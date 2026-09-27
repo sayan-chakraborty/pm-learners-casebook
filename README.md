@@ -1,3 +1,5 @@
+<p align="center"><img src="XLRI%20Logo.webp" alt="XLRI – Xavier School of Management" height="90"></p>
+
 # PM Learner's Casebook
 
 A learner's guide for product-management interviews, built in September 2026 for PM placements at XLRI. Nine sectors, each with a sector primer, real interview cases in Q&A form, product teardowns and a technology block, plus a chapter on behavioural interviews.
