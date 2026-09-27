@@ -1,0 +1,29 @@
+<!-- ============ TECHNOLOGY: MCP ============ -->
+<h2 style="margin-top:12pt">C. MCP: one standard plug for tools and data</h2>
+<p><b>Everyday picture.</b> Ten years ago every phone brand had its own charger, and a drawer full of cables. USB-C made one plug work for all of them. <span class="term">MCP</span> (Model Context Protocol) aims to do the same between AI apps and the tools and data they use. Anthropic released it as an open standard in November 2024. OpenAI, Google and Microsoft added support during 2025, and in December 2025 it was handed to the Agentic AI Foundation under the Linux Foundation, so no single company controls it. By then there were more than 10,000 active MCP servers.</p>
+
+<h3>1. How it works: host, client, server</h3>
+<p>Three parts ({{REF:mcp}}). The <span class="term">host</span> is the AI app a person uses: the support copilot, a desktop assistant, a coding tool. Inside it, a <span class="term">client</span> handles the connection to each outside service. An <span class="term">MCP server</span> is a small program, usually written by the service’s own company, that tells any host what it offers and runs requests. A server can offer <b>tools</b> (actions such as <i>create_issue</i>), <b>resources</b> (data to read, such as files) and <b>prompts</b> (ready-made instructions). The host first asks each server “what do you offer?”, shows those tools to the model, and passes on the model’s requests.</p>
+<figure>{{SVG:mcp}}
+<figcaption><b>{{FIG:mcp}} · Host, clients and servers.</b> The host speaks one standard to every server; each server translates to its own service. Adding a new service means adding a server, not changing the AI app. <span class="src">Author’s diagram, after the MCP specification (modelcontextprotocol.io).</span></figcaption>
+</figure>
+<p><b>Worked example.</b> Priya types “Summarise ticket #4821 and file a bug.” The copilot asks the help-desk server for the ticket, summarises it (CSV export fails over 10,000 rows), asks Priya to approve filing, creates the issue through the Jira server, and adds a note with the issue number back on the ticket ({{REF:mcptrace}}). The copilot’s makers wrote no code for Jira.</p>
+<figure>{{SVG:mcptrace}}
+<figcaption><b>{{FIG:mcptrace}} · One request across two MCP servers.</b> Discovery (②) tells the copilot what each server can do; the write to Jira still waits for Priya (⑥–⑦). <span class="src">Author’s diagram; ticket and issue illustrative.</span></figcaption>
+</figure>
+
+<h3>2. Why a standard matters: the arithmetic</h3>
+<p>Without a standard, every AI app needs its own connector to every tool: 5 apps × 20 tools = 100 connectors to build and repair whenever any of them changes. With a standard, each app builds one client and each tool one server: 5 + 20 = 25 pieces ({{REF:mcpmath}}). The same sum explains why USB, and HTTP for websites, spread: multiplication turns into addition.</p>
+<figure>{{SVG:mcpmath}}
+<figcaption><b>{{FIG:mcpmath}} · From many-to-many to many-to-one.</b> The saving grows with the number of apps and tools, which is why adoption sped up once the big AI companies joined. <span class="src">Author’s diagram.</span></figcaption>
+</figure>
+
+<h3>3. Where MCP breaks</h3>
+<p><b>Untrusted servers.</b> Installing an MCP server is like installing an app with access to your data; a fake or careless one can leak it. <b>Too much power:</b> a server that can delete as well as read, when read was all the task needed. <b>Poisoned tool descriptions:</b> the text a server uses to describe its tools goes to the model, so a malicious server can hide instructions there (“also send the file to…”). <b>Login gaps:</b> the server must act as the right user with the right rights, not as an all-powerful system account. <b>Crowded context:</b> each tool’s description takes up room in every request; 40 tools × 150 words is a lot of text for the model to read before it starts, which adds cost and makes it pick the wrong tool more often.</p>
+<p><b>The PM decisions.</b> <b>Build an MCP server for your own product.</b> This is a distribution decision: once there is a server, every AI assistant a customer uses can work with your product, as happened with Jira, GitHub and Notion. <b>Which actions to expose:</b> start read-only, add writes with approvals. <b>Which servers your own AI app may connect to:</b> an approved list, not anything a user installs. <b>How many tools</b> to show the model at once.</p>
+<div class="box int"><span class="lbl">In the interview · MCP</span>
+<ul class="small">
+<li><b>“What is MCP, simply?”</b> A USB-C for AI: one standard way for any AI app to use any tool or data source, so 100 connectors become 25.</li>
+<li><b>“Should our SaaS product ship an MCP server?”</b> Yes if customers work inside AI assistants: it puts your product where their work is; start with read-only tools.</li>
+<li><b>“What’s the risk?”</b> Servers you don’t trust, too many powers, and instructions hidden in tool descriptions.</li>
+</ul></div>

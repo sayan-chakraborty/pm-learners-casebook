@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8">
+<title>S0 Style sample</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* shared diagram styles */
+svg.d text{ font-family:'Inter','Segoe UI',Arial,sans-serif; font-size:11px; fill:#1c232b; }
+svg.d .b{ font-weight:700; } svg.d .s{ font-size:10.5px; fill:#4d5763; } svg.d .w{ fill:#fff; }
+svg.d .halo{ paint-order:stroke; stroke:#fff; stroke-width:4px; stroke-linejoin:round; }
+svg.d .msg{ stroke:#4a5563; stroke-width:1.4; stroke-dasharray:5 3; fill:none; }
+svg.d .ret{ stroke:#8a939e; stroke-width:1.3; stroke-dasharray:2 3; fill:none; }
+svg.d .money{ stroke:#127a64; stroke-width:3.2; fill:none; }
+svg.d .ln{ stroke:#7d8793; stroke-width:1.2; fill:none; }
+svg.d .acc{ fill:#0b5d7a; } svg.d .red{ fill:#b93a32; } svg.d .grn{ fill:#127a64; } svg.d .fwc{ fill:#3e4fb8; } svg.d .c text{ font-size:10.3px; }
+</style></head>
+<body>
+
+<!-- ============ PAGE 1: PRIMER ============ -->
+<section class="page">
+<div class="kicker">M1 · Payments &amp; fintech · Sector primer</div>
+<h1>How UPI moves money</h1>
+<p class="lede">7:40 pm, a kirana in Pune. Asha buys ₹500 of groceries, scans the QR code at the counter and types her UPI PIN. Before she has put her phone away, the shop’s soundbox says “₹500 received”. PhonePe was on her screen the whole time, yet PhonePe never held her ₹500. Here is who did.</p>
+
+<div class="stats">
+ <div><b>24.51 bn</b><span>UPI payments in Aug 2026, up 22% on Aug 2025</span></div>
+ <div><b>791 mn</b><span>payments a day, about 9,150 every second on average</span></div>
+ <div><b>₹29.82 lakh Cr</b><span>moved over UPI in Aug 2026</span></div>
+ <div><b>45.9% · 32.4%</b><span>PhonePe · Google Pay share of UPI volume; Paytm 8.1%</span></div>
+</div>
+
+<figure>
+<svg class="d" viewBox="0 0 680 262" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="m1a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker>
+  <marker id="m1g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#127a64"/></marker>
+ </defs>
+ <!-- legend -->
+ <line x1="486" y1="9" x2="516" y2="9" class="msg"/><text x="521" y="13" class="s">message</text>
+ <line x1="580" y1="9" x2="606" y2="9" class="money"/><text x="612" y="13" class="s">money</text>
+ <!-- row 1: message path -->
+ <rect x="4" y="52" width="118" height="62" rx="6" fill="#e1f2ec" stroke="#127a64" stroke-width="1.4"/>
+ <text x="63" y="73" text-anchor="middle" class="b">Asha’s phone</text>
+ <text x="63" y="88" text-anchor="middle">PhonePe app</text>
+ <text x="63" y="102" text-anchor="middle" class="s">screens only</text>
+ <rect x="176" y="52" width="128" height="62" rx="6" fill="#dbe8f5" stroke="#2f6ea5" stroke-width="1.4"/>
+ <text x="240" y="73" text-anchor="middle" class="b">PhonePe’s PSP bank</text>
+ <text x="240" y="88" text-anchor="middle">e.g. Yes Bank, @ybl</text>
+ <text x="240" y="102" text-anchor="middle" class="s">plugs the app into UPI</text>
+ <rect x="358" y="52" width="128" height="62" rx="6" fill="#fde7c8" stroke="#c47f17" stroke-width="1.4"/>
+ <text x="422" y="73" text-anchor="middle" class="b">NPCI UPI switch</text>
+ <text x="422" y="88" text-anchor="middle">routes every request</text>
+ <text x="422" y="102" text-anchor="middle" class="s">holds no money</text>
+ <rect x="540" y="52" width="136" height="62" rx="6" fill="#dbe8f5" stroke="#2f6ea5" stroke-width="1.4"/>
+ <text x="608" y="73" text-anchor="middle" class="b">Kirana’s PSP</text>
+ <text x="608" y="88" text-anchor="middle">turns kirana@… into</text>
+ <text x="608" y="102" text-anchor="middle" class="s">account no. + IFSC</text>
+ <!-- message arrows -->
+ <line x1="122" y1="83" x2="174" y2="83" class="msg" marker-end="url(#m1a)"/>
+ <text x="149" y="31" text-anchor="middle">① pay ₹500 to kirana@…</text>
+ <text x="149" y="44" text-anchor="middle" class="s">PIN encrypted on the phone</text>
+ <line x1="304" y1="83" x2="356" y2="83" class="msg" marker-end="url(#m1a)"/>
+ <text x="331" y="44" text-anchor="middle">② request passed on</text>
+ <line x1="486" y1="74" x2="538" y2="74" class="msg" marker-end="url(#m1a)"/>
+ <line x1="540" y1="94" x2="488" y2="94" class="msg" marker-end="url(#m1a)"/>
+ <text x="513" y="31" text-anchor="middle">③ who is kirana@…?</text>
+ <text x="513" y="44" text-anchor="middle">④ a/c no. + IFSC</text>
+ <!-- NPCI instructs banks -->
+ <line x1="404" y1="114" x2="236" y2="178" class="msg" marker-end="url(#m1a)"/>
+ <text x="316" y="143" text-anchor="end" class="b halo">⑤ debit ₹500</text>
+ <line x1="440" y1="114" x2="500" y2="178" class="msg" marker-end="url(#m1a)"/>
+ <text x="480" y="143" class="b halo">⑥ credit ₹500</text>
+ <!-- row 2: money -->
+ <rect x="140" y="180" width="160" height="62" rx="6" fill="#dbe8f5" stroke="#2f6ea5" stroke-width="1.4"/>
+ <text x="220" y="200" text-anchor="middle" class="b">Asha’s bank (issuer)</text>
+ <text x="220" y="215" text-anchor="middle">checks PIN, balance, limit</text>
+ <text x="220" y="230" text-anchor="middle" class="s">then debits ₹500</text>
+ <rect x="432" y="180" width="160" height="62" rx="6" fill="#dbe8f5" stroke="#2f6ea5" stroke-width="1.4"/>
+ <text x="512" y="200" text-anchor="middle" class="b">Kirana’s bank (acquirer)</text>
+ <text x="512" y="215" text-anchor="middle">credits ₹500 to the</text>
+ <text x="512" y="230" text-anchor="middle" class="s">shop’s account</text>
+ <rect x="612" y="180" width="64" height="62" rx="6" fill="#f1f2f4" stroke="#8a939e" stroke-width="1.2"/>
+ <text x="644" y="200" text-anchor="middle" class="b">Soundbox</text>
+ <text x="644" y="215" text-anchor="middle" class="s">“₹500</text>
+ <text x="644" y="229" text-anchor="middle" class="s">received”</text>
+ <line x1="300" y1="206" x2="424" y2="206" class="money" marker-end="url(#m1g)"/>
+ <text x="362" y="199" text-anchor="middle" class="b grn">₹500</text>
+ <text x="366" y="222" text-anchor="middle" class="s">banks settle the net</text>
+ <text x="366" y="235" text-anchor="middle" class="s">amount later, via RBI</text>
+ <line x1="592" y1="211" x2="608" y2="211" class="msg" marker-end="url(#m1a)"/>
+ <text x="601" y="176" text-anchor="middle">⑦</text>
+ <!-- return path -->
+ <text x="63" y="133" text-anchor="middle">⑧ “Paid ✓” goes back</text>
+ <text x="63" y="146" text-anchor="middle" class="s">up the same path</text>
+ <!-- insight -->
+ <text x="4" y="258" class="b acc">Money never sits in PhonePe: the app only carries messages; banks move the money.</text>
+</svg>
+<figcaption><b>Figure 1.1 · One ₹500 UPI payment, step by step.</b> Follow the dashed arrows: four organisations pass messages before any money moves, and the only real money movement (green) is bank to bank. The app you see, PhonePe, owns the screen and the customer relationship, but not the rails. <span class="src">Flow simplified from NPCI’s UPI procedural guidelines; PSP handle as used by PhonePe, Sep 2026.</span></figcaption>
+</figure>
+
+<p><span class="term">UPI ID</span> (or VPA, virtual payment address) is a nickname for a bank account, such as kirana@ybl. A <span class="term">TPAP</span> (third-party app provider) such as PhonePe or Google Pay builds the screens but cannot join UPI alone; it plugs in through one or more <span class="term">PSP banks</span> (payment service providers). <span class="term">NPCI</span>, owned by a group of banks, runs the switch. The <span class="term">issuer</span> is the payer’s bank and the <span class="term">acquirer</span> is the merchant’s.</p>
+
+<div class="keep"><h2>Who pays for a free payment?</h2>
+<p>Since January 2020 merchants have paid zero <span class="term">MDR</span> on UPI (merchant discount rate: the share of each payment a merchant pays to accept it; roughly 2% on a credit card). Banks and apps carried the cost, and the government paid a small subsidy instead: ₹1,500 Cr in FY25, at 0.15% on small-merchant payments up to ₹2,000. Zero MDR is why a chaiwala takes UPI but not cards. It is also why UPI apps lose money on payments. That changes on <b>15 October 2026</b>, when a 0.4% MDR starts on large merchants’ payments above ₹2,000.</p></div>
+
+<figure>
+<svg class="d" viewBox="0 0 680 232" xmlns="http://www.w3.org/2000/svg">
+ <!-- grid -->
+ <g stroke="#e3e7eb" stroke-width="1">
+  <line x1="70" y1="40" x2="450" y2="40"/><line x1="70" y1="90" x2="450" y2="90"/><line x1="70" y1="140" x2="450" y2="140"/>
+ </g>
+ <line x1="70" y1="190" x2="450" y2="190" stroke="#7d8793" stroke-width="1.2"/>
+ <line x1="70" y1="30" x2="70" y2="190" stroke="#7d8793" stroke-width="1.2"/>
+ <text x="64" y="194" text-anchor="end" class="s">₹0</text>
+ <text x="64" y="144" text-anchor="end" class="s">₹100</text>
+ <text x="64" y="94" text-anchor="end" class="s">₹200</text>
+ <text x="64" y="44" text-anchor="end" class="s">₹300</text>
+ <g class="s" text-anchor="middle">
+  <text x="114" y="205" class="s">₹1k</text><text x="158" y="205" class="s">₹2k</text><text x="216" y="205" class="s">₹5k</text>
+  <text x="260" y="205" class="s">₹10k</text><text x="304" y="205" class="s">₹20k</text><text x="388" y="205" class="s">₹75k</text><text x="450" y="205" class="s">₹2 lakh</text>
+ </g>
+ <text x="260" y="222" text-anchor="middle" class="s">size of one payment (log scale)</text>
+ <text x="16" y="110" text-anchor="middle" class="s" transform="rotate(-90 16 110)">fee the merchant pays</text>
+ <!-- free segment -->
+ <line x1="70" y1="190" x2="158" y2="190" stroke="#127a64" stroke-width="4"/>
+ <text x="76" y="181" class="b grn">₹0 up to ₹2,000</text>
+ <!-- curve -->
+ <polyline points="158,190 158,186 216,180 260,170 304,150 348,110 388,40 450,40" fill="none" stroke="#b93a32" stroke-width="2.6"/>
+ <circle cx="216" cy="180" r="3.6" fill="#b93a32"/>
+ <text x="172" y="163" class="b">₹5,000 → ₹20</text>
+ <circle cx="388" cy="40" r="3.6" fill="#b93a32"/>
+ <text x="382" y="34" text-anchor="end" class="b">capped at ₹300</text>
+ <text x="80" y="54" class="b red">Large merchant, from 15 Oct 2026:</text>
+ <text x="80" y="68" class="red">0.4% on every payment above ₹2,000</text>
+ <!-- right panel -->
+ <rect x="470" y="28" width="206" height="176" rx="6" fill="#f3f7f5" stroke="#b9d8cd"/>
+ <text x="480" y="46" class="b grn">Still ₹0 to the merchant</text>
+ <text x="480" y="64">• Person-to-person transfers,</text>
+ <text x="490" y="78">any amount</text>
+ <text x="480" y="95">• Merchant payments ≤ ₹2,000</text>
+ <text x="490" y="109" class="s">(95%+ of UPI merchant volume)</text>
+ <text x="480" y="126">• Small merchants taking up to</text>
+ <text x="490" y="140">₹1 lakh a month on QR, any size</text>
+ <text x="480" y="163" class="b">Special cases above ₹2,000</text>
+ <text x="480" y="179">• Flat ₹5: rail, telecom, fuel,</text>
+ <text x="490" y="193">insurance, utilities · 0.02%: shares</text>
+</svg>
+<figcaption><b>Figure 1.2 · What a merchant pays to accept UPI from 15 Oct 2026.</b> The fee applies only to large merchants and only above ₹2,000, so most everyday payments stay free. How the 0.4% is split between banks, the app and NPCI has not been published, and that split decides whether PhonePe’s payments business ever makes money. <span class="src">NPCI MDR FAQ, 15 Sep 2026 (via SCC Online, Business Standard); PIB, FY25 incentive scheme.</span></figcaption>
+</figure>
+
+<h2>Turning points</h2>
+<figure>
+<svg class="d" viewBox="0 0 680 158" xmlns="http://www.w3.org/2000/svg">
+ <line x1="10" y1="84" x2="672" y2="84" stroke="#7d8793" stroke-width="2"/>
+ <line x1="560" y1="84" x2="672" y2="84" stroke="#fff" stroke-width="2.4" stroke-dasharray="5 4"/>
+ <!-- 9 events, x = 36 + i*76; even above, odd below -->
+ <g>
+  <line x1="36" y1="56" x2="36" y2="84" class="ln"/><circle cx="36" cy="84" r="5" fill="#127a64"/>
+  <text x="8" y="20" class="b grn">Apr 2016</text><text x="8" y="34">UPI launches</text><text x="8" y="48" class="s">with 21 banks</text>
+
+  <line x1="112" y1="84" x2="112" y2="104" class="ln"/><circle cx="112" cy="84" r="5" fill="#c47f17"/>
+  <text x="84" y="120" class="b" fill="#9a6310">Nov 2016</text><text x="84" y="134">Demonetisation</text><text x="84" y="148" class="s">pushes cash users online</text>
+
+  <line x1="188" y1="56" x2="188" y2="84" class="ln"/><circle cx="188" cy="84" r="5" fill="#127a64"/>
+  <text x="160" y="20" class="b grn">Oct 2019</text><text x="160" y="34">1 bn payments</text><text x="160" y="48" class="s">in a month</text>
+
+  <line x1="264" y1="84" x2="264" y2="104" class="ln"/><circle cx="264" cy="84" r="6.5" fill="#c47f17"/>
+  <text x="236" y="120" class="b" fill="#9a6310">Jan 2020</text><text x="236" y="134" class="b">Zero MDR by law</text><text x="236" y="148" class="s">merchants pay nothing</text>
+
+  <line x1="340" y1="56" x2="340" y2="84" class="ln"/><circle cx="340" cy="84" r="6.5" fill="#c47f17"/>
+  <text x="312" y="20" class="b" fill="#9a6310">Nov 2020</text><text x="312" y="34" class="b">30% cap per app</text><text x="312" y="48" class="s">announced; deferred 3×</text>
+
+  <line x1="416" y1="84" x2="416" y2="104" class="ln"/><circle cx="416" cy="84" r="5" fill="#c47f17"/>
+  <text x="388" y="120" class="b" fill="#9a6310">Jan 2024</text><text x="388" y="134">RBI curbs Paytm</text><text x="388" y="148" class="s">Payments Bank</text>
+
+  <line x1="492" y1="56" x2="492" y2="84" class="ln"/><circle cx="492" cy="84" r="5" fill="#127a64"/>
+  <text x="464" y="20" class="b grn">Aug 2025</text><text x="464" y="34">20 bn payments</text><text x="464" y="48" class="s">in a month</text>
+
+  <line x1="568" y1="84" x2="568" y2="104" class="ln"/><circle cx="568" cy="84" r="6.5" fill="#fff" stroke="#b93a32" stroke-width="2.4"/>
+  <text x="540" y="120" class="b red">15 Oct 2026</text><text x="540" y="134" class="b">MDR returns</text><text x="540" y="148" class="s">large merchants, &gt;₹2,000</text>
+
+  <line x1="644" y1="56" x2="644" y2="84" class="ln"/><circle cx="644" cy="84" r="6.5" fill="#fff" stroke="#b93a32" stroke-width="2.4"/>
+  <text x="672" y="20" text-anchor="end" class="b red">31 Dec 2026</text><text x="672" y="34" text-anchor="end" class="b">30% cap deadline</text><text x="672" y="48" text-anchor="end" class="s">PhonePe at 45.9%</text>
+ </g>
+</svg>
+<figcaption><b>Figure 1.3 · Ten years of UPI in nine moments.</b> Green dots are growth, amber dots are rules, and hollow red dots are still to come. The policy dots shaped the market more than any product launch: zero MDR decided who could make money, and the cap decides who may keep growing. <span class="src">NPCI; Business Standard (Aug 2023, Aug 2025); Business Today (cap extension, 31 Dec 2024); RBI press release, 31 Jan 2024.</span></figcaption>
+</figure>
+
+<h2>The metrics that matter</h2>
+<table class="tbl">
+<tr><th style="width:20%">Metric</th><th style="width:38%">What it means</th><th>Worked number, and why it matters</th></tr>
+<tr><td><b>Volume and TPV</b></td><td>Count of payments, and total payment value (₹ moved)</td><td>Aug 2026: ₹29.82 lakh Cr ÷ 24.51 bn = <b>₹1,217 average ticket</b>. A falling ticket means UPI is winning small, everyday payments.</td></tr>
+<tr><td><b>Market share</b></td><td>Share of all UPI payments started in one app, by count</td><td>PhonePe 45.9%. The 30% cap is measured on this, over a rolling three months.</td></tr>
+<tr><td><b>Success rate</b> and <b>TD</b></td><td>Share of payments that go through. Technical decline (TD): a failure caused by a bank or system, not the user</td><td>Each 0.1 point of TD at 791 mn a day is about <b>7.9 lakh</b> failed payments daily. Users blame the app they see.</td></tr>
+<tr><td><b>MTU</b></td><td>Monthly transacting users: at least one successful payment in 30 days</td><td>Better than downloads or registrations (PhonePe: 70 crore+ registered), because it counts habit.</td></tr>
+<tr><td><b>Take rate</b></td><td>Revenue ÷ TPV</td><td>About 0% on most UPI merchant payments today; 0.4% on eligible large-merchant payments from Oct 2026 (₹20 on ₹5,000).</td></tr>
+</table>
+
+<div class="box chk"><span class="lbl">Check · “PhonePe must cut its share to 30% by January 2027” <span class="verdict v-over">Overstated</span></span>
+<p>The rule, announced in November 2020, says an app above 30% of UPI volume (rolling three months) must stop <i>onboarding new users</i>. It does not force existing users off. NPCI has pushed the deadline back three times, most recently to 31 December 2026, and as of September 2026 it is not in force. Watch it: a cap on new users would hand growth to Paytm, Navi and CRED.</p></div>
+
+<div class="cols2">
+<div class="box key"><span class="lbl">Key idea · Payments are the hook</span>
+<p>With most UPI payments free to the merchant, apps earn from what the payment habit lets them sell: loans, insurance, broking, bill payments, ads and soundbox rentals. PhonePe’s lending arm earned ₹945 Cr in FY26, 2.5× the year before.</p></div>
+<div class="box int"><span class="lbl">In the interview</span>
+<p>Asked “How does PhonePe make money?”, avoid “transaction fees”. Say: “Most UPI payments earn it close to nothing. The habit is distribution for loans, insurance and bills. From October, large-merchant payments above ₹2,000 add a fee line, but the split isn’t public yet.”</p></div>
+</div>
+</section>
+
+<!-- ============ PAGES 2–3: CASE ============ -->
+<section class="page">
+<div class="kicker">M1 · Payments &amp; fintech · Cases</div>
+<div class="casehead"><span class="t">Case 1.6 · Android DAU drops 40%</span>
+ <span class="m"><span class="pill">Root cause analysis</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, p. 308</span></span></div>
+<div class="try"><b>Try it first.</b> Read only the question in the blue box. Take 5 minutes and say your structure out loud before you read the candidate’s answer.</div>
+
+{{A308}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Checked the data first.</b> Asking about tracking changes and pipeline delays is rare: only 1 of the 12 RCA cases in this book does it.</li>
+ <li><b>Pinned the definition</b> (unique users, at least one open a day) and checked new vs existing users.</li>
+ <li><b>Segmented by OS version and maker</b>, which turned “Android” into “Android 12+”.</li>
+ <li><b>Closed the loose end.</b> The North America skew didn’t fit a pure OS bug, so the candidate proposed a staged rollout and asked for proof. This is the best moment in the case.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Never asked “sudden or slow?”</b> A sudden drop usually means something broke; a slow one means users are drifting away. That one question points straight at the update and saves three turns.</li>
+ <li><b>Looked outside first</b>, although the drop began right after our own update.</li>
+ <li><b>Never checked the size.</b> Does the crash explain all 40%, or is something else going on too?</li>
+ <li><b>Forgot the business cost.</b> In a banking app, users who can’t open it can’t pay, and they call support.</li>
+</ul>
+</div>
+
+<div class="box chk"><span class="lbl">Check · “Roll back to the last stable version” <span class="verdict v-over">Overstated</span></span>
+<p>On Android you can’t take an update back from phones that already have it. You can only stop it reaching more phones (the Play Store lets you pause a gradual release) and then send a <i>newer</i> version containing the old, working code. Teams that put risky features behind an on/off switch controlled from their own servers (a “feature flag”) can simply switch the feature off. More in M9.</p></div>
+
+<div class="box key"><span class="lbl">The scoping kit · five questions before any answer</span>
+<p>A good doctor doesn’t write a prescription the moment you say “headache”. They ask where it hurts, since when, and whether anything changed: new food, new medicine, less sleep. The scoping kit is your version of those questions. It takes about a minute and stops you solving the wrong problem.</p>
+<p class="small"><b>Same questions, everyday setting:</b> planning a friend’s birthday, you’d ask what they’d enjoy (goal), who is coming (who), what’s already booked (today), and the budget and date (limits).</p>
+<div class="kit">
+ <div class="card"><span class="n">1</span><b>What exactly is it?</b><span class="why">So you and the interviewer mean the same thing.</span><span class="here">“Android daily users down 40% in two weeks, iPhone steady. Right?”</span><span class="tick y">✓ asked</span></div>
+ <div class="card"><span class="n">2</span><b>What’s the goal?</b><span class="why">More users, more money or fewer failures lead to different answers.</span><span class="here">Already given here: get the users back.</span><span class="tick na">not needed</span></div>
+ <div class="card"><span class="n">3</span><b>Who is affected?</b><span class="why">New and old users, or two cities, behave differently.</span><span class="here">“New users, existing users, or both?”</span><span class="tick y">✓ asked</span></div>
+ <div class="card"><span class="n">4</span><b>What changed?</b><span class="why">Most problems start with a change. Ask what exists today and why now.</span><span class="here">“Did we release anything just before?”</span><span class="tick y">✓ asked late</span></div>
+ <div class="card"><span class="n">5</span><b>What are the limits?</b><span class="why">Country, platform or deadline shrinks the problem.</span><span class="here">“All countries, or one?”</span><span class="tick y">✓ asked</span></div>
+</div>
+<p class="small" style="margin-top:4pt"><b>For a “number dropped” case, add two or three of these:</b> What exactly is counted? <span class="tk y">✓</span> · Sudden or slow? <span class="tk n">✗ skipped</span> · Where is it worst? <span class="tk y">✓</span> · Can we trust the number? <span class="tk y">✓ rare, and impressive</span></p>
+<p class="small"><b>Rule of thumb:</b> don’t ask everything. Ask 3–4, say one assumption out loud (“I’ll assume this is worldwide”), and begin.</p>
+</div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">
+<svg class="d" viewBox="0 0 680 62" xmlns="http://www.w3.org/2000/svg">
+ <g class="c">
+  <polygon points="0,4 106,4 116,31 106,58 0,58" fill="#127a64"/>
+  <text x="54" y="26" text-anchor="middle" class="b w">① Clarify</text><text x="54" y="44" text-anchor="middle" class="w">sudden or slow?</text>
+  <polygon points="113,4 219,4 229,31 219,58 113,58 123,31" fill="#1d8a73"/>
+  <text x="170" y="26" text-anchor="middle" class="b w">② Rule out</text><text x="170" y="44" text-anchor="middle" class="w">bad data? outside?</text>
+  <polygon points="226,4 332,4 342,31 332,58 226,58 236,31" fill="#2a9a82"/>
+  <text x="283" y="26" text-anchor="middle" class="b w">③ Find where</text><text x="283" y="44" text-anchor="middle" class="w">which users?</text>
+  <polygon points="339,4 445,4 455,31 445,58 339,58 349,31" fill="#0b5d7a"/>
+  <text x="396" y="26" text-anchor="middle" class="b w">④ Check size</text><text x="396" y="44" text-anchor="middle" class="w">does it add up?</text>
+  <polygon points="452,4 558,4 568,31 558,58 452,58 462,31" fill="#3e4fb8"/>
+  <text x="509" y="26" text-anchor="middle" class="b w">⑤ Fix</text><text x="509" y="44" text-anchor="middle" class="w">stop, patch, tell</text>
+  <polygon points="565,4 680,4 680,58 565,58 575,31" fill="#7c3aa6"/>
+  <text x="624" y="26" text-anchor="middle" class="b w">⑥ Measure</text><text x="624" y="44" text-anchor="middle" class="w">back to normal?</text>
+ </g>
+</svg>
+<figcaption><b>Figure 1.4 · A “metric dropped” answer in six moves.</b> Every RCA case in this book can be answered in this order. Each turn below is tagged with its move. <span class="src">Author’s summary of the RCA sequence.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Before I start, two quick questions. Did the drop happen suddenly, on one day, or slowly over the two weeks? And did we change anything just before it began, such as an app update?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Suddenly, the day after we released a new Android version.</p></div></div>
+<p class="whynote">Why this move: a sudden drop usually means something broke; a slow one means users are drifting away. One answer and the update is the main suspect.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Rule out · ③ Find where</div><p>Two quick checks first: is the number real, with no tracking bug, and did anything outside change, like a rival’s offer? If not, can we split Android users by their Android version, and by whether they installed the update?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>The number is real and nothing outside changed. For users on Android 12 or newer who installed the update, the app crashes the moment they open it.</p></div></div>
+<p class="whynote">Why this move: clear the cheap explanations in one breath, then narrow down to exactly who is hit.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Check the size</div><p>Does that explain the whole 40%? Say 70% of our Android users are on Android 12 or newer, and 60% of them have updated (illustrative). 70% × 60% = 42% who can’t open the app. That’s close to 40%, so this one bug explains the drop. North America saw it first because the update reached it first.</p></div></div>
+<p class="whynote">Why this move: if the numbers didn’t add up, there would be a second cause still to find.</p>
+
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Good. What do you do now, and how will you know it’s fixed?</p></div></div>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Fix · ⑥ Measure</div><p><b>Today:</b> stop the update reaching more phones. Send out a fixed version fast, because on Android you can’t take an update back. Text affected users to update, since they can’t open the app to read a notice.</p>
+<p><b>Goal (North Star):</b> Android daily users back to normal within a week. <b>Safety check (guardrail):</b> logins and payments still work after the rushed fix. <b>Trade-off:</b> a rushed fix is less tested, so it goes to 10% of users for a few hours before everyone. <b>Next time:</b> test every release on the newest Android versions.</p></div></div>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · Finding the cause: four doors, then 5 Whys</span>
+<p><span class="step">1 · The situation.</span>A number has dropped and you have 25 minutes. The usual mistake is to grab the first idea (“a rival must have run an offer”) and spend the case defending it.</p>
+<p><span class="step">2 · An everyday example.</span>Your scooter won’t start. You don’t open up the engine first. You check the easy things first, in an order that works just as well for an app:</p>
+<table class="tbl">
+<tr><th style="width:17%">Door</th><th style="width:25%">The question</th><th>Scooter won’t start</th><th>Android users fell 40%</th></tr>
+<tr><td><b>1 · Data</b></td><td>Is the reading real?</td><td>Is the fuel gauge just broken?</td><td>Is the tracking broken?</td></tr>
+<tr><td><b>2 · Outside</b></td><td>Did the world change?</td><td>Is there a petrol strike?</td><td>Did a rival launch an offer?</td></tr>
+<tr><td><b>3 · Inside</b></td><td>Did we change something?</td><td>Did the mechanic work on it yesterday?</td><td>Did we release an update?</td></tr>
+<tr><td><b>4 · Where</b></td><td>Where exactly is it?</td><td>Only on cold mornings?</td><td>Only on Android 12 or newer?</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>Knock on the doors in order, because the first ones are quickest to check. If a clue points at one door, go there early: a sudden drop right after an update points at door 3. When a door opens, keep asking “why?” (the <b>5 Whys</b>) until you reach something a team can fix. That is usually a missing step in a process, not a person to blame.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 284" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="m3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7d8793"/></marker></defs>
+ <rect x="4" y="66" width="132" height="74" rx="6" fill="#fcecea" stroke="#b93a32" stroke-width="1.4"/>
+ <text x="70" y="88" text-anchor="middle" class="b">Android users</text>
+ <text x="70" y="102" text-anchor="middle" class="b">down 40%</text>
+ <text x="70" y="116" text-anchor="middle">in 2 weeks;</text>
+ <text x="70" y="130" text-anchor="middle" class="s">iPhone steady</text>
+ <path d="M136,103 H156 M156,28 V178 M156,28 H174 M156,78 H174 M156,128 H174 M156,178 H174" class="ln"/>
+ <rect x="176" y="8" width="220" height="40" rx="5" fill="#fff" stroke="#9aa3ad"/>
+ <text x="184" y="24" class="b">1 · Data: is the number real?</text><text x="184" y="39" class="s">tracking bug? late data?</text>
+ <rect x="176" y="58" width="220" height="40" rx="5" fill="#fff" stroke="#9aa3ad"/>
+ <text x="184" y="74" class="b">2 · Outside: did the world change?</text><text x="184" y="89" class="s">rival offer? holiday? Google change?</text>
+ <rect x="176" y="108" width="220" height="40" rx="5" fill="#fff" stroke="#3e4fb8" stroke-width="1.6"/>
+ <text x="184" y="124" class="b">3 · Inside: did we change it?</text><text x="184" y="139" class="s">app update? new feature?</text>
+ <rect x="176" y="158" width="220" height="40" rx="5" fill="#fff" stroke="#3e4fb8" stroke-width="1.6"/>
+ <text x="184" y="174" class="b">4 · Where: which users exactly?</text><text x="184" y="189" class="s">phone type, country, new or old user</text>
+ <rect x="408" y="8" width="130" height="40" rx="5" fill="#eef0f2"/><text x="473" y="32" text-anchor="middle" class="s">✗ no</text>
+ <rect x="408" y="58" width="130" height="40" rx="5" fill="#eef0f2"/><text x="473" y="82" text-anchor="middle" class="s">✗ no</text>
+ <rect x="408" y="108" width="130" height="40" rx="5" fill="#fff3d6" stroke="#c47f17"/>
+ <text x="473" y="124" text-anchor="middle" class="b">✓ yes: an update</text><text x="473" y="139" text-anchor="middle" class="s">2 weeks ago</text>
+ <rect x="408" y="158" width="130" height="40" rx="5" fill="#fff3d6" stroke="#c47f17"/>
+ <text x="473" y="174" text-anchor="middle" class="b">✓ Android 12+ only</text><text x="473" y="189" text-anchor="middle" class="s">N. America first</text>
+ <line x1="396" y1="28" x2="406" y2="28" class="ln"/><line x1="396" y1="78" x2="406" y2="78" class="ln"/>
+ <line x1="396" y1="128" x2="406" y2="128" class="ln"/><line x1="396" y1="178" x2="406" y2="178" class="ln"/>
+ <rect x="552" y="78" width="124" height="100" rx="6" fill="#1c232b"/>
+ <text x="614" y="96" text-anchor="middle" class="w b" style="font-size:10px;letter-spacing:.08em">THE CAUSE</text>
+ <text x="614" y="114" text-anchor="middle" class="w">the update’s new</text>
+ <text x="614" y="128" text-anchor="middle" class="w">security check</text>
+ <text x="614" y="142" text-anchor="middle" class="w">crashes the app</text>
+ <text x="614" y="156" text-anchor="middle" class="w">on Android 12+</text>
+ <path d="M538,128 H550" class="ln" marker-end="url(#m3)"/><path d="M538,178 C546,178 544,172 550,170" class="ln" marker-end="url(#m3)"/>
+ <!-- 5 whys -->
+ <text x="4" y="238" class="b fwc">5 WHYS</text>
+ <text x="4" y="253" class="s">keep asking</text>
+ <text x="4" y="266" class="s">“why?”</text>
+ <g class="s" style="font-style:italic">
+  <text x="209" y="218" text-anchor="middle" class="s">why? →</text><text x="325" y="218" text-anchor="middle" class="s">why? →</text>
+  <text x="441" y="218" text-anchor="middle" class="s">why? →</text><text x="557" y="218" text-anchor="middle" class="s">why? →</text>
+ </g>
+ <g class="c">
+  <polygon points="96,222 204,222 214,251 204,280 96,280 106,251" fill="#eef0fb" stroke="#3e4fb8"/>
+  <text x="156" y="248" text-anchor="middle" class="b">App crashes</text><text x="156" y="262" text-anchor="middle">when opened</text>
+  <polygon points="212,222 320,222 330,251 320,280 212,280 222,251" fill="#eef0fb" stroke="#3e4fb8"/>
+  <text x="272" y="241" text-anchor="middle" class="b">New security</text><text x="272" y="255" text-anchor="middle">check fails on</text><text x="272" y="269" text-anchor="middle">Android 12+</text>
+  <polygon points="328,222 436,222 446,251 436,280 328,280 338,251" fill="#eef0fb" stroke="#3e4fb8"/>
+  <text x="388" y="241" text-anchor="middle" class="b">Code expected</text><text x="388" y="255" text-anchor="middle">a permission the</text><text x="388" y="269" text-anchor="middle">phone never gave</text>
+  <polygon points="444,222 552,222 562,251 552,280 444,280 454,251" fill="#eef0fb" stroke="#3e4fb8"/>
+  <text x="504" y="241" text-anchor="middle" class="b">Nobody tested</text><text x="504" y="255" text-anchor="middle">on an Android</text><text x="504" y="269" text-anchor="middle">12+ phone</text>
+  <polygon points="560,222 668,222 678,251 668,280 560,280 570,251" fill="#3e4fb8"/>
+  <text x="620" y="241" text-anchor="middle" class="b w">Checklist</text><text x="620" y="255" text-anchor="middle" class="w">doesn’t require it:</text><text x="620" y="269" text-anchor="middle" class="w b">fix the checklist</text>
+ </g>
+</svg>
+<figcaption><b>Figure 1.5 · The four doors and the 5 Whys, on this case.</b> Two doors stay shut, two open (blue) and point to one cause. Then “why?” five times walks from the symptom to the real fix: a checklist, not a person. <span class="src">Case facts from IIM A p. 308; whys 3–5 are illustrative.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>Your scooter has a flat tyre <i>and</i> an empty tank. Fix the tyre and it still won’t go. So once you find a cause, check it explains the whole drop (move ④ above). 5 Whys also goes wrong if you stop at “the developer made a mistake”. People always make mistakes; the fix is the check that should have caught this one.</p>
+<p><span class="step">5 · In the interview.</span>Say it once, in plain words: “First I’ll check the number is real, then whether something outside changed, then what we changed, then which users are hit.” Then follow the clues, and say out loud when you skip a door and why.</p>
+</div>
+
+</section>
+
+<!-- ============ PAGE 4: TECHNOLOGY ============ -->
+<section class="page">
+<div class="kicker">M1 · Technology · System design I (preview)</div>
+<h1>2 seconds inside a UPI payment</h1>
+<p class="lede">Back at the kirana. Between Asha’s thumb on “Pay” and the soundbox speaking, about ten messages cross five organisations. Knowing that path lets a PM answer the question every payments team hears weekly: “The money left my account but the shop didn’t get it. Where is it?”</p>
+
+<figure>
+<svg class="d" viewBox="0 0 680 362" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="m4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker>
+  <marker id="m4r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a939e"/></marker>
+ </defs>
+ <!-- lanes -->
+ <g>
+  <rect x="3" y="4" width="104" height="34" rx="5" fill="#e1f2ec" stroke="#127a64"/>
+  <text x="55" y="18" text-anchor="middle" class="b">Asha’s phone</text><text x="55" y="32" text-anchor="middle" class="s">PhonePe app</text>
+  <rect x="116" y="4" width="104" height="34" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/>
+  <text x="168" y="18" text-anchor="middle" class="b">PhonePe’s</text><text x="168" y="32" text-anchor="middle" class="s">PSP bank</text>
+  <rect x="229" y="4" width="104" height="34" rx="5" fill="#fde7c8" stroke="#c47f17"/>
+  <text x="281" y="18" text-anchor="middle" class="b">NPCI</text><text x="281" y="32" text-anchor="middle" class="s">UPI switch</text>
+  <rect x="342" y="4" width="104" height="34" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/>
+  <text x="394" y="18" text-anchor="middle" class="b">Kirana’s</text><text x="394" y="32" text-anchor="middle" class="s">PSP</text>
+  <rect x="455" y="4" width="104" height="34" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/>
+  <text x="507" y="18" text-anchor="middle" class="b">Asha’s bank</text><text x="507" y="32" text-anchor="middle" class="s">(issuer)</text>
+  <rect x="568" y="4" width="108" height="34" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/>
+  <text x="622" y="18" text-anchor="middle" class="b">Kirana’s bank</text><text x="622" y="32" text-anchor="middle" class="s">(acquirer)</text>
+ </g>
+ <g stroke="#c3cad2" stroke-width="1.1" stroke-dasharray="3 3">
+  <line x1="55" y1="38" x2="55" y2="298"/><line x1="168" y1="38" x2="168" y2="298"/><line x1="281" y1="38" x2="281" y2="298"/>
+  <line x1="394" y1="38" x2="394" y2="298"/><line x1="507" y1="38" x2="507" y2="298"/><line x1="622" y1="38" x2="622" y2="298"/>
+ </g>
+ <rect x="502" y="160" width="10" height="30" fill="#f6c9c4" stroke="#b93a32"/>
+ <!-- messages -->
+ <line x1="55" y1="62" x2="166" y2="62" stroke="#4a5563" stroke-width="1.4" marker-end="url(#m4)"/>
+ <text x="111" y="57" text-anchor="middle" class="halo">① ₹500 + PIN (encrypted)</text>
+ <line x1="168" y1="86" x2="279" y2="86" stroke="#4a5563" stroke-width="1.4" marker-end="url(#m4)"/>
+ <text x="224" y="81" text-anchor="middle" class="halo">② ReqPay</text>
+ <line x1="281" y1="110" x2="392" y2="110" stroke="#4a5563" stroke-width="1.4" marker-end="url(#m4)"/>
+ <text x="337" y="105" text-anchor="middle" class="halo">③ who is kirana@…?</text>
+ <line x1="394" y1="134" x2="283" y2="134" class="ret" marker-end="url(#m4r)"/>
+ <text x="337" y="129" text-anchor="middle" class="halo s">④ a/c + IFSC</text>
+ <line x1="281" y1="162" x2="500" y2="162" stroke="#4a5563" stroke-width="1.4" marker-end="url(#m4)"/>
+ <text x="394" y="157" text-anchor="middle" class="halo">⑤ debit ₹500, verify PIN</text>
+ <line x1="502" y1="190" x2="283" y2="190" class="ret" marker-end="url(#m4r)"/>
+ <text x="394" y="185" text-anchor="middle" class="halo s">⑥ debited ✓</text>
+ <line x1="281" y1="216" x2="620" y2="216" stroke="#4a5563" stroke-width="1.4" marker-end="url(#m4)"/>
+ <text x="560" y="211" text-anchor="middle" class="halo">⑦ credit ₹500</text>
+ <line x1="622" y1="240" x2="283" y2="240" class="ret" marker-end="url(#m4r)"/>
+ <text x="560" y="235" text-anchor="middle" class="halo s">⑧ credited ✓</text>
+ <line x1="281" y1="266" x2="57" y2="266" class="ret" marker-end="url(#m4r)"/>
+ <text x="168" y="261" text-anchor="middle" class="halo s">⑨ success → “Paid ✓”</text>
+ <line x1="281" y1="288" x2="392" y2="288" class="ret" marker-end="url(#m4r)"/>
+ <text x="337" y="283" text-anchor="middle" class="halo s">⑩ soundbox speaks</text>
+ <text x="516" y="180" class="s halo">PIN, balance, limit</text>
+ <!-- timing strip -->
+ <text x="4" y="318" class="b">Where ~1.9 s goes (illustrative)</text>
+ <text x="676" y="318" text-anchor="end" class="s">NPCI timeout: 15 s for pay requests, since 16 Jun 2025</text>
+ <rect x="4" y="324" width="124" height="18" fill="#cfe6dd"/><text x="66" y="337" text-anchor="middle" class="s">①② app + network 350</text>
+ <rect x="128" y="324" width="71" height="18" fill="#fde7c8"/><text x="163" y="337" text-anchor="middle" class="s">③④ 200</text>
+ <rect x="199" y="324" width="283" height="18" fill="#f6c9c4"/><text x="340" y="337" text-anchor="middle" class="b" style="font-size:10.5px">⑤⑥ issuer bank checks and debits: 800 ms</text>
+ <rect x="482" y="324" width="106" height="18" fill="#dbe8f5"/><text x="535" y="337" text-anchor="middle" class="s">⑦⑧ credit 300</text>
+ <rect x="588" y="324" width="88" height="18" fill="#e5e7eb"/><text x="632" y="337" text-anchor="middle" class="s">⑨ reply 250</text>
+ <text x="340" y="357" text-anchor="middle" class="s">typically the slowest hop: the bank’s core system (NPCI publishes each bank’s decline rate)</text>
+</svg>
+<figcaption><b>Figure 1.6 · A UPI payment as a sequence of messages (time runs downwards).</b> Solid arrows are requests, dotted arrows are replies. Only step ⑤ touches Asha’s money, and it happens deep inside her bank, far from the app she is looking at. <span class="src">Message names from NPCI’s UPI specification; timings are illustrative, no public per-hop data exists. Timeout: NPCI circular, 26 Apr 2025.</span></figcaption>
+</figure>
+
+<div class="cols2 small">
+<div>
+<p><span class="term">API</span>: a fixed menu of requests one system accepts from another. In UPI, <i>ReqPay</i> means “pay this”.</p>
+<p><span class="term">Switch</span>: a router for payment messages. NPCI’s switch sees every UPI payment and holds none of the money.</p>
+<p><span class="term">Timeout</span>: how long a system waits before giving up. UPI allows 15 s for pay requests and 10 s for status checks.</p>
+</div><div>
+<p><span class="term">Idempotency</span>: sending the same request twice has the effect of sending it once. Each UPI payment carries a unique ID, so a retry can’t debit twice.</p>
+<p><span class="term">Pending (“deemed”)</span>: debit done, credit not confirmed. A status check or a reversal settles it later.</p>
+<p><span class="term">p95 latency</span>: the time within which 95% of requests finish.</p>
+</div></div>
+
+<div class="keep"><h2>Why the average lies</h2>
+<p>Take 100 payments: 90 finish in 1.2 s, 8 take 3 s and 2 hang until the 15 s timeout. The mean is (90×1.2 + 8×3 + 2×15) ÷ 100 = <b>1.62 s</b>, which looks healthy. But the 95th payment in line (<b>p95</b>) takes 3 s and the 99th (<b>p99</b>) takes 15 s. Users feel their own payment, not the average: the unlucky two stand at the counter staring at a spinner. At 791 mn payments a day, 2 in 100 would be 1.6 crore stuck payments daily (illustrative; real UPI failure rates are lower).</p></div>
+{{TAILCHART}}
+
+<div class="keep"><h2>Success rates multiply</h2>
+<p>A payment succeeds only if every hop succeeds, so the hop success rates multiply. Five hops at 99.9% each give 0.999<sup>5</sup> ≈ 99.5%: one payment in 200 fails, although no single hop looks bad. Let one issuer bank slip to 99.0% and the chain drops to 0.999<sup>4</sup> × 0.99 ≈ 98.6%, or one in 72. That is why payments teams track success rate <i>per bank</i>, and why an app’s success rate can fall with no change to the app.</p></div>
+<figure>
+<svg class="d" viewBox="0 0 680 104" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="30" class="b">All hops healthy</text>
+ <text x="4" y="80" class="b red">One bank slips</text>
+ <g>
+  <rect x="108" y="12" width="84" height="30" rx="5" fill="#e1f2ec" stroke="#127a64"/><text x="150" y="31" text-anchor="middle">app 99.9%</text>
+  <rect x="204" y="12" width="84" height="30" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/><text x="246" y="31" text-anchor="middle">PSP 99.9%</text>
+  <rect x="300" y="12" width="84" height="30" rx="5" fill="#fde7c8" stroke="#c47f17"/><text x="342" y="31" text-anchor="middle">NPCI 99.9%</text>
+  <rect x="396" y="12" width="84" height="30" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/><text x="438" y="31" text-anchor="middle">issuer 99.9%</text>
+  <rect x="492" y="12" width="84" height="30" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/><text x="534" y="31" text-anchor="middle" style="font-size:10.3px">acquirer 99.9%</text>
+  <text x="198" y="31" text-anchor="middle" class="s">×</text><text x="294" y="31" text-anchor="middle" class="s">×</text><text x="390" y="31" text-anchor="middle" class="s">×</text><text x="486" y="31" text-anchor="middle" class="s">×</text>
+  <text x="588" y="25" class="b grn" style="font-size:13px">= 99.5%</text><text x="588" y="40" class="s">1 in 200 fails</text>
+
+  <rect x="108" y="62" width="84" height="30" rx="5" fill="#e1f2ec" stroke="#127a64"/><text x="150" y="81" text-anchor="middle">app 99.9%</text>
+  <rect x="204" y="62" width="84" height="30" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/><text x="246" y="81" text-anchor="middle">PSP 99.9%</text>
+  <rect x="300" y="62" width="84" height="30" rx="5" fill="#fde7c8" stroke="#c47f17"/><text x="342" y="81" text-anchor="middle">NPCI 99.9%</text>
+  <rect x="396" y="62" width="84" height="30" rx="5" fill="#fcecea" stroke="#b93a32" stroke-width="2"/><text x="438" y="81" text-anchor="middle" class="b red">issuer 99.0%</text>
+  <rect x="492" y="62" width="84" height="30" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/><text x="534" y="81" text-anchor="middle" style="font-size:10.3px">acquirer 99.9%</text>
+  <text x="198" y="81" text-anchor="middle" class="s">×</text><text x="294" y="81" text-anchor="middle" class="s">×</text><text x="390" y="81" text-anchor="middle" class="s">×</text><text x="486" y="81" text-anchor="middle" class="s">×</text>
+  <text x="588" y="75" class="b red" style="font-size:13px">= 98.6%</text><text x="588" y="90" class="s">1 in 72 fails</text>
+ </g>
+</svg>
+<figcaption><b>Figure 1.8 · One weak link nearly triples failures.</b> The app, PSP and NPCI did nothing wrong in the second row, yet users see almost three times as many failures and blame the app on their screen. <span class="src">Illustrative rates; arithmetic exact.</span></figcaption>
+</figure>
+
+<div class="cols2">
+<div>
+<table class="tbl">
+<tr><th>Uptime</th><th class="num" style="white-space:nowrap">Down per month</th><th class="num">Missed*</th></tr>
+<tr><td>99.9% (three nines)</td><td class="num">43 min</td><td class="num">~2.4 crore</td></tr>
+<tr><td>99.99%</td><td class="num">4.3 min</td><td class="num">~24 lakh</td></tr>
+<tr><td>99.999%</td><td class="num">26 s</td><td class="num">~2.4 lakh</td></tr>
+</table>
+<p class="small muted">*At Aug 2026’s average of ~9,150 payments a second (791 mn ÷ 86,400 s). Peaks run higher, so real losses would be larger. Each extra nine cuts downtime tenfold and usually costs far more than ten times as much.</p>
+</div>
+<div class="box brk" style="margin-top:3pt"><span class="lbl">When it breaks · “Money gone, shop not paid”</span>
+<p>If step ⑤ debits Asha but the reply to ⑦ or ⑧ is lost, the payment is pending. The app must not say “failed” (Asha pays again and is out ₹1,000) or “success” (the kirana hands over goods unpaid). RBI’s rule: a failed UPI payment that debited the customer must be reversed by T+1, or the bank pays ₹100 a day.</p></div>
+</div>
+
+<div class="cols2">
+<div class="box key"><span class="lbl">Key idea · The PM decisions this drives</span>
+<ul>
+<li>What the pending screen says, and how often it re-checks status.</li>
+<li>Retry rules: re-check status freely, never resend a payment with a new ID.</li>
+<li>Routing: PhonePe spreads users across PSP banks (@ybl, @ibl, @axl), so a failing bank can be routed around.</li>
+<li>Dashboards: success rate and p95 per bank, not one average.</li>
+</ul></div>
+<div class="box int"><span class="lbl">In the interview</span>
+<p>“UPI failures are up on our app. Why?” Split by hop before you guess: one issuer bank, one PSP bank, or all of them? Failures clustered on one bank point outside your app. Failures everywhere point at your app, or at NPCI.</p></div>
+</div>
+</section>
+
+<!-- ============ PAGE 5: TEARDOWN ============ -->
+<section class="page">
+<div class="kicker">M1 · Product teardowns · 1 of 5</div>
+<h1>PhonePe: free payments, paid loans</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Meena, 41, runs a tailoring shop in Indore. On the 5th of each month she opens PhonePe, taps <i>Electricity</i>, picks her board, and the app fetches her ₹1,240 bill through Bharat BillPay. One PIN later it is paid, and a banner offers her a business loan. That banner is where PhonePe’s revenue is heading.</p>
+
+<figure>
+<svg class="d" viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg">
+ <!-- phone -->
+ <rect x="24" y="4" width="200" height="322" rx="24" fill="#ffffff" stroke="#2b3138" stroke-width="3"/>
+ <rect x="32" y="16" width="184" height="298" rx="14" fill="#f4f2f8"/>
+ <path d="M32,30 a14,14 0 0 1 14,-14 h156 a14,14 0 0 1 14,14 v28 h-184 z" fill="#5f259f"/>
+ <text x="46" y="43" class="b w" style="font-size:12.5px">PhonePe</text>
+ <circle cx="178" cy="38" r="7" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="199" cy="38" r="7" fill="none" stroke="#fff" stroke-width="1.5"/>
+ <!-- transfers card -->
+ <rect x="40" y="66" width="168" height="72" rx="7" fill="#fff"/>
+ <text x="48" y="81" class="b" style="font-size:10.5px">Money Transfers</text>
+ <g fill="#5f259f"><circle cx="64" cy="102" r="10"/><circle cx="104" cy="102" r="10"/><circle cx="144" cy="102" r="10"/><circle cx="184" cy="102" r="10"/></g>
+ <g style="font-size:9.5px" text-anchor="middle"><text x="64" y="127" style="font-size:9.5px">Mobile</text><text x="104" y="127" style="font-size:9.5px">Bank</text><text x="144" y="127" style="font-size:9.5px">Self</text><text x="184" y="127" style="font-size:9.5px">Balance</text></g>
+ <!-- banner -->
+ <rect x="40" y="146" width="168" height="32" rx="7" fill="#ffe7c2" stroke="#e0a340"/>
+ <text x="124" y="166" text-anchor="middle" class="b" style="font-size:10px">Business loan up to ₹5 lakh</text>
+ <!-- bills card -->
+ <rect x="40" y="186" width="168" height="62" rx="7" fill="#fff"/>
+ <text x="48" y="201" class="b" style="font-size:10.5px">Recharge &amp; Pay Bills</text>
+ <g fill="#8a5cc4"><circle cx="64" cy="220" r="9"/><circle cx="104" cy="220" r="9"/><circle cx="144" cy="220" r="9"/><circle cx="184" cy="220" r="9"/></g>
+ <g text-anchor="middle"><text x="64" y="243" style="font-size:9.5px">Mobile</text><text x="104" y="243" style="font-size:9.5px">Power</text><text x="144" y="243" style="font-size:9.5px">DTH</text><text x="184" y="243" style="font-size:9.5px">Loan EMI</text></g>
+ <rect x="40" y="252" width="168" height="20" rx="7" fill="#fff"/>
+ <text x="124" y="266" text-anchor="middle" style="font-size:10px">Insurance · Mutual funds · Gold</text>
+ <!-- bottom nav -->
+ <path d="M32,290 h184 v10 a14,14 0 0 1 -14,14 h-156 a14,14 0 0 1 -14,-14 z" fill="#fff"/>
+ <g text-anchor="middle"><text x="52" y="307" style="font-size:9px">Home</text><text x="88" y="307" style="font-size:9px">Search</text><text x="162" y="307" style="font-size:9px">Alerts</text><text x="198" y="307" style="font-size:9px">History</text></g>
+ <circle cx="125" cy="294" r="16" fill="#5f259f" stroke="#fff" stroke-width="3"/>
+ <text x="125" y="298" text-anchor="middle" class="b w" style="font-size:10px">Scan</text>
+ <!-- leaders -->
+ <g stroke="#0b5d7a" stroke-width="1.3" fill="none">
+  <path d="M208,98 H252"/><path d="M208,162 H252"/><path d="M208,220 L240,220 L252,204"/><path d="M143,291 C200,291 220,280 252,276"/>
+ </g>
+ <g fill="#0b5d7a"><circle cx="208" cy="98" r="2.5"/><circle cx="208" cy="162" r="2.5"/><circle cx="208" cy="220" r="2.5"/><circle cx="143" cy="291" r="2.5"/></g>
+ <!-- callouts -->
+ <g>
+  <circle cx="262" cy="88" r="9" fill="#0b5d7a"/><text x="262" y="92" text-anchor="middle" class="w b">1</text>
+  <text x="278" y="92" class="b">Person-to-person transfers sit at the top</text>
+  <text x="278" y="107">Free and social: every friend who gets paid installs the app.</text>
+  <text x="278" y="121" class="s">Moves: new monthly users.</text>
+
+  <circle cx="262" cy="152" r="9" fill="#0b5d7a"/><text x="262" y="156" text-anchor="middle" class="w b">2</text>
+  <text x="278" y="156" class="b">The loan banner is the business model</text>
+  <text x="278" y="171">Most UPI spends earn ~₹0. The lending arm earned ₹945 Cr</text>
+  <text x="278" y="185">in FY26, 2.5× FY25. Moves: loans disbursed per 1,000 users.</text>
+
+  <circle cx="262" cy="204" r="9" fill="#0b5d7a"/><text x="262" y="208" text-anchor="middle" class="w b">3</text>
+  <text x="278" y="208" class="b">Bills and recharges make a monthly habit</text>
+  <text x="278" y="223">Bills are fetched automatically via Bharat BillPay, so no typing.</text>
+  <text x="278" y="237" class="s">Moves: share of users paying a bill every month.</text>
+
+  <circle cx="262" cy="272" r="9" fill="#0b5d7a"/><text x="262" y="276" text-anchor="middle" class="w b">4</text>
+  <text x="278" y="276" class="b">Scan sits in the thumb zone, on every screen</text>
+  <text x="278" y="291">The top job at a shop counter is one tap from anywhere.</text>
+  <text x="278" y="305" class="s">Moves: time to pay and payment success rate.</text>
+ </g>
+</svg>
+<figcaption><b>Figure 1.9 · PhonePe’s home screen, read as a business plan.</b> Payments (1, 4) bring people in and keep them coming back; the loan banner and financial tiles (2) earn the money. <span class="src">Simplified redraw, not pixel-accurate; layout varies by app version, Sep 2026. Revenue: company filings via Outlook Business, FY26.</span></figcaption>
+</figure>
+
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 176" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="m6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0b5d7a"/></marker></defs>
+ <rect x="95" y="4" width="140" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/>
+ <text x="165" y="18" text-anchor="middle" class="b">Friends pay friends</text><text x="165" y="32" text-anchor="middle" class="s">P2P, free</text>
+ <rect x="216" y="70" width="110" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/>
+ <text x="271" y="84" text-anchor="middle" class="b">Shops add QR</text><text x="271" y="98" text-anchor="middle" class="s">+ soundbox</text>
+ <rect x="95" y="138" width="140" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/>
+ <text x="165" y="152" text-anchor="middle" class="b">More places to pay</text><text x="165" y="166" text-anchor="middle" class="s">so a daily habit</text>
+ <rect x="4" y="70" width="110" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/>
+ <text x="59" y="84" text-anchor="middle" class="b">More users</text><text x="59" y="98" text-anchor="middle" class="s">on the app</text>
+ <g stroke="#0b5d7a" stroke-width="1.5" fill="none">
+  <path d="M235,24 Q268,30 271,68" marker-end="url(#m6)"/><path d="M271,104 Q268,146 237,152" marker-end="url(#m6)"/>
+  <path d="M95,152 Q62,146 59,106" marker-end="url(#m6)"/><path d="M59,70 Q62,30 93,24" marker-end="url(#m6)"/>
+ </g>
+ <text x="165" y="80" text-anchor="middle" class="b acc">habit + data</text>
+ <text x="165" y="94" text-anchor="middle" class="acc">sell loans, bills,</text>
+ <text x="165" y="108" text-anchor="middle" class="acc">insurance</text>
+</svg>
+<figcaption><b>Figure 1.10 · The core loop.</b> Each turn adds users and shops for free; money is made only at the centre, by selling to the habit. <span class="src">Author’s model.</span></figcaption>
+</figure>
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 176" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="22">Operating revenue</text>
+ <rect x="128" y="10" width="190" height="17" fill="#0b5d7a"/><text x="312" y="23" text-anchor="end" class="w b">₹7,920 Cr</text>
+ <text x="4" y="48">Lending arm</text>
+ <rect x="128" y="37" width="23" height="15" fill="#127a64"/><text x="156" y="48" class="b">₹945 Cr (2.5×)</text>
+ <text x="4" y="72">Insurance arm</text>
+ <rect x="128" y="61" width="5" height="15" fill="#127a64"/><text x="138" y="72">₹191 Cr</text>
+ <text x="4" y="96">Broking arm</text>
+ <rect x="128" y="85" width="3" height="15" fill="#127a64"/><text x="136" y="96">₹108 Cr</text>
+ <text x="4" y="120">Govt UPI incentive</text>
+ <rect x="128" y="109" width="7" height="15" fill="#c47f17"/><text x="140" y="120">₹286 Cr</text>
+ <line x1="4" y1="133" x2="326" y2="133" stroke="#d9dee4"/>
+ <text x="4" y="152" class="b red">Net loss</text>
+ <rect x="128" y="141" width="67" height="15" fill="#b93a32"/><text x="200" y="152" class="b red">−₹2,792 Cr</text>
+ <text x="4" y="172" class="s">Arms are subsidiaries, counted inside the total.</text>
+</svg>
+<figcaption><b>Figure 1.11 · PhonePe FY26 money in and out.</b> Revenue grew 11%; the loss grew 62%, driven by stock-based pay and write-downs. <span class="src">Inc42, Outlook Business, Entrackr (company filings), FY26.</span></figcaption>
+</figure>
+</div>
+
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Monthly transacting users: at least one successful payment in 30 days.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>New P2P senders · live merchant QRs · payment success rate · loans per 1,000 users.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Fraud loss per ₹1 lakh moved · reversal complaints · loans 30+ days overdue.</div>
+</div>
+
+<p><b>Moat, in plain words.</b> Habit (45.9% of UPI payments in Aug 2026 started on PhonePe) and 5 crore+ merchants with its QR codes and soundboxes. The crack: UPI makes switching free, because any UPI app scans any QR. <b>2025–26 moves:</b> IPO papers filed Jan 2026, listing paused Mar 2026; Pincode (quick commerce) shut; Indus Appstore written down; large-merchant MDR from 15 Oct 2026.</p>
+
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> A pending payment at a counter breaks trust on both sides <span class="arrow">→</span> soundbox says “payment pending, PhonePe guarantees it” for pending payments under ₹500 <span class="arrow">→</span> repeat payments at that shop within 7 days.</p>
+<p class="idea"><b>2.</b> Small merchants pay no MDR, so they earn PhonePe nothing <span class="arrow">→</span> use soundbox takings as the credit signal for working-capital loans <span class="arrow">→</span> approval rate and 30+ day defaults, soundbox merchants vs others.</p>
+</section>
+</body></html>

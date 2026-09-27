@@ -1,0 +1,571 @@
+R3 (Behavioural/Personal): Why Insurance, Why Acko, Do you like Bangalore? 
+
+R3 (HR): - How do you feel about the whole interview experience? - Why do you want to join Acko? - Why do you want to get into product management? General Feedback: Structured problem solving is what they are primarily looking for. Apart from general case prep, an important thing is to focus on researching the company well and their products. Showing genuine interest in the company's products and having a dialogue about their strategy while providing your point of view goes a long way in showing interest in joining their company. Affinity Global 
+
+R1 (Resume, Behavioural/Personal, Product Design, Product Strategy): 1. How do you use vibe coding tools like Replit/Lovable in your daily life? (Asked because this was mentioned on my resume) 2. Which is your favorite AI product? Why? 3. Why Affinity Global? Why product management? What makes you a better fit vs. others? 4. Some more Behavioural questions. 5. CASE STUDY: You are working in the product strategy team of a large bank. You are to design an ATM kiosk to be set up in an airport. Recommend a strategic location in the airport, and more importantly, talk about how you would design this ATM to have a better value proposition to improve cash usage and do better than competitors (asked to focus on designing a better value proposition vs. current ATMs). (Lengthy round with an extensive case study that covered product strategy, design, market entry, and a little bit on risks and mitigations.) 
+
+R2 (Resume, Behavioural/Personal): 1. What are your long-term aspirations, and how does joining Affinity play a part in that? 2. Explain a project you are proud of 3. Why MBA, how has ISB helped in your product management transition journey? 4. Some more Behavioural questions. Aionos 
+
+R1 (Resume, Behavioural/Personal): 1. Explain a product lifecycle. 2. Other work and Behavioural questions. 
+
+R1 (Resume, Behavioural/Personal, Product Design): 1. Tell me about yourself. 2. What did you do at <workplace name>? 3. Case: BHIM Pay has a stagnant market share. What should it do to expand its market share? R2: 1. Tell me about yourself. 2. What did you do at <workplace name>? 3. Case: A CEO of a Li-Ion battery manufacturer (used in two-wheelers) wants to understand how Gen AI could be used on their factory floor. Describe a few initiatives you would recommend to the CEO. 
+
+R1 (Resume, Guesstimate): Guesstimate the size of the market for M&A target identification AI based tool 
+
+R2 (Resume, Behavioural/Personal): 
+
+R1 (Resume): The first round was a basic information and resume-related round. He asked me various resume-based questions and checked my basic understanding of the JD and what I was expected to do. The main questions revolved around what I did at my previous company, what my role was there and how I grew into that role. He also asked me to describe one or two of my projects, etc. So, the key takeaway is to be thorough with your resume. The first round was basically around that only, and it lasted for around 20 to 25 minutes. 
+
+R3 (Behavioural/Personal): A typical HR type discussion. I don’t think it was eliminative. In my view, round three felt more like a formality. They asked basic questions like strengths, weaknesses, views on culture, etc., the usual stuff. 
+
+R1 (Behavioural/Personal, RCA, Metrics): RCA for decline in Flipkart orders in the last quarter. 
+
+R2 (Resume, Product Design, Fav Product): Fav Product and design a competitor to that product R3: Resume, Behavioural/Personal Cashfree 
+
+R3 (Behavioural/Personal): Behavioural round with CPO - past AI residency experience, trying to assess non-work passion projects, how to measure success. 
+
+R4 (HR Round): HR round - why Cashfree? Strengths? Weaknesses? Conflict in the past? 
+
+R1 (Resume, Product Design, Product Strategy): Suggest a new product line for WhatsApp Design a platform for gig workers Design a performance analytics dashboard for ongoing projects for HRs and senior managers Design an AI screening tool for resumes 
+
+R1 (Resume, Behavioural/Personal, Product Strategy): Product Launch strategy for US market 
+
+R2 (Behavioural/Personal, Positioning + Content): Design a product pitch in 2-3 sentences for CHRO of a company (company details similar to my past workex) Convert this into an internal pitch Convert this into a 5-6 word Google Ad text 
+
+R3 (Resume, Behavioural/Personal, Product Improvement): Resume deep dive. Gaps on resume - justification. “If we want to impose a 50% price increase on our product (which is an upgraded version with an additional 7 modules), how do we justify it to our existing clients, and also, how do we take the higher-priced product to market?” 
+
+R4 (Behavioural/Personal): Tested on my knowledge and understanding of the company and its product portfolio General Feedback: Be as authentic as possible. Don’t try to be someone you think they would like, be yourself. If you don't know something and have faffed on your CV, or try to faff, they will see through it. Even if you have exaggerated here and there on CV, make sure you have a solid foolproof story ready to back it up. 
+
+R2 (Resume, Product Design, Technical): They ask you questions around the task, product strategy and give you situations to think about and then answer. They also go through the entire resume and may ask sections of explanations 
+
+R3 (Resume, Behavioural/Personal, Technical): Revolved mostly around technical plus behavioural 
+
+R1 (Resume, Deck): They had a written exam for a design question before the interview. Later they asked us questions based on the submission. They also had some basic questions about my previous work-ex. 
+
+R2 (Resume, Behavioural/Personal): Asked me some questions on my work-ex. They also later asked me how I would prioritise features. Why Eli Lilly, and why have you made so many switches in the past? 
+
+R1 (Behavioural/Personal, RCA): Let's say Spotify's listening minutes are down by 10% over the weekend - what could the reason be? Give me only 4 hypotheses. Assume you have constraints and can investigate only one of them - which one, and why? 
+
+R2 (Behavioural/Personal, Product Design): Spoke in depth about my work and hobbies, I run a cat rescue, so the product design question was around it, design a platform for pet adoption 
+
+R3 (Resume, Behavioural/Personal): Only Behavioural and resume-based questions. Has there been a situation where you had to challenge your manager? Who was the most challenging stakeholder you dealt with, and why? What was the biggest problem you have ever solved? 
+
+R1 (Resume, Behavioural/Personal): Completely based on the resume, where the depth of my understanding of every point was tested. Behavioural questions: 1. Explain a time when you did not build a feature despite planning and deciding on it earlier. What made you do that? How did you communicate it to the stakeholders? 2. Give an example of a time you came up with a metric that was not previously being tracked. Why did you track it, and what did it lead to? 
+
+R2 (Resume, Behavioural/Personal, RCA): Again deeper into the resume, this time in the fintech and insurtech space. RCA - You are an auto insurance marketplace website where the user journey is: acquire customers through performance marketing, take inputs on their coverage needs, show all insurers, and basis the click made on a certain insurer, the website earns revenue (classic lead-gen model). Recently, across all insurers, prices have increased by 5% and commission has reduced by 10% for your website. RCA? How will you take mitigation steps to ensure the bottom line is not affected much? 
+
+R3 (Behavioural/Personal): 1. Example of a very simple customer feature built. Why? What did it do? Impact? 2. Example of a time you gave up short-term gains for long-term value. General Feedback: Had a case round, but it was only eliminatory - no questions on it. Very specific to Ethos's business, so it won't be used much. 
+
+R1 (Resume, Behavioural/Personal, Product Design, Product Strategy, Technical): Round 1 was mainly about my resume and situational product questions. Discussions were related to one of the projects I did at my previous company; the interviewer dug very deep into the how, why, and what of the project. Follow-up questions were not technical as such - situational product questions like, if you were a product manager on this product, how would you prioritise, how would you present a case to senior leadership as a PM, not a developer. Takeaway - prepare your resume thoroughly, and be prepared to answer situational product-extension questions for your technical projects. 
+
+R2 (Resume, Behavioural/Personal, Product Design, Product Improvement, Product Strategy, Technical): This round was taken by a staff PM. Heavily resume- and product-strategy-focused. Asked to explain any one project from my resume, and explain it from a product perspective - what all I did as a product manager in that project, a situation where conflicts were resolved with multiple stakeholders, explain how you would improve the adoption of your feature as a PM, how you measure the success of the feature; went deep into metrics, guardrails were also asked about. The complete interview was tailored to assess how well-rounded you think as a PM. 
+
+R3 (Resume, Behavioural/Personal): This was a managerial round, taken by the Director of PM. The interview was around 20 minutes, and started off with a question - tell me about the most complex project you have worked on, why it was that complex, and what you did to handle that. Some questions on trade-offs and handling of conflicts - tell me about a time when you disagreed with your manager, both an example where I was right and one where my manager was right. There was also a trick question about whether you would like to join your previous firm as a product manager. The interviewer mainly wanted to understand how I handle problems in real life. General Feedback: Be extremely thorough with your resume, and with on-the- spot product thinking. EverStage 
+
+R1 (Resume, Behavioural/Personal, Metrics): Where to use AI; case PPT discussion - focusing on finance admin persona - payouts, JTBD. Metrics that you would prioritise as finance lead at the org. Flipkart 
+
+R3 (Behavioural/Personal, Product Design): A mix of behavioural (why PM, why Flipkart, where do you see yourself in 5 years) plus a few product design related questions Gameberry 
+
+R3 (Googliness / Behavioural): Introduce yourself. Resume-based questions. Situation-based: How will you handle a conflict situation with your colleague? What will you do in a situation where this colleague has received poor customer reviews, and there are certain complaints? What if he says this is none of your business? When will you escalate, and to whom? Incident-based: Share two incidents where you received life-changing feedback and how you implemented it (education/work/school/etc.) 
+
+R3 (Resume, Behavioural/Personal): I was the sole candidate left in R3. It was taken by a CXO. It was a stress test. Much like a B-school interview. Situational- based questions. Asked me about my weaknesses and what I am doing to improve them 
+
+R4 (Behavioural/Personal, Technical, Metrics): The hiring manager round. Asked me questions on all touch points. Business sense, technical strengths, how I use AI in day-to-day, leadership skills, evidence of proactiveness Hexagon 
+
+R1 (Resume, Product Design, Technical): A brief introduction? Have you heard about Hexagon and specially Asset Lifecycle division? What is the main issue in developing any technical product? My experience in handling data of my organisation? AI use cases in day-to-day activities? A use case where you solved the issue, but if AI was implemented, it would have been much better? Preventive vs Predictive Maintenance? Are you aware of prescriptive maintenance? 
+
+R2 (Resume, Behavioural/Personal, AI): Brief introduction; asked to repeat all use cases from round 1, and kept asking detailed questions on implementation plans, AI use, my role, and in- depth knowledge of the same. Asked about location preference, working environment; asked to solve a business case where customer pain points are known, but the solution doesn't exist within the company - what would be your approach to making sure senior management is aligned. Asked if I had ever faced a situation where senior management was not aligned with my solution, and what I did to make sure they were aligned with my approach or solution. 
+
+R3 (HR round): More of a conversational round, culture, role, fitment check HiLabs 
+
+R3 (Behavioural/Personal): Didn't ask a lot of questions - more conversational. I used the opportunity to explain my journey and how everything makes me the best candidate for HiLabs. Why PM? Why now? ISB learnings? What is PM in one word? (He was looking for the word: prioritization.) I felt it was more of a personality test. Show genuine interest - I had researched the company well. Location preference was also discussed in this round. General Feedback: My interview started at 11, and all rounds were 1 hour each. I was done by 2. I was not allowed to leave the Zoom call at all - no breaks. Mentioning it because this matters. They negotiate as well - make good use of it. Incedo 
+
+R1 (Resume, Behavioural/Personal): They asked me to explain the projects that I have done. Later, I was asked how I would work with the engineering team, any issues I had faced while working with engineering before, and how I would scale an MVP and fix issues that might come up with it. 
+
+R4 (HR): Why InMobi? Why should InMobi hire you? 
+
+R1 (Resume, Technical): Resume deep dive, and what are data products, and how would you improve an existing data product? Explain 2-3 features from the deck and how they connect with Mastercard's vision of a data-based product. 
+
+R1 (Resume, Behavioural/Personal, Fav Product): This was a stress-test interview, with detailed questions asked on my resume and detailed grilling on each and every point of the resume. After that, I was asked a question about my favourite data product (since it was a data team); when I answered, he said okay, give me your second favourite data product (when I answered this, he said okay, third favourite data product) - we finally agreed on the product Datadog, after which it was a typical favourite-product question format. After this, I was asked some questions about my case submission. After that, I was asked to tell him about a product that is not present in my case submission, what the product would look like, and who its users would be. After which I was asked questions on estimating this product's TAM, as well as risks involved. The interview ended later on a friendly note. 
+
+R2 (Resume, Behavioural/Personal, Product Design): In this round, I was again asked questions on my resume (since I came from a team at JPMorgan that did similar work to the team I was interviewing for). He then took a point from my resume, essentially one of the products I had worked on during my time at JPMorgan (he then asked detailed questions about it - who were the personas, their pain points, what were the solutions (what other solution could you come up with), metrics as well). He then made a lot of if/else scenarios and asked me what the metrics would be in each case. Basically, it was more or less a product design question morphed into a product improvement one. After this, he asked me about challenges dealing with data, and considering these challenges, how should Mastercard build a product around this, and what would that product look like. After this, he asked me questions about why Mastercard, why ISB, why product. This interview also ended on a very positive note. 
+
+R3 (HR): This was an HR round, where we discussed questions around my ISB journey, and why Mastercard. This round seemed like a formality; I got a soft offer in this round from HR. General Feedback: Put a lot of effort into the deck - after the deck round for my role, only 6 people were left for the interview. Also, before the interview, read up on your deck submission in detail and be ready to answer a lot of detailed questions on it. The team I was interviewing for was a data team, so it is generally recommended to read about data products as well. Be very well versed with your resume, and be prepared to answer a lot of cross-questions on it. Other than that, the typical product prep should suffice. 
+
+R1 (Resume, Ppt submission made): Most of the questions were on the case submission - assumptions made in the case, why a certain strategy was chosen over the alternatives, and understanding of their product offerings. 
+
+R3 (Behavioural/Personal): 
+
+R4 (Resume, Behavioural/Personal): Media Net 
+
+R1 (Behavioural/Personal, Product Design, Guesstimate): Round 1 - 10-15 minutes - Questions about work-ex, why Media.net, why do you want to join ad-tech, questions on understanding of ad-tech, what is the biggest threat to ads now with AI in the scene. Then a question on guesstimate - estimate Airbnb's annual revenue. Another product sense question - design a dashboard for Swiggy's CEO. Interviewer was mainly trying to check product design and understanding of ad-tech. 
+
+R2 (Resume, Behavioural/Personal, Product Design, Product Improvement, Product Strategy): 1) Since you are an avid user of Myntra, what do you like about it, and what improvements can you suggest? 2) You are a PM at Myntra, and you have to scale the M-Now service across India. How will you go about it? How will you measure success? What success metrics matter here? 
+
+R3 (Resume, Behavioural/Personal, Product Design): You are a PM at Myntra, and you have to design/improve the seller-side portal for Myntra. (Strong focus on AI features.) 
+
+R4 (HR Round): Typical HR round. I don't think this round was eliminative. 
+
+R3 (Resume, Product Design): VP took this round. A lot from the resume. Grilled on trade offs on various cases. To name a few, what would you choose? A few large darkstores or many small darkstores. 
+
+R4 (HR Round): HR Round. Questions on values and expectations. It was chill afair 
+
+R1 (Resume, Behavioural/Personal, RCA): Resume-based questions. RCA case on cart additions on Zepto having declined. Follow-up questions - what is your hypothesis on why this happened? What is the revenue loss from this issue? 
+
+R2 (Resume, Behavioural/Personal, Product Design): Case on improving Google Maps. Behavioural question - what is your expectation from the role and company? 
+
+R3 (Behavioural/Personal): Stress-based interview. Asked me questions about my journey. Some situation-based questions. Asked what my criteria would be while deciding which company to join. 
+
+R1 (Resume, Fav Product, RCA): Explanation of two projects - focus on AI and personalization. 
+
+R2 (Resume, Behavioural/Personal, Product Design) 
+
+R3 (Resume, Behavioural/Personal) Nagarro 
+
+R4 (Behavioural/Personal): VP Product round - given 9 features with different effort levels and a separate company strategy, prioritise bandwidth for 5 engineers for the next 3 months. Paytm 
+
+R1 (Resume, Case study): Questions based on the case study, strengths, and one quality you would hate seeing in your teammates. 
+
+R2 (Behavioural/Personal): Intro, plus why product after such deeply technical SDE roles, plus a verbal psychometric question linking to the agilities framework (mental/people/change/results) - wanted to understand how I ranked these with respect to being able to achieve my goal (in this case, Director of PM @Swiggy in 5 years) and why. Very brief interview, <15 minutes. 
+
+R1 (Resume, Behavioural/Personal, Product Strategy): 1.5-hour discussion, with 20 minutes on the case. Majority of it was Behavioural/leadership questions. I was from a non-tech background, so questions around why PM and not consulting. Case was on: Instagram wants to monetize by building a native commerce flow in the app - whether Instagram should do it or not, and what the product flow and journey would be. Questions were asked on how and who would price, who would manage the catalogues, and how logistics would be managed. What would be the tradeoffs and risks? R2: 10-minute HR round on expectations and CTC. 
+
+R1 (Resume, Behavioural/Personal): 1. Walk me through the work you have done, in one line for each role. 2. Why move from e-commerce to fintech? 3. What is your most important skill? Talk about why you think you possess this skill. 4. Detailed deep-dive into a project where you showcased that skill-set: 4a. Business case for the project (strategic importance for the org?) 4b. What component were you responsible for? 4c. How did you make it work? 5. Questions for the interviewer? Target 
+
+R1 (Resume, Behavioural/Personal, Product Strategy): Based on your learnings at ISB, what would you improve about the existing product that you worked on? How will you improve your contributions? What are some of the biggest challenges you have faced during the product work? What about Target attracts you? 
+
+R2 (Behavioural/Personal, Product scoping): When you faced workplace conflict, how did you resolve it? What was the most impactful project you worked on? Can you frame it like a PM problem statement? What would be the OKRs? Who are the personas and stakeholders involved? Teradata 
+
+R1 (Resume, Behavioural/Personal): First few questions were based on the resume - what, why, how, results. The panel (2 members) later moved on to situational PM questions. For example: there was a requirement from a client for a new feature in one of Teradata's products, but the engineering team is caught up in other important deliverables - how would you handle the situation? There were many such questions back to back. Interviewers were very punctual. It was a 1-hour interview. 
+
+R2 (Behavioural/Personal, Product Strategy, Technical): This round was a mix of technical and situational. Interviewer asked about cloud, data engineering concepts, and how I would explain the concepts to a layman in a very simple way. Then there were a lot of situational/product-strategy questions. For example: how would I introduce a new Teradata product to market? How do I identify the opportunities? How will I prioritize between 2 important clients? This was also a 1-hour interview. 
+
+R3 (Resume, Behavioural/Personal, Product Strategy): This interview was with the Director of Product Management. It revolved around projects from the resume. Then a lot of high-level situational questions (product strategy, product vision). General Feedback: All the interviewers were based out of the US, so expect all interviews at around 8-11pm. These interviews took place a week before Day 1.1 and 1.2. Uber 
+
+R1 (Resume): Pick a project where you identified the problem and solved it using some product improvement. 
+
+R1 (Resume, Behavioural/Personal, Product Strategy): Intro and some questions on the resume. Asked me for my favourite app; I had mentioned MMT, so he asked me why I like MMT. One point I mentioned was clean UX, so he made me compare the UX of Cleartrip and MMT. Next, a case on: if you were CEO of MMT, what would be your strategy for next year? 
+
+R2 (Resume, Behavioural/Personal, RCA): Resume - Which is your favourite project so far, and why? RCA - We have just launched Uber in Brazil and are facing major fare review tickets. What is the reason for this, and how would you fix it? 
+
+R2 (Resume, Product Design, Product Improvement, Product Strategy): What are your passions/interests? Based on that, should we create product X? How would the whole thing work, and how will you market it? 
+
+R3 (Resume, Technical): System design, with some edge cases too. 
+
+R4 (Resume, Behavioural/Personal, Product Design, Product Strategy): Lots of grilling about previous work experience. Questions on how I would handle a particular situation. And another product strategy/design question specific to Uber. General Feedback: Be extremely thorough - don't blindly rely on AI, your brain will come up with some great ideas. Always think of answering all product questions from a Why, Who, What, How approach. And always make sure to give reasons for what you're saying. 
+
+R1 (Resume, Product Improvement, Product Strategy, Fav Product): Pick a favourite product - How would you improve it, grow its market share, and shape its pricing strategy? 
+
+R2 (Resume, Behavioural/Personal, Product Design): If you were designing a labelling system for Uber Eats, how would you approach it? Which attributes or fields would you capture, and how would you structure the labelling logic? For example, if McDonald's offers a Vegan Burger, labels might include 'Vegan' and 'Burger'. Walk me through the taxonomy, rules, and design considerations. 
+
+R3 (Behavioural/Personal, Technical, Wanted to test collaboration with Engineering Management team): How does auto-suggestion work for Gmail/Outlook? 
+
+R4 (Behavioural/Personal): 
+
+R1 (Behavioural/Personal, Product Design, Fav Product): First asked me about my favourite product - what I liked about it in the user journey, and what could be improved. Then, asked me to design a product improvement for the weak link. We discussed user segments, solutions, metrics and risks for the same. 
+
+R2 (Behavioural/Personal, Product Strategy, Metrics): A very detailed problem statement around Swiggy customer complaints and customer disputes. A new feature is introduced that asks users to upload evidence (a picture) of their dispute. That image is then sent to the merchants as proof when they are charged back for the issued refund. I was then asked to design metrics for this specific feature and design a launch strategy. Behavioural question: "Explain an instance when you had to give up on perfection to achieve something better." 
+
+R3 (Behavioural/Personal, Technical): Some discussion on the product I used to work on at my previous org. Then, asked a bunch of questions on file chunking, APIs, and how they are stored in the database - pros and cons of storing certain values in certain tables, etc. Extremely detailed conversation around databases, and some discussion on vector databases and embeddings. 
+
+R4 (Behavioural/Personal, Fav Product): Favourite product - 2 things I like, 2 things that can be improved. Behavioural questions on previous role - things I learnt, plus a product where I created max impact and how I realised it. Biggest learning from the experience, and questions around that. 2025 Interview Experiences Providence ● 
+
+R1 (Product Metrics; Product Strategy; Product Design; Behavioural / Resume;): 40 mins ○ How would you do the GTM of security services? ○ How did you price your product? ○ What did learn in finance? ○ What was the metrics for the product you worked on? ○ How did you know it's the right metric? ○ Talk about healthcare ○ Design cybersecurity plan ○ Design business continuity plan ○ 
+
+R2 (Behavioural / Resume;Company Related;): 45 mins ○ Random questions ○ Healthcare and cyber attacks ○ Attack intentions ○ What is strategy ○ What is marketing ○ Asked 3-4 numbers written in resume ○ Then behavioral questions around strength, weakness , what excites you, tell me about a situation (4-5) questions ○ 
+
+R3 (Behavioural / Resume;): This was an HR round. ○ General Feedback: Be thorough with product concepts, product cases, cybersecurity concepts, healthcare and read recent news related to cyber attacks on healthcare Okta ● 
+
+R1 (Product Design;Company Related;Behavioural / Resume;): This is for PM round - It was very conversational. Started with an intro and tell me about your work or any project. Went into some details around it. Then gave me a problem around 'Increase Conversion Rate of Fee to paid Users for Workflow connectors for Okta'. It was like a design question but what mattered more was getting to the actual reasons behind why the conversion was low. Had to make the full funnel from awareness to conversion and realised issue was in 'Free trial Uage' itself. Interviewer was very helpful throughout and articulating your thought process mattered most ○ 
+
+R2 (Behavioural / Resume;): With a PM: First question: Tell me about a product you worked on, and the value it added. Next, sort of product design case. She showed me her product on her laptop and said there was low adoption in terms of users upgrading their subscription. I asked a lot of questions about specific numbers as if it was an RCA. After that, she guided me to a user journey/adoption funnel structure to find more problems. I was able suggest some features that she said she actually had on her roadmap. Understanding Okta's wider product offerings and the customer needs was extremely helpful here in getting to user problems and solutions. It was also just really fun because I was getting real-world answers to questions from the PM instead of hypothetical because it was her product. ○ 
+
+R4 (Behavioural / Resume;Product Metrics;):After last 3 rounds, half the group was eliminated and other half had a round with product director. Deep- dive into my experience. Asking even about specific resume lines and why I made certain choices. What was a feature you shipped, what was the process for that, why did you choose it, what metric did it move, what tradeoffs did you have to make, what would you do differently. What stakeholders did you work with? Why Okta? Why PM? How do you define a PM? Would you want to work frontend or backend? And a lot more, basically really questioned every answer I gave in a lot of depth and from a product perspective. We also discussed what the role looks like in general. ○ General Feedback: For the first three rounds, research into the company/IAM space will get you ahead by a lot since the cases are based on their products. For the last round, just know your resume and any other stories you might want to tell centered around feature discovery and execution. ● 
+
+R1 (Behavioural / Resume;): This was with a Senior PM. He started with some basic introduction. Next question was - Microsoft has mandated MFA, what will you do. At first, I did not really understand question well, so scoped it further - Microsoft has mandated all Office 365 products to have MFA (this MFA may or may not be from Microsoft Authenticator or any other Authenticator), so how can Okta use this as an opportunity to provide MFA to it's customers ○ 
+
+R2 (Product Design;Behavioural / Resume;RCA;): The second round was with an Engineering Lead. He wanted to understand how I work with the Engineering team. Questions from my past work ex. Then in-depth questions on prioritisation, t-shirt sizing, stack ranking etc as part of the implementation process ○ 
+
+R3 (Behavioural / Resume;Product Design;): This round was with a Senior Designer. How will you help IT Admins overcome notifications pile-up. She had a fig jam board open and wanted me to identify pain points and the prioritise and come up with solutions and prioritise again. She asked me how I would go about with the implementation ○ 
+
+R4 (Behavioural / Resume;): This was with a Director of Engineering. ○ He dissected my resume and asked very pointed questions asking me to explain in-depth.He dug into one particular project, asked me about the metrics we had set, if we met the metrics, whether it was successful, why/why not. Questions on B2B enterprise products, what were my learnings, what would I do differently ○ General Feedback: Be thorough with your resume. First Principle thinking - no frameworks or anything. Understand how as a PM you would need to work with engineering, design and other teams - this is extremely important ● 
+
+R3 (Behavioural / Resume;Product Design;Company Related;): Started with tell me about yourself and why Microsoft. ○ After why Microsoft, because I basically said I wanted a to be at like a cutting- edge tech company, she asked me what was interesting tech I learned about recently. I said something about different design patterns for collaborative work (I was thinking of CRDTs and alternatives to them but gun to my head I wouldn't have remembered the actual algorithms. That wasn't a problem). Based on that, she asked me to design/MVP a collaborative text-editing app. Prompted me to keep to the usual structure - user personas, their problems, potential solutions, prioritize, measure success. ○ Since we had more time after that, she asked me 2 more questions. Why PM and not coding? and What are 3 products you've learned about and liked in the past year/5 years and what would you improve about them? For the second question, she said she asked past year because she didn't want to hear something standard like Whatsapp. ○ 
+
+R4 (Behavioural / Resume;Product Design;Product Strategy;Company Related;): Went more in-depth in the tell me about yourself section for this one. Because I studied AI in my last degree, he asked me how I applied AI on products I worked on. ○ The rest of the conversation was very related to the work his own team was doing. ○ He asked me to design a dashboard for managers at Walmart to monitor the store. Same deal, personas, problems, prioritization. He really pushed me to think of AI features specifically. ○ Finally, asked about my philosophy regarding AI and UX (because I had done UX design as a developer.) ○ Talked a lot about his team's direction and I was able to connect it to things I had worked on ○ General Feedback: BTwo things I think I stood out for: ○ Being able to talk about diverse technical topics (esp during R1 case and R3). ○ Sounding genuinely very excited and passionate about PM/tech and being very candid in my answers. ○ Microsoft AI hype is real - do some reading about what's new in that area and think about how it can be applied to different scenarios. ○ Being conversational and honest is good, I didn't hesitate to say when I was unsure about something and tried to be fun to talk to in general. Myntra ● 
+
+R1 (Behavioural / Resume;Product Metrics;): My RCA question was "You are a PM for Myntra and the customer support team has complained that the reviews and ratings (UGC) on the products page are broken?" ○ Started with clarifying the problem: we are only talking about apparells and broken here means that the reviews are (1) Not trustworthy (2) Not enough of them (3) Not easy to use. ○ Made 2 user journeys - one for users who write reviews and one for customers who consume reviews. ○ The interviewer wanted to start with confirming if this is even a problem or not using metrics ○ Extremely metrics heavy interview. ● 
+
+R1 (Behavioural / Resume;Product Metrics;): A case related to Product Improvement was given where the interviewer asked how to reduce the return rate on Myntra. What he was looking at was the structure and how can the interviewee break the problem statement into reasons for return. I broke it into 3 segments and was asked to focus on the quality/fit of the clothing articles. Gave 2 solutions appreciated by the interviewer. ○ Next I was asked about the metrics to be tracked in this case and why I want to dive into product management. ○ R2: Some questions related to the FinTech industry was asked since I belonged to that industry pre-ISB. Questions around Myntra was asked. Improvements to Myntra platform, a case related to Myntra’s utility by Tier 2 citizens. ○ R3: I was told that Myntra wanted to explore quick fashion e-commerce and was given to design features focusing on the sellers to Improve Myntra’s revenue. ○ It was a classic platform design case where I needed to decide how to subsidise sellers. ○ Gave 4 features- Inventory Management, Pricing and Reviews analysis, Settlement features & Credit management products. ○ The case was about 20 minutes with the interviewer praising the solutions. ○ The interviewer asked the metrics to be tracked, both L1 and north star. ○ The round ended with some resume based questions and my past experience. ○ R4: This was the HR round where the HR asked a lot of behavioural questions- Ambiguous situations, conflicts, strengths, situation based questions. Next, surprisingly I was asked about the changes I want to do on the App’s homepage. The interview went for 30 minutes. ○ I recommend to be prepared with 3-4 great stories from past work experiences and adjust them accordingly to the questions asked. If you have stories prepared, you can answer any kind of cross questioning. ○ A couple of questions related to the values of my past firm was asked since the HR was well aware of it. ● 
+
+R1 (Behavioural / Resume;Product Metrics;): (20-25 minutes) ○ Very conversational round, we talked about my work, then about Q- commerce and some metrics that can be used to gauge Q-comm success. ○ Next question was about how Myntra can enter q-comm, this was from a very business and operational perspective. ○ Next question was about 3 improvements that I will bring about in the Myntra app. ○ I was surprised to not get a call back for Round 2. General advice is to be well-versed with Myntra's business and app before the interview. BCGx ● 
+
+R2 (Product Design;Behavioural / Resume;): 1. Asked me questions about my past projects mentioned on my resume ○ 2. You are the PM of a fitness app like Adidas Running; the app sends notifications to drive adoption; can you think of all the edge cases on when the notifications will not work or can backfire? ○ Broke down the problem into dimensions - time, place, activity e.g. time, wise someone might be sleeping, working, traveling ○ I suggested how these parameters will be different for everyone, so real-time decision mechanisms and personalisation at the user level are needed. I missed the whole angle of wearable devices but later covered that when interviewer probed. ○ 3. Samsung want to monetise by bundling pre-loaded apps with its smartphones, how should you approach this? ○ I answered 5 questions in order ○ 1. Should it do this? ○ 2. ⁠where? (Geo and smartphone range) ○ 3. ⁠Which apps? ○ 4. ⁠bundling structure (bloatware vs simple install) ○ 5. ⁠partnership/monetisation structure ○ Was grilled fairly on the monetisation structure part ○ 
+
+R3 (Behavioural / Resume;): This round was a senior Product Leader and was focused more on resume and way of working. ○ 1. If you are the PM of Teams (O365), what is the one metric that you will track everyday? ○ I have engagement (hours per day) as a metric, gave me 2-3 risks and said how will I modify my metric to include those (scenarios like people sharing meme etc. instead of productive work and different work groups in orgs with different activity levels) ○ 2. In a 3x3 grid where Talent is High/Med/Low and hard work is High/Med/Low, in which bucket will you place yourself? ○ General Feedback: The process was long and well-aligned with core PM prep, so confidence and first-principle thinking are important. ● 
+
+R1 (Behavioural / Resume;Product Strategy;): Round 1 | Director, Restaurants at Zomato | 45 mins: ○ 1. Introduction ○ 2. Work experience details ○ 3. Why Zomato as your next job ○ 4. Case: Zomato has a 60% market share in Delhi, we need to grow it to 70% ○ 5. Deep dived into the restaurants piece within the case and wanted to understand what will you do if for a certain pincode both Dominos and Pizza Hut are not serving and your user is searching for pizza - what will you do? ○ 6. Some metrics and what will you look at to understand which problem to prioritize first - customers not enough at a pincode, restaurants not enough or delivery fleet not enough ○ 
+
+R2 (Behavioural / Resume;Product Strategy;):Round 2 | Director at Blinkit | 45 mins: ○ 1. Introduction ○ 2. Case: 20% of the delivery personnels are going home on the occasion of diwali. How would you go about handling the situation (he wanted me to think of very basic things like 1. Try to negotiate and stop them, 2. Non monetary incentives to stop them, 3. Hire new folks, 4. Get the remaining 80% to work extra hours) ○ 3. We gave monetary incentives in Diwali to the delivery folks and now when we reduced the incentive, they have gone on a strike asking for more money. How will you deal with this both from an immediate execution standpoint and structural change. ○ I made a 2 pager doc and took it in the interview and tried showing it to the interviewer but he was not super interested since I made it on hyperpure and he was from blinkit ○ General Feedback: First-principles thinking and a good understanding of the company and its various stakeholders are key. Sirionlabs ● 
+
+R1 (Behavioural / Resume;Product Metrics;): Round 1 | CEOs Office Associate (ISB Co21) | 20 mins: I plant 2-3 curiosity cues in my introduction such that the interviewee is interested asks further details. Had a detailed conversation around work experience where I explained a project. Counter questions asked were: ○ 1. Introduce yourself ○ 2. Funnel conversion: How do you convert users better? ○ 3. Setting up a customer support team: What metrics did you track for this project? ○ Things that worked in favour: ○ 1. Linkedin research of the interviewer - Gave common talking points right from the start of the interview ○ 2. Company and role understanding - Changed my intro to align with the company philosophies, mission and vision, changed my work ex in a way that it aligns with the role ○ 
+
+R2 (Behavioural / Resume;Math and Profitability;): Round 2 | Co-Founder (India Business Head) | 45 mins: Went straight into work ex without asking for introduction. Once I gave the brief about my work which involved certain level of user acquisition, the question asked was "What was the CAC" - I did not have an exact number to this question and I did not want to randomly say a number since he could mathematically prove that what I am saying does not make sense. I was geuine and informed that I do not remember the exact CAC but I do know that it was not good enough for us continue the method of user acquisition and hence we shut it down. This was followed by a math problem solving session. The interviewer asked me to join an excel sheet and we went through the math of a company looking to start a calling center and hiring agents. There were fixed costs, variable costs and I went through the case route where I understood the problem, asked certain clarifying questions and understood the whole ecosystem. I allocated number of productive hours per calling agent and did the math to help the interviewer understand in how much time can we break even and what is the CAC. This made him clear that I can handle the P&L if needed and I had structured problem solving. After this, I showed them a short document I had prepared on the company (to show intent, they did not ask for any such thing) - I listed the user segments and their pain points and how would I go about solving it, what do I like and dislike about the product and a wireframe for the prioritized user persona. The interviewer asked me to send the doc to him for future reference. ○ Questions: ○ 1. Explain about your last work experience? How did you do what you have written in your resume? ○ 2. What was the CAC in your acquisition project? ○ 3. Math Problem solving on an excel sheet with assumed numbers ○ Things that worked in favour: ○ 1. I was honest about not knowing the exact CAC number and the interviewer was accepting of that fact and gave me a case to check if I am comfortable with numbers. ○ 2. I prepared a doc which had my company research and what I like and dislike about the product and it was received extremely well. ○ 
+
+R3 (Behavioural / Resume;Company Related;):Round 3 | Chief of Staff (Reporting Manager to CEOs Office) | 25 mins: More of a informational round telling me details about the role and what would it mean to work in this role. Informed of the company level details and just wanted to understand my journey. ○ 
+
+R4 (Behavioural / Resume;): ○ Round 4 | HR (Behavioural) | 25 mins: Asked Why Practo in different shape and form ○ 1. Why Practo? ○ 2. Why Healthcare industry? ○ 3. How do you deal with folks disagreeing with you? ○ General Feedback: Read the annual report to understand the company's vision and mission. Razorpay ● 
+
+R2 (Product Design;Behavioural / Resume;): Round 2 | Principal Product Manager | 50 mins: ○ 1. Introduction ○ 2. Some work ex ○ 3. Design an alarm clock for the deaf: Clarified, stakeholders (Deaf and the caregiver), User journey, Segmentation, Pain points, Prioritization, Solution, Prioiritization, Success Metrics ○ 4. How do you confirm that there is a market for this product (Assume pricing is not an issue): Took a real example of when do we buy a new product: Pain Threshold and easy access to alternative; Deep dived into the pain and the alternatives and how much it impacts the deaf person's life ○ 
+
+R3 (Behavioural / Resume;Company Related;): Round 3 | Head of Product | 15 mins: ○ 1. Work ex ○ 2. Why B2B ○ 3. Have you worked with Tech ○ 4. Have you worked with Design ○ General Feedback: Tech and B2B heavy prep would have helped further, as the company is looking for people who understand tech and can execute. ● 
+
+R2 (Product Design;Behavioural / Resume;): The interviewer asked about the various ways I have worked on building/ developing products. How did I measure the impact? Why did I focus on analytics and improve the results? What product suggestions did I have for the Product team and how did that impact the firm? Why do I want to join ThoughtSpot (kept iterating that the product is boring since it mainly caters to businesses)? How will I work with teams outside India, remotely? ○ General Feedback: It helped that I tried to understand their various products since I could ask questions based on this (shows intent). ● 
+
+R2 (Product Design;Behavioural / Resume;): How will you improve bangalore traffic situation? ○ - Expected answer was to solve the problem from Corporate companies / IT Park as persona. I solved from government and a working professional's perspective. Followed framework but finally interviewer expected some creative solutions on the Corporate company personal. ○ General Feedback: Stick to framework. Showing creativity in solutioning is very important. Salesforce ● 
+
+R1 (Behavioural / Resume;Product Design;): Time taken: 30 minutes ○ Questions asked: ○ 1. They took the first project from my resume (catalog management system) and asked me what I would want to change about it if I were to go back. ○ 2. How would you improve this product (catalog management system) ○ Approach: I told about the users for this product - suppliers and ops team and then I listed the pain points for each user and then one solution for each pain point. ○ They asked me what seems to be the biggest pain point that I would like to solve along with justification. ○ Follow up: If you have to convince your founder to prioritise this solution, how would you go about it (They gave a hint initially: Use porter's 5 forces and talk from high level business pov) ○ 2nd follow up: Now, you have to convince your CFO to give money for it and probably you can prioritise another solution, how would you approach. ○ I used my domain knowledge and answered using porter's 5 forces as the base. I didn't change my answer for CFO follow up as I still thought the same reasoning was relevant. ○ 3rd follow up: If barriers of entry are low, and you can not beat your competitors for sure, how would you strategize? ○ I proposed a counter-positioning strategy by focussing on creating unique differentiation value prop that our competitors can't take by focussing on premiumisation. ○ 3. General questions on why Salesforce. Any questions for the company? ○ I did some research about Salesforce and asked a couple of questions from that and couple of general questions ○ 
+
+R2 (Product Strategy;Product Design;Behavioural / Resume;): Time taken: 45-50 minutes ○ Questions: ○ 1. How would you increase adoption of X by 50% in next 6 months (X is the B2C product I worked on in my last company). How would I approach this? ○ I first talked about how would I approach it if I were responsible for this. I talked about certain measures I will take to identify the root cause (product funnel analysis, user complaints, interviews etc) ○ Then I talked about potential reasons for low adoption and stated my assumptions about what seems to be the primary reasons in these based on my domain knowledge. Finally, I gave some high-level solutions to solve those gaps. ○ Advice: I focused on first-principle thinking and also kept on checking with the interviewer to see if we were aligned on my approach. ○ 2. How would you implement the above solutions in 6 months? ○ I am not sure what he was expecting, but I told him what I would actually do as a PM and stated my assumptions. He asked me to ignore marketing and other GTM things. I gave a month-wise plan of action on how I would go about distributing work in devs, handling integration, internal testing and GTM from a product pov. ○ Feedback I received: Overall good, but think of bolder ideas. ○ General Feedback: It is crucial to be thorough with the industry and product you've worked on. Rely on first-principles thinking and keep checking with the interviewer for alignment. Eli Lilly ● 
+
+R3 (Behavioural / Resume;): This was an interview with HR Head. 2 interviewers were present. ○ They asked me grilling behavioural questions. Around 20 questions in 45 minutes and were very specific to understand my contribution/ my role in each of them. ○ This was to decide if they can give me one level up Senior Manager instead of Manager ○ 
+
+R3 (Behavioural / Resume;): What's not on your resume. ○ What did you learn at ISB and other resume related Zynga ● 
+
+R1 (Behavioural / Resume;Company Related;RCA;):30 min interview overall ○ 1. Introduction ○ 2. Why Winzo ○ Discussed growth trajectory, preference for B2C apps and Gaming industry. Discussed how role aligned with career. ○ 3. RCA (10% drop in Retention on Ludo after launch of a feature) ○ Discussed scoping questions, followed by by identified how the feature affected the gameplay. Interviewer was interested in understanding motivations of users and how feature can affect their considerations. ○ 4. Observations on Winzo app ○ Discussed the unintuitive flow of external apk download, app size being too large for Indian users, etc. ○ 
+
+R2 (Behavioural / Resume;Product Strategy;): 30 min interview overall ○ 1. Introduction ○ 2. Why MBA? ○ 3. Market Entry (How should Winzo enter Germany?) ○ Followed the GTM framework, to discuss users and preferences, games mix (football and fantasy focus) for product changes, promotion through sports sponsorships and pricing changes to move away from microtransactions model. ○ 4. Profitability (How would you address lower than expected profits for a game you launch? ○ Described the revenue and cost models for gaming and listed the levers that can affect revenue. Discussed each to say how they can be tweaked to increase revenue. ○ 
+
+R3 (Behavioural / Resume;):Founder Round for 20 min ○ 1. General chat about family and MBA ○ 2. Whta are your strengths/weaknesses? ○ 3. What is your superpower? ○ 4. How much would you rate yourself on Hard Work ○ General Feedback: Understand Gaming metrics and Monetization levers for Winzo. RCA and Market Entry questions were asked. Use the app in advance to give suggestions on improvement. Grab ● 
+
+R1 (Behavioural / Resume;): 25-30 minutes: ○ Very conversational round. Mainly based on the case assessment, my resume, and how AI can be leveraged for the solutions I provided. ○ 
+
+R2 (Product Design;Behavioural / Resume;): More formal round, a mix of my resume and a small product design/improvement question. The question was to solve for the high turnaround time in fixing POS machine connections for merchants. Suggested in-app and automated phone line solutions. ○ 
+
+R3 (CPO Round - Technical;): 15-20 mins: ○ This was surprisingly a very technical round and I was caught a little off guard, I was asked about OOP, API calls and their response codes, REST API. Another question was how would you write a program which can summarise WhatsApp messages through GPT and schedule it at a particular time every day. Just wanted some basic structure about how I will design the program. ○ 
+
+R4 (HR;): General questions about Pine Labs, why the industry, why the company, where is Pine in your preference. Biggest learnings at ISB and biggest changes. ○ General Feedback: Do the case assessment properly and be prepared for technical questions, as interviews are on a rolling basis. Mastercard ● 
+
+R1 (Behavioural / Resume;Related to the Case;): I was asked to explain the points I had written on my resume. From work experience in my previous role to how we came up with a solution during a case comp. ○ I was asked questions on my case submission, why I prioritized certain features, how did I calculate TAM ○ 
+
+R2 (Behavioural / Resume;Company Related;): I was asked in-depth questions about my work experience, why I want to pursue a Product Manager role, what product I would build for Mastercard, and how I would determine its TAM. Each answer required detailed explanations and proper reasoning ○ 
+
+R3 (Behavioural / Resume;): Questions on why Mastercard and how would I navigate through challenges as a PM. ○ General Feedback: Thoroughly review your resume and case submission to ensure you can explain every point in detail. Research the company extensively, including its operations, revenue model, and product offerings, before the interview ● 
+
+R1 (Behavioural / Resume;Related to the Case;): Firstly it was intro, then asked few points from my resume. Tell what was the product you worked on, tell a specific feature workflow, how it was started and executed. Then the interviewer asked about the case submission(Not to present) but asked how would you sell this to a potential client. I have a pharma background so the interviewer asked how would you sell this to a pharma sales rep manager. Explained about the pain points it would solve in terms of costs and revenues. In terms of increasing sales of drugs, having good data analytics and others. Then a bit on why Mastercard. ○ 
+
+R2 (Behavioural / Resume;Company Related;):It was mainly random questioning. It started off with intro, then he took one point in my resume dug deeper on product development and others. I also had a startup experience, when mentioned he asked, If you were to reject all offers from ISB and start again what would you do. I mentioned market research, demand estimation, whitespace, problem I am trying to solve and others. He wasn't very impressed with my answer. The interview ended over there. ○ 
+
+R3 (Behavioural / Resume;): Intro, Then was asked what is your favorite data product, then asked random questions such as is Flipkart a data product, what is a data product, how would you define it. Why do you want to become a "B2B" "Data" "Product" "Payments" manager .Why is data everywhere. Then was asked why Mastercard. ○ General Feedback: It was mainly about data products and how data is used to build companies and products. A bit of randomness in questions but it would be better to know about B2B data products space. Fresh Prints / Acube ● 
+
+R1 (Behavioural / Resume;): 15 minute discussion around - why PM, what do you think a PM does, what do you want to do after ISB. General conversation only. ○ 
+
+R2 (Behavioural / Resume;): 1 hour interview. Resume based interview. Talked about previous work experience in detail. Why do you want to be a PM. Transferable skills. ISB projects. What all I have learnt at ISB that will help in becoming a PM. ○ Behavioral questions like what was your most difficult project, how do you handle stress, difficulty working with PMs in past etc. ○ Had to convince about my intent to become a PM as I did not have PM experience before. ● 
+
+R1 (Behavioural / Resume;): R1 was all about me. Asked tell me about your work experience. From their the interviewer asked questions on my workex and asked behavioural questions. ○ 
+
+R2 (Behavioural / Resume;): It's again behavioural. Asked questions on my resume and a few behavioural questions like why are u the best fit for Product manager role. ○ Tips: See the company website and about the company well. Be strong with your workex and resume part. HiLabs ● 
+
+R1 (Related to the Case;Behavioural / Resume;): My interviewer didn't give much importance to deck (later they told they were satisfied with the deck). Grilled lot on why DevRev / why Strategy why not PM. Scenario based questions and instances from previous work-ex ○ General Feedback: Prepare your resume well. As it is a founder's office role, more structured and prepared responses (STAR) will be helpful in initial rounds. Prepare strong story points from previous work-ex that would entail key skills enlisted in JD like stakeholder management, strategy implementation, team leading capabilities, managing complexities and uncertainties etc. Browserstack ● 
+
+R2 (Product Metrics;Product Strategy;Behavioural / Resume;): '- How to determine success of WhatsApp calls? ○ Took tree based approach to deconstruct whatsapp call feature from NSM - L0 - L1. Added AARRR and quality metrics. ○ - What is your favourite developer tool ○ Github. Couldn't follow structure properly as Github had lots of products ○ It was a stress interview and interviewer kept on cornering on my previous software experience (I am a mechanical engineer worked as PM in and IoT startup). ○ General Feedback: Show strong developer empathy. Researching about the company and its product is beneficial. Case submission is the most important. Company respects analytical approach to problem solving - so showing strength in metrics is a plus AuxoAI ● 
+
+R1 (Behavioural / Resume;Product Strategy;Product Metrics;): Was a 40 min long interview with few small cases in between ○ - What factors to consider if Netflix is launching in a new geography ○ Use product growth framework. Covered product requirments, tech requirements and Content requirements. ○ Why PM, Why Amadeus ○ 
+
+R2 (Company Related;Behavioural / Resume;Product Strategy;RCA;): 1hr 40min interview. Taken by Chief of product ○ - Went into detail on every single line of resume. ○ - Asked scenario based questions - Willingness to learn, Challenging situations, Owned and delivered a project, Stakeholder management. ○ - Explain how Amazon's review system works (Posting review, how is it captured, what details are captured, where is it stored, how will the merchant see it). I drew a flowchart to explain. ○ - How will you launch a startup ○ Drilled down on each line of my answer. Tested the confidence in my answer ○ - As a PM how will you handle a new request from business development team ○ Drilled down on each line of my answer. Gave some scenarios in each step. ○ - RCA question "Uber's no of rides have reduced by 20%" ○ Followed framework. Wanted my approach rather than arriving at the answer. ○ - Asked about my understanding of Amadeus and why Amadeus ○ General Feedback: Research about the company and industry. Strong prep of resume is required. Senior people will be interviewing, so more practical comprehensive answers rather than a framework approach is expected. 2024 Interview Experiences ADP ● 
+
+R1 (Behavioural): "Why my startup failed, Important skills for a product manager." ○ 
+
+R2 (Behavioural): "Agri-tech supply chain related questions; SQL query" ○ General Feedback: The candidate was comfortable with the Agri-tech questions but told the interviewer they couldn't write the SQL query but could find it, which the interviewer was happy with. Adani Digital ● 
+
+R1 (Behavioural): "Describe your startup". "your role as a pm in it". ○ 
+
+R2 (Behavioural, Product Strategy, Product Design): "how did you decide your startup's product roadmap". "How would you improve ola". ○ 
+
+R3 (HR Round): "Nothing specific. Company culture and fit". ○ Overall Feedback: "Be well versed with your role and collate to the role you're applying to". Be well versed with product improvement cases. Be yourself. Keep it human, candid and build a rapport. ● 
+
+R1 (Behavioural, Guesstimate, Product Strategy, Metrics, Root Cause Analysis): "How many umbrellas are sold in India". "What are the pain points of booking an Uber?". "What is the first thing you do after you land at an airport?". "Tell me something that is not in your resume?". ○ 
+
+R1 (Behavioural, Product Strategy, Product Design): "Youtube Vs Netflix, Analyze Business Model, Long term sustainability". "What did you do in your last role". "Favourite Product & Improvements". ○ 
+
+R2 (Behavioural, Situational, Product Strategy): "What was your most challenging project and what did you gain from it.". "Future of HR tech". ○ Overall Feedback: "Build an understanding of the business models of all common products and platforms.". Airtel ● 
+
+R1 (Behavioural, Product Strategy): "Tell me about yourself briefly?". "We are in 2050, and the concept of the driverless car has reached perfection in this world. What future problems for Uber will be and how to improve it.". ○ General Feedback: "Airtel typically has only one round (post CV shortlisting) on day 0, which is made or broken. Try to keep this interview as earliest as possible so that you are done with at least one interview of the day.". ● 
+
+R3 (Resume/Behavioural/WorkEx): "HR based round, pretty conversational and just final negotiation.". ○ Overall Feedback: "Process was extremely smooth, interviewers were great throughout. ...Standard PM prep is sufficient.". ● 
+
+R1 (Resume/Behavioural/WorkEx;Product Design ("Design x for y")): The round revolved around the candidate's previous work experience and designing a product roadmap. ○ 
+
+R3 (Resume/Behavioural/WorkEx): An HR round. ○ Overall Feedback: The candidate advised to be yourself, be prepared, and enjoy the process. Reading about Airtel and its transformation plans helped in answering questions. ● 
+
+R2 (Resume/Behavioural/WorkEx): "This round was entirely behavioural." ○ Overall Feedback: The candidate had prepared high points from their resume and general frameworks and behavioral questions. Atlassian ● 
+
+R2 (Behavioural, Situational, Product Design): "Questions Regarding Case submission - basically explain this feature, if you have to pick one feature, one metric what will it be?". "What is your Favourite Product? Improvements? How will these improvements move the metrics (by what scale)". ○ General Feedback: The interviewer for R2 liked the answers but felt the improvement percentage was a calculated guess that "didn't land well". BCG-X ● 
+
+R2 (Behavioural, Problem Solving): "Puzzle: How many points are there on the earth where you could travel one mile south, then one mile east, then one mile north and end up in the same spot you started?". A bunch of behavioral questions were also asked. ○ General Feedback: The CEO and COO conducted a conversational interview and offered the job at the end. Brane Enterprises ● 
+
+R1 (Behavioural, Metrics, Product Design): "Very conversational interview. The interviewer shared her experience with the firm, explained about its product & how it works. Then the interviewer asked about my professional journey & work experience.". A product design question was asked to design a solution for students looking to apply to universities. ○ 
+
+R2 (Behavioural, Product Design): Questions around prior work experience and a design question for an app for football enthusiasts. ○ 
+
+R3 (Behavioural): The round was with a senior advisor trying to gauge fit to the company. ● 
+
+R2 (Metrics, Product Design, Behavioural): "Choose an application of your choice and suggest improvements along with metrics that you would use to measure success.". The candidate chose Instagram. ○ 
+
+R1 (Behavioural, Product Strategy): The candidate was asked what options Chargebee could explore for subscription management services for OTTs, based on their case submission. ○ 
+
+R2 (Behavioural): "Why product management", "Why mba", and "What do I look for in a company". ○ General Feedback: "Just be yourself. Cultural fit is about knowing if you will fit in the company or not. Do a bit of research about the company and tailor your answers accordingly.". Cisco ● 
+
+R2 (Behavioural): "Explain something from your resume". ○ 
+
+R3 (HR Round): "Why Cisco". "Competitors of Cisco". ○ Overall Feedback: "Look up basic company info". Cogoport ● 
+
+R1 (Behavioural): Questions were asked about a Big Data project on the candidate's resume. ○ 
+
+R2 (Behavioural): HR questions, such as "Why would you choose a startup and not some famous MNCs?". ● 
+
+R2 (Behavioural, Behavioural): "What is product management and why do you fit in this role?". The interviewer also asked a peculiar question: "Are you single/married? Do you think monogamists are compliant people and hence not adventurous?". DevRev ● 
+
+R1 (Behavioural, Situational): Resume grilling, specifically on a previous experience at Flipkart. ○ 
+
+R2 (Behavioural, Go To Market): "How would you launch DevRev in Japan". ○ 
+
+R3 (Behavioural): A "Culture-fit round." ○ General Feedback: "Be very thorough with your resume". ● 
+
+R2 (Behavioural): "What has been your journey till now" and "Why Devrev?". ○ 
+
+R1 (Behavioural, Situational, Go To Market, Product Strategy): Guesstimate about "number of users on instagram". ○ 
+
+R1 (Behavioural, Product Strategy, Metrics, Root Cause Analysis, Product Design): "What is your favourite product?" (Zerodha was chosen). "If you were to destroy Zerodha, how would you do it?". ○ 
+
+R2 (Behavioural, Situational, Product Strategy, Product Design): Behavioural questions and "What features would you introduce to Netflix?". ○ General Feedback: "Nothing specific, just be honest and genuine - they can see through lies". ● 
+
+R3 (Behavioural, Go To Market, Product Strategy): The candidate was given a budget and asked to distribute it between customer acquisition and retention. ○ 
+
+R4 (Behavioural): An HR round with questions about what excites and worries the candidate about the role. ○ General Feedback: "Overall, very conversational questions were asked. Focus on the case should be on making sure it is analytical with lots of nos, data and beautifully crafted decks.". Head Digital Works ● 
+
+R1 (Behavioural, Product Strategy): A conversational discussion on credit, P2P, and BNPL. Questions were also asked about matching algorithms and monetization strategies. ○ 
+
+R2 (Behavioural, Situational, Root Cause Analysis): RCA question: "Imagine you are the PM at Amazon Prime and you notice the viewership dropping by 10% in India." ○ 
+
+R3 (Behavioural): The CEO asked about why the candidate wanted to join HiLabs. ○ 
+
+R4 (HR Round): A normal HR round on preferences. ○ General Feedback: The candidate focused on pricing and GTM strategy after doing research on the company. ● 
+
+R3 (Behavioural, Situational, Product Strategy): "How will you price a SaaS product?" and "Motivation for joining HiLabs". ○ 
+
+R4 (Behavioural, Situational): A standard HR round. ○ General Feedback: "Focus on your case....Your product prep with Design, RCA etc will help you in this round". Hilti Technology Solutions ● 
+
+R2 (Behavioural): "Why product owner" and "Why Hilti". Housing.com ● 
+
+R2 (Behavioural): "What's your goal in next 5 years" and "Why Housing.com?". ○ 
+
+R3 (HR Round): Questions about expected compensation. Jio ● 
+
+R3 (Behavioural, Situational): "Tell me about yourself, Talk about a difficult situation.". ○ General Feedback: "Read about all their products and try using it. ...Know your resume properly". ● 
+
+R3 (Behavioural): "Tell me about yourself? Why PM" and "Why MBA? Why Jio?". ○ General Feedback: "Start the prep with BTC Handbook and read all the interview experiences of that or a similar company from the handbook when shortlisted." Jivox ● 
+
+R2 (Behavioural): Questions were around the candidate's digital marketing work experience. ○ 
+
+R2 (Behavioural, Product Design): This round was with the CEO, who asked why the candidate wanted to be a PM. The candidate was also asked to pick a single solution from their case submission. ○ General Feedback: "Be a better listener. Interviews with CEOs are a great way to learn." Media.net ● 
+
+R2 (Behavioural, Situational, Guesstimate): Questions on "What is NPS", "Describe Database to a 5 year old" and a guesstimate on the number of weddings in India. ○ 
+
+R3 (Behavioural): Questions from the candidate's past work experience. ○ General Feedback: The interviewer was mainly interested in the candidate's thought process. ● 
+
+R4 (Behavioural): "Explain big data to 6-year-olds." ○ General Feedback: "Talk to the interviewer, try to get subtle hints, and give a logical explanation." MPS Ltd. ● 
+
+R1 (Behavioural, Go To Market, Product Strategy, Metrics): "Design Go To Market Strategy for the Product in a New Geography". ○ 
+
+R2 (Behavioural, Situational): "CV Based. Went into nitty gritty of CV". ○ 
+
+R3 (Behavioural, Product Strategy): "Company related. How do you plan to work on specific aspects of the product strategy for MPS Ltd." ○ 
+
+R4 (Behavioural): "Fitment round. How well do you fit with the company culture, expectations." Nagarro ● 
+
+R1 (Behavioural, Situational, Behavioural): "Tell us something interesting about you". ○ 
+
+R2 (Behavioural, Situational, General): "What are some of the latest disruptions in tech". ○ 
+
+R3 (HR Round): Basic HR questions. ○ General Feedback: "Focus on building up an integrated personal and professional story, and know your previous work in depth." ● 
+
+R1 (Behavioural, Situational, Product Strategy, Root Cause Analysis, Product Design): "Resume-based questions, explain how you have achieved so and so, previous experience, etc". ○ 
+
+R1 (Behavioural, Product Strategy, Product Design): "Favourite fintech product? Why? How would you improve it?". ○ 
+
+R2 (Behavioural, Product Strategy, Product Design): "Consider there are only 2 players (Swiggy and Zomato) in the food delivery space and each of them has 50% market share. How can Swiggy capture 80% market share?". ○ General Feedback: "Structure matters. They gave higher weightage to structure than solutions." Nium ● 
+
+R1 (Behavioural, Product Design): "Create a service that detects meeting conflicts". ○ 
+
+R3 (Behavioural, Situational): "Why PM?" and "Why NIUM?". ○ General Feedback: "Be foolproof in your clarifying questions." Nykaa ● 
+
+R2 (Behavioural, Metrics, Product Design): "How will you solve for paradox of choice in Myntra". ○ 
+
+R3 (Behavioural, Product Design): "Design a new-age airport experience". ○ General Feedback: "Structure matters. When preparing for interviews give higher weightage to structure than solutions". Paytm ● 
+
+R1 (Product Design, Behavioural): "Since you're interested in football, design an app for football (it's your interpretation)?". A puzzle was also asked. ○ 
+
+R2 (Product Design, Behavioural): "What is your favourite product and is there any improvement with it?". "Why Paytm?". ○ Overall Feedback: "Be prepared about company and brush up fundamentals of Product Management. Should be an easy interview process." ● 
+
+R1 (Product Design, Behavioural): "Give me a summary of your resume in 2 minutes, what are you most proud of from undergraduate and ISB time?". "Design an OTT platform for Marathi content." ○ 
+
+R3 (RCA, Metrics, Behavioural): "Why Razorpay and why Product management?". "What metrics would you track to measure the success of Instagram reels?". "Design a shopping app to improve the in-store shopping experience." ○ 
+
+R4 (Behavioural): Resume related questions. Rupeek ● 
+
+R1 (Product Design, GTM/Market Entry, Behavioural): "Explain your case submission and why did you choose to target a particular user segment". "You are a PM at Finshots. Come up with a monetisation plan for the product.". "Why PM?". ○ 
+
+R2 (Behavioural): An HR round with behavioral questions. ● 
+
+R1 (RCA, Metrics, GTM/Market Entry, Behavioural): "Platform traffic on Swiggy has dropped suddenly and significantly last week. Do RCA". "How to improve Swiggy". ○ General Feedback: "Be very thorough with company research as all questions asked were app specific." ● 
+
+R2 (Product Design, Behavioural): "How would you design the next gen OTT app?". Questions on work culture, ethics, and values. ○ 
+
+R3 (Behavioural): "Why Tata Digital?". "What other super apps are you aware of?". ● 
+
+R1 (Product Design, RCA, GTM/Market Entry, Guesstimate, Behavioural): "Uber has seen a 40% dip in rider ratings. Ideate possible reasons why this has happened.". ○ 
+
+R2 (Product Design, Metrics, Technical, Behavioural): "Choose an app/website that you use regularly and take me through the different pages from the mindset of a product manager". ○ General Feedback: The candidate was advised to keep it conversational and engaging. Ula ● 
+
+R3 (Behavioural): "Asked about my past experience and why I wanted to do PM.". ○ General Feedback: "They don't mind giving you a 2-3 mins break if you need it." Zeta ● 
+
+R2 (Behavioural): "Can you tell me what was asked in the previous round so that we can talk about something else?". ○ 
+
+R3 (Behavioural): "Tell me about yourself. Why do you want to be a product manager? Why do you want to join us?". Zynga ● 
+
+R3 (HR): Generic HR questions. 2022 Interview Experiences Accenture ● 
+
+R3 (Behavioural): "What challenges did you face as a Project Manager in your project?", "How would your juniors describe you as a manager?", and "Why do you want to build a career in Tech domain?". ○ 
+
+R4 (Behavioural): CTC negotiations. ○ Overall Feedback: Prior technology consulting, especially data consulting, is helpful. Airtel ● 
+
+R1 (Behavioural): Questions on the steps and phases of a managed project, approaches to product/service growth, and incorporating past learnings into future projects. ○ Overall Feedback: Be completely on top of your profile to ensure there are no gaps in your story. ● 
+
+R1 (Product Design, Metrics, Technical, Behavioural): "What is your favourite product and why?", "If you were the PM of your favourite product, what changes would you make", and "Why product management?". ○ Overall Feedback: Good research about the company and industry helps drive conversations, especially with CXO-level interviewers. ● 
+
+R1 (Product Design, GTM/Market Entry, Guesstimate, Behavioural): "Estimate the number of basketballs and basketball-shoes in India", "Design a Wynk app for tier 3/4 cities", and "What are the ways to monetize Wynk app?". ● 
+
+R1 (Product Design, Metrics, Technical, Behavioural): "How have you applied Product Management skills at the workplace so far?", "Approach with regards to the Microsoft PM Engage case competition mentioned on my resume", and "What are your weaknesses that can obstruct your performance as a Product Manager?". ○ Overall Feedback: Be prepared for behavioral questions and know how to answer them without sounding like you're throwing yourself under the bus. Amazon ● 
+
+R1 (Behavioural): All questions revolved around Amazon's leadership principles. ○ Overall Feedback: Follow the STAR method and link your answers to the leadership principles. If the interview gets tough, it may be a bar-raiser, so stay calm and show customer empathy and stakeholder management skills. Atlassian ● 
+
+R2 (Behavioural): "What interests you in PM?", "What was some time when you were criticized?", and "What was a time when you failed as a team?". ○ 
+
+R3 (Behavioural): "Intro, Values of Atlassian and which one value will you pick?", "Did you criticize anyone and were you criticised by anyone?", and "As a team, give an instance when you failed". ○ Overall Feedback: The company checks for personality a lot, so focus on HR- based questions. ● 
+
+R2 (Metrics, Behavioural): Questions on how to prioritize features and top tech trends. ○ 
+
+R3 (Behavioural): "Share an instance when you helped someone in your organization and your learnings from this experience" and "Time when you had a disagreement with a co-worker". ○ Overall Feedback: Make sure you go through Atlassian's values before your interviews. Brane Enterprises ● 
+
+R1 (Behavioural): "Different resume & behaviour questions + Role Understanding". ○ 
+
+R2 (Product Design, Behavioural): Resume-based questions and a question about modules of a home decoration app. ○ 
+
+R3 (Behavioural): "General discussion on post-ISB goal". ○ Overall Feedback: The role is end-to-end, so be prepared to take on many different responsibilities. BrowserStack ● 
+
+R3 (Behavioural): Behavioral questions with the head of product, such as "how do you handle internal conflicts within the engineering and product teams". ○ Overall Feedback: It helps to understand their product end-to-end because they are a technical product company and are not looking for template answers. Cisco ● 
+
+R1 (Product Design, Behavioural): "Tell us about yourself? Why do you want to be a product manager?", and "What is one app you don't like and how would you improve it?". ○ 
+
+R3 (Behavioural): "Tell me about yourself? What are your expectations?" and "Do you know who the competitors of Cisco are?". ○ Overall Feedback: The process was smooth, and the panelists were accommodating. ● 
+
+R3 (Behavioural): "As a PM, will you go for product led growth always?" and "Do you follow the do it right first-time approach or fail fast approach?". ○ Overall Feedback: Having some perspective on fantasy sports and competitors is helpful. ● 
+
+R2 (Metrics, GTM/Market Entry, Behavioural): "SaaS start-up wants to enter the Communication & Engagement industry, how can it succeed here?". ○ 
+
+R3 (Behavioural): "Why PM? What culture do you like? Conflict example? Failure Example?". ○ Overall Feedback: Make sure you actually have experience with the app, it's important to them. ● 
+
+R2 (RCA, Behavioural): "Cart abandonment for Myntra has gone up recently. Find out why?" and "If you ship 2 features at the same time to impact the same metric, how would you measure which one is more successful?". ○ 
+
+R3 (Behavioural): Questions on the biggest challenge faced, the meaning of product management, and why Dream11. ○ Overall Feedback: The candidate advised staying calmer and being as structured as possible. Epifi (fi.money) ● 
+
+R5 (Product Design, Behavioural): "Design a dynamic traffic light" and behavioral questions based on the candidate's resume. ○ Overall Feedback: The interviews were fairly technical and focused on product design. Behavioral questions were asked in almost every round. ● 
+
+R3 (Product Design, RCA, Metrics, Behavioural, Technical): A stress interview with one of the co-founders. The candidate was asked to list metrics for a "happiness index" for readers of a digital publication and an RCA on dropping readership numbers. ○ 
+
+R5 (Product Design, Behavioural, Fitment): A short cultural fitment round with a co-founder. ○ Overall Feedback: Be very well prepared for boilerplate questions for stress rounds. Flipkart ● 
+
+R3 (Technical, Behavioural): General questions on why the candidate joined ISB, what they learned, and challenges with engineering teams. ○ Overall Feedback: Try to be as conversational as possible. The interviewers were calm and guided the candidate when needed. ● 
+
+R3 (Guesstimate, Behavioural): "Estimate the number of tubelights in Delhi". ○ Overall Feedback: Be very well versed in the company's current offerings. Games 24x7 ● 
+
+R2 (RCA, Behavioural): Resume-based questions and a hypothetical case about a metric falling in an auto-insurance company. ○ 
+
+R3 (HR): A brief HR round. ○ Overall Feedback: An understanding of metrics and a clear analytical mind were very important. ● 
+
+R3 (Behavioural): Standard behavioral questions. ○ Overall Feedback: The candidate was advised that gaming knowledge is not required, but a good understanding of games helps. Google ● 
+
+R3 (Behavioural): "Why Product Management", "Why the gaming industry", and "why GSN games". ○ Overall Feedback: Gaming knowledge is not required, but being honest about your involvement helps. Jio ● 
+
+R1 (GTM/Market Entry, Technical, Behavioural): "Tell me about yourself" with a deep dive into technical projects and questions on an app improvement. The candidate was also asked the difference between HTTP and HTTPS. ○ Overall Feedback: It's important to get clarity on the role with the actual interviewer, as it may be different from a typical PM role. ● 
+
+R1 (Product Design, Behavioural): "Tell me about yourself" and "What is your favourite app and why?". The candidate was asked to describe the product design stages and allocate timelines. ○ 
+
+R2 (Behavioural): A general behavioral round. ○ Overall Feedback: The candidate did minimal prep but succeeded by using the frameworks from the BTC handbook. ● 
+
+R2 (Behavioural): "What are your strengths and weaknesses?" and a location preference question. ● 
+
+R2 (Behavioural): "How would your friends describe you?" and "Why Reliance Jio?". ○ Overall Feedback: The company focuses on understanding the entire PM role, from ideation to launch. Meesho ● 
+
+R2 (Behavioural): A culture-fit round with questions on past experiences, why PM, and why the candidate would be a good fit. ○ Overall Feedback: The process focused on empathizing with the user, rather than on product design questions. Microsoft ● 
+
+R3 (Product Design, Behavioural): "Design a browsing experience for offline users" and questions about work experience and why the candidate wanted to become a PM. ○ Overall Feedback: The candidate was advised to keep the interviews conversational and to not lie or try too hard to impress the interviewers, as they are industry experts. ● 
+
+R3 (Product Design, Behavioural): A design question on how to use usage data across all MS products to improve user experience. ○ Overall Feedback: The candidate noted that Microsoft interviews are generally taken by experienced PMs and advised to keep the conversation flowing and keep faffing to a minimum. MPS ● 
+
+R1 (Product Design, Behavioural): "Tell me about Yourself" and "As you have worked as PM before, describe all the activities that you were part of right from ideation stage to delivery stage". The candidate was also asked to design a product to help an academic publisher. ○ Overall Feedback: The candidate reflected that they may not have made it because they couldn't come up with the right pain points for a librarian. Myntra ● 
+
+R2 (Technical, Behavioural): Questions about past work experience, situational questions, and modules in Swiggy. ○ 
+
+R4 (Behavioural): An HR round with behavioral and situational questions. ● 
+
+R1 (Product Design, Behavioural): "Tell me about yourself" and a design question for old people. ○ 
+
+R3 (Behavioural): A leadership round with questions on what's not on the CV and handling difficult situations. ○ Overall Feedback: The candidate advised to converse with the interviewer as the process was smooth. Navi ● 
+
+R3 (Behavioural): General behavioral questions. ● 
+
+R3 (Behavioural): HR interview with standard behavioral questions. ○ Overall Feedback: They are looking at your ability to think on the spot and be clear. Nium ● 
+
+R2 (Behavioural): The candidate was asked if they were a "hacker or a builder" and what they would do if their jokes didn't land. ○ Overall Feedback: The interview felt more like a general tech discussion, and the behavioral questions were not from the usual template. ● 
+
+R3 (Behavioural): "Why Nium?" and questions for the interviewer. Nykaa ● 
+
+R2 (Product Design, Behavioural): "What design changes can be made to increase the attachment rate of add-on services like warranty to the products?" and "Why Product management?". ○ Overall Feedback: The candidate was advised not to stick to frameworks and to be practical and honest. Oyo ● 
+
+R1 (Product Design, Behavioural): A thorough discussion of previous work experience and a design question on how to increase OYO app revenue via pop-ups. The candidate was also asked about a loyalty program for Amazon Prime. Paytm ● 
+
+R1 (Product Design, Behavioural): "Since you're interested in football, design an app for football" and a puzzle question. ○ 
+
+R2 (Product Design, Behavioural): "What is your favourite product and is there any improvement with it?" and "Why Paytm?". ○ Overall Feedback: The candidate advised preparing well about the company and brushing up on the fundamentals of Product Management. ● 
+
+R2 (Metrics, Technical, Behavioural): A deep dive into a project on the candidate's resume, focusing on metrics and how they were tracked. ○ Overall Feedback: PhonePe's process was very simple and well managed. The case study was open-ended and they focused on the approach rather than the exact solution. ● 
+
+R1 (Product Design, Behavioural): A basic intro and questions around project and program management, with a special focus on risk management. The candidate was also asked to design a cybersecurity plan. ○ 
+
+R2 (Product Design, Behavioural): "How would you eliminate the need for patients to carry files between hospitals?". The candidate was also asked about team leadership and behavioral skills. ○ 
+
+R3 (Behavioural): An HR interview with basic questions. ○ Overall Feedback: Interviewers tried to make the candidate feel comfortable and were checking for a general thought process. Razorpay ● 
+
+R1 (Product Design, GTM/Market Entry, Behavioural): The candidate was asked to explain their case submission and devise a monetization plan for "Finshots". ○ 
+
+R2 (Behavioural): An HR round. ○ Overall Feedback: The case study was important, and the interviewer asked the candidate to defend the entire case study. ● 
+
+R1 (RCA, Metrics, GTM/Market Entry, Behavioural): "Platform traffic on Swiggy has dropped suddenly and significantly last week. Do RCA" and "How to improve Swiggy". ○ Overall Feedback: Be very thorough with company research. ● 
+
+R2 (Product Design, Behavioural): "How would you design the next gen OTT app?" and questions on work culture, ethics, and values. ○ 
+
+R3 (Behavioural): "Why Tata Digital?" and "What other super apps are you aware of?". ● 
+
+R1 (Product Design, RCA, GTM/Market Entry, Guesstimate, Behavioural): "Uber has seen a 40% dip in rider ratings. Ideate possible reasons why this has happened". ○ 
+
+R2 (Product Design, Metrics, Technical, Behavioural): "Choose an app/website that you use regularly and take me through the different pages from the mindset of a product manager". ○ Overall Feedback: The candidate was advised to keep it conversational and engaging with the interviewer. Ula ● 
+
+R3 (Behavioural): Questions about past experience and why the candidate wanted to do PM. ○ Overall Feedback: The interviewers were supportive but the interviews were stressful, so the key was to take a step back and relax. Zeta ● 
+
+R2 (Behavioural): The interviewer asked what was asked in the previous round so they could talk about something else. ○ 
+
+R3 (Behavioural): "Tell me about yourself. Why do you want to be a product manager? Why do you want to join us?". Zynga ● 
+
+R3 (HR): Generic HR questions. ○ Overall Feedback: Sharing the screen of a drawing tablet helped the candidate, as they could draw out problem trees and dashboards. QUESTION BANK The following are sample questions you can practice in groups. Brainstorm ideas, approaches, and frameworks with your peers. 1. PRODUCT DESIGN B2C a. Consumer Software 1. Design a product that helps gig workers manage their personal finance. 2. Design a digital product for people who regularly commute between two cities for work. Focus on one high-frequency problem rather than attempting to solve the entire commuting journey. 3. Design a product that helps consumers make better decisions when purchasing refurbished electronics. 4. Design a hyperlocal news app for rural India. 5. Design a product that helps users reduce unnecessary online shopping. Assume the business still wants users to remain engaged with the platform. 6. Design a digital experience for attending a large live event such as a concert or sporting event. 7. Design a product that helps elderly users independently manage routine digital tasks such as payments, bookings, and appointments. 8. Design a product for households that want to reduce their electricity consumption without significantly changing their lifestyle. Identify the highest-value intervention and explain the behavioural challenge you are solving. b. Physical Products/IoT 9. Design an intelligent shoe for visually impaired users. B2B 10. Design a product that helps small retailers understand which products are likely to run out of stock in the coming week. 11. Design a product that helps sales representatives prepare for their customer meetings. Decide which part of the sales workflow you would solve first. 12. Design a product for independent restaurants to manage their supplier orders. 13. Design a product for independent healthcare clinics to reduce the administrative work involved in managing appointments and follow-ups. 14. Design an AI copilot for procurement teams that helps them evaluate supplier proposals. Explain what decisions the AI should assist with and where human approval should remain mandatory. 15. A logistics company wants to give its enterprise customers greater visibility into shipment disruptions. Design the product. 16. Design a platform that enables construction companies to coordinate multiple subcontractors working on the same project. 2. PRODUCT IMPROVEMENT B2C a. Feature Enhancement 17. Improve the experience of saving and organizing articles, videos, and posts that users discover online. Assume users frequently save content but rarely return to it. 18. A grocery delivery app has strong order frequency but users increasingly complain that they cannot find what they want. How would you improve the discovery experience? 19. Improve a travel-booking platform for users who are still exploring destinations and have not decided where they want to travel. b. UX/Accessibility 20. Improve the experience of buying tickets for popular events where inventory sells out quickly. c. Performance Adoption 21. A short-form video platform wants to increase meaningful engagement without increasing average screen time. How would you rethink the product? 22. An online learning product has strong course completion rates but very low conversion from learning to real-world application. How would you improve the product? 23. Improve an AI-powered consumer assistant whose usage is high initially but falls sharply after the first few weeks. Identify why this might happen and what you would change. B2B 24. Improve an expense-management platform where employees submit expenses regularly but finance teams still spend significant time correcting submissions. 25. A B2B analytics platform has excellent functionality but new customers take three months to become productive. How would you improve the onboarding experience? 26. Improve a project-management product used by consulting teams where senior leaders want visibility but consultants complain about excessive reporting requirements. 

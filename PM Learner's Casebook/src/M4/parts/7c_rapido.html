@@ -1,0 +1,40 @@
+<!-- ============ TEARDOWNS: RAPIDO (+ NAMMA YATRI) ============ -->
+<h1 style="margin-top:12pt">Rapido: the bike taxi that changed how drivers are paid</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Priya, 24, is stuck at Silk Board at 8:40 am with a 9:30 meeting. A cab would take 50 minutes and cost ₹400. She books a Rapido bike for ₹85. A “captain” (Rapido’s word for its bike riders) 600 m away accepts, hands her a spare helmet, checks her OTP and weaves through traffic. Twenty minutes later she scans the captain’s UPI QR code. All ₹85 goes to the captain, who pays Rapido a flat daily pass instead of a commission ({{REF:rp-walk}}).</p>
+
+
+<figure>{{SVG:flow_rapido}}
+<figcaption><b>{{FIG:rp-walk}} · Behind Priya’s bike ride.</b> The fare goes straight to the captain (⑧); Rapido earns from the pass (⑨). The spare helmet (⑤) is a safety and a legal requirement. <span class="src">Simplified; fare illustrative; subscription model as described by Rapido and press, 2025–26.</span></figcaption>
+</figure>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Bike taxi</td><td>“Traffic makes cabs slow and expensive”</td><td>A two-wheeler slips through jams at a fraction of a cab’s fare</td><td>Trips per rider; time saved</td></tr>
+<tr><td>Driver subscription</td><td>Captains: “I lose a quarter of every fare”</td><td>A flat daily pass; captains keep the whole fare, so fares can be 10–15% lower</td><td>Captains online; fares</td></tr>
+<tr><td>Autos and cabs</td><td>“Sometimes I need a bigger vehicle”</td><td>Cross-sell to riders who already trust the app</td><td>Share of non-bike trips</td></tr>
+<tr><td>Parcels and Ownly (food)</td><td>Captains idle between peaks; restaurants hate high commissions</td><td>The same fleet carries parcels and food in quiet hours</td><td>Off-peak utilisation</td></tr>
+</table>
+
+<h3>Core loop and the product ladder</h3>
+<p>The loop starts with the cheapest, fastest ride in a traffic jam. A commuter who saves 30 minutes every morning comes back daily, which no cab can match for frequency. Captains who pay no commission earn more per ride and stay loyal. From that base Rapido climbs a ladder of products that reuse the same app, riders and captains ({{REF:rp-lad}}).</p>
+<figure>{{SVG:ladder_rapido}}
+<figcaption><b>{{FIG:rp-lad}} · One fleet, five products.</b> Bikes win the daily habit; autos and cabs raise spend per rider; parcels and food fill the captains’ quiet hours. <span class="src">Company announcements, 2015–2026.</span></figcaption>
+</figure>
+
+<p><b>Business model, with numbers.</b> FY25 revenue from operations was <b>₹934 Cr</b> (+44%) and the loss narrowed to <b>₹258 Cr</b> from ₹370 Cr. In May 2026 it raised $240 mn at a <b>$3 bn</b> valuation, led by Prosus; its co-founder has said it was profitable for one quarter in FY25 and is preparing for an IPO. The subscription is <span class="term">counter-positioning</span>: Uber and Ola could match it only by giving up commission, and for autos they did.</p>
+<div class="box ex"><span class="lbl">Real-life example · Namma Yatri, the driver-owned comparison</span>
+<p>Namma Yatri started in Bengaluru in 2022 on the open ONDC and Beckn rails, with auto drivers’ unions involved from the start. Drivers pay ₹25 a day for unlimited rides (or ₹3.50 a ride for the first ten) and keep every rupee of the fare. By August 2026 it had 7.7 lakh drivers enabled. It proved that a thin, open platform could win drivers, and within two years every major app had moved autos to a fee model. Its limit: with so little revenue per ride, it has little to spend on rider marketing or safety operations.</p></div>
+<p><b>Moat, in plain words.</b> Captain loyalty (no commission), the daily commuting habit, and the lowest fares. The risk is regulation: Karnataka stopped bike taxis in June 2025; the High Court lifted the ban in January 2026 and the state has appealed to the Supreme Court.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Completed trips per week.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Paying captains online at peak · pickup ETA · share of trips outside bikes.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Safety incidents · regulatory status by state · captain churn.</div>
+</div>
+<p><b>2025–26 moves.</b> Ownly food delivery with low restaurant commissions (2025); the $3 bn round (May 2026); bike taxis back in Bengaluru after the January 2026 court order.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Leader in bike taxis, about 56% of rides</li><li>Loyal captains; the lowest fares</li><li>A daily habit, not an occasional trip</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Bike taxis depend on each state’s rules</li><li>Little revenue per ride; must earn from volume</li><li>Food puts it against Zomato and Swiggy</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Many women avoid bike taxis <span class="arrow">→</span> an opt-in women-captain option with live trip sharing <span class="arrow">→</span> share of women riders; safety reports.</p>
+<p class="idea"><b>2.</b> Captains want to own electric bikes but lack credit <span class="arrow">→</span> partner loans repaid through the daily pass <span class="arrow">→</span> captains financed; 12-month captain retention.</p>
+<p class="idea"><b>3.</b> Regulation can switch off a city overnight <span class="arrow">→</span> a state-by-state readiness plan: shift captains to autos and parcels within a week of a ban <span class="arrow">→</span> captain earnings kept during a ban.</p>

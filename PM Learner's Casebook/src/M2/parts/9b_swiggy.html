@@ -1,0 +1,59 @@
+<!-- ============ TEARDOWNS: SWIGGY + INSTAMART ============ -->
+<h1 style="margin-top:12pt">Swiggy and Instamart: one member, one fleet, many services</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Neha, 34, a consultant in Pune, pays for Swiggy One. At 8 pm she orders dal makhani and rotis for ₹380; the membership makes delivery free. While waiting she remembers breakfast, taps the Instamart tab in the same app, and adds eggs and bread for ₹240. Dinner arrives at 8:34, groceries at 8:47. It feels like one shop. Behind it, two businesses share one customer, one wallet and often one rider ({{REF:sw-walk}}).</p>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:26%">User problem</th><th style="width:33%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Swiggy One</td><td>“I pay delivery fees on every app”</td><td>One membership across food, Instamart and Dineout makes Swiggy the default for everything</td><td>Services used per member; orders per member</td></tr>
+<tr><td>Bolt (since Oct 2024)</td><td>“I want food in 10–15 minutes”</td><td>Only restaurants within about 2 km and dishes that are quick to make, so speed comes from distance, not rushing</td><td>Share of orders under 15 min; repeat rate</td></tr>
+<tr><td>Instamart megapods</td><td>“They never have what I need”</td><td>Larger dark stores with 10,000+ items for bigger, planned baskets</td><td>Fill rate; AOV (about ₹700)</td></tr>
+<tr><td>Basket-size offers</td><td>Swiggy: small baskets lose money</td><td>Discounts unlock only above a basket value</td><td>AOV; contribution per order</td></tr>
+<tr><td>Dineout</td><td>Paying the bill and finding a deal when eating out</td><td>Book a table, pay the bill in the app, get a restaurant-funded discount</td><td>Dine-out bills paid through the app</td></tr>
+</table>
+<figure>
+{{SVG:flow_swiggy}}
+<figcaption><b>{{FIG:sw-walk}} · Behind Neha’s evening.</b> Food and Instamart orders use different suppliers but the same fleet and the same membership. The rider in step ⑨ is the one who has just delivered the dinner. <span class="src">Simplified from Swiggy’s public descriptions of its shared delivery fleet and Swiggy One; amounts illustrative.</span></figcaption>
+</figure>
+
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 170" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="12" class="s">Order value, Apr–Jun 2026 (₹ Cr), growth, margin</text>
+ <text x="4" y="42" class="b">Food</text><rect x="80" y="28" width="236" height="22" fill="#e0a340"/><text x="86" y="43" class="b">9,490 · +17%</text>
+ <text x="80" y="66" class="grn b">profitable: adj. EBITDA ~₹299 Cr</text>
+ <text x="4" y="102" class="b">Instamart</text><rect x="80" y="88" width="197" height="22" fill="#c47f17"/><text x="86" y="103" class="w b">7,907 · +40%</text>
+ <text x="80" y="126" class="b">contribution breakeven in May 2026</text>
+ <text x="80" y="140" class="s">(it was −5.6% of order value in Jan–Mar 2025)</text>
+ <text x="4" y="164" class="red b">Group net loss: ₹791 Cr in the quarter</text>
+</svg>
+<figcaption><b>{{FIG:sw-money}} · Two businesses, two stages.</b> Food pays the bills; Instamart has just stopped losing money on each order but still loses money after fixed costs. <span class="src">Swiggy Q1 FY27 results (Jul 2026) as reported by Business Standard and Entrackr; Q4 FY25 margin from the company.</span></figcaption>
+</figure>
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 170" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="sw6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0b5d7a"/></marker></defs>
+ <rect x="4" y="8" width="126" height="40" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="67" y="25" text-anchor="middle" class="b">Swiggy One</text><text x="67" y="40" text-anchor="middle" class="s">member</text>
+ <rect x="200" y="8" width="126" height="40" rx="6" fill="#fde7c8" stroke="#c47f17"/><text x="263" y="25" text-anchor="middle" class="b">Uses 2+ services</text><text x="263" y="40" text-anchor="middle" class="s">food, Instamart</text>
+ <rect x="200" y="120" width="126" height="40" rx="6" fill="#e3f0f5" stroke="#0b5d7a"/><text x="263" y="137" text-anchor="middle" class="b">Fleet busier</text><text x="263" y="152" text-anchor="middle" class="s">cost per order ↓</text>
+ <rect x="4" y="120" width="126" height="40" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="67" y="137" text-anchor="middle" class="b">Membership</text><text x="67" y="152" text-anchor="middle" class="s">worth more</text>
+ <g stroke="#0b5d7a" stroke-width="1.5" fill="none"><path d="M130,28 L196,28" marker-end="url(#sw6)"/><path d="M263,48 L263,116" marker-end="url(#sw6)"/><path d="M200,140 L134,140" marker-end="url(#sw6)"/><path d="M67,120 L67,52" marker-end="url(#sw6)"/></g>
+ <text x="165" y="80" text-anchor="middle" class="b acc">cross-use loop</text><text x="165" y="94" text-anchor="middle" class="acc s">every extra service</text><text x="165" y="107" text-anchor="middle" class="acc s">makes the fee worth it</text>
+</svg>
+<figcaption><b>{{FIG:sw-loop}} · The growth loop.</b> Swiggy’s bet is that people who use two services stay longer and cost less to serve. <span class="src">Author’s model of Swiggy’s stated strategy.</span></figcaption>
+</figure>
+</div>
+
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Monthly transacting users who use two or more services.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Food orders per user · Instamart AOV · fill rate · One members · rider orders per hour.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Contribution per order (both) · on-time % · membership cancellations.</div>
+</div>
+
+<p><b>Moat, in plain words.</b> A shared fleet and a shared membership: every service Swiggy adds makes both cheaper per order. It is weaker than it sounds, because Zomato and Blinkit together match it in most big cities and Blinkit has more stores.</p>
+<p><b>2025–26 moves.</b> Instamart chose profit over size: it dropped millions of unprofitable, small-basket users and pushed bigger baskets, reaching contribution breakeven in May 2026. Bolt grew as a share of food orders. Snacc, a separate 10-minute snacks app, was tried in 2025. Advertising spend stayed high (about ₹1,160 Cr in Apr–Jun 2026) to hold share.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Highest basket size in quick commerce</li><li>One app, one fleet, one membership</li><li>Food business profitable and growing</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Number two in food, number three in quick commerce</li><li>Still loss-making as a group</li><li>Fewer dark stores than Blinkit</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Members don’t notice Instamart while waiting for food <span class="arrow">→</span> an “add groceries, same rider” card on the order-tracking screen for pods under 1 km away <span class="arrow">→</span> share of food orders with a grocery add-on.</p>
+<p class="idea"><b>2.</b> Bolt users can’t tell what is fresh-cooked <span class="arrow">→</span> show “made to order” vs “ready-made” on each Bolt dish <span class="arrow">→</span> Bolt repeat rate and ratings.</p>

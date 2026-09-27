@@ -1,0 +1,58 @@
+<!-- ============ TEARDOWNS: TATA NEU ============ -->
+<section>
+<h1 style="margin-top:12pt">Tata Neu</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Priya, 34, in Pune, pays for ₹4,000 of groceries on BigBasket with her Tata Neu HDFC Bank credit card. The card gives her 5% back as NeuCoins, 200 coins, and BigBasket adds a 40-coin offer. Over a few months her balance reaches 1,240 coins; each coin is worth ₹1. In October she books a ₹6,500 Air India flight inside the Neu app, spends all 1,240 coins at checkout and pays the rest by card. Air India is paid for the coins she spent from the programme’s pool ({{REF:flow_neu}}).</p>
+<figure>{{SVG:flow_neu}}
+<figcaption><b>{{FIG:flow_neu}} · Behind earning and spending NeuCoins.</b> Most coins come from the co-branded card (②), paid for by the bank from its card fees; the brand adds offers (③); the brand where coins are spent is paid from the pool (⑦). <span class="src">Author’s diagram; earn rates from HDFC Bank’s card page (up to 5% on Tata brands, 2025–26); amounts illustrative.</span></figcaption>
+</figure>
+<p><b>What it is.</b> Tata Neu launched in April 2022 as a “super-app”: one login for BigBasket, Croma, Tata CLiQ, Tata 1mg, Westside, Air India, Taj hotels, Titan and others, with NeuCoins as a shared currency and NeuPass as the loyalty membership. Tata Digital, which runs it, invested heavily and still loses money: ₹4,974 crore in FY26 on ₹35,990 crore of revenue, with BigBasket making up 64% of the loss.</p>
+<p><b>What went wrong.</b> A super-app needs a reason to open it every day, as WeChat has messaging and PhonePe has payments. Neu had none: people opened BigBasket for groceries and Air India for flights directly, and saw little reason to go through Neu. The brands underneath ran their own apps, prices and offers, so the experience felt stitched together. Coins were earned but often not spent, which made them feel worth less than ₹1.</p>
+<p><b>What worked, and the change.</b> The co-branded card did. It had passed 20 lakh cards by March 2025, took over 13% of new credit cards issued in one quarter, and carried more than ₹800 crore a month of UPI spends. Card users earn coins everywhere, so the coins build up fast enough to matter. By 2025–26 Tata Digital had refocused Neu on financial services (the card, payments, loans and insurance) and loyalty, rather than on being a shopping mall.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Members who earn and spend coins across two or more brands in 90 days</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Active cards; coins earned per member; coins spent ÷ coins earned; first purchase at a new brand</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Cost of coins as a share of sales; card defaults; complaints about missing coins</div>
+</div>
+<p><b>Moat, in plain words.</b> Trusted brands that people already buy from, and a card that turns everyday spending into coins for them. <b>Weakness:</b> no daily habit of its own, and brands that answer to their own profit targets.</p>
+<p class="idea"><span class="arrow">Build next →</span> <b>Problem:</b> coins sit unspent and feel worthless. <b>Bet:</b> “pay with coins” at the counter of every Tata store and café, suggested automatically when the balance covers the bill. <b>Metric:</b> coins spent ÷ coins earned; members spending at a second brand.</p>
+
+<!-- ============ TEARDOWNS: DIGILOCKER ============ -->
+<h1 style="margin-top:12pt">DigiLocker (with ONDC for comparison)</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Ananya’s grandfather, 71, is stopped at a traffic check in Lucknow without his licence. He opens DigiLocker, which he set up last year with an Aadhaar OTP; the app had then fetched his driving licence straight from the transport department’s records. He shows it; the constable scans its QR code with the police app, which checks the record live: valid, not suspended. He is on his way in two minutes ({{REF:flow_dl}}).</p>
+<figure>{{SVG:flow_dl}}
+<figcaption><b>{{FIG:flow_dl}} · Behind showing a licence from DigiLocker.</b> The document comes from the issuer (②–③), and the verifier checks with the issuer too (⑦–⑧). The phone is only the window. <span class="src">Author’s diagram based on DigiLocker’s documented flow (2026).</span></figcaption>
+</figure>
+<p><b>How it works, and why it is trusted.</b> DigiLocker, launched in 2015 by the government’s digital-services arm, holds two kinds of document ({{REF:dl_issued}}). <b>Issued documents</b> are fetched from the body that issued them (CBSE mark sheets, driving licences, vehicle registrations, PAN, insurance policies), carry its digital signature, and under the IT rules count the same as the original. <b>Uploaded documents</b> are scans a citizen adds for their own use, with no special standing. By March 2026 DigiLocker had 67.6 crore users, and over 950 crore documents had been issued through it. Banks use it for KYC, universities for admissions, and employers to check degrees, each with the citizen’s consent.</p>
+<figure>{{SVG:dl_issued}}
+<figcaption><b>{{FIG:dl_issued}} · Uploaded copy vs issued document.</b> The value is in the right-hand box: the issuer vouches for the document, so the person checking it doesn’t have to trust the person showing it. <span class="src">Author’s comparison; DigiLocker (2026).</span></figcaption>
+</figure>
+<p><b>Business model.</b> None in the usual sense: the state pays, and the return is fewer office visits, fewer forged certificates and faster checks. The costs a PM watches are uptime at peak times (results day for board exams), how many issuers are connected, and help for people who get locked out when their Aadhaar-linked number changes. <b>ONDC, for comparison,</b> is the same idea applied to shopping: an open network (launched 2022) where any buyer app can show any seller’s goods, so a kirana shop on one app can sell to a customer on another. Where DigiLocker succeeded because a government department is the only issuer of a licence, ONDC must persuade private buyers and sellers to join, and orders have been harder to sustain once early discounts ended.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Checks done with an issued document instead of a paper copy, each month</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Issuers connected; documents issued; verifiers (banks, police, colleges) accepting it; sign-ups that fetch a document</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Uptime on results day; wrong or stale records; access requests without consent</div>
+</div>
+<p class="idea"><span class="arrow">Build next →</span> <b>Problem:</b> many of the elderly can’t manage the app when a document is needed. <b>Bet:</b> a “family helper” mode where a child can show a parent’s document, with the parent’s one-time consent and a log the parent can see. <b>Metric:</b> checks completed for users over 60; consent revocations.</p>
+
+<!-- ============ TEARDOWNS: SIDE BY SIDE ============ -->
+<h2 style="margin-top:10pt">Side by side</h2>
+<table class="tbl flow">
+<tr><th style="width:12%"></th><th style="width:15%">TurboTax</th><th style="width:15%">QuickBooks</th><th style="width:14%">IES</th><th style="width:14%">Credit Karma</th><th style="width:15%">Tata Neu</th><th>DigiLocker</th></tr>
+<tr><td><b>Job</b></td><td>File the yearly tax return</td><td>Books, invoices, payroll</td><td>One set of books for a group</td><td>Know your credit; get approved</td><td>One currency across Tata brands</td><td>Show a document the issuer vouches for</td></tr>
+<tr><td><b>Who pays</b></td><td>The filer</td><td>The business, plus fees on money moved</td><td>The group, by contract</td><td>Lenders and insurers</td><td>The card bank and brands</td><td>The state</td></tr>
+<tr><td><b>How often used</b></td><td>Once a year</td><td>Daily or weekly</td><td>Daily</td><td>Monthly</td><td>Weekly, if it works</td><td>A few times a year</td></tr>
+<tr><td><b>Latest number</b></td><td>$5.3 bn, +7% (FY26)</td><td>Online +19% (FY26)</td><td>Mid-market customers +28%</td><td>$2.6 bn, +20%</td><td>20 lakh+ cards; ₹4,974 Cr loss (FY26)</td><td>67.6 crore users</td></tr>
+<tr><td><b>Moat</b></td><td>Last year’s return inside</td><td>Years of books; accountants</td><td>Grows from QuickBooks</td><td>Approval-odds data</td><td>Brands and the card</td><td>The issuers’ signatures</td></tr>
+<tr><td><b>Biggest threat</b></td><td>Free government filing; trust</td><td>Price rises; local rivals</td><td>ERPs; hard migrations</td><td>Lenders pulling back</td><td>No daily habit</td><td>Outages; exclusion</td></tr>
+</table>
+<figure>{{SVG:pos2x2}}
+<figcaption><b>{{FIG:pos2x2}} · How often it is used, and who pays.</b> Products in the top row can be free because someone else pays; products on the left must earn a lot from each rare use. TurboTax’s answer to rare use is selling expert help; Tata Neu’s answer to weak frequency was the card. <span class="src">Author’s placement; positions are judgement, not measured values.</span></figcaption>
+</figure>
+<div class="box int"><span class="lbl">In the interview · How these products come up</span>
+<ul class="small">
+<li><b>“Improve TurboTax.”</b> It is used once a year and feared; start with the step where people drop out or pay for help, and remember trust is the product.</li>
+<li><b>“Should QuickBooks re-enter India?”</b> Ask what the local rules and channel are (GST, Tally, accountants) and whether Intuit can win them; a global product alone lost last time.</li>
+<li><b>“How does a free app like Credit Karma make money, and what can go wrong?”</b> Lenders pay per approval; the risk is ranking offers by fee instead of by the member’s chances.</li>
+<li><b>“Why did Tata Neu struggle, and what would you change?”</b> No daily reason to open it; build around what worked (the card) and make coins easy to spend everywhere.</li>
+</ul></div>
+</section>

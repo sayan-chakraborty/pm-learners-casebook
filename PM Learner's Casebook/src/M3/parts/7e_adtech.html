@@ -1,0 +1,31 @@
+<!-- ============ TEARDOWNS: AD TECH (InMobi, Media.net) ============ -->
+<h1 style="margin-top:12pt">Ad tech: InMobi, Media.net, and the auction before the page loads</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Priya, 29, opens a free news app on the metro. As the article loads, a banner for running shoes appears. She never sees what happened in the tenth of a second before: the app announced an empty ad slot, an exchange asked twenty bidders what they would pay to show Priya an ad, and a shoe brand’s bidding software won at about $1.20 per thousand views. The brand paid; three companies in between each kept a cut; the news app got the rest ({{REF:rtb}}).</p>
+
+<h3>How the ad-tech stack works</h3>
+<p>Google, Meta and Amazon run <b>walled gardens</b>: they own the users, the ad slots and the buying tools, all in one company. Everyone else (news sites, games, small apps) sells ads through the <b>open web</b>, where specialist firms connect buyers and sellers. The advertiser uses a <span class="term">DSP</span> (demand-side platform: software that bids for ads on its behalf). The app or site uses an <span class="term">SSP</span> (supply-side platform: software that sells its ad slots to the highest bidder). An <span class="term">ad exchange</span> is the marketplace in between. Each auction is <span class="term">real-time bidding</span> (RTB): one auction per ad slot, finished in about 100 milliseconds.</p>
+<figure>
+{{SVG:flow_rtb}}
+<figcaption><b>{{FIG:rtb}} · One real-time auction.</b> Steps ②–⑥ happen before the article finishes loading. The money in ⑧–⑩ flows back through every middleman, and each keeps a share. <span class="src">Simplified from the OpenRTB protocol; bids and fee shares illustrative.</span></figcaption>
+</figure>
+<div class="figrow">
+<figure style="margin-top:0">{{SVG:wf_adtax}}
+<figcaption><b>{{FIG:adtax}} · Where a dollar of open-web ad spend goes.</b> Roughly half reaches the app or site that showed the ad. <span class="src">Illustrative split, consistent with the ISBA–PwC study of UK programmatic ads (2020), which traced about 51% to publishers.</span></figcaption></figure>
+<div class="box key" style="margin-top:0"><span class="lbl">Key idea · Contextual vs personal targeting</span>
+<p class="small"><b>Personal</b> targeting shows ads based on who you are, built from tracking across apps and sites. <b>Contextual</b> targeting shows ads based on what you are reading: a marathon article gets running-shoe ads. Privacy changes (Apple’s App Tracking Transparency in 2021; India’s Digital Personal Data Protection Act, 2023) make personal tracking harder, so contextual ads, the old idea, are valuable again. Walled gardens suffer least: their users are logged in.</p></div>
+</div>
+
+<h3>InMobi: India’s first unicorn, now on the lock screen</h3>
+<p>Founded in Bengaluru in 2007, InMobi built a mobile ad network and became India’s first startup valued at over $1 bn (2011). It now runs two businesses. <b>InMobi Advertising</b> is a DSP and exchange for in-app ads, strongest in Asia. <b>Glance</b> puts news, games and shopping cards on the lock screen of Android phones through deals with phone makers, so it reaches hundreds of millions of people who never downloaded it. That reach is its strength and its controversy: users didn’t choose it. In 2025 the founders bought back SoftBank’s stake to regain control, and in July 2026 InMobi appointed banks for an Indian listing of about $1 bn. Its revenue is not public, and estimates vary widely.</p>
+<p><b>Moat:</b> deals with Android phone makers (a distribution channel competitors can’t easily get) and in-app data across emerging markets. <b>Risk:</b> dependence on those deals, and competition from Google’s and Meta’s own app-install ads. <b>North Star:</b> ad revenue per daily user reached (Glance) and spend through its exchange; <b>guardrails:</b> lock-screen opt-outs, ad fraud rate.</p>
+
+<h3>Media.net: ads that read the page, not the person</h3>
+<p>Founded in 2010 by Divyank Turakhia and run largely from Mumbai and Dubai, Media.net runs the contextual ad network behind Microsoft’s and Yahoo’s search ads on other websites. When you read an article about home loans on a news site, the “related searches” box and the ads beside it can come from Media.net: its software reads the page, works out its topic and picks matching ads. When a reader clicks, the advertiser’s payment is shared between Media.net and the site. A Chinese consortium bought it in 2016 for about $900 mn. <b>Moat:</b> page-understanding technology and a long partnership with Microsoft’s ad network. <b>Risk:</b> that one partner is most of its business.</p>
+
+<div class="sw">
+<div><h4 class="g">Why open-web ad tech survives</h4><ul class="good"><li>Millions of apps and sites need someone to sell their ads</li><li>Brands want reach outside the walled gardens</li><li>Privacy rules favour context over tracking</li></ul></div>
+<div><h4 class="r">Why it struggles</h4><ul class="miss"><li>Middlemen take about half of each dollar</li><li>Ad fraud: bots that “view” ads</li><li>Google, Meta and Amazon take most new ad money</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Glance users feel it was forced on them <span class="arrow">→</span> a first-unlock choice of topics (cricket, recipes, jobs) with one-tap off <span class="arrow">→</span> 30-day retention of users who opted in; revenue per opted-in user.</p>
+<p class="idea"><b>2.</b> Publishers don’t trust where their ad money goes <span class="arrow">→</span> a per-auction receipt showing each middleman’s cut <span class="arrow">→</span> publisher share of spend; publishers renewing.</p>

@@ -1,0 +1,41 @@
+<!-- ============ INTUIT PART 3: CREDIT KARMA, MAILCHIMP, AI, NUMBERS ============ -->
+<h2>Credit Karma: free to the user, paid for by lenders</h2>
+<p><b>Walkthrough (illustrative persona).</b> Maria, 26, in Texas, wants her first rewards credit card but fears being turned down. She signs up to Credit Karma free. It checks her credit file with a bureau using a <span class="term">soft check</span> (a look that doesn’t lower her score), shows her score of 712, and lists cards with her <b>approval odds</b>: “very good” for two, “fair” for a third. She applies for one marked “very good” and is approved. The card issuer pays Credit Karma a fee for an approved customer ({{REF:flow_ck}}).</p>
+<figure>{{SVG:flow_ck}}
+<figcaption><b>{{FIG:flow_ck}} · Behind a Credit Karma card offer.</b> The value to the member is fewer rejections (⑤); the value to the lender is a customer likely to be approved; the fee (⑧) is paid only on approval. <span class="src">Author’s diagram; score illustrative.</span></figcaption>
+</figure>
+<p><b>Business model.</b> Credit Karma is a <span class="term">lead-generation</span> business: lenders and insurers pay for customers who are approved or who buy. It earned $2.6 billion in FY2026, up 20%, from personal loans, car insurance and credit cards. Its revenue swings with lenders’ appetite: when interest rates rose in 2022–23, lenders cut back and Credit Karma’s revenue fell, though nothing in the app had changed. Intuit ties it to TurboTax: filers can have their refund paid into a Credit Karma Money account, and TurboTax data can pre-fill Credit Karma’s view of a member’s income. <b>The PM tension:</b> the member trusts Credit Karma to show the best card for her; the money comes from lenders. If the ranking starts following fees instead of approval odds, members notice their rejections, and the trust that made the model work goes. The guardrail is the approval rate of offers marked “very good”.</p>
+
+<h2>Mailchimp: the purchase that stalled</h2>
+<p>Mailchimp lets a small business send emails and text messages to its customers: a bakery’s weekly specials, a shop’s sale. It is <span class="term">freemium</span>: free for a small list, then priced by the number of contacts. Intuit paid about $12 billion for it in 2021, when it earned about $800 million a year and grew about 20%. The plan was to link it with QuickBooks: a business’s customer list and sales history would let Mailchimp send the right offer to the right customer, and show the sales it brought in. It hasn’t worked as planned. By FY2026 Mailchimp’s revenue was shrinking; Intuit now reports it separately from 1 August 2026 and expects it to stay flat at about $1.26 billion. Small businesses moved to cheaper tools, to WhatsApp and Instagram for reaching customers, and to AI tools that write campaigns. <b>The lesson for a PM:</b> “their data plus our data” is a reason to buy a company only if customers actually use the two products together; count how many do before counting the synergy.</p>
+
+<h2>Intuit Assist and AI agents: from software to “done for you”</h2>
+<p>Intuit launched <b>Intuit Assist</b> in 2023, an AI assistant across its products, and in July 2025 a set of <b>AI agents</b> for QuickBooks: a payments agent that chases invoices, an accounting agent that categorises and reconciles transactions, a finance agent that prepares reports, and a customer agent that chases new leads. Here is the payments agent at work for Neha ({{REF:flow_agent}}). It finds three overdue invoices, notices one customer always pays late, drafts polite reminders with a pay link, and asks Neha to approve. She edits one and sends. The customer pays by card; the agent marks the invoice paid and matches the bank deposit. Intuit reports that invoices chased this way are paid about five days sooner on average, and overdue ones are 10% more likely to be paid in full.</p>
+<figure>{{SVG:flow_agent}}
+<figcaption><b>{{FIG:flow_agent}} · A payments agent chasing late invoices.</b> The agent reads and drafts on its own (①–③) but asks before contacting customers (④–⑤), because a rude or wrong reminder costs the owner a customer. <span class="src">Author’s diagram; Intuit’s figure of about 5 days sooner (2025).</span></figcaption>
+</figure>
+<p><b>Experts plus AI.</b> Intuit’s bigger idea is to combine agents with people: AI does the routine work, and a human bookkeeper or tax expert reviews and signs off, sold as a higher tier. In tax and accounts a wrong answer has a legal cost, so the human check is part of what customers pay for. <b>Where it breaks:</b> an agent that files a transaction to the wrong account can put an error in a tax return months later, long after anyone would notice; an agent sending reminders on its own can annoy a customer the owner has known for years. <b>What it means for pricing:</b> if an agent does the bookkeeping, a price per user makes less sense than a price for work done, which is why Intuit bundles agents into higher plans and sells expert help per task.</p>
+
+<h2>Intuit in numbers: moat, metrics and moves</h2>
+<p><b>Moat, in plain words.</b> Intuit holds the financial records of crores of households and small firms, and moving them is painful. Accountants learnt its software and recommend it. Its brand is trusted in the one area where people fear mistakes most. And each money product (payments, payroll, loans) adds another reason to stay. <b>2025–26 moves:</b> AI agents across QuickBooks (July 2025); Enterprise Suite pushed up-market, with mid-market customers up 28%; expert help grown to over half of TurboTax revenue; Mailchimp split out as its own segment (August 2026).</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Customers for whom Intuit does the money work (books, taxes or credit) each month</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Money products per customer; share of work done by agents; customers served by experts; upgrades to IES</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Errors reaching a tax return; complaints about price rises or ads; approval rate of “very good” offers</div>
+</div>
+<div class="sw">
+<div class="good"><h4 class="g">Strengths</h4><ul>
+<li>The records of years of books and returns, which are hard to move</li>
+<li>Accountants as a channel and as a check on quality</li>
+<li>Money products that grow faster than subscriptions</li>
+<li>A path up-market (IES) that keeps growing customers</li>
+</ul></div>
+<div><h4 class="r">Weaknesses</h4><ul>
+<li>TurboTax filers are flat; growth relies on selling more help</li>
+<li>Trust damaged by “free” advertising; price-rise complaints</li>
+<li>Credit Karma’s revenue depends on lenders’ mood</li>
+<li>Mailchimp shrinking after a $12 bn purchase; exit from India</li>
+</ul></div>
+</div>
+<p class="idea"><span class="arrow">Build next →</span> <b>Problem:</b> small firms learn they are short of cash too late. <b>Bet:</b> a 90-day cash forecast from QuickBooks data (invoices due, bills, payroll) that offers a small loan before the gap, priced from the firm’s own records. <b>Metric:</b> share of cash shortfalls flagged 30 days early; loan losses.</p>
+<p class="idea"><span class="arrow">Build next →</span> <b>Problem:</b> agents make mistakes that surface months later. <b>Bet:</b> a monthly “agent review” where the owner’s accountant sees every change an agent made, sorted by risk, and signs them off. <b>Metric:</b> share of agent changes reviewed; errors found at year end.</p>

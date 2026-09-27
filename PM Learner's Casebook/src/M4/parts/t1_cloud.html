@@ -1,0 +1,36 @@
+<!-- ============ TECHNOLOGY: CLOUD COMPUTING ============ -->
+<section class="page">
+<div class="kicker">Mobility, maps &amp; travel · Technology for PMs</div>
+<h1>Cloud computing: renting the computer instead of owning it</h1>
+<p class="lede">On an ordinary Tuesday a ride app in India might need 40 servers. At midnight on New Year’s Eve it needs 130, for about two hours. In 2005 a company would have bought 130 servers, paid for power and cooling all year, and watched 90 of them sit idle on 364 days. Today it rents them from Amazon Web Services (AWS), Microsoft Azure or Google Cloud by the second, and hands them back at 2 am. A PM doesn’t configure any of this, but decides what must stay up, how much the bill may grow and which provider the product depends on.</p>
+
+<h2>The idea: computing as a utility</h2>
+<p>A century ago, big factories ran their own power plants. When the grid arrived, they plugged in and paid per unit. <span class="term">Cloud computing</span> is the same move for computers: servers, storage, databases and AI models delivered over the internet, paid for as you use them. Three things change for a product team. You pay as you go instead of buying up front (running cost, not capital cost). You can add capacity in minutes, called <span class="term">elasticity</span>. And someone else replaces the failed disk at 2 am. The providers are few and large: in April–June 2026, AWS had about 28% of the world market, Azure 20% and Google Cloud 15% (Synergy Research). All three run data centres in Mumbai and Hyderabad or Delhi, which matters for Indian rules that keep payment data in India.</p>
+
+<h2>How much do you want to run yourself? IaaS, PaaS, SaaS</h2>
+<p>The classic analogy is pizza ({{REF:pizza}}). Make it at home and you do everything, from the oven to the dough. Take-and-bake gives you the kitchen and ingredients; you still cook. Delivery hands you a finished pizza. Dining out means you only eat. <span class="term">IaaS</span> (infrastructure as a service) rents you virtual machines, storage and network; your team installs and runs everything above them. <span class="term">PaaS</span> (platform as a service) also runs the operating system and scaling, so you bring only your code and data. <span class="term">SaaS</span> (software as a service) is finished software used through a browser: Gmail, Zoho, Freshdesk.</p>
+<figure>{{SVG:pizza}}
+<figcaption><b>{{FIG:pizza}} · Who runs which layer.</b> Moving right gives you speed and less work; moving left gives you control and more work. A ride app runs its matching engine on IaaS or containers, uses PaaS databases, and buys SaaS for email and support tickets. <span class="src">Author’s diagram after the common “pizza as a service” analogy; examples current in 2026.</span></figcaption>
+</figure>
+<p><b>Two newer rungs.</b> <span class="term">Containers</span> (Docker) package an app with everything it needs, so it runs the same on a laptop and in the cloud; <b>Kubernetes</b> runs thousands of containers and restarts or adds them automatically. <span class="term">Serverless</span> (AWS Lambda, Google Cloud Functions) goes further: you upload a small function that runs only when something triggers it, and you pay per call, by the millisecond. It is excellent for spiky, occasional jobs (send the trip receipt when a ride ends) and expensive for constant heavy work (the matching engine that runs every second).</p>
+
+<h2>Three ways to pay for the same server</h2>
+<p><b>On-demand:</b> pay by the second, no commitment; the most flexible and the highest price. <b>Reserved</b> or <b>savings plans:</b> commit to one or three years of use for discounts of up to about 72% on AWS; right for the base load you are sure of. <b>Spot:</b> spare capacity at up to about 90% off, but the provider can take it back with two minutes’ notice; right for work that can pause, such as retraining the ETA model overnight. A sensible bill mixes all three ({{REF:costmix}}).</p>
+<figure>{{SVG:costmix}}
+<figcaption><b>{{FIG:costmix}} · One day of servers, bought three ways.</b> Reserve the base that runs all day, rent the evening peak on demand, and push interruptible jobs to spot. The same capacity costs about a third. <span class="src">Illustrative prices (₹20 an hour on demand, 40% off reserved, 70% off spot); published maximum discounts from AWS pricing pages, 2026.</span></figcaption>
+</figure>
+
+<div class="cols2">
+<div class="box brk" style="margin-top:0"><span class="lbl">When it breaks</span>
+<p class="small"><b>Bill shock:</b> a forgotten test cluster or a runaway loop runs up lakhs in a weekend; budget alerts and tagging every server by team are basic hygiene. <b>A region goes down:</b> on 20 October 2025 a fault in AWS’s Virginia region took down many apps worldwide for hours; apps that ran in only one region went down with it. <b>Lock-in:</b> the deeper you use one provider’s special services, the costlier it is to leave, and moving data out (egress) is charged per GB.</p></div>
+<div class="box int" style="margin-top:0"><span class="lbl">In the interview</span>
+<p class="small">“Our load swings 3× in a day and 10× on New Year’s Eve, so owning servers for the peak would waste most of them. I’d reserve the base, rent the peak, run model training on spot, and keep payments data in an Indian region. The decision I’d push for is a second region for the booking path, because a one-region outage stops every ride.”</p></div>
+</div>
+
+<table class="tbl">
+<tr><th style="width:26%">PM decision</th><th style="width:38%">The cloud question behind it</th><th>Typical answer for a ride app</th></tr>
+<tr><td><b>How reliable must it be?</b></td><td>One region or two? How fast must we recover?</td><td>Two regions for booking and payments; one for analytics</td></tr>
+<tr><td><b>How fast can we ship?</b></td><td>Build on PaaS and managed databases, or run our own?</td><td>Managed services early; own only what gives an edge (matching)</td></tr>
+<tr><td><b>What may it cost?</b></td><td>Cost per trip; reserved vs on-demand mix</td><td>Track cloud cost per 1,000 trips as a product metric</td></tr>
+<tr><td><b>What do rules require?</b></td><td>Where may data live? (RBI rules for payments; the DPDP Act, 2023)</td><td>Payment data in Indian regions only</td></tr>
+</table>

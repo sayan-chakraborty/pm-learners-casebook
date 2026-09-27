@@ -1,0 +1,50 @@
+<!-- ============ TEARDOWNS: GOOGLE SEARCH AND ADS ============ -->
+<h1 style="margin-top:12pt">Google Search: people say what they want, and advertisers pay to answer</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Karan, 27, in Hyderabad, types “buy running shoes online” into Chrome. Within a quarter of a second he sees an AI Overview summarising what to look for, two ads above the ordinary results, and a row of shopping listings. He clicks the second ad, from a shoe shop, and lands on its page. In that quarter-second an auction ran among every advertiser bidding on his words, and the shop agreed to pay Google only because he clicked ({{REF:gs-walk}}).</p>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Search results</td><td>“Find me the right page, now”</td><td>Ranking learns from billions of clicks which pages satisfy which queries</td><td>Searches that end without a re-search</td></tr>
+<tr><td>AI Overviews, AI Mode</td><td>“Just tell me the answer”</td><td>A generated summary for complex questions, keeping people on Google instead of a chatbot; AI Mode passed 1 bn monthly users (Q2 2026, per Google)</td><td>Queries per user; longer questions asked</td></tr>
+<tr><td>Search ads</td><td>Shops: “reach people the moment they want to buy”</td><td>Advertisers bid on keywords; paid per click, so they pay only for interest shown</td><td>Revenue per search</td></tr>
+<tr><td>Shopping listings</td><td>“Show me prices side by side”</td><td>Product photos and prices from shops’ product feeds, many of them ads</td><td>Clicks to retailers</td></tr>
+<tr><td>Lens</td><td>“What is this, and where can I buy it?”</td><td>Search with the camera; turns what you see into a query</td><td>Visual searches; shopping clicks</td></tr>
+</table>
+<figure>
+{{SVG:flow_search}}
+<figcaption><b>{{FIG:gs-walk}} · Behind one search with ads.</b> The auction (③–⑤) runs for every search that has ads, in a fraction of a second. Google earns nothing unless Karan clicks (⑧–⑨), which is why it cares about which ad he will click, not only who bids most. <span class="src">Simplified from Google Ads documentation; amounts illustrative.</span></figcaption>
+</figure>
+
+<h3>How the search ad auction works</h3>
+<p>Google doesn’t simply sell the top slot to the highest bidder. Each ad gets a score: <b>Ad Rank ≈ bid × quality</b>, where quality is Google’s estimate of how likely people are to click and how useful the landing page is. The winner pays only enough to keep its place above the next ad. So a relevant ad can win with a lower bid, and pay less ({{REF:gs-auc}}). Everyone gains: users see more useful ads, good advertisers pay less, and Google earns more clicks overall.</p>
+<figure>
+<svg class="d" viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <text x="0" y="14" class="b">Three shoe shops bid for “buy running shoes online” (illustrative)</text>
+  <text x="0" y="40" class="b">Shop A</text><text x="70" y="40">bid ₹40 × quality 5</text><rect x="210" y="28" width="200" height="16" fill="#2f6ea5"/><text x="416" y="40" class="b">rank 200</text>
+  <text x="0" y="66" class="b">Shop B</text><text x="70" y="66">bid ₹30 × quality 8</text><rect x="210" y="54" width="240" height="16" fill="#127a64"/><text x="456" y="66" class="b grn">rank 240: top slot</text>
+  <text x="0" y="92" class="b">Shop C</text><text x="70" y="92">bid ₹25 × quality 6</text><rect x="210" y="80" width="150" height="16" fill="#9aa3ad"/><text x="366" y="92" class="b">rank 150</text>
+  <rect x="0" y="108" width="680" height="38" rx="5" fill="#e7f4f0" stroke="#127a64"/>
+  <text x="10" y="124" class="b grn">B wins with the lower bid, and pays just enough to beat A: 200 ÷ 8 = ₹25 a click (not its ₹30 bid).</text>
+  <text x="10" y="139">A comes second and pays enough to beat C: 150 ÷ 5 = ₹30. The best ad gets the best slot at the lowest price.</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:gs-auc}} · Why a better ad can pay less.</b> Multiplying the bid by quality rewards ads people actually click. The real auction adds reserve prices, ad formats and other signals, but this is its core. <span class="src">Simplified from Google Ads’ published Ad Rank explanation; numbers illustrative.</span></figcaption>
+</figure>
+<p><b>Business model, with numbers.</b> In April–June 2026 Alphabet earned <b>$119.8 bn</b> (+24%). <b>Search and other: $63.3 bn</b> (+17%), still growing in the age of chatbots. YouTube ads: $11.1 bn; Google Cloud: $24.8 bn. Google said in 2025 it handles over 5 trillion searches a year, about 1.25 trillion a quarter. So very roughly, $63 bn ÷ 1.25 trillion ≈ <b>5 cents of revenue per search</b>, most of it from the small share of searches with buying intent.</p>
+<figure>
+{{SVG:loop_google}}
+<figcaption><b>{{FIG:gs-loop}} · Google’s loop.</b> Every search and click teaches the ranking what people find useful, which keeps people searching, which makes their intent worth more to advertisers. The ad money funds Android and Chrome, which bring in more searches. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<p><b>Moat, in plain words.</b> Being the default: the search box on Android, in Chrome, and (through payments to Apple) in Safari. Twenty-five years of click data that tell it which result satisfies which question. And advertisers who already run campaigns there. In August 2024 a US court found Google had illegally kept its search monopoly; in September 2025 it ordered remedies that stopped short of selling Chrome but barred exclusive default deals.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Searches that end with the user satisfied (no quick re-search or return to results).</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Queries per user · AI Overview and AI Mode use · ad click-through rate · Lens searches.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Ads per results page · clicks sent to publishers · results-page load time.</div>
+</div>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Default search almost everywhere</li><li>The highest-intent ad inventory in the world</li><li>Its own AI models, chips and data centres</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>AI answers can cut clicks to the websites that feed it</li><li>Chatbots compete for the “answer me” queries</li><li>Antitrust limits on default deals</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> AI answers satisfy users but starve the websites that wrote the content <span class="arrow">→</span> clearer source cards with a one-tap “read more” inside AI answers <span class="arrow">→</span> clicks to publishers per AI answer, with satisfied searches held steady.</p>
+<p class="idea"><b>2.</b> Small Indian shops can’t write good ads <span class="arrow">→</span> AI-made ads in Hindi and regional languages from a shop’s Google Business Profile <span class="arrow">→</span> new small advertisers; their spend after 90 days.</p>

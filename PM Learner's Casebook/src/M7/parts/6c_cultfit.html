@@ -1,0 +1,37 @@
+<!-- ============ TEARDOWNS: CULT.FIT ============ -->
+<h1 style="margin-top:12pt">Cult.fit: selling the 7 am slot</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Arjun, 31, a product analyst in Bengaluru, has a cultpass that lets him attend classes at any centre in his city. On Sunday evening he tries to book Monday’s 7 am strength class at the HSR Layout centre. It is full, and he is third on the waitlist. At 9:04 pm two members cancel and a notification says he is in. At 6:55 am he scans a QR code at the door. The class runs 45 minutes, with each person’s effort shown on a screen. Afterwards the app asks him to rate the class and suggests Wednesday’s slot ({{REF:cult-flow}}).</p>
+
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Group classes with a trainer</td><td>“I don’t know what to do in a gym”</td><td>A fixed 45-minute plan led by a person; no thinking needed</td><td>Classes attended a week</td></tr>
+<tr><td>One pass, many centres</td><td>“My gym is far from office”</td><td>Book near home or work, any day</td><td>Attendance; renewals</td></tr>
+<tr><td>Waitlist and no-show rules</td><td>“The 7 am class is always full”</td><td>Freed places go to the next person; repeated no-shows limit future bookings</td><td>Places filled per class</td></tr>
+<tr><td>App-only plans</td><td>“I can’t get to a centre”</td><td>Recorded and live workouts at home, far cheaper</td><td>Paid users outside centres</td></tr>
+<tr><td>Pause a membership</td><td>“I’m travelling for a month”</td><td>Freeze instead of cancelling</td><td>Churn</td></tr>
+</table>
+
+<figure>{{SVG:flow_cult}}
+<figcaption><b>{{FIG:cult-flow}} · Behind one booked class.</b> The waitlist (②–⑤) and the check-in (⑥–⑦) exist to keep a scarce morning place from going empty; a member who books and doesn’t come blocks someone who would have. <span class="src">Author’s simplification of the cult app’s booking flow (2026); no-show rules vary by plan; prices illustrative.</span></figcaption>
+</figure>
+
+<h3>Core loop and business model</h3>
+<p>The loop is book → attend → feel the class → book the next. The business is places: rent and trainers are fixed each month, so the money is made by filling every class. Cult.fit earned <b>₹1,216 crore in FY25</b> (up 31%) and cut its loss from ₹889 crore in FY24 to ₹481 crore, then ₹252 crore in FY26. By March 2026 it had <b>708 centres in 77 cities</b>, and about three in four centres added in FY26 were run by franchisees ({{REF:cult-fr}}). That is the key shift: someone else pays the rent, and Cult earns a fee for the brand, the app and the booking system. It filed for an IPO in July 2026.</p>
+<figure>{{SVG:franchise}}
+<figcaption><b>{{FIG:cult-fr}} · Two ways to run a centre.</b> Franchising moves the rent risk to a local owner; Cult grows faster but earns a smaller share of each centre. <span class="src">Cult.fit DRHP via press reports (July 2026); fee structure simplified.</span></figcaption>
+</figure>
+<p><b>Moat, in plain words.</b> A dense network of centres in big cities, a booking app that fills them, and a brand that franchisees pay to use. A single-location gym can’t offer “any centre, any day”.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Classes attended per paying member a month.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Places filled per class · waitlist conversion · no-show rate · renewals in month 3.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Injuries · class ratings · crowding at peak hours.</div>
+</div>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>India’s largest centre network</li><li>Franchising cuts rent risk</li><li>Losses falling fast</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Mostly metro cities</li><li>Peak hours full, afternoons empty</li><li>Quality varies across franchisees</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Afternoons are empty while 7 am is full <span class="arrow">→</span> a cheaper off-peak pass for students, homemakers and retirees <span class="arrow">→</span> places filled 11 am–5 pm, without a fall in peak renewals.</p>
+<p class="idea"><b>2.</b> January joiners fade by March <span class="arrow">→</span> a four-week starter plan with a named trainer and a check-in after the third missed class <span class="arrow">→</span> classes attended in weeks 3–6.</p>
+<p class="idea"><b>3.</b> Franchise quality varies <span class="arrow">→</span> a public score per centre from ratings, trainer turnover and cleanliness checks <span class="arrow">→</span> gap in ratings between the best and worst centres.</p>

@@ -1,0 +1,75 @@
+<!-- ============ TECHNOLOGY: INTRO + RAG ============ -->
+<section class="page">
+<div class="kicker">SaaS, productivity &amp; enterprise AI · Technology</div>
+<h1>AI that looks things up, takes actions and plugs into other software</h1>
+<p class="lede">A language model on its own knows only what it read during training. It has never seen your company’s refund policy, can’t check a customer’s invoice and can’t change a plan. Three ideas close that gap. <b>RAG</b> lets the model look things up in your own documents before it answers. <b>Agents</b> let it take actions through tools, one step at a time. <b>MCP</b> is a common standard for plugging those tools in. Then come two questions every PM must answer before launch: how do we know it works (evals), and what does each answer cost and how long does it take? One running picture helps with all of them: Priya, a new support agent at a Pune software company, on her third week.</p>
+<table class="tbl">
+<tr><th style="width:25%">Priya’s day</th><th style="width:22%">The idea</th><th>What it means for an AI system</th></tr>
+<tr><td>Walking to the company library to check the policy before answering</td><td><b>RAG</b> (retrieval)</td><td>Search your own documents first, then answer from what was found</td></tr>
+<tr><td>Photocopying the two relevant pages, not the whole binder</td><td><b>Chunking</b></td><td>Cut documents into pieces small enough to find and pass on</td></tr>
+<tr><td>A librarian who knows “money back” and “refund” mean the same</td><td><b>Embeddings</b>, meaning search</td><td>Turn text into numbers so similar meanings sit close together</td></tr>
+<tr><td>Looking up an exact error code in the index at the back</td><td><b>Keyword search</b></td><td>Exact matches for codes, names and numbers</td></tr>
+<tr><td>Her lead saying “answer only from these pages, and say which”</td><td><b>Grounded prompt</b></td><td>Instructions to use only the retrieved text and cite it</td></tr>
+<tr><td>Calling the billing team to check an invoice or change a plan</td><td><b>Tools</b></td><td>Functions the AI can ask the app to run</td></tr>
+<tr><td>Working through a checklist: look up, calculate, confirm, act</td><td><b>Agent loop</b></td><td>Plan, use a tool, read the result, decide the next step</td></tr>
+<tr><td>Her team lead signing off any refund over ₹5,000</td><td><b>Approvals</b></td><td>Actions that move money or can’t be undone wait for a person</td></tr>
+<tr><td>One phone system that reaches every department the same way</td><td><b>MCP</b></td><td>One standard for connecting any AI app to any tool</td></tr>
+<tr><td>The weekly quality review of 50 of her tickets</td><td><b>Evals</b></td><td>A fixed set of test cases scored the same way after every change</td></tr>
+<tr><td>Her manager counting tickets closed per hour, and the cost</td><td><b>Cost per task</b>, latency</td><td>What a solved task costs, and how long people wait for it</td></tr>
+</table>
+
+<h2>A. RAG: answering from your own documents</h2>
+<p><b>Why the model alone isn’t enough.</b> Ask a general chatbot “what is our refund window for annual plans?” and it will answer confidently from patterns in its training, which never included your policy. Its knowledge also stops at a training cut-off, and it will invent a plausible answer rather than say it doesn’t know. <span class="term">RAG</span> (retrieval-augmented generation) fixes this the way Priya would: look it up first, then answer from what you found ({{REF:rag}}). It is the pattern behind the support copilot, Microsoft 365 Copilot and most company chatbots.</p>
+<figure>{{SVG:rag}}
+<figcaption><b>{{FIG:rag}} · RAG, end to end.</b> The top row runs whenever documents change and builds a searchable index; the bottom row runs for every question. Most quality problems start in the top row, long before the model writes a word. <span class="src">Author’s diagram.</span></figcaption>
+</figure>
+
+<h3>1. Preparing the library: collect, clean, chunk</h3>
+<p><b>Everyday picture.</b> Before an exam you don’t reread the textbook; you make notes, one topic per card, each card complete enough to make sense alone.</p>
+<p><b>How it works.</b> The team collects every source the copilot may use: help articles, policy PDFs, past tickets that were resolved well. It cleans them, removing website menus, duplicate copies and old versions. Then it cuts them into pieces called <span class="term">chunks</span>, usually a few hundred words each, with a small <span class="term">overlap</span> so no sentence is cut in half. <b>Worked example:</b> a 3,000-word refund policy becomes 12 chunks of about 250 words, each sharing 50 words with the next ({{REF:chunk}}). Too small, and a chunk loses its conditions (“within 14 days” without “for annual plans only”). Too big, and each chunk is about many things, so it matches every question a little and none well, and passing it to the model costs more words.</p>
+<figure>{{SVG:chunk}}
+<figcaption><b>{{FIG:chunk}} · Three ways to cut one policy.</b> The right size keeps one complete rule in one piece. There is no single correct size; teams test two or three on real questions and keep the best. <span class="src">Illustrative policy text.</span></figcaption>
+</figure>
+
+<h3>2. Embeddings: finding pieces by meaning</h3>
+<p><b>Everyday picture.</b> In a good library, books on similar topics sit on the same shelf, so the librarian can walk to “refunds” even if you asked about “getting my money back”.</p>
+<p><b>How it works.</b> An <span class="term">embedding</span> model turns each chunk into a long list of numbers, often about a thousand, that places it in a “meaning space”: texts about similar things get similar numbers. The question is turned into numbers the same way, and the search returns the chunks whose numbers point in the most similar direction (cosine similarity: the smaller the angle between two arrows, the closer the meaning). These numbers are stored in a <span class="term">vector database</span> (a store built to find the nearest lists of numbers fast), with labels such as product, date and who may see it. <b>Worked example:</b> “Can I get a refund if I cancel my annual plan after 10 days?” scores 0.86 against the annual-refund chunk, 0.71 against monthly cancellations and 0.12 against password resets ({{REF:simmap}}).</p>
+<figure>{{SVG:simmap}}
+<figcaption><b>{{FIG:simmap}} · Meaning as direction.</b> Chunks about refunds point almost the same way as the question; the password page points elsewhere. Real embeddings have about a thousand directions; two are drawn here. <span class="src">Illustrative scores.</span></figcaption>
+</figure>
+
+<h3>3. Keywords, meaning, and a second opinion: hybrid search and re-ranking</h3>
+<p><b>Everyday picture.</b> To find a book you use both the subject shelves and the exact title in the catalogue. Then you flip through the five likeliest and keep the best.</p>
+<p><b>How it works.</b> Meaning search is weak on exact strings: an error code such as “ERR-4012”, a “GSTIN”, a plan name. <span class="term">Keyword search</span> finds those exactly but misses rephrasing. <span class="term">Hybrid search</span> runs both and merges the results. A <span class="term">re-ranker</span>, a second, slower model, then reads the top 20 candidates next to the question and reorders them, and only the best 5 go forward. <b>Worked example:</b> on 200 real test questions, the right article was in the top 5 for 74% with meaning search alone, 80% with hybrid, and 86% (172 of 200) after re-ranking ({{REF:hybrid}}).</p>
+<figure>{{SVG:hybrid}}
+<figcaption><b>{{FIG:hybrid}} · Better search, measured.</b> Each step adds a few points of retrieval hit rate; the re-ranker costs a little time for a big gain. <span class="src">Illustrative; the pattern matches published retrieval benchmarks (2024–26).</span></figcaption>
+</figure>
+
+<h3>4. The grounded prompt</h3>
+<p><b>Everyday picture.</b> An open-book exam where the teacher says: answer from the book, and write the page number.</p>
+<p><b>How it works.</b> The app builds a prompt from the question, the top chunks with their titles and dates, and clear instructions: answer only from these passages, cite the passage for each fact, and if the passages don’t contain the answer, say so. This is a <span class="term">grounded prompt</span>. Showing the sources lets the agent or customer check the answer in one click.</p>
+<div class="prompts">
+<div class="prompt bad"><b>Without grounding</b><br>“Customer asks: can I get a refund on my annual plan after 10 days?”<br><br><i>Model:</i> “Yes, you can request a full refund within 30 days.” (invented; sounds right)</div>
+<div class="prompt good"><b>Grounded</b><br>“Answer only from these passages; cite [1] or [2]; if they don’t answer it, reply ‘not found’.<br>[1] Refund policy §2, updated 1 Sep 2026: Annual plans: full refund within 14 days of purchase…<br>[2] Help article 214: Monthly plans can be cancelled any time…”<br><br><i>Model:</i> “Yes. Annual plans get a full refund within 14 days of purchase, so a cancellation on day 10 qualifies [1].”</div>
+</div>
+
+<h3>5. Freshness and permissions</h3>
+<p><b>Everyday picture.</b> A library that still lends last year’s timetable causes missed trains; one that lets anyone read the staff files causes worse.</p>
+<p><b>How it works.</b> When a document changes, its chunks must be rebuilt and re-indexed; otherwise the copilot keeps quoting the old version. <b>Worked example:</b> the refund window changed from 7 to 14 days on 1 September, but the index refreshed weekly, so for six days the copilot said 7: about 6 × 30 refund tickets = 180 wrong answers ({{REF:fresh}}). Re-indexing whenever an article is published fixes it. <b>Permissions</b> matter as much: every chunk carries labels (which customer, which team, internal or public) and the search filters by them before anything reaches the model. A line in the prompt saying “don’t reveal other customers’ data” is not a lock; a model can be talked out of it.</p>
+<figure>{{SVG:fresh}}
+<figcaption><b>{{FIG:fresh}} · Keeping answers current and private.</b> Update the index when documents change, not on a timetable; filter results by customer and role before the model sees them. <span class="src">Illustrative.</span></figcaption>
+</figure>
+
+<h3>6. Where RAG breaks</h3>
+<p>The same refund question can fail in four ways ({{REF:ragfail}}). The search can return the wrong piece; the right piece can be out of date; two sources can disagree (the policy says 14 days, an old ticket reply said 7); or the answer can be spread across pieces that weren’t all retrieved. Each has a different fix, which is why teams test retrieval and answering separately.</p>
+<figure>{{SVG:ragfail}}
+<figcaption><b>{{FIG:ragfail}} · Four failures, four fixes.</b> Only one of the four is the model’s fault in any sense; the rest are about the library and the search. <span class="src">Author’s diagram.</span></figcaption>
+</figure>
+<p><b>The PM decisions.</b> <b>What goes in the library</b>, and who owns each source: if nobody owns the refund article, nobody updates it. <b>Refresh:</b> on publish for policies, daily for tickets. <b>Answer or abstain:</b> the match score under which the copilot says “not found” (say 0.6); too high and it rarely helps, too low and it guesses. <b>Show sources</b> by default, so people can check. <b>Official over informal:</b> policies outrank old ticket replies.</p>
+<div class="box int"><span class="lbl">In the interview · RAG</span>
+<ul class="small">
+<li><b>“Our chatbot gives wrong answers. What do you check?”</b> First whether search found the right passage (retrieval), then whether the answer stuck to it (faithfulness), then whether the source was current.</li>
+<li><b>“Why not fine-tune the model on our documents instead?”</b> Documents change weekly and need permissions and citations; RAG updates by re-indexing, fine-tuning needs retraining and can’t cite.</li>
+<li><b>“What’s a key decision you’d own?”</b> The abstain threshold and the list of sources, with an owner for each.</li>
+</ul></div>
+</section>

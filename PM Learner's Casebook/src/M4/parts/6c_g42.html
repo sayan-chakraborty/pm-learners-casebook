@@ -1,0 +1,53 @@
+<!-- ============ GUESSTIMATE 4.2 BIKES FOR A BIKE-TAXI FIRM ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Guesstimate 4.2 · Bikes for a new bike-taxi firm</span>
+ <span class="m"><span class="pill">Guesstimate</span><span>Medium</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, p. 140</span></span></div>
+<div class="try"><b>Try it first.</b> At what time of day would you most want a bike taxi, and how many other people want one at the same moment? Size the fleet for that moment, for five minutes.</div>
+</div>
+
+{{CASE:B140}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Scoped to one city</b> before any number.</li>
+ <li><b>Segmented by age and income</b>, and cut the pool when challenged.</li>
+ <li><b>Converted demand into a fleet</b> with rides per bike per day, then added 10% for repairs.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Sized on the daily average.</b> Bike-taxi rides bunch at 8–10 am and 6–8 pm. A fleet built for 20 evenly spread rides a bike runs out at 9 am.</li>
+ <li><b>A unit jump.</b> “10% of the times they travel” became “10% of people, once a day”. Say the trips-per-person assumption out loud.</li>
+ <li><b>Never asked who owns the bikes.</b> Indian bike-taxi firms mostly sign up riders with their own bikes; the question may really be “how many riders?”.</li>
+ <li><b>No check</b> against a rider’s day or earnings.</li>
+</ul>
+</div>
+<p class="small"><b>Guesstimate kit check:</b> 1 Unit <span class="tk n">✗ bikes owned or riders on the app?</span> · 2 Approach <span class="tk y">✓ demand to fleet</span> · 3 Tree <span class="tk y">✓</span> · 4 Numbers with reasons <span class="tk y">✓</span> · 5 Check <span class="tk n">✗</span> · 6 Range <span class="tk n">✗</span>. Skipping card 1 left the ownership model open; skipping the peak halved the answer.</p>
+
+<div class="box chk"><span class="lbl">Check · “A rider works 10 hours… 20 trips in a day” <span class="verdict v-over">Overstated</span></span>
+<p>Twenty trips assumes the bike is busy every minute of ten hours. Real riders wait between rides, ride empty to pickups and take breaks. Driver surveys and platform statements usually suggest 10–15 trips on a full day. At 12 trips, the same 40,000 rides need about 3,300 riders, not 2,000.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:stripg2}}
+<figcaption><b>{{FIG:stripg2}} · The six cards, applied to a bike fleet.</b> Card 4 uses the peak hour, not the daily average. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">1 · Unit</div><p>Bikes active on a weekday in Bengaluru. I’ll assume riders bring their own bikes, as at Rapido, so the count equals riders we must sign up. If we own an electric fleet, I’ll add spares for charging and repairs.</p></div></div>
+<p class="whynote">Why this move: the ownership model decides whether the answer is a hiring target or a purchase order.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">2 · Approach</div><p>Demand side, to the busiest hour, then capacity: peak-hour rides ÷ rides one bike completes in an hour.</p></div></div>
+<p class="whynote">Why this move: a fleet that works at 9 am works all day; the reverse is not true ({{REF:peak}}).</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">3–4 · Tree and numbers</div><p>I’ll keep the candidate’s pool: 40 lakh middle-income 15–35-year-olds. If each makes one trip a day and 10% of those go by bike taxi: 4 lakh rides a day across all firms. A new firm wins 10%: 40,000. The morning peak hour carries about 15% of the day: 40,000 × 15% = 6,000 rides. A trip of about 20 minutes plus the ride to the pickup is a 40-minute cycle: 1.5 rides an hour. 6,000 ÷ 1.5 = 4,000 bikes, and 4,400 with 10% spare ({{REF:gtree2}}).</p></div></div>
+<p class="whynote">Why this move: the peak share and the cycle time are the two numbers the candidate skipped; together they double the fleet.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">5 · Check</div><p>From the rider’s side: a full day is realistically about 12 rides. 40,000 ÷ 12 ≈ 3,300 riders, the same range. And a rider doing 12 rides at about ₹60 earns about ₹720 a day before fuel, a believable gig income, so signing up 3,000–4,000 riders in a city of 1.4 crore is plausible.</p></div></div>
+<p class="whynote">Why this move: the rider’s day is a second route to the same number, and the earnings check tests whether that supply would actually show up.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">6 · Range</div><p>The swing factor is how peaky demand is. If the peak hour carries 10% of rides, about 2,700 bikes; at 20%, about 5,300. So 3,000–5,000 bikes, and I’d plan to sign up 4,000 riders, with incentives for the 8–10 am slot.</p></div></div>
+<p class="whynote">Why this move: naming the peak share as the swing factor turns the estimate into an operating plan: pay extra for the hour that sets the fleet size.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>Card 1 turned “bikes” into “riders with their own bikes”. The tree kept the candidate’s demand but sized the fleet for the 9 am peak, with a realistic trip cycle. The rider’s-day check lands in the same range, and the range points to the peak share, which is also where the firm should spend its incentives.</div>
+<figure>{{SVG:peak}}
+<figcaption><b>{{FIG:peak}} · Why the average misleads.</b> The busiest morning hour carries almost three times the average hour’s rides. A fleet sized on the average would leave most 9 am riders waiting. <span class="src">Illustrative weekday profile, shaped like published ride-hailing demand curves for Indian metros.</span></figcaption>
+</figure>
+<figure>{{SVG:gtree2}}
+<figcaption><b>{{FIG:gtree2}} · Bikes for a new bike-taxi firm, as an equation tree.</b> The peak share (orange) moves the answer most; the rider’s-day check lands in the same range. <span class="src">Demand pool from the casebook; peak share, cycle time and fares illustrative.</span></figcaption>
+</figure>
+<div class="box key"><span class="lbl">The reusable trick</span>
+<p>Peak-hour share ≈ 10–15% of the day for commuting products (rides, metro, office lunch delivery). Fleet ≈ daily trips × peak share × cycle time in hours. 40,000 × 15% × ⅔ hour = 4,000. One line, and it works for buses, delivery riders and call-centre agents.</p></div>

@@ -1,0 +1,133 @@
+<!-- ============ TECHNOLOGY 1: HOW SOFTWARE IS BUILT ============ -->
+<section class="page">
+<div class="kicker">Payments &amp; fintech · Technology</div>
+<h1>How software is built: from an idea to an app update</h1>
+<p class="lede">September 2026, PhonePe’s merchant team has two jobs on its board. The first has a date nobody can move: from 15 October, large merchants pay 0.4% on UPI payments above ₹2,000, so fee calculation, invoices and settlement reports must be live on day one. The second is open-ended: “help merchants like Hitesh keep payments on their business QR”, where nobody yet knows what will work. Same team, same engineers, and two very different ways to plan the work.</p>
+
+<h2>The software development life cycle (SDLC)</h2>
+<p>Every piece of software, from a button to a bank, goes through the same six stages. The <span class="term">SDLC</span> is simply their names. What changes between teams is how long each stage lasts and how often they loop.</p>
+<figure>
+<svg class="d" viewBox="0 0 680 168" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="sd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7d8793"/></marker></defs>
+ <g>
+  <rect x="2" y="8" width="100" height="58" rx="6" fill="#3e4fb8"/><text x="52" y="30" text-anchor="middle" class="w b">① Requirements</text><text x="52" y="46" text-anchor="middle" class="w" style="font-size:10.3px">what and why</text>
+  <rect x="116" y="8" width="100" height="58" rx="6" fill="#3e4fb8" opacity=".88"/><text x="166" y="30" text-anchor="middle" class="w b">② Design</text><text x="166" y="46" text-anchor="middle" class="w" style="font-size:10.3px">screens, systems</text>
+  <rect x="230" y="8" width="100" height="58" rx="6" fill="#0b5d7a"/><text x="280" y="30" text-anchor="middle" class="w b">③ Build</text><text x="280" y="46" text-anchor="middle" class="w" style="font-size:10.3px">write the code</text>
+  <rect x="344" y="8" width="100" height="58" rx="6" fill="#0b5d7a" opacity=".88"/><text x="394" y="30" text-anchor="middle" class="w b">④ Test</text><text x="394" y="46" text-anchor="middle" class="w" style="font-size:10.3px">does it work?</text>
+  <rect x="458" y="8" width="100" height="58" rx="6" fill="#127a64"/><text x="508" y="30" text-anchor="middle" class="w b">⑤ Release</text><text x="508" y="46" text-anchor="middle" class="w" style="font-size:10.3px">to real users</text>
+  <rect x="572" y="8" width="104" height="58" rx="6" fill="#127a64" opacity=".88"/><text x="624" y="30" text-anchor="middle" class="w b">⑥ Maintain</text><text x="624" y="46" text-anchor="middle" class="w" style="font-size:10.3px">fix, measure, learn</text>
+  <g class="ln"><line x1="102" y1="37" x2="114" y2="37" marker-end="url(#sd)"/><line x1="216" y1="37" x2="228" y2="37" marker-end="url(#sd)"/><line x1="330" y1="37" x2="342" y2="37" marker-end="url(#sd)"/><line x1="444" y1="37" x2="456" y2="37" marker-end="url(#sd)"/><line x1="558" y1="37" x2="570" y2="37" marker-end="url(#sd)"/></g>
+  <path d="M624,66 C624,96 52,96 52,70" class="ln" stroke-dasharray="4 3" marker-end="url(#sd)"/><text x="340" y="92" text-anchor="middle" class="s i">what you learn after release feeds the next requirements</text>
+ </g>
+ <text x="4" y="118" class="b acc">What the PM owns at each stage</text>
+ <g class="s">
+  <text x="52" y="136" text-anchor="middle" class="s">PRD, user stories,</text><text x="52" y="150" text-anchor="middle" class="s">success metric</text>
+  <text x="166" y="136" text-anchor="middle" class="s">review flows with</text><text x="166" y="150" text-anchor="middle" class="s">designer, engineers</text>
+  <text x="280" y="136" text-anchor="middle" class="s">answer questions,</text><text x="280" y="150" text-anchor="middle" class="s">cut scope if late</text>
+  <text x="394" y="136" text-anchor="middle" class="s">acceptance criteria:</text><text x="394" y="150" text-anchor="middle" class="s">what “done” means</text>
+  <text x="508" y="136" text-anchor="middle" class="s">go / no-go, roll-out</text><text x="508" y="150" text-anchor="middle" class="s">plan, comms</text>
+  <text x="624" y="136" text-anchor="middle" class="s">watch metrics,</text><text x="624" y="150" text-anchor="middle" class="s">prioritise fixes</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:sdlc}} · Six stages, and the PM’s job in each.</b> The PM writes little code, but owns the “why” at the start, the definition of “done” in the middle, and the learning at the end. <span class="src">Stages as in the IIM A Product Mindset tech curriculum (p. 70); PM roles: author’s summary.</span></figcaption>
+</figure>
+
+<div class="cols2 small">
+<div>
+<p><span class="term">PRD</span> (product requirements document): the one document that says what is being built, for whom, why, and how success is measured.</p>
+<p><span class="term">User story</span>: one requirement from the user’s side: “As a merchant, I want to see the fee on each payment, so that I can check my settlement.”</p>
+</div><div>
+<p><span class="term">Acceptance criteria</span>: the tests a story must pass to count as done: “Fee shown to the paisa; zero on payments of ₹2,000 or less.”</p>
+<p><span class="term">MVP</span> (minimum viable product): the smallest version that tests whether the idea works with real users.</p>
+</div></div>
+
+<h2>Waterfall and Agile: two ways to walk the stages</h2>
+<p><span class="term">Waterfall</span> walks the six stages once, in order: all requirements, then all design, then all the code, then all the testing. <span class="term">Agile</span> walks all six in a small loop every two weeks or so, shipping a working slice each time and learning from users before the next slice. Think of building a house (you can’t pour the foundation after the roof) against cooking for guests (you taste and adjust as you go).</p>
+<figure>
+<svg class="d" viewBox="0 0 680 190" xmlns="http://www.w3.org/2000/svg">
+ <line x1="60" y1="150" x2="672" y2="150" stroke="#7d8793" stroke-width="1.2"/><line x1="60" y1="150" x2="60" y2="14" stroke="#7d8793" stroke-width="1.2"/>
+ <g text-anchor="middle"><text x="60" y="166" class="s">month 0</text><text x="162" y="166" class="s">1</text><text x="264" y="166" class="s">2</text><text x="366" y="166" class="s">3</text><text x="468" y="166" class="s">4</text><text x="570" y="166" class="s">5</text><text x="672" y="166" text-anchor="end" class="s">6</text></g>
+ <text x="14" y="82" text-anchor="middle" class="s" transform="rotate(-90 14 82)">working features with users</text>
+ <!-- waterfall: flat then jump at month 5.5 -->
+ <polyline points="60,148 621,148 621,40 672,40" fill="none" stroke="#b93a32" stroke-width="3"/>
+ <text x="614" y="34" text-anchor="end" class="b red">Waterfall: everything at once</text>
+ <text x="300" y="140" text-anchor="middle" class="s red">nothing reaches users for five months</text>
+ <!-- agile: steps every 0.5 month -->
+ <polyline points="60,148 111,148 111,138 162,138 162,128 213,128 213,116 264,116 264,106 315,106 315,96 366,96 366,88 417,88 417,80 468,80 468,70 519,70 519,64 570,64 570,58 621,58 621,52 672,52" fill="none" stroke="#127a64" stroke-width="3"/>
+ <text x="70" y="36" class="b grn">Agile: a working slice every two weeks</text>
+ <circle cx="213" cy="128" r="6" fill="#fff" stroke="#127a64" stroke-width="2"/>
+ <path d="M207,124 L170,104" class="ln"/><text x="72" y="86" class="s grn">week 6: users ignore a feature,</text><text x="72" y="99" class="s grn">so the team changes course</text>
+ <circle cx="570" cy="148" r="6" fill="#fff" stroke="#b93a32" stroke-width="2"/>
+ <text x="596" y="128" text-anchor="end" class="s red">month 5: testing finds the design was wrong</text>
+ <text x="60" y="186" class="s">Illustrative: same team, same six months.</text>
+</svg>
+<figcaption><b>{{FIG:agile}} · When users see the work, and when mistakes surface.</b> Waterfall can finish at the same time, but its first real feedback arrives at the end, when changes cost the most. Agile trades a tidy plan for early learning. <span class="src">Illustrative; comparison after IIM A Product Mindset (pp. 71–74).</span></figcaption>
+</figure>
+
+<table class="tbl">
+<tr><th style="width:22%">Use</th><th>When the work looks like…</th><th>Payments example</th></tr>
+<tr><td><b>Waterfall-style plan</b></td><td>Requirements are fixed and known, the date can’t move, and a mistake is expensive</td><td>The 15 Oct MDR change; RBI’s card-tokenisation deadline (1 Oct 2022)</td></tr>
+<tr><td><b>Agile</b></td><td>You don’t yet know what users will value, and learning fast beats a perfect plan</td><td>“Keep merchants on their business QR”; a new rewards format</td></tr>
+<tr><td><b>Mix (most real teams)</b></td><td>A fixed core with open edges</td><td>Fee engine planned to the day; merchant fee dashboard iterated in sprints</td></tr>
+</table>
+
+<h2>Scrum and Kanban: the two common ways to run Agile</h2>
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 208" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="sq" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3e4fb8"/></marker></defs>
+ <rect x="2" y="84" width="84" height="44" rx="5" fill="#eef0fb" stroke="#3e4fb8"/><text x="44" y="102" text-anchor="middle" class="b">Backlog</text><text x="44" y="117" text-anchor="middle" class="s">ranked by PM</text>
+ <circle cx="206" cy="106" r="64" fill="none" stroke="#3e4fb8" stroke-width="2.4"/>
+ <text x="206" y="100" text-anchor="middle" class="b">2-week sprint</text><text x="206" y="116" text-anchor="middle" class="s">daily 15-min stand-up</text>
+ <path d="M86,106 L140,106" stroke="#3e4fb8" stroke-width="1.5" marker-end="url(#sq)"/>
+ <text x="112" y="72" text-anchor="middle" class="s">① planning:</text><text x="112" y="85" text-anchor="middle" class="s">what fits?</text>
+ <rect x="236" y="4" width="92" height="34" rx="5" fill="#e1f2ec" stroke="#127a64"/><text x="282" y="18" text-anchor="middle" class="b">② Review</text><text x="282" y="32" text-anchor="middle" class="s">demo to users</text>
+ <rect x="236" y="172" width="92" height="34" rx="5" fill="#fde7c8" stroke="#c47f17"/><text x="282" y="186" text-anchor="middle" class="b">③ Retro</text><text x="282" y="200" text-anchor="middle" class="s">improve the team</text>
+ <path d="M250,56 L262,40" stroke="#3e4fb8" stroke-width="1.3" marker-end="url(#sq)"/><path d="M252,156 L262,170" stroke="#3e4fb8" stroke-width="1.3" marker-end="url(#sq)"/>
+ <text x="4" y="160" class="s">Roles: product owner</text><text x="4" y="174" class="s">(often the PM), scrum</text><text x="4" y="188" class="s">master, developers</text>
+</svg>
+<figcaption><b>{{FIG:scrum}} · Scrum: fixed-length loops.</b> Work is chosen at the start of each sprint and demoed at the end. <span class="src">After the Scrum Guide (2020).</span></figcaption>
+</figure>
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 208" xmlns="http://www.w3.org/2000/svg">
+ <g><rect x="2" y="2" width="76" height="22" fill="#eef1f4"/><text x="40" y="17" text-anchor="middle" class="b">To do</text>
+ <rect x="84" y="2" width="76" height="22" fill="#eef1f4"/><text x="122" y="17" text-anchor="middle" class="b">Building</text>
+ <rect x="166" y="2" width="76" height="22" fill="#fcecea"/><text x="204" y="17" text-anchor="middle" class="b red">Testing</text>
+ <rect x="248" y="2" width="80" height="22" fill="#eef1f4"/><text x="288" y="17" text-anchor="middle" class="b">Done</text></g>
+ <text x="122" y="38" text-anchor="middle" class="s">limit 3</text><text x="204" y="38" text-anchor="middle" class="b red" style="font-size:10.3px">limit 2 · full</text>
+ <g fill="#fff" stroke="#9aa3ad">
+  <rect x="8" y="46" width="64" height="26" rx="3"/><rect x="8" y="78" width="64" height="26" rx="3"/><rect x="8" y="110" width="64" height="26" rx="3"/><rect x="8" y="142" width="64" height="26" rx="3"/>
+  <rect x="90" y="46" width="64" height="26" rx="3"/><rect x="90" y="78" width="64" height="26" rx="3"/><rect x="90" y="110" width="64" height="26" rx="3" stroke="#b93a32" stroke-dasharray="3 2"/>
+  <rect x="172" y="46" width="64" height="26" rx="3" fill="#fcecea" stroke="#b93a32"/><rect x="172" y="78" width="64" height="26" rx="3" fill="#fcecea" stroke="#b93a32"/>
+  <rect x="254" y="46" width="68" height="26" rx="3"/><rect x="254" y="78" width="68" height="26" rx="3"/>
+ </g>
+ <text x="122" y="127" text-anchor="middle" class="s red">waiting</text>
+ <text x="4" y="190" class="s">Testing is full, so building must wait:</text>
+ <text x="4" y="204" class="b red">the board shows the bottleneck.</text>
+</svg>
+<figcaption><b>{{FIG:kanban}} · Kanban: continuous flow with limits.</b> Each column caps work in progress; a full column is a bottleneck to fix. <span class="src">After Toyota’s kanban and David J. Anderson’s software Kanban.</span></figcaption>
+</figure>
+</div>
+<p><span class="term">Scrum</span> suits a team building new features on a steady rhythm. <span class="term">Kanban</span> suits work that arrives unpredictably, such as payment-failure fixes or merchant support escalations. A <span class="term">WIP limit</span> (work in progress) caps how many tasks can sit in a column, which stops a team from starting ten things and finishing none.</p>
+
+<div class="keep"><h2>Light maths: when will it ship?</h2>
+<p>Teams size stories in <span class="term">story points</span> (relative effort, not hours) and track <span class="term">velocity</span>, the points finished per sprint. Say the merchant fee dashboard is 120 points and the last three sprints delivered 18, 22 and 20. At the average of 20, that is 120 ÷ 20 = 6 sprints, or 12 weeks. But velocity wobbles: at 22 it is 5.5 sprints, at 18 it is 6.7. So the honest answer is <b>“11 to 14 weeks”</b>, not a date. If the business needs 8 weeks, the PM’s lever is scope: cut the dashboard to 80 points (80 ÷ 20 = 4 sprints) by dropping charts and keeping the fee table.</p></div>
+
+<div class="cols2">
+<div class="box brk"><span class="lbl">When it breaks</span>
+<ul class="small">
+<li><b>Agile in name only:</b> daily stand-ups, but releases once a quarter. Nothing is learned between them.</li>
+<li><b>Points as a productivity target:</b> tell teams to raise velocity and estimates quietly inflate, so velocity rises while output doesn’t.</li>
+<li><b>Fixed deadlines in an open backlog:</b> regulatory work treated as “we’ll pick it up next sprint” misses the date. Plan it backwards from the deadline.</li>
+</ul></div>
+<div class="box key"><span class="lbl">Key idea · The PM decisions this drives</span>
+<ul class="small">
+<li>Which method fits which project (fixed vs open).</li>
+<li>What is in each sprint, ranked in the backlog.</li>
+<li>What “done” means: acceptance criteria, not “the code is written”.</li>
+<li>When late, cut scope, not testing.</li>
+</ul></div>
+</div>
+<div class="box int"><span class="lbl">In the interview</span>
+<p><b>“How do you work with engineers?”</b> “I own the why and the what: the problem, the user story and the acceptance criteria. Engineers own the how. I bring them in at requirements, not after design, because they often see a cheaper way to reach the same outcome.” <b>“The sprint is slipping. What do you do?”</b> “Protect the date or the scope, not both. I’d rank what’s left by user impact, cut from the bottom, and keep testing intact, because in payments a bug costs more than a delay.”</p></div>
+</section>

@@ -1,0 +1,36 @@
+<!-- ============ TEARDOWNS: MAKEMYTRIP ============ -->
+<h1 style="margin-top:12pt">MakeMyTrip: the flight brings you in, the hotel pays the bills</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Rohit, 30, plans a December weekend in Goa with his wife. MakeMyTrip compares over 30 flights in seconds; he picks an IndiGo flight at ₹5,400 each and pays ₹11,200 including a convenience fee. The ticket is issued and a PNR appears. The next screen asks: “Add a hotel?” He books two nights at ₹8,000. The flight earned MakeMyTrip about ₹400; the hotel, about ₹1,400 ({{REF:mm-walk}}).</p>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Flight search and fare alerts</td><td>“Prices change every hour”</td><td>Fares from airlines and global distribution systems (GDS: the networks airlines use to sell through agents) in one list</td><td>Search-to-book conversion</td></tr>
+<tr><td>Hotel and homestay cross-sell</td><td>“Where do we stay?”</td><td>Asked right after the flight, when intent is highest; hotels pay far more commission</td><td>Hotels per flight booking</td></tr>
+<tr><td>Holiday packages</td><td>“Plan the whole trip for me”</td><td>Flights, hotels and transfers bundled; margin on the bundle</td><td>Revenue per customer</td></tr>
+<tr><td>redBus, trains, cabs</td><td>“We’re going by bus this time”</td><td>Covers the cheaper, more frequent trips</td><td>Trips per customer a year</td></tr>
+<tr><td>myBiz (corporate travel)</td><td>Companies need policy and invoices</td><td>Approval rules and GST invoices built in</td><td>Corporate bookings</td></tr>
+</table>
+<figure>{{SVG:flow_mmt}}
+<figcaption><b>{{FIG:mm-walk}} · Behind Rohit’s Goa booking.</b> Most of the flight money passes straight through to IndiGo (⑪); the hotel commission (⑫) is where MakeMyTrip earns. <span class="src">Simplified; fares, fee and commission rate illustrative, typical of Indian OTAs, 2025–26.</span></figcaption>
+</figure>
+
+<h3>Core loop and business model</h3>
+<p>Flights are the most searched travel product and the least profitable. They bring people to the app often; each visit is a chance to sell a hotel, a package or a bus ticket, which pay more. More customers attract more hotels, which want to be listed where the travellers are, which gives customers more choice. In FY26 (to March 2026), MakeMyTrip handled <b>$10.4 bn</b> of bookings (+10.4% in constant currency), passed <b>$1 bn</b> of revenue for the first time and earned an operating profit of <b>$156 mn</b>. In April–June 2026, bookings grew 19.9% to $2.85 bn, though international travel was subdued by the West Asia conflict. The fastest-growing lines are the non-flight ones ({{REF:mm-seg}}).</p>
+<figure>{{SVG:mmt_seg}}
+<figcaption><b>{{FIG:mm-seg}} · Where profit growth came from in FY26.</b> Buses (redBus) and other services grew fastest; hotels and packages, the biggest profit line, grew faster than flights. <span class="src">MakeMyTrip FY26 results (May 2026), adjusted margin growth in constant currency.</span></figcaption>
+</figure>
+<p><b>Moat, in plain words.</b> Relationships with tens of thousands of Indian hotels and homestays; redBus, the leader in online bus tickets; a brand that most Indian travellers try first; and corporate accounts through myBiz. Airlines can sell direct, hotels much less so.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Trips booked by repeat customers.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Search-to-book conversion · hotels per flight booking · share of bookings with a package.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Refund and cancellation complaints · margin per booking · hotel payment delays.</div>
+</div>
+<p><b>2025–26 moves.</b> An experiences-booking platform (tours and activities, 2025); more AI trip planning in the app; growth in the UAE business for residents, including Umrah packages.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Largest Indian hotel supply</li><li>redBus and myBiz widen the base</li><li>Profitable and growing</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Airlines push travellers to book direct</li><li>Google and AI assistants can intercept the search</li><li>International travel is exposed to shocks</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Flyers book the hotel elsewhere <span class="arrow">→</span> a “trip pack” price that drops when flight and hotel are booked together within 24 hours <span class="arrow">→</span> hotels per flight booking.</p>
+<p class="idea"><b>2.</b> Refunds after cancellations take weeks <span class="arrow">→</span> instant refund to UPI for low-risk bookings, recovered from the airline later <span class="arrow">→</span> repeat bookings within 90 days; complaints.</p>
+<p class="idea"><b>3.</b> Indians in the Gulf fly home often <span class="arrow">→</span> a “going home” hub: baggage-clear fares, festival alerts, family packages <span class="arrow">→</span> repeat UAE customers.</p>

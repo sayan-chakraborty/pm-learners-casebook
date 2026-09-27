@@ -1,0 +1,95 @@
+<!-- ============ TECHNOLOGY: LLMS AND PROMPTING ============ -->
+<section class="page">
+<div class="kicker">Health, fitness &amp; learning · Technology</div>
+<h1>Large language models and prompting</h1>
+<p class="lede">An assistant that turns a patient’s folder into a one-page brief for the doctor, HealthifyMe’s AI coach and PhysicsWallah’s night-time doubt answers all run on a <span class="term">large language model</span> (LLM): a program trained on a huge amount of text to predict what comes next. A PM building on one needs to know why it costs what it costs, why it sometimes makes things up, what its settings do and how to instruct it.</p>
+
+<h2>One new intern, eight ideas</h2>
+<p>Think of an LLM as an extremely well-read new intern who has read almost every public book and website, but has never worked at your clinic, doesn’t know today’s date and badly wants to give an answer.</p>
+<table class="tbl">
+<tr><th style="width:20%">Idea</th><th style="width:40%">The intern</th><th>The model</th></tr>
+<tr><td><b>Tokens</b></td><td>Reads in syllables, not whole words, and is paid per syllable</td><td>Reads and writes in word-pieces; you pay per piece</td></tr>
+<tr><td><b>Next-word prediction</b></td><td>Finishes your sentences from habit</td><td>Picks the likeliest next piece, again and again</td></tr>
+<tr><td><b>Attention</b></td><td>Re-reads the sentence to see what “it” refers to</td><td>Weighs every earlier word when choosing the next</td></tr>
+<tr><td><b>Training stages</b></td><td>Library, then solved cases, then feedback from seniors</td><td>Pre-training, instruction tuning, feedback from people</td></tr>
+<tr><td><b>Temperature</b></td><td>Careful on Monday, playful at the office party</td><td>A setting for how much randomness to allow</td></tr>
+<tr><td><b>Context window</b></td><td>Can only see what is on the desk right now</td><td>Sees only the text sent with this request</td></tr>
+<tr><td><b>Hallucination</b></td><td>Would rather guess confidently than say “I don’t know”</td><td>Writes what sounds right, true or not</td></tr>
+<tr><td><b>Prompting</b></td><td>Does far better with a clear brief and an example</td><td>Does far better with role, context, examples and format</td></tr>
+</table>
+
+<h2>1. Tokens: the unit of cost</h2>
+<p><b>Everyday picture.</b> An SMS used to be priced per 160 characters, so a long message cost two or three. Language models are priced in the same spirit, per <span class="term">token</span>: a word or a piece of a word.</p>
+<p><b>How it works.</b> Before the model reads anything, a <span class="term">tokeniser</span> cuts the text into pieces from a fixed list. Common English words are one token each. Words in scripts the list was not built for get chopped into many small pieces ({{REF:tokens}}). The same advice in Hindi can take two or three times as many tokens on an older tokeniser. Newer tokenisers built with Indian scripts in mind, such as those from Indian labs like Sarvam AI, close much of the gap.</p>
+<figure>{{SVG:tokens}}
+<figcaption><b>{{FIG:tokens}} · One sentence, three token counts.</b> The Hindi sentence means the same, but an older tokeniser splits it into letters and vowel signs; one built for Indian scripts keeps whole words. <span class="src">Illustrative token splits; exact counts depend on the model.</span></figcaption>
+</figure>
+<p><b>Real example: what the clinic brief costs.</b> Each brief reads about 6,000 tokens of typed-up reports and writes about 400. At illustrative prices that is about ₹2 a patient, or ₹2,500 a month for a busy clinic, more than the ₹2,000 subscription ({{REF:costchain}}). Sending only new reports and using a smaller model for the typing-up cuts it to about ₹750.</p>
+<figure>{{SVG:costchain}}
+<figcaption><b>{{FIG:costchain}} · Tokens turn into a monthly bill.</b> The first design loses money on every clinic; two plain engineering choices fix it. <span class="src">Illustrative prices and token counts.</span></figcaption>
+</figure>
+<p><b>PM decision.</b> Every AI feature has a cost per use that never falls to zero, unlike most software. Price it per task, check the cost in each language you support, and ask engineers what the answer costs at 10 times today’s users.</p>
+
+<h2>2. Next-word prediction: why it sounds so fluent</h2>
+<p><b>Everyday picture.</b> Your phone keyboard suggests “day” after “Happy birth”. It has seen that pattern often.</p>
+<p><b>How it works.</b> An LLM does the same, but with far more text behind it and the whole conversation in view. For every possible next token it calculates a chance ({{REF:nextword}}), picks one, adds it to the text and repeats. A 300-word answer is several hundred of these steps. Nothing in this loop looks anything up; it produces what is likely, which is usually, but not always, what is true.</p>
+<figure>{{SVG:nextword}}
+<figcaption><b>{{FIG:nextword}} · The model’s guess for the next word.</b> “Water” wins by a mile because it is the common pattern. Even an absurd word keeps a tiny chance, which is one reason odd answers sometimes appear. <span class="src">Illustrative probabilities.</span></figcaption>
+</figure>
+<p><b>PM decision.</b> Fluency is not accuracy. Any fact that matters (a lab value, a dose, a fee) must come from a source you control, not from the model’s memory.</p>
+
+<h2>3. Attention: how it keeps track of meaning</h2>
+<p><b>Everyday picture.</b> “The tablet didn’t fit in the box because it was too big.” You know “it” is the tablet. Change “big” to “small” and “it” becomes the box. You re-read the sentence without noticing.</p>
+<p><b>How it works.</b> The <span class="term">transformer</span>, the design behind almost every modern LLM (published by Google researchers in 2017), lets each word look at every other word and decide how much each matters, which is called <span class="term">attention</span> ({{REF:attention}}). This is what lets a model connect a patient’s allergy on page one with a medicine on page five. It is also the expensive part: the longer the text, the more pairs of words to compare.</p>
+<figure>{{SVG:attention}}
+<figcaption><b>{{FIG:attention}} · What “it” attends to.</b> The last word decides which earlier word gets the heaviest weight. <span class="src">Illustrative weights; example after the Winograd schema used in language research.</span></figcaption>
+</figure>
+<p><b>PM decision.</b> Longer inputs cost more and answer more slowly. Send the relevant pages, not the whole folder.</p>
+
+<h2>4. How a model is made</h2>
+<p><b>Everyday picture.</b> A doctor’s training: years of reading, then internship on real cases, then seniors correcting their notes ({{REF:stages}}).</p>
+<p><b>How it works.</b> <span class="term">Pre-training</span>: the model reads a vast amount of text and learns to predict the next token; this takes months on thousands of chips. <span class="term">Instruction tuning</span>: it is trained on examples of requests and good answers, so it follows instructions. <span class="term">Feedback from people</span>: people compare answers, and the model is rewarded for the helpful, honest and safe ones. What comes out has a <span class="term">training cut-off</span>: it knows nothing after that date, and nothing about your clinic or your users unless you send it.</p>
+<figure>{{SVG:stages}}
+<figcaption><b>{{FIG:stages}} · Three stages, three kinds of learning.</b> A product team rarely touches stage 1; it shapes behaviour through prompts, its own data and sometimes extra tuning. <span class="src">Author’s summary of standard LLM training.</span></figcaption>
+</figure>
+<p><b>PM decision.</b> Most teams should buy a model and shape it with instructions and their own data, not build one. Anything that changes (prices, rules, a patient’s reports) must be sent at the moment of the request.</p>
+
+<h2>5. Temperature: steady or creative</h2>
+<p><b>Everyday picture.</b> Ask a friend for a greeting for a card. On a serious day they write the same safe line every time; in a playful mood they try something new, sometimes brilliant, sometimes odd.</p>
+<p><b>How it works.</b> <span class="term">Temperature</span> changes how the model picks from its list of likely next tokens. At 0 it almost always takes the top one, so the same input gives nearly the same output. Higher values give less likely tokens a better chance: more variety, and more drift ({{REF:tempdial}}). A related setting, <span class="term">top-p</span>, limits the choice to the most likely tokens that together make up, say, 90% of the chance.</p>
+<figure>{{SVG:tempdial}}
+<figcaption><b>{{FIG:tempdial}} · The same prompt at three temperatures.</b> At 1.5 the lines stop being useful. <span class="src">Illustrative outputs.</span></figcaption>
+</figure>
+<p><b>PM decision.</b> Set it per feature: near 0 for the clinic brief and anything tested against a fixed answer; moderate for coaching messages people see every day.</p>
+
+<h2>6. The context window: what’s on the desk</h2>
+<p><b>Everyday picture.</b> The intern can only use the papers on the desk right now. Whatever is in the filing cabinet might as well not exist.</p>
+<p><b>How it works.</b> The <span class="term">context window</span> is the maximum amount of text, in tokens, that the model can take in one request: instructions, documents, conversation so far and its answer. In 2026, large models take from about a lakh to over ten lakh tokens. The model remembers nothing between requests; “memory” in a chat app is the app re-sending earlier messages or a saved summary. And a bigger desk is not a cleaner one: researchers found that models find facts at the start and end of a long input more reliably than in the middle ({{REF:desk}}).</p>
+<figure>{{SVG:desk}}
+<figcaption><b>{{FIG:desk}} · What fits, and what gets found.</b> One patient’s material fills a small part of the window; placing the key facts near the top matters more than the space left. <span class="src">Window size illustrative; “Lost in the middle” from Liu et al., Stanford (2023).</span></figcaption>
+</figure>
+<p><b>PM decision.</b> Decide what the model sees: which reports, how much history, in what order. For a coach, a short saved summary of past weeks is cheaper and more reliable than re-sending every chat.</p>
+
+<h2>7. Hallucination: confident and wrong</h2>
+<p><b>Everyday picture.</b> Ask a stranger for directions and some will point confidently the wrong way rather than admit they don’t know.</p>
+<p><b>How it works.</b> A <span class="term">hallucination</span> is a fluent statement with no basis in the input or in fact. It comes straight from next-word prediction: the model produces what a good answer usually looks like, including numbers and names ({{REF:halluc}}). Two real cases: in 2023 lawyers in New York were fined after filing court cases invented by a chatbot; in 2024 a Canadian tribunal made Air Canada honour a refund policy its chatbot had made up.</p>
+<figure>{{SVG:halluc}}
+<figcaption><b>{{FIG:halluc}} · Anatomy of a made-up dose, and four defences.</b> None of the four relies on the model “trying harder”; each adds a check outside it. <span class="src">Author’s diagram; Mata v. Avianca (US, 2023); Moffatt v. Air Canada (Canada, 2024).</span></figcaption>
+</figure>
+<p><b>PM decision.</b> Decide which questions the product must refuse, where every claim needs a source, and how you will measure false statements before launch, not after complaints.</p>
+
+<h2>8. Prompting: writing the brief</h2>
+<p><b>Everyday picture.</b> “Write something about diet” gets you a generic essay from any intern. “You are writing to Neha, 27, vegetarian, who logged 1,420 calories today; give one tip under 25 words, no medical advice” gets you something usable.</p>
+<p><b>How it works.</b> A <span class="term">prompt</span> is the full set of instructions and material sent with each request. Good prompts have five parts: a <b>role</b>, the <b>context</b> (the user’s data), an <b>example</b> of a good answer, the <b>steps</b> or rules, and the <b>format</b> of the output. The instructions that the app sends every time, which the user never sees, are called the <span class="term">system prompt</span>.</p>
+<div class="prompts">
+<div class="prompt bad"><b>Before</b><br>Give diet advice to the user based on their food log.</div>
+<div class="prompt good"><b>After</b><br><b>Role:</b> a friendly diet coach for Indian users.<br><b>Context:</b> Neha, 27, vegetarian, goal 1,600 kcal; today 1,420 kcal, protein 38 g.<br><b>Example:</b> “Good day! Protein is low: add a bowl of curd at dinner.”<br><b>Rules:</b> one tip, under 25 words; never mention medicines, doses or illnesses; if she mentions a symptom, suggest she asks her coach.<br><b>Format:</b> plain text, no emojis.</div>
+</div>
+<p><b>PM decision.</b> The prompt is product copy and product policy at once. Keep it under version control, test every change against the eval set, and write the “never” rules as clearly as a legal clause.</p>
+<div class="box int"><span class="lbl">In the interview · LLMs</span>
+<ul class="small">
+<li><b>“Why is our AI feature so expensive?”</b> Count tokens in and out per task, times price, times uses; cut what you send before you cut the model.</li>
+<li><b>“Why did the bot make up an answer?”</b> It predicts likely text; ground it in your data, show sources, and let it say “I don’t know”.</li>
+<li><b>“Should we build our own model?”</b> Almost never at first: buy one, shape it with prompts and data, measure it with evals.</li>
+</ul></div>
+</section>

@@ -1,0 +1,35 @@
+<!-- ============ TEARDOWNS: SNAPCHAT ============ -->
+<h1 style="margin-top:14pt">Snapchat: the camera company</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Kabir, 17, in Delhi, has a 200-day “streak” with his best friend Aarav: they have sent each other a Snap every single day. At 10:40 pm he remembers. The app opens straight to the camera, not a feed. He picks a cricket-helmet Lens, which the phone itself draws onto his face in real time, snaps a photo and sends it to Aarav. Snap’s servers hold the photo until Aarav opens it, then delete it. The streak counter moves to 201. Aarav replies with a picture of his maths homework ({{REF:sn-flow}}).</p>
+
+<figure>{{SVG:flow_snap}}
+<figcaption><b>{{FIG:sn-flow}} · Behind one Snap.</b> The Lens runs on the phone (②), so it costs Snap no server time. The servers keep a Snap only until it is opened (④–⑥). The streak (⑦) is a daily reason to open the app. <span class="src">Simplified from Snap’s published privacy and product pages; illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Opens to the camera</td><td>“I want to share this moment now”</td><td>Creating is the default, not scrolling; one big button: tap for photo, hold for video</td><td>Snaps sent per user</td></tr>
+<tr><td>Snaps that disappear</td><td>“I don’t want every silly photo kept forever”</td><td>Deleted after viewing; a screenshot alerts the sender</td><td>Private sends; trust among teens</td></tr>
+<tr><td>Lenses</td><td>“A plain photo is boring”</td><td>AR effects make ordinary moments worth sending; brands sponsor Lenses</td><td>Lens plays; ad revenue</td></tr>
+<tr><td>Streaks</td><td>“Stay close to my best friends”</td><td>A visible daily count; losing it hurts</td><td>Daily users; days active per month</td></tr>
+<tr><td>Snapchat+</td><td>Fans: “I want extras”</td><td>A paid tier with early features and custom icons</td><td>Subscribers; “other revenue”</td></tr>
+</table>
+
+<h3>Business model, with numbers</h3>
+<p>In April–June 2026 Snap earned about <b>$1.6 bn</b>, up 19%. Most of it came from ads: Lens ads, Stories ads and ads in Spotlight, its short-video feed. Its “other revenue”, mostly Snapchat+ subscriptions, grew 85% to <b>$316 mn</b> ({{REF:snap-rev}}). Snap has about 1 bn monthly users and added 10 mn daily users that quarter, most of them outside North America and Europe, with India a big contributor. That is Snap’s puzzle: its growth is where each user earns it least.</p>
+<figure>{{SVG:snap_rev}}
+<figcaption><b>{{FIG:snap-rev}} · Where Snap’s money came from, one quarter.</b> Subscriptions are small but growing fastest, a hedge against low ad prices in markets like India. <span class="src">Snap Q2 2026 results (advertising estimated as total minus other revenue, rounded).</span></figcaption>
+</figure>
+<p><b>Moat, in plain words.</b> Your closest friends and your streaks are here. Snap is private and playful, not about follower counts, which is why teenagers use it to talk and Instagram to show off. It also has one of the best AR engines, with tools that let outside creators build Lenses.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Daily users who send at least one Snap.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Snaps per user · Lens plays · streaks active · Snapchat+ sign-ups.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Teen safety reports · revenue per user by region · stress about streaks (surveys).</div>
+</div>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Close friends, daily habit</li><li>Leader in AR Lenses</li><li>Subscriptions growing fast</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Low ad revenue per user where it grows</li><li>Streaks can feel like pressure</li><li>Instagram copies its best ideas (Stories, 2016)</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Indian users are active but earn Snap little <span class="arrow">→</span> self-serve sponsored Lenses for Diwali, IPL and college fests, priced for local brands at ₹5,000 <span class="arrow">→</span> India revenue per daily user; Lens plays per user.</p>
+<p class="idea"><b>2.</b> A lost streak makes teenagers anxious <span class="arrow">→</span> one free “streak freeze” a month <span class="arrow">→</span> daily users (guardrail: stress reported in surveys).</p>

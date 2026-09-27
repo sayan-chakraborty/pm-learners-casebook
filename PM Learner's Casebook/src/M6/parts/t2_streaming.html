@@ -1,0 +1,104 @@
+<!-- ============ TECHNOLOGY: SYSTEM DESIGN V ============ -->
+<section class="page">
+<div class="kicker">Streaming, music &amp; entertainment · Technology</div>
+<h1>System design V: one IPL final, to crores of phones at once</h1>
+<p class="lede">7:28 pm, final night. In the next five minutes, several crore people will open JioHotstar, log in, perhaps renew a plan, and ask for the same few seconds of video at the same moment. Priya’s phone on the hostel steps has a patchy 4G signal; her father’s smart TV in Rajkot is on fibre; a truck driver near Nagpur is on a ₹199 data pack. Each of them should get the best picture their connection can carry, the match should never stop, and the ads in every over-break must be sold and shown. Follow one ball from the stadium to those three screens.</p>
+
+<h2>One dairy, ten ideas</h2>
+<p>Getting live video to crores of people works much like getting milk to a city every morning. Each row of this table is one of the ideas that follow.</p>
+<table class="tbl">
+<tr><th style="width:20%">Idea</th><th style="width:40%">The dairy</th><th>Live video</th></tr>
+<tr><td><b>Concurrency</b></td><td>Everyone wants milk between 6 and 7 am</td><td>Crores want the same ball at the same second</td></tr>
+<tr><td><b>Bitrate ladder</b></td><td>The same milk in 200 ml, 500 ml and 1-litre packs</td><td>The same match at 240p to 4K</td></tr>
+<tr><td><b>Segments</b></td><td>Milk sent in crates, not one giant tank</td><td>Video cut into chunks of a few seconds</td></tr>
+<tr><td><b>Adaptive bitrate</b></td><td>The milkman brings a smaller pack when the lift is broken</td><td>The player picks a lower quality when the network slows</td></tr>
+<tr><td><b>CDN, edge cache</b></td><td>Chilling centres and neighbourhood booths near homes</td><td>Servers in every city, even inside internet providers</td></tr>
+<tr><td><b>Latency</b></td><td>Time from cow to doorstep</td><td>Seconds from the stadium camera to your screen</td></tr>
+<tr><td><b>Pre-warming</b></td><td>Extra tankers booked before Diwali, not on the day</td><td>Servers switched on before the toss, not when the rush hits</td></tr>
+<tr><td><b>Ad insertion</b></td><td>A leaflet slipped into each packet, different for each street</td><td>Different ads stitched into each viewer’s stream</td></tr>
+<tr><td><b>Graceful degradation</b></td><td>In a shortage, stop selling cream and ghee; never stop milk</td><td>Drop 4K and extras first; never stop the match</td></tr>
+<tr><td><b>DRM, watermarks</b></td><td>A sealed pack with a batch number, to trace adulteration</td><td>Encrypted video with a hidden viewer mark, to trace pirates</td></tr>
+</table>
+
+<h2>The load, in numbers</h2>
+<p>Suppose 6.5 crore phones and TVs watch at once, the March 2026 record. At an average of 1.5 megabits per second each, that is 6,50,00,000 × 1.5 Mbps ≈ <b>100 terabits per second</b>, more than many countries’ entire internet traffic, all carrying the same few seconds of video. Live is harder than on-demand in three ways. Everyone wants the <i>same</i> moment, so nothing can be sent the night before. The crowd arrives in minutes, not over an evening. And a failure is public and remembered: the wicket everyone missed.</p>
+
+<h2>1. Encoding and the bitrate ladder</h2>
+<p><b>Everyday picture.</b> A dairy sells the same milk in 200 ml pouches for a single person and 1-litre packs for a family. Nobody gets different milk; they get the size that suits them.</p>
+<p><b>How it works.</b> The stadium feed arrives at the platform as one very high-quality stream. <span class="term">Encoders</span> (machines that compress video) turn it into several versions at once, the <span class="term">bitrate ladder</span>: each rung is a picture size and a number of bits per second ({{REF:ladder}}). The data a viewer uses is simple arithmetic: megabits per second × 3,600 seconds ÷ 8 = megabytes an hour. At 1.5 Mbps, 1.5 × 3,600 ÷ 8 = <b>675 MB an hour</b>; a three-and-a-half-hour match is about 2.4 GB, most of a ₹199 pack’s daily data. At 0.4 Mbps it is 180 MB an hour. Newer <span class="term">codecs</span> (the compression methods, such as HEVC and AV1) squeeze the same picture into 30–50% fewer bits, but older phones can’t play them, so platforms encode in more than one.</p>
+<figure>{{SVG:ladder}}
+<figcaption><b>{{FIG:ladder}} · One match, many sizes.</b> Each rung is the same picture at a different quality. Most Indian phone viewers sit on the middle rungs; 4K is for TVs on fibre. <span class="src">Typical ladder values used across the industry (illustrative); data arithmetic exact.</span></figcaption>
+</figure>
+<p><b>Real example.</b> JioCinema and then JioHotstar showed IPL in 4K on TVs while keeping low rungs for phones on weak signals; data-saver options let viewers cap quality to save their packs. <b>PM decision:</b> which rungs to offer and what the default is. A higher default looks better but eats viewers’ data and the company’s delivery bill; a lower default is cheap but looks poor on TVs. Many apps pick by device: low on phones, high on TVs.</p>
+
+<h2>2. Segments and adaptive bitrate</h2>
+<p><b>Everyday picture.</b> Milk goes out in crates, not in one giant tanker to each house. And a good milkman, seeing the lift broken, brings two small packs instead of one heavy can.</p>
+<p><b>How it works.</b> Each rung is cut into <span class="term">segments</span> of 2–6 seconds. The player first downloads a small list (the <span class="term">manifest</span>) of all rungs and segments, then fetches one segment at a time, using standard formats called HLS and DASH. After each segment, it checks how fast it arrived and how much video is waiting in its <span class="term">buffer</span>. If a 4-second segment at 1.5 Mbps arrived in 2 seconds, the network could carry about 3 Mbps, so the player steps up. If segments start arriving slower than they play, it steps down before the buffer empties. This is <span class="term">adaptive bitrate</span> (ABR) ({{REF:abr}}). The buffer is the safety margin: 12 seconds of stored video gives the player 12 seconds to react when Priya’s train enters a tunnel.</p>
+<figure>{{SVG:abr}}
+<figcaption><b>{{FIG:abr}} · A train journey, as the player sees it.</b> When the network dips, the player drops quality and lives on its buffer; the picture blurs for a few seconds but never freezes. Freezing is what viewers punish. <span class="src">Illustrative trace.</span></figcaption>
+</figure>
+<p><b>Real example.</b> Research on streaming (Conviva and university studies, 2011–13) found that a 1% increase in time spent frozen cut viewing of a live event by several minutes. That is why players prefer a blurry picture to a pause. <b>PM decision:</b> how cautious the player is. A cautious player (big buffer, slow to step up) rarely freezes but looks soft; an aggressive one looks sharp but freezes more. For live sport, the usual choice is caution.</p>
+
+<h2>3. CDNs and edge caching</h2>
+<p><b>Everyday picture.</b> A dairy doesn’t send a truck from the plant to every home. Milk goes to chilling centres, then to neighbourhood booths; each booth serves a few hundred homes. If the booth runs out, it fetches more from the chilling centre, not from the plant.</p>
+<p><b>How it works.</b> A <span class="term">CDN</span> (content delivery network) is thousands of servers placed near viewers, in every big city and often inside the internet providers’ own buildings. The first viewer in Nagpur to ask for a segment makes the Nagpur server fetch it from further up; every other viewer in Nagpur gets the copy it already holds. The share of requests answered from the nearby copy is the <span class="term">hit rate</span>, and it decides how much reaches the source (the <span class="term">origin</span>) ({{REF:cdn}}). With 6.5 crore viewers each asking for a segment every 4 seconds, about 1.6 crore requests arrive a second. At a 95% hit rate, 5% reach the next layer: 8 lakh a second. At 99%, only 1.6 lakh. Four points of hit rate, five times less load. Platforms add an <span class="term">origin shield</span>, a middle layer that collects the misses so the origin sees each segment asked for only a few times.</p>
+<figure>{{SVG:cdn}}
+<figcaption><b>{{FIG:cdn}} · From the stadium to a street in Nagpur.</b> Each layer answers most requests itself; only misses travel up. Moving from a 95% to a 99% hit rate cuts the load on the layer above five times. <span class="src">Illustrative numbers; the structure is standard for large streaming services.</span></figcaption>
+</figure>
+<p><b>Real example.</b> Netflix places its own cache servers (Open Connect) inside internet providers, including Indian ones, and fills them overnight with the shows people are likely to watch the next day. Large live platforms use several CDN companies at once and move traffic between them if one struggles. <b>PM decision:</b> how much to spend on delivery, and where. Caches inside providers cost money and negotiation but cut delays and bills; using two CDNs costs more but removes a single point of failure on final night.</p>
+
+<h2>4. Live latency: why your father sees the wicket first</h2>
+<p><b>Everyday picture.</b> Milk from a village reaches a city home in hours: collection, chilling, packing, transport, the booth, the doorstep. Each step is short; together they add up.</p>
+<p><b>How it works.</b> <span class="term">Glass-to-glass latency</span> is the delay from the camera lens to your screen ({{REF:latency}}). Production and graphics take a few seconds; encoding a few more; the player waits for whole segments to be ready; the CDN adds a little; and the player keeps a buffer of two or three segments for safety. With 6-second segments, that adds up to about 30 seconds. Satellite TV is usually 5–10 seconds behind the stadium. That gap is why Priya’s father phones about a wicket she hasn’t seen. <span class="term">Low-latency</span> streaming cuts segments into parts of about a second and shrinks the buffer, reaching 5–8 seconds, but a smaller buffer means more freezes on weak networks.</p>
+<figure>{{SVG:latency}}
+<figcaption><b>{{FIG:latency}} · Where the 30 seconds go.</b> Most of the delay is waiting for segments and the player’s safety buffer. Shrinking them cuts delay but raises the risk of freezes. <span class="src">Illustrative budget for 6-second segments; typical satellite delay.</span></figcaption>
+</figure>
+<p><b>PM decision:</b> delay against smoothness. For a match with neighbours cheering and WhatsApp buzzing, spoilers hurt; for a film, delay doesn’t matter at all. Many platforms offer lower delay on good connections and keep a bigger buffer on weak ones. Anything interactive, such as live predictions or voting, must allow for viewers being 30 seconds apart.</p>
+
+<h2>5. The toss-time spike</h2>
+<p><b>Everyday picture.</b> Before Diwali a dairy books extra tankers and staff a week ahead. If it waited until the morning queues formed, the extra tankers would arrive after the customers had gone.</p>
+<p><b>How it works.</b> Viewers don’t arrive smoothly: millions join in the five minutes before the toss, and again when a star walks out to bat ({{REF:spike}}). Each new viewer logs in, loads the home page, perhaps pays for a plan, then starts the video, so the first wave hits login, payments and the home page, not the video. <span class="term">Autoscaling</span> (adding servers automatically as load rises) takes minutes, too slow for a surge that arrives in seconds. So the platform <span class="term">pre-warms</span>: it starts servers before the match for the crowd it expects, from past matches and the teams playing. It also serves the home page from caches, lets a phone that is already logged in skip login, and, if payments pile up, lets viewers start watching while the payment finishes.</p>
+<figure>{{SVG:spike}}
+<figcaption><b>{{FIG:spike}} · The crowd arrives faster than servers can start.</b> Capacity added by autoscaling (red) lags the surge; capacity switched on before the toss (green) is ready when viewers arrive. <span class="src">Illustrative curve; the approach follows Hotstar engineers’ public talks on IPL scaling (2019–20).</span></figcaption>
+</figure>
+<p><b>Real example.</b> Hotstar’s engineers described in public talks how they scaled ahead of big matches using forecasts, because waiting for autoscaling left them short at the toss, and how they had switches to turn off heavy features when load passed set levels. <b>PM decision:</b> how much spare capacity to pay for. Over-provision and you pay for idle servers on a dull match; under-provision and the final breaks in front of crores. The forecast (which teams, which stage, which time) belongs to the product team as much as to engineering.</p>
+
+<h2>6. Ads inside a live match</h2>
+<p><b>Everyday picture.</b> A dairy that slips a local shop’s leaflet into each milk packet, a different leaflet for each street, all in the half-hour before dawn.</p>
+<p><b>How it works.</b> At the end of an over, the production team sends a marker saying “break starts now, 30 seconds”. Each viewer’s stream is then filled with ads chosen for that viewer, stitched in on the server so the ads look like the match to the phone: <span class="term">server-side ad insertion</span>. The hard part is the timing. If 6.5 crore players all ask “which ads for me?” in the same second, the ad system faces 6.5 crore decisions at once. So platforms spread the questions over the seconds before the break, and prepare likely ads in advance.</p>
+<p><b>PM decision:</b> how personal to make the ads against how reliable the break must be. A fully personal choice for every viewer earns more per ad; a few broad groups (city, language, device) are far easier to serve at peak. If the ad system can’t answer in time, the fallback must be a pre-chosen ad or the match, never a black screen.</p>
+
+<h2>7. Graceful degradation: what to switch off first</h2>
+<p><b>Everyday picture.</b> In a milk shortage, the dairy stops making cream, curd and ghee before it cuts a single family’s daily milk.</p>
+<p><b>How it works.</b> The team agrees a ladder in advance ({{REF:degrade}}): as load rises, features are switched off in order, from the least to the most important, each with a switch (a <span class="term">kill switch</span>) that works in seconds. The two numbers watched live are the ones viewers feel: <span class="term">start time</span> (seconds from pressing play to picture) and <span class="term">rebuffering ratio</span> (share of watching time spent frozen).</p>
+<figure>{{SVG:degrade}}
+<figcaption><b>{{FIG:degrade}} · The ladder for final night.</b> Each step saves load and costs little that viewers notice. The live match is the last thing that may ever be touched. <span class="src">Author’s illustrative ladder; order agreed before the match, switches tested in rehearsal.</span></figcaption>
+</figure>
+<p><b>PM decision:</b> the order of the ladder is a product decision: which feature matters least to viewers and to revenue tonight? The PM writes it down before the match, because at 9:45 pm there is no time to debate it.</p>
+
+<h2>8. On-demand is different</h2>
+<p><b>Everyday picture.</b> Bread for tomorrow can be baked and delivered to shops tonight. Only fresh milk has to move at dawn.</p>
+<p><b>How it works.</b> For films and series, nobody needs the same second at the same time, so platforms <b>place copies in advance</b>: overnight, when networks are quiet, caches are filled with what people will probably watch tomorrow (a new season, today’s Top 10). Viewing is lopsided: a small share of titles gets most views, so caching the most popular few per cent covers most requests. <b>Downloads</b> let viewers save episodes on home Wi-Fi and watch on the train without mobile data. <b>PM decision:</b> which titles to place where, and whether to push downloads for markets with costly data, such as mobile-first India.</p>
+
+<h2>9. DRM and piracy</h2>
+<p><b>Everyday picture.</b> A sealed milk pack with a batch number: if adulterated milk turns up, the batch shows where it came from.</p>
+<p><b>How it works.</b> Video segments are encrypted; a player gets the key from a <span class="term">licence server</span> only after the app checks the viewer’s plan and device. This is <span class="term">DRM</span> (digital rights management), built into Android, iOS and TVs (Google’s Widevine, Apple’s FairPlay). DRM can’t stop someone filming a screen, so platforms add an invisible <span class="term">watermark</span>, a tiny pattern unique to each account, woven into the picture. When a pirated IPL stream appears on Telegram, the watermark shows which account it came from, and that account can be cut off within minutes. <b>PM decision:</b> stronger protection (highest quality only on the most secure devices) versus reach (older phones and cheap TVs). Rights holders often decide it in the contract: 4K only with the strongest DRM.</p>
+
+<h2>Final night: the plan on one page</h2>
+<table class="tbl flow">
+<tr><th style="width:19%">When</th><th style="width:43%">What happens</th><th>Why</th></tr>
+<tr><td><b>The week before</b></td><td>Forecast the peak from past finals; book CDN capacity with two providers; rehearse the degradation ladder with real switches</td><td>Capacity can’t be bought in the last minute</td></tr>
+<tr><td><b>Match day, noon</b></td><td>Freeze app releases; pre-warm servers for the forecast plus a margin; warm caches with the home page and ads</td><td>No surprises from new code; ready before the crowd</td></tr>
+<tr><td><b>7:00–7:35 pm</b></td><td>Let logged-in phones skip login; let viewers watch while payments complete; spread ad requests over time</td><td>The first wave hits login and payments, not video</td></tr>
+<tr><td><b>During play</b></td><td>Watch start time and rebuffering by city and network; move traffic between CDNs if one struggles</td><td>These are what viewers feel</td></tr>
+<tr><td><b>If load passes the limit</b></td><td>Walk down the ladder: 4K, then extras, then recommendations; never the match</td><td>Save the one thing everyone came for</td></tr>
+<tr><td><b>After the final</b></td><td>Scale down in stages; review every alarm; show the “after the IPL” watchlist</td><td>The next morning is when renewals are won or lost</td></tr>
+</table>
+
+<div class="box int"><span class="lbl">In the interview · How streaming systems come up</span>
+<ul class="small">
+<li><b>“How would you handle 6 crore concurrent viewers?”</b> Bitrate ladder and ABR, CDNs with a high hit rate, pre-warming before the toss, and a degradation ladder that never touches the match.</li>
+<li><b>“Why is the app 30 seconds behind TV?”</b> Segments and the safety buffer; shrinking them lowers delay but raises freezes on weak networks.</li>
+<li><b>“Which metrics would you watch during the final?”</b> Start time and rebuffering ratio by city and network, plus login and payment success in the first half-hour.</li>
+</ul></div>
+</section>

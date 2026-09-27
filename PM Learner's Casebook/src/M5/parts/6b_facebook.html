@@ -1,0 +1,45 @@
+<!-- ============ TEARDOWNS: FACEBOOK + META ADS ============ -->
+<h1 style="margin-top:14pt">Facebook and Meta’s ad machine</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Arun runs a bakery in Kochi. Two weeks before Christmas he opens Meta’s ad tool and spends ₹500 a day to show a photo of his plum cakes to adults within 5 km, with a “Send message” button. That evening Priya, 34, scrolls Facebook. In the few milliseconds before the next post appears, Meta holds an auction for that one slot among every advertiser who wants someone like Priya. Arun’s ad wins. Priya taps “Send message”, a WhatsApp chat with the bakery opens, and she orders a 1 kg cake. Meta charges Arun about ₹37 for that message ({{REF:fb-flow}}).</p>
+
+<figure>{{SVG:flow_fb}}
+<figcaption><b>{{FIG:fb-flow}} · Behind one ad on Priya’s feed.</b> The auction (④–⑥) runs for every ad slot, billions of times a day. Arun pays only when Priya does what he paid for, here sending a message. <span class="src">Simplified from Meta’s published description of its ad auction; amounts illustrative.</span></figcaption>
+</figure>
+
+<h3>How the auction picks a winner</h3>
+<p>Meta doesn’t simply show the highest bid. It ranks ads by <b>total value</b> = the advertiser’s bid for an action × the chance that this person does it + a quality score (which falls if people hide or report the ad). Arun bids ₹40 for a message, and Meta predicts a 1.5% chance Priya sends one: ₹40 × 1.5% = ₹0.60, plus a small quality bonus, 0.65. A phone brand bids ₹8 per click at 5%: 0.40, plus 0.10 = 0.50. A loan app bids ₹100 per install at 0.8%: 0.80, but its ads are often reported, so its quality score is −0.20: 0.60 ({{REF:auction}}). Arun wins with 0.65, and pays only enough to beat the next ad, 0.60, which works out to about ₹37 per message instead of his ₹40 bid.</p>
+<figure>{{SVG:auction}}
+<figcaption><b>{{FIG:auction}} · One ad slot, three bidders.</b> The highest bid (the loan app’s ₹100) loses because Priya is unlikely to install it and people report its ads. Relevance and quality beat money alone. <span class="src">Formula from Meta’s published auction description (total value = bid × estimated action rate + ad quality); numbers illustrative.</span></figcaption>
+</figure>
+<p>Why design it this way? If the biggest bidder always won, feeds would fill with ads people hate, they would scroll less, and every advertiser would lose. Weighting by the chance of action makes a small bakery competitive against a national brand for the people nearby who might actually want cake. It is also why Meta’s better AI models raise its price per ad: when ads convert better, advertisers bid more.</p>
+
+<h3>Keeping the feed safe: the moderation pipeline</h3>
+<p>Billions of posts a day can’t all be checked by people. Automatic classifiers score each post; posts that clearly break the rules are removed at once, clear cases pass, and uncertain ones go to human reviewers, who work in many Indian languages ({{REF:moder}}). India’s IT Rules 2021 make large platforms publish monthly compliance reports and act on government and court orders within fixed times. The sum that sets the size of the review team: if 2 lakh posts a day in India need a human look, and a reviewer handles about 400 a day, Meta needs 2,00,000 ÷ 400 = 500 reviewers on duty, about 700 after shifts and leave (illustrative).</p>
+<figure>{{SVG:moder}}
+<figcaption><b>{{FIG:moder}} · How a reported post is handled.</b> Machines take the clear cases; people take the grey ones. Every rule change moves posts between the boxes, and so changes the size of the review team. <span class="src">Simplified from Meta’s Transparency Center descriptions (2024–26); volumes illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Groups</td><td>“People who share my interest or problem”</td><td>Admins, rules, topics; where much of Facebook’s daily use happens</td><td>Daily active group members</td></tr>
+<tr><td>Marketplace</td><td>“Buy and sell used things nearby”</td><td>Local listings and chat with the seller; high intent, so good for ads</td><td>Listings that sell</td></tr>
+<tr><td>Friends tab, video feed</td><td>“I only want my friends” / “entertain me”</td><td>A friends-only tab beside an AI-ranked video feed: both jobs in one app</td><td>Time spent; young adults’ share</td></tr>
+<tr><td>Click-to-WhatsApp ads</td><td>Small shops: “My customers live on WhatsApp”</td><td>The ad opens a chat instead of a website</td><td>Messages started; advertiser spend</td></tr>
+</table>
+
+<h3>Business model, with numbers</h3>
+<p>Meta’s revenue in April–June 2026 was <b>$60.8 bn</b>, up 28%, almost all from ads across Facebook, Instagram, Messenger and WhatsApp. 3.60 bn people used at least one Meta app each day. Its automated campaign tool, Advantage+, runs at about $75 bn a year. Meta also spends heavily: Reality Labs (glasses and headsets) lost $4.6 bn that quarter, and it plans $130–145 bn of spending on data centres for AI in 2026.</p>
+<p><b>Moat, in plain words.</b> Three billion people and the data on what they respond to, plus an auction that small businesses can use for ₹500 a day. Advertisers go where the customers and the results are. The risk is age: Facebook’s users are getting older, which is why the young go to Instagram.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Daily users who interact with friends, groups or Marketplace.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Group posts · Marketplace messages · video time · ad conversion rate.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Scam reports per 1,000 Marketplace chats · hide and report rate on ads · share of daily users under 30.</div>
+</div>
+<p><b>2025–26 moves.</b> A Friends tab and a feed rebuilt around recommended video. Messenger was folded back into Facebook: messenger.com shut in April 2026. In the US, Community Notes replaced third-party fact-checkers in 2025.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>The largest audience in the world</li><li>An ad system small shops can use</li><li>Groups and Marketplace give daily reasons to visit</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Ageing users; weak with under-25s</li><li>Scams on Marketplace and in ads</li><li>Constant rulings on content and data, in India and abroad</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Buyers fear being cheated on used goods <span class="arrow">→</span> verified sellers plus UPI payment held until the buyer confirms pickup <span class="arrow">→</span> listings that sell; scam reports per 1,000 deals.</p>
+<p class="idea"><b>2.</b> Small shops don’t know if their ₹500 a day worked <span class="arrow">→</span> a weekly “what your ads brought in” message on WhatsApp, with orders from chats counted <span class="arrow">→</span> small advertisers still spending after 90 days.</p>

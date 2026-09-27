@@ -1,0 +1,126 @@
+<!-- ============ CASE 3.1 AI FOR MYNTRA ============ -->
+<section class="page">
+<div class="kicker">E-commerce &amp; marketplaces · Cases</div>
+<div class="keep" style="break-after:avoid">
+<div class="casehead"><span class="t">Case 3.1 · AI to raise engagement on Myntra</span>
+ <span class="m"><span class="pill">Product improvement</span><span>Medium</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, pp. 107–108</span></span></div>
+<div class="try"><b>Try it first.</b> Think of the last three times you opened a fashion app without buying anything. What brought you there? Which of those reasons would a chatbot make better, and which would a simple rule fix?</div>
+</div>
+
+{{CASE:B107}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Asked what “AI” meant</b> and got a precise goal back: more days of use and longer sessions, not more orders.</li>
+ <li><b>Picked one persona with a reason</b>: a “what do I wear today?” need can bring people back daily, a shopping need can’t.</li>
+ <li><b>Named the tech and the hook for each idea</b>, and ranked them on impact against cost.</li>
+ <li><b>Chose text first because it is cheaper and more reliable</b>, and added a counter metric for bad suggestions.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Accepted “AI is the answer” without testing it.</b> Fit anxiety, for one, is mostly solved by data and a rule (“62% of buyers chose one size up”), with no model at all.</li>
+ <li><b>Never sized the problem.</b> How many users open the app only when buying? How many have enough Myntra purchases to style?</li>
+ <li><b>No cost.</b> An LLM chat has a price per message; at millions of users a day that decides whether the feature survives.</li>
+ <li><b>The North Star rewards chattiness.</b> A stylist that confuses people gets more messages, not fewer.</li>
+ <li><b>Didn’t ask what Myntra already has.</b> It launched MyFashionGPT (search by typing a need in plain words) in 2023 and has visual search.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓ (which kind of AI)</span> · Goal <span class="tk y">✓</span> · Who <span class="tk y">✓</span> · Today and the trigger: what Myntra already ships <span class="tk n">✗</span> · Edges: budget, platform, timeline <span class="tk n">✗</span>. Skipping “today” is why the answer proposed a chatbot Myntra already has a version of; skipping edges is why cost never came up.</p>
+
+<div class="box chk"><span class="lbl">Check · “No other platform knows what you already own” <span class="verdict v-over">Overstated</span></span>
+<p>Myntra knows only what you bought <i>on Myntra</i>. Most Indian wardrobes are bought in shops, as gifts and on other apps. A user with three Myntra orders has too few items for a daily outfit. The data moat is real only for heavy buyers, or if users add photos of the rest of their clothes.</p></div>
+<div class="box chk"><span class="lbl">Check · “Chatting increases session duration significantly” <span class="verdict v-over">Overstated</span></span>
+<p>Longer sessions can mean people can’t find what they want. What matters is whether they come back on more days and act on the suggestion. Many apps have seen chat features get a burst of curiosity in week one and then fade.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip31}}
+<figcaption><b>{{FIG:strip31}} · An AI-feature answer in six moves.</b> Move ③ is the one most candidates skip: check whether the problem needs a model at all before choosing one. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>“Engagement” can mean two things: people open Myntra on more days, or they stay longer each time. They lead to different ideas, so I’d ask which one matters. I’d also ask which users we care about, and what AI Myntra already has, such as visual search and MyFashionGPT, so I don’t propose something that exists. I’ll assume a mobile launch within six months.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>More days a week. Focus on 18–30-year-olds. Assume visual search exists.</p></div></div>
+<p class="whynote">Why this move: “days a week” rules out ideas that only make each visit longer, such as a chat that keeps you typing. It also tells us what to measure at the end.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Size it</div><p>Most people open a fashion app only when they need to buy something. Illustrative: of 100 monthly users, about 60 come only when buying, a few times a year. Short interviews would give three reasons they don’t come on other days: nothing new that suits me, I don’t know what goes with what, and I’m scared of ordering the wrong size.</p><p>Only the second reason can create a habit on days you are <i>not</i> buying, the way people check the weather every morning. The other two matter when you are already shopping.</p></div></div>
+<p class="whynote">Why this move: fixing the reason that creates a daily need moves “days a week”; fixing the others mostly moves sales.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Does it need AI?</div><p>Take each problem on its own. <b>Fear of size</b> doesn’t need a model: our returns data can say “runs small, most people chose one size up”, and that is a simple rule. <b>Styling</b> does: picking which bottoms and shoes go with a mustard kurta is a judgement nobody can write down as rules, we have millions of saved and bought outfits to learn from, and a bad suggestion costs the user only a swipe ({{REF:needai}}).</p></div></div>
+<p class="whynote">Why this move: it puts AI only where rules fail and mistakes are cheap, and ships the cheap fix for size straight away.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Pick one, check four risks</div><p>The idea: a daily “outfit of the day” built from what you own. Its four risks are in {{REF:risks}}. The biggest is <b>data</b>: most users own too few Myntra items to style, because they bought most of their clothes elsewhere. So the first version asks users to add photos of three favourite pieces.</p><p>Cost, illustrative: 10 lakh users a day × 3 outfits each × ₹0.20 of model cost per outfit = ₹6 lakh a day. ₹6 lakh × 365 days ≈ ₹22 Cr a year. The feature must bring in more than that in extra purchases.</p></div></div>
+<p class="whynote">Why this move: if the riskiest part fails, nothing else matters, so it is tested first and cheaply.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ MVP</div><p>A morning card, not a chatbot: “Today: your blue jeans + this kurta + white sneakers”, with three buttons: Wear it, Swap, and Shop the missing piece. Launch it to 5% of users who own five or more Myntra items. Keep a similar group without it (a holdout) so we can see what the card really changes.</p></div></div>
+<p class="whynote">Why this move: a card needs no typing and costs one model call a day; a chat invites long, costly conversations. The holdout separates the card’s effect from everything else happening that month.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> weekly users who save, wear or buy from a suggested outfit. <b>Inputs:</b> share of users with enough wardrobe items; outfits accepted per 100 shown. <b>Safety checks (guardrails):</b> return rate on items bought from suggestions; thumbs-down rate; model cost per active user. <b>Trade-off:</b> the card is cheap but narrow; chat is flexible but costly. <b>Next time:</b> open chat only to people who already use the card every week.</p></div></div>
+<p class="whynote">Why this move: the goal counts people who <i>act</i> on an outfit, so a confusing stylist can’t score well just by generating more chat.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>The goal (people acting on outfits each week) comes straight from the clarified meaning of engagement (more days a week). The biggest risk (too little wardrobe data) shaped the MVP (add three photos). The cost maths (₹22 Cr a year) set the bar the feature must clear. And the guardrail (returns on suggested items) stops an AI that sells clothes people send back.</div>
+
+<div class="box fw"><span class="lbl">Framework · Does this need AI?</span>
+<p><span class="step">1 · The situation.</span>Leadership says “use AI”. Some of the user problems here need a model; others need a rule and a good label. Building a model where a rule works costs months and money, and adds wrong answers.</p>
+<p><span class="step">2 · An everyday example.</span>A chai stall owner wonders whether to buy software that predicts how much milk to order. If he sells about 200 cups every day, a line in his notebook (“order 20 litres”) is enough. Only if sales swing with rain, cricket matches and festivals, and he has months of past sales to learn from, would a prediction beat his notebook. Even then, a wrong guess costs him only some spilt milk.</p>
+<table class="tbl">
+<tr><th style="width:25%">Question</th><th>Chai stall milk order</th><th>Myntra: fit anxiety</th><th>Myntra: styling</th></tr>
+<tr><td><b>Can a simple rule do it?</b></td><td>Yes, on steady days</td><td>Mostly: “runs small” from returns data</td><td>No: too many combinations</td></tr>
+<tr><td><b>Is there data with right answers?</b></td><td>Months of sales</td><td>Returns tagged “too small”</td><td>Millions of saved and bought looks</td></tr>
+<tr><td><b>Is a wrong answer cheap?</b></td><td>Some spilt milk</td><td>No: a return costs ~₹250</td><td>Yes: the user swipes</td></tr>
+<tr><td><b>Verdict</b></td><td>Notebook</td><td>Rule + label first</td><td>AI, with an easy “no”</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>Ask four questions in order ({{REF:needai}}). <b>Can a rule do it?</b> If a person can write the logic down, write it down. <b>Is there enough data with right answers?</b> (Called <span class="term">labels</span>: past examples where we know the right answer, like “returned: too small”.) <b>How costly is a wrong answer?</b> Cheap mistakes suit AI; costly ones need a human check. <b>Does it beat the simple version by enough to pay for itself?</b></p>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this case):</p><ol class="usesteps"><li>List the user problems separately: fear of the wrong size, not knowing what goes together, nothing new that suits me.</li><li>For each one, try to write the logic as a single rule. “Tell people when a kurta runs small” fits in one sentence, so ship the rule.</li><li>Where no rule fits (styling), check you have past examples with known right answers: outfits people saved, bought and kept.</li><li>Ask what a wrong answer costs the user. A bad outfit costs a swipe, so AI can decide alone; blocking a seller costs a livelihood, so a person checks.</li><li>Test the model against the simple version on a small group. Keep it only if it wins by more than its running cost.</li></ol><p class="slip"><b>Common slip</b> · judging the whole idea (“an AI stylist”) instead of each problem inside it. Most ideas contain one part that needs AI and two that don’t.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="na" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker></defs>
+ <g>
+  <rect x="0" y="10" width="140" height="48" rx="6" fill="#eef0fb" stroke="#3e4fb8"/><text x="70" y="30" text-anchor="middle" class="b">① Can a written</text><text x="70" y="45" text-anchor="middle" class="b">rule do it?</text>
+  <rect x="176" y="10" width="140" height="48" rx="6" fill="#eef0fb" stroke="#3e4fb8"/><text x="246" y="30" text-anchor="middle" class="b">② Enough data</text><text x="246" y="45" text-anchor="middle" class="b">with right answers?</text>
+  <rect x="352" y="10" width="140" height="48" rx="6" fill="#eef0fb" stroke="#3e4fb8"/><text x="422" y="30" text-anchor="middle" class="b">③ Is a wrong</text><text x="422" y="45" text-anchor="middle" class="b">answer cheap?</text>
+  <rect x="528" y="10" width="150" height="48" rx="6" fill="#eef0fb" stroke="#3e4fb8"/><text x="603" y="30" text-anchor="middle" class="b">④ Beats the rule by</text><text x="603" y="45" text-anchor="middle" class="b">enough to pay?</text>
+  <line x1="140" y1="34" x2="172" y2="34" class="ln" marker-end="url(#na)"/><text x="156" y="28" text-anchor="middle" class="s">no</text>
+  <line x1="316" y1="34" x2="348" y2="34" class="ln" marker-end="url(#na)"/><text x="332" y="28" text-anchor="middle" class="s">yes</text>
+  <line x1="492" y1="34" x2="524" y2="34" class="ln" marker-end="url(#na)"/><text x="508" y="28" text-anchor="middle" class="s">yes</text>
+  <line x1="70" y1="58" x2="70" y2="94" class="ln" marker-end="url(#na)"/><text x="76" y="80" class="s">yes</text>
+  <line x1="246" y1="58" x2="246" y2="94" class="ln" marker-end="url(#na)"/><text x="252" y="80" class="s">no</text>
+  <line x1="422" y1="58" x2="422" y2="94" class="ln" marker-end="url(#na)"/><text x="428" y="80" class="s">no</text>
+  <line x1="603" y1="58" x2="603" y2="94" class="ln" marker-end="url(#na)"/><text x="609" y="80" class="s">yes</text>
+  <rect x="0" y="96" width="140" height="48" rx="6" fill="#e7f4f0" stroke="#127a64"/><text x="70" y="116" text-anchor="middle" class="b grn">Use the rule</text><text x="70" y="131" text-anchor="middle" class="s">size label from returns</text>
+  <rect x="176" y="96" width="140" height="48" rx="6" fill="#fcecea" stroke="#b93a32"/><text x="246" y="116" text-anchor="middle" class="b red">Collect data first</text><text x="246" y="131" text-anchor="middle" class="s">start with a rule, log outcomes</text>
+  <rect x="352" y="96" width="140" height="48" rx="6" fill="#fbf4e6" stroke="#c47f17"/><text x="422" y="116" text-anchor="middle" class="b amb">AI + a human check</text><text x="422" y="131" text-anchor="middle" class="s">e.g. blocking a seller</text>
+  <rect x="528" y="96" width="150" height="48" rx="6" fill="#e3f0f5" stroke="#0b5d7a"/><text x="603" y="116" text-anchor="middle" class="b acc">Build with AI</text><text x="603" y="131" text-anchor="middle" class="s">outfit suggestions</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:needai}} · Four questions before building with AI.</b> Most ideas leave at the first box: if a person can write the logic down, a rule is cheaper, faster and easier to explain. AI earns its cost only at the far right. <span class="src">Author’s summary, adapted from the “framework for applying AI/ML” in IIM A <i>Product Mindset 2026–27</i>, p. 89.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>A rule that looks simple can quietly grow into hundreds of exceptions. “Brand X runs small” works until Brand X changes its factory mid-season and half its kurtas now run large; the rule keeps telling people to size up, and returns jump. Re-ask question ① whenever a rule needs a new exception every week.</p>
+<p><span class="step">5 · In the interview.</span>“Before choosing a model, I’ll check whether a simple rule gets us most of the way. I’d use AI only where rules fail and a wrong answer is cheap.”</p>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · The four risks of a new product (Marty Cagan)</span>
+<p><span class="step">1 · The situation.</span>The candidate ranked ideas on “impact” and “AI complexity”. That misses the ways a product can fail even when it is easy to build: nobody wants it, people can’t figure it out, or it loses money.</p>
+<p><span class="step">2 · An everyday example.</span>Your aunt wants to start a home tiffin service. Four things can sink it. Will office-goers nearby want home food at ₹120? Can they order and pay easily on WhatsApp? Can she cook 50 tiffins by noon in her kitchen? And does ₹120 cover vegetables, gas, packing and delivery, with the housing society’s permission?</p>
+<table class="tbl">
+<tr><th style="width:17%">Risk</th><th style="width:26%">Tiffin service</th><th style="width:30%">Myntra outfit of the day</th><th>Cheapest test</th></tr>
+<tr><td><b>Value</b>: will they want it?</td><td>Office-goers pay ₹120 for home food?</td><td>Will people open the app for an outfit on non-buying days?</td><td>Stylists pick outfits by hand for 200 users for two weeks</td></tr>
+<tr><td><b>Usability</b>: can they use it?</td><td>Ordering on WhatsApp</td><td>Do people understand Swap and Wear it without typing?</td><td>Five-user test of a clickable prototype</td></tr>
+<tr><td><b>Feasibility</b>: can we build it?</td><td>50 tiffins by noon</td><td>Enough wardrobe data; good outfits from few items</td><td>Run the model on 1,000 real wardrobes, rate the output</td></tr>
+<tr><td><b>Viability</b>: does it work for the business?</td><td>₹120 covers costs; society allows it</td><td>₹22 Cr a year of model cost pays back in purchases; no brand conflicts</td><td>Spreadsheet: cost per user vs extra purchases per user</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>Marty Cagan (SVPG, <i>Inspired</i>) says every idea carries four risks: <b>value</b> (will customers want it?), <b>usability</b> (can they work out how to use it?), <b>feasibility</b> (can we build it with our time, skills and data?) and <b>viability</b> (does it work for the business: cost, law, brand, partners?). The point is to test the riskiest one first and cheaply, before building ({{REF:risks}}).</p>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this case):</p><ol class="usesteps"><li>Write the idea in one line: a daily outfit card built from what the user owns.</li><li>For each of the four risks, write the one thing that would kill it. Value: nobody opens it. Usability: people don’t get the buttons. Feasibility: too few wardrobe items. Viability: model cost beats extra sales.</li><li>Mark the riskiest: the one you know least about <i>and</i> that would hurt most. Here, wardrobe data.</li><li>Design the cheapest test for that one: run the model on 1,000 real wardrobes and have stylists rate the outfits.</li><li>Only when that passes, move to the next risk, and only then design the screens.</li></ol><p class="slip"><b>Common slip</b> · testing usability first because designing screens is the fun part, while the real unknown is whether the data or the demand exists.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect x="0" y="0" width="336" height="72" rx="6" fill="#e7f4f0" stroke="#127a64"/>
+  <text x="10" y="18" class="b grn">Value: will they want it?</text><text x="10" y="35">Do people open Myntra on non-buying days</text><text x="10" y="50">for an outfit? Test: human stylists, 200 users.</text><text x="326" y="64" text-anchor="end" class="s">risk: medium</text>
+  <rect x="344" y="0" width="336" height="72" rx="6" fill="#e3f0f5" stroke="#0b5d7a"/>
+  <text x="354" y="18" class="b acc">Usability: can they use it?</text><text x="354" y="35">A card with three taps, no typing.</text><text x="354" y="50">Test: five users, one clickable prototype.</text><text x="670" y="64" text-anchor="end" class="s">risk: low</text>
+  <rect x="0" y="78" width="336" height="72" rx="6" fill="#fcecea" stroke="#b93a32" stroke-width="2"/>
+  <text x="10" y="96" class="b red">Feasibility: can we build it?</text><text x="10" y="113">Most users own too few Myntra items to style.</text><text x="10" y="128">Test: run it on 1,000 real wardrobes.</text><text x="326" y="142" text-anchor="end" class="b red">risk: HIGH, test first</text>
+  <rect x="344" y="78" width="336" height="72" rx="6" fill="#fbf4e6" stroke="#c47f17"/>
+  <text x="354" y="96" class="b amb">Viability: does it pay?</text><text x="354" y="113">~₹22 Cr a year of model cost (illustrative)</text><text x="354" y="128">must come back as extra purchases.</text><text x="670" y="142" text-anchor="end" class="s">risk: medium</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:risks}} · The four risks, applied to an outfit-of-the-day card.</b> The red box is the one to test first, because if it fails nothing else matters. <span class="src">Framework: Marty Cagan, <i>Inspired</i> (2nd ed., 2017); ratings and costs illustrative.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>The four risks pull against each other. Cutting model cost (viability) by switching to a smaller model can make outfits worse (value). Google Glass passed feasibility in 2013 and failed value and social acceptance: people didn’t want a camera on a stranger’s face. Ticking each box separately misses the trade-off between them.</p>
+<p><span class="step">5 · In the interview.</span>“This idea is easy to use but hard to feed with data, so I’d test the data risk first, cheaply, before designing screens.”</p>
+</div>
+</section>

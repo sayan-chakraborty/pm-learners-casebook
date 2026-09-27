@@ -1,0 +1,36 @@
+<!-- ============ TEARDOWNS: PRACTO (WITH TATA 1MG) ============ -->
+<h1 style="margin-top:12pt">Practo: the doctor’s calendar, from both sides</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Rahul, 34, in Hyderabad, has a rash that won’t go away. He searches Practo for a skin doctor near his office and sees a list with ratings, fees and the next free slot. Dr Rao, 2 km away, charges ₹600 and has a 6:30 pm opening. He books it. At 5 pm a reminder arrives with directions. After the visit, the prescription Dr Rao typed into her clinic software appears in Rahul’s app, and he orders the cream and a blood test from it ({{REF:practo-flow}}).</p>
+
+<figure>{{SVG:flow_practo}}
+<figcaption><b>{{FIG:practo-flow}} · Behind one appointment.</b> The same booking touches both sides: Rahul’s app (①–③) and Dr Rao’s clinic software (④, ⑦). Owning the software is what makes the free slot visible at all. <span class="src">Author’s simplification of Practo’s patient app and clinic software (2026); fee illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Doctor search with reviews</td><td>“Which doctor near me is good?”</td><td>Ratings, experience, fees and real slots in one list</td><td>Bookings per search</td></tr>
+<tr><td>Clinic software</td><td>Doctors: “my appointments are on paper”</td><td>Calendar, records and prescriptions; also feeds live slots to the app</td><td>Clinics on the software; slots visible</td></tr>
+<tr><td>Video consults</td><td>“I can’t take half a day off”</td><td>Legal since the March 2020 guidelines; fixed price, often within an hour</td><td>Consults a month; repeat use</td></tr>
+<tr><td>Digital prescription</td><td>“I lost the paper”</td><td>Saved in the app; one tap to order medicines or tests</td><td>Tests and orders per consult</td></tr>
+<tr><td>Employer health plans</td><td>“Staff want doctors, not only insurance”</td><td>Unlimited consults sold to companies for their staff</td><td>Corporate revenue</td></tr>
+</table>
+
+<h3>Business model, and the Tata 1mg comparison</h3>
+<p>Practo earns from many small streams ({{REF:practo-money}}): clinic software subscriptions and better listings paid by doctors, online consults and tests paid by patients, and health plans sold to employers. That mix took years to pay off: <b>₹234 crore of revenue in FY25</b> and its first full year of operating profit, ₹15 crore. <b>Tata 1mg</b>, the comparison, is the opposite shape. It is mainly a pharmacy: it sells medicines and lab tests, with consults as a way in. That brings far more revenue, <b>₹2,392 crore in FY25</b>, because each order is a basket of medicines, but thin margins and heavy delivery costs kept it at a ₹276 crore loss. Practo owns the moment a patient chooses a doctor; 1mg owns what happens after the prescription.</p>
+<figure>{{SVG:practo_money}}
+<figcaption><b>{{FIG:practo-money}} · Four kinds of payer.</b> Doctors pay for tools and visibility, patients for consults and tests, employers and hospitals for plans and software. <span class="src">Practo FY25 annual letter; Inc42 (Aug 2025); streams simplified.</span></figcaption>
+</figure>
+<p><b>Moat, in plain words.</b> Clinic software used every day by doctors gives Practo real appointment slots that a directory can’t show; millions of reviews help patients choose.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Appointments completed (in person and online) a month.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Doctors with live slots · bookings per search · repeat patients · tests per consult.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>No-show rate · fake or bought reviews · complaints about consult quality.</div>
+</div>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Both sides: patients and clinics</li><li>Profitable at the operating level</li><li>Trusted brand for finding doctors</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Small revenue for its age</li><li>Hospitals and pharmacies run their own apps</li><li>Reviews can be gamed</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Patients arrive without their history <span class="arrow">→</span> link ABHA records at booking so the doctor sees past reports before the visit <span class="arrow">→</span> share of visits with records attached; consult time.</p>
+<p class="idea"><b>2.</b> Small clinics still use paper <span class="arrow">→</span> a free basic calendar with a paid pre-visit brief (old reports sorted, values out of range flagged) <span class="arrow">→</span> clinics adopting; upgrade rate.</p>
+<p class="idea"><b>3.</b> Follow-ups get forgotten <span class="arrow">→</span> a reminder and one-tap rebooking on the date the doctor set <span class="arrow">→</span> follow-up visits kept.</p>

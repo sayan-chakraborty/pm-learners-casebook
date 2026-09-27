@@ -1,0 +1,86 @@
+<!-- ============ SECTOR PRIMER ============ -->
+<section class="page">
+<div class="modtitle"><h1>SaaS, productivity &amp; enterprise AI</h1></div>
+
+<div class="coldopen"><span class="lbl">Gurugram, a Monday in March</span>
+<p>Karan, 29, sells logistics software. After his last call of the day he spends 40 minutes typing notes into the company’s CRM (the customer database where every sales deal is tracked), because the sales-operations head has made it compulsory. He skips two calls’ notes to get home. On Friday the sales forecast built from that CRM is wrong by ₹1.2 crore. One floor up, the head of support is deciding whether to pay ₹1,500 a seat a month for an AI assistant for her 120 agents. And the finance head wants to know why the company’s AI bill doubled this quarter when the number of people using the software stayed the same.</p>
+<div class="tryq">Try it: who is the real customer for a CRM, Karan or his boss? And if an AI tool does half an agent’s work, should the vendor still charge per agent? Think for five minutes before reading on.</div>
+</div>
+
+<h2 style="font-size:14pt;border:none;margin-top:6pt">Software that companies buy, and people have to use</h2>
+<p class="lede">SaaS (software as a service) is software a company rents over the internet instead of installing it: Gmail and Google Docs for an office, Salesforce for sales teams, Freshdesk for support desks. The customer pays every month or every year, for as long as the software stays useful. So the whole business depends on one thing: do people keep using it after the contract is signed? Two things make this sector different from consumer apps. The person who signs the cheque is usually not the person who uses the product every day. And AI has changed the cost of serving a customer. A copy of classic software costs almost nothing to run. An AI feature pays a bill every time someone uses it.</p>
+
+<div class="stats">
+ <div><b>3 crore+</b><span>paid Microsoft 365 Copilot seats, double January’s count (Microsoft, Jul 2026)</span></div>
+ <div><b>$42.2 bn</b><span>AWS revenue in one quarter, up 37%; Google Cloud grew 82% (Apr–Jun 2026)</span></div>
+ <div><b>₹12,313 Cr</b><span>Zoho’s revenue in FY25, up 18%, with ₹3,191 crore profit (RoC filings)</span></div>
+ <div><b>10,000+</b><span>MCP servers connecting AI tools to other software, a year after launch (Dec 2025)</span></div>
+</div>
+
+<h2>Who does what, and who pays whom</h2>
+<p>Take one deal: a support-desk tool for a company with 200 support agents, at ₹1,000 a seat a month ({{REF:deal}}). The <b>users</b> are the 200 agents. They decide, day by day, whether the tool actually gets used. The <span class="term">buyer</span> (the person who owns the budget and signs) is the head of support. Around them sit people who can’t say yes but can say no. <b>IT and security</b> check how people log in, where the data is stored and who can see it. <b>Legal</b> negotiates the data-processing terms. <b>Finance and procurement</b> push for a discount and yearly payment. On the vendor’s side, a sales rep, a solutions engineer (who runs the demo and the pilot) and later a customer-success manager (whose job is to make sure the customer uses what it bought and renews) work the deal.</p>
+<p>Software also reaches customers through other routes. <b>Resellers and systems integrators</b> (firms such as Infosys or smaller local partners who set software up for clients) take a cut for selling and installing it. <b>Cloud marketplaces</b> let a company buy software on its AWS or Azure bill, which is often quicker because the budget is already approved. The vendor, in turn, pays its own suppliers: a cloud bill for servers, and now an AI bill for every call to a model.</p>
+<figure>{{SVG:deal}}
+<figcaption><b>{{FIG:deal}} · Who buys, who uses, who can say no.</b> The buyer signs, but the users decide whether the software is used, and IT or legal can block the deal outright. A sales cycle is long because each of these people has to agree. <span class="src">Author’s diagram; deal size and timings illustrative.</span></figcaption>
+</figure>
+
+<h2>The unit economics, worked in rupees</h2>
+<p><b>A seat a month.</b> At ₹1,000 a seat a month, the 200-seat deal is 200 × ₹1,000 × 12 = <b>₹24 lakh a year</b>. That yearly figure for all contracts is called <span class="term">ARR</span> (annual recurring revenue: what customers pay each year if nothing changes). Running classic software is cheap: servers, storage and a support team cost about ₹200 a seat, so the <span class="term">gross margin</span> (what is left after the cost of serving the customer) is about 80% ({{REF:seatwf}}). Add an AI feature and the picture changes. If each agent triggers 60 AI drafts a day at about 12 paise each, that is about ₹150 a seat a month on model bills alone, and the margin falls to 65%. Heavy users cost more than light ones, even though both pay the same ₹1,000.</p>
+<figure>{{SVG:seatwf}}
+<figcaption><b>{{FIG:seatwf}} · Where ₹1,000 a seat goes.</b> Classic SaaS costs little to serve, so extra customers are almost pure profit. An AI feature adds a cost that grows with every use, which is why AI products are rethinking per-seat prices. <span class="src">Illustrative; margins typical of listed SaaS companies (2025–26).</span></figcaption>
+</figure>
+<p><b>Paying back the cost of winning a customer.</b> B2B deals are expensive to win: months of a sales rep’s and engineer’s time, demos, a pilot, travel. Say winning this customer cost ₹24 lakh (its CAC, customer acquisition cost). Each month the customer brings ₹2 lakh in revenue and ₹1.6 lakh in gross profit, so the vendor gets its money back in ₹24 lakh ÷ ₹1.6 lakh = <b>15 months</b>. With the AI feature’s extra cost it takes 18.5 months ({{REF:payback}}). If the customer leaves after a year, the deal lost money. That is why B2B companies care so much about the next metric.</p>
+<figure>{{SVG:payback}}
+<figcaption><b>{{FIG:payback}} · How long until the deal pays back.</b> The customer has to stay more than a year before the vendor earns anything on it; a lower margin pushes that point further out. <span class="src">Illustrative.</span></figcaption>
+</figure>
+
+<h2>The metrics that matter</h2>
+<p><b>Keeping and growing customers.</b> A customer who stays and adds seats is worth far more than a new one. <span class="term">Net revenue retention</span> (NRR) takes the customers you had a year ago and compares what they pay now with what they paid then, counting extra seats, downgrades and those who left. If last year’s customers paid ₹24 lakh and now pay ₹30 lakh, NRR is 125% ({{REF:nrr}}): the company grew 25% without winning anyone new. Over 100% is good; the best companies reach 120% or more. Amplitude’s was 103% in April–June 2026.</p>
+<figure>{{SVG:nrr}}
+<figcaption><b>{{FIG:nrr}} · Net revenue retention, worked.</b> Existing customers added 60 seats and a few cut back. NRR counts only customers you already had, so it shows whether the product grows inside the accounts that bought it. <span class="src">Illustrative.</span></figcaption>
+</figure>
+<table class="tbl">
+<tr><th style="width:21%">Metric</th><th style="width:44%">What it means, in one line</th><th>Example</th></tr>
+<tr><td><b>ARR</b></td><td>What all customers pay in a year, if nothing changes</td><td>200 seats × ₹1,000 × 12 = ₹24 lakh</td></tr>
+<tr><td><b>Net revenue retention</b></td><td>Last year’s customers: what they pay now ÷ what they paid then</td><td>₹30 lakh ÷ ₹24 lakh = 125%</td></tr>
+<tr><td><b>Gross revenue retention</b></td><td>The same, but counting only losses, never growth; at most 100%</td><td>₹22.8 lakh kept of ₹24 lakh = 95%</td></tr>
+<tr><td><b>Logo churn</b></td><td>Share of customers (logos) who left in the year</td><td>6 of 100 companies left = 6%</td></tr>
+<tr><td><b>Seat utilisation</b></td><td>Seats in use ÷ seats paid for; the number a buyer checks at renewal</td><td>110 active of 200 paid = 55%</td></tr>
+<tr><td><b>Expansion revenue</b></td><td>New money from existing customers: more seats, a higher plan, an add-on</td><td>60 extra seats = ₹7.2 lakh a year</td></tr>
+<tr><td><b>CAC payback</b></td><td>Months of gross profit needed to earn back the cost of winning a customer</td><td>₹24 lakh ÷ ₹1.6 lakh = 15 months</td></tr>
+</table>
+
+<h2>Players and numbers</h2>
+<p>Three kinds of company sell software to businesses. <b>Cloud providers</b> rent computing power, storage and now AI models: AWS earned $42.2 billion in April–June 2026 alone, Microsoft’s Azure grew 43% and Google Cloud 82%, the fastest of the three, as companies rushed to run AI ({{REF:cloudgrowth}}). <b>Office suites</b> sell tools everyone in a company uses: Microsoft 365 has about 45 crore paid business seats, and its AI add-on, Copilot, passed 3 crore paid seats by July 2026 ({{REF:copilotseats}}). Google Workspace put its Gemini AI into every business plan in 2025 and raised prices by about $2 a user a month. <b>Specialist SaaS</b> sells to one team: Salesforce for sales, Amplitude for product analytics, ThoughtSpot for business reporting. India has built strong companies here. Zoho, from Chennai, earned ₹12,313 crore in FY25 with a large profit and no outside investors. Freshworks earned $237 million in April–June 2026. Postman, BrowserStack and LeadSquared sell to developers, testers and sales teams worldwide.</p>
+<div class="figrow">
+<figure>{{SVG:cloudgrowth}}
+<figcaption><b>{{FIG:cloudgrowth}} · Cloud growth.</b> AI work is pouring into all three; Google, the smallest, grew fastest. <span class="src">Amazon, Microsoft and Alphabet results for the quarter to 30 Jun 2026.</span></figcaption>
+</figure>
+<figure>{{SVG:copilotseats}}
+<figcaption><b>{{FIG:copilotseats}} · AI sold per seat.</b> Copilot doubled in six months, yet still reaches under 7% of Microsoft 365 users. <span class="src">Microsoft earnings calls, FY26 Q2–Q4.</span></figcaption>
+</figure>
+</div>
+
+<h2>Turning points</h2>
+<p>Four changes shaped the sector ({{REF:timeline}}). <b>Subscriptions replaced licences.</b> Salesforce sold software over the internet from 1999, and in 2013 Adobe stopped selling boxed Photoshop altogether. Customers paid less up front but kept paying, and vendors had to earn the renewal every year. <b>The cloud (2006 onwards)</b> let anyone rent servers by the hour, so a start-up could sell to Fortune 500 companies without owning a data centre. <b>Covid (2020)</b> made video calls, chat and shared documents the way offices work. <b>Generative AI (2022 onwards)</b> put an assistant into every office tool, first sold per seat (Microsoft 365 Copilot at $30 a user a month from November 2023), then more and more per piece of work done. The latest step is <b>agents and MCP</b>: AI that takes actions inside other software, connected through a common standard.</p>
+<figure>{{SVG:timeline}}
+<figcaption><b>{{FIG:timeline}} · Eight dates that changed how software is sold.</b> Each step moved the price closer to the value the customer gets, and moved more risk onto the vendor. <span class="src">Company announcements; Linux Foundation (9 Dec 2025); Intercom and Salesforce pricing pages (2026).</span></figcaption>
+</figure>
+
+<h2>The non-obvious mechanics</h2>
+<p><b>Renewal day is judgement day.</b> A buyer who paid for 200 seats looks, before renewing, at how many people actually used the tool. If only 110 did, the order shrinks ({{REF:renewal}}). So a B2B product manager watches usage every week, not only at renewal: an unused seat is revenue that will leave in a few months.</p>
+<figure>{{SVG:renewal}}
+<figcaption><b>{{FIG:renewal}} · The renewal cliff.</b> Use peaked after launch and drifted down. Nobody complained, so nothing looked wrong until the renewal meeting. <span class="src">Illustrative.</span></figcaption>
+</figure>
+<p><b>Land, then expand.</b> Vendors often start small (one team, a pilot) and grow inside the account, team by team. Slack and Zoom spread this way: one team starts using it, then its neighbours ask for access. <b>Switching is slow and painful</b>, because years of data, custom workflows and trained staff sit inside the tool, so customers stay for years once a tool is embedded. <b>Deals take months</b>: security reviews, legal terms and budget cycles mean a mid-sized deal in India often takes three to six months. <b>AI makes each use cost money.</b> A seat price that ignores usage lets a few heavy users wipe out the margin on a whole account, which is why prices are moving from per seat to per use and per result ({{REF:priceladder}}).</p>
+<figure>{{SVG:priceladder}}
+<figcaption><b>{{FIG:priceladder}} · Three ways to charge for AI software.</b> Seats are easy to budget but blind to cost; results match value but make the bill unpredictable. Many vendors now mix them: a seat price with a usage allowance. <span class="src">Microsoft, Salesforce and Intercom pricing pages (2025–26).</span></figcaption>
+</figure>
+<div class="box int"><span class="lbl">In the interview · Questions this sector loves</span>
+<ul class="small">
+<li><b>“Adoption of our tool is low. Why?”</b> Separate who bought it from who uses it; find what the user gets back for the effort.</li>
+<li><b>“Design an AI assistant for support, sales or HR.”</b> Say what it may do alone, what a person approves, and how you know it is right.</li>
+<li><b>“How would you launch this to businesses?”</b> Name the buyer, the users and who can say no, then the first customers, the pilot and its pass mark.</li>
+<li><b>“How should we price the AI feature?”</b> Work out the cost per use first; then choose seat, use or result, or a mix.</li>
+</ul></div>
+</section>

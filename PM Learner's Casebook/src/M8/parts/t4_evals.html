@@ -1,0 +1,59 @@
+<!-- ============ TECHNOLOGY: EVALS FOR RAG AND AGENTS ============ -->
+<h2 style="margin-top:12pt">D. Evals for RAG and agents</h2>
+<p>An <span class="term">eval</span> is a repeatable test for an AI system: a fixed set of real cases with known good answers (a golden set), a written standard for grading (a rubric), and a score, re-run after every change. Graders can be code, experts, or another model acting as judge, checked against experts. RAG and agents add one idea on top: they have several stages, so you test each stage on its own, or you won’t know which one to fix.</p>
+
+<h3>1. Split the pipeline: retrieval, then answer</h3>
+<p><b>Everyday picture.</b> A student gets a question wrong. Either they studied the wrong chapter, or they read the right chapter and still wrote the wrong answer. The fixes are different: a better study plan, or more practice writing answers.</p>
+<p><b>How it works.</b> For each test question, label which chunk holds the answer. Then score three things. <span class="term">Retrieval hit rate</span>: was that chunk in the top 5? <span class="term">Faithfulness</span>: does every claim in the answer appear in the retrieved text, with nothing added? <span class="term">Correctness</span>: is the answer right and complete? An AI judge with a rubric can score faithfulness at scale, once its scores have been checked against a person’s on a sample.</p>
+<div class="box ex egcard"><span class="lbl">One RAG test case from the golden set (illustrative)</span>
+<p><b>Question 37.</b> “We’re on the annual plan, bought on 25 August. If we cancel today (15 September), do we get our money back?”</p>
+<p><b>Expected source:</b> Refund policy §2, chunk 4: “Annual plans: full refund within 14 days of purchase. After that, no refund; the plan runs to the end of the term and can be set not to renew.”</p>
+<p><b>Expected answer must include:</b> ① no refund, because 21 days have passed (more than 14) ② the plan stays active to the end of the term ③ how to switch off renewal. <b>Must not include:</b> any partial refund; any promise the policy doesn’t make.</p>
+<p><b>Version 1’s answer:</b> “You’re past the 14-day window, but we can offer a 50% refund as a goodwill gesture.” <b>Scores:</b> retrieval hit ✓ (chunk 4 ranked 2nd) · faithfulness ✗ (the 50% offer appears nowhere in the sources) · correctness ✗ (missing ② and ③). <b>Result: fail</b>, and the fault is in the answering, not the search.</p></div>
+<p><b>Worked example.</b> Run 200 labelled tickets through the copilot. 172 answers are right; 28 are wrong. Tracing each failure: 17 had the wrong chunk in the top 5, 7 had the right chunk but a wrong answer, and 4 used an out-of-date article ({{REF:evalsplit}}). So 21 of 28 failures are about the library and the search. Switching to a bigger, dearer model would fix at most the 7; better search and re-indexing fix the other 21.</p>
+<figure>{{SVG:evalsplit}}
+<figcaption><b>{{FIG:evalsplit}} · Why 28 answers failed.</b> Most failures happen before the model writes anything. Splitting the score tells the team to fix search first. <span class="src">Illustrative.</span></figcaption>
+</figure>
+
+<h3>2. Agent evals: judge the path, not only the result</h3>
+<p><b>Everyday picture.</b> A driving test checks that you reached the end of the route and how you drove: signals, speed, no red lights. Arriving safely after jumping a red light is still a fail.</p>
+<p><b>How it works.</b> For each task, write the expected tool calls and inputs, the final state (plan changed, amount charged) and the safety rules (no charge before approval). Then score: <span class="term">task success</span> (right final state), <span class="term">tool-call accuracy</span> (right tool, right inputs), <b>steps per task</b>, <b>cost per task</b>, and the <span class="term">unsafe-action rate</span> (anything done that needed a person’s approval and didn’t get it).</p>
+<div class="box ex egcard"><span class="lbl">One agent test case (illustrative)</span>
+<p><b>Task 12.</b> “Upgrade customer C-2291 from Basic to Pro today.” <b>Expected:</b> get_account(C-2291) → get_plan_rules(Pro) → calc_proration(22 of 30 days) = ₹1,833 → ask_approval(₹1,833) → change_plan(C-2291, Pro, today) → draft confirmation.</p>
+<p><b>Version 1’s run:</b> get_account ✓ · get_plan_rules ✓ · calc_proration ✓ ₹1,833 · <b>change_plan ✗ called before ask_approval</b> · ask_approval ✓ (afterwards) · confirmation ✓. <b>Final state right, path unsafe. Result: fail.</b></p></div>
+<table class="tbl">
+<tr><th style="width:34%">Agent scorecard: 50 plan-change tasks</th><th class="num" style="width:18%">Version 1</th><th class="num" style="width:18%">Launch bar</th><th>Verdict</th></tr>
+<tr><td><b>Task success</b></td><td class="num">41 of 50 (82%)</td><td class="num">80%</td><td>Passes</td></tr>
+<tr><td><b>Tool calls right (tool and inputs)</b></td><td class="num">291 of 310 (94%)</td><td class="num">95%</td><td>Just short: 12 wrong invoice numbers</td></tr>
+<tr><td><b>Average steps per task</b></td><td class="num">6.2</td><td class="num">8 or fewer</td><td>Passes</td></tr>
+<tr><td><b>Cost per task</b></td><td class="num">₹4.10</td><td class="num">₹6 or less</td><td>Passes</td></tr>
+<tr><td><b>Unsafe actions</b> (critical)</td><td class="num">1 of 50</td><td class="num">0</td><td><b style="color:var(--brk)">Blocks launch</b></td></tr>
+</table>
+
+<h3>3. Regression evals: before switching a model or a setting</h3>
+<p><b>Everyday picture.</b> Before a restaurant changes its oil supplier to save money, the chef cooks the ten best-selling dishes both ways and tastes them side by side.</p>
+<p><b>How it works.</b> Every proposed change, a cheaper model, a new chunk size, a new prompt, is run on the same golden sets before it ships, and scores are compared by stage and by category. <b>Worked example:</b> a model that costs a third as much.</p>
+<table class="tbl">
+<tr><th style="width:36%">Same test sets, two models</th><th class="num" style="width:18%">Current</th><th class="num" style="width:18%">Cheaper model</th><th>Reading</th></tr>
+<tr><td>Retrieval hit rate</td><td class="num">86%</td><td class="num">86%</td><td>Same search, so no change: expected</td></tr>
+<tr><td>Faithfulness</td><td class="num">96%</td><td class="num">91%</td><td>Adds more unsupported claims</td></tr>
+<tr><td>Correct answers</td><td class="num">88%</td><td class="num">84%</td><td>Small drop overall</td></tr>
+<tr><td>Agent task success</td><td class="num">82%</td><td class="num">79%</td><td>Small drop</td></tr>
+<tr><td>Unsafe agent actions</td><td class="num">0 of 50*</td><td class="num">3 of 50</td><td><b style="color:var(--brk)">Not acceptable</b></td></tr>
+<tr><td>Cost per ticket</td><td class="num">₹4.10</td><td class="num">₹1.20</td><td>A big saving</td></tr>
+</table>
+<p class="small">* after fixing version 1’s approval-order bug. <b>Decision:</b> use the cheaper model for summaries and simple answers, keep the current one for agent actions. One overall score would have hidden the safety problem.</p>
+
+<h3>4. Reading real conversations: failure buckets and live signals</h3>
+<p><b>Everyday picture.</b> A shop owner who reads the complaints book every week, sorts the complaints into piles, and fixes the biggest pile first.</p>
+<p><b>How it works.</b> Test sets catch known problems; real users find new ones. Each week, read a sample of conversations where users gave up and label why. Five buckets cover most of it: <b>accuracy</b> (wrong or made-up answer), <b>capability</b> (asked for something it can’t do), <b>flow</b> (loops, asks the same thing twice), <b>hand-off</b> (couldn’t reach a person) and <b>tone</b> ({{REF:failbuckets}}). Live signals flag conversations worth reading: the same question asked again within ten minutes, “talk to a human”, a thumbs-down, and abandonment rates compared across model versions. Every labelled failure becomes a new test case, so it can’t quietly come back.</p>
+<figure>{{SVG:failbuckets}}
+<figcaption><b>{{FIG:failbuckets}} · Why users gave up on a support chatbot.</b> A third were wrong answers, but more than a quarter asked for things the bot couldn’t do; that is a product-scope decision, not a model fix. <span class="src">Illustrative labels; bucket names after the IIM A casebook’s chatbot-abandonment case (pp. 313–314).</span></figcaption>
+</figure>
+<p><b>The PM decisions.</b> Which stages to score, and the launch bar for each. Which metrics are <b>critical</b> (unsafe actions: zero). How many real conversations to read each week, and who reads them. Whether a cheaper model passes the same tests, stage by stage.</p>
+<div class="box int"><span class="lbl">In the interview · Evals for RAG and agents</span>
+<ul class="small">
+<li><b>“How would you measure an AI support agent before launch?”</b> A golden set with expected sources and tool calls; score retrieval, faithfulness, task success and unsafe actions separately; unsafe actions must be zero.</li>
+<li><b>“Accuracy is 88%. Ship?”</b> Ask which 12% fail and why, and whether any failure is dangerous; one overall number hides both.</li>
+<li><b>“We want a cheaper model.”</b> Run the regression set; switch where it passes, keep the dearer model where it doesn’t.</li>
+</ul></div>

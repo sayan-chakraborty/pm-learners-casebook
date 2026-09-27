@@ -1,0 +1,44 @@
+<!-- ============ TEARDOWNS: NETFLIX ============ -->
+<section class="page">
+<div class="kicker">Streaming, music &amp; entertainment · Product teardowns</div>
+<h1>Netflix: always something good to watch, found in a minute</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Meera, 29, a software tester in Bengaluru, pays ₹199 a month for Netflix Basic and watches on her TV. At 9:40 pm she opens the app. The home screen is built for her alone: a row of Korean dramas because she finished one last week, a “Top 10 in India today” row, and a poster for a thriller that shows its female lead, because Meera tends to click on those. She presses play. The picture appears in about two seconds, a little soft, and sharpens within ten. When the episode ends, the next one starts in five seconds unless she stops it. She watches three ({{REF:nf-flow}}).</p>
+
+<figure>{{SVG:flow_nf}}
+<figcaption><b>{{FIG:nf-flow}} · Behind Meera’s evening.</b> The home screen is chosen for her (②–④); the licence key (⑧–⑨) stops copying; the video itself comes from a Netflix box inside her own internet provider (⑩–⑪), which is why it starts fast. <span class="src">Simplified from Netflix’s technology blog and Open Connect documentation (2016–26); timings illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Personal rows and artwork</td><td>“Too much choice; nothing to watch”</td><td>Each row, and even each poster image, is chosen for the viewer; the aim is to press play in under a minute</td><td>Time to first play; hours per member</td></tr>
+<tr><td>Profiles</td><td>“My son’s cartoons ruin my suggestions”</td><td>A separate history for each person in the house</td><td>Quality of recommendations</td></tr>
+<tr><td>Autoplay next episode</td><td>“I want to keep going without reaching for the remote”</td><td>Five-second countdown; can be switched off</td><td>Episodes per session; series completed</td></tr>
+<tr><td>Downloads</td><td>“The internet on my train is patchy”</td><td>Save episodes on the phone at home, watch offline</td><td>Mobile-plan retention</td></tr>
+<tr><td>Phone-only plan (₹149)</td><td>“I can’t pay ₹499”</td><td>Cheap, but only on phones at 480p, so families still buy TV plans</td><td>New members in India</td></tr>
+<tr><td>Household rule, profile transfer</td><td>Netflix: millions watching free on others’ accounts</td><td>Accounts tied to one home; a sharer can move their profile to a new account</td><td>Paying households</td></tr>
+</table>
+
+<h3>Core loop: why people come back, and why they stay</h3>
+<p>Each evening follows a small loop: open, see something picked for you, press play, finish, see the next suggestion. The bigger loop is the business ({{REF:nf-loop}}). More members bring more money; more money pays for more shows in more languages; more hits bring more viewing and more data about what people like; better picks mean less browsing, so fewer people cancel, and the base grows again. The loop only works at a size where a ₹200-crore series is shared by crores of members.</p>
+<figure>{{SVG:loop_nf}}
+<figcaption><b>{{FIG:nf-loop}} · Netflix’s flywheel.</b> Each step makes the next one easier. Scale is the moat: a new rival must pay similar content costs with far fewer members. <span class="src">Author’s diagram; revenue guidance from Netflix’s Q2 2026 letter.</span></figcaption>
+</figure>
+
+<h3>Business model, with numbers</h3>
+<p>Netflix earns almost entirely from subscriptions, plus a fast-growing ads plan in about a dozen countries (not India). It expects revenue of about <b>$51 bn in 2026</b>, with an operating margin of 31.5%; April–June 2026 revenue was $12.6 bn, up 13%. Advertising should roughly double, to about $3 bn, in 2026. Content is the largest cost, spread over the years each show is watched. In 2025 Netflix stopped reporting member numbers, to point investors at revenue and profit instead. In India it chose low prices over ads: a ₹149 phone plan and bundles with Jio and Airtel.</p>
+<p><b>Moat, in plain words.</b> It can spend more on shows than almost anyone because the cost is shared by hundreds of millions of homes. It owns its big originals worldwide, so <i>Squid Game</i> exists only here. And years of viewing data make its picks better than a newcomer’s.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Hours of viewing per member that people rate as satisfying.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Time to first play · share of members starting a new release in 30 days · series completion · ads-plan reach.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Monthly cancellations · cancellations after a price rise · ad load on the ads plan.</div>
+</div>
+<p><b>2025–26 moves.</b> Live events (sport and specials) to create “watch it tonight” moments; games on TV; video podcasts; short vertical clips in the phone app from August 2026; and the password-sharing rule, now in every major market.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Global scale spreads content cost</li><li>Recommendations that cut browsing</li><li>Very profitable; can outspend rivals</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Little live sport, the biggest draw in India</li><li>Priciest TV plans in India</li><li>Slow growth outside cities</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> During the IPL, non-cricket viewers in a house fight for the TV <span class="arrow">→</span> “match-length” picks: films under two hours and one-night stories, promoted at 7:30 pm on phones <span class="arrow">→</span> hours per member in April–May; cancellations in May.</p>
+<p class="idea"><b>2.</b> Growth outside big cities is slow <span class="arrow">→</span> more Tamil, Telugu and Malayalam originals, with good subtitles and dubbing into eight languages <span class="arrow">→</span> sign-ups outside metros; share of viewing in Indian languages.</p>
+<p class="idea"><b>3.</b> People join for one show and leave <span class="arrow">→</span> a small discount for paying for six months, offered on the day a big series ends <span class="arrow">→</span> share of members on longer plans; churn in the month after big releases.</p>
+</section>

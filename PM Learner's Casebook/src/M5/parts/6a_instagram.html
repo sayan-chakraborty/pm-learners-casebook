@@ -1,0 +1,47 @@
+<!-- ============ TEARDOWNS: INSTAGRAM ============ -->
+<section class="page">
+<div class="kicker">Social, creators &amp; messaging · Product teardowns</div>
+<h1>Instagram: a video feed that keeps friends in the loop</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Riya, 22, from Pune, films 30 seconds of a vada pav stall at FC Road, adds a trending song in Instagram’s Edits app and posts it as a Reel. Within seconds Instagram’s servers make four copies at different sizes and check the audio and pictures against its rules. The Reel is first shown to a few hundred people: some of her followers and some strangers who like food videos. They watch it to the end and send it to friends, so Instagram shows it to more. By the next evening it has 40,000 views, 3,000 of them from people who didn’t follow her, 120 shares in DMs and 200 new followers ({{REF:ig-flow}}). Riya earns nothing from Instagram for those views. A café that saw the Reel messages her about a paid post.</p>
+
+<figure>{{SVG:flow_ig}}
+<figcaption><b>{{FIG:ig-flow}} · Behind Riya’s Reel.</b> A new Reel is tested on a small audience first (④–⑥); shares count far more than likes in deciding whether it goes wider. Ads slot in between Reels (⑩). <span class="src">Simplified from Instagram’s published explanations of Reels ranking (2023–26); numbers illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Reels</td><td>“I’m bored; entertain me”</td><td>Full screen, endless, picked by interest rather than by who you follow, so it works from day one</td><td>Time spent; daily users</td></tr>
+<tr><td>Stories, Close Friends</td><td>“I want to share without it staying on my profile”</td><td>Gone in 24 hours; a smaller audience lowers the pressure to look perfect</td><td>Posts per user</td></tr>
+<tr><td>DMs and sharing Reels</td><td>“I want to talk about what I watched”</td><td>A share button on every Reel sends it into a chat; the friend comes back to watch</td><td>Sends per user; returning users</td></tr>
+<tr><td>Trial Reels</td><td>Creators: “Will my followers hate this?”</td><td>Test a Reel on non-followers first, then decide whether to share it with followers</td><td>Creators posting weekly</td></tr>
+<tr><td>Teen Accounts</td><td>Parents: “Is my child safe here?”</td><td>Private by default; messages only from people they follow; sleep mode at night</td><td>Safety reports; parents’ trust; regulatory risk</td></tr>
+<tr><td>Product tags, brand deals</td><td>Creators: “How do I earn here?”</td><td>Tag a product; mark paid partnerships; brands can boost the post as an ad</td><td>Creators earning</td></tr>
+</table>
+
+<h3>Core loop: why people come back</h3>
+<p>Instagram’s loop has four steps ({{REF:ig-loop}}). A <b>trigger</b> brings you in, often a friend’s message with a Reel. You <b>act</b>: open and watch. The <b>reward</b> is uneven, and that is the point: one Reel in five is really funny, so you keep swiping for the next one. Then you <b>invest</b>: you follow, share or post, which gives Instagram more signals and brings your friends back, starting the loop again for them. The same shape, trigger to action to uneven reward to investment, is Nir Eyal’s “Hooked” model, and it also explains why regulators worry about teenagers’ screen time.</p>
+<figure>{{SVG:loop_ig}}
+<figcaption><b>{{FIG:ig-loop}} · The loop that brings people back.</b> The share in step ④ is also the next person’s trigger in step ①, which is why Instagram weights DM shares so heavily. <span class="src">Author’s diagram, after Nir Eyal’s <i>Hooked</i> (2014) and Instagram’s ranking posts (2025).</span></figcaption>
+</figure>
+
+<h3>Business model, with numbers</h3>
+<p>Instagram earns from ads in the feed, Stories and Reels, sold through Meta’s auction. Meta doesn’t report Instagram’s revenue separately, but Instagram is its biggest growth engine: 2 bn daily users (July 2026), and in April–June 2026 Meta’s ad impressions rose 14% and the average price per ad 12%. Creators earn mostly from brands, directly. Instagram tries to take a share of that money by letting brands turn a creator’s post into an ad.</p>
+<p><b>Moat, in plain words.</b> Your friends and favourite creators are here, and leaving means losing both. Its ranking has learned from billions of swipes, which a new app can’t copy quickly. And for Indian creators, Instagram is where brands look first.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Daily users who share or create, not only watch.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Reels watch time · DM shares per user · creators posting weekly · follows from Reels.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>“Not interested” rate · teen safety reports · ad load · creator churn.</div>
+</div>
+<p><b>2025–26 moves.</b> Instagram passed 2 bn daily users. It released Edits, its own video editor, and Trial Reels for creators. Teen Accounts became the default for under-18s. “Your Algorithm” lets users see and change the topics Instagram thinks they like, an answer to “my feed feels random”.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>India’s default app for creators and brands</li><li>Friends and entertainment in one place</li><li>Meta’s ad machine behind it</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Feels less personal as strangers’ Reels take over</li><li>Low revenue per Indian user</li><li>Teen safety and screen-time criticism</li></ul></div>
+</div>
+
+<div class="box ex"><span class="lbl">Real-life example · Threads: borrowing a network to skip the cold start</span>
+<p>Meta launched Threads, a text app like X, in July 2023. New users could sign in with Instagram and follow everyone they already followed there in one tap, so nobody opened an empty app. 10 crore people signed up in five days. Many then drifted away: a borrowed network gets sign-ups, but only posts worth reading bring people back. Meta added messages, communities and a feed users can steer, and Threads reached <b>500 mn monthly users in June 2026</b>. The lesson for any new social product: bring the network, then give it a reason to stay.</p></div>
+
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Indian creators sell through DMs and payment screenshots <span class="arrow">→</span> a creator shop inside DMs with UPI payment and order tracking <span class="arrow">→</span> creators earning each month; complaints per 1,000 orders.</p>
+<p class="idea"><b>2.</b> People want to know what’s happening in their own city this weekend <span class="arrow">→</span> a “Near me” Reels feed of events, food and local businesses, with a map <span class="arrow">→</span> local sessions per user; ad spend from local businesses.</p>
+<p class="idea"><b>3.</b> Parents can’t see how their teenager uses the app <span class="arrow">→</span> a weekly summary for parents (time spent, new follows), agreed by the teen <span class="arrow">→</span> share of teen accounts with a parent linked; teen retention.</p>

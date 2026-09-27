@@ -1,0 +1,93 @@
+<!-- ============ TEARDOWNS: PAYTM + SUPER-APP LENS ============ -->
+<div style="height:10pt"></div>
+<h1>Paytm, and the super-app question</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Sunita, 45, runs a tea stall outside Lucknow’s Charbagh station. Her Paytm Soundbox calls out every payment, including the ₹10 ones, so she never checks a customer’s phone. At night the day’s ₹6,850 lands in her SBI account, and the app offers her a ₹50,000 loan repaid in small daily amounts. Paytm lost most of its consumer lead to PhonePe and Google Pay, then rebuilt around shopkeepers like Sunita.</p>
+
+<figure>
+{{SVG:flow_paytm}}
+<figcaption><b>{{FIG:pt-walk}} · Behind a ₹10 chai payment, and the loan it leads to.</b> As a payment aggregator, Paytm receives customers’ money in an escrow account and settles it to Sunita each evening (⑤). Her daily takings become the credit signal (⑥), and loan repayments come out of future settlements (⑨). <span class="src">Simplified from RBI payment-aggregator rules and Paytm’s merchant-lending model; amounts and loan terms illustrative.</span></figcaption>
+</figure>
+
+<h2>Key features, and why they’re built that way</h2>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:27%">User problem</th><th style="width:32%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Soundbox, card machine</td><td>Can’t check every customer’s screen at a rush-hour counter</td><td>A device that speaks each payment aloud; sold as a monthly subscription, and the card machine accepts UPI and cards</td><td>Subscription merchants (1.51 crore, Q4 FY26)</td></tr>
+<tr><td>Merchant loans</td><td>No formal income proof, so banks say no</td><td>Partner lenders use Paytm’s payment history; repayments taken in small amounts from daily settlements</td><td>Loans disbursed; collection rate</td></tr>
+<tr><td>Consumer UPI</td><td>Pay anywhere, keep the Paytm habit</td><td>After its own bank was shut, Paytm moved users to four partner-bank handles (Axis, HDFC, SBI, Yes)</td><td>UPI share (8.1%, Aug 2026)</td></tr>
+<tr><td>Financial services distribution</td><td>Loans, insurance and equities in one known app</td><td>Paytm earns a fee per product sold; lenders keep the loans on their books</td><td>Revenue: ₹750 Cr in Q4 FY26, +38%</td></tr>
+<tr><td>Paytm Intelligence (Sep 2026)</td><td>Banks and insurers want AI for fraud, credit and claims</td><td>Sells AI agents built on Paytm’s payment data and models to financial firms in India and the UAE</td><td>New: enterprise contracts</td></tr>
+</table>
+
+<figure>
+<svg class="d" viewBox="0 0 680 236" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <text x="165" y="14" text-anchor="middle" class="b t12">WeChat (China)</text>
+  <circle cx="165" cy="110" r="46" fill="#127a64"/><text x="165" y="106" text-anchor="middle" class="w b">Chat</text><text x="165" y="121" text-anchor="middle" class="w" style="font-size:10.3px">many times a day</text>
+  <g stroke="#127a64" stroke-width="2"><line x1="132" y1="78" x2="96" y2="46"/><line x1="198" y1="78" x2="234" y2="46"/><line x1="132" y1="142" x2="96" y2="174"/><line x1="198" y1="142" x2="234" y2="174"/></g>
+  <rect x="10" y="26" width="120" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="70" y="41" text-anchor="middle" class="b">WeChat Pay</text><text x="70" y="54" text-anchor="middle" class="s">rides on chat</text>
+  <rect x="200" y="26" width="120" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="260" y="41" text-anchor="middle" class="b">Mini programs</text><text x="260" y="54" text-anchor="middle" class="s">services, no install</text>
+  <rect x="10" y="160" width="120" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="70" y="175" text-anchor="middle" class="b">Red packets</text><text x="70" y="188" text-anchor="middle" class="s">money as a gift</text>
+  <rect x="200" y="160" width="120" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="260" y="175" text-anchor="middle" class="b">Taxis, bills, doctors</text><text x="260" y="188" text-anchor="middle" class="s">inside the chat app</text>
+  <text x="165" y="216" text-anchor="middle" class="s">1.4 bn monthly users (Sep 2025)</text>
+  <text x="165" y="230" text-anchor="middle" class="b grn">The hub is a social habit</text>
+ </g>
+ <line x1="340" y1="10" x2="340" y2="230" stroke="#d9dee4"/>
+ <g transform="translate(350,0)">
+  <text x="165" y="14" text-anchor="middle" class="b t12">Paytm (India)</text>
+  <circle cx="165" cy="110" r="46" fill="#00a0dc"/><text x="165" y="106" text-anchor="middle" class="w b">Payments</text><text x="165" y="121" text-anchor="middle" class="w" style="font-size:10.3px">a few times a day</text>
+  <g stroke="#00a0dc" stroke-width="2"><line x1="132" y1="78" x2="96" y2="46"/><line x1="198" y1="78" x2="234" y2="46"/><line x1="132" y1="142" x2="96" y2="174"/><line x1="198" y1="142" x2="234" y2="174" stroke-dasharray="4 3"/></g>
+  <rect x="10" y="26" width="120" height="34" rx="6" fill="#dbe8f5" stroke="#2f6ea5"/><text x="70" y="41" text-anchor="middle" class="b">Merchant devices</text><text x="70" y="54" text-anchor="middle" class="s">subscriptions</text>
+  <rect x="200" y="26" width="120" height="34" rx="6" fill="#dbe8f5" stroke="#2f6ea5"/><text x="260" y="41" text-anchor="middle" class="b">Loans, insurance</text><text x="260" y="54" text-anchor="middle" class="s">partners lend</text>
+  <rect x="10" y="160" width="120" height="34" rx="6" fill="#dbe8f5" stroke="#2f6ea5"/><text x="70" y="175" text-anchor="middle" class="b">Tickets, travel</text><text x="70" y="188" text-anchor="middle" class="s">rivals: MakeMyTrip</text>
+  <rect x="200" y="160" width="120" height="34" rx="6" fill="#f1f2f4" stroke="#9aa3ad" stroke-dasharray="4 3"/><text x="260" y="175" text-anchor="middle" class="b">Messaging</text><text x="260" y="188" text-anchor="middle" class="s">owned by WhatsApp</text>
+  <text x="165" y="216" text-anchor="middle" class="s">any UPI app pays any QR</text>
+  <text x="165" y="230" text-anchor="middle" class="b red">The hub is a switchable habit</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:pt-hub}} · Why WeChat became a super-app and Paytm did not.</b> WeChat’s hub is conversation, which people return to many times a day and can’t take elsewhere; its services ride on that. Paytm’s hub is payments, which UPI makes interchangeable, and the social hub in India belongs to WhatsApp. <span class="src">Tencent 2025 annual results (MAU as of 30 Sep 2025); author’s model.</span></figcaption>
+</figure>
+
+<div class="box chk"><span class="lbl">Check · “Paytm is India’s super-app” <span class="verdict v-over">Overstated</span></span>
+<p>Paytm tried: shopping, games, travel, movies and a bank, all in one app. Three things worked against it. In India, messaging belongs to WhatsApp, so no payments app owns the daily social habit that carried WeChat Pay. Android and the Play Store make standalone apps easy to install, so mini-apps save users little. And UPI lets every app pay every shop, so payments can’t lock users in. Paytm today is a merchant-payments and financial-distribution company with some consumer services, and its results improved when it narrowed.</p></div>
+
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 176" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="14" class="b">Revenue (₹ Cr)</text>
+ <text x="4" y="40">FY25</text><rect x="54" y="28" width="196" height="16" fill="#9fc6e4"/><text x="256" y="41" class="b">6,900</text>
+ <text x="4" y="64">FY26</text><rect x="54" y="52" width="240" height="16" fill="#00a0dc"/><text x="298" y="65" class="b">8,437</text>
+ <text x="4" y="96" class="b">Profit after tax (₹ Cr)</text>
+ <line x1="160" y1="104" x2="160" y2="160" stroke="#7d8793"/>
+ <text x="4" y="122">FY25</text><rect x="122" y="110" width="38" height="16" fill="#b93a32"/><text x="116" y="123" text-anchor="end" class="b red">−663</text>
+ <text x="4" y="146">FY26</text><rect x="160" y="134" width="32" height="16" fill="#127a64"/><text x="198" y="147" class="b grn">+552</text>
+ <text x="4" y="170" class="s">Q1 FY27: revenue ₹2,448 Cr (+28%), profit ₹220 Cr</text>
+</svg>
+<figcaption><b>{{FIG:pt-fin}} · From loss to profit in one year.</b> Revenue rose 22% and EBITDA improved by ₹2,008 Cr, to ₹502 Cr. <span class="src">Paytm investor relations, 6 May 2026; Q1 FY27 results, Jul 2026.</span></figcaption>
+</figure>
+<div>
+<div class="metrics" style="grid-template-columns:1fr;margin-top:0">
+ <div><span class="h" style="color:var(--key)">North Star</span>Merchants on a paid device subscription who transact daily.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Devices deployed · merchant payment volume (GMV) · loans distributed per 100 merchants.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Device churn · loan collection rate · compliance findings.</div>
+</div>
+</div>
+</div>
+
+<p><b>Moat, in plain words.</b> A field force and 1.51 crore merchants paying for devices: switching means returning a device and retraining staff, which a UPI app can’t replicate with software alone. <b>2025–26 moves:</b> first full year of profit (FY26); RBI cancelled the Payments Bank licence (24 Apr 2026), ending a two-year overhang; Paytm Intelligence, AI agents for banks and insurers (Sep 2026).</p>
+
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good">
+<li>Earns from merchants: devices, card fees, loan distribution</li>
+<li>Profitable, with revenue growing faster than costs</li>
+<li>Deep merchant data for credit and fraud models</li>
+</ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss">
+<li>Consumer UPI share fell to 8.1% after the 2024 curbs</li>
+<li>Regulatory history makes RBI and partners cautious</li>
+<li>AI pivot is new and unproven as a business</li>
+</ul></div>
+</div>
+
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Soundbox merchants borrow informally at high rates when stock runs out <span class="arrow">→</span> a small credit line that grows with daily takings, drawn by voice on the Soundbox (“bolo, ₹5,000 chahiye”) <span class="arrow">→</span> credit-line use and 30+ day defaults per 100 merchants.</p>
+<p class="idea"><b>2.</b> Shopkeepers can’t read dashboards while serving customers <span class="arrow">→</span> the Soundbox reads out the day’s total at closing time in their language <span class="arrow">→</span> weekly active merchants on the app, and device churn.</p>

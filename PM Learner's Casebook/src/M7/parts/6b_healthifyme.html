@@ -1,0 +1,38 @@
+<!-- ============ TEARDOWNS: HEALTHIFYME ============ -->
+<h1 style="margin-top:12pt">HealthifyMe: counting calories so a coach can do the rest</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Neha, back in Indore, restarts in March with a coaching plan, because a wedding is six weeks away. At lunch she photographs her thali. The app guesses dal, two rotis, rice and sabzi, about 640 kcal, and shows each portion. She changes the rotis to one. Her day now shows 1,420 of 1,600 kcal. A tip appears: she is low on protein, so curd at dinner would help. On Saturday her dietitian, who has her whole week in front of her, calls for ten minutes and plans the wedding week: what to eat at the sangeet and how to get back on track after ({{REF:hm-flow}}).</p>
+
+<figure>{{SVG:flow_hm}}
+<figcaption><b>{{FIG:hm-flow}} · Behind one logged lunch.</b> The photo AI does the counting (②–③); Neha’s correction (⑤) keeps it honest; the AI tip (⑧) is cheap; the dietitian’s call (⑩) is what she pays for. <span class="src">Author’s simplification of HealthifyMe’s published features (Snap photo logging, AI coach, coaching plans, 2025–26); timings and prices illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Photo logging (Snap)</td><td>“Typing every item is tedious”</td><td>One photo, with a guess she can correct in a tap; Indian dishes, not only Western food</td><td>Meals logged per day; activation</td></tr>
+<tr><td>Indian food database</td><td>“It doesn’t know poha or pesarattu”</td><td>Regional dishes with home-style portions (a katori, a roti)</td><td>Logging accuracy; time to log</td></tr>
+<tr><td>AI coach</td><td>“I don’t know what to change”</td><td>Short tips from the day’s log, any time, at almost no cost per user</td><td>Days with a tip followed; retention</td></tr>
+<tr><td>Human coaches</td><td>“I need someone to answer to”</td><td>A named dietitian or trainer with weekly calls; accountability to a person</td><td>Paid conversion; renewals</td></tr>
+<tr><td>Wearable and phone sync</td><td>“I already track steps on my watch”</td><td>Pull steps and weight from Health Connect or Apple Health, so nothing is typed twice</td><td>Data completeness</td></tr>
+<tr><td>Metabolic and weight-loss drug plans</td><td>“I’m on a GLP-1 drug and losing muscle”</td><td>Diet and protein guidance alongside doctors; a partnership with Novo Nordisk India (Dec 2025)</td><td>Revenue per user; outcomes</td></tr>
+</table>
+
+<h3>Core loop and business model</h3>
+<p>The daily loop is log → see the day’s total → get a tip → log the next meal. The paid loop is weekly: the coach reviews the log, the user feels watched in a good way, and renews. The business is a ladder ({{REF:hm-ladder}}): free tracking brings people in; each step up adds more expert time and costs more. HealthifyMe’s revenue fell 14% to <b>₹178 crore in FY25</b>, with coaching services at ₹99 crore, but it cut its loss by 96% to ₹4.7 crore by spending less on ads. Its bet now is weight-loss drugs: people on GLP-1 medicines need diet and muscle guidance, and coaches plus doctors can charge far more than a calorie counter.</p>
+<figure>{{SVG:ladder_hm}}
+<figcaption><b>{{FIG:hm-ladder}} · Four rungs, from free to expert-led.</b> The margin question on every rung is how many clients one coach can handle; AI moves that number up. <span class="src">Author’s diagram of HealthifyMe’s plan types (2025–26); revenue from RoC filings (FY25).</span></figcaption>
+</figure>
+<p><b>Moat, in plain words.</b> A large database of Indian dishes and years of meal photos make the photo AI better on Indian food than a global app; a coach who knows you is hard to leave mid-plan.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Paying users with healthy progress towards their goal each month (for example, 0.5–1 kg a week).</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Share logging 3 meals in the first 3 days · meals logged a week · coach calls kept · renewals.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Unsafe weight loss · complaints about coaches · clients per coach.</div>
+</div>
+<p><b>2025–26 moves.</b> Weight-loss drug support with Novo Nordisk India; a push into the US; a reported merger with the US nutrition firm Berry Street (August 2026).</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Best Indian food data</li><li>Human coaches people trust</li><li>Near break-even</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Shrinking revenue in India</li><li>Free rivals for tracking (phones, watches)</li><li>Coach time limits margins</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> New users quit before their first meal log <span class="arrow">→</span> five questions, then “snap your lunch” as the first screen <span class="arrow">→</span> share with 3 meals logged in 3 days.</p>
+<p class="idea"><b>2.</b> Coaches spend time writing the same feedback <span class="arrow">→</span> AI drafts each client’s weekly note, the coach edits and sends <span class="arrow">→</span> clients per coach, with renewal rate as the guardrail.</p>
+<p class="idea"><b>3.</b> People on weight-loss drugs lose muscle <span class="arrow">→</span> a protein and strength plan linked to the dose schedule, reviewed by the prescribing doctor <span class="arrow">→</span> muscle mass kept (smart-scale readings); plan renewals.</p>

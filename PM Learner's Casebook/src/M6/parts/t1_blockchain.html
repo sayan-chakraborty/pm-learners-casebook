@@ -1,0 +1,101 @@
+<!-- ============ TECHNOLOGY: BLOCKCHAIN ============ -->
+<section class="page">
+<div class="kicker">Streaming, music &amp; entertainment · Technology</div>
+<h1>Blockchain: a shared record that nobody can quietly change</h1>
+<p class="lede">Twenty families in a Pune housing society run a savings group, a <i>bhishi</i>. Each month every family puts in ₹5,000 and one family takes the ₹1 lakh pot. Mrs Kulkarni, the secretary, keeps the account book. In the third year, a family says it paid in March; the book says it didn’t. Did it forget, or did someone change the page? Nobody can prove either. Now imagine that every family keeps its own copy of the book, every entry is read out and written in all twenty copies, and each page carries a seal made from the page before it. To cheat, you would have to rewrite the same page in more than half the books, and every page after it, without anyone noticing. That is the whole idea of a blockchain. Making it work takes a seal that shows any change, a fair rule for who writes the next page, and a reason good enough to justify the effort.</p>
+
+<h2>One savings group, eight ideas</h2>
+<table class="tbl">
+<tr><th style="width:18%">Idea</th><th style="width:42%">The society’s savings book</th><th>A blockchain</th></tr>
+<tr><td><b>Ledger</b></td><td>The account book of who paid whom</td><td>A list of every transaction ever made</td></tr>
+<tr><td><b>Node</b></td><td>Each family’s copy of the book</td><td>Each computer that keeps a full copy</td></tr>
+<tr><td><b>Block</b></td><td>One page of entries</td><td>A batch of transactions, written together</td></tr>
+<tr><td><b>Hash, chain</b></td><td>A seal on each page, made from the page and the previous seal</td><td>A fingerprint of each block, stored in the next block</td></tr>
+<tr><td><b>Consensus</b></td><td>The rule for who writes the next page, and how the others check it</td><td>Proof of work (solve a puzzle) or proof of stake (put down a deposit)</td></tr>
+<tr><td><b>Wallet, keys</b></td><td>Your signature, which only you can make</td><td>A private key that signs your payments; an address anyone can pay into</td></tr>
+<tr><td><b>Smart contract</b></td><td>A rule in the book that carries itself out: “the pot goes to whoever’s name is drawn”</td><td>A small program on the chain that moves money when conditions are met</td></tr>
+<tr><td><b>Fee</b></td><td>Tea for the person who writes the page</td><td>A “gas” or transaction fee paid to whoever adds the block</td></tr>
+</table>
+
+<h2>1. A block: one page of entries</h2>
+<p><b>Everyday picture.</b> One page of the society book: the date, three entries, and the seal from the previous page at the top.</p>
+<p><b>How it works.</b> A block holds a batch of transactions, a time stamp, the fingerprint of the previous block, and its own fingerprint ({{REF:block}}). The fingerprint is a <span class="term">hash</span>: a short code worked out from the block’s contents, the same kind of fingerprint apps use to store passwords safely. The same contents always give the same hash, and changing even one character gives a completely different one. Real SHA-256 outputs: “Hello” gives 185f8db3…, “hello” gives 2cf24dba…. One capital letter, a new fingerprint.</p>
+<figure>{{SVG:block}}
+<figcaption><b>{{FIG:block}} · One block, three payments.</b> The block stores the previous block’s fingerprint (top) and has its own (bottom). Change Asha’s 2 coins to 20 and the fingerprint changes from 5bdfe69a… to 8b31a072…. <span class="src">Real SHA-256 fingerprints of the text shown, first 12 characters; names and amounts illustrative.</span></figcaption>
+</figure>
+
+<h2>2. The chain: why old pages can’t be changed quietly</h2>
+<p><b>Everyday picture.</b> Each page’s seal is pressed partly over the previous page’s seal. Tear out page 12 and rewrite it, and the seal on page 13 no longer lines up.</p>
+<p><b>How it works.</b> Block 102 contains block 101’s fingerprint. If someone edits block 101, its fingerprint changes, so block 102 now points at a fingerprint that doesn’t exist ({{REF:chain}}). To hide the edit, the cheat must redo 102, then 103, and every block after it, and do it on more than half of all the copies, faster than honest writers add new blocks. On a large network, that is practically impossible. This property is called being <span class="term">tamper-evident</span>: changes are not impossible, but they are always visible.</p>
+<figure>{{SVG:chain}}
+<figcaption><b>{{FIG:chain}} · Change one old entry and every later link breaks.</b> Block 102 still says the previous fingerprint is 5bdfe69a…, but the edited block 101 now hashes to 8b31a072…. Every honest copy spots the mismatch. <span class="src">Real SHA-256 fingerprints (first 12 characters) of the illustrative blocks.</span></figcaption>
+</figure>
+<p><b>Real example.</b> Bitcoin’s ledger has run since January 2009 with no one able to rewrite an old block. <b>PM decision:</b> tamper-evidence is valuable only when people fear the record keeper might change the record. If everyone trusts the keeper (a bank, the RBI, the railways), a normal database with an audit log gives the same comfort for a tiny fraction of the cost.</p>
+
+<h2>3. Consensus: who gets to write the next page?</h2>
+<p><b>Everyday picture.</b> If any family could write the next page whenever it liked, two families could write different pages at once, or one could write only entries that suit it. The society needs a fair rule for choosing the writer, and a way for everyone to check the page.</p>
+<p><b>How it works, proof of work.</b> Bitcoin runs a lottery that costs electricity to enter. To write the next block, a computer must find a number (a <span class="term">nonce</span>) that, added to the block, makes its hash start with a set number of zeros. There is no shortcut: you guess, hash, and check. On a laptop, making block 102’s hash start with four zeros took <b>31,312 guesses</b> (the average is 16<sup>4</sup> = 65,536). Anyone can check the winner’s answer with one hash. Bitcoin sets the target so the whole network finds one block about every 10 minutes; in 2025 that meant roughly 10<sup>23</sup> guesses per block ({{REF:consensus}}). Cheating means out-guessing everyone else combined, which needs more than half the world’s mining power: a <span class="term">51% attack</span>.</p>
+<p><b>How it works, proof of stake.</b> Instead of burning electricity, writers lock up a deposit of coins. The network picks the next writer at random, weighted by deposit, and others check the block. A writer who signs two different blocks or lies loses part of the deposit (<span class="term">slashing</span>). Ethereum switched from work to stake on 15 September 2022 and cut its electricity use by more than 99.9%.</p>
+<figure>{{SVG:consensus}}
+<figcaption><b>{{FIG:consensus}} · Two ways to choose the writer.</b> Proof of work makes cheating expensive in electricity; proof of stake makes it expensive in lost deposits. Both let any stranger check the result. <span class="src">Bitcoin network difficulty (2025, order of magnitude); Ethereum Foundation (the Merge, 15 September 2022); laptop test by the author.</span></figcaption>
+</figure>
+<p><b>Real example, and the cost.</b> Cambridge University estimates Bitcoin uses around 150 terawatt-hours a year, about as much as a mid-sized country, for roughly 4–5 lakh transactions a day. That works out to roughly 900 kilowatt-hours per transaction, close to what an average Indian home uses in a year (estimate). A UPI payment uses a tiny fraction of one kilowatt-hour. Small chains have suffered real 51% attacks: Ethereum Classic had blocks rewritten several times in 2020. <b>PM decision:</b> the consensus method decides cost, speed and energy. Bitcoin handles about 7 payments a second; UPI handles thousands. If a product needs speed and low fees for everyday payments, a public proof-of-work chain is the wrong base.</p>
+
+<h2>4. Wallets and keys: “not your keys, not your coins”</h2>
+<p><b>Everyday picture.</b> A letterbox outside your flat. Anyone who knows the address can drop a letter in; only the person with the key can open it and take things out.</p>
+<p><b>How it works.</b> A crypto wallet holds a <b>private key</b>, and from it an <b>address</b> that others can pay into, a public/private key pair (two linked keys: what the private key signs, anyone can check with the public one). To spend, the wallet signs the payment with the private key; every node checks the signature with the public key. There is no password reset: the key is usually backed up as a <span class="term">seed phrase</span> of 12 or 24 words. Lose it, and the coins are gone for ever. Share it, and they can be taken for ever. Chainalysis has estimated that around a fifth of all bitcoins are lost or stuck in wallets nobody can open. Many people let an exchange hold their keys instead ({{REF:custody}}). That is easier, but it means trusting the exchange: in July 2024 hackers took about $230 million from the Indian exchange WazirX, and users’ withdrawals were frozen for months.</p>
+<figure>{{SVG:custody}}
+<figcaption><b>{{FIG:custody}} · Who holds the key decides who you must trust.</b> Holding your own key removes the middleman but leaves you alone with mistakes; an exchange brings back customer care and brings back the risk of a trusted party. <span class="src">Author’s diagram; WazirX incident (July 2024, widely reported); Chainalysis estimate of lost bitcoin.</span></figcaption>
+</figure>
+<p><b>PM decision:</b> key recovery is the biggest user-experience problem in crypto. Every design choice (a seed phrase, recovery through friends, an exchange holding the key) trades freedom from middlemen against the chance of losing everything.</p>
+
+<h2>5. Smart contracts: a vending machine made of code</h2>
+<p><b>Everyday picture.</b> A vending machine at a railway station. Put in ₹20, press B4, and a bottle drops out. No shopkeeper decides; the rules are built into the machine.</p>
+<p><b>How it works.</b> A <span class="term">smart contract</span> is a small program stored on a blockchain (usually Ethereum) that holds money and moves it when conditions are met. Worked example, an escrow ({{REF:escrow}}): Nisha, a designer in Kochi, agrees to make a logo for a client in Dubai for 500 dollar-tokens (a <span class="term">stablecoin</span>: a token meant to stay worth one dollar). The client locks 500 tokens in the contract. When Nisha delivers and the client clicks “approve”, the contract pays her. If the client goes silent for 14 days after delivery, it pays her anyway. If the client raises a dispute, it waits for an agreed arbitrator. Nobody can run off with the money in between.</p>
+<p><b>Where it breaks.</b> Code does exactly what it says, bugs included, and on a blockchain you can’t quietly patch it. In June 2016 an attacker used a flaw in “The DAO”, a smart-contract investment fund, to drain about 3.6 million ether, then worth around $50 million. Ethereum’s community reversed it only by splitting the whole chain in two. And a contract only knows what is on the chain: a delivery, a match result or a price must be fed in from outside (the <span class="term">oracle problem</span>), and whoever feeds it in must be trusted. <b>PM decision:</b> smart contracts need audits before launch, limits on how much money they hold, and a plan for disputes, because “code is law” also means “bugs are law”.</p>
+<figure>{{SVG:escrow}}
+<figcaption><b>{{FIG:escrow}} · An escrow contract.</b> The money sits in code, not with either person. But the contract can’t see the logo: whether the work was good still needs a human or an outside source of truth. <span class="src">Illustrative example.</span></figcaption>
+</figure>
+
+<h2>6. Real uses and real failures</h2>
+<table class="tbl flow">
+<tr><th style="width:17%">Use</th><th style="width:43%">What happened</th><th>The lesson</th></tr>
+<tr><td><b>Crypto payments</b></td><td>Bitcoin was built as money without banks. In India, gains on crypto are taxed at 30% with 1% tax deducted on every transfer (since 2022); prices swing widely. Stablecoins are used more for moving dollars abroad than for shopping</td><td>Works where people distrust the currency or the banks; UPI is faster and cheaper for everyday Indian payments</td></tr>
+<tr><td><b>Food tracing</b></td><td>Walmart and IBM traced a packet of sliced mangoes to its farm in 2.2 seconds, against about 7 days on paper (2018 pilot)</td><td>Worked because Walmart could require its suppliers to join. The speed came from digital records; the chain added shared trust</td></tr>
+<tr><td><b>Shipping (TradeLens)</b></td><td>Maersk and IBM built a shared shipping ledger in 2018 and shut it in early 2023: rival shipping lines wouldn’t join a platform run by a competitor</td><td>A shared ledger fails if one rival controls it; the hard part is getting rivals to agree, not the software</td></tr>
+<tr><td><b>e-rupee (RBI)</b></td><td>RBI pilots since late 2022: about 80 lakh users; ₹772 crore in circulation in March 2026, down 24% in a year; programmable food subsidies in Gujarat, Puducherry and Chandigarh</td><td>A digital rupee needs no public blockchain: the RBI is the trusted party. Hardly anyone switched from UPI</td></tr>
+<tr><td><b>NFTs</b></td><td>Digital art tokens boomed in 2021 (a Beeple work sold for $69 million at Christie’s) and trading collapsed by more than 90% within two years</td><td>The token proves who owns a record, not a right to the art or any lasting value</td></tr>
+<tr><td><b>Music royalties</b></td><td>Start-ups promised artists paid per play on a chain. Few labels joined, and play counts still came from the streaming apps</td><td>The oracle problem again: the chain is only as honest as the data fed into it</td></tr>
+</table>
+
+<h2>7. Public or private: who may join, and who may write</h2>
+<p><b>Everyday picture.</b> A notice board in a railway station, which anyone may read and anyone may pin to, against a housing society’s minutes book, which only members see and only the committee writes in.</p>
+<p><b>How it works.</b> Two questions sort every blockchain. Who may <b>read and join</b>: anyone, or only approved members? And who may <b>write and check</b> new blocks: anyone, or only approved members? A <span class="term">public, permissionless</span> chain (Bitcoin, Ethereum) lets anyone do both; that is what makes it hard to censor, and also what makes it slow and costly. A <span class="term">private, permissioned</span> chain (built on tools such as Hyperledger Fabric or R3 Corda) lets only named organisations join and write. It is fast and keeps data private, but it only works if members trust the group that approves them.</p>
+<table class="tbl">
+<tr><th style="width:22%"></th><th style="width:39%">Anyone may write and check</th><th>Only approved members write and check</th></tr>
+<tr><td><b>Anyone may read</b></td><td><b>Public, permissionless:</b> Bitcoin, Ethereum. Open, slow, costly per transaction</td><td><b>Public, permissioned:</b> a registry anyone can inspect but only approved bodies update</td></tr>
+<tr><td><b>Only members read</b></td><td><b>Private, permissionless:</b> rare in practice</td><td><b>Private, permissioned:</b> banks sharing trade papers; a consortium of exporters. Fast, private</td></tr>
+</table>
+<p><b>PM decision:</b> a private chain answers most business needs, but ask the awkward question: if a handful of known members run it, why not one shared database with signed entries and an audit log? The honest answer must be “because no member will let another run it”, as TradeLens found out.</p>
+
+<h2>8. When a blockchain is not the answer</h2>
+<p>A blockchain is a slow, costly database with one special power: it lets people who don’t trust each other, and don’t trust any one keeper, share a record nobody can quietly change. Five questions test whether you need that power ({{REF:bctree}}). Most proposals fail at the second or third.</p>
+<figure>{{SVG:bctree}}
+<figcaption><b>{{FIG:bctree}} · Do you need a blockchain?</b> Answer in order. If any answer sends you left, a normal database (perhaps with an audit log and digital signatures) does the job faster and cheaper. <span class="src">Adapted from the World Economic Forum’s blockchain toolkit and NIST’s blockchain overview (2018–20).</span></figcaption>
+</figure>
+<table class="tbl flow">
+<tr><th style="width:26%">Proposal</th><th style="width:14%">Many writers?</th><th style="width:16%">No trusted keeper?</th><th style="width:14%">Can be public, slow?</th><th>Verdict</th></tr>
+<tr><td>IPL tickets on a chain to stop touts</td><td class="n">✗ one seller</td><td class="n">✗ the ticketing app</td><td>✓</td><td>Database with names on tickets and ID at the gate</td></tr>
+<tr><td>A state’s land records</td><td class="n">✗ one registrar</td><td class="n">✗ the state</td><td class="n">✗ private data</td><td>Database with signed entries and a public audit log</td></tr>
+<tr><td>College degree certificates</td><td class="n">✗ each college</td><td class="n">✗ each college</td><td>✓</td><td>Digitally signed certificates, as DigiLocker already does</td></tr>
+<tr><td>Trade papers between banks in six countries</td><td class="y">✓</td><td class="y">✓ no bank trusts one bank</td><td>✓ within the group</td><td>A private, permissioned chain can fit</td></tr>
+<tr><td>Royalties for a streaming app’s songs</td><td class="n">✗ the app counts plays</td><td class="n">✗</td><td>✓</td><td>Publish audited play counts instead</td></tr>
+</table>
+
+<div class="box int"><span class="lbl">In the interview · How blockchain comes up</span>
+<ul class="small">
+<li><b>“Should we use blockchain for X?”</b> Ask who writes, who they don’t trust, and whether one keeper would do. Name the oracle problem: the chain can’t check that the data was true when entered.</li>
+<li><b>“Explain blockchain to a ten-year-old.”</b> A class notebook that every student copies, where each page is sealed with the one before, so nobody can change an old page without everyone noticing.</li>
+<li><b>“Why hasn’t the e-rupee taken off?”</b> UPI already moves money free and instantly; the e-rupee must offer something UPI can’t, such as money programmed for one purpose.</li>
+</ul></div>
+</section>

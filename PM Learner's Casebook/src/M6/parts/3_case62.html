@@ -1,0 +1,63 @@
+<!-- ============ CASE 6.2 PRIME VIDEO VIEWS FALL ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 6.2 · Prime Video views fall 20%</span>
+ <span class="m"><span class="pill">Root cause</span><span>Hard</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, pp. 80–81</span></span></div>
+<div class="try"><b>Try it first.</b> A “view” is counted when someone watches 70% of a title. Views per day have fallen 20% over a month, everywhere in India. Write down every way that number could fall without a single person cancelling. Five minutes.</div>
+</div>
+
+{{CASE:B80}}
+
+<figure>{{SVG:journey62}}
+<figcaption><b>{{FIG:journey62}} · The candidate’s user journey, redrawn from the original.</b> Two ways in, two ways to find a title, one way to watch. The numbers under each step are what the candidate proposed to check, added here as examples. <span class="src">Redrawn from the original, IIM B <i>Sigma PM Casebook 2026–27</i>, p. 81; example metrics added by the author.</span></figcaption>
+</figure>
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Excellent clarifying questions:</b> the exact definition of a view, how big, since when, sudden or gradual, which platforms, which regions and groups.</li>
+ <li><b>Played the problem back</b> in one sentence before starting.</li>
+ <li><b>A sharp answer on releases:</b> a change rolled out slowly would cause a slow fall.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Didn’t use the definition.</b> Views = viewers × titles started × share watched to 70%. A 20% fall can hide in any of the three, and two of them don’t need anyone to leave.</li>
+ <li><b>External checks were guesses, not data.</b> The interviewer had to reveal the cause. Splitting light and heavy viewers would have found it.</li>
+ <li><b>The fix doesn’t match the cause.</b> People left for a <i>free</i> app. Paying per season is still paying.</li>
+ <li><b>Pay-per-title already exists.</b> Prime Video’s rental store has sold single films in India since 2022.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓</span> · Exact definition <span class="tk y">✓</span> · Size and timing <span class="tk y">✓</span> · Where it shows <span class="tk y">✓ platform, region, group</span> · Recent changes <span class="tk y">✓</span> · Is the data trustworthy <span class="tk n">✗</span> · Split of the metric <span class="tk n">✗</span>. A model opening. The one skipped question, “has the way we count a view changed?”, is worth asking whenever a fall is smooth and everywhere.</p>
+
+<div class="box chk"><span class="lbl">Check · “We need an innovative way of pricing such as sachet pricing” <span class="verdict v-no">Doesn’t hold up</span></span>
+<p>Two problems. First, Amazon already sells single films in India through the Prime Video rental store (since October 2022) and offers cheaper Prime plans such as Prime Lite. Second, Amazon’s real answer to free rivals was <i>free</i>: its ad-supported miniTV, merged with MX Player into Amazon MX Player in 2024, and ads on Prime Video itself from June 2025. A viewer who left for free content won’t come back to pay for a season of <i>Lupin</i>.</p></div>
+
+<div class="box key"><span class="lbl">Key idea · A slow fall everywhere points outside the code</span>
+<p>A bug or a bad release usually hits one platform or one app version, and hits suddenly. A fall that is gradual and the same on every device, region and group usually means the world changed (a rival, a season, a habit) or what you offer changed (fewer new releases, longer shows), or the way you count changed. Check those three before opening the app’s logs.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip62}}
+<figcaption><b>{{FIG:strip62}} · Seven moves for a falling metric.</b> The new move is ②: break the number into parts before guessing causes. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>A view is 70% of a title watched, and views per day are down 20%, gradually, over a month, on every platform and in every region. Has anything changed in how we count a view, for example a new version of the player that logs progress differently?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>No change in counting.</p></div></div>
+<p class="whynote">Why this move: a counting change is the cheapest explanation to check and the most embarrassing one to miss. It takes one question.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Split the number</div><p>Views per day = people watching that day × titles each person starts × share of starts watched to 70%. Illustrative: 1 crore viewers × 1.5 starts × 60% = 90 lakh views. A 20% fall means 72 lakh. That happens if viewers fall to 80 lakh, <i>or</i> starts fall to 1.2, <i>or</i> the finish rate falls to 48% ({{REF:viewtree62}}). Which part moved?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Daily viewers are down about 15%. Starts per viewer dipped a little. The finish rate is flat.</p></div></div>
+<p class="whynote">Why this move: each part has different causes. Fewer viewers means people went elsewhere; fewer starts means a weaker catalogue or home screen; a lower finish rate means longer shows or a player problem. Asking which part moved saves ten guesses.</p>
+<figure>{{SVG:viewtree62}}
+<figcaption><b>{{FIG:viewtree62}} · Three ways to lose 20% of views.</b> Only the first needs people to leave. Longer episodes or autoplay trailers that count as starts would lower the finish rate with no one unhappy. <span class="src">Illustrative numbers.</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Rule out</div><p>Since viewers are down everywhere and gradually, it isn’t a crash or one bad release. There was no IPL, no price change and no new rule. What about our own catalogue: were there fewer new releases this month than last year?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>The release calendar was normal.</p></div></div>
+<p class="whynote">Why this move: a thin month of releases is the most common internal cause of a slow fall in viewing, and it would look exactly like this.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Find where</div><p>Then which viewers are missing? I’d split by how often people watch. If the 15% is mostly light viewers, people who watched one or two evenings a week, they are the easiest to lose to something free and good enough.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Yes: mostly light viewers. They are watching films on a new free app.</p></div></div>
+<p class="whynote">Why this move: the split by viewing habit turns “users left” into “one kind of user left, for one kind of reason”, which is something you can design for.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Cause</div><p>For many light viewers, Prime Video came free with Prime, which they bought for delivery. They didn’t cancel Prime; they just stopped opening Prime Video. So revenue hasn’t fallen yet. The risk comes at renewal: if Prime’s video part feels unused, Prime feels less worth ₹1,499.</p></div></div>
+<p class="whynote">Why this move: naming who pays and why tells you how urgent this is and what to protect. Here it is Prime renewal, not a video subscription.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Fix</div><p>Meet free with free, and make choosing quick. <b>1.</b> Bring Amazon’s free, ad-supported films into Prime Video’s home screen for light viewers, so the free option is inside our app. <b>2.</b> A “tonight in under two hours” row: films and short series picked for people who watch once or twice a week. <b>3.</b> For new blockbusters, keep renting single titles; don’t invent season passes that ask the same people to pay more.</p></div></div>
+<p class="whynote">Why this move: every fix aims at the light viewer and the reason they left (free, easy), rather than at a pricing idea that asks them for money.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑦ Measure</div><p><b>Goal (North Star):</b> Prime members who watch at least once a week. <b>Inputs:</b> days watched per light viewer; time from opening the app to pressing play. <b>Safety check (guardrail):</b> Prime renewal rate, and complaints about ads. <b>Trade-off:</b> more free, ad-supported titles bring light viewers back but can make paying for ad-free viewing feel less worth it.</p></div></div>
+<p class="whynote">Why this move: the goal counts watchers, the unit that fell; the guardrail watches Prime renewal, the money that is really at risk.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>Splitting views into viewers × starts × finish rate showed that people, not minutes, went missing. Splitting people by habit showed they were light viewers lured by free films. So the fixes are free and quick to choose, the goal counts weekly watchers, and the guardrail protects Prime renewal, which is where this problem would finally cost money.</div>

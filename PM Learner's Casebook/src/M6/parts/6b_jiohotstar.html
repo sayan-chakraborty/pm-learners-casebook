@@ -1,0 +1,36 @@
+<!-- ============ TEARDOWNS: JIOHOTSTAR (+ PRIME VIDEO) ============ -->
+<h1 style="margin-top:12pt">JioHotstar: cricket for everyone, paid for by ads</h1>
+<p class="lede"><b>Walkthrough.</b> Back to Priya on the hostel steps in Ahmedabad on final night. She pays ₹79 a month for the phone plan, but most of her friends watch on a plan bundled with their Jio recharge. She picks Hindi commentary. The picture starts blurry and sharpens. At the end of the over, two 10-second ads play: a phone brand and a biscuit brand, in Hindi. Her friend in Chennai, watching the same ball, sees two different ads in Tamil. Nobody chose those ads by hand: a computer picked them for each of the crores of phones watching ({{REF:jh-flow}}).</p>
+<figure>{{SVG:flow_jh}}
+<figcaption><b>{{FIG:jh-flow}} · Behind one over-break.</b> The video is the same for everyone; the ads are not. A marker in the stream (⑤) tells each phone to ask for its own ads (⑥–⑧), so one 30-second break is sold many times over. <span class="src">Simplified from how server-side ad insertion generally works; JioHotstar’s internal design is not public; numbers illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Commentary in 12 languages</td><td>“I want the match in my language”</td><td>Separate audio for Hindi, Tamil, Telugu, Bhojpuri and more, chosen in one tap</td><td>Reach outside Hindi states</td></tr>
+<tr><td>Cheap plans and bundles</td><td>“I won’t pay ₹500 a month”</td><td>Phone plan from ₹79 a month; included in many Jio recharges</td><td>Paid subscriptions</td></tr>
+<tr><td>Vertical video, key moments</td><td>“I joined late” / “I’m on my phone”</td><td>Watch holding the phone upright; jump to wickets and sixes without leaving live</td><td>Minutes per viewer</td></tr>
+<tr><td>Serials, Disney, HBO, regional films</td><td>“Something for the rest of the family”</td><td>One app for sport and the evening serial</td><td>Watch time outside cricket</td></tr>
+<tr><td>Tadka (short videos)</td><td>“I have five minutes”</td><td>Vertical micro-dramas and clips</td><td>Daily users between matches</td></tr>
+</table>
+<p><b>Business model, with numbers.</b> JioStar earns from ads (sport above all), subscriptions (many through recharges) and TV channels. In April–June 2026, the IPL quarter, its revenue was <b>₹10,946 crore</b>, up 14%, and JioHotstar averaged 53 crore monthly users. Prices rose in January 2026: phone ₹79 a month, Super ₹149, Premium ₹299. The biggest cost is rights: IPL, ICC events and studio libraries, paid for whether or not the ads sell.</p>
+<p><b>Moat, in plain words.</b> Almost all top cricket in one app; Jio’s hundreds of millions of phone customers as a sales channel; and the engineering and ad-sales machine to serve crores at once. The risk is the same as the moat: rights cost a fortune, and a weak ad year doesn’t lower them.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Monthly viewers who also watch something other than cricket.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Peak concurrency · ad slots sold at peak · cricket-to-serial viewers · paid plans outside bundles.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Buffering at peak · complaints about too many ads · cancellations after the IPL.</div>
+</div>
+
+<div class="box ex flowbox"><span class="lbl">Comparison · Prime Video: the show that sells the shipping</span>
+<p>Prime Video earns in a different way. For most Indians it comes inside Amazon Prime (₹1,499 a year), which also gives free, fast delivery. Its job is to make Prime feel worth renewing, so that members keep shopping on Amazon ({{REF:pv-loop}}). Since 17 June 2025 it shows ads by default in India; removing them costs ₹129 a month. Its pitch to advertisers is not JioHotstar’s mass reach but ads matched to real shopping data, with sales measured on Amazon. For free viewers, Amazon runs Amazon MX Player, with ads.</p>
+<figure style="margin:3pt 0 2pt">{{SVG:loop_pv}}
+<figcaption><b>{{FIG:pv-loop}} · Why Amazon spends on shows it doesn’t sell separately.</b> A hit like <i>Panchayat</i> pays back through Prime renewals and shopping, not through video revenue. <span class="src">Author’s diagram; Prime price and ad-free add-on from Amazon India (2025–26).</span></figcaption>
+</figure></div>
+
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Owns India’s biggest live events</li><li>Every language, every price point</li><li>Proven at record scale</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Two months of peak a year</li><li>Rights costs fixed, ad revenue not</li><li>Many users never chose to pay</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Lakhs leave after the IPL <span class="arrow">→</span> pause instead of cancel, and an “after the IPL” watchlist built during the season <span class="arrow">→</span> share of IPL joiners watching weekly 60 days after the final.</p>
+<p class="idea"><b>2.</b> Advertisers pay for reach but want sales <span class="arrow">→</span> tap an ad during a strategic time-out to save the offer to WhatsApp or JioMart, paid by UPI later <span class="arrow">→</span> revenue per 1,000 ad views; offer saves per ad.</p>

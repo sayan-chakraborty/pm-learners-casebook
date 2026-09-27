@@ -1,0 +1,85 @@
+<!-- ============ CASE 3.2 FACEBOOK MARKETPLACE METRICS ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 3.2 · Measuring Facebook Marketplace</span>
+ <span class="m"><span class="pill">Metrics</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, p. 290</span></span></div>
+<div class="try"><b>Try it first.</b> You list an old study table on Marketplace for ₹2,000. What would make you say “this app works”? Now answer as the person who wants to buy a table. Is it the same thing?</div>
+</div>
+
+{{CASE:A290}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Restated the product</b> in one line and stated the goal as an assumption, which the interviewer accepted.</li>
+ <li><b>Mapped both journeys</b>, buyer and seller, before any metric, and spotted that payment and handover happen off Facebook.</li>
+ <li><b>Grouped metrics into stages</b>, then chose one North Star and one counter metric when pushed.</li>
+ <li><b>Segmented by category</b>: furniture and phones behave differently.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Never tested whether buyers and sellers actually meet.</b> A marketplace is healthy when listings sell and searches find something. That idea, liquidity, is the heart of the case and never appears.</li>
+ <li><b>The counter metric can’t be measured.</b> The candidate said payment happens outside Facebook, then chose purchases per week to guard the North Star.</li>
+ <li><b>No trust metric.</b> Scams and fake listings are Marketplace’s best-known problem; “interactions” rise when scammers message people.</li>
+ <li><b>No local view.</b> A table in Pune only matters to buyers in Pune. City-level health is the real unit.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓</span> · Goal <span class="tk y">✓ (assumed, then confirmed)</span> · Who <span class="tk y">✓ both sides</span> · Today and the trigger: mature product, about a billion monthly users <span class="tk n">✗</span> · Edges: which markets <span class="tk n">✗</span>. Metrics add-on “what decision will the metric drive?” <span class="tk n">✗</span>: without it, the list grew to eleven metrics and no priority.</p>
+
+<div class="box chk"><span class="lbl">Check · “Counter metric: purchases per week” <span class="verdict v-no">Doesn’t hold up</span></span>
+<p>Most Marketplace deals are paid in cash or by UPI at the door, so Facebook can’t see them. The observable proxies are a seller tapping “Mark as sold”, a buyer rating the seller, and a conversation that ends with both sides agreeing a time. Pick metrics you can actually count.</p></div>
+<div class="box chk"><span class="lbl">Check · “Unique interactions per week” as the North Star <span class="verdict v-over">Overstated</span></span>
+<p>Messages go up when buyers haggle endlessly, when a listing is misleading (“is this still available?” asked 40 times) and when scammers write to sellers. More interactions can mean a worse marketplace. The North Star should count <i>completed</i> matches.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip32}}
+<figcaption><b>{{FIG:strip32}} · A marketplace-metrics answer in six moves.</b> Move ③ is what separates a marketplace answer from a generic app answer: check that the two sides meet. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Marketplace is mature, with about a billion monthly users, so this is about health, not launch. Two questions change the answer. What decision will these metrics drive: where to invest, or spotting problems early? And is the goal more time on Facebook, or Marketplace working as a place to buy and sell?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>A monthly health review for the Marketplace team. Buying and selling that works; engagement follows.</p></div></div>
+<p class="whynote">Why this move: a monthly review needs a handful of numbers that point to action, not a list of eleven. And “buying and selling that works” tells us to measure deals, not clicks.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Map</div><p>There are two sides, and each has one moment that decides whether they come back. For the seller: did my table sell, quickly, at a fair price? For the buyer: did I find a table near me, from someone I could trust? Every other metric is a cause of one of these two moments.</p></div></div>
+<p class="whynote">Why this move: naming the moment of truth for each side keeps the metrics tied to what users actually care about.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Liquidity</div><p>So the core question is whether listings find buyers. Illustrative, for 100 furniture listings in Pune in a week: 62 get a message within a day, 41 lead to an agreed meeting, and 30 are marked sold within 7 days ({{REF:liq}}). That 30% is the <b>sell-through rate</b>. I’d track it for each city and category, because a buyer in Pune can’t use a table in Patna.</p></div></div>
+<p class="whynote">Why this move: a marketplace is only as good as its chance of a match. Visits and messages are causes or side effects of that.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Goal</div><p><b>Goal (North Star):</b> weekly successful local matches, meaning listings marked sold after a Marketplace conversation, or confirmed by the buyer’s rating. Payment happens off Facebook, so I pick signals we can actually see.</p></div></div>
+<p class="whynote">Why this move: one number that both sides’ success feeds into, and that Facebook can count.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Inputs</div><p>I’d split the levers by side so each team knows what to move. <b>Sellers:</b> new listings a week from active sellers; share of listings with a clear photo and a price close to similar items. <b>Buyers:</b> share of searches that show 10 or more nearby listings; share of searches that lead to a message. <b>Between them:</b> median time to first reply; share of first messages answered within an hour.</p></div></div>
+<p class="whynote">Why this move: when the goal drops, these tell you which side, and which step, to fix.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Guardrails</div><p><b>Safety checks (guardrails):</b> scam reports per 1,000 conversations; share of listings removed for breaking rules; how often sellers block buyers. <b>Trade-off:</b> stricter checks on new sellers cut scams but also cut listings, which lowers liquidity. <b>Next time:</b> show “thin” cities separately from “thick” ones in every chart.</p></div></div>
+<p class="whynote">Why this move: scams and spam can inflate activity numbers, so the guardrails make sure growth is healthy growth.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>The decision (a monthly health review) told us to keep the list short. Mapping both sides gave two moments of truth, and liquidity joined them into one number: completed local matches. The inputs are split by side, so a drop points to a team. The guardrails stop scams from making the numbers look better than the marketplace really is.</div>
+
+<div class="box fw"><span class="lbl">Framework · Marketplace liquidity</span>
+<p><span class="step">1 · The situation.</span>The candidate counted activity on each side, but nothing measured whether the sides met. A marketplace with many listings and many visitors can still fail, if the listings are in the wrong city or at the wrong price.</p>
+<p><span class="step">2 · An everyday example.</span>A Sunday vegetable market (a <i>haat</i>). A vendor comes back next week only if most of her tomatoes sold before closing. A shopper comes back only if she found good tomatoes without walking the whole market. Count the vendors and shoppers and you learn little; count the share of tomatoes sold and the time shoppers took to find them, and you know if the market will survive.</p>
+<table class="tbl">
+<tr><th style="width:24%">Idea</th><th style="width:36%">Sunday vegetable market</th><th>Facebook Marketplace</th></tr>
+<tr><td><b>Seller-side liquidity</b></td><td>Share of tomatoes sold before closing</td><td>Share of listings sold within 7 days (sell-through)</td></tr>
+<tr><td><b>Buyer-side liquidity</b></td><td>Found good tomatoes in 10 minutes</td><td>Searches that end in a message to a seller</td></tr>
+<tr><td><b>Speed</b></td><td>How long a vendor waits for the first customer</td><td>Time to first message; time to sale</td></tr>
+<tr><td><b>Local</b></td><td>This market, this Sunday</td><td>This city, this category</td></tr>
+<tr><td><b>Unhealthy but busy</b></td><td>Crowds that haggle and don’t buy</td><td>Many messages, few sales</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span><span class="term">Liquidity</span> is the chance that a participant on one side finds a match on the other side within a reasonable time. Measure it from both ends: sell-through for sellers, search success for buyers, and the time each takes. Liquidity is local: it must be read city by city and category by category, because a buyer in Pune can’t use a table in Patna. The side that is harder to attract (usually supply, the listings) gets the first investment.</p>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this case):</p><ol class="usesteps"><li>Name each side and what success means for it: a seller’s table sells; a buyer finds a table nearby.</li><li>Pick one event you can see that proves a match happened: a listing marked sold after a Marketplace chat.</li><li>Build the funnel from listing to match (100 → 62 → 41 → 30) and find the biggest leak.</li><li>Cut the same funnel by city and category to find “thin” markets where few matches happen.</li><li>Invest in the harder side (usually listings) in the thinnest markets first.</li></ol><p class="slip"><b>Common slip</b> · counting activity (visits, messages) as if it were matches. A busy market where nothing sells is a failing market.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect x="0" y="10" width="160" height="26" rx="3" fill="#0b5d7a"/><text x="8" y="28" class="b w">100 listings</text><text x="168" y="28" class="s">furniture, Pune, one week (illustrative)</text>
+  <rect x="0" y="42" width="99" height="26" rx="3" fill="#2c7a95"/><text x="8" y="60" class="b w">62 get a</text><text x="107" y="60" class="s">message within a day: buyers can find them</text>
+  <rect x="0" y="74" width="66" height="26" rx="3" fill="#3e4fb8"/><text x="8" y="92" class="b w">41</text><text x="74" y="92" class="s">agree a time to meet: price and trust are OK</text>
+  <rect x="0" y="106" width="48" height="26" rx="3" fill="#127a64"/><text x="8" y="124" class="b w">30</text><text x="56" y="124" class="s">marked sold within 7 days: sell-through 30%</text>
+  <rect x="430" y="44" width="248" height="90" rx="6" fill="#fcecea" stroke="#b93a32"/>
+  <text x="440" y="62" class="b red">Where it leaks, and the fix</text>
+  <text x="440" y="80">38 never get a message: bad photo,</text>
+  <text x="440" y="94">price far above similar tables</text>
+  <text x="440" y="112">21 talk but don’t meet: lowballers,</text>
+  <text x="440" y="126">no-shows, fear of scams</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:liq}} · Liquidity, read as a funnel from the seller’s side.</b> Only 30 of 100 tables sell in a week. The two leaks point to two different fixes: price and photo guidance for the first, trust signals and reminders for the second. <span class="src">Illustrative numbers.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>High sell-through can hide a price problem. If sellers price far below value (a new phone for half price), everything sells fast and sellers feel cheated later, or it is stolen goods. And a national average hides dead cities: 45% sell-through in Mumbai and 8% in small towns average to a healthy-looking 30%.</p>
+<p><span class="step">5 · In the interview.</span>“A marketplace is healthy when the two sides find each other, so my North Star counts completed matches, and I read it city by city.”</p>
+</div>

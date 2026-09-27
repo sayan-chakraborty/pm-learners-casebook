@@ -1,0 +1,158 @@
+<!-- ============ CASE 1.6 ANDROID DAU (approved S0 version, adapted) ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 1.6 · Android daily users drop 40%</span>
+ <span class="m"><span class="pill">Root cause analysis</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, p. 308</span></span></div>
+<div class="try"><b>Try it first.</b> Read only the question in the blue box. Take 5 minutes and say your structure out loud before you read the candidate’s answer.</div>
+</div>
+
+{{CASE:A308}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Checked the data first.</b> Asking about tracking changes and pipeline delays is rare: only 1 of the 12 root-cause cases in the IIM A and IIM B casebooks does it.</li>
+ <li><b>Pinned the definition</b> (unique users, at least one open a day) and checked new vs existing users.</li>
+ <li><b>Segmented by OS version and maker</b>, which turned “Android” into “Android 12+”.</li>
+ <li><b>Closed the loose end.</b> The North America skew didn’t fit a pure OS bug, so the candidate proposed a staged rollout and asked for proof. This is the best moment in the case.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Never asked “sudden or slow?”</b> A sudden drop usually means something broke; a slow one means users are drifting away. That one question points straight at the update and saves three turns.</li>
+ <li><b>Looked outside first</b>, although the drop began right after our own update.</li>
+ <li><b>Never checked the size.</b> Does the crash explain all 40%, or is something else going on too?</li>
+ <li><b>Forgot the business cost.</b> In a banking app, users who can’t open it can’t pay, and they call support.</li>
+</ul>
+</div>
+
+<div class="box chk"><span class="lbl">Check · “Roll back to the last stable version” <span class="verdict v-over">Overstated</span></span>
+<p>On Android you can’t take an update back from phones that already have it. You can only stop it reaching more phones (the Play Store lets you pause a gradual release) and then send a <i>newer</i> version containing the old, working code. Teams that put risky features behind an on/off switch controlled from their own servers (a “feature flag”) can simply switch the feature off.</p></div>
+
+<div class="box key flowbox"><span class="lbl">The scoping kit · applied to a “number dropped” case</span>
+<p>The same five questions, but in a root-cause case question 4 does the heavy lifting: most drops start with something that changed. Think of a doctor asking “did you start any new medicine?” before ordering tests.</p>
+<div class="kit">
+ <div class="card"><span class="n">1</span><b>What exactly is it?</b><span class="why">So you and the interviewer mean the same thing.</span><span class="here">“Android daily users down 40% in two weeks, iPhone steady. Right?”</span><span class="tick y">✓ asked</span></div>
+ <div class="card"><span class="n">2</span><b>What’s the goal?</b><span class="why">More users, more money or fewer failures lead to different answers.</span><span class="here">Already given here: get the users back.</span><span class="tick na">not needed</span></div>
+ <div class="card"><span class="n">3</span><b>Who is affected?</b><span class="why">New and old users, or two cities, behave differently.</span><span class="here">“New users, existing users, or both?”</span><span class="tick y">✓ asked</span></div>
+ <div class="card"><span class="n">4</span><b>What changed?</b><span class="why">Most problems start with a change. Ask what exists today and why now.</span><span class="here">“Did we release anything just before?”</span><span class="tick y">✓ asked late</span></div>
+ <div class="card"><span class="n">5</span><b>What are the limits?</b><span class="why">Country, platform or deadline shrinks the problem.</span><span class="here">“All countries, or one?”</span><span class="tick y">✓ asked</span></div>
+</div>
+<p class="small" style="margin-top:4pt"><b>For a “number dropped” case, add two or three of these:</b> What exactly is counted? <span class="tk y">✓</span> · Sudden or slow? <span class="tk n">✗ skipped</span> · Where is it worst? <span class="tk y">✓</span> · Can we trust the number? <span class="tk y">✓ rare, and impressive</span></p>
+<p class="small"><b>Rule of thumb:</b> don’t ask everything. Ask 3–4, say one assumption out loud (“I’ll assume this is worldwide”), and begin.</p>
+</div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">
+<svg class="d" viewBox="0 0 680 62" xmlns="http://www.w3.org/2000/svg">
+ <g class="c">
+  <polygon points="0,4 106,4 116,31 106,58 0,58" fill="#127a64"/>
+  <text x="54" y="26" text-anchor="middle" class="b w">① Clarify</text><text x="54" y="44" text-anchor="middle" class="w">sudden or slow?</text>
+  <polygon points="113,4 219,4 229,31 219,58 113,58 123,31" fill="#1d8a73"/>
+  <text x="170" y="26" text-anchor="middle" class="b w">② Rule out</text><text x="170" y="44" text-anchor="middle" class="w">bad data? outside?</text>
+  <polygon points="226,4 332,4 342,31 332,58 226,58 236,31" fill="#2a9a82"/>
+  <text x="283" y="26" text-anchor="middle" class="b w">③ Find where</text><text x="283" y="44" text-anchor="middle" class="w">which users?</text>
+  <polygon points="339,4 445,4 455,31 445,58 339,58 349,31" fill="#0b5d7a"/>
+  <text x="396" y="26" text-anchor="middle" class="b w">④ Check size</text><text x="396" y="44" text-anchor="middle" class="w">does it add up?</text>
+  <polygon points="452,4 558,4 568,31 558,58 452,58 462,31" fill="#3e4fb8"/>
+  <text x="509" y="26" text-anchor="middle" class="b w">⑤ Fix</text><text x="509" y="44" text-anchor="middle" class="w">stop, patch, tell</text>
+  <polygon points="565,4 680,4 680,58 565,58 575,31" fill="#7c3aa6"/>
+  <text x="624" y="26" text-anchor="middle" class="b w">⑥ Measure</text><text x="624" y="44" text-anchor="middle" class="w">back to normal?</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:strip16}} · A “metric dropped” answer in six moves.</b> Almost any root-cause case can be answered in this order. Each turn below is tagged with its move. <span class="src">Author’s summary of the RCA sequence.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Before I start, two quick questions. Did the drop happen suddenly, on one day, or slowly over the two weeks? And did we change anything just before it began, such as an app update?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Suddenly, the day after we released a new Android version.</p></div></div>
+<p class="whynote">Why this move: a sudden drop usually means something broke; a slow one means users are drifting away. One answer and the update is the main suspect.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Rule out · ③ Find where</div><p>Two quick checks first: is the number real, with no tracking bug, and did anything outside change, like a rival’s offer? If not, can we split Android users by their Android version, and by whether they installed the update?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>The number is real and nothing outside changed. For users on Android 12 or newer who installed the update, the app crashes the moment they open it.</p></div></div>
+<p class="whynote">Why this move: clear the cheap explanations in one breath, then narrow down to exactly who is hit.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Check the size</div><p>Does that explain the whole 40%? Say 70% of our Android users are on Android 12 or newer, and 60% of them have updated (illustrative). 70% × 60% = 42% who can’t open the app. That’s close to 40%, so this one bug explains the drop. North America saw it first because the update reached it first.</p></div></div>
+<p class="whynote">Why this move: if the numbers didn’t add up, there would be a second cause still to find.</p>
+
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Good. What do you do now, and how will you know it’s fixed?</p></div></div>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Fix · ⑥ Measure</div><p><b>Today:</b> stop the update reaching more phones. Send out a fixed version fast, because on Android you can’t take an update back. Text affected users to update, since they can’t open the app to read a notice.</p>
+<p><b>Goal (North Star):</b> Android daily users back to normal within a week. <b>Safety check (guardrail):</b> logins and payments still work after the rushed fix. <b>Trade-off:</b> a rushed fix is less tested, so it goes to 10% of users for a few hours before everyone. <b>Next time:</b> test every release on the newest Android versions.</p></div></div>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · Finding the cause: four doors, then 5 Whys</span>
+<p><span class="step">1 · The situation.</span>A number has dropped and you have 25 minutes. The usual mistake is to grab the first idea (“a rival must have run an offer”) and spend the case defending it.</p>
+<p><span class="step">2 · An everyday example.</span>Your scooter won’t start. You don’t open up the engine first. You check the easy things first, in an order that works just as well for an app:</p>
+<table class="tbl">
+<tr><th style="width:17%">Door</th><th style="width:25%">The question</th><th>Scooter won’t start</th><th>Android users fell 40%</th></tr>
+<tr><td><b>1 · Data</b></td><td>Is the reading real?</td><td>Is the fuel gauge just broken?</td><td>Is the tracking broken?</td></tr>
+<tr><td><b>2 · Outside</b></td><td>Did the world change?</td><td>Is there a petrol strike?</td><td>Did a rival launch an offer?</td></tr>
+<tr><td><b>3 · Inside</b></td><td>Did we change something?</td><td>Did the mechanic work on it yesterday?</td><td>Did we release an update?</td></tr>
+<tr><td><b>4 · Where</b></td><td>Where exactly is it?</td><td>Only on cold mornings?</td><td>Only on Android 12 or newer?</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>Knock on the doors in order, because the first ones are quickest to check. If a clue points at one door, go there early: a sudden drop right after an update points at door 3. When a door opens, keep asking “why?” (the <b>5 Whys</b>) until you reach something a team can fix. That is usually a missing step in a process, not a person to blame.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 284" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="m3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7d8793"/></marker></defs>
+ <rect x="4" y="66" width="132" height="74" rx="6" fill="#fcecea" stroke="#b93a32" stroke-width="1.4"/>
+ <text x="70" y="88" text-anchor="middle" class="b">Android users</text>
+ <text x="70" y="102" text-anchor="middle" class="b">down 40%</text>
+ <text x="70" y="116" text-anchor="middle">in 2 weeks;</text>
+ <text x="70" y="130" text-anchor="middle" class="s">iPhone steady</text>
+ <path d="M136,103 H156 M156,28 V178 M156,28 H174 M156,78 H174 M156,128 H174 M156,178 H174" class="ln"/>
+ <rect x="176" y="8" width="220" height="40" rx="5" fill="#fff" stroke="#9aa3ad"/>
+ <text x="184" y="24" class="b">1 · Data: is the number real?</text><text x="184" y="39" class="s">tracking bug? late data?</text>
+ <rect x="176" y="58" width="220" height="40" rx="5" fill="#fff" stroke="#9aa3ad"/>
+ <text x="184" y="74" class="b">2 · Outside: did the world change?</text><text x="184" y="89" class="s">rival offer? holiday? Google change?</text>
+ <rect x="176" y="108" width="220" height="40" rx="5" fill="#fff" stroke="#3e4fb8" stroke-width="1.6"/>
+ <text x="184" y="124" class="b">3 · Inside: did we change it?</text><text x="184" y="139" class="s">app update? new feature?</text>
+ <rect x="176" y="158" width="220" height="40" rx="5" fill="#fff" stroke="#3e4fb8" stroke-width="1.6"/>
+ <text x="184" y="174" class="b">4 · Where: which users exactly?</text><text x="184" y="189" class="s">phone type, country, new or old user</text>
+ <rect x="408" y="8" width="130" height="40" rx="5" fill="#eef0f2"/><text x="473" y="32" text-anchor="middle" class="s">✗ no</text>
+ <rect x="408" y="58" width="130" height="40" rx="5" fill="#eef0f2"/><text x="473" y="82" text-anchor="middle" class="s">✗ no</text>
+ <rect x="408" y="108" width="130" height="40" rx="5" fill="#fff3d6" stroke="#c47f17"/>
+ <text x="473" y="124" text-anchor="middle" class="b">✓ yes: an update</text><text x="473" y="139" text-anchor="middle" class="s">2 weeks ago</text>
+ <rect x="408" y="158" width="130" height="40" rx="5" fill="#fff3d6" stroke="#c47f17"/>
+ <text x="473" y="174" text-anchor="middle" class="b">✓ Android 12+ only</text><text x="473" y="189" text-anchor="middle" class="s">N. America first</text>
+ <line x1="396" y1="28" x2="406" y2="28" class="ln"/><line x1="396" y1="78" x2="406" y2="78" class="ln"/>
+ <line x1="396" y1="128" x2="406" y2="128" class="ln"/><line x1="396" y1="178" x2="406" y2="178" class="ln"/>
+ <rect x="552" y="78" width="124" height="100" rx="6" fill="#1c232b"/>
+ <text x="614" y="96" text-anchor="middle" class="w b" style="font-size:10px;letter-spacing:.08em">THE CAUSE</text>
+ <text x="614" y="114" text-anchor="middle" class="w">the update’s new</text>
+ <text x="614" y="128" text-anchor="middle" class="w">security check</text>
+ <text x="614" y="142" text-anchor="middle" class="w">crashes the app</text>
+ <text x="614" y="156" text-anchor="middle" class="w">on Android 12+</text>
+ <path d="M538,128 H550" class="ln" marker-end="url(#m3)"/><path d="M538,178 C546,178 544,172 550,170" class="ln" marker-end="url(#m3)"/>
+ <!-- 5 whys -->
+ <text x="4" y="238" class="b fwc">5 WHYS</text>
+ <text x="4" y="253" class="s">keep asking</text>
+ <text x="4" y="266" class="s">“why?”</text>
+ <g class="s" style="font-style:italic">
+  <text x="209" y="218" text-anchor="middle" class="s">why? →</text><text x="325" y="218" text-anchor="middle" class="s">why? →</text>
+  <text x="441" y="218" text-anchor="middle" class="s">why? →</text><text x="557" y="218" text-anchor="middle" class="s">why? →</text>
+ </g>
+ <g class="c">
+  <polygon points="96,222 204,222 214,251 204,280 96,280 106,251" fill="#eef0fb" stroke="#3e4fb8"/>
+  <text x="156" y="248" text-anchor="middle" class="b">App crashes</text><text x="156" y="262" text-anchor="middle">when opened</text>
+  <polygon points="212,222 320,222 330,251 320,280 212,280 222,251" fill="#eef0fb" stroke="#3e4fb8"/>
+  <text x="272" y="241" text-anchor="middle" class="b">New security</text><text x="272" y="255" text-anchor="middle">check fails on</text><text x="272" y="269" text-anchor="middle">Android 12+</text>
+  <polygon points="328,222 436,222 446,251 436,280 328,280 338,251" fill="#eef0fb" stroke="#3e4fb8"/>
+  <text x="388" y="241" text-anchor="middle" class="b">Code expected</text><text x="388" y="255" text-anchor="middle">a permission the</text><text x="388" y="269" text-anchor="middle">phone never gave</text>
+  <polygon points="444,222 552,222 562,251 552,280 444,280 454,251" fill="#eef0fb" stroke="#3e4fb8"/>
+  <text x="504" y="241" text-anchor="middle" class="b">Nobody tested</text><text x="504" y="255" text-anchor="middle">on an Android</text><text x="504" y="269" text-anchor="middle">12+ phone</text>
+  <polygon points="560,222 668,222 678,251 668,280 560,280 570,251" fill="#3e4fb8"/>
+  <text x="620" y="241" text-anchor="middle" class="b w">Checklist</text><text x="620" y="255" text-anchor="middle" class="w">doesn’t require it:</text><text x="620" y="269" text-anchor="middle" class="w b">fix the checklist</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:doors}} · The four doors and the 5 Whys, on this case.</b> Two doors stay shut, two open (blue) and point to one cause. Then “why?” five times walks from the symptom to the real fix: a checklist, not a person. <span class="src">Case facts from IIM A p. 308; whys 3–5 are illustrative.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>Your scooter has a flat tyre <i>and</i> an empty tank. Fix the tyre and it still won’t go. So once you find a cause, check it explains the whole drop (move ④ above). 5 Whys also goes wrong if you stop at “the developer made a mistake”. People always make mistakes; the fix is the check that should have caught this one.</p>
+<p><span class="step">5 · In the interview.</span>Say it once, in plain words: “First I’ll check the number is real, then whether something outside changed, then what we changed, then which users are hit.” Then follow the clues, and say out loud when you skip a door and why.</p>
+</div>
+
+<div class="box int" style="margin-top:8pt"><span class="lbl">In the interview · The first 60 seconds, by case type</span>
+<table class="tbl" style="margin:2pt 0 1pt">
+<tr><th style="width:16%">Case type</th><th style="width:34%">Open with</th><th style="width:26%">The move that impresses</th><th>The usual trap</th></tr>
+<tr><td><b>Design</b></td><td>Goal, who it’s for, what they do today, limits (phones, law)</td><td>Checking the law or the lender first (teen credit)</td><td>Listing features before naming the user’s job</td></tr>
+<tr><td><b>Improvement</b></td><td>Confirm the product, pick one goal, find who is leaving</td><td>Protecting a basic before adding delight</td><td>Four personas and no decision</td></tr>
+<tr><td><b>Metrics</b></td><td>Why the feature exists and for whom, then one North Star</td><td>Asking “did it cause this?” and proposing a holdout</td><td>A list of 15 equal metrics</td></tr>
+<tr><td><b>Root cause</b></td><td>Exact definition, size, sudden or slow, what changed</td><td>Checking the data is real, and that the cause explains the whole drop</td><td>Blaming a competitor before checking our own release</td></tr>
+</table></div>
+

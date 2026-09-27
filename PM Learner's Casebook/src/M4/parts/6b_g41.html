@@ -1,0 +1,50 @@
+<!-- ============ GUESSTIMATE 4.1 UBER DRIVERS IN BENGALURU ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Guesstimate 4.1 · Uber drivers in Bengaluru</span>
+ <span class="m"><span class="pill">Guesstimate</span><span>Medium</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, p. 138</span></span></div>
+<div class="try"><b>Try it first.</b> How many times did you or your family take an app cab last month? Would the answer be similar for most people in a big Indian city? Build the number of drivers from that, for five minutes.</div>
+</div>
+
+{{CASE:B138}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Pinned down the unit</b> (drivers serving the city in a day) and confirmed it.</li>
+ <li><b>Chose supply from demand at the peak</b>, the right approach for a fleet.</li>
+ <li><b>Stated the equation first</b>, then filled in numbers, and included shared rides.</li>
+</ul>
+<ul class="miss small">
+ <li><b>40% of working people commute by cab</b> is far too high for any Indian city; buses, metro and two-wheelers carry most work trips.</li>
+ <li><b>Everyone rides in the same hour.</b> 3.4 lakh rides in one peak hour means all Uber commuters leave work at once.</li>
+ <li><b>A 30-minute ride is not a 30-minute cycle.</b> The empty drive to the pickup and waiting add 10–15 minutes.</li>
+ <li><b>No check.</b> 1.7 lakh drivers doing even 8 trips a day is 13.6 lakh trips, one for every 10 residents daily.</li>
+</ul>
+</div>
+<p class="small"><b>Guesstimate kit check:</b> 1 Unit <span class="tk y">✓</span> · 2 Approach <span class="tk y">✓ supply from peak demand</span> · 3 Tree <span class="tk y">✓</span> · 4 Numbers with reasons <span class="tk n">✗ the cab share had no reason</span> · 5 Check <span class="tk n">✗</span> · 6 Range <span class="tk n">✗</span>. Card 5 would have caught the error in seconds: the answer implies more cab trips than Bengaluru’s buses carry.</p>
+
+<div class="box chk"><span class="lbl">Check · 40% of working professionals commute by cab <span class="verdict v-no">Doesn’t hold up</span></span>
+<p>Bengaluru’s city buses alone carried about 40 lakh passenger trips a day in 2025, and two-wheelers are the most common way to get to work. App cabs are a small share of daily trips, a few per cent. A 40% cab share would put more cars on the Outer Ring Road than it could physically hold.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:stripg1}}
+<figcaption><b>{{FIG:stripg1}} · The six cards, applied to a driver fleet.</b> The trip cycle (card 4) and the per-driver check (card 5) are where fleet guesstimates go wrong. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">1 · Unit</div><p>I’ll count distinct Uber car drivers who drive in Bengaluru on a typical weekday. Autos and bikes I’ll add at the end, since Uber runs those too.</p></div></div>
+<p class="whynote">Why this move: “drivers” could mean registered, monthly active or online now; these differ by 3–5×, so pick one out loud.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">2 · Approach</div><p>Supply from demand: daily trips, then the busiest hour, then how many trips one driver completes in that hour, then how many of the day’s drivers are online at that hour.</p></div></div>
+<p class="whynote">Why this move: drivers are capacity, and capacity is set by the peak.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">3–4 · Tree and numbers</div><p>1.4 crore people. About 2% take an app cab on a weekday (commuters, airport runs, late nights), about 1.8 trips each: 1.4 crore × 2% × 1.8 ≈ 5 lakh cab trips. Uber’s share of cabs is about 50%: 2.5 lakh. The busiest hour carries about 10% of the day: 25,000 trips. A trip cycle at peak, 35 minutes riding plus 10 to reach the pickup, is 45 minutes: 1.33 trips an hour. 25,000 ÷ 1.33 ≈ 19,000 drivers online at the peak. About 60% of the day’s drivers are on then: 19,000 ÷ 0.6 ≈ <b>31,000 drivers</b> ({{REF:gtree1}}).</p></div></div>
+<p class="whynote">Why this move: every number has a one-line reason, and the cycle includes the empty minutes that the candidate left out.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">5 · Check</div><p>Per driver: 2.5 lakh trips ÷ 31,000 ≈ 8 trips a day, a little below a full-timer’s 10–12, which fits a mix of full- and part-timers. Per resident: 5 lakh cab trips for 1.4 crore people is one app-cab trip per person every four weeks. Both sound right for Bengaluru.</p></div></div>
+<p class="whynote">Why this move: two quick ratios, one per side, catch almost any error in a fleet estimate.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">6 · Range</div><p>The swing factor is the share riding each day: at 1%, about 16,000 drivers; at 3%, about 47,000. Monthly active drivers are higher, perhaps 1.5×, because few drive every day. With Uber Auto and Moto added, the whole fleet is roughly double.</p></div></div>
+<p class="whynote">Why this move: a range with its driver tells the interviewer which assumption to argue with.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>The unit (distinct car drivers on a weekday) fixed what to count. Supply from peak demand gave the tree, the 45-minute cycle made the capacity realistic, and two ratios, trips per driver and trips per resident, confirmed the scale. The range names the one input that moves it.</div>
+<figure>{{SVG:gtree1}}
+<figcaption><b>{{FIG:gtree1}} · Uber car drivers in Bengaluru, as an equation tree.</b> The orange box is the swing factor; the green box is the answer; the grey box is the check that rejects the casebook’s 1.7 lakh. <span class="src">Population rounded from 2025 estimates; Uber cab share from industry estimates (2025); all other inputs illustrative.</span></figcaption>
+</figure>
+<div class="box key"><span class="lbl">The reusable trick</span>
+<p>Drivers needed at peak = peak trips an hour × cycle time in hours. 25,000 trips × 0.75 hours = about 19,000. This is Little’s law: things in the system = arrival rate × time each one stays. Use it for drivers, riders, delivery bikes, checkout counters and servers.</p></div>

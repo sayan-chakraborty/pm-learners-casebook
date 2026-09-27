@@ -1,0 +1,101 @@
+<!-- ============ CASE 1.4 FRAUD ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 1.4 · Fraud prevention in a banking app</span>
+ <span class="m"><span class="pill">Product improvement</span><span>Medium</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, pp. 110–111</span></span></div>
+<div class="try"><b>Try it first.</b> Before reading: in India, where do people lose the most money to payment fraud, and how are they usually tricked? Then sketch one fix.</div>
+</div>
+
+{{CASE:B110}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Clarified fraud type, platform and region</b> before starting.</li>
+ <li><b>Set two goals at once</b>: fewer frauds, and no customers lost to the added step. That second goal is a guardrail in all but name.</li>
+ <li><b>Followed the interviewer’s steer</b> to tech-savvy users without arguing.</li>
+ <li><b>Designed a concrete flow</b> with an opt-out toggle, and noticed a child using a parent’s card.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Picked a small slice.</b> In FY25 India saw 12.64 lakh UPI fraud cases against about 66,000 credit-card fraud cases. The candidate’s own first pain, sharing an OTP on a call, is where most money goes.</li>
+ <li><b>The feature can’t work as designed</b>: card payments are approved in seconds, not 30 minutes.</li>
+ <li><b>“Rejects = frauds” overcounts.</b> Rejects include mistaken taps and family use; nothing counted genuine users annoyed.</li>
+ <li><b>Missed what exists.</b> Since January 2020 RBI has required banks to let customers switch contactless, online and international use on or off, and set limits, in the app.</li>
+</ul>
+</div>
+
+<div class="box chk"><span class="lbl">Check · “Approve tap-to-pay from a notification; auto-approve after 30 minutes” <span class="verdict v-no">Doesn’t hold up</span></span>
+<p>A card payment is approved or declined at the terminal in a few seconds. A shop won’t hand over goods on a 30-minute maybe, and a fraudster’s tap would be approved long before the notification arrived. The skimming worry is also overstated: taps without a PIN are capped at ₹5,000, and the thief needs a merchant account that can be traced. What works: contactless off or a low tap limit set in the app, plus an instant alert with a one-tap “block card and report”.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">
+<svg class="d" viewBox="0 0 680 62" xmlns="http://www.w3.org/2000/svg">
+ <g class="c">
+  <polygon points="0,4 106,4 116,31 106,58 0,58" fill="#127a64"/><text x="54" y="26" text-anchor="middle" class="b w">① Clarify</text><text x="54" y="44" text-anchor="middle" class="w">which fraud? whose loss?</text>
+  <polygon points="113,4 219,4 229,31 219,58 113,58 123,31" fill="#1d8a73"/><text x="170" y="26" text-anchor="middle" class="b w">② Size</text><text x="170" y="44" text-anchor="middle" class="w">where is money lost?</text>
+  <polygon points="226,4 332,4 342,31 332,58 226,58 236,31" fill="#2a9a82"/><text x="283" y="26" text-anchor="middle" class="b w">③ Moment</text><text x="283" y="44" text-anchor="middle" class="w">when to step in</text>
+  <polygon points="339,4 445,4 455,31 445,58 339,58 349,31" fill="#0b5d7a"/><text x="396" y="26" text-anchor="middle" class="b w">④ Design</text><text x="396" y="44" text-anchor="middle" class="w">friction if risky</text>
+  <polygon points="452,4 558,4 568,31 558,58 452,58 462,31" fill="#3e4fb8"/><text x="509" y="26" text-anchor="middle" class="b w">⑤ Safety check</text><text x="509" y="44" text-anchor="middle" class="w">good users hurt?</text>
+  <polygon points="565,4 680,4 680,58 565,58 575,31" fill="#7c3aa6"/><text x="624" y="26" text-anchor="middle" class="b w">⑥ Measure</text><text x="624" y="44" text-anchor="middle" class="w">₹ lost, ₹ delayed</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:strip14}} · A fraud answer in six moves.</b> Move ⑤ is the one most candidates skip, and the one a bank’s leadership asks about first. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Which fraud: cards, UPI or net banking? And whose loss is it: do we refund only when an account is hacked, or also when a customer is tricked into paying?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Your call. The bank refunds only unauthorised fraud, but tricked customers blame us anyway.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Size</div><p>Then I’d go where the losses are. In FY25 India had 12.64 lakh UPI fraud cases worth ₹981 Cr, against about 1.45 lakh card and net-banking cases worth ₹822 Cr. Most UPI fraud is people being talked into paying: fake customer care, “refund pending, enter your PIN”. So I’ll focus on tricked payments.</p></div></div>
+<p class="whynote">Why this move: one sentence of sizing moves the whole answer to where the money is lost.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Moment</div><p>Tech-savvy users get tricked too, usually while on a call with the scammer or sharing their screen. The moment to step in is after they type the amount and before they enter the PIN.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Design</div><p>Friction only when risk is high. <b>On a call or screen-sharing, paying a new payee:</b> a full-screen warning in plain words and a 10-second pause. <b>First payment above ₹10,000 to a new payee:</b> a one-hour cooling-off the user can cancel, similar to what RBI proposed in April 2026. <b>A kill switch:</b> one tap freezes all outgoing payments.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Safety check</div><p>Illustrative numbers: 1 crore users make 3 crore transfers a month. If our rules flag 1%, that’s 3 lakh. If 5% of flagged payments are fraud, we stop 15,000 frauds and delay 2.85 lakh genuine payments: 19 good payments slowed for every fraud stopped. That ratio is my guardrail ({{REF:dial}}).</p></div></div>
+<p class="whynote">Why this move: every fraud rule also hits honest people. Naming the cost, with a number, is what makes the design credible.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> ₹ lost to fraud per ₹1 lakh moved, down 30% in two quarters. <b>Safety check (guardrail):</b> genuine payments delayed per fraud stopped, and the share of warned users who give up a payment that was real. <b>Trade-off:</b> stricter rules catch a little more fraud and slow a lot more honest payments. <b>Next:</b> start with 5% of users and tune the rule weekly.</p></div></div>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · Guardrails and counter-metrics</span>
+<p><span class="step">1 · The situation.</span>Any fraud rule can drive fraud to zero: block every payment. The real question is what the rule costs honest users, and whether anyone is watching that cost.</p>
+<p><span class="step">2 · An everyday example.</span>A school wants fewer late-comers, so the gate is locked at 8:00 sharp. Late arrivals drop to zero within a week. But children who would have arrived at 8:05 now stay home, and attendance falls. The school fixed the number it watched and damaged the one it didn’t.</p>
+<table class="tbl">
+<tr><th style="width:22%">Part</th><th>School gate</th><th>Fraud rules</th></tr>
+<tr><td><b>Goal metric</b></td><td>Late arrivals ↓</td><td>₹ lost to fraud ↓</td></tr>
+<tr><td><b>Counter-metric</b></td><td>Attendance (children sent home)</td><td>Genuine payments delayed or abandoned</td></tr>
+<tr><td><b>The dial</b></td><td>Gate time: 8:00, 8:10, 8:15</td><td>Share of payments flagged: 0.5%, 1%, 3%</td></tr>
+<tr><td><b>Right setting</b></td><td>Most children in class, on time</td><td>Least total harm: fraud plus friction</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>A <span class="term">guardrail</span> is a metric you promise not to hurt while chasing your goal, with a limit written down in advance (“genuine payments delayed stay under 1%”). A <span class="term">counter-metric</span> is the specific number that would move if your change backfired. Pick them before launch, put them on the same dashboard as the goal, and agree what happens if they cross the line.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 214" xmlns="http://www.w3.org/2000/svg">
+ <!-- funnel -->
+ <text x="4" y="14" class="b">One month, 1% of payments flagged (illustrative)</text>
+ <rect x="4" y="24" width="300" height="34" rx="4" fill="#dbe8f5"/><text x="154" y="39" text-anchor="middle" class="b">3 crore transfers</text><text x="154" y="52" text-anchor="middle" class="s">by 1 crore users</text>
+ <polygon points="40,62 268,62 238,98 70,98" fill="#fde7c8"/><text x="154" y="78" text-anchor="middle" class="b">3 lakh flagged (1%)</text><text x="154" y="92" text-anchor="middle" class="s">warning or 1-hour hold</text>
+ <rect x="20" y="106" width="130" height="40" rx="4" fill="#127a64"/><text x="85" y="123" text-anchor="middle" class="w b">15,000 frauds</text><text x="85" y="138" text-anchor="middle" class="w" style="font-size:10.3px">stopped (goal ✓)</text>
+ <rect x="158" y="106" width="146" height="40" rx="4" fill="#b93a32"/><text x="231" y="123" text-anchor="middle" class="w b">2.85 lakh genuine</text><text x="231" y="138" text-anchor="middle" class="w" style="font-size:10.3px">payments delayed</text>
+ <text x="154" y="166" text-anchor="middle" class="b red">19 honest payments slowed</text><text x="154" y="180" text-anchor="middle" class="b red">for every fraud stopped</text>
+ <text x="154" y="198" text-anchor="middle" class="s">the counter-metric to watch</text>
+ <!-- dial -->
+ <line x1="330" y1="10" x2="330" y2="206" stroke="#d9dee4"/>
+ <text x="346" y="14" class="b">Turning the dial: how strict?</text>
+ <text x="346" y="36" class="s">flagged</text><text x="416" y="36" class="s">frauds caught</text><text x="552" y="36" class="s">genuine delayed</text>
+ <text x="346" y="62" class="b">0.5%</text><rect x="416" y="50" width="48" height="16" fill="#127a64"/><text x="468" y="62" class="s">40%</text>
+ <rect x="552" y="50" width="16" height="16" fill="#b93a32"/><text x="572" y="62" class="s">1.4 lakh</text>
+ <text x="346" y="94" class="b">1%</text><rect x="416" y="82" width="84" height="16" fill="#127a64"/><text x="504" y="94" class="s">71%</text>
+ <rect x="552" y="82" width="32" height="16" fill="#b93a32"/><text x="588" y="94" class="s">2.85 lakh</text>
+ <text x="346" y="126" class="b">3%</text><rect x="416" y="114" width="108" height="16" fill="#127a64"/><text x="528" y="126" class="s">90%</text>
+ <rect x="552" y="114" width="100" height="16" fill="#b93a32"/><text x="656" y="126" class="s">8.8L</text>
+ <rect x="346" y="146" width="330" height="56" rx="5" fill="#fcecea" stroke="#b93a32"/>
+ <text x="356" y="163" class="b red">Going from 1% to 3% catches 3,900 more frauds</text>
+ <text x="356" y="178">and slows 6 lakh more honest payments.</text>
+ <text x="356" y="194" class="s">Without the counter-metric, “90% caught” looks like a win.</text>
+</svg>
+<figcaption><b>{{FIG:dial}} · The goal and its counter-metric move together.</b> Left: what one setting does in a month. Right: stricter settings buy small gains in fraud caught at a large cost to honest users. The guardrail decides where to stop. <span class="src">Illustrative model: 3 crore transfers a month, ~21,000 of them fraudulent.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>An airport adds a second bag check. Smuggling falls, queues reach three hours, and passengers miss flights. If “missed flights” isn’t on the dashboard, the change looks like a success. Guardrails fail the same way when they are set but never read, or when there are so many (twelve “must not drop” metrics) that nothing can ever ship. Two or three, with written limits, is plenty.</p>
+<p><span class="step">5 · In the interview.</span>“My goal is fewer rupees lost to fraud. To make sure I’m not buying that with honest customers’ time, I’ll watch genuine payments delayed per fraud stopped, and loosen the rule if it goes above about 20.”</p>
+</div>

@@ -1,0 +1,87 @@
+<!-- ============ GUESSTIMATE 3.2 DARK STORES FOR AHMEDABAD ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Guesstimate 3.2 · Dark stores for 10-minute Ahmedabad</span>
+ <span class="m"><span class="pill">Guesstimate</span><span>Hard</span><span>IIM A <i>Product Mindset 2026–27</i>, pp. 240–241</span></span></div>
+<div class="try"><b>Try it first.</b> A rider on a scooter has 7 minutes to reach any home from the store. How far can they go in Ahmedabad’s evening traffic? Turn that into an area per store before reading on.</div>
+</div>
+
+{{CASE:A240}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Three clarifications that each changed the maths</b>: city or district, one player or all, and whether the 10 minutes include picking.</li>
+ <li><b>Solved it twice, for two different limits</b> (reach and peak capacity), and took the larger.</li>
+ <li><b>Used the peak hour, not a flat day</b>: 120 orders an hour is 800 a day, not 1,920.</li>
+ <li><b>Showed a sensitivity table</b> for the weakest number and said which input it trusted most.</li>
+ <li><b>Refused to build to 99% utilisation</b>, sized for 80%, and phased the build.</li>
+</ul>
+<ul class="miss small">
+ <li><b>No check against real store counts.</b> Mapped data for mid-2025 shows Blinkit with 44 stores in Ahmedabad and all players with about 122.</li>
+ <li><b>Used daytime speed for the evening peak.</b> At 15 km/h instead of 20, the coverage count rises to about 53, the same as the demand count.</li>
+ <li><b>Circles need about 20% overlap to cover a map, not 10%.</b> Small, but it moves coverage from 28 to about 30 stores.</li>
+</ul>
+</div>
+<p class="small"><b>Guesstimate kit check:</b> 1 Unit <span class="tk y">✓</span> · 2 Approach <span class="tk y">✓ supply and demand</span> · 3 Tree <span class="tk y">✓</span> · 4 Numbers with reasons <span class="tk y">✓</span> · 5 Check another way <span class="tk y">✓ (the two paths)</span>, but not against real counts <span class="tk n">✗</span> · 6 Range <span class="tk y">✓</span>. One of the strongest answers in either casebook; what it skipped is a real-world check that would have confirmed it.</p>
+
+<div class="box chk"><span class="lbl">Check · “Demand binds, not geometry” <span class="verdict v-dir">Directionally right</span></span>
+<p>True at daytime speeds. But the evening rush is exactly when demand peaks <i>and</i> scooters slow down. At 15 km/h, 7 minutes cover 1.75 km of road, or 1.35 km in a straight line; each store reaches about 5.7 sq km, and 250 sq km needs about 53 stores. At the peak, both limits bind at once. Real networks confirm the scale: Blinkit, the leader, had 44 mapped stores in the city in mid-2025.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:stripg2}}
+<figcaption><b>{{FIG:stripg2}} · The six kit cards, applied to dark stores.</b> The candidate already did cards 1–4 well; the stronger version adds the peak-speed check and a real-world count. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">1–2 · Unit and approach</div><p>Stores for one leading player, covering the dense 250 sq km of the city, with order-to-door in 10 minutes. Two things limit a store: how far its riders can reach in time, and how many orders its pickers can pack in the busiest hour. I’ll work out both and take the larger number.</p></div></div>
+<p class="whynote">Why this move: a store count must satisfy every limit at once, so the answer is the tighter of the two.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">3–4 · Reach, at the peak</div><p>Picking and packing take about 3 minutes, which leaves 7 minutes to ride. In evening traffic a scooter averages about 15 km/h: 7 minutes × 15 km/h ≈ 1.75 km of road. Roads bend, so the straight-line reach is about 1.75 ÷ 1.3 ≈ 1.35 km. Each store’s circle is π × 1.35² ≈ 5.7 sq km, but circles must overlap to leave no gaps, so each store really covers about 83% of that: ≈ 4.7 sq km. 250 ÷ 4.7 ≈ <b>53 stores</b> ({{REF:hex}}).</p></div></div>
+<p class="whynote">Why this move: the slowest traffic and the most orders arrive in the same hour, so reach must be tested at the peak, not at noon.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">3–4 · Capacity</div><p>At the peak, 8 pickers × 15 orders an hour = 120 orders an hour per store. The busiest hour carries about 15% of the day, so a store handles about 120 ÷ 0.15 = 800 orders a day. Demand: 23 lakh households × 17% who order × 0.3 orders a day × 35% share ≈ 42,000 orders a day. 42,000 ÷ 800 ≈ <b>53 stores</b>.</p></div></div>
+<p class="whynote">Why this move: the peak hour, not the whole day, is what a fixed team of pickers can handle.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">5 · Check</div><p>Mapped data from mid-2025 shows Blinkit with 44 stores in Ahmedabad and all players with about 122. So the leader runs about 36% of the city’s stores, close to my 35% share. My 53–65 for a player at full maturity sits sensibly above today’s 44.</p></div></div>
+<p class="whynote">Why this move: a real count confirms the scale and catches any assumption that is badly off.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">6 · Range</div><p>I’d plan about 65 stores, so each store runs at about 80% of its peak capacity rather than 99%. The range is 45–70, and orders per household is the number that swings it most. I’d open about 30 for coverage first, then add stores in the busiest neighbourhoods as orders grow.</p></div></div>
+<p class="whynote">Why this move: headroom absorbs rainy evenings and festivals; phasing avoids paying for half-empty stores up front.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>Both limits were worked out at the same moment, the evening peak, and both land near 53. The real count (Blinkit’s 44) confirms the scale, headroom lifts the plan to about 65, and the range names the one input to watch.</div>
+
+<figure>
+<svg class="d" viewBox="0 0 680 186" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <text x="0" y="14" class="b">Why a store covers less than its circle</text>
+  <g fill="#e3f0f5" stroke="#0b5d7a" stroke-width="1.2" fill-opacity="0.55">
+   <circle cx="60" cy="80" r="34.6"/><circle cx="120" cy="80" r="34.6"/><circle cx="180" cy="80" r="34.6"/>
+   <circle cx="90" cy="132" r="34.6"/><circle cx="150" cy="132" r="34.6"/>
+  </g>
+  <g fill="none" stroke="#127a64" stroke-width="1.6">
+   <polygon points="60,45.4 90,62.7 90,97.3 60,114.6 30,97.3 30,62.7"/>
+   <polygon points="120,45.4 150,62.7 150,97.3 120,114.6 90,97.3 90,62.7"/>
+   <polygon points="180,45.4 210,62.7 210,97.3 180,114.6 150,97.3 150,62.7"/>
+  </g>
+  <text x="236" y="56" class="s">circles must overlap to leave</text><text x="236" y="69" class="s">no gaps; each store really</text><text x="236" y="82" class="s">“owns” the green hexagon,</text><text x="236" y="95" class="b grn">~83% of its circle</text>
+  <text x="236" y="122" class="s">radius 1.35 km at 15 km/h</text><text x="236" y="135" class="s">→ circle 5.7 sq km</text><text x="236" y="148" class="s">→ hexagon 4.7 sq km</text>
+  <line x1="390" y1="6" x2="390" y2="180" stroke="#d9dee4"/>
+  <text x="404" y="14" class="b">Two limits, one answer</text>
+  <rect x="404" y="28" width="118" height="20" fill="#9aa3ad"/><text x="530" y="42" class="s">reach, daytime 20 km/h: ~30</text>
+  <rect x="404" y="54" width="208" height="20" fill="#0b5d7a"/><text x="410" y="68" class="b w">reach, evening 15 km/h: ~53</text>
+  <rect x="404" y="80" width="208" height="20" fill="#3e4fb8"/><text x="410" y="94" class="b w">peak capacity: ~53</text>
+  <rect x="404" y="106" width="258" height="20" fill="#127a64"/><text x="410" y="120" class="b w">plan with 20% headroom: ~65</text>
+  <rect x="404" y="132" width="172" height="20" fill="#c47f17"/><text x="410" y="146" class="b w">Blinkit, mid-2025: 44</text>
+  <text x="404" y="172" class="s">bar length = number of stores (1 store = 3.9 units)</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:hex}} · How many dark stores does a 10-minute promise need?</b> Left: circles overlap, so each store effectively covers a hexagon about 83% of its circle. Right: at evening speeds the reach limit and the capacity limit meet at about 53 stores; the leader’s real count in 2025 sits just below. <span class="src">Case numbers (IIM A p. 240); store counts from quickcommercemap.com (third-party mapping, mid-2025, approximate).</span></figcaption>
+</figure>
+<div class="box key"><span class="lbl">The reusable trick</span>
+<p>For anything built from physical capacity (stores, riders, servers, counters), size for the <b>peak hour</b>, not the day, and leave about 20% headroom. Then check the two limits, reach and throughput, at the same moment: the busiest hour is usually also the slowest.</p></div>
+
+<h3>Two guesstimates, one kit</h3>
+<table class="tbl">
+<tr><th style="width:16%">Card</th><th style="width:42%">Google searches a second (demand side)</th><th>Dark stores for Ahmedabad (supply side)</th></tr>
+<tr><td><b>1 · Unit</b></td><td>All queries answered, worldwide, average second; peak stated separately</td><td>Stores for one leading player, 10 minutes door to door, the dense 250 sq km</td></tr>
+<tr><td><b>2 · Approach</b></td><td>Top-down from people: users × searches each</td><td>Bottom-up from one store: its reach and its pickers</td></tr>
+<tr><td><b>3–4 · Swing factor</b></td><td>Searches per person a day (2 to 5)</td><td>Orders per active household a day (0.2 to 0.4)</td></tr>
+<tr><td><b>5 · Check</b></td><td>Google’s “5 trillion a year” ≈ 158,000 a second</td><td>Blinkit’s 44 mapped stores (mid-2025)</td></tr>
+<tr><td><b>6 · Answer</b></td><td>~150,000 a second (100,000–250,000); build for ~300,000 at peak</td><td>~53 stores at the limit; plan ~65 (45–70)</td></tr>
+</table>
+<p class="small">Pick the approach by what is <b>physical</b>. Searches, users and payments are counted from people (demand). Stores, riders, servers and counters are limited by space, time and staff (supply). When both sides can be estimated, do both; the gap between them is where the interesting discussion starts.</p>

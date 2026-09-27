@@ -1,0 +1,155 @@
+<!-- ============ TECHNOLOGY: ML AND AI FUNDAMENTALS ============ -->
+<section class="page">
+<div class="kicker">E-commerce &amp; marketplaces · Technology for PMs</div>
+<h1>Machine learning and AI: what a PM needs to know</h1>
+<p class="lede">Open Myntra and almost everything you see was chosen by a model: the order of the home feed, the “similar products” row, the size hint, the search results, even which banner appears. None of these was written as rules by a person. Each was <i>learned</i> from millions of past clicks, purchases and returns. A PM doesn’t build these models, but decides where they are worth building, what data they need, what a wrong answer costs, and how to tell if they work.</p>
+
+<h2>AI, machine learning, deep learning and GenAI</h2>
+<p>These four words are nested, like Russian dolls ({{REF:nest}}). <span class="term">Artificial intelligence</span> (AI) is any computer system doing something we would call intelligent, including hand-written rules (“if cart value &gt; ₹499, delivery is free” is not AI; a chess program written as rules once was). <span class="term">Machine learning</span> (ML) is AI that learns patterns from examples instead of being told the rules. <span class="term">Deep learning</span> is ML using large neural networks, good at messy inputs like photos, speech and text. <span class="term">Generative AI</span> (GenAI) is deep learning that <i>creates</i> new text, images or code, rather than choosing from existing options.</p>
+<figure>
+<svg class="d" viewBox="0 0 680 176" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect x="0" y="4" width="678" height="168" rx="10" fill="#eef0f2" stroke="#5b6470"/>
+  <text x="10" y="26" class="b">Artificial intelligence</text><text x="10" y="42" class="s">any “smart” system, even</text><text x="10" y="56" class="s">hand-written rules:</text><text x="10" y="70" class="s">a 1999 spam filter</text>
+  <rect x="172" y="14" width="498" height="150" rx="10" fill="#e3f0f5" stroke="#0b5d7a"/>
+  <text x="182" y="36" class="b acc">Machine learning</text><text x="182" y="52" class="s">learns from examples:</text><text x="182" y="66" class="s">“will it be returned?”,</text><text x="182" y="80" class="s">delivery-time estimates</text>
+  <rect x="344" y="24" width="318" height="132" rx="10" fill="#eef0fb" stroke="#3e4fb8"/>
+  <text x="354" y="46" class="b fwc">Deep learning</text><text x="354" y="62" class="s">big neural networks:</text><text x="354" y="76" class="s">photo search, speech</text>
+  <rect x="506" y="34" width="148" height="114" rx="10" fill="#e7f4f0" stroke="#127a64"/>
+  <text x="516" y="56" class="b grn">Generative AI</text><text x="516" y="72" class="s">creates new content:</text><text x="516" y="86" class="s">shopping-assistant</text><text x="516" y="100" class="s">answers, product</text><text x="516" y="114" class="s">descriptions, outfit</text><text x="516" y="128" class="s">suggestions</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:nest}} · Four nested ideas.</b> Every GenAI feature is also deep learning, ML and AI, but most AI in an e-commerce app today is plain ML predicting a number: will she click, buy, return? <span class="src">Author’s diagram; examples from Indian shopping apps.</span></figcaption>
+</figure>
+
+<h2>Three ways a machine learns</h2>
+<p><b>Supervised learning</b> learns from examples where the right answer is known (<span class="term">labelled</span> data). Show it 10 lakh past orders, each marked “returned” or “kept”, with details like size, brand, price and the customer’s history, and it learns to predict the chance that a <i>new</i> order will come back. <b>Unsupervised learning</b> has no right answers; it finds groups by itself. Give it every shopper’s behaviour and it may find five clusters, such as “sale-only phone buyers” or “weekly beauty browsers”, which marketing can then name and target. <b>Reinforcement learning</b> learns by trial and reward, like a child learning to cycle: it tries an action (which banner to show), sees the reward (a click or not), and slowly shifts towards what works ({{REF:learn3}}).</p>
+<figure>
+<svg class="d" viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect x="0" y="4" width="220" height="142" rx="6" fill="#e3f0f5" stroke="#0b5d7a"/>
+  <text x="10" y="22" class="b acc">Supervised: learn from answers</text>
+  <text x="10" y="42" class="s">past order → label</text>
+  <text x="10" y="58">size M, brand X, COD → returned</text><text x="10" y="73">size L, brand Y, UPI → kept</text><text x="10" y="88">… 10 lakh more</text>
+  <text x="10" y="110" class="b">new order → “38% chance</text><text x="10" y="124" class="b">of return”</text>
+  <rect x="230" y="4" width="220" height="142" rx="6" fill="#fbf4e6" stroke="#c47f17"/>
+  <text x="240" y="22" class="b amb">Unsupervised: find the groups</text>
+  <g fill="#c47f17"><circle cx="270" cy="60" r="4"/><circle cx="282" cy="52" r="4"/><circle cx="276" cy="70" r="4"/><circle cx="290" cy="64" r="4"/></g>
+  <g fill="#3e4fb8"><circle cx="360" cy="54" r="4"/><circle cx="372" cy="62" r="4"/><circle cx="366" cy="46" r="4"/><circle cx="380" cy="50" r="4"/></g>
+  <g fill="#127a64"><circle cx="318" cy="100" r="4"/><circle cx="330" cy="94" r="4"/><circle cx="326" cy="108" r="4"/></g>
+  <text x="240" y="130" class="s">no labels: the model finds clusters;</text><text x="240" y="142" class="s">people name them afterwards</text>
+  <rect x="460" y="4" width="220" height="142" rx="6" fill="#e7f4f0" stroke="#127a64"/>
+  <text x="470" y="22" class="b grn">Reinforcement: try, get a reward</text>
+  <text x="470" y="44">show banner A → 2 clicks</text><text x="470" y="60">show banner B → 9 clicks</text><text x="470" y="76">show B more often, keep</text><text x="470" y="90">testing A a little</text>
+  <text x="470" y="116" class="s">learns while it runs; used for</text><text x="470" y="130" class="s">banners, ad bids, pricing tests</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:learn3}} · Three ways a machine learns, on one shopping app.</b> Most features a PM ships use supervised learning; it is the easiest to measure because the right answers are known. <span class="src">Author’s examples; numbers illustrative.</span></figcaption>
+</figure>
+
+<h2>How a model is trained, and how it fools you</h2>
+<p><b>Training</b> means showing the model labelled examples and letting it adjust itself to make fewer mistakes. The labelled data is split three ways: about 70% to <span class="term">train</span> on, 15% for <span class="term">validation</span> (to tune settings and choose between models) and 15% for a final <span class="term">test</span> the model has never seen. The test score is the honest one.</p>
+<p><b>Overfitting</b> is the classic trap. A student who memorises last year’s question paper scores 100% on it and fails the real exam. A model can do the same: it learns quirks of the training data (a brand that happened to have many returns in one bad week) instead of the real pattern. Training error keeps falling, but error on new data starts rising ({{REF:overfit}}). <b>Data leakage</b> is the sneakier trap: a column that secretly contains the answer. A return model that uses “refund issued” as an input looks 99% accurate in testing and is useless in real life, because at the moment of ordering nobody knows yet whether a refund will be issued.</p>
+<figure>
+<svg class="d" viewBox="0 0 680 170" xmlns="http://www.w3.org/2000/svg">
+ <line x1="60" y1="140" x2="440" y2="140" stroke="#4a5563"/><line x1="60" y1="14" x2="60" y2="140" stroke="#4a5563"/>
+ <text x="54" y="24" text-anchor="end" class="s">high</text><text x="54" y="138" text-anchor="end" class="s">low</text>
+ <text x="30" y="80" text-anchor="middle" class="s" transform="rotate(-90 30 80)">error</text>
+ <text x="250" y="160" text-anchor="middle" class="s">model complexity (or training time) →</text>
+ <path d="M70,40 C140,90 220,118 430,132" fill="none" stroke="#2f6ea5" stroke-width="2.6"/>
+ <path d="M70,48 C140,96 190,104 230,104 C290,104 360,80 430,40" fill="none" stroke="#b93a32" stroke-width="2.6"/>
+ <circle cx="230" cy="104" r="5" fill="#127a64"/>
+ <text x="236" y="122" class="b grn halo">stop here</text>
+ <line x1="80" y1="8" x2="104" y2="8" stroke="#2f6ea5" stroke-width="2.6"/><text x="110" y="12" class="s">training error</text>
+ <line x1="220" y1="8" x2="244" y2="8" stroke="#b93a32" stroke-width="2.6"/><text x="250" y="12" class="s">error on new data</text>
+ <text x="330" y="100" class="s halo">overfitting: memorising</text>
+ <text x="96" y="34" class="s halo">underfitting: too simple</text>
+ <rect x="470" y="16" width="208" height="126" rx="6" fill="#fcecea" stroke="#b93a32"/>
+ <text x="480" y="36" class="b red">Data leakage, a quick test</text>
+ <text x="480" y="56">Ask of every input:</text><text x="480" y="72">“would we know this at the</text><text x="480" y="88">moment the prediction is</text><text x="480" y="104">made?” “Refund issued”: no.</text><text x="480" y="124" class="b">Remove it.</text>
+</svg>
+<figcaption><b>{{FIG:overfit}} · When a model starts memorising.</b> Error on the training data keeps falling as the model gets more complex, but error on new data turns up again. The best model sits at the bottom of the red curve, which is why a separate test set exists. <span class="src">Standard illustration; shape only.</span></figcaption>
+</figure>
+
+<h2>Recommender systems, from the inside</h2>
+<p>The “you may also like” row is the most valuable model in e-commerce. It has one hard job: from a catalogue of, say, 50 lakh products, pick the 20 this person is most likely to want, in under 0.2 seconds. Two ideas sit underneath. <b>Collaborative filtering</b> uses what similar people did: “people who bought this kurta also bought these juttis”. It needs no understanding of the product, only lots of behaviour. <b>Content-based filtering</b> uses the product’s own features: colour, fabric, style, price. It works for brand-new products that nobody has bought yet.</p>
+<p><b>Embeddings.</b> Modern systems turn every product and every user into a list of numbers, an <span class="term">embedding</span>, so that similar things sit close together, like cities on a map. Similarity is then measured by <span class="term">cosine similarity</span>: how closely two arrows point the same way (1 = same direction, 0 = unrelated). Worked example with two made-up dimensions, “ethnic” and “casual” ({{REF:cos}}): kurta A = (0.9, 0.3), kurta B = (0.8, 0.4), T-shirt C = (0.1, 0.95). A·B = 0.9×0.8 + 0.3×0.4 = 0.84; divide by the lengths (0.95 × 0.89 ≈ 0.85): cosine ≈ <b>0.99</b>, almost the same direction. A·C = 0.09 + 0.29 = 0.38; ÷ (0.95 × 0.96 ≈ 0.91) ≈ <b>0.41</b>. So B is recommended next to A, and C isn’t. Real embeddings have a few hundred dimensions, but the arithmetic is the same.</p>
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 200" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="cv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker></defs>
+ <line x1="40" y1="176" x2="310" y2="176" stroke="#4a5563"/><line x1="40" y1="176" x2="40" y2="10" stroke="#4a5563"/>
+ <text x="304" y="192" text-anchor="end" class="s">ethnic →</text><text x="46" y="18" class="s">casual ↑</text>
+ <line x1="40" y1="176" x2="175" y2="131" stroke="#c47f17" stroke-width="2.6" marker-end="url(#cv)"/><text x="182" y="140" class="b amb">A kurta (0.9, 0.3)</text>
+ <line x1="40" y1="176" x2="160" y2="116" stroke="#b93a32" stroke-width="2.6" marker-end="url(#cv)"/><text x="166" y="112" class="b red">B kurta (0.8, 0.4)</text>
+ <line x1="40" y1="176" x2="55" y2="34" stroke="#2f6ea5" stroke-width="2.6" marker-end="url(#cv)"/><text x="62" y="40" class="b" style="fill:#2f6ea5">C T-shirt (0.1, 0.95)</text>
+ <text x="200" y="166" class="s">A–B: 0.99, almost parallel</text>
+ <text x="96" y="86" class="s">A–C: 0.41, wide angle</text>
+</svg>
+<figcaption><b>{{FIG:cos}} · Products as arrows.</b> The smaller the angle between two arrows, the more similar the products, whatever their length. <span class="src">Illustrative two-dimensional embeddings.</span></figcaption>
+</figure>
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 200" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect x="0" y="4" width="330" height="36" rx="4" fill="#0b5d7a"/><text x="10" y="20" class="b w">① Retrieve: 50 lakh → 500</text><text x="10" y="34" class="w">nearest embeddings, fast, rough · ~20 ms</text>
+  <rect x="30" y="48" width="270" height="36" rx="4" fill="#3e4fb8"/><text x="40" y="64" class="b w">② Rank: 500 → 50</text><text x="40" y="78" class="w">model predicts buy-and-keep · ~60 ms</text>
+  <rect x="60" y="92" width="210" height="36" rx="4" fill="#7c3aa6"/><text x="70" y="108" class="b w">③ Re-rank: 50 → 20</text><text x="70" y="122" class="w">in stock, variety, ads · ~10 ms</text>
+  <rect x="90" y="136" width="150" height="30" rx="4" fill="#127a64"/><text x="165" y="156" text-anchor="middle" class="b w">20 products shown</text>
+  <text x="165" y="188" text-anchor="middle" class="s">whole trip must fit in ~150–200 ms</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:recpipe}} · Three stages from 50 lakh products to one row.</b> Cheap, rough filtering first; the expensive model only scores 500 items. <span class="src">Common industry pattern; sizes and timings illustrative.</span></figcaption>
+</figure>
+</div>
+<p><b>The pipeline</b> ({{REF:recpipe}}). Scoring 50 lakh products with a heavy model for every page view would take too long and cost too much. So systems work in stages: <b>retrieval</b> quickly pulls about 500 candidates whose embeddings are close to the user’s; <b>ranking</b> runs a detailed model on those 500 to predict the chance of a click, purchase or (better) a <i>kept</i> purchase; <b>re-ranking</b> applies business rules: hide out-of-stock items, avoid showing ten near-identical kurtas, place sponsored products in fixed slots. PMs own that last stage most directly.</p>
+<table class="tbl">
+<tr><th style="width:22%">Where it breaks</th><th style="width:42%">What happens</th><th>PM decision</th></tr>
+<tr><td><b>Cold start</b></td><td>A new user or a new product has no history, so collaborative filtering has nothing to go on</td><td>Ask 3 quick preferences at sign-up; use product features for new items; give new items some guaranteed exposure</td></tr>
+<tr><td><b>Popularity loop</b></td><td>Popular items get shown, so they get clicked, so they get shown more; small sellers vanish</td><td>Reserve slots for exploration; measure the share of sales going to new sellers</td></tr>
+<tr><td><b>Wrong target</b></td><td>A model tuned for clicks recommends eye-catching items people return</td><td>Train on “bought and kept”, not on clicks</td></tr>
+<tr><td><b>Offline vs online</b></td><td>A model that scores better on last month’s data can do worse with real users</td><td>Ship only after an A/B test on live traffic</td></tr>
+</table>
+
+<h2>Neural networks, in one picture</h2>
+<p>Visual search runs on a <span class="term">neural network</span>: layers of simple units, each adding up its inputs with different weights and passing the result on. The first layers of an image model learn to spot edges and colours, the middle layers patterns such as embroidery or a collar, and the last layers whole ideas like “anarkali kurta” ({{REF:nnet}}). <b>Training</b> means nudging millions of weights, a little at a time, so the network’s guesses on labelled photos get less wrong. Nobody writes the rule “an anarkali flares below the waist”; the network works it out from thousands of labelled photos.</p>
+<figure>
+<svg class="d" viewBox="0 0 680 142" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect x="0" y="30" width="96" height="84" rx="6" fill="#fde7c8" stroke="#c47f17"/><text x="48" y="66" text-anchor="middle" class="b">photo</text><text x="48" y="82" text-anchor="middle" class="s">pixels in</text>
+  <g stroke="#c3cad2" stroke-width="0.8">
+   <line x1="96" y1="72" x2="160" y2="30"/><line x1="96" y1="72" x2="160" y2="72"/><line x1="96" y1="72" x2="160" y2="114"/>
+   <line x1="172" y1="30" x2="300" y2="44"/><line x1="172" y1="30" x2="300" y2="100"/><line x1="172" y1="72" x2="300" y2="44"/><line x1="172" y1="72" x2="300" y2="100"/><line x1="172" y1="114" x2="300" y2="44"/><line x1="172" y1="114" x2="300" y2="100"/>
+   <line x1="312" y1="44" x2="440" y2="72"/><line x1="312" y1="100" x2="440" y2="72"/>
+  </g>
+  <g fill="#e3f0f5" stroke="#0b5d7a"><circle cx="166" cy="30" r="10"/><circle cx="166" cy="72" r="10"/><circle cx="166" cy="114" r="10"/></g>
+  <g fill="#eef0fb" stroke="#3e4fb8"><circle cx="306" cy="44" r="10"/><circle cx="306" cy="100" r="10"/></g>
+  <g fill="#e7f4f0" stroke="#127a64"><circle cx="446" cy="72" r="10"/></g>
+  <text x="166" y="138" text-anchor="middle" class="s">edges, colours</text>
+  <text x="306" y="138" text-anchor="middle" class="s">patterns: collar, embroidery</text>
+  <text x="446" y="138" text-anchor="middle" class="s">whole idea</text>
+  <rect x="490" y="40" width="190" height="64" rx="6" fill="#e7f4f0" stroke="#127a64"/>
+  <text x="500" y="60" class="b grn">“anarkali kurta: 92%”</text><text x="500" y="78" class="s">then its embedding is used to</text><text x="500" y="92" class="s">find 40 similar products</text>
+  <line x1="456" y1="72" x2="488" y2="72" class="ln"/>
+ </g>
+</svg>
+<figcaption><b>{{FIG:nnet}} · A neural network looking at a photo.</b> Each layer builds on the one before: from pixels to edges to patterns to a label. Real networks have dozens of layers and millions of connections. <span class="src">Schematic.</span></figcaption>
+</figure>
+
+<h2>Generative AI: what changes for the PM</h2>
+<p>A classic model picks from options: a score, a label, a ranked list. A generative model <b>writes something new</b>: Amazon’s shopping assistant composes an answer from reviews; a seller tool writes a product description from a photo. Three things change. <b>Wrong answers look confident</b>: a generated answer can state a fabric that isn’t in the listing (a <span class="term">hallucination</span>), so answers must be grounded in the product’s own data. <b>Every answer has a running cost</b>, paid per word generated, unlike a recommendation that is cheap once trained. And <b>quality is harder to measure</b>: there is no single right answer to compare against, so teams build test sets of questions with human ratings.</p>
+
+<div class="cols2">
+<div class="box brk"><span class="lbl">When it breaks</span>
+<p class="small">Models learn yesterday. After a big change (a new sale format, a pandemic, a price war) the patterns they learned stop holding, and accuracy falls silently; this is called <b>drift</b>. The only defence is monitoring live accuracy against fresh labels, and retraining on a schedule.</p></div>
+<div class="box int"><span class="lbl">In the interview</span>
+<p class="small">“I’d start with a simple rule or a popularity baseline, then use a model only if it beats that baseline in an A/B test by enough to cover its cost. I’d train it on the outcome we actually want, bought and kept, not on clicks.”</p></div>
+</div>
+<table class="tbl">
+<tr><th style="width:24%">PM decision</th><th>What to ask the team</th></tr>
+<tr><td><b>Build, buy or rule</b></td><td>Does a simple rule get 80% of the value? Is there an API (a ready-made model we can call) that is good enough?</td></tr>
+<tr><td><b>Data</b></td><td>Do we have labels for the outcome we want? How long until we know the answer (a return is known only 2–3 weeks later)?</td></tr>
+<tr><td><b>Errors</b></td><td>Which mistake costs more, a false alarm or a miss? (That sets the threshold, next section.)</td></tr>
+<tr><td><b>Speed and cost</b></td><td>How many milliseconds can it take on the page? What does each prediction or answer cost at our traffic?</td></tr>
+<tr><td><b>Proof</b></td><td>Which offline test, then which live A/B test, and what guardrail must not get worse?</td></tr>
+</table>
+</section>

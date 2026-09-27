@@ -1,0 +1,103 @@
+<!-- ============ CASE 2.6 ZOMATO CANCELLATIONS ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 2.6 · Rising cancellations at a food app</span>
+ <span class="m"><span class="pill">Root cause</span><span>Medium</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, pp. 86–87</span></span></div>
+<div class="try"><b>Try it first.</b> You paid for a biryani two minutes ago. What could you see on the screen that would make you cancel before the restaurant has even started cooking? List three things.</div>
+</div>
+
+{{CASE:B86}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Five clarifying questions, each narrowing the search</b>: where (metros, frequent users), when in the order (before cooking), since when (2–3 weeks, no release) and which cuisines (biryani, North Indian).</li>
+ <li><b>Named who is hurt</b> and why: professionals who need dinner on time.</li>
+ <li><b>Grouped causes into buckets</b> before guessing.</li>
+ <li><b>Planned an A/B test</b> to prove the fix caused the drop.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Ignored the best clue.</b> Customers cancel before cooking starts, so the cause is in the first minutes after paying (see Check).</li>
+ <li><b>The buckets overlap.</b> “Peak-hour surges” is external, “kitchens overloaded” is restaurant-side: the same event in two places.</li>
+ <li><b>“From my experience and intuition”</b> replaced a data check, and three features followed.</li>
+ <li><b>No calendar check.</b> A 2–3 week spike in biryani orders in metros could match a festival season such as Ramzan evenings, or a rival’s offer.</li>
+ <li><b>No guardrail.</b> Showing a busy kitchen may cut orders along with cancellations.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check (RCA add-ons):</b> Exact definition <span class="tk y">✓ given</span> · Size vs baseline: 4–5% of what? <span class="tk n">✗</span> · Since when <span class="tk y">✓</span> · Where it shows <span class="tk y">✓✓</span> · Recent changes <span class="tk y">✓</span> · Can we trust the data? <span class="tk n">✗</span>. “A 4–5% increase” could mean 3.0% → 3.1% (noise) or 3% → 7.5% (a crisis). Always ask.</p>
+
+<div class="box chk"><span class="lbl">Check · “The biggest contributors are wrong prep-time estimates and items unavailable after ordering” <span class="verdict v-no">Doesn’t hold up</span></span>
+<p>The interviewer said customers cancel <b>before preparation begins</b>. Wrong prep-time estimates show up later, as food running late. An item that turns out to be unavailable is usually the restaurant cancelling, not the customer. Early customer cancellations point to what the customer saw in the first minutes: a long “waiting for the restaurant to accept”, an arrival time that jumped after payment, or second thoughts about the bill.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">
+<svg class="d" viewBox="0 0 680 62" xmlns="http://www.w3.org/2000/svg">
+ <g class="c">
+  <polygon points="0,4 106,4 116,31 106,58 0,58" fill="#127a64"/><text x="54" y="26" text-anchor="middle" class="b w">① Clarify</text><text x="54" y="44" text-anchor="middle" class="w">% of what, when</text>
+  <polygon points="113,4 219,4 229,31 219,58 113,58 123,31" fill="#1d8a73"/><text x="170" y="26" text-anchor="middle" class="b w">② Size</text><text x="170" y="44" text-anchor="middle" class="w">orders lost a day</text>
+  <polygon points="226,4 332,4 342,31 332,58 226,58 236,31" fill="#2a9a82"/><text x="283" y="26" text-anchor="middle" class="b w">③ Tree</text><text x="283" y="44" text-anchor="middle" class="w">split by stage</text>
+  <polygon points="339,4 445,4 455,31 445,58 339,58 349,31" fill="#0b5d7a"/><text x="396" y="26" text-anchor="middle" class="b w">④ Clues</text><text x="396" y="44" text-anchor="middle" class="w">prune with data</text>
+  <polygon points="452,4 558,4 568,31 558,58 452,58 462,31" fill="#3e4fb8"/><text x="509" y="26" text-anchor="middle" class="b w">⑤ Fix</text><text x="509" y="44" text-anchor="middle" class="w">truth before paying</text>
+  <polygon points="565,4 680,4 680,58 565,58 575,31" fill="#7c3aa6"/><text x="624" y="26" text-anchor="middle" class="b w">⑥ Measure</text><text x="624" y="44" text-anchor="middle" class="w">net orders</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:strip26}} · A root-cause answer in six moves.</b> Move ④ is the one the original skipped: using the interviewer’s own answers to cut the tree down. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Customer cancellations as a share of orders: from what level to what? And how long after payment do people cancel? One more: do we trust the tagging, or could restaurant cancellations be logged as customer ones?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>From about 3% to 7.5% of metro orders. Most cancel within three minutes of paying. The tagging is fine.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Size</div><p>Illustrative: 4.5 extra cancellations per 100 orders, on 20 lakh metro dinner orders a day, is 90,000 cancelled dinners a day. Each is a refund, a restaurant annoyed, and a customer who may try another app tomorrow.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Tree</div><p>I’ll split by the stage of the order, which has no overlaps: before the restaurant accepts, accepted but not cooking, cooking, on the way ({{REF:tree26}}). Your data puts us in the first two. Within them, the customer either waited too long for acceptance, saw the arrival time jump, got a price surprise, or changed their mind.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Clues</div><p>Biryani and North Indian, metros, frequent users, 2–3 weeks, no release: that looks like a demand spike at heavy kitchens. I’d check two numbers for those restaurants: time to accept an order, and arrival time after payment against the time shown on the menu. Suppose acceptance went from 1 to 4 minutes and the arrival time jumps by 20 minutes on 40% of orders.</p></div></div>
+<p class="whynote">Why this move: every clue the interviewer gave removes branches. Using them out loud is what they are testing.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Fix</div><p>Show the truth before payment, not after: calculate the arrival time from the kitchen’s live queue before checkout. Pause a restaurant for new orders when its acceptance time passes 3 minutes. Offer “similar biryani, 30 minutes” from a less busy kitchen.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> customer cancellations within 5 minutes of payment, back to 3%. <b>Safety check (guardrail):</b> orders placed, since honest times may put some people off, and order value for paused restaurants. <b>Trade-off:</b> a few lost orders against many fewer broken promises; <b>net orders delivered</b> decides.</p></div></div>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · Issue trees and MECE</span>
+<p><span class="step">1 · The situation.</span>The candidate had good clues and four buckets, but the buckets overlapped and nothing was ruled out. An issue tree turns “why?” into a list of branches you can check one by one.</p>
+<p><span class="step">2 · An everyday example.</span>Your keys are missing. Split the search: inside the flat or outside it. Inside: bedroom, kitchen, living room, bathroom. Every place is in exactly one branch, and together they cover the whole flat. Now compare a bad split: “in my bag” and “in the bedroom”. The bag may be in the bedroom, so you search it twice, and nothing covers the car.</p>
+<table class="tbl">
+<tr><th style="width:22%">Tree level</th><th>Missing keys</th><th>Cancellations</th></tr>
+<tr><td><b>The question</b></td><td>Where are my keys?</td><td>Why did early customer cancellations rise?</td></tr>
+<tr><td><b>First split</b></td><td>Inside / outside the flat</td><td>Stage: before accept / accepted / cooking / on the way</td></tr>
+<tr><td><b>Second split</b></td><td>Room by room</td><td>Waited too long / time jumped / price surprise / changed mind</td></tr>
+<tr><td><b>Prune with a clue</b></td><td>“I had them when I came in”: skip outside</td><td>“Before cooking”: skip the last two stages</td></tr>
+<tr><td><b>Check a leaf</b></td><td>Look behind the sofa cushions</td><td>Acceptance time at biryani kitchens</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>An <span class="term">issue tree</span> breaks one question into branches, and each branch into smaller ones, until every leaf can be checked with data. The branches should be <span class="term">MECE</span>: mutually exclusive (no overlaps) and collectively exhaustive (no gaps). Four reliable ways to split: by <b>stage</b> of a process, by a <b>formula</b> (orders = users × frequency), by <b>segment</b> (city, platform, new or old users), and <b>inside vs outside</b> the company.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 232" xmlns="http://www.w3.org/2000/svg">
+ <g stroke="#9aa4b0" stroke-width="1.3" fill="none">
+  <path d="M128,116 C140,116 140,28 152,28"/><path d="M128,116 C140,116 140,84 152,84"/><path d="M128,116 C140,116 140,150 152,150"/><path d="M128,116 C140,116 140,200 152,200"/>
+  <path d="M300,28 C312,28 312,16 324,16"/><path d="M300,28 C312,28 312,52 324,52"/><path d="M300,84 C312,84 312,88 324,88"/><path d="M300,84 C312,84 312,124 324,124"/>
+ </g>
+ <rect x="2" y="88" width="126" height="56" rx="6" fill="#fcecea" stroke="#b93a32" stroke-width="1.4"/>
+ <text x="65" y="108" text-anchor="middle" class="b">Customer</text><text x="65" y="122" text-anchor="middle" class="b">cancellations</text><text x="65" y="136" text-anchor="middle" class="red">3% → 7.5%</text>
+ <rect x="152" y="12" width="148" height="32" rx="5" fill="#e8ebfa" stroke="#3e4fb8" stroke-width="1.6"/><text x="226" y="32" text-anchor="middle" class="b">Before restaurant accepts</text>
+ <rect x="152" y="68" width="148" height="32" rx="5" fill="#e8ebfa" stroke="#3e4fb8" stroke-width="1.6"/><text x="226" y="88" text-anchor="middle" class="b">Accepted, not cooking</text>
+ <rect x="152" y="134" width="148" height="32" rx="5" fill="#f4f5f6" stroke="#c3cad2"/><text x="226" y="154" text-anchor="middle" style="fill:#8a939e">While cooking</text>
+ <rect x="152" y="184" width="148" height="32" rx="5" fill="#f4f5f6" stroke="#c3cad2"/><text x="226" y="204" text-anchor="middle" style="fill:#8a939e">On the way</text>
+ <text x="226" y="180" text-anchor="middle" class="s">ruled out: “before prep begins”</text>
+ <rect x="324" y="4" width="170" height="24" rx="4" fill="#fff" stroke="#b93a32" stroke-width="1.6"/><text x="332" y="20" class="b red">Waited too long to accept</text>
+ <rect x="324" y="40" width="170" height="24" rx="4" fill="#fff" stroke="#c3cad2"/><text x="332" y="56">Price or fee surprise</text>
+ <rect x="324" y="76" width="170" height="24" rx="4" fill="#fff" stroke="#b93a32" stroke-width="1.6"/><text x="332" y="92" class="b red">Arrival time jumped</text>
+ <rect x="324" y="112" width="170" height="24" rx="4" fill="#fff" stroke="#c3cad2"/><text x="332" y="128">Changed mind, cheaper rival</text>
+ <text x="504" y="14" class="s">check: time to accept at</text><text x="504" y="27" class="s b red">biryani kitchens, 1 → 4 min</text>
+ <text x="504" y="86" class="s">check: time after payment vs</text><text x="504" y="99" class="s b red">time on the menu, +20 min</text>
+ <text x="504" y="50" class="s">check: fee changes? none</text><text x="504" y="122" class="s">check: rival offers? none</text>
+ <rect x="330" y="160" width="346" height="58" rx="5" fill="#e1f2ec" stroke="#127a64"/>
+ <text x="340" y="178" class="b grn">One cause, two symptoms:</text>
+ <text x="340" y="194">busy heavy kitchens accept slowly, so the time</text>
+ <text x="340" y="209">promised before payment no longer holds after it.</text>
+</svg>
+<figcaption><b>{{FIG:tree26}} · The cancellation tree, cut down by the interviewer’s clues.</b> Splitting by stage is MECE: every cancellation happens at exactly one stage. Two branches are ruled out by one fact, and the two red leaves share a cause. <span class="src">Illustrative data for the case.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>A complete MECE tree can have fifty leaves; the skill is pruning with data, not drawing. Category splits such as restaurant / delivery / platform / external tend to overlap because causes interact: rain (external) slows riders (delivery), which makes kitchens wait (restaurant). And the neat split of the flat into inside and outside still misses keys left in the door lock, on the boundary.</p>
+<p><span class="step">5 · In the interview.</span>“I’ll split this by the stage of the order, because every cancellation happens at exactly one stage. Your point that people cancel before cooking lets me drop half the tree straight away.”</p>
+</div>

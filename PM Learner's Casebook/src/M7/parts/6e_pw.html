@@ -1,0 +1,37 @@
+<!-- ============ TEARDOWNS: PHYSICSWALLAH ============ -->
+<h1 style="margin-top:12pt">PhysicsWallah: free on YouTube, paid in the classroom</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Aman, 16, in Patna, wants to crack JEE. His school physics teacher rushes through rotation, so he watches a free two-hour lecture on PW’s YouTube channel. The teacher mentions the year-long JEE batch. He installs the app, takes a free mock test and scores 42 of 120. He buys the batch for about ₹4,000, joins live classes and a weekly test where he sees his all-India rank. When he photographs a doubt at 11 pm, it is answered by morning. In the summer his parents visit PW’s centre in Patna and pay about ₹80,000 for classroom coaching ({{REF:pw-flow}}).</p>
+
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Free YouTube lectures</td><td>“I can’t afford Kota”</td><td>Full lectures free, by teachers students already like</td><td>Subscribers; app installs</td></tr>
+<tr><td>Low-price batches</td><td>“Online courses cost ₹50,000”</td><td>A year of classes and tests for a few thousand rupees</td><td>Paid students</td></tr>
+<tr><td>Weekly tests with ranks</td><td>“I don’t know where I stand”</td><td>An all-India rank every week, like the real exam</td><td>Test attendance; renewals</td></tr>
+<tr><td>Doubt solving</td><td>“Nobody to ask at night”</td><td>Photo a question; an answer from a doubt-solver, with AI helping first</td><td>Doubts answered in time</td></tr>
+<tr><td>Offline centres (Vidyapeeth)</td><td>Parents: “I want a real classroom”</td><td>Classrooms in many cities, at lower fees than big coaching chains</td><td>Offline enrolments; revenue per student</td></tr>
+</table>
+
+<figure>{{SVG:flow_pw}}
+<figcaption><b>{{FIG:pw-flow}} · From a free lecture to a classroom.</b> Every paid step is sold by a free one before it: the lecture sells the app, the mock test sells the batch, the weekly rank sells the classroom. <span class="src">Author’s simplification of PW’s funnel (2026); fees illustrative, within PW’s published price range.</span></figcaption>
+</figure>
+
+<h3>Core loop and business model</h3>
+<p>The growth loop starts with free video: good lectures bring subscribers, subscribers install the app, tests show them where they stand, some buy a batch, and results and word of mouth bring more subscribers. The money comes in steps: cheap online batches for many, expensive classrooms for a few. In FY26 revenue rose 35% to <b>₹3,900 crore</b>, paying students grew to <b>53.4 lakh</b>, and the net loss shrank to ₹24 crore ({{REF:pw-growth}}). Offline students were 4.7 lakh, under a tenth, but pay many times more each. Compare Byju’s: it sold expensive tablets and courses door to door on loans; PW started free and cheap and made the classroom the premium.</p>
+<figure>{{SVG:pw_growth}}
+<figcaption><b>{{FIG:pw-growth}} · One year of growth.</b> Revenue grew faster than students, because more of them moved to the classroom. <span class="src">PhysicsWallah FY26 results (May 2026).</span></figcaption>
+</figure>
+<p><b>Moat, in plain words.</b> Students trust the teachers, not the app; PW’s teachers built huge free audiences first, so its cost of winning a student is low. Rivals with bigger marketing budgets couldn’t buy that trust.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Paying students attending at least one class or test a week.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>YouTube-to-app installs · mock-test takers who buy · weekly test attendance · online-to-offline moves.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Refund requests · student stress signals and complaints · compliance with coaching rules (no under-16s in centres, no rank promises).</div>
+</div>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Very low cost to win a student</li><li>Teachers students trust</li><li>Online and offline together</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Star teachers can leave and take students</li><li>Centres bring rent and rules</li><li>Exam pressure and student wellbeing</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Students fall behind silently in a batch of 1 lakh <span class="arrow">→</span> a weekly “you’re slipping in rotation” plan built from test answers <span class="arrow">→</span> test scores of students flagged, a month later.</p>
+<p class="idea"><b>2.</b> Doubts pile up at night <span class="arrow">→</span> AI answers the routine ones with a worked solution; hard ones go to a teacher, with a quality check on a sample <span class="arrow">→</span> doubts answered within an hour; share marked unhelpful.</p>
+<p class="idea"><b>3.</b> Parents can’t see progress <span class="arrow">→</span> a weekly parent summary in Hindi on WhatsApp <span class="arrow">→</span> renewals; online-to-offline moves.</p>

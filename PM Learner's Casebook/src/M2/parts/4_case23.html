@@ -1,0 +1,91 @@
+<!-- ============ CASE 2.3 BIGBASKET METRICS ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 2.3 · Metrics for BigBasket’s app</span>
+ <span class="m"><span class="pill">Metrics</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, pp. 291–292</span></span></div>
+<div class="try"><b>Try it first.</b> Your family buys groceries online. Write the one number that would tell BigBasket it is winning your household, then read on.</div>
+</div>
+
+{{CASE:A291}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Confirmed the product in one line</b> and asked for the goal before listing a single metric.</li>
+ <li><b>Wrote the goal as a formula</b>: order value = orders × AOV, and orders broken down further. That is a driver tree.</li>
+ <li><b>Scoped the platform</b> (app only) with one question.</li>
+ <li><b>Walked the journey first</b>, so the metrics follow what the user does.</li>
+</ul>
+<ul class="miss small">
+ <li><b>About 40 metrics, none chosen.</b> No North Star, no guardrail, no target.</li>
+ <li><b>The buckets are AARRR without Revenue</b>, although order value was the stated goal.</li>
+ <li><b>The formula forgets frequency</b>, the biggest lever in grocery (see Check).</li>
+ <li><b>BB Now (10–20 minutes) and scheduled slots</b> were never split, though their baskets differ a lot.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓</span> · Goal <span class="tk y">✓</span> · Who: new or repeat buyers? <span class="tk n">✗ skipped</span> · Today and the trigger <span class="tk n">✗ skipped</span> · Edges <span class="tk y">✓ (app only)</span>. Metrics add-on, “what decision will these metrics drive?”: <span class="tk n">✗ skipped</span>, which is how a list of 40 happens.</p>
+
+<div class="box chk"><span class="lbl">Check · “Orders = visitors × add-to-cart rate × purchase conversion” <span class="verdict v-dir">Directionally right</span></span>
+<p>True for one visit. But groceries are a habit: a household that orders every week and four strangers who order once look the same in this formula. For a month, a better split is <b>orders = monthly buyers × orders per buyer</b>. It shows at once whether growth is coming from new households or from existing ones ordering more often.</p></div>
+<div class="box chk"><span class="lbl">Check · “Daily active users as an engagement metric” <span class="verdict v-over">Overstated</span></span>
+<p>Families buy groceries three to six times a month. A daily-use ratio would call a healthy weekly habit “weak engagement” and push the team towards notifications nobody wants. Match the metric to the natural rhythm of the job: here, orders per buyer per month.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">
+<svg class="d" viewBox="0 0 680 62" xmlns="http://www.w3.org/2000/svg">
+ <g class="c">
+  <polygon points="0,4 106,4 116,31 106,58 0,58" fill="#127a64"/><text x="54" y="26" text-anchor="middle" class="b w">① Clarify</text><text x="54" y="44" text-anchor="middle" class="w">who, which service</text>
+  <polygon points="113,4 219,4 229,31 219,58 113,58 123,31" fill="#1d8a73"/><text x="170" y="26" text-anchor="middle" class="b w">② Formula</text><text x="170" y="44" text-anchor="middle" class="w">buyers × freq × AOV</text>
+  <polygon points="226,4 332,4 342,31 332,58 226,58 236,31" fill="#2a9a82"/><text x="283" y="26" text-anchor="middle" class="b w">③ Stages</text><text x="283" y="44" text-anchor="middle" class="w">AARRR</text>
+  <polygon points="339,4 445,4 455,31 445,58 339,58 349,31" fill="#0b5d7a"/><text x="396" y="26" text-anchor="middle" class="b w">④ One each</text><text x="396" y="44" text-anchor="middle" class="w">metric per stage</text>
+  <polygon points="452,4 558,4 568,31 558,58 452,58 462,31" fill="#3e4fb8"/><text x="509" y="26" text-anchor="middle" class="b w">⑤ North Star</text><text x="509" y="44" text-anchor="middle" class="w">from the key stage</text>
+  <polygon points="565,4 680,4 680,58 565,58 575,31" fill="#7c3aa6"/><text x="624" y="26" text-anchor="middle" class="b w">⑥ Guardrails</text><text x="624" y="44" text-anchor="middle" class="w">what must not slip</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:strip23}} · A metrics answer in six moves.</b> The list of metrics shrinks from 40 to about eight, and each one earns its place. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Over what time frame, and should I include both BB Now and scheduled delivery? I’ll assume the goal is order value from the app over the next two quarters, from both new and existing buyers.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Both services, two quarters. Go ahead.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Formula</div><p>Monthly app order value = monthly buyers × orders per buyer × AOV. Illustrative: 40 lakh × 3.5 × ₹750 = ₹1,050 Cr a month. Lifting any one factor by 10% adds ₹105 Cr. For households that already buy, frequency is the cheapest to move.</p></div></div>
+<p class="whynote">Why this move: the formula shows which lever is worth the most before any metric is named.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Stages</div><p>I’ll follow the buyer through five stages ({{REF:aarrr}}): they find the app, place a first order, come back, spend more, and tell others.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ One each</div><p><b>Acquisition:</b> cost per first order. <b>Activation:</b> share of new installers who order within 7 days. <b>Retention:</b> share of first-time buyers who order again within 30 days. <b>Revenue:</b> orders per buyer per month, and AOV. <b>Referral:</b> invites accepted per 100 buyers.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ North Star</div><p><b>Goal (North Star):</b> monthly order value from repeat buyers (households with two or more orders in the month). It grows only if people come back and buy more, which is what the business goal needs.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Guardrails</div><p><b>Safety checks (guardrails):</b> on-time delivery %; missing or substituted items per 100 orders; contribution margin per order, so discounts don’t buy the growth. <b>Trade-off:</b> pushing BB Now raises frequency but shrinks baskets, so I’d watch the mix. <b>Next:</b> a weekly review of the five stage metrics, split by service.</p></div></div>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · AARRR, the customer funnel</span>
+<p><span class="step">1 · The situation.</span>The candidate grouped 40 metrics into buckets. The buckets were almost right; what was missing was one number per bucket and the reason for it.</p>
+<p><span class="step">2 · An everyday example.</span>A new gym opens in your colony. Some people see the poster. A few come for a free trial. Some enjoy the first workout. Fewer are still coming in week six. Those pay for a six-month plan. A couple bring a friend. If the gym is failing, it matters a lot which of those steps is leaking.</p>
+<table class="tbl">
+<tr><th style="width:16%">Stage</th><th>The gym</th><th>BigBasket app</th><th style="width:28%">One metric</th></tr>
+<tr><td><b>Acquisition</b></td><td>Sees the poster, visits</td><td>Installs and opens the app</td><td>Cost per first order</td></tr>
+<tr><td><b>Activation</b></td><td>First workout feels good</td><td>First order arrives fresh, on time</td><td>Order within 7 days of install</td></tr>
+<tr><td><b>Retention</b></td><td>Still coming in week six</td><td>Orders again this month</td><td>Second order within 30 days</td></tr>
+<tr><td><b>Revenue</b></td><td>Buys the six-month plan</td><td>Bigger, more frequent baskets; BB Star</td><td>Orders per buyer × AOV</td></tr>
+<tr><td><b>Referral</b></td><td>Brings a friend</td><td>Shares a referral code</td><td>Invites accepted per 100 buyers</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span><span class="term">AARRR</span> (Dave McClure’s “pirate metrics”, 2007) splits a customer’s life into five stages: <b>A</b>cquisition, <b>A</b>ctivation, <b>R</b>etention, <b>R</b>evenue, <b>R</b>eferral. Measure the conversion from each stage to the next, find the biggest leak, and work there. <span class="term">Activation</span> means the first moment the user gets the promised value, here a first order that arrives complete.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 206" xmlns="http://www.w3.org/2000/svg">
+ <polygon points="10,8 390,8 372,40 28,40" fill="#9fb3c8"/><text x="200" y="29" text-anchor="middle" class="b">Acquisition · 10 lakh installs a month</text>
+ <polygon points="28,44 372,44 346,76 54,76" fill="#e0a340"/><text x="200" y="65" text-anchor="middle" class="b">Activation · 2.8 lakh order in 7 days</text>
+ <polygon points="54,80 346,80 318,112 82,112" fill="#127a64"/><text x="200" y="101" text-anchor="middle" class="b w">Retention · 1.4 lakh order again</text>
+ <polygon points="82,116 318,116 296,148 104,148" fill="#0b5d7a"/><text x="200" y="137" text-anchor="middle" class="b w">Revenue · 3.5 orders × ₹750</text>
+ <polygon points="104,152 296,152 280,184 120,184" fill="#7c3aa6"/><text x="200" y="173" text-anchor="middle" class="b w">Referral · 6 per 100</text>
+ <text x="410" y="30" class="b red">28%: the biggest leak</text><text x="410" y="44" class="s">72 of 100 installers never order.</text><text x="410" y="57" class="s">Fix: a first-order basket of staples,</text><text x="410" y="70" class="s">slot shown before sign-up.</text>
+ <text x="410" y="100" class="b">50% come back in 30 days</text><text x="410" y="113" class="s">Each returning household is worth</text><text x="410" y="126" class="s">3.5 × ₹750 = ₹2,625 a month.</text>
+ <text x="410" y="160" class="b">Referral is small in grocery</text><text x="410" y="173" class="s">Nobody brags about buying onions.</text>
+ <text x="10" y="200" class="s">Illustrative monthly numbers for BigBasket’s app.</text>
+</svg>
+<figcaption><b>{{FIG:aarrr}} · One month of new users, stage by stage.</b> The funnel narrows fastest between install and first order, so that is where the next quarter’s effort goes. Retention is where the money is. <span class="src">Illustrative numbers. Framework: Dave McClure, “Startup Metrics for Pirates”, 2007.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>The funnel invites a list of metrics per stage, which is how this candidate reached 40. It also draws acquisition at the top, as if it mattered most. A gym that spends on posters while members stop coming in week two is filling a leaking bucket. In grocery the order of attention is often retention, activation, revenue, and acquisition last.</p>
+<p><span class="step">5 · In the interview.</span>“I’ll walk the five stages and pick one metric for each. Then I’ll choose the North Star from the stage that moves order value most, which for groceries is repeat buying.”</p>
+</div>

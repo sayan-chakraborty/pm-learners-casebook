@@ -1,0 +1,80 @@
+<!-- ============ CASE 5.1 LINKEDIN FOR BLUE-COLLAR WORKERS ============ -->
+<section class="page">
+<div class="kicker">Social, creators &amp; messaging · Cases</div>
+<div class="keep" style="break-after:avoid">
+<div class="casehead"><span class="t">Case 5.1 · LinkedIn for blue-collar workers</span>
+ <span class="m"><span class="pill">Product design</span><span>Medium</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, pp. 46–47</span></span></div>
+<div class="try"><b>Try it first.</b> Think of the last time your family hired a cook, a driver or someone to clean. How did you find them, and what did you check before letting them into the house? Now think about it from the worker’s side. Spend five minutes on how an app could help both.</div>
+</div>
+
+{{CASE:B46}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Three personas, including the employer.</b> A jobs app has two sides, and Mr. Shah’s pain (people not showing up) is as real as Ramesh’s.</li>
+ <li><b>A clear order of problems</b>: discovery, then trust, then clarity of pay and hours, each with a one-line reason.</li>
+ <li><b>A flow built for the user</b>: icons, voice intro, local language, jobs near home, a simple written agreement.</li>
+ <li><b>The right core metric</b>: matches that turn into someone actually starting work.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Never asked what exists today.</b> Apna has about 6 crore job-seekers in 900+ cities; WorkIndia and local agents are everywhere; e-Shram has registered 31.89 crore workers. Why would Ramesh switch?</li>
+ <li><b>No plan for the empty app.</b> Which city, which trade and how many employers must be on the app before Savita sees enough jobs to come back?</li>
+ <li><b>Scams were missing.</b> Fake job offers that ask for a “registration fee” are one of India’s most common frauds. The employer must be checked, not only the worker.</li>
+ <li><b>Metrics count profiles, not hires that last</b>, and there is no guardrail (wage disputes, no-shows, safety complaints) and no answer to who pays.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓ India</span> · Goal <span class="tk n">✗</span> · Who <span class="tk y">✓ three personas</span> · Today and the trigger <span class="tk n">✗</span> · Edges <span class="tk y">✓ full- and part-time</span>. Design add-ons: platform <span class="tk y">✓ new app</span> · eligibility and legal limits <span class="tk n">✗</span>. Skipping “what exists today” cost the most: the answer never says why a worker already on Apna would try one more app.</p>
+
+<div class="box chk"><span class="lbl">Check · “Basic phone and Aadhaar verification is enough for the MVP” <span class="verdict v-over">Overstated</span></span>
+<p>A phone OTP is easy. Aadhaar is not: private apps can’t freely run Aadhaar authentication, so most use documents the user chooses to share through DigiLocker, with consent. The bigger gap is direction. Scams usually run against the worker: a fake “company” asks for ₹500–2,000 to “confirm the job” and disappears. So the employer needs checking at least as much as the worker, and the app should promise one simple rule: <b>a worker never pays to get a job</b>.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip51}}
+<figcaption><b>{{FIG:strip51}} · Six moves for a two-sided product.</b> Start with the smallest area where the app works, before designing screens. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Is this LinkedIn itself, with its brand, or a new company? Is the goal hires, or engagement? And what do workers use today? I know Apna, WorkIndia, local agents who charge a month’s salary, and word of mouth. I’ll assume the goal is <b>hires that last</b>, in a new app under the LinkedIn brand.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>That’s fine. LinkedIn wants a foothold with India’s blue-collar workforce. Hires are the goal.</p></div></div>
+<p class="whynote">Why this move: a jobs app that grows “profiles” but not hires is a directory nobody returns to. Naming Apna and the agents early forces the answer to say why anyone would switch.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Start small</div><p>I won’t launch across India. I’ll pick one trade in one area where both sides are close together: home help (cooks, cleaners, nannies) in gated societies of one Pune suburb, say Wakad. Savita comes back only if she sees at least 3 suitable jobs within 3 km each week. About 1 in 3 jobs fits her hours, so she needs 3 × 3 = 9 new postings a week nearby. If 2% of households post a job in a given week, we need 9 ÷ 2% = <b>450 active households</b> ({{REF:atomic}}). Ten societies of 500 flats, with 1 in 10 signing up, gives 500. That is reachable in a month through the societies’ committees.</p></div></div>
+<p class="whynote">Why this move: an empty app loses both sides on day one. The maths turns “get users” into one target the team can hit: 450 households in one suburb.</p>
+<figure>{{SVG:atomic}}
+<figcaption><b>{{FIG:atomic}} · When does the app start to work for Savita?</b> Below about 450 active households nearby she sees fewer than 3 suitable jobs a week and drifts away; above it, she comes back without being asked. <span class="src">Illustrative: 2% of households post in a week; 1 in 3 jobs fits a worker’s hours.</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Trust, both ways</div><p>Households fear theft; workers fear unpaid wages and fake jobs. So: employers verify their phone and flat through the society; workers verify their phone and share an ID through DigiLocker; the app helps with police verification, which many cities expect for home help. Pay, hours and weekly off are fixed in a one-page agreement before the first day. And the rule “a worker never pays” is on the first screen, so any request for money is a red flag ({{REF:scam}}).</p></div></div>
+<p class="whynote">Why this move: trust is the product here. Each check blocks one known way things go wrong, and the “never pay” rule turns every worker into a scam detector.</p>
+<figure>{{SVG:scam}}
+<figcaption><b>{{FIG:scam}} · A fake-job scam, and where the app stops it.</b> Each checkpoint breaks one step of the fraud. The cheapest one is a rule every worker can remember. <span class="src">Scam pattern from NCRB’s cyber-awareness material on job fraud; checkpoints are the author’s design.</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Flow</div><p>For Savita: pick Marathi or Hindi, record a 20-second voice intro, tap icons for the work she does and the hours she is free. She sees jobs on a map with pay and hours in big numbers, and taps “Call” through a masked number, so her phone number stays private. A trial day, then the agreement. On the 1st of each month, the household gets a reminder to pay her wage by UPI.</p></div></div>
+<p class="whynote">Why this move: each screen removes one reason Savita gives up: reading English, typing, distance, sharing her number with strangers, or chasing her pay.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Who pays</div><p>Households pay, workers never do. An agent in Pune often charges a month’s salary, ₹8,000–12,000. We charge ₹499 per hire, refunded if the worker leaves within 15 days. Illustrative first quarter: 500 households × 30% hire = 150 hires × ₹499 ≈ ₹75,000. That money is small; the point of the first suburb is to prove the density maths, then copy it society by society.</p></div></div>
+<p class="whynote">Why this move: charging the side that has money and a problem to solve keeps the app free for the side we need most, and the refund makes the promise believable.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> hires still working after 30 days, per week. <b>Inputs:</b> suitable jobs seen per worker per week (target 3+); share of postings answered within 24 hours; trial-to-hire rate. <b>Safety checks (guardrails):</b> wage disputes and scam reports per 100 hires; no-shows. <b>Trade-off:</b> strict checks slow down new employers, but loose checks bring scams, and one scam story in a society WhatsApp group can empty the app. <b>Next:</b> when a suburb passes 3 jobs a week per worker, move to the next suburb, then add drivers.</p></div></div>
+<p class="whynote">Why this move: “still working after 30 days” counts only hires that helped both sides, which a count of profiles or matches can’t tell you.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>The goal, hires that last, set the North Star. The density maths (3 jobs a week within 3 km, so 450 households) chose where to start. Trust checks and the “never pay” rule protect the goal from its biggest threat, and the scam guardrail watches exactly that. Money comes from the side with the problem, and expansion waits until the first suburb works.</div>
+
+<div class="box fw"><span class="lbl">Framework · Network effects and the cold start</span>
+<p><span class="step">1 · The situation.</span>Savita downloads the app, sees one job 9 km away, and never opens it again. Mr. Shah posts a job, gets no replies in two days, and goes back to his agent. The app works only when both sides are there, close together, at the same time.</p>
+<p><span class="step">2 · An everyday example.</span>A new weekly haat (street market) in a colony. Buyers come only if there are enough stalls; vendors come only if there are enough buyers. A smart organiser doesn’t advertise across the city. She picks one street, one day (Sunday), persuades 20 vendors with free stalls for a month, and tells three nearby colonies. Once Sunday on that street is worth the walk, it fills itself.</p>
+<table class="tbl">
+<tr><th style="width:21%">Idea</th><th style="width:38%">The Sunday haat</th><th>The jobs app</th></tr>
+<tr><td><b>Two sides</b></td><td>Vendors and buyers</td><td>Workers and households</td></tr>
+<tr><td><b>Smallest network that works</b></td><td>One street, one day</td><td>One trade in ten societies of one suburb</td></tr>
+<tr><td><b>“Worth coming back”</b></td><td>Enough stalls to buy the week’s vegetables</td><td>3 suitable jobs a week within 3 km</td></tr>
+<tr><td><b>Seed the hard side</b></td><td>Free stalls for the first month</td><td>Field team signs up households through society committees</td></tr>
+<tr><td><b>Tipping</b></td><td>It becomes “the” Sunday market</td><td>It becomes where Wakad hires home help</td></tr>
+<tr><td><b>Expand</b></td><td>Next street, next day</td><td>Next suburb, then the next trade</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>A <span class="term">network effect</span> means each new user makes the product more useful for the others. There are three kinds ({{REF:kinds}}). <b>Direct</b>: WhatsApp is useful because your people are on it. <b>Cross-side</b>: more households make the app better for workers, and more workers make it better for households. <b>Local</b>: only users nearby count; a cook in Wakad gains nothing from a household in Delhi. The <span class="term">cold start</span> is the empty-app problem: with too few users, nobody finds value and nobody stays. The cure is the <span class="term">atomic network</span> (Andrew Chen’s term): the smallest group that works on its own. Build one, then copy it.</p>
+<p>How fast does value grow? A group of n people has n × (n − 1) ÷ 2 possible pairs. Farhan’s 47-member family group has 47 × 46 ÷ 2 = <b>1,081</b> pairs. But nobody talks to all 46 relatives; people talk to a handful. So value grows with users, but much more slowly than the count of pairs suggests, and a bigger group can even get worse: more noise, more forwards, more muting.</p>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this case):</p><ol class="usesteps"><li>Name the sides and which one is harder to get: households who post jobs.</li><li>Define “works” as one number a user feels: 3 suitable jobs a week within 3 km.</li><li>Find the smallest area and trade where that number is reachable: 450 households in one suburb.</li><li>Seed the hard side by hand: society committees, a field team, a first month free.</li><li>Expand only when the first network passes the number, and copy the playbook.</li></ol><p class="slip"><b>Common slip</b> · spending on national advertising at launch. Thin everywhere means empty everywhere: a lakh sign-ups spread across India can still leave every worker seeing zero jobs nearby.</p>
+<figure style="margin:3pt 0 4pt">{{SVG:kinds}}
+<figcaption><b>{{FIG:kinds}} · Three kinds of network effect.</b> A jobs app has the cross-side kind, and it is also local, so it must be won one area at a time. <span class="src">Author’s diagram.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>A network effect protects you only if users can’t easily use a rival too. Workers keep Apna and yours on the same phone, and take whichever job comes first, so the advantage must be earned every week. Big numbers can also hide an empty product: Google+ got crores of sign-ups through Gmail in 2011, but people’s friends weren’t posting there, so it stayed a ghost town and shut in 2019. And a network can turn bad as it grows: once scammers find a jobs app, every new fake posting makes it worse for everyone.</p>
+<p><span class="step">5 · In the interview.</span>“This only works if both sides are close together, so I’ll start with one trade in one suburb, define the density that makes a worker come back, and hit it before expanding.”</p>
+</div>
+</section>

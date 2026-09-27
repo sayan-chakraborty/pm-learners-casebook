@@ -1,0 +1,43 @@
+<!-- ============ TEARDOWNS: BIGBASKET ============ -->
+<h1 style="margin-top:12pt">BigBasket: the planned weekly shop in a ten-minute world</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Mrs Iyer, 58, in Chennai, orders the week’s groceries every Sunday night: vegetables, rice, dal, oil and cleaning supplies, ₹2,150 in all, for the 7–9 am slot. She trusts BigBasket’s vegetables more than the corner shop’s and earns NeuCoins she spends on Tata products. On Wednesday she runs out of curd and uses BB Now, which arrives in 18 minutes. One app, two machines ({{REF:bb-walk}}).</p>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:26%">User problem</th><th style="width:33%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Scheduled slots</td><td>A big weekly shop with fresh produce</td><td>Orders known a night ahead: buy produce to demand, pick overnight, one van route for 20 homes</td><td>Cost per order; freshness complaints</td></tr>
+<tr><td>BB Now</td><td>“I ran out of curd”</td><td>10–20 minute delivery from dark stores, inside the same app</td><td>Share of households using both modes</td></tr>
+<tr><td>Own brands (Fresho, BB Royal)</td><td>Trust and price</td><td>Graded produce and staples under BigBasket’s own label, at a better margin</td><td>Own-brand share of sales</td></tr>
+<tr><td>Tata Neu and NeuCoins</td><td>Loyalty that is worth something</td><td>Coins earned here can be spent at Croma, Taj or Westside</td><td>Customers active on two Tata brands</td></tr>
+</table>
+<figure>
+{{SVG:flow_bb}}
+<figcaption><b>{{FIG:bb-walk}} · Behind a scheduled weekly basket.</b> Knowing tomorrow’s orders tonight lets BigBasket buy produce to demand (②–③), pick overnight, and put 20 homes on one van route, which is cheaper per order than any 10-minute ride. <span class="src">Simplified from BigBasket’s public descriptions of its supply chain; amounts illustrative.</span></figcaption>
+</figure>
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 160" xmlns="http://www.w3.org/2000/svg">
+ <!-- scale 0.022 px per Cr -->
+ <text x="4" y="12" class="s">BigBasket consolidated (₹ Cr)</text>
+ <text x="4" y="40" class="b">FY25</text><rect x="48" y="28" width="218" height="16" fill="#9fb3c8"/><text x="272" y="40" class="s">~9,900</text>
+ <rect x="48" y="46" width="44" height="12" fill="#b93a32"/><text x="98" y="56" class="s red">loss ~2,000</text>
+ <text x="4" y="92" class="b">FY26</text><rect x="48" y="80" width="231" height="16" fill="#0b5d7a"/><text x="285" y="92" class="b">10,498</text>
+ <rect x="48" y="98" width="70" height="12" fill="#b93a32"/><text x="124" y="108" class="b red">loss 3,192 (+59%)</text>
+ <text x="4" y="136" class="s">Revenue grew 6%; the loss grew 59% as BB Now</text><text x="4" y="150" class="s">stores opened. Ad revenue: ₹242 Cr (+19%).</text>
+</svg>
+<figcaption><b>{{FIG:bb-money}} · Paying to become fast.</b> Revenue barely moved while losses widened: the cost of building quick commerce on top of a scheduled business. <span class="src">FY26 filings as reported by MediaNama and Inc42 (Sep 2026); FY25 values derived from reported growth rates.</span></figcaption>
+</figure>
+<div class="box ex" style="margin-top:0"><span class="lbl">Real-life example · Why a van beats a scooter, sometimes</span>
+<p class="small">Illustrative: a van costs ₹2,400 for a morning route of 20 homes, so ₹120 an order on baskets of ₹2,000+ (6% of the basket). A 10-minute rider costs ₹45 on a ₹500 basket (9%). Per rupee of groceries the van is cheaper; per order the scooter is. That is why BigBasket keeps both: slots for the weekly shop, BB Now for top-ups. The risk is that the top-ups slowly replace the weekly shop, and the cheaper machine goes idle.</p></div>
+</div>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Monthly order value from households that buy weekly.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Weekly buyers · BB Now attach · own-brand share · slot on-time %.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Fresh-produce complaints · loss per order in BB Now stores.</div>
+</div>
+<p><b>Moat, in plain words.</b> Fresh-produce sourcing and grading, built over a decade, and the trust of planned, older, family shoppers. The weakness: it came late to speed, grows slowly (6%), and its app is opened weekly while rivals’ are opened daily.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Best in fresh produce and big planned baskets</li><li>Tata’s balance sheet and loyalty network</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Slow growth, widening loss</li><li>Seen as slower and less exciting by young users</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Weekly shoppers forget items and turn to rivals mid-week <span class="arrow">→</span> a “top up before Wednesday” reminder built from each household’s usual run-out day, delivered by BB Now <span class="arrow">→</span> share of weekly buyers with a mid-week BB Now order.</p>
+<p class="idea"><b>2.</b> Produce quality is BigBasket’s edge but invisible in a 10-minute app <span class="arrow">→</span> a “picked today, graded A” tag with the farm region <span class="arrow">→</span> fresh-category conversion and complaints.</p>

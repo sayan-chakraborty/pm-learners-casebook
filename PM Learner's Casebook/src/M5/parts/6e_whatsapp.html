@@ -1,0 +1,51 @@
+<!-- ============ TEARDOWNS: WHATSAPP ============ -->
+<h1 style="margin-top:14pt">WhatsApp: India’s default way to talk, and now to buy</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Neha, 31, in Jaipur, is watching Reels when an ad from a Sanganeri saree shop shows a “Send message” button. She taps it and WhatsApp opens a chat with the shop, with “Hi, I’m interested” already typed. The shop’s AI assistant replies in Hindi within seconds: three colours, ₹2,400, delivery in four days. She picks one from the catalogue in the chat, pays by UPI without leaving WhatsApp, and gets an “order shipped” message two days later. Meta earned twice: once for the ad, and a few paise for the shipping update ({{REF:wa-flow}}).</p>
+
+<figure>{{SVG:flow_wa}}
+<figcaption><b>{{FIG:wa-flow}} · Behind Neha’s saree order.</b> The chat itself is encrypted end to end, so WhatsApp can’t read it (③–⑤). Meta is paid by the shop, not by Neha: for the ad (①) and per business message (⑨). <span class="src">Simplified from Meta’s WhatsApp Business documentation; India prices approximate (January 2026); amounts illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>End-to-end encryption</td><td>“Is anyone reading my chats?”</td><td>Only the people in the chat hold the keys; on by default since 2016</td><td>Trust; long-term retention</td></tr>
+<tr><td>Voice notes</td><td>“Typing Hindi on a phone is slow”</td><td>Hold to talk; now with transcripts</td><td>Messages per user</td></tr>
+<tr><td>Groups and Communities</td><td>“Our housing society needs one place for notices”</td><td>Groups up to 1,024, grouped under a Community with an announcements channel</td><td>Active groups</td></tr>
+<tr><td>Status and Channels</td><td>“I want to share with everyone, or follow a creator”</td><td>Broadcast features kept in a separate Updates tab, away from chats</td><td>Updates-tab users; ad revenue</td></tr>
+<tr><td>Business app, AI agents</td><td>Shops: “I can’t answer 500 chats a day”</td><td>Catalogue, quick replies, AI that answers and hands over to a person</td><td>Paying businesses</td></tr>
+<tr><td>UPI payments</td><td>“Pay without leaving the chat”</td><td>Built on UPI; NPCI removed its user cap on WhatsApp Pay in December 2024</td><td>Payments started in chats</td></tr>
+</table>
+
+<h3>How WhatsApp earns without ads in chats</h3>
+<p>Users pay nothing. The money comes from three places. <b>Business messages</b>, priced per message by type ({{REF:wa-price}}). <b>Click-to-WhatsApp ads</b> on Facebook and Instagram, which open a chat instead of a website. And since 2025, <b>ads and paid subscriptions in the Updates tab</b>, where Status and Channels live, never in personal chats. Meta’s “other revenue”, mostly business messaging, reached <b>$1 bn</b> in April–June 2026, up 73%, and more than 10 lakh businesses use its AI agents each week.</p>
+<figure>{{SVG:wa_price}}
+<figcaption><b>{{FIG:wa-price}} · What a business pays WhatsApp per message in India.</b> Marketing is priced highest to keep offers rare; replies to a customer who wrote first are free, which rewards good service. <span class="src">Meta WhatsApp Business pricing, India, billed in rupees from January 2026 (approximate).</span></figcaption>
+</figure>
+<p><b>Moat, in plain words.</b> Everyone you know is on it, reachable by the phone number already in your contacts, and years of chats and photos live in it. That makes it one of the strongest positions in consumer technology. The risks are misinformation spreading through forwards, pressure from governments to trace messages, and the temptation to earn so much from businesses that personal chats fill up with offers.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Daily users who send a message or make a call.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Messages and calls per user · active groups · business conversations per week · Updates-tab reach.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Spam and business-block reports · share of users muting business chats · forward-limit breaches.</div>
+</div>
+<p><b>2025–26 moves.</b> Per-message pricing (July 2025) and rupee billing (January 2026). Ads and paid Channel subscriptions in the Updates tab. Business AI agents at scale. In June 2026 Kunal Shah, founder of CRED, was named head of WhatsApp, a sign that payments and commerce will get more attention.</p>
+
+<div class="box ex"><span class="lbl">Real-life example · Telegram, the public messenger</span>
+<p>Telegram made the opposite choices, and each follows from one decision: it is built for people who <i>don’t</i> know each other. It has over 1 bn monthly users, about 15 mn paying Premium subscribers, and India was its biggest download market in 2025. It made its first annual profit, $547 mn, in 2024, and $870 mn of revenue in January–June 2025.</p>
+<table class="tbl">
+<tr><th style="width:18%"></th><th style="width:41%">WhatsApp</th><th>Telegram</th></tr>
+<tr><td><b>Built for</b></td><td>People who know each other</td><td>People who don’t: channels, big communities</td></tr>
+<tr><td><b>Encryption</b></td><td>End to end for every chat, by default</td><td>Stored on its servers by default; end to end only in “secret chats”</td></tr>
+<tr><td><b>Group size</b></td><td>Up to 1,024; Channels for broadcast</td><td>Groups up to 2 lakh; channels with no limit</td></tr>
+<tr><td><b>How you’re found</b></td><td>Your phone number</td><td>A username or public link</td></tr>
+<tr><td><b>Earns from</b></td><td>Businesses, Updates-tab ads</td><td>Premium, channel ads, crypto (TON)</td></tr>
+<tr><td><b>Biggest risk</b></td><td>Over-earning from users’ trust</td><td>Piracy, scams, weak moderation (its founder was arrested in France in 2024)</td></tr>
+</table></div>
+
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Nearly every smartphone user in India</li><li>Private by default, and trusted for it</li><li>Businesses already talk to customers here</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Little revenue per user</li><li>Forwards spread rumours it can’t see</li><li>Weaker than Telegram for large public groups</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Offers from businesses crowd out personal chats <span class="arrow">→</span> a “Businesses” folder with one-tap unsubscribe and a monthly cap per brand <span class="arrow">→</span> business blocks per 1,000 messages (down); order-update read rate (guardrail: marketing revenue).</p>
+<p class="idea"><b>2.</b> Kirana owners take orders in chat and lose track <span class="arrow">→</span> turn any customer message into an order card with items, total and a UPI request <span class="arrow">→</span> weekly active small businesses; payments started from chats.</p>
+<p class="idea"><b>3.</b> Housing societies chase maintenance fees in groups <span class="arrow">→</span> fee requests with UPI and a paid/unpaid list for the committee inside Communities <span class="arrow">→</span> active society Communities; share of fees paid on time.</p>

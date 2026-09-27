@@ -1,0 +1,93 @@
+<!-- ============ TEARDOWNS: PHONEPE ============ -->
+<section class="page">
+<div class="kicker">Payments &amp; fintech · Product teardowns</div>
+<h1>PhonePe: free payments, paid loans</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Meena, 41, runs a tailoring shop in Indore. On the 5th of every month she opens PhonePe, taps <i>Power</i>, and the app fetches her ₹1,240 electricity bill from her consumer number. One PIN later it’s paid, and the success screen offers her a business loan. Three screens show the whole business model: a free, frequent job brings her back, and the money is made on what she sees next.</p>
+
+<figure>
+{{SVG:flow_phonepe}}
+<figcaption><b>{{FIG:pp-walk}} · What happens behind Meena’s three taps.</b> Six parties, thirteen steps. PhonePe carries a message at almost every step but touches money only once, at ⑬, its own fee. Solid arrows are requests, dotted arrows replies, green arrows money. <span class="src">Simplified from NPCI’s Bharat BillPay and UPI flows; lender steps follow RBI (Digital Lending) Directions 2025; amounts illustrative.</span></figcaption>
+</figure>
+
+<h2>Key features, and why they’re built that way</h2>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:27%">User problem</th><th style="width:32%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Scan &amp; pay, P2P</td><td>Pay anyone, any shop, instantly</td><td>Scan button in the thumb zone of every screen; every transfer is free, so friends who get paid install the app</td><td>New monthly payers; payment success rate</td></tr>
+<tr><td>Bill payments</td><td>Forgotten due dates, typed-in wrong amounts</td><td>Bills fetched through Bharat BillPay from the consumer number; reminders and autopay</td><td>Share of users paying a bill every month</td></tr>
+<tr><td>SmartSpeaker, SmartPOD</td><td>Shopkeeper can’t watch every customer’s screen; fake “paid” screenshots</td><td>A speaker announces each payment aloud; SmartPOD adds card payments on the same device</td><td>Live merchants; merchant fraud complaints</td></tr>
+<tr><td>Loans marketplace</td><td>Credit for people and shops banks find hard to assess</td><td>PhonePe finds the borrower and shows offers; partner banks and NBFCs lend and carry the risk</td><td>Loans per 1,000 users; 30+ days overdue</td></tr>
+<tr><td>Insurance, funds, Share.Market</td><td>Small, simple investment and cover</td><td>Sold where the habit already is, in the same app, with the same KYC</td><td>Revenue per monthly transacting user</td></tr>
+</table>
+
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 176" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="m6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0b5d7a"/></marker></defs>
+ <rect x="95" y="4" width="140" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/>
+ <text x="165" y="18" text-anchor="middle" class="b">Friends pay friends</text><text x="165" y="32" text-anchor="middle" class="s">P2P, free</text>
+ <rect x="216" y="70" width="110" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/>
+ <text x="271" y="84" text-anchor="middle" class="b">Shops add QR</text><text x="271" y="98" text-anchor="middle" class="s">+ speaker</text>
+ <rect x="95" y="138" width="140" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/>
+ <text x="165" y="152" text-anchor="middle" class="b">More places to pay</text><text x="165" y="166" text-anchor="middle" class="s">so a daily habit</text>
+ <rect x="4" y="70" width="110" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/>
+ <text x="59" y="84" text-anchor="middle" class="b">More users</text><text x="59" y="98" text-anchor="middle" class="s">on the app</text>
+ <g stroke="#0b5d7a" stroke-width="1.5" fill="none">
+  <path d="M235,24 Q268,30 271,68" marker-end="url(#m6)"/><path d="M271,104 Q268,146 237,152" marker-end="url(#m6)"/>
+  <path d="M95,152 Q62,146 59,106" marker-end="url(#m6)"/><path d="M59,70 Q62,30 93,24" marker-end="url(#m6)"/>
+ </g>
+ <text x="165" y="80" text-anchor="middle" class="b acc">habit + data</text>
+ <text x="165" y="94" text-anchor="middle" class="acc">sell loans, bills,</text>
+ <text x="165" y="108" text-anchor="middle" class="acc">insurance</text>
+</svg>
+<figcaption><b>{{FIG:pp-loop}} · The core loop.</b> Each turn adds users and shops for free; money is made only at the centre, by selling to the habit. <span class="src">Author’s model.</span></figcaption>
+</figure>
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 176" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="22">Operating revenue</text>
+ <rect x="128" y="10" width="190" height="17" fill="#0b5d7a"/><text x="312" y="23" text-anchor="end" class="w b">₹7,920 Cr</text>
+ <text x="4" y="48">Lending arm</text>
+ <rect x="128" y="37" width="23" height="15" fill="#127a64"/><text x="156" y="48" class="b">₹945 Cr (2.5×)</text>
+ <text x="4" y="72">Insurance arm</text>
+ <rect x="128" y="61" width="5" height="15" fill="#127a64"/><text x="138" y="72">₹191 Cr</text>
+ <text x="4" y="96">Broking arm</text>
+ <rect x="128" y="85" width="3" height="15" fill="#127a64"/><text x="136" y="96">₹108 Cr</text>
+ <text x="4" y="120">Govt UPI incentive</text>
+ <rect x="128" y="109" width="7" height="15" fill="#c47f17"/><text x="140" y="120">₹286 Cr</text>
+ <line x1="4" y1="133" x2="326" y2="133" stroke="#d9dee4"/>
+ <text x="4" y="152" class="b red">Net loss</text>
+ <rect x="128" y="141" width="67" height="15" fill="#b93a32"/><text x="200" y="152" class="b red">−₹2,792 Cr</text>
+ <text x="4" y="172" class="s">Arms are subsidiaries, counted inside the total.</text>
+</svg>
+<figcaption><b>{{FIG:pp-money}} · PhonePe FY26, money in and out.</b> Revenue grew 11%; the loss grew 62%, driven by stock-based pay and write-downs. <span class="src">Inc42, Outlook Business, Entrackr (company filings), FY26.</span></figcaption>
+</figure>
+</div>
+
+<p><b>Business model in one line.</b> Payments bring people in at a loss; revenue comes from merchant devices, bill payments, a small government incentive for UPI, and increasingly from distributing loans, insurance and investments. The lending arm alone grew from ₹378 Cr to ₹945 Cr in a year.</p>
+
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Monthly transacting users: at least one successful payment in 30 days.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>New P2P senders · live merchant QRs · payment success rate · loans per 1,000 users.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Fraud loss per ₹1 lakh moved · reversal complaints · loans 30+ days overdue.</div>
+</div>
+
+<p><b>Moat, in plain words.</b> Habit and reach: 45.9% of UPI payments start on PhonePe (Aug 2026), and its QR codes and speakers sit in lakhs of shops. The crack in the wall: UPI makes switching free, because any UPI app scans any QR. So the moat is only as deep as the reasons to open PhonePe <i>first</i>: bills, loans, rewards, trust.</p>
+<p><b>2025–26 moves.</b> Pincode, its quick-commerce app, wound down (Dec 2025). SEBI cleared its IPO (Jan 2026); listing paused on market volatility (Mar 2026). Indus Appstore written down in FY26. Merchant lending platform and SmartPOD (speaker plus card machine). Coming: 0.4% MDR on large merchants (15 Oct 2026) and the 30% cap deadline (31 Dec 2026).</p>
+
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good">
+<li>Largest UPI share, and the default app for Bharat’s shopkeepers</li>
+<li>Lending revenue growing 2.5× a year, on payment data rivals lack</li>
+<li>Trusted brand among first-time digital users</li>
+</ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss">
+<li>Loss-making (−₹2,792 Cr in FY26); payments earn about nothing</li>
+<li>Growth could be frozen by the 30% cap</li>
+<li>Diversification misfires: Pincode shut, Indus Appstore written down</li>
+</ul></div>
+</div>
+
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> A pending payment at a counter breaks trust on both sides <span class="arrow">→</span> the speaker says “payment pending, PhonePe guarantees it” for pending payments under ₹500 <span class="arrow">→</span> repeat payments at that shop within 7 days.</p>
+<p class="idea"><b>2.</b> Small merchants pay no MDR, so they earn PhonePe nothing <span class="arrow">→</span> use speaker takings as the credit signal for working-capital loans <span class="arrow">→</span> approval rate and 30+ day defaults, speaker merchants vs others.</p>
+<p class="idea"><b>3.</b> Large merchants like the Surat trader will push buyers to personal UPI IDs to dodge the new fee <span class="arrow">→</span> a fee dashboard that shows the 0.4% next to the value of instant settlement, GST-ready receipts and credit built on business payments <span class="arrow">→</span> share of large merchants keeping payments on their business QR after 15 October.</p>
+</section>

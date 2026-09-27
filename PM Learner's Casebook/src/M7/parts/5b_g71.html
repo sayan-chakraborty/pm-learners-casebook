@@ -1,0 +1,53 @@
+<!-- ============ GUESSTIMATE 7.1 ZOOM DAILY SERVER USAGE ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Guesstimate 7.1 · Zoom’s daily server usage in India</span>
+ <span class="m"><span class="pill">Guesstimate</span><span>Hard</span><span>IIM A <i>Product Mindset 2026–27</i>, pp. 237–238</span></span></div>
+<div class="try"><b>Try it first.</b> How many video calls were you on last week, and for how long? Were they on Zoom, Teams or Meet? Build one weekday of Zoom’s video traffic in India from that, for five minutes.</div>
+</div>
+
+{{CASE:A237}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Defined “server usage”</b> as streaming data, and said why: it is the biggest load.</li>
+ <li><b>Scoped well:</b> India, business calls, and noticed that webinars are one-to-many, a different load.</li>
+ <li><b>A clear equation</b> and a sensible mix of heavy, medium and light users. The closing “lite version” answer was practical.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Counted one direction only.</b> 1 Mbps is what one person sends up. The server also sends each person the others’ video, so the traffic it handles is more than double.</li>
+ <li><b>“Working population 60%”</b> is the share of people of working age, not the share who work. The 10% white-collar share was then applied to the wrong base.</li>
+ <li><b>5 crore daily video-call users with 1.8 hours each</b> is very high for India, and 50% for Zoom ignores that Teams comes with Office and Meet with Gmail.</li>
+ <li><b>No check.</b> Zoom has published how many meeting minutes it hosts; comparing would have shown the answer was far too big.</li>
+</ul>
+</div>
+<p class="small"><b>Guesstimate kit check:</b> 1 Unit <span class="tk n">✗ one direction</span> · 2 Approach <span class="tk y">✓ demand side</span> · 3 Tree <span class="tk y">✓</span> · 4 Numbers with reasons <span class="tk y">✓ mostly</span> · 5 Check <span class="tk n">✗</span> · 6 Range <span class="tk n">✗</span>. Card 1 cost the most: the answer counts less than half of what a server actually carries.</p>
+
+<div class="box chk"><span class="lbl">Check · “≈ 20,000 TB/day” for Indian business calls on Zoom <span class="verdict v-over">Overstated</span></span>
+<p>The casebook’s users imply 5 crore × 50% × 1.8 hours = 4.5 crore hours of Zoom a day in India. At its pandemic peak, Zoom said it hosted 3.3 trillion meeting minutes a year worldwide (October 2020): 3.3 trillion ÷ 365 ÷ 60 ≈ 15 crore hours a day. So Indian business calls alone would be 30% of Zoom’s entire worldwide peak. That doesn’t hold; the users and hours are several times too high. The data per hour, meanwhile, is too low, because only one direction was counted. The two errors partly cancel, which is why the final number looks plausible.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:stripg71}}
+<figcaption><b>{{FIG:stripg71}} · The six cards, applied to video data.</b> Card 1 (both directions) and card 5 (Zoom’s own minutes) change the answer most. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">1 · Unit</div><p>Terabytes of video and audio that Zoom’s servers receive and send, for business calls in India, on a typical weekday. Webinars, storage and recordings are out.</p></div></div>
+<p class="whynote">Why this move: “server usage” could mean storage, computing or traffic. Choosing traffic, in both directions, sets up the one fact that matters most in the tree.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">2 · Approach</div><p>Demand side: start from people who might be on a call, then how long they talk, then how much data each person-hour creates in and out of the server ({{REF:updown}}).</p></div></div>
+<p class="whynote">Why this move: people and hours are things you can reason about from daily life; server capacity is not.</p>
+<figure>{{SVG:updown}}
+<figcaption><b>{{FIG:updown}} · One call, two directions.</b> Each person sends one video up and gets three smaller ones back. The server carries both, about 2.5 Mbps per person, not 1. <span class="src">Author’s diagram; bitrates rounded from the typical range in Zoom’s published bandwidth guidance (group video, 2024–26).</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">3–4 · Tree and numbers</div><p>About 3 crore white-collar workers in India (office and IT jobs, a small part of the 60 crore workforce). × 40% on at least one video call on a weekday = 1.2 crore. × 30% of those on Zoom, because Teams comes with Office and Meet with Gmail = 36 lakh people. × 1.2 hours each = 43 lakh person-hours. × 1.1 GB per person-hour (2.5 Mbps × 3,600 seconds ÷ 8) = <b>about 4,800 TB a weekday</b> ({{REF:gtree71}}).</p></div></div>
+<p class="whynote">Why this move: every rate has a reason a listener can argue with: white-collar workers rather than working-age people, Zoom’s share against its bundled rivals, data in both directions.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">5 · Check</div><p>Zoom’s 2020 peak worked out to about 15 crore meeting hours a day worldwide. 43 lakh hours is about 3% of that, for one country’s office calls, several years after the peak. That is plausible. The casebook’s 4.5 crore hours would be 30%, which isn’t.</p></div></div>
+<p class="whynote">Why this move: one published company figure, divided down to a day, tells you whether the whole tree is the right size.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">6 · Range</div><p><b>2,000–8,000 TB a weekday</b>, most likely about 5,000. The swing factors are the share of workers on a call and Zoom’s share: 25% × 20% gives about 2,000 TB; 50% × 40% gives about 8,000 TB.</p></div></div>
+<p class="whynote">Why this move: naming the two swing factors tells the interviewer what data would narrow the answer, which is what a real capacity plan needs.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>Counting data in both directions more than doubled the data per hour, while starting from white-collar workers cut the number of people. The two corrections pull opposite ways, which is why the stronger answer (about 5,000 TB) is a quarter of the casebook’s. Zoom’s own minutes confirm its size, and the range names what would move it.</div>
+<figure>{{SVG:gtree71}}
+<figcaption><b>{{FIG:gtree71}} · Zoom’s daily traffic in India, as an equation tree.</b> The orange box is the swing factor, green is the answer, grey is the check against Zoom’s published minutes. <span class="src">Zoom (3.3 trillion annualised meeting minutes, Oct 2020); worker, share and hour assumptions illustrative.</span></figcaption>
+</figure>
+<div class="box key"><span class="lbl">The reusable trick</span>
+<p>For any live video or voice product, traffic = people × hours × (data up + data down). The server carries both directions, and in group calls “down” is bigger than “up”.</p></div>

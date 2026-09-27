@@ -1,0 +1,41 @@
+<!-- ============ GUESSTIMATES: PRIMER + KIT ============ -->
+<div class="keep" style="margin-top:14pt"><div class="kicker">E-commerce &amp; marketplaces · Guesstimates</div>
+<h1>Guesstimates: a number from nothing, out loud</h1>
+<p class="lede">“How many searches does Google answer each second?” Nobody expects you to know. The interviewer wants to watch you break an unknown number into pieces you can estimate, pick sensible values, and check the result. A wrong answer with a clear structure scores better than a right answer you can’t explain.</p></div>
+
+<h2>Four ideas that make every guesstimate easier</h2>
+<p><b>1. Top-down or bottom-up.</b> <span class="term">Top-down</span> starts from a big known number and narrows it: India’s 146 crore people → online → shopping on one app → orders a day. <span class="term">Bottom-up</span> starts from one small unit and multiplies it out: one dark store’s pickers → orders an hour → stores in a city. Top-down is fast and suits “how many users or searches”. Bottom-up suits “how many stores, riders or servers”, where capacity is physical.</p>
+<p><b>2. Demand side or supply side.</b> Swiggy orders an hour can be counted from the <b>eaters</b> (households × how often they order) or from the <b>riders</b> (riders online × orders each carries an hour). They should agree. When they don’t, one of your assumptions is wrong, and finding which one is the best part of the answer.</p>
+<p><b>3. Proxies.</b> A <span class="term">proxy</span> is a number you know that moves with the one you don’t. UPI’s 79 crore payments a day are a proxy for how often Indians pay digitally. A city’s number of two-wheelers is a proxy for potential bike-taxi riders. Name the proxy and say why it moves with the answer.</p>
+<p><b>4. Round numbers and sanity checks.</b> Use numbers that multiply easily: 146 crore becomes 150 crore, 86,400 seconds in a day become about 1 lakh (when precision matters, keep 86,400). Then check the answer <i>per person</i>: “13 billion searches a day is 3 per internet user”. If the per-person figure sounds silly, a step is wrong.</p>
+
+<table class="tbl">
+<tr><th style="width:36%">Number worth remembering</th><th style="width:22%">Round value</th><th>Source and date</th></tr>
+<tr><td>India’s population</td><td>~146 crore</td><td>UN estimate, 2025</td></tr>
+<tr><td>Indian households</td><td>~31 crore (≈ 4.7 people each)</td><td>Estimate from the population; the last census count was 2011</td></tr>
+<tr><td>Active internet users in India</td><td>~96 crore</td><td>IAMAI–Kantar, 2025</td></tr>
+<tr><td>People who shopped online in India</td><td>29–30 crore</td><td>Bain &amp; Flipkart, 2025</td></tr>
+<tr><td>UPI payments</td><td>24.5 bn a month ≈ 79 crore a day</td><td>NPCI, August 2026</td></tr>
+<tr><td>People online worldwide</td><td>~600 crore (6 bn, 74%)</td><td>ITU, 2025</td></tr>
+<tr><td>Seconds in a day · hours awake</td><td>86,400 ≈ 1 lakh · ~16</td><td>Arithmetic</td></tr>
+</table>
+
+<h2>The guesstimate kit</h2>
+<p><b>Start with a wedding caterer.</b> A caterer in Lucknow is asked how much biryani to cook for a wedding. She doesn’t guess “100 kg”. She asks how many guests are invited (400) and what time dinner is served (late, so everyone eats). Most weddings see 80% turn up: 320 people. About 90% will take biryani: 290. At 250 g a plate that is 72 kg. She adds 10% because running out at a wedding is a disaster: about 80 kg. Then she checks: “last month, 350 guests ate 75 kg”. Same ballpark, so she cooks 80 kg. Every step of a good guesstimate is in that story.</p>
+
+<div class="kit k6">
+ <div class="card"><span class="n">1</span><b>Pin down the unit</b><span class="why">What exactly are we counting, over what time, and where? Typical day or peak?</span><span class="here">Caterer: plates of biryani, for one dinner, one wedding.</span></div>
+ <div class="card"><span class="n">2</span><b>Pick the approach</b><span class="why">Top-down or bottom-up; demand side or supply side. Say which, and why.</span><span class="here">Caterer: bottom-up from guests (demand), not from pot sizes (supply).</span></div>
+ <div class="card"><span class="n">3</span><b>Draw the tree</b><span class="why">Write the answer as a product of 3–5 pieces before putting in any number.</span><span class="here">Caterer: guests × turn-up × take biryani × grams a plate.</span></div>
+ <div class="card"><span class="n">4</span><b>Round numbers, one reason each</b><span class="why">Every number gets a one-line “because”. Round so the maths is easy aloud.</span><span class="here">Caterer: 80% turn up, because that is what most weddings see.</span></div>
+ <div class="card"><span class="n">5</span><b>Check it another way</b><span class="why">A known figure, a per-person rate, or the other side (supply vs demand).</span><span class="here">Caterer: last month 350 guests ate 75 kg.</span></div>
+ <div class="card"><span class="n">6</span><b>Give a range, and what moves it</b><span class="why">Name the one assumption that matters most, and what the answer would be if it were off.</span><span class="here">Caterer: 70–90 kg; turn-up is the swing factor.</span></div>
+</div>
+<p class="small" style="margin-top:4pt"><b>Rule of thumb:</b> clarify in two or three questions, say your approach in one sentence, and write the tree down <i>before</i> the numbers. Interviewers check the tree first and the arithmetic second. The cards follow the steps taken by the strongest of the fourteen guesstimates in the IIM A and IIM B casebooks; the weaker ones skip card 5.</p>
+
+<div class="cols2">
+<div class="box brk" style="margin-top:4pt"><span class="lbl">When it breaks</span>
+<p class="small">A tree with ten steps multiplies ten errors. If each step could be 20% off, the answer could be off by a factor of six. Keep the tree to 3–5 steps, and spend your time on the step that swings the answer most: for a store count, orders per household; for searches, searches per person.</p></div>
+<div class="box int" style="margin-top:4pt"><span class="lbl">In the interview</span>
+<p class="small">“I’ll count this from the demand side, as users times searches per user, and then check it against what we know Google has said. The number I’m least sure of is searches per person, so I’ll show a range on that one.”</p></div>
+</div>

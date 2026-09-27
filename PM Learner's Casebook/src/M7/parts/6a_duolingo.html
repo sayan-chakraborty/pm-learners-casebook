@@ -1,0 +1,44 @@
+<!-- ============ TEARDOWNS: DUOLINGO ============ -->
+<section class="page">
+<div class="kicker">Health, fitness &amp; learning · Product teardowns</div>
+<h1>Duolingo: a daily habit, three minutes at a time</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Neha, 27, has learned Spanish on Duolingo for 212 days, mostly in the office lift. At 8:50 am her phone shows “Your 212-day streak is waiting”. She taps it, and a lesson of about fifteen exercises opens: match words, type a sentence, listen and pick, speak a line. Most are easy; two past-tense verbs trip her up, and those come back later in the lesson. Three minutes later: “Lesson complete, +15 points”, the streak flame reads 213, and a banner says she has moved up to fourth in this week’s league of 30 learners. She puts the phone away before the lift doors open ({{REF:duo-flow}}).</p>
+
+<figure>{{SVG:flow_duo}}
+<figcaption><b>{{FIG:duo-flow}} · Behind Neha’s three minutes.</b> Duolingo’s model, Birdbrain, estimates how likely she is to get each exercise right and picks a mix she will mostly get (③–④); wrong answers update what it thinks she has forgotten (⑥). The reminder system tests which message and time bring each learner back (⑩). <span class="src">Simplified from Duolingo’s engineering and research blogs (Birdbrain, 2020; notification research, 2020–25); timings illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Streak</td><td>“I start well and stop after a week”</td><td>A count of days in a row that is painful to lose; the loss hurts more than one lesson’s effort</td><td>Daily active users; day-30 return</td></tr>
+<tr><td>Streak freeze</td><td>“One missed day and I gave up”</td><td>A missed day can be covered, so one bad day doesn’t end the habit</td><td>Streak survival; fewer quits after a break</td></tr>
+<tr><td>Short lessons</td><td>“I have no time”</td><td>Two to five minutes, so the ability bar is low even on busy days</td><td>Lessons finished per day</td></tr>
+<tr><td>Birdbrain exercise picker</td><td>“Too easy is boring, too hard is discouraging”</td><td>Picks exercises the learner will get right most of the time, bringing back what they are forgetting</td><td>Lesson finish rate; accuracy</td></tr>
+<tr><td>Leagues</td><td>“Nobody notices if I study”</td><td>Weekly tables of 30 similar learners, promotion and demotion</td><td>Lessons per active learner</td></tr>
+<tr><td>Max (AI tier)</td><td>“I can read but I can’t speak”</td><td>AI video calls with a character and explanations of mistakes, in the top paid plan</td><td>Paid upgrades; revenue per payer</td></tr>
+</table>
+
+<h3>Core loop: why people come back</h3>
+<p>The loop is short on purpose ({{REF:duo-loop}}): a lesson takes minutes, the streak and points rise, the league gives a reason to do one more, and a reminder at the learner’s usual time brings them back tomorrow. Each part pushes ability up or supplies a prompt, which is why Duolingo is often used as the textbook case of habit design. The growth loop is the same streak seen from outside: people share milestone streaks, and friends on the app nudge each other. The Q2 2026 letter credited part of the jump in daily users to a one-time “Streak Revival” campaign in June, which brought back people who had lost their streaks.</p>
+<figure>{{SVG:loop_duo}}
+<figcaption><b>{{FIG:duo-loop}} · Duolingo’s habit loop.</b> Every step lowers the effort of the next one or times a prompt. What it doesn’t measure directly is how much Spanish Neha can speak. <span class="src">Author’s diagram.</span></figcaption>
+</figure>
+
+<h3>Business model, with numbers</h3>
+<p>Freemium: the full course is free with ads and limits, and learners pay to remove them. In April–June 2026 Duolingo had <b>5.87 crore daily users</b> (up 23%), <b>1.27 crore paid subscribers</b> (up 17%) and <b>revenue of $298.5 million</b> (up 18%), though bookings, the money actually taken in the quarter, grew only 8%. Most revenue comes from subscriptions: Super (no ads, unlimited mistakes) and Max (adds AI features). Ads on the free tier and the Duolingo English Test, a cheap online exam accepted by many universities, add the rest. The key number is that roughly one in five daily users pays, which is high for a free app.</p>
+<p><b>Moat, in plain words.</b> Hundreds of millions of learners’ answers train the exercise picker and the reminders, so a new rival starts with cruder lessons. The streak is also a switching cost: a learner with 400 days on Duolingo won’t start from zero elsewhere.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Daily active learners who finish at least one lesson.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Streak survival at day 7 and 30 · lesson finish rate · reminder open rate · free-to-paid conversion.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Learning outcomes (test scores, speaking practice) · notification opt-outs · streak anxiety complaints.</div>
+</div>
+<p><b>2025–26 moves.</b> An “AI-first” memo in April 2025 (AI to create courses, fewer contractors) drew a public backlash on social media, then 148 new AI-built courses; chess and music courses; AI video calls in Max; and the June 2026 Streak Revival.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>The best habit machine in consumer apps</li><li>High share of users who pay</li><li>Cheap to add courses with AI</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Streaks can drift from real learning</li><li>Weak at speaking fluency</li><li>AI tools can copy the lessons</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Learners keep streaks alive on the easiest lessons <span class="arrow">→</span> a weekly “can you still do this?” check that counts toward the streak only when passed <span class="arrow">→</span> share of streak days with real practice; test scores after 90 days.</p>
+<p class="idea"><b>2.</b> Indian learners of English want to speak at work <span class="arrow">→</span> short AI role-plays for interviews and customer calls, in Hindi-to-English and Tamil-to-English courses <span class="arrow">→</span> speaking minutes per learner; Max upgrades in India.</p>
+<p class="idea"><b>3.</b> Speaking exercises are skipped in public <span class="arrow">→</span> serve them when headphones are connected, and save them for later in the day otherwise <span class="arrow">→</span> speaking exercises done per learner without a fall in lessons finished.</p>
+</section>

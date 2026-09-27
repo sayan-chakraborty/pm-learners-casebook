@@ -1,0 +1,66 @@
+<!-- ============ TEARDOWNS: INTUIT DEEP DIVE, PART 1 ============ -->
+<section class="page">
+<div class="kicker">Consumer hardware, loyalty &amp; public services · Product teardowns</div>
+<h1>Intuit: a deep dive into TurboTax, QuickBooks, Enterprise Suite, Credit Karma and Mailchimp</h1>
+<p class="lede">Intuit sells software for the money chores people and small firms dread: the yearly tax return, the books, invoices, payroll, a loan. It is a useful company for a PM to study because it has every model on one balance sheet: a once-a-year consumer product (TurboTax), a monthly subscription for small businesses (QuickBooks), a free app paid for by lenders (Credit Karma), a freemium marketing tool (Mailchimp), and now a sales-led product for mid-sized firms (Intuit Enterprise Suite). It also has a lesson for India: QuickBooks left the Indian market in 2023.</p>
+
+<div class="stats">
+ <div><b>$21.4 bn</b><span>revenue in FY2026 (year to 31 Jul 2026), up 14%</span></div>
+ <div><b>42%</b><span>operating margin before share-based pay and one-offs ($8.9 bn); 27.5% as reported</span></div>
+ <div><b>3.9 crore</b><span>US TurboTax returns in FY26, down 2%, while revenue rose 7%</span></div>
+ <div><b>+28%</b><span>growth in mid-market customers (QuickBooks Advanced and IES) in FY26</span></div>
+</div>
+
+<h2>The company on one page</h2>
+<p>Scott Cook and Tom Proulx started Intuit in 1983 with Quicken, a program for balancing a household cheque book. Cook’s idea was to watch people doing their finances at home and remove every step they found painful; Intuit still sends staff to sit with customers (“follow-me-home” visits). QuickBooks followed for small businesses, and in 1993 Intuit bought the maker of TurboTax. The big bets since then ({{REF:intu_timeline}}) have moved it from software people install to money it helps move: payments, payroll, loans, and lender fees.</p>
+<figure>{{SVG:intu_timeline}}
+<figcaption><b>{{FIG:intu_timeline}} · Intuit’s big bets.</b> Each purchase added a new way to earn from the same customers: lender fees (Credit Karma), marketing spend (Mailchimp), bigger contracts (Enterprise Suite). <span class="src">Intuit filings and announcements; purchase prices as announced.</span></figcaption>
+</figure>
+<p><b>Who it serves.</b> Three groups, each with its own products ({{REF:intu_map}}). <b>Consumers</b> use TurboTax once a year and Credit Karma to watch their credit. <b>Small businesses</b>, from a freelance designer to a bakery with six staff, use QuickBooks and Mailchimp. <b>Mid-sized firms</b> with several companies or locations use Intuit Enterprise Suite. Around them sit <b>accountants</b>: they file taxes for clients with Intuit’s professional software (ProTax), and they recommend QuickBooks to the small businesses they serve, which makes them Intuit’s most important sales channel.</p>
+<figure>{{SVG:intu_map}}
+<figcaption><b>{{FIG:intu_map}} · How Intuit’s products connect.</b> Data and customers flow between products: a TurboTax refund can land in a Credit Karma account; QuickBooks customer lists feed Mailchimp; a growing QuickBooks firm moves up to Enterprise Suite. <span class="src">Author’s diagram from Intuit’s product pages (2026).</span></figcaption>
+</figure>
+<p><b>Where the money comes from.</b> In FY2026 Intuit earned $21.4 billion ({{REF:intu_rev}}). Global Business Solutions (QuickBooks, Enterprise Suite, Mailchimp) brought $12.9 billion, up 16%; within it, the online products grew 19%, or 23% without Mailchimp. The Consumer side (TurboTax, Credit Karma, ProTax) brought $8.6 billion, up 11%. The parts Intuit calls its “big bets” (mid-market, expert help, money products) grew 34% and are now 30% of revenue. For FY2027 it expects 9–10% growth, and it now reports Mailchimp on its own, expecting it to stay flat.</p>
+<figure>{{SVG:intu_rev}}
+<figcaption><b>{{FIG:intu_rev}} · Intuit’s revenue by product, FY2026.</b> QuickBooks and Enterprise Suite are the engine; TurboTax is large but slow; Credit Karma is the fastest-growing named business. <span class="src">Intuit Q4 FY26 results (Aug 2026). QuickBooks online, desktop and Mailchimp split derived from reported segment totals and Mailchimp’s FY27 guidance, so approximate.</span></figcaption>
+</figure>
+<p><b>The data flywheel.</b> Intuit’s bet is that its data makes each product smarter ({{REF:intu_fly}}). Every tax return teaches TurboTax which questions to ask; every categorised bank line teaches QuickBooks how to file the next one; every approved loan improves Credit Karma’s approval odds. More data makes more of the work automatic, and automatic work lets Intuit sell “done for you” help (by an expert or an AI agent) at a higher price.</p>
+<figure>{{SVG:intu_fly}}
+<figcaption><b>{{FIG:intu_fly}} · The flywheel Intuit is betting on.</b> It spins only while customers trust Intuit with their data, which is why a tax error or a misleading ad costs Intuit more than a normal software bug. <span class="src">Author’s diagram.</span></figcaption>
+</figure>
+
+<h2>TurboTax: the once-a-year product</h2>
+<p><b>Walkthrough (illustrative persona).</b> Rohan, 29, moved from Pune to Austin for a software job and has to file his first US tax return. He opens TurboTax in February and takes a photo of his W-2 (the form from his employer showing salary and tax already taken out). TurboTax fills in the numbers and asks plain questions: did you move for work, do you have a bank account in India, did you sell any shares? He isn’t sure how to report his Indian bank interest, so he pays $89 to add a tax expert, who reviews his return on a video call and fixes a deduction. TurboTax sends the return to the IRS (the US tax department), which accepts it within a day, and his $1,240 refund arrives about three weeks later ({{REF:flow_tt}}).</p>
+<table class="tbl flow feat">
+<tr><th style="width:18%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Interview, not forms</td><td>“I don’t understand the tax form”</td><td>Plain questions hide the form; the software places each answer</td><td>Returns completed; time to file</td></tr>
+<tr><td>Data import</td><td>“Typing numbers is slow and error-prone”</td><td>W-2s, brokerage statements and last year’s return pulled in</td><td>Errors; drop-off mid-return</td></tr>
+<tr><td>Expert Assist</td><td>“What if I get it wrong?”</td><td>A tax expert on video checks and signs off, for a higher price</td><td>Revenue per return</td></tr>
+<tr><td>Full Service</td><td>“Just do it for me”</td><td>Upload documents; an expert prepares and files the whole return</td><td>Revenue per return; share of “done for you”</td></tr>
+<tr><td>Refund tracker</td><td>“When will my money come?”</td><td>Shows IRS status; offers to put the refund in Credit Karma Money</td><td>Credit Karma sign-ups</td></tr>
+</table>
+<figure>{{SVG:flow_tt}}
+<figcaption><b>{{FIG:flow_tt}} · Behind a TurboTax return.</b> Data is pulled in (②–③), the user answers questions instead of filling forms (④), and the paid expert step (⑤–⑦) checks the answer before filing. <span class="src">Author’s diagram; amounts and timings illustrative.</span></figcaption>
+</figure>
+<p><b>Business model, with numbers.</b> TurboTax earned $5.3 billion in FY2026, up 7%, even though the number of US returns it filed fell 2% to 3.9 crore. The growth came from moving people up the price ladder ({{REF:tt_ladder}}): the expert-help tiers (TurboTax Live) grew 37% and are now 53% of TurboTax revenue. The money arrives in a rush: most returns are filed between February and April, so most of the year’s TurboTax revenue lands in one quarter ({{REF:tt_season}}). That shapes everything, from hiring thousands of seasonal experts to freezing risky changes in January.</p>
+<figure>{{SVG:tt_ladder}}
+<figcaption><b>{{FIG:tt_ladder}} · The TurboTax price ladder.</b> The free edition covers only simple returns; anyone with investments, rent or freelance income moves up, and each step up adds more human help. <span class="src">Tiers from TurboTax’s US site (2026); prices vary by year, return and offer, so shown as rough illustrative ranges.</span></figcaption>
+</figure>
+<div class="figrow">
+<figure>{{SVG:tt_season}}
+<figcaption><b>{{FIG:tt_season}} · One season pays for the year.</b> Most returns are filed by the April deadline. <span class="src">Illustrative split, consistent with Intuit’s seasonal Consumer revenue.</span></figcaption>
+</figure>
+<div>
+<div class="box brk" style="margin-top:0"><span class="lbl">When it breaks · “Free” that wasn’t</span>
+<p class="small">TurboTax advertised “free” filing for years while most filers didn’t qualify for the free edition. In 2022 Intuit agreed to pay $141 million to settle claims by all 50 US states, and in 2024 the US Federal Trade Commission ruled the ads deceptive. The IRS also tested its own free filing tool, Direct File, in 2024 and 2025. The lesson for a PM: a free tier that exists mainly to advertise erodes trust, and in tax, trust is the product.</p></div>
+</div>
+</div>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Returns filed correctly and on time, weighted by the help level chosen</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Share of data imported, not typed; completion rate; share moving to expert help; returning filers</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Amended returns and IRS notices; refunds for “free” disputes; expert wait times in April</div>
+</div>
+<p><b>Moat, in plain words.</b> Last year’s return is already inside TurboTax, so filing again there is easier than anywhere else; people are afraid of tax mistakes and stay with the brand they trust; and thousands of experts are hired and trained for one season, which a newcomer can’t match quickly. <b>Weakness:</b> the number of people filing with it is flat, so growth depends on selling more help to the same people.</p>
+<p class="idea"><span class="arrow">Build next →</span> <b>Problem:</b> people like Rohan, with income in two countries, are anxious and expensive to serve. <b>Bet:</b> an “income from abroad” path that imports foreign bank statements and explains tax treaties in plain words, with an expert check included. <b>Metric:</b> completion rate and amended returns for filers with foreign income.</p>
+<p class="idea"><span class="arrow">Build next →</span> <b>Problem:</b> the product is opened once a year, so nothing is learnt in between. <b>Bet:</b> a year-round “tax health” check in Credit Karma (withholding too high or too low, with a fix suggested in July). <b>Metric:</b> share of filers who adjust withholding; next year’s refund surprise.</p>
+</section>

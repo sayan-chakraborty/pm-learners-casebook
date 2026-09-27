@@ -1,0 +1,45 @@
+<!-- ============ TEARDOWNS: ZEPTO ============ -->
+<h1 style="margin-top:12pt">Zepto: speed first, and then the bill for it</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Ira, 22, is studying late in a Mumbai PG. She opens Zepto for a snack. The top row shows a new flavour of chips marked “Ad”. She adds it, then a cold coffee from “Zepto Café”, and pays ₹310. Nine minutes later one bag arrives with both. The chips maker paid Zepto before Ira saw the chips; the coffee was brewed at a counter inside the same dark store ({{REF:zp-walk}}).</p>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:26%">User problem</th><th style="width:33%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>10-minute promise</td><td>“I forgot something”</td><td>Dense stores close to homes and picking in about 2 minutes</td><td>Delivery time; orders per customer</td></tr>
+<tr><td>Zepto Café</td><td>A snack or coffee with the groceries</td><td>Small kitchens inside dark stores add a high-margin item to a small basket</td><td>Café attach rate; margin per basket</td></tr>
+<tr><td>Ads for brands</td><td>Brands: “we need to be seen where shoppers decide”</td><td>Sponsored rows and banners inside search and categories</td><td>Ad revenue as % of order value</td></tr>
+<tr><td>Membership pass</td><td>Small baskets attract fees</td><td>A monthly pass removes delivery and handling fees</td><td>Orders per member</td></tr>
+</table>
+<figure>
+{{SVG:flow_zepto}}
+<figcaption><b>{{FIG:zp-walk}} · Behind Ira’s snack order.</b> Two things raise the value of a small basket: a café item with a high margin (③–⑤) and an ad paid for by a brand (⑧). <span class="src">Simplified from Zepto’s public descriptions of Zepto Café and its ads platform; amounts illustrative.</span></figcaption>
+</figure>
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 190" xmlns="http://www.w3.org/2000/svg">
+ <!-- x = 40 + 15*month, y = 100 - 4*pct -->
+ <line x1="40" y1="100" x2="322" y2="100" stroke="#4a5563"/><text x="36" y="104" text-anchor="end" class="s">0%</text>
+ <text x="36" y="32" text-anchor="end" class="s">+16%</text><text x="36" y="176" text-anchor="end" class="s">−18%</text>
+ <line x1="40" y1="10" x2="40" y2="180" stroke="#c3cad2"/>
+ <polyline points="55,172 70,148 85,132 100,120 130,108 160,100 190,92 220,88 310,84" fill="none" stroke="#127a64" stroke-width="2.6"/>
+ <circle cx="160" cy="100" r="4.5" fill="#127a64"/><text x="166" y="116" class="b grn">breakeven ~month 8</text>
+ <text x="60" y="186" class="s">month 1</text><text x="304" y="186" text-anchor="end" class="s">month 18</text>
+ <text x="176" y="146" class="s">each new store starts</text><text x="176" y="159" class="s">deep in the red</text>
+</svg>
+<figcaption><b>{{FIG:zp-curve}} · A dark store’s life.</b> Contribution margin climbs as orders per day rise. Opening hundreds of stores at once makes the whole company look worse even as older stores improve. <span class="src">Illustrative shape, consistent with company statements that new stores take 6–12 months to break even.</span></figcaption>
+</figure>
+<div class="box key" style="margin-top:0"><span class="lbl">Key idea · Why fast growth looks like big losses</span>
+<p class="small">Imagine stores that each lose ₹3 lakh a month in their first six months and make ₹1 lakh a month after that. A company that opens 50 new stores this quarter reports a bigger loss than last quarter, even though every old store is improving. So ask two questions of any quick-commerce loss: <b>what share of stores are under six months old</b>, and <b>what do the mature stores earn?</b> Blinkit’s first profit came when its expansion slowed and most stores had matured.</p></div>
+</div>
+<p><b>Business model and 2026 reality.</b> Zepto earns the margin on goods sold through its stores, customer fees, café margins and brand ads. Press reports put FY26 revenue at about ₹22,600 Cr and the loss at about ₹5,900 Cr (not yet checked against filings). It moved its holding company from Singapore to India in 2025, filed for an IPO, and in July 2026 put the IPO on hold and raised money privately instead.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Weekly orders from repeat customers.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Orders per store per day · share of stores over 8 months old · AOV · fill rate.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Contribution per order · cash burn per month · stock written off.</div>
+</div>
+<p><b>Moat, in plain words.</b> Thin. Speed is copyable by anyone with stores in the same streets, and Blinkit, Instamart, Flipkart Minutes and Amazon Now all have them. What Zepto had was execution speed and a young brand; what it lacks is a profitable second business to pay for the fight.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Fastest-growing challenger; strong with young urban users</li><li>Café and ads raise margin per basket</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Large losses; IPO on hold</li><li>No profitable core business, unlike Eternal or Swiggy</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Young stores lose money until orders build <span class="arrow">→</span> open new stores only where a nearby store already fills 1,000 orders a day, and move its far orders to the new store <span class="arrow">→</span> months to breakeven per new store.</p>
+<p class="idea"><b>2.</b> Brands can’t see which stores sell their products <span class="arrow">→</span> self-serve store-level sales and ad results for brands <span class="arrow">→</span> ad revenue per brand; brands advertising again next quarter.</p>

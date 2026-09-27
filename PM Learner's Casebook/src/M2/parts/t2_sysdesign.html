@@ -1,0 +1,205 @@
+<!-- ============ TECHNOLOGY: SYSTEM DESIGN II ============ -->
+<section class="page">
+<div class="kicker">Food delivery &amp; quick commerce · Technology for PMs</div>
+<h1>System design II: where an order lives, and why the map never freezes</h1>
+<p class="lede">IPL final, 8:30 pm. Orders on a food app run at three times a normal Sunday. In the same minute, lakhs of people open menus, thousands pay, and lakhs of riders’ phones send their location every few seconds. The payment must never be lost; the menu must open in a blink; the rider’s dot must keep moving. These three jobs need three different kinds of storage, and the choice between them is one of the most common PM–engineering conversations.</p>
+
+<figure>
+<svg class="d" viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="sd2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker></defs>
+ <rect x="0" y="96" width="100" height="52" rx="6" fill="#e1f2ec" stroke="#127a64" stroke-width="1.4"/><text x="50" y="117" text-anchor="middle" class="b">Kavya’s app</text><text x="50" y="132" text-anchor="middle" class="s">menu, pay, map</text>
+ <rect x="122" y="96" width="100" height="52" rx="6" fill="#e3f0f5" stroke="#0b5d7a" stroke-width="1.4"/><text x="172" y="117" text-anchor="middle" class="b">API gateway</text><text x="172" y="132" text-anchor="middle" class="s">checks login, routes</text>
+ <g fill="#e3f0f5" stroke="#0b5d7a" stroke-width="1.4"><rect x="250" y="12" width="118" height="40" rx="5"/><rect x="250" y="102" width="118" height="40" rx="5"/><rect x="250" y="198" width="118" height="40" rx="5"/></g>
+ <text x="309" y="30" text-anchor="middle" class="b">Menu service</text><text x="309" y="44" text-anchor="middle" class="s">read-heavy</text>
+ <text x="309" y="120" text-anchor="middle" class="b">Order service</text><text x="309" y="134" text-anchor="middle" class="s">must be exact</text>
+ <text x="309" y="216" text-anchor="middle" class="b">Location service</text><text x="309" y="230" text-anchor="middle" class="s">75,000 pings/s</text>
+ <rect x="398" y="12" width="120" height="40" rx="5" fill="#fde7c8" stroke="#c47f17" stroke-width="1.4"/><text x="458" y="30" text-anchor="middle" class="b">Cache (memory)</text><text x="458" y="44" text-anchor="middle" class="s">menus, ~1 ms</text>
+ <rect x="548" y="12" width="132" height="40" rx="5" fill="#dbe8f5" stroke="#2f6ea5" stroke-width="1.4"/><text x="614" y="30" text-anchor="middle" class="b">Menu store (NoSQL)</text><text x="614" y="44" text-anchor="middle" class="s">flexible, ~20 ms</text>
+ <rect x="398" y="80" width="120" height="44" rx="5" fill="#dbe8f5" stroke="#2f6ea5" stroke-width="1.4"/><text x="458" y="98" text-anchor="middle" class="b">Orders + payments</text><text x="458" y="113" text-anchor="middle" class="s">SQL database</text>
+ <rect x="398" y="142" width="120" height="36" rx="5" fill="#fde7c8" stroke="#c47f17" stroke-width="1.4"/><text x="458" y="158" text-anchor="middle" class="b">Queue</text><text x="458" y="171" text-anchor="middle" class="s">“order placed” events</text>
+ <rect x="398" y="200" width="120" height="36" rx="5" fill="#fde7c8" stroke="#c47f17" stroke-width="1.4"/><text x="458" y="216" text-anchor="middle" class="b">Latest location</text><text x="458" y="229" text-anchor="middle" class="s">in memory</text>
+ <g fill="#f1e6f8" stroke="#7c3aa6" stroke-width="1.2"><rect x="548" y="80" width="132" height="30" rx="4"/><rect x="548" y="118" width="132" height="30" rx="4"/><rect x="548" y="156" width="132" height="30" rx="4"/></g>
+ <text x="556" y="99">Dispatch: find a rider</text><text x="556" y="137">Notify: SMS, push</text><text x="556" y="175">Invoice, analytics</text>
+ <g stroke="#4a5563" stroke-width="1.4" fill="none">
+  <line x1="100" y1="122" x2="120" y2="122" marker-end="url(#sd2)"/>
+  <path d="M222,112 L236,112 L236,32 L248,32" marker-end="url(#sd2)"/><line x1="222" y1="122" x2="248" y2="122" marker-end="url(#sd2)"/><path d="M222,132 L236,132 L236,218 L248,218" marker-end="url(#sd2)"/>
+  <line x1="368" y1="32" x2="396" y2="32" marker-end="url(#sd2)"/><line x1="518" y1="32" x2="546" y2="32" stroke-dasharray="4 3" marker-end="url(#sd2)"/>
+  <path d="M368,116 L382,116 L382,102 L396,102" marker-end="url(#sd2)"/><path d="M368,128 L382,128 L382,160 L396,160" marker-end="url(#sd2)"/>
+  <line x1="368" y1="218" x2="396" y2="218" marker-end="url(#sd2)"/>
+  <path d="M518,160 L532,160 L532,95 L546,95" marker-end="url(#sd2)"/><line x1="532" y1="133" x2="546" y2="133" marker-end="url(#sd2)"/><path d="M532,160 L532,171 L546,171" marker-end="url(#sd2)"/>
+ </g>
+ <text x="532" y="68" text-anchor="middle" class="s">only on a miss</text>
+ <rect x="0" y="176" width="226" height="64" rx="5" fill="#fff" stroke="#c3cad2"/>
+ <text x="8" y="193" class="b">Three kinds of data, three stores</text>
+ <text x="8" y="209" class="s">exact and permanent → SQL database</text>
+ <text x="8" y="222" class="s">read a lot, changes rarely → cache</text>
+ <text x="8" y="235" class="s">changes every second → memory + queue</text>
+</svg>
+<figcaption><b>{{FIG:arch}} · One food app, simplified.</b> The order service saves the order and payment in a SQL database, then drops an “order placed” event on a queue so that dispatch, notifications and invoices happen in the background. Menus come from a cache; rider locations never touch the order database. <span class="src">Author’s simplified architecture, typical of large delivery apps; not any one company’s design.</span></figcaption>
+</figure>
+
+<h2>Databases: SQL for money, NoSQL for flexible things</h2>
+<p><b>A real situation.</b> Kavya pays ₹490. Two things must be saved together: “payment received” and “order created”. If the app saves one and crashes before the other, she has paid for food nobody will cook. A <span class="term">SQL (relational) database</span> stores data in tables with fixed columns (orders, customers, payments) and supports <span class="term">transactions</span>: a group of changes that all happen or none do. The guarantee has a name, <span class="term">ACID</span>, which in plain words means complete, consistent, not mixed up with other people’s changes, and permanent once saved. A <span class="term">NoSQL database</span> stores flexible documents (a menu with dishes, variants and add-ons that differ by restaurant) and spreads easily across many machines, usually by relaxing some of those guarantees.</p>
+<table class="tbl">
+<tr><th style="width:18%"></th><th style="width:41%">SQL (e.g. PostgreSQL, MySQL)</th><th>NoSQL (e.g. MongoDB, Cassandra, DynamoDB)</th></tr>
+<tr><td><b>Shape of data</b></td><td>Tables, fixed columns, links between tables</td><td>Documents or key–value pairs, shape can vary</td></tr>
+<tr><td><b>In a food app</b></td><td>Orders, payments, refunds, restaurant payouts</td><td>Menus, reviews, user activity, product catalogues</td></tr>
+<tr><td><b>Strength</b></td><td>All-or-nothing changes; exact numbers</td><td>Huge volumes; easy to add new fields and machines</td></tr>
+<tr><td><b>Where it strains</b></td><td>Very high write volumes on one machine</td><td>Money: harder to guarantee two changes happen together</td></tr>
+</table>
+<p><b>Indexes: why one query takes 2 ms and another 2 minutes.</b> Kavya taps “My orders”. The orders table has 200 crore rows. Without help, the database reads every row looking for hers. An <span class="term">index</span> is like the index at the back of a textbook: a sorted list of customer IDs pointing to their rows. Finding one ID in a sorted list of 2 billion takes about 31 halving steps (2³¹ ≈ 2.1 billion), not 2 billion reads. The catch: every index must be updated on every new order, so indexes speed up reads and slow down writes. When a PM asks for a new filter (“orders by restaurant, by week”), the real engineering cost is often a new index on a very large table.</p>
+
+<h2>One order, eight states</h2>
+<p><b>A real situation.</b> Kavya taps “Cancel” at 8:52 pm. Does she get her ₹490 back? It depends on where the order is. Inside the database an order is a <span class="term">state machine</span>: a fixed list of states, and a fixed list of allowed moves between them. Every move is saved with a timestamp. That log is what made the cancellations case answerable: “cancelled before preparation began” is simply a count of orders that moved to Cancelled from Placed or Accepted.</p>
+<figure>
+<svg class="d" viewBox="0 0 680 196" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="sm1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker></defs>
+ <g fill="#e3f0f5" stroke="#0b5d7a" stroke-width="1.4"><rect x="0" y="20" width="96" height="40" rx="20"/><rect x="116" y="20" width="96" height="40" rx="20"/><rect x="232" y="20" width="96" height="40" rx="20"/><rect x="348" y="20" width="96" height="40" rx="20"/><rect x="464" y="20" width="96" height="40" rx="20"/></g>
+ <rect x="580" y="20" width="100" height="40" rx="20" fill="#127a64"/>
+ <text x="48" y="44" text-anchor="middle" class="b">Placed</text><text x="164" y="44" text-anchor="middle" class="b">Accepted</text><text x="280" y="44" text-anchor="middle" class="b">Preparing</text><text x="396" y="44" text-anchor="middle" class="b">Picked up</text><text x="512" y="44" text-anchor="middle" class="b">Arriving</text><text x="630" y="44" text-anchor="middle" class="b w">Delivered</text>
+ <g stroke="#4a5563" stroke-width="1.4"><line x1="96" y1="40" x2="114" y2="40" marker-end="url(#sm1)"/><line x1="212" y1="40" x2="230" y2="40" marker-end="url(#sm1)"/><line x1="328" y1="40" x2="346" y2="40" marker-end="url(#sm1)"/><line x1="444" y1="40" x2="462" y2="40" marker-end="url(#sm1)"/><line x1="560" y1="40" x2="578" y2="40" marker-end="url(#sm1)"/></g>
+ <text x="48" y="12" text-anchor="middle" class="s">8:40:05</text><text x="164" y="12" text-anchor="middle" class="s">8:40:50</text><text x="280" y="12" text-anchor="middle" class="s">8:41</text><text x="396" y="12" text-anchor="middle" class="s">8:58</text><text x="512" y="12" text-anchor="middle" class="s">9:26</text><text x="630" y="12" text-anchor="middle" class="s">9:31</text>
+ <rect x="130" y="120" width="170" height="40" rx="20" fill="#fcecea" stroke="#b93a32" stroke-width="1.4"/><text x="215" y="144" text-anchor="middle" class="b red">Cancelled</text>
+ <rect x="0" y="120" width="112" height="40" rx="20" fill="#fcecea" stroke="#b93a32"/><text x="56" y="138" text-anchor="middle" class="b red">Rejected</text><text x="56" y="152" text-anchor="middle" class="s">by restaurant</text>
+ <g stroke="#b93a32" stroke-width="1.3" fill="none" stroke-dasharray="4 3">
+  <path d="M40,60 L40,118" marker-end="url(#sm1)"/><path d="M70,60 L170,118" marker-end="url(#sm1)"/><path d="M164,60 L200,118" marker-end="url(#sm1)"/><path d="M280,60 L240,118" marker-end="url(#sm1)"/>
+ </g>
+ <text x="48" y="100" class="s grn b">full refund</text><text x="292" y="80" class="s amb b">refund; app may pay</text><text x="292" y="93" class="s amb b">the restaurant for food</text>
+ <rect x="348" y="100" width="332" height="86" rx="5" fill="#fff" stroke="#c3cad2"/>
+ <text x="358" y="118" class="b">What the PM decides, state by state</text>
+ <text x="358" y="134" class="s">· which states allow “Cancel”, and who pays</text>
+ <text x="358" y="149" class="s">· what each state is called on screen (“Preparing”)</text>
+ <text x="358" y="164" class="s">· after “Picked up”, no customer cancel: food is on the road</text>
+ <text x="358" y="179" class="s">· a new state (“Waiting at gate”) changes every report</text>
+ <text x="0" y="186" class="s">Each arrow is one row written with a timestamp.</text>
+</svg>
+<figcaption><b>{{FIG:states}} · Kavya’s order as a state machine.</b> Grey timestamps are the log that analysts query. The red dashed moves are where money and blame get decided; they are product policy written into code. <span class="src">Illustrative states and refund policy, typical of food apps.</span></figcaption>
+</figure>
+
+<h2>When one database is not enough: replicas and shards</h2>
+<p><b>Replicas.</b> Most requests only read data (“show my orders”), and a few write it (“place an order”). So teams keep one <span class="term">primary</span> database that takes all writes and several <span class="term">read replicas</span>, copies that serve reads. Copies arrive a fraction of a second late (<span class="term">replication lag</span>). That is why an app sometimes shows “no orders yet” one second after you paid; the fix is to read your own fresh order from the primary. <b>Shards.</b> When writes outgrow one machine, the data is split across several databases by a key, each piece a <span class="term">shard</span>. Illustrative: at peak each order writes about 10 rows (the order, items, state changes, payment), so 600 orders a second is 6,000 writes a second; four shards take about 1,500 each. The key decides everything ({{REF:shards}}).</p>
+<figure>
+<svg class="d" viewBox="0 0 680 184" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="rp1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker></defs>
+ <text x="0" y="12" class="b">Replicas: one writer, many readers</text>
+ <rect x="0" y="62" width="84" height="40" rx="5" fill="#e3f0f5" stroke="#0b5d7a"/><text x="42" y="80" text-anchor="middle" class="b">Order</text><text x="42" y="94" text-anchor="middle" class="s">service</text>
+ <rect x="124" y="62" width="92" height="40" rx="5" fill="#dbe8f5" stroke="#2f6ea5" stroke-width="1.6"/><text x="170" y="80" text-anchor="middle" class="b">Primary</text><text x="170" y="94" text-anchor="middle" class="s">all writes</text>
+ <rect x="236" y="24" width="84" height="34" rx="5" fill="#f4f5f6" stroke="#9fb3c8"/><text x="278" y="45" text-anchor="middle">Replica 1</text>
+ <rect x="236" y="106" width="84" height="34" rx="5" fill="#f4f5f6" stroke="#9fb3c8"/><text x="278" y="127" text-anchor="middle">Replica 2</text>
+ <g stroke="#4a5563" stroke-width="1.3" fill="none"><line x1="84" y1="82" x2="122" y2="82" marker-end="url(#rp1)"/><path d="M216,74 L234,46" stroke-dasharray="4 3" marker-end="url(#rp1)"/><path d="M216,90 L234,118" stroke-dasharray="4 3" marker-end="url(#rp1)"/></g>
+ <text x="100" y="74" text-anchor="middle" class="s">write</text>
+ <text x="0" y="160" class="s">dashed: copies arrive ~0.1–1 s late, so read your</text><text x="0" y="174" class="s">own just-placed order from the primary</text>
+ <line x1="336" y1="4" x2="336" y2="180" stroke="#d9dee4"/>
+ <text x="350" y="12" class="b">Shards: split by which key?</text>
+ <text x="350" y="32" class="s">By customer ID: load spreads evenly</text>
+ <rect x="350" y="40" width="70" height="16" fill="#127a64"/><rect x="430" y="40" width="72" height="16" fill="#127a64"/><rect x="512" y="40" width="68" height="16" fill="#127a64"/><rect x="590" y="40" width="71" height="16" fill="#127a64"/>
+ <text x="385" y="52" text-anchor="middle" class="s w">shard 1</text><text x="466" y="52" text-anchor="middle" class="s w">shard 2</text><text x="546" y="52" text-anchor="middle" class="s w">shard 3</text><text x="625" y="52" text-anchor="middle" class="s w">shard 4</text>
+ <text x="350" y="72" class="s">…but “all orders of one restaurant” must ask all four</text>
+ <text x="350" y="102" class="s">By restaurant ID: a viral biryani place overloads one shard</text>
+ <rect x="350" y="110" width="70" height="16" fill="#9fb3c8"/><rect x="430" y="110" width="72" height="16" fill="#b93a32"/><rect x="512" y="110" width="30" height="16" fill="#9fb3c8"/><rect x="590" y="110" width="36" height="16" fill="#9fb3c8"/>
+ <text x="466" y="144" text-anchor="middle" class="b red">hot shard: slow for every</text><text x="466" y="158" text-anchor="middle" class="b red">restaurant stored on it</text>
+ <text x="350" y="178" class="s">No key is best for every question; choose by the busiest one.</text>
+</svg>
+<figcaption><b>{{FIG:shards}} · Scaling reads with replicas, and writes with shards.</b> Replicas trade a moment of staleness for many more reads. Shards trade simple queries for more writes, and the choice of key decides which queries become slow. <span class="src">Illustrative load; common patterns in large consumer apps.</span></figcaption>
+</figure>
+
+<h2>Caching: the answer you already have</h2>
+<p>A <span class="term">cache</span> is a small, very fast memory that keeps copies of answers the system is asked for often, like the chef’s counter that holds today’s most-ordered sauces instead of fetching them from the store room each time. Menus are ideal: read lakhs of times, changed a few times a day. The number that matters is the <span class="term">hit rate</span>, the share of requests the cache answers on its own.</p>
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 186" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="12" class="s">50,000 menu views a second at peak</text>
+ <text x="4" y="30" class="b">hit rate</text><text x="80" y="30" class="b">reads reaching the database</text>
+ <text x="4" y="56" class="b">80%</text><rect x="80" y="44" width="200" height="18" fill="#b93a32"/><text x="274" y="57" text-anchor="end" class="w b">10,000/s</text>
+ <text x="4" y="86" class="b">95%</text><rect x="80" y="74" width="50" height="18" fill="#e0a340"/><text x="136" y="87" class="b">2,500/s</text>
+ <text x="4" y="116" class="b">99%</text><rect x="80" y="104" width="10" height="18" fill="#127a64"/><text x="96" y="117" class="b">500/s</text>
+ <line x1="4" y1="132" x2="326" y2="132" stroke="#d9dee4"/>
+ <text x="4" y="150" class="s">average wait = hit rate × 1 ms + misses × 20 ms</text>
+ <text x="4" y="166">80%: 4.8 ms · 95%: 2.0 ms · 99%: 1.2 ms</text>
+ <text x="4" y="182" class="b red">80 → 95% cuts database load four times</text>
+</svg>
+<figcaption><b>{{FIG:cache}} · Cache hit-rate arithmetic.</b> Small changes near 100% make big differences to the database behind it. <span class="src">Illustrative load; typical memory and database response times.</span></figcaption>
+</figure>
+<div class="box brk" style="margin-top:0"><span class="lbl">When it breaks · The stale menu</span>
+<p class="small">The restaurant runs out of mutton biryani at 9:10 pm. The cache still shows it until its copy expires. Customers keep ordering a dish that doesn’t exist, and the restaurant rejects each order. The fixes are engineering choices with product costs: a short expiry (more database load), or clearing the cached copy the moment the restaurant marks the dish sold out (more moving parts). The PM decides which data may be a few minutes old (ratings, photos) and which must be live (stock, prices, fees).</p></div>
+</div>
+
+<p><b>Expiry, and the stampede.</b> Every cached copy has a <span class="term">TTL</span> (time to live), say 5 minutes, after which it is fetched again. On a big night, if a viral restaurant’s cached menu expires, the next 5,000 requests that second all miss at once and hit the database together: a <span class="term">cache stampede</span>. The usual fixes: let one request refresh the copy while the rest are served the old one for a second, and spread expiry times so that thousands of entries (every promo banner set to go live at 8 pm, say) don’t expire in the same second. For a PM this explains a familiar incident: “menus stopped loading exactly when the 8 pm offer went live.”</p>
+
+<h2>Queues: say “order placed” now, do the rest in the background</h2>
+<p>When Kavya pays, the app needs to do five things: save the order, find a rider, notify the restaurant, send an SMS, and create an invoice. If it did them one after another before answering, she would stare at a spinner for seconds, and one slow SMS provider could block the whole order. Instead the order service saves the order, puts an “order placed” message on a <span class="term">queue</span>, and answers her immediately. Separate programs (<span class="term">workers</span>) take messages off the queue and do the other jobs in their own time. This is <span class="term">asynchronous processing</span>. A kitchen works the same way: the waiter hangs your ticket on the rail and returns to the next table; the cooks pick tickets up as they free up.</p>
+<div class="box ex"><span class="lbl">Light maths · How many workers for the IPL final?</span>
+<p>Normal evening: 50 orders a second. Each order needs 0.2 seconds of background work. So 50 × 0.2 = <b>10 workers</b> busy on average; run about 15 to leave room. IPL final: 150 orders a second needs 30 busy workers. With only 20, the workers can clear 20 ÷ 0.2 = 100 orders a second, so the queue grows by 50 every second: <b>30,000 orders</b> waiting after ten minutes. Customers still see “order placed”, but their SMS, and worse, their rider search, run late. That is why rider dispatch gets its own queue and priority, ahead of invoices and analytics.</p></div>
+
+<h2>Live tracking: 75,000 updates a second</h2>
+<p>Illustrative: 3 lakh riders online at peak, each phone sending its location every 4 seconds, is 3,00,000 ÷ 4 = <b>75,000 writes a second</b>. Writing each into the SQL orders database would swamp it. So location pings take a separate path ({{REF:track}}): a queue, a fast in-memory store that keeps only each rider’s latest point, and a push to the customer’s app over a connection that stays open.</p>
+<figure>
+{{SVG:flow_track}}
+<figcaption><b>{{FIG:track}} · Behind the moving dot.</b> One ping becomes an overwrite in memory and two pushes to the customer. History, if needed for disputes or better arrival-time models, goes to cheap storage later. <span class="src">Author’s simplified design, typical of ride-hailing and delivery apps.</span></figcaption>
+</figure>
+<p><b>The PM’s dial.</b> Pinging every 2 seconds makes the dot smoother, doubles the writes to 1.5 lakh a second and drains riders’ phone batteries faster. Pinging every 10 seconds saves both, and the dot jumps across the map, which makes customers call support. Most apps settle between 3 and 5 seconds while a rider is on an order, and much less often while idle.</p>
+
+<h2>Finding the nearest free rider in milliseconds</h2>
+<p><b>A real situation.</b> Kavya’s biryani will be ready at 8:58, and dispatch must pick a rider now. Measuring the distance from the restaurant to all 3 lakh riders, for each of 50 new orders a second, is 1.5 crore calculations a second, mostly about riders on the other side of the city. Instead the map is cut into small grid cells, each with a short code; a common scheme, <span class="term">geohash</span>, gives nearby places codes that start the same way. The system keeps, in memory, a list of free riders in each cell. To find candidates it looks only in the restaurant’s cell and the 8 around it ({{REF:grid}}).</p>
+<figure>
+<svg class="d" viewBox="0 0 680 208" xmlns="http://www.w3.org/2000/svg">
+ <g stroke="#c3cad2" fill="#fff">
+  <rect x="0" y="4" width="40" height="40"/><rect x="40" y="4" width="40" height="40"/><rect x="80" y="4" width="40" height="40"/><rect x="120" y="4" width="40" height="40"/><rect x="160" y="4" width="40" height="40"/>
+  <rect x="0" y="44" width="40" height="40"/><rect x="40" y="44" width="40" height="40" fill="#e3f0f5"/><rect x="80" y="44" width="40" height="40" fill="#e3f0f5"/><rect x="120" y="44" width="40" height="40" fill="#e3f0f5"/><rect x="160" y="44" width="40" height="40"/>
+  <rect x="0" y="84" width="40" height="40"/><rect x="40" y="84" width="40" height="40" fill="#e3f0f5"/><rect x="80" y="84" width="40" height="40" fill="#fde7c8"/><rect x="120" y="84" width="40" height="40" fill="#e3f0f5"/><rect x="160" y="84" width="40" height="40"/>
+  <rect x="0" y="124" width="40" height="40"/><rect x="40" y="124" width="40" height="40" fill="#e3f0f5"/><rect x="80" y="124" width="40" height="40" fill="#e3f0f5"/><rect x="120" y="124" width="40" height="40" fill="#e3f0f5"/><rect x="160" y="124" width="40" height="40"/>
+  <rect x="0" y="164" width="40" height="40"/><rect x="40" y="164" width="40" height="40"/><rect x="80" y="164" width="40" height="40"/><rect x="120" y="164" width="40" height="40"/><rect x="160" y="164" width="40" height="40"/>
+ </g>
+ <rect x="94" y="98" width="12" height="12" fill="#c47f17"/>
+ <g fill="#127a64"><circle cx="58" cy="62" r="4"/><circle cx="124" cy="72" r="4"/><circle cx="112" cy="140" r="4"/><circle cx="54" cy="108" r="4"/><circle cx="146" cy="150" r="4"/><circle cx="96" cy="58" r="4"/></g>
+ <g fill="#9fb3c8"><circle cx="18" cy="24" r="4"/><circle cx="182" cy="30" r="4"/><circle cx="20" cy="186" r="4"/><circle cx="186" cy="182" r="4"/><circle cx="176" cy="100" r="4"/></g>
+ <line x1="130" y1="4" x2="160" y2="204" stroke="#2f6ea5" stroke-width="5" opacity="0.45"/><circle cx="151" cy="62" r="4" fill="#127a64"/><circle cx="151" cy="62" r="8" fill="none" stroke="#b93a32" stroke-width="1.5"/>
+ <text x="216" y="18" class="b">How dispatch narrows 3 lakh riders to a handful</text>
+ <rect x="216" y="28" width="12" height="12" fill="#c47f17"/><text x="234" y="38">the restaurant’s cell</text>
+ <rect x="216" y="46" width="12" height="12" fill="#e3f0f5" stroke="#c3cad2"/><text x="234" y="56">its 8 neighbours: search only these 9</text>
+ <circle cx="222" cy="70" r="4" fill="#127a64"/><text x="234" y="74">free riders found: about 7, not 3 lakh</text>
+ <circle cx="222" cy="88" r="4" fill="#9fb3c8"/><text x="234" y="92">riders outside the search: ignored</text>
+ <text x="216" y="118" class="b">Then rank the 7 candidates by</text>
+ <text x="216" y="134">① time by road, not straight-line distance (the blue river:</text>
+ <text x="230" y="148">the ringed rider is 600 m away, but 4 km by road)</text>
+ <text x="216" y="164">② can they batch this with an order they already carry?</text>
+ <text x="216" y="180">③ acceptance rate and rating  ④ fairness: who has waited longest</text>
+ <text x="216" y="200" class="s">No rider in 9 cells? Widen to the next ring, or raise the pay for this order.</text>
+</svg>
+<figcaption><b>{{FIG:grid}} · Nearby search with a grid.</b> Looking in 9 cells instead of the whole city turns crores of distance checks into a few dozen. The ranking rules after that are product choices: speed for the customer, fair earnings for riders, cost for the company. <span class="src">Illustrative; grid-based nearby search is standard in ride-hailing and delivery dispatch.</span></figcaption>
+</figure>
+<p><b>Matching one at a time, or in batches.</b> The simplest dispatch gives each order to the best free rider the moment it arrives. Many apps instead collect the orders of the last 20–30 seconds and match them all together, because the best rider for order A may be the only good rider for order B. Batch matching lowers total travel across the city, at the cost of a few seconds’ wait before any rider is chosen. When a PM asks “why did it take 40 seconds to assign a rider?”, this is often the answer, and on a Friday at 8:30 pm it is usually the right trade-off.</p>
+
+<div class="box brk"><span class="lbl">When it breaks · What goes wrong on a busy night</span>
+<ul class="small">
+<li><b>Queue backlog:</b> orders show “placed” but no rider is found for minutes (the worker maths above).</li>
+<li><b>Hot spot:</b> one viral restaurant gets 5,000 orders in an hour and the database machine holding its data overheats while others sit idle.</li>
+<li><b>Out-of-sync screens:</b> the payment succeeded but the order screen still says “pending”, because two stores haven’t caught up. Tell the user the truth (“payment received, confirming your order”) rather than a scary error.</li>
+<li><b>Stale cache:</b> sold-out dishes still orderable (see above).</li>
+</ul></div>
+
+<h2>Exact now, or correct soon?</h2>
+<p>Keeping every copy of every number identical everywhere, instantly, is slow and expensive. So engineers ask of each piece of data whether it needs <span class="term">strong consistency</span> (everyone sees the same, latest value, always) or can live with <span class="term">eventual consistency</span> (copies agree after a short delay). The answer is a product decision, because only the PM knows what a stale value costs the user.</p>
+<table class="tbl">
+<tr><th style="width:26%">Data</th><th style="width:18%">How fresh?</th><th>Why, in user terms</th></tr>
+<tr><td><b>Payment status, order state</b></td><td>Exact, now</td><td>A wrong “unpaid” means a double charge or no food</td></tr>
+<tr><td><b>Dish sold out, fees, prices</b></td><td>Within seconds</td><td>Stale means rejected orders, or a price that changes at checkout</td></tr>
+<tr><td><b>Rider’s dot on the map</b></td><td>A few seconds</td><td>Smoothness matters more than exactness</td></tr>
+<tr><td><b>Restaurant rating, review count</b></td><td>Minutes</td><td>Nobody notices 4.3 becoming 4.4 an hour late</td></tr>
+<tr><td><b>Dashboards, “orders today”</b></td><td>Minutes to hours</td><td>Used for decisions, not transactions</td></tr>
+</table>
+
+<div class="cols2">
+<div class="box key"><span class="lbl">Key idea · Decisions a PM makes here</span>
+<ul class="small">
+<li>Which data must be exact (money, orders) and which can be seconds or minutes old (menus, ratings, rider dots).</li>
+<li>Which order states allow a cancel, and who pays.</li>
+<li>Dispatch rules: speed for the customer against fair earnings for riders.</li>
+<li>What the user sees while background work is still running.</li>
+<li>Which background job gets priority when the queue backs up.</li>
+<li>How often to update live data, trading smoothness against cost and battery.</li>
+</ul></div>
+<div class="box int"><span class="lbl">In the interview</span>
+<p class="small">“How would you design order tracking?” Don’t draw twenty boxes. Say: “Orders and payments go in a SQL database because they must be exact. Rider locations, 75,000 a second at peak, go through a queue into an in-memory store and are pushed to the customer. Menus are cached. On a big night I’d protect rider dispatch first.”</p></div>
+</div>
+</section>

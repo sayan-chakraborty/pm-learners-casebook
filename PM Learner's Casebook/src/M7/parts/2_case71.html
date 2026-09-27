@@ -1,0 +1,77 @@
+<!-- ============ CASE 7.1 AI ASSISTANT FOR DOCTORS ============ -->
+<section class="page">
+<div class="kicker">Health, fitness &amp; learning · Cases</div>
+<div class="keep" style="break-after:avoid">
+<div class="casehead"><span class="t">Case 7.1 · An AI assistant for doctors in small clinics</span>
+ <span class="m"><span class="pill">Design</span><span>Medium</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, p. 50</span></span></div>
+<div class="try"><b>Try it first.</b> Picture the last time you or a parent waited at a neighbourhood clinic. What did the doctor spend the first two minutes doing? Now design an assistant that gives those minutes back, and decide what it must never do. Five minutes, out loud.</div>
+</div>
+
+{{CASE:B50}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Asked the goal first</b> and got a sharp edge: admin work only, no diagnosis.</li>
+ <li><b>Mapped the doctor’s morning</b> and found three moments where time is lost: the same questions, the folder of reports, the notes afterwards.</li>
+ <li><b>Kept the first version small</b> (intake, report summary, one-page brief) and named accuracy and doctor control as the risks.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Crossed the line it was given.</b> Flagging “abnormal values” and choosing “what matters from their history” is clinical judgement, not admin. The answer needed rules for what the assistant may say.</li>
+ <li><b>Never sized the prize or named the payer.</b> “Saving 1–2 minutes” was left as a feeling. Who pays: the clinic owner, who is usually the doctor.</li>
+ <li><b>No success metric</b> and no safety number, although “one wrong summary can break trust” was its own best point.</li>
+ <li><b>Didn’t check what exists.</b> ABHA-linked records already move lab reports without photos, and Indian clinic software already keeps digital records.</li>
+ <li><b>Missed language and consent.</b> A Nashik patient may answer best in Marathi; health data needs clear consent under the DPDP Act.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓</span> · Goal <span class="tk y">✓ admin, not diagnosis</span> · Who <span class="tk y">✓ doctor, patient, receptionist</span> · Today and the trigger <span class="tk n">✗ what software do these clinics use now?</span> · Edges <span class="tk n">✗ city, language, rules on health data</span>. Design add-on: legal limits <span class="tk n">✗</span>. The costly skip was the edges: “no diagnosis” is a legal and safety boundary, and the design had to be built around it.</p>
+
+<div class="box chk"><span class="lbl">Check · “A quiet helper that prepares the consultation, not one that tries to influence it” <span class="verdict v-over">Overstated</span></span>
+<p>Any summary influences. If the brief lists three of a patient’s six reports, the doctor reads those three. If it marks a creatinine value red and leaves a borderline potassium value plain, the doctor’s eye goes to the red. Choosing what to show is a medical choice. The honest claim is narrower: the assistant organises and points, the doctor decides, and anything it points at comes with the original report one tap away.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip71}}
+<figcaption><b>{{FIG:strip71}} · Six moves for “design an AI assistant for doctors”.</b> The fifth move, deciding what the AI may do alone, is what makes the design safe to ship. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>So this is for one- or two-doctor clinics, where the doctor is also the owner and the buyer. What do they use today: paper, or some clinic software? Which cities and languages? And “no diagnosis” means the assistant never says what is wrong or what to prescribe; I’ll treat that as a hard rule. I’ll assume Maharashtra, paper records, a receptionist with a tablet.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Yes. Mostly paper. Patients bring folders.</p></div></div>
+<p class="whynote">Why this move: the doctor-owner pays, so the pitch must be in his terms (time, patients seen). “Paper” tells you the input is photos of messy reports, which is where most errors will come from.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Size</div><p>Say a consultation takes about 5 minutes and 2.2 of them go on the same eight questions and on reading the folder ({{REF:clinicmins}}). If a one-page brief cuts that to 0.7 minutes, the saving is 1.5 minutes. 1.5 × 50 patients = 75 minutes a morning; × 25 days ≈ 31 hours a month. At a ₹400 fee, 15 extra patients a morning is ₹6,000 a day. So a ₹2,000-a-month subscription pays for itself in one morning (all illustrative).</p></div></div>
+<p class="whynote">Why this move: a number turns “the impact is huge” into a reason to pay. It also sets the design target: the brief must be readable in about 20 seconds, or the saving disappears.</p>
+<figure>{{SVG:clinicmins}}
+<figcaption><b>{{FIG:clinicmins}} · Where a consultation’s minutes go.</b> The examination and the decision stay the same length: the assistant only shortens the parts around them. <span class="src">Illustrative split of a 5-minute consultation.</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Who</div><p>I’d design for Dr Kulkarni, 52, a general physician in Nashik who sees 40 to 50 patients between 9 and 1. He won’t learn a dashboard, he reads English but many patients answer best in Marathi, and he has been burned by a wrong lab value before. The patient, Mrs Joshi, 58, is diabetic and brings six reports from three labs.</p></div></div>
+<p class="whynote">Why this move: a specific doctor gives you specific limits (no training time, bilingual patients, low trust), and each limit becomes a design rule.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Design</div><p>Four steps ({{REF:flow71}}). At the desk, the patient answers eight questions in her language, and either photographs her reports or scans the clinic’s QR code to share her ABHA-linked lab records. The assistant sorts reports by date, types up values and translates answers. The doctor gets one page: why she came today, current medicines, allergies, and values outside the normal range, each linked to the photo it came from. If a photo is too blurry, it says “couldn’t read, see original” instead of guessing.</p></div></div>
+<p class="whynote">Why this move: linking every value to its source lets the doctor check in one tap, which is what makes a busy doctor trust it. Saying “couldn’t read” is safer than a confident wrong number.</p>
+<figure>{{SVG:flow71}}
+<figcaption><b>{{FIG:flow71}} · Behind Mrs Joshi’s visit.</b> Records arrive two ways: typed from ABHA-linked labs (③–④) or as photos (②). The doctor’s corrections (⑩) go back into the assistant’s test set, so the same mistake is caught next time. <span class="src">Author’s design; ABDM Scan and Share and consent flow as described by the National Health Authority (2026).</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Risk tiers</div><p>Then I’d sort every feature by how much harm a mistake could do and how easily the doctor would spot it ({{REF:tiers}}). Sorting and typing it may do alone. Flagging values, listing medicines and allergy alerts it may only suggest, with the source shown. Naming an illness, suggesting a dose or explaining results to the patient, never. Auto-written notes after the visit wait for phase two, once we know how accurate the brief is.</p></div></div>
+<p class="whynote">Why this move: this is where the candidate’s “no diagnosis” rule becomes a design. Each tier has a different interface: the middle tier needs the source one tap away, the bottom tier needs no button at all.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> minutes saved per consultation, measured by time from calling the patient in to the next patient, in pilot clinics against similar clinics without it. <b>Inputs:</b> share of patients who finish the questions before being called; share of briefs opened. <b>Safety check (guardrail):</b> critical facts missed or wrong (an allergy, a current medicine, a dangerous value) in a weekly audit of 100 briefs checked by a doctor; the target is zero, and one miss stops the rollout. <b>Trade-off:</b> a fuller brief is safer but slower to read; every line has to earn its place.</p></div></div>
+<p class="whynote">Why this move: time saved is the reason to buy; missed facts are the reason to stop. Watching both stops the team from speeding up the brief by leaving things out.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>The doctor-owner pays, so the goal is his time: 1.5 minutes a patient, worth about ₹6,000 a morning. The one-page brief is built for a 20-second read, with every value linked to its source so he can trust it. Risk tiers turn “no diagnosis” into rules for each feature. The North Star (minutes saved) and the safety check (critical facts missed, target zero) pull in opposite directions, which is exactly the tension the design has to hold.</div>
+
+<div class="box fw flowbox"><span class="lbl">Framework · Human-in-the-loop and risk tiers</span>
+<p><span class="step">1 · The situation.</span>The assistant can read Mrs Joshi’s reports faster than Dr Kulkarni. But if it reads “sulfa allergy” as “penicillin allergy”, someone could be harmed. The question is not whether to use AI, but which jobs it may do alone, which it may only suggest, and which it must never touch.</p>
+<p><span class="step">2 · An everyday example.</span>A hospital pharmacy. A machine counts tablets into strips: if it miscounts, the pharmacist sees it at once. The pharmacist checks every prescription against the patient’s allergies before handing it over: the machine may help, but a person signs. Only the doctor decides what to prescribe: no machine does that, however clever.</p>
+<table class="tbl">
+<tr><th style="width:18%"></th><th style="width:38%">The hospital pharmacy</th><th>The clinic assistant</th></tr>
+<tr><td><b>Does it alone</b></td><td>Counting tablets into strips</td><td>Sorting reports by date; typing up answers; translating</td></tr>
+<tr><td><b>Suggests, a person confirms</b></td><td>Allergy check before handing over</td><td>Flagged values, medicine list, allergy alerts, with the source</td></tr>
+<tr><td><b>Never</b></td><td>Choosing the medicine</td><td>Naming the illness; suggesting a dose; advising the patient</td></tr>
+<tr><td><b>What decides the tier</b></td><td>How bad a mistake is, and whether the pharmacist would notice it</td><td>Harm if wrong, and whether the doctor can spot the error in a few seconds</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span><span class="term">Human-in-the-loop</span> means a person checks or approves what the AI produces before it has an effect. <span class="term">Risk tiers</span> decide how much checking each job needs. Two questions set the tier. <b>How much harm if it is wrong?</b> A misfiled report is a nuisance; a missed allergy can kill. <b>Can a person catch the mistake quickly and undo it?</b> A wrong date is obvious; a wrongly read decimal (1.6 or 16) is not. Low harm and easy to catch: the AI does it alone. High harm but checkable: the AI suggests, shows its evidence and a person confirms. High harm and hard to check, or outside what the product is allowed to do: never. Confidence moves a job down a tier: a value read from a blurry photo is shown as “couldn’t read”, even if the same field is normally trusted.</p>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this case):</p><ol class="usesteps"><li>List every job the assistant would do, down to small ones like “count pages”.</li><li>For each, write the worst realistic mistake and who it hurts.</li><li>Ask whether the doctor would notice that mistake in five seconds.</li><li>Place the job in a tier ({{REF:tiers}}) and design its screen for that tier: plain text, text with a source link, or nothing at all.</li><li>Decide what moves a job down a tier: a blurry photo, an unusual value, a new lab format.</li></ol><p class="slip"><b>Common slip</b> · putting a human in the loop who can’t see the evidence. If the doctor only sees “creatinine 1.6” and not the report it came from, his “approve” checks nothing.</p>
+<figure style="margin:3pt 0 4pt">{{SVG:tiers}}
+<figcaption><b>{{FIG:tiers}} · Three tiers for the clinic assistant.</b> Jobs move up the ladder as the harm from a mistake grows and the mistake gets harder to spot. The middle tier is where the design work is: evidence one tap away. <span class="src">Author’s framework, after common human-in-the-loop practice in clinical AI (2024–26).</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>Rubber-stamping. By the fortieth patient, a doctor taps “OK” on every brief without looking, because the assistant has been right 300 times in a row. The check has become a formality. Watch for it: if doctors almost never open the source or make a correction, that is a warning, not a success. Countermeasures: show the source beside risky values, make some values require a tap to confirm, and audit a sample every week. The opposite failure is also real: so many “please confirm” steps that the doctor stops using it, and the time saving is gone.</p>
+<p><span class="step">5 · In the interview.</span>“I’d sort each feature by harm if wrong and how fast the doctor could catch it: sorting reports it does alone, flagged values it suggests with the source attached, and diagnosis or doses it never touches.”</p>
+</div>
+</section>

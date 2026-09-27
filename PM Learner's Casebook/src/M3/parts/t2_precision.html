@@ -1,0 +1,67 @@
+<!-- ============ TECHNOLOGY: PRECISION, RECALL, THRESHOLDS ============ -->
+<h1 style="margin-top:14pt">Precision, recall and the threshold dial</h1>
+<p class="lede">Some customers abuse returns: they send back a used item, or a cheap copy instead of the original. A shopping app trains a model that gives every return request a <b>fraud score</b> from 0 to 1. Somebody has to decide the score above which a return is held for inspection instead of refunded instantly. That somebody is usually the PM, and the choice decides how many honest customers get annoyed and how many cheats get paid.</p>
+
+<h2>Four boxes: the confusion matrix</h2>
+<p>Take 10,000 return requests, of which 200 (2%) are really fraudulent. At a threshold of 0.35 the model flags 300. Every request lands in one of four boxes ({{REF:cm}}). <b>True positives</b>: fraud, correctly flagged (150). <b>False positives</b>: honest customers wrongly flagged (150). <b>False negatives</b>: fraud the model missed (50). <b>True negatives</b>: honest, correctly let through (9,650).</p>
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 214" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <text x="200" y="14" text-anchor="middle" class="b">What really happened</text>
+  <text x="140" y="32" text-anchor="middle" class="s">fraud (200)</text><text x="260" y="32" text-anchor="middle" class="s">honest (9,800)</text>
+  <text x="14" y="90" text-anchor="middle" class="b" transform="rotate(-90 14 90)">Model says</text>
+  <text x="44" y="70" text-anchor="middle" class="s">flag</text><text x="44" y="84" text-anchor="middle" class="s">(300)</text>
+  <text x="44" y="146" text-anchor="middle" class="s">let</text><text x="44" y="160" text-anchor="middle" class="s">through</text>
+  <rect x="80" y="40" width="120" height="70" fill="#e7f4f0" stroke="#127a64"/><text x="140" y="68" text-anchor="middle" class="b grn t13">150</text><text x="140" y="86" text-anchor="middle" class="s">true positive</text><text x="140" y="100" text-anchor="middle" class="s">cheat caught</text>
+  <rect x="200" y="40" width="120" height="70" fill="#fcecea" stroke="#b93a32"/><text x="260" y="68" text-anchor="middle" class="b red t13">150</text><text x="260" y="86" text-anchor="middle" class="s">false positive</text><text x="260" y="100" text-anchor="middle" class="s">honest, annoyed</text>
+  <rect x="80" y="110" width="120" height="70" fill="#fbf4e6" stroke="#c47f17"/><text x="140" y="138" text-anchor="middle" class="b amb t13">50</text><text x="140" y="156" text-anchor="middle" class="s">false negative</text><text x="140" y="170" text-anchor="middle" class="s">cheat paid</text>
+  <rect x="200" y="110" width="120" height="70" fill="#eef0f2" stroke="#9aa3ad"/><text x="260" y="138" text-anchor="middle" class="b t13">9,650</text><text x="260" y="156" text-anchor="middle" class="s">true negative</text><text x="260" y="170" text-anchor="middle" class="s">honest, fine</text>
+  <text x="80" y="200" class="s">precision = 150 ÷ 300 = 50% (read across the top row)</text>
+  <text x="80" y="212" class="s">recall = 150 ÷ 200 = 75% (read down the left column)</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:cm}} · The confusion matrix at threshold 0.35.</b> Precision reads the top row; recall reads the left column. <span class="src">Illustrative counts.</span></figcaption>
+</figure>
+<div>
+<p><span class="term">Precision</span>: of the returns we flagged, how many were really fraud? 150 ÷ 300 = <b>50%</b>. Half the people we inconvenienced were honest.</p>
+<p><span class="term">Recall</span>: of all the fraud that happened, how much did we catch? 150 ÷ 200 = <b>75%</b>. A quarter of the cheats still got their refund.</p>
+<p><b>The accuracy trap.</b> Accuracy counts all correct answers: (150 + 9,650) ÷ 10,000 = 98%. Impressive? A “model” that never flags anything is also 98% accurate, because 98% of requests are honest. When the thing you are hunting is rare, accuracy is useless; ask for precision and recall.</p>
+<p class="small"><b>F1 score</b> combines the two into one number (their harmonic mean): here 2 × 0.5 × 0.75 ÷ 1.25 = 0.6. Handy for comparing models, but it hides which mistake you are making.</p>
+</div>
+</div>
+
+<h2>The dial: one threshold, two kinds of mistake</h2>
+<p>Lower the threshold and the model flags more: it catches more cheats (recall up) but annoys more honest customers (precision down). Raise it and the opposite happens. There is no setting that is best at both ({{REF:dial}}). The right setting depends on <b>what each mistake costs</b>. Say a missed fraud costs ₹1,000 (the refund plus the lost item) and wrongly holding an honest customer’s refund costs ₹300 (support calls, and some of them shop less afterwards).</p>
+<table class="tbl">
+<tr><th>Threshold</th><th class="num">Flagged</th><th class="num">Cheats caught</th><th class="num">Precision</th><th class="num">Recall</th><th class="num">Missed × ₹1,000</th><th class="num">False alarms × ₹300</th><th class="num">Total cost</th></tr>
+<tr><td>0.20 (strict)</td><td class="num">600</td><td class="num">185</td><td class="num">31%</td><td class="num">92%</td><td class="num">₹15,000</td><td class="num">₹1,24,500</td><td class="num">₹1,39,500</td></tr>
+<tr><td><b>0.35</b></td><td class="num">300</td><td class="num">150</td><td class="num">50%</td><td class="num">75%</td><td class="num">₹50,000</td><td class="num">₹45,000</td><td class="num"><b>₹95,000</b></td></tr>
+<tr><td>0.50</td><td class="num">180</td><td class="num">120</td><td class="num">67%</td><td class="num">60%</td><td class="num">₹80,000</td><td class="num">₹18,000</td><td class="num">₹98,000</td></tr>
+<tr><td>0.65</td><td class="num">120</td><td class="num">100</td><td class="num">83%</td><td class="num">50%</td><td class="num">₹1,00,000</td><td class="num">₹6,000</td><td class="num">₹1,06,000</td></tr>
+<tr><td>0.80 (lenient)</td><td class="num">60</td><td class="num">55</td><td class="num">92%</td><td class="num">27%</td><td class="num">₹1,45,000</td><td class="num">₹1,500</td><td class="num">₹1,46,500</td></tr>
+</table>
+<figure>
+<svg class="d" viewBox="0 0 680 170" xmlns="http://www.w3.org/2000/svg">
+ <!-- x = 60 + (t-0.2)*800 ; y = 150 - pct*1.3 -->
+ <line x1="60" y1="150" x2="560" y2="150" stroke="#4a5563"/><line x1="60" y1="14" x2="60" y2="150" stroke="#4a5563"/>
+ <text x="54" y="154" text-anchor="end" class="s">0%</text><text x="54" y="24" text-anchor="end" class="s">100%</text>
+ <text x="60" y="166" text-anchor="middle" class="s">0.20</text><text x="180" y="166" text-anchor="middle" class="s">0.35</text><text x="300" y="166" text-anchor="middle" class="s">0.50</text><text x="420" y="166" text-anchor="middle" class="s">0.65</text><text x="540" y="166" text-anchor="middle" class="s">0.80</text>
+ <polyline points="60,109.7 180,85 300,62.9 420,42.1 540,30.4" fill="none" stroke="#127a64" stroke-width="2.6"/>
+ <polyline points="60,30.4 180,52.5 300,72 420,85 540,114.9" fill="none" stroke="#c47f17" stroke-width="2.6"/>
+ <text x="546" y="26" class="b grn">precision</text><text x="546" y="118" class="b amb">recall</text>
+ <line x1="180" y1="14" x2="180" y2="150" stroke="#3e4fb8" stroke-dasharray="4 3"/>
+ <text x="186" y="24" class="b fwc">cheapest setting: 0.35</text>
+ <text x="66" y="66" class="s halo">strict: catches almost all</text><text x="66" y="80" class="s halo">cheats, annoys many</text>
+ <rect x="580" y="30" width="100" height="100" rx="6" fill="#eef0fb" stroke="#3e4fb8"/>
+ <text x="590" y="50" class="b fwc">Add a human</text><text x="590" y="66" class="s">check: a false</text><text x="590" y="80" class="s">alarm now costs</text><text x="590" y="94" class="s">₹20, and the best</text><text x="590" y="108" class="s">setting moves to</text><text x="590" y="122" class="b fwc">0.20</text>
+</svg>
+<figcaption><b>{{FIG:dial}} · The threshold dial.</b> Precision rises and recall falls as the threshold goes up. The cheapest point depends on what each mistake costs, not on the model; change the costs (add a quick human review) and the best setting moves. <span class="src">Illustrative model and costs; same numbers as the table.</span></figcaption>
+</figure>
+<div class="cols2">
+<div class="box brk"><span class="lbl">When it breaks</span>
+<p class="small">The labels arrive late: you learn a return was fraudulent only after the warehouse inspects it, weeks later, so today’s precision is a guess. Cheats adapt: once a pattern is blocked they change it, and recall quietly drops. And one threshold for everyone can be unfair: a new customer in a small town with one odd return may be flagged far more often than a regular in a metro.</p></div>
+<div class="box int"><span class="lbl">In the interview</span>
+<p class="small">“Accuracy is misleading when fraud is 2% of cases. I’d look at precision and recall, put a rupee cost on each kind of mistake, and set the threshold where the total cost is lowest. For costly false alarms I’d add a human check instead of blocking outright.”</p></div>
+</div>
+<p><b>PM decisions it drives.</b> Which mistake is worse for this product (a spam filter hiding a real email, or a fraud filter letting a cheat through)? Whether flagged cases get blocked, slowed or sent to a person. Different thresholds for different groups, such as new vs long-standing customers, with a check that the difference is fair. And what to watch after launch: precision on reviewed cases, complaints from wrongly flagged customers, fraud losses.</p>

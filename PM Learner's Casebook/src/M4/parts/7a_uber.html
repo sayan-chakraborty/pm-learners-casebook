@@ -1,0 +1,44 @@
+<!-- ============ TEARDOWNS: UBER ============ -->
+<section class="page">
+<div class="kicker">Mobility, maps &amp; travel · Product teardowns</div>
+<h1>Uber: a pricing and matching engine that happens to move cars</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Ananya, from the cold open, finally gets a car. She types Jayanagar; the app shows an upfront fare of ₹610 at 1.8× surge before she commits. She confirms. In the next two seconds Uber’s dispatch ranks nearby drivers by how soon each could reach her, and offers the ride to Suresh, 1.2 km away, who sees the drop area and accepts. Ananya gets his name, plate and a four-digit PIN. When he arrives she reads out the PIN, the trip starts, and at the end ₹610 leaves her UPI account. Suresh sees ₹488 in his weekly payout ({{REF:ub-walk}}).</p>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Upfront fare</td><td>“Will the meter cheat me in traffic?”</td><td>A fixed price before booking; Uber, not the rider, carries the risk of a jam</td><td>Booking conversion; fare disputes</td></tr>
+<tr><td>Ride PIN</td><td>“Is this the right car?”</td><td>The trip starts only when the rider’s PIN is entered; built for India first</td><td>Wrong pickups; safety reports</td></tr>
+<tr><td>Auto, Moto, Go, Premier, Intercity</td><td>“A cab is too expensive for 3 km”</td><td>A price point for every trip; autos moved to a driver subscription in 2025</td><td>Trips per rider; share of short trips</td></tr>
+<tr><td>Share trip, SOS</td><td>“My family worries at night”</td><td>Live location to contacts; a safety line inside the app</td><td>Night-time trips; women riders</td></tr>
+<tr><td>Uber One, Uber for Business</td><td>“I ride often”; companies need billing</td><td>Membership perks; central invoices for employees</td><td>Frequency; corporate trips</td></tr>
+</table>
+<figure>{{SVG:flow_uber}}
+<figcaption><b>{{FIG:ub-walk}} · Behind Ananya’s ride.</b> Pricing (④) and matching (⑦) happen before any car moves. The surge fare earns Uber more, but its main job is to pull drivers into Bellandur. <span class="src">Simplified from Uber’s published rider and driver flows; amounts illustrative; 80% driver share per India’s 2025 aggregator guidelines.</span></figcaption>
+</figure>
+
+<h3>Core loop: liquidity</h3>
+<p>Uber’s whole strategy is one loop ({{REF:ub-loop}}). More riders in an area mean drivers earn more per hour, so more drivers log on. More drivers mean a car is always close, so pickups are quicker and drivers spend less time driving empty. Less empty driving means Uber can hold fares steady and still pay drivers well, which brings more riders. The loop is <b>local</b>: winning Mumbai does nothing for Indore. That is why rivals can attack city by city.</p>
+<figure>{{SVG:loop_uber}}
+<figcaption><b>{{FIG:ub-loop}} · The liquidity loop.</b> Density is the product. A city where Uber has twice the drivers per square km has shorter ETAs and lower costs per trip. <span class="src">Author’s diagram, after Uber’s published growth logic.</span></figcaption>
+</figure>
+
+<h3>Business model, with numbers</h3>
+<p>Uber doesn’t report India separately. Worldwide, in April–June 2026, riders and eaters paid <b>$58.0 bn</b> (+22%); Uber kept <b>$14.2 bn</b> as revenue and earned <b>$2.8 bn</b> of adjusted EBITDA, on 3.9 bn trips and 208 mn monthly users ({{REF:ub-earn}}). In India it runs two models side by side: commission on cabs (capped at 20% for driver-owned cars under the 2025 rules) and a daily subscription for autos since February 2025.</p>
+<figure>{{SVG:uber_earn}}
+<figcaption><b>{{FIG:ub-earn}} · From bookings to profit, one quarter.</b> Of every $100 riders pay, Uber keeps about $24 as revenue and about $5 as adjusted EBITDA; the rest goes to drivers, couriers and restaurants. <span class="src">Uber Q2 2026 results (August 2026).</span></figcaption>
+</figure>
+<p><b>Moat, in plain words.</b> Density in each big city, which makes pickups faster than a smaller rival can offer. Global pricing, mapping and safety technology that a local player can’t afford to build. And a brand that corporate travel desks trust. The weakness: drivers and riders both use several apps, so the moat must be re-earned every evening.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Completed trips per week.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Pickup ETA · request-to-completion rate · drivers online at peak · utilisation.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Driver and rider cancellations · safety incidents per million trips · driver earnings per hour · surge share.</div>
+</div>
+<p><b>2025–26 moves.</b> Subscription for auto drivers (February 2025). Compliance with the July 2025 guidelines: 80% to drivers on own vehicles, surge up to 2× base. Bike taxis restarting in Karnataka after the January 2026 court order. Metro tickets and bus shuttles inside the app in some cities, to own more of the commute.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Market leader in cabs and autos</li><li>Profitable worldwide, so it can outspend locals</li><li>Trusted by companies and airport travellers</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Priced above Rapido and Namma Yatri for autos and bikes</li><li>Cancellations and surge anger riders at peaks</li><li>Rules on fares and fees now vary state by state</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Office-goers pay surge on the same route at 9 am every day <span class="arrow">→</span> a weekly commute pass: fixed route and time, a fixed price below average surge, guaranteed pickup <span class="arrow">→</span> weekday trips per pass holder; driver utilisation at peak.</p>
+<p class="idea"><b>2.</b> Drivers cancel trips that end far away <span class="arrow">→</span> a return premium on edge trips, offered first to drivers heading that way <span class="arrow">→</span> completed trips per request on edge trips.</p>
+<p class="idea"><b>3.</b> Families don’t trust bike taxis for teenagers <span class="arrow">→</span> a “trusted rider” mode: verified drivers with top ratings, live sharing to a parent, no cash <span class="arrow">→</span> share of under-21 riders; safety reports.</p>

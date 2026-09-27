@@ -1,0 +1,90 @@
+<!-- ============ CASE 4.2 IMPROVE GOOGLE MAPS ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 4.2 · Improve Google Maps</span>
+ <span class="m"><span class="pill">Product improvement</span><span>Medium</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, pp. 114–115</span></span></div>
+<div class="try"><b>Try it first.</b> Open Maps and look at the last five things you did in it. How many were “take me from A to B”, and how many were “help me decide where to go”? Which kind would you want more of, if you ran Maps? Five minutes, out loud.</div>
+</div>
+
+{{CASE:B114}}
+
+<figure>{{SVG:journey}}
+<figcaption><b>{{FIG:journey}} · A tourist’s journey through Maps, as the candidate drew it.</b> Three of the four pain points bite before and during exploring, not while navigating, which is where Maps is already strong. <span class="src">Redrawn from the original, IIM B <i>Sigma PM Casebook 2026–27</i>, p. 114; pain-point placement is the author’s.</span></figcaption>
+</figure>
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Asked the goal and the platform</b> before anything else, and got two useful constraints: engagement, Android first.</li>
+ <li><b>Chose a segment with a reason</b>: commuters know their routes, drivers are well served, tourists depend on Maps in a new city.</li>
+ <li><b>Mapped the journey</b> and placed pain points on it, then grouped three into one feature.</li>
+ <li><b>Made money without charging users</b>: a commission on bookings, and saw the risk to existing category chips.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Never defined engagement.</b> Tourists use Maps for a few days a year; “more engagement” needs a measurable meaning.</li>
+ <li><b>Didn’t check what exists.</b> Maps already has Explore, saved lists and, since March 2026 in India, Ask Maps: a Gemini-powered way to ask “what should I do here for two days?”</li>
+ <li><b>Metrics are counts, not outcomes.</b> “Users who generate an itinerary” rises even if nobody follows it. No guardrail at all.</li>
+ <li><b>Commission can bend the plan.</b> If Maps earns on bookings, will the itinerary favour places that pay? Trust is Maps’ most valuable asset.</li>
+ <li><b>No cheap test</b> before building a full planner.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk n">✗ which part of Maps</span> · Goal <span class="tk y">✓ engagement</span> · Who <span class="tk y">✓ tourists</span> · Today and the trigger <span class="tk n">✗ existing features, why now</span> · Edges <span class="tk y">✓ Android first</span>. Skipping “today” is why the answer designed a planner that overlaps with Ask Maps and lists; one question would have turned it into an improvement of what is there.</p>
+
+<div class="box chk"><span class="lbl">Check · “Delivery drivers… Google Maps is currently serving that need very well” <span class="verdict v-over">Overstated</span></span>
+<p>Getting from A to B is well served. Finding the exact door in India is not: addresses are often descriptive (“behind the temple, second lane”) and pins are frequently wrong. Delivery and cab apps build their own address fixes, and in 2024 Google itself added landmark-based address descriptions in India. Heavy daily users with a hard last 100 metres are a strong segment, not a solved one.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip42}}
+<figcaption><b>{{FIG:strip42}} · An improvement answer built as a tree.</b> One outcome at the top; every idea hangs from a user need. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>By engagement, do we mean more days people open Maps, or Maps used for deciding where to go, not only for directions? And what should I take as given: Explore, saved lists and Ask Maps already exist. I’ll assume India, Android first.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Planning and discovery, not just directions. Yes, those exist.</p></div></div>
+<p class="whynote">Why this move: now the answer improves what exists, and success means Maps being used to <i>decide</i>, which is where the money (local ads, bookings) is.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Outcome</div><p>I’ll keep tourists, including domestic ones: India records about 250 crore domestic tourist visits a year. One outcome: the share of trips outside a user’s home city where they save or follow a plan in Maps. Illustrative: 10 crore users × 2 trips a year = 20 crore trips. Moving planned trips from 8% to 15% = 20 crore × 7% = 1.4 crore more trips planned in Maps.</p></div></div>
+<p class="whynote">Why this move: a single outcome makes every later idea comparable; the sizing shows the prize is worth a team.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Opportunities</div><p>From user research I’d expect four needs, written in the tourist’s words ({{REF:ost}}): “I don’t know what’s worth it in two days”; “is this a tourist trap, will I be overcharged?”; “queues and tickets everywhere”; “I can’t read the menu or signs”. The first two affect almost every short trip; I’d start there.</p></div></div>
+<p class="whynote">Why this move: needs come before features. The candidate went from pain to a “Travel Planner” in one step, and never compared it with other ways to meet the same need.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Solutions</div><p>For “what’s worth it”: a <b>Plan my day</b> card built from places I saved, open hours and travel time, and Ask Maps prompts for trips. For “tourist trap”: a <b>Locals love this</b> badge, based on the share of reviews from people living within 20 km, and a price range from recent visitors. The badge is cheap to build and helps every tourist, even those who never plan.</p></div></div>
+<p class="whynote">Why this move: two or three solutions per need let you pick on cost and reach, instead of defending your first idea.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Test cheaply</div><p>A <b>fake door</b>: show a “Plan my day” button to 1% of users who search in a new city; count taps before building anything. And the badge on places in two cities, compared with two similar cities without it: do saves and visits rise?</p></div></div>
+<p class="whynote">Why this move: the riskiest assumption is that tourists want a ready plan at all. A button that measures taps answers that in a week.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> share of trips with a plan saved and at least two stops visited. The HEART table below gives the supporting signals. <b>Safety checks (guardrails):</b> share of plan stops that are paying partners, so bookings never bend the plan; complaints about closed or wrong places. <b>Trade-off:</b> bookings bring revenue but can cost trust. <b>Next time:</b> tackle tickets and queues through partners.</p></div></div>
+<p class="whynote">Why this move: counting visits, not plans created, rewards plans people actually use; the partner-share guardrail protects the thing Maps can’t afford to lose.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>Defining engagement as “Maps used to decide” set one outcome: trips planned in Maps. The tree hung every idea from a tourist’s need, the fake door tests the biggest assumption before building, and the guardrail on paid stops keeps the new revenue from eating the trust that makes Maps worth planning with.</div>
+
+<div class="box fw"><span class="lbl">Framework · Opportunity Solution Tree</span>
+<p><span class="step">1 · The situation.</span>The candidate jumped from pain points to one feature. There was no way to see other solutions, or to tell which need mattered most.</p>
+<p><span class="step">2 · An everyday example.</span>You want to lose 5 kg by March. You notice three reasons you haven’t: late-night snacking, no time to exercise, four cups of sweet tea a day. For each, there are a few fixes: keep no snacks at home, walk during phone calls, cut sugar to half a spoon. You try one for a week and weigh yourself. That is a tree: one goal, the reasons, the fixes, the tests.</p>
+<table class="tbl">
+<tr><th style="width:18%">Level</th><th style="width:38%">Losing 5 kg</th><th>Google Maps for tourists</th></tr>
+<tr><td><b>Outcome</b></td><td>5 kg lighter by March</td><td>15% of trips planned in Maps</td></tr>
+<tr><td><b>Opportunities</b></td><td>Night snacking; no time to exercise; sweet tea</td><td>“What’s worth it?”; “tourist trap?”; tickets; language</td></tr>
+<tr><td><b>Solutions</b></td><td>No snacks at home; walk on calls; half sugar</td><td>Plan my day; Locals love this badge; price range</td></tr>
+<tr><td><b>Experiments</b></td><td>One week without evening snacks</td><td>Fake-door button; badge in two cities</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>Teresa Torres’s <span class="term">Opportunity Solution Tree</span> (from <i>Continuous Discovery Habits</i>, 2021) has four levels. The <b>outcome</b> is one measurable change the team owns. <b>Opportunities</b> are user needs, pains or wishes, found in interviews and written in the user’s words. <b>Solutions</b> are ideas that could meet an opportunity, several per opportunity. <b>Experiments</b> are the cheapest ways to test whether a solution works. You work top-down, pick one opportunity at a time, and compare solutions side by side ({{REF:ost}}).</p>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this case):</p><ol class="usesteps"><li>Write one outcome with a number: trips planned in Maps, 8% to 15%.</li><li>List the opportunities from what tourists say, never as features: “I don’t know what’s worth it in two days”.</li><li>Pick the one or two that most tourists feel on most trips.</li><li>Under each, write at least two solutions, and one that is cheap.</li><li>Test the riskiest solution with the cheapest experiment, then update the tree.</li></ol><p class="slip"><b>Common slip</b> · writing a feature as an opportunity (“users need a travel planner”). A need never names the solution; if it does, you have skipped a level.</p>
+<figure style="margin:3pt 0 4pt">{{SVG:ost}}
+<figcaption><b>{{FIG:ost}} · An Opportunity Solution Tree for tourists in Maps.</b> Two opportunities are worked on, two are parked on purpose. Each experiment tests a solution before anyone builds it. <span class="src">Structure after Torres (2021); content and numbers illustrative.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>A tree built in a meeting room is a list of guesses drawn nicely. If the opportunities didn’t come from real tourists, the tree only makes your first idea look researched. It can also grow into a backlog of fifty boxes; prune it to what you will work on this quarter.</p>
+<p><span class="step">5 · In the interview.</span>“I’ll fix one outcome, list what tourists struggle with in their words, and only then compare two or three ideas for the biggest need.”</p>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · HEART metrics</span>
+<p><span class="step">1 · The situation.</span>The candidate measured users who make itineraries and bookings. Both can rise while tourists find the plans useless.</p>
+<p><span class="step">2 · An everyday example.</span>A restaurant adds a new biryani. The owner asks five questions: do diners say it’s good (happiness)? Do regulars order it often (engagement)? Do new customers try it (adoption)? Do they order it again next month (retention)? Does it reach the table hot, in 15 minutes (task success)?</p>
+<p><span class="step">3 · The framework.</span>Google’s <span class="term">HEART</span> framework (Rodden, Hutchinson and Fu, 2010) scores a feature on <b>Happiness, Engagement, Adoption, Retention and Task success</b>. For each letter you write a <b>goal</b>, a <b>signal</b> (what users do or say that shows it) and a <b>metric</b> (the number you track). Pick the two or three letters that matter for this feature; you rarely need all five.</p>
+<table class="tbl">
+<tr><th style="width:13%">Letter</th><th style="width:24%">The biryani (everyday)</th><th style="width:22%">Plan my day: goal</th><th>Signal → metric</th></tr>
+<tr><td><b>Happiness</b></td><td>Diners say it’s good</td><td>Tourists trust the plan</td><td>Rating after the day → share rating 4 or 5</td></tr>
+<tr><td><b>Engagement</b></td><td>Regulars order it often</td><td>Plans guide the day</td><td>Stops visited from the plan → stops per trip day</td></tr>
+<tr><td><b>Adoption</b></td><td>New customers try it</td><td>Tourists find it</td><td>First plan opened → % of trips with a plan opened</td></tr>
+<tr><td><b>Retention</b></td><td>Ordered again next month</td><td>A trip habit</td><td>Used again next trip → % using it on 2 trips</td></tr>
+<tr><td><b>Task success</b></td><td>Hot, on the table in 15 min</td><td>Works on the ground</td><td>Stops open and reachable → % visited as planned</td></tr>
+</table>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this case):</p><ol class="usesteps"><li>Name the feature: Plan my day.</li><li>For each letter, ask whether it matters here. All five do, but task success and retention matter most.</li><li>Write goal, then signal, then metric, in that order, so the metric follows from the goal.</li><li>Choose one as the headline (task success) and add a guardrail from outside HEART (paid-partner share).</li></ol><p class="slip"><b>Common slip</b> · starting from the metrics you already log. Goals first; otherwise HEART just relabels your dashboard.</p>
+<p><span class="step">4 · When it misleads.</span>HEART measures a feature, not the business. A plan feature can score well on all five while it quietly moves bookings to partners who pay the most. Add the business and trust guardrails yourself.</p>
+<p><span class="step">5 · In the interview.</span>“For this feature, I care most about task success: did the plan actually work on the ground? I’d back it with retention on the next trip.”</p>
+</div>

@@ -1,0 +1,106 @@
+<!-- ============ CASE 2.1 VENDOR MANAGEMENT ============ -->
+<section class="page">
+<div class="kicker">Food delivery &amp; quick commerce · Cases</div>
+<div class="keep" style="break-after:avoid">
+<div class="casehead"><span class="t">Case 2.1 · A vendor platform for quick commerce</span>
+ <span class="m"><span class="pill">Product design</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, pp. 269–271</span></span></div>
+<div class="try"><b>Try it first.</b> A dark store runs out of Amul butter at 8 pm. Trace back the chain of messages between the app’s buyers and Amul that should have prevented it. Where would a vendor platform help most?</div>
+</div>
+
+{{CASE:A269}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Three sharp clarifying questions.</b> Who uses it, replace or integrate, and which goal. “A layer over SAP, not a new ERP” shaped everything after it.</li>
+ <li><b>Stated the plan</b> and got a yes before starting.</li>
+ <li><b>Chose two of four users, with a reason</b>: procurement managers and vendors drive availability.</li>
+ <li><b>Ordered features by dependency.</b> Scorecards need data, so they come last. That is real product sense.</li>
+ <li><b>An explicit “leave out” list.</b> Saying what you won’t build is half of prioritising.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Named RICE but scored nothing.</b> No reach, no impact numbers. Say “I’ll order these by dependency” instead, or use the numbers.</li>
+ <li><b>Treated all vendors as one.</b> A national brand’s key-account team on EDI and a local bakery taking orders by email need different products. Most vendors by count are the small ones.</li>
+ <li><b>Never sized the pain.</b> How many orders to suppliers go wrong, and what does a missing item cost a dark store?</li>
+ <li><b>Twenty metrics, no guardrail</b>, and a North Star that can improve while shelves stay empty.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓</span> · Goal <span class="tk y">✓</span> · Who <span class="tk y">✓</span> · Today and the trigger <span class="tk y">✓ (replace or integrate)</span> · Edges: how many vendors, which cities <span class="tk n">✗ skipped</span>. Skipping the edges is why the vendor mix never came up.</p>
+
+<div class="box chk"><span class="lbl">Check · “North Star: procurement cycle time” <span class="verdict v-over">Overstated</span></span>
+<p>A faster purchase order (PO: the buyer’s formal order to a supplier) helps little if the truck arrives with 70% of what was ordered. Quick commerce loses a sale when an item is missing at the one store near the customer. The metric closest to that is <span class="term">OTIF</span>: the share of ordered lines delivered <b>on time and in full</b>, backed by the item fill rate at the store. Cycle time is a good input metric that feeds it.</p></div>
+<div class="box chk"><span class="lbl">Check · “EDI has lower reach, as not all vendors use it” <span class="verdict v-dir">Directionally right</span></span>
+<p><span class="term">EDI</span> (electronic data interchange) is a standard format in which two companies’ computers exchange orders and invoices directly. Large FMCG brands use it with modern retailers; local dairies and bakeries mostly don’t. So EDI covers few vendors but a large share of purchase value. Measure reach in rupees of purchases, not number of vendors, and EDI jumps up the list.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">
+<svg class="d" viewBox="0 0 680 62" xmlns="http://www.w3.org/2000/svg">
+ <g class="c">
+  <polygon points="0,4 106,4 116,31 106,58 0,58" fill="#127a64"/><text x="54" y="26" text-anchor="middle" class="b w">① Clarify</text><text x="54" y="44" text-anchor="middle" class="w">vendor mix, pain</text>
+  <polygon points="113,4 219,4 229,31 219,58 113,58 123,31" fill="#1d8a73"/><text x="170" y="26" text-anchor="middle" class="b w">② Users</text><text x="170" y="44" text-anchor="middle" class="w">big brand vs bakery</text>
+  <polygon points="226,4 332,4 342,31 332,58 226,58 236,31" fill="#2a9a82"/><text x="283" y="26" text-anchor="middle" class="b w">③ Workflow</text><text x="283" y="44" text-anchor="middle" class="w">where it breaks</text>
+  <polygon points="339,4 445,4 455,31 445,58 339,58 349,31" fill="#0b5d7a"/><text x="396" y="26" text-anchor="middle" class="b w">④ Size it</text><text x="396" y="44" text-anchor="middle" class="w">lines short a day</text>
+  <polygon points="452,4 558,4 568,31 558,58 452,58 462,31" fill="#3e4fb8"/><text x="509" y="26" text-anchor="middle" class="b w">⑤ Prioritise</text><text x="509" y="44" text-anchor="middle" class="w">impact vs effort</text>
+  <polygon points="565,4 680,4 680,58 565,58 575,31" fill="#7c3aa6"/><text x="624" y="26" text-anchor="middle" class="b w">⑥ Measure</text><text x="624" y="44" text-anchor="middle" class="w">OTIF + guardrail</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:strip21}} · A design answer in six moves.</b> Moves ② and ④ are what the original skipped: two very different vendors, and a number for the pain. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Two more questions. How many vendors, and how concentrated are they? And what is the cost of today’s mess: stock missing at dark stores, or staff time? I’ll assume one country and all our cities.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>About 3,000 vendors. The top 150 brands are 70% of purchase value; most of the rest use email or WhatsApp. The worry is stockouts: about 6% of items customers search for are missing at their store.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Users</div><p>So there are two vendors to design for. <b>Priya</b> runs key accounts at a national snacks brand: EDI, dozens of POs a day, and her pain is orders that fail silently. <b>Ramesh</b> runs a bakery supplying 60 dark stores: he reads POs in email at night and confirms on the phone, and waits 45 days to be paid. Our buyer <b>Neha</b> chases both.</p></div></div>
+<p class="whynote">Why this move: one product for Priya and Ramesh would suit neither. Naming them keeps every later choice honest.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Workflow</div><p>The chain is: PO sent → vendor confirms quantity → truck dispatched with an advance shipping notice → store receives and counts → invoice matched → payment. Items go missing at two points: the vendor can’t supply the full quantity and nobody hears until the truck arrives, and EDI messages fail without an alert.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Size it</div><p>Illustrative: 30,000 PO lines a day × 8% arriving short or late = 2,400 lines. If each leaves an item missing in one store for a day, that’s 2,400 store-days of lost sales, every day. Knowing a shortfall even 12 hours earlier lets Neha order from a second vendor.</p></div></div>
+<p class="whynote">Why this move: it turns “procurement is inefficient” into a number the fix can be judged against.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Prioritise</div><p>Using impact against effort ({{REF:ie21}}). <b>Quick wins:</b> a mobile PO inbox where Ramesh confirms or changes quantities in one tap, and failure alerts on EDI orders for Priya. <b>Big bet next:</b> shipment tracking. <b>Later:</b> scorecards, once there are three months of data. <b>Not now:</b> AI forecasting and contract management.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> PO lines delivered on time and in full (OTIF), from 92% to 96% in two quarters. <b>Inputs:</b> POs confirmed within 2 hours; share of POs on the platform; EDI error rate. <b>Safety check (guardrail):</b> active vendors must not fall, and store stockouts must not rise while we migrate. <b>Trade-off:</b> a portal adds work for small vendors, so email and WhatsApp stay as a fallback in the first version.</p></div></div>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · Impact–Effort and MoSCoW</span>
+<p><span class="step">1 · The situation.</span>The candidate had ten sensible ideas and one team. A good list isn’t a plan; a plan says what comes first and what never comes.</p>
+<p><span class="step">2 · An everyday example.</span>Guests arrive in an hour and the flat is a mess. Clearing the living-room sofa takes 5 minutes and everyone will see it. Cleaning the bathroom takes 20 minutes and matters a lot. Repainting the scuffed wall takes a weekend and nobody will notice tonight. You sort by <i>how much it matters</i> against <i>how long it takes</i>, and you say out loud that the wall is not happening.</p>
+<table class="tbl">
+<tr><th style="width:20%">Part</th><th>Guests in an hour</th><th>Vendor platform</th></tr>
+<tr><td><b>Quick win</b></td><td>Clear the sofa</td><td>One-tap PO confirmation on a phone</td></tr>
+<tr><td><b>Big bet</b></td><td>Clean the bathroom</td><td>Live shipment tracking</td></tr>
+<tr><td><b>Fill-in</b></td><td>Light a candle</td><td>Vendor scorecards (once data exists)</td></tr>
+<tr><td><b>Money pit</b></td><td>Repaint the wall</td><td>Contract management, today</td></tr>
+<tr><td><b>Won’t (this time)</b></td><td>“Not tonight”</td><td>AI demand forecasting in the first version</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span><span class="term">Impact–Effort</span> places each idea on a 2×2: how much it moves the goal against how much work it takes. Start top-left (quick wins), plan the top-right (big bets), fit in the bottom-left, and avoid the bottom-right. <span class="term">MoSCoW</span> then sorts a release into Must have, Should have, Could have and Won’t have (this time). The Won’t list is the useful part: it tells engineers, vendors and your boss what not to expect.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg">
+ <rect x="40" y="8" width="170" height="104" fill="#e1f2ec"/><rect x="210" y="8" width="170" height="104" fill="#e8ebfa"/>
+ <rect x="40" y="112" width="170" height="104" fill="#f4f5f6"/><rect x="210" y="112" width="170" height="104" fill="#fcecea"/>
+ <text x="48" y="24" class="b grn">Quick wins: do first</text><text x="372" y="24" text-anchor="end" class="b fwc">Big bets: plan</text>
+ <text x="48" y="208" class="b" style="fill:#5b6470">Fill-ins</text><text x="372" y="208" text-anchor="end" class="b red">Money pits: avoid</text>
+ <line x1="40" y1="216" x2="384" y2="216" stroke="#4a5563" stroke-width="1.3"/><line x1="40" y1="216" x2="40" y2="4" stroke="#4a5563" stroke-width="1.3"/>
+ <text x="210" y="232" text-anchor="middle" class="s">effort (engineering weeks) →</text>
+ <text x="14" y="112" text-anchor="middle" class="s" transform="rotate(-90 14 112)">impact on OTIF →</text>
+ <circle cx="80" cy="46" r="6" fill="#127a64"/><text x="92" y="50">Mobile PO inbox</text>
+ <circle cx="150" cy="74" r="6" fill="#127a64"/><text x="162" y="78">EDI failure alerts</text>
+ <circle cx="300" cy="48" r="6" fill="#3e4fb8"/><text x="292" y="64" text-anchor="end">Shipment tracking</text>
+ <circle cx="90" cy="150" r="6" fill="#5b6470"/><text x="102" y="147">Vendor scorecards</text><text x="102" y="161" class="s">needs 3 months of data</text>
+ <circle cx="330" cy="104" r="6" fill="#c47f17"/><text x="322" y="100" text-anchor="end">AI forecasting</text><text x="322" y="88" text-anchor="end" class="s">impact unsure</text>
+ <circle cx="320" cy="170" r="6" fill="#b93a32"/><text x="312" y="174" text-anchor="end">Contract management</text>
+ <text x="410" y="18" class="b">MoSCoW for the first release</text>
+ <rect x="410" y="28" width="266" height="42" rx="4" fill="#127a64"/><text x="420" y="45" class="w b">Must</text><text x="470" y="45" class="w">PO inbox (phone + email), EDI alerts</text><text x="470" y="60" class="w">PO status from sent to paid</text>
+ <rect x="410" y="76" width="266" height="30" rx="4" fill="#3e8f7c"/><text x="420" y="95" class="w b">Should</text><text x="470" y="95" class="w">shipment notices, delivery dates</text>
+ <rect x="410" y="112" width="266" height="30" rx="4" fill="#9fb3c8"/><text x="420" y="131" class="b">Could</text><text x="470" y="131">invoice matching, payment status</text>
+ <rect x="410" y="148" width="266" height="46" rx="4" fill="#fff" stroke="#b93a32" stroke-width="1.4"/><text x="420" y="166" class="b red">Won’t</text><text x="470" y="166">AI forecasting, contracts,</text><text x="470" y="182">vendor recommendations</text>
+ <text x="410" y="214" class="s">The Won’t list is written down and shared</text><text x="410" y="228" class="s">with vendors, so nobody waits for it.</text>
+</svg>
+<figcaption><b>{{FIG:ie21}} · Ten ideas, sorted twice.</b> Left: impact on on-time-in-full deliveries against effort. Right: the same ideas as a release plan. Scorecards look like a quick win but can’t work until the platform has data, so the 2×2 alone would have put them too early. <span class="src">Positions are illustrative judgements for this case.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>Both axes are guesses, and teams guess in their own favour: everything drifts into “quick wins”. The 2×2 also ignores order. You can’t cook the curry before buying the onions, however quick the curry is; vendor scorecards are the onions-first trap here. MoSCoW breaks when 80% of the list becomes “Must”. A rule that helps: Musts may use at most 60% of the team’s time.</p>
+<p><span class="step">5 · In the interview.</span>“I’ll place these on impact against effort, then call out one dependency: scorecards need data, so they wait. And here is what I’m deliberately not building in version one.”</p>
+</div>
+</section>

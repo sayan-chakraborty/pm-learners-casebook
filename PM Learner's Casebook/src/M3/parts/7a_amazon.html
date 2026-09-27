@@ -1,0 +1,48 @@
+<!-- ============ TEARDOWNS: AMAZON ============ -->
+<section class="page">
+<div class="kicker">E-commerce &amp; marketplaces · Product teardowns</div>
+<h1>Amazon: the store that is really a delivery network and an ad business</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Neha, 31, a Prime member in Bengaluru, needs running shoes for flat feet. She types the question into the Amazon app’s AI assistant (launched as Rufus, now merged with Alexa+ into one shopping assistant). It reads reviews and product specs and suggests three pairs; the first result is a sponsored listing. She buys a ₹3,499 pair with free next-day delivery because she’s a Prime member. The shoes come from a fulfilment centre (FC: Amazon’s warehouse, where sellers store stock) 18 km away. She never thinks about the seller, who is paid about a week later ({{REF:am-walk}}).</p>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Prime</td><td>“I don’t want to pay for delivery every time”</td><td>One yearly fee (₹1,499) makes Amazon the default shop; the video and music in the bundle keep members renewing even in months they buy little</td><td>Orders per member; renewal rate</td></tr>
+<tr><td>AI shopping assistant</td><td>“Which of these 200 shoes is right for me?”</td><td>Answers questions in plain words from reviews and specs, then links to products; it shortens the “compare” step of the funnel</td><td>Search-to-purchase conversion</td></tr>
+<tr><td>Sponsored Products</td><td>Sellers: “nobody sees my listing on page 5”</td><td>Sellers bid per click for a slot in search results; the auction weighs relevance so ads don’t push shoppers away</td><td>Ad revenue; conversion on ad clicks</td></tr>
+<tr><td>Fulfilled by Amazon</td><td>Sellers can’t promise next-day delivery themselves</td><td>Sellers store stock in Amazon’s FCs and get the Prime badge; Amazon controls speed and quality</td><td>Share of orders delivered next day</td></tr>
+<tr><td>Amazon Now</td><td>“I need it in the next hour”</td><td>Small city stores deliver everyday items in minutes, so Amazon keeps the frequent purchases quick commerce was taking</td><td>Orders per customer per month</td></tr>
+</table>
+<figure>
+{{SVG:flow_amazon}}
+<figcaption><b>{{FIG:am-walk}} · Behind Neha’s shoe order.</b> One ₹3,499 order earns Amazon in four places: the seller’s referral and fulfilment fees (⑩), the ad click (⑪), and the Prime fee that made Neha buy here rather than elsewhere. <span class="src">Simplified from Amazon seller documentation; fee and bid amounts illustrative.</span></figcaption>
+</figure>
+
+<h3>Core loop: the flywheel</h3>
+<p>Jeff Bezos sketched Amazon’s strategy on a napkin in 2001 as a loop with no start and no end ({{REF:am-loop}}). More selection gives shoppers a better experience; more shoppers attract more sellers; more orders spread the cost of warehouses and trucks, which allows lower prices, which brings more shoppers. Prime adds a habit to the loop: once you have paid the fee, you shop at Amazon first. And in the last decade ads were added on top: more shoppers make every sponsored slot more valuable, and that ad money pays for faster delivery.</p>
+<figure>
+{{SVG:loop_amazon}}
+<figcaption><b>{{FIG:am-loop}} · Amazon’s flywheel.</b> Push any box and the wheel turns faster; for example, fuller trucks lower the cost per order, which funds lower prices. Competitors copy one box at a time; the advantage is having all six. <span class="src">Adapted from Amazon’s published flywheel (2001 onwards).</span></figcaption>
+</figure>
+
+<h3>Business model, with numbers</h3>
+<p>Amazon doesn’t report India on its own. Worldwide, in April–June 2026, it had revenue of <b>$200.6 bn</b> (+20%). Two lines matter most for understanding its shop: <b>advertising, $19.8 bn</b> (+26%), almost all profit, and <b>AWS, $42.2 bn</b> (+37%), its cloud business, which earns most of the company’s operating profit. In India, the store earns from seller fees (referral, fulfilment, closing fees), ads, Prime fees and payments. From 16 March 2026 it removed referral fees on items under ₹1,000 across 1,800+ categories, matching Flipkart and Meesho; sellers now pay mainly through fulfilment fees and ads.</p>
+<figure>
+{{SVG:am_earn}}
+<figcaption><b>{{FIG:am-earn}} · Four ways Amazon earns on Neha’s ₹3,499 shoes.</b> The referral fee is the biggest single item, but ads and the Prime fee are the ones that grow fastest and cost least to deliver. <span class="src">Illustrative: referral ~12% of the price; fulfilment and closing fees typical for a shoe box; one ad click; ₹1,499 Prime fee spread over ~24 orders a year.</span></figcaption>
+</figure>
+
+<p><b>Moat, in plain words.</b> The delivery network: a nationwide network of fulfilment centres, sort centres and delivery stations took a decade and billions of dollars to build, and they let Amazon promise next-day delivery. The Prime habit: members check Amazon first. And the ad data: Amazon knows what people actually <i>buy</i>, not just what they look at, which makes its ads worth more to brands.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Weekly purchases by repeat customers.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>In-stock selection with next-day delivery · search-to-purchase conversion · Prime sign-ups and renewals.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Sponsored share of the first screen vs conversion · return rate · seller fees as % of price.</div>
+</div>
+<p><b>2025–26 moves.</b> Zero referral fee under ₹1,000 (March 2026). Amazon Now’s 10-minute delivery expanding across Indian cities. Rufus and Alexa+ merged into one AI shopping assistant; Amazon said active users nearly doubled and interactions rose more than 5× in a year (Q2 2026).</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Fastest reliable delivery; the Prime habit</li><li>Ads and AWS pay for price cuts and speed</li><li>Trusted for electronics and branded goods</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Weaker than Flipkart in smaller towns and in the big October sale</li><li>Too many ads on the first screen can hurt conversion</li><li>FDI rules limit how much it can control stock and prices</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Tier-2 shoppers don’t trust fit or quality for clothes <span class="arrow">→</span> “Kept by people like you”: show the share of buyers in your size who kept the item, next to the price <span class="arrow">→</span> return rate on fashion; conversion.</p>
+<p class="idea"><b>2.</b> The AI assistant answers questions but can’t follow up after delivery <span class="arrow">→</span> the assistant asks “did they fit?” three days later and offers an exchange in one tap <span class="arrow">→</span> exchanges instead of refunds; repeat purchases.</p>
+<p class="idea"><b>3.</b> Prime members in small towns see little value in video <span class="arrow">→</span> promote the ₹399 Shopping Edition to them, with local-language delivery tracking <span class="arrow">→</span> paid members outside metros; orders per member.</p>

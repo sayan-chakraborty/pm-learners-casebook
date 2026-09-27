@@ -1,0 +1,52 @@
+<!-- ============ TECHNOLOGY: CAPSTONE, IRCTC TATKAL ============ -->
+<section class="page">
+<div class="kicker">Consumer hardware, loyalty &amp; public services · Technology</div>
+<h2 style="font-size:14pt;border:none;margin-top:0">E. Capstone: designing Tatkal booking at 10 am, at PM level</h2>
+<p><b>Everyday picture.</b> A famous temple on a festival morning. Lakhs of devotees arrive when the gates open at 5 am, but the inner hall holds a few hundred at a time. A well-run temple doesn’t let everyone rush the door. It sets up a queue outside with barriers, gives each person a token with a time, lets a fixed number in each minute, checks tickets at the gate so touts can’t jump the line, keeps a separate fast lane for staff, and tells people the true wait. The prasad counter shuts for an hour if the hall gets crowded; the darshan never stops.</p>
+<p><b>The problem.</b> Tatkal tickets for the next day open at 10 am for AC classes and 11 am for sleeper and other non-AC classes. Most of the berths on busy routes go in the first few minutes, and lakhs of people, plus agents and bots, try at once. Traffic that is calm at 9:58 is many times higher at 10:00:00 ({{REF:tatkal_demand}}). The system must never sell the same berth twice, must not charge anyone without issuing a ticket, and must be seen as fair. IRCTC booked a record 20,06,353 tickets on 7 September 2026, after roughly doubling its capacity with new servers and software changes and adding anti-bot and CDN protection.</p>
+<figure>{{SVG:tatkal_demand}}
+<figcaption><b>{{FIG:tatkal_demand}} · The 10 am wall.</b> Demand jumps about 17 times in seconds and fades within 20 minutes. Adding servers after the jump is too late; capacity must be in place by 9:45. <span class="src">Illustrative shape and numbers; IRCTC’s record of 20.06 lakh tickets in a day (7 Sep 2026, Business Today).</span></figcaption>
+</figure>
+<p><b>Requirements, with numbers.</b> Say 4 lakh people are logged in at 10:00 for Tatkal, each refreshing the seat count every three seconds: 4,00,000 ÷ 3 ≈ 1.3 lakh requests a second, against about 8,000 in a normal busy minute. Say the system can safely complete 25,000 bookings a minute. Then the job is to turn a crowd of 4 lakh into an orderly flow of 25,000 a minute, while keeping the seat count exact. All numbers here are illustrative.</p>
+
+<h3>The design, piece by piece</h3>
+<p>{{REF:tatkal_arch}} puts it together; each piece is explained in a few lines.</p>
+<figure>{{SVG:tatkal_arch}}
+<figcaption><b>{{FIG:tatkal_arch}} · Tatkal booking, the whole system.</b> The top row controls the crowd; the bottom row keeps the seat count exact and the money safe. <span class="src">Author’s design at PM level, not IRCTC’s actual architecture.</span></figcaption>
+</figure>
+<p><b>1. The front door (internet basics, CDNs).</b> DNS sends users to the nearest entry point; a CDN serves the static parts of the site (pages, images, train lists) so they never touch the booking servers. A bot filter and <span class="term">rate limits</span> (a cap on requests per account and per network address each second) turn away scripts. Since 1 July 2025 only Aadhaar-authenticated users can book Tatkal online, with an Aadhaar OTP from 15 July 2025, and authorised agents can’t book in the first 30 minutes of each window. Those are product rules doing a security job: they make each bot cost a real identity.</p>
+<p><b>2. The virtual waiting room.</b> Like the temple queue, it lets a fixed number of people through each minute, in order of arrival, and tells everyone else where they stand ({{REF:wroom}}). A user who is 38,412th sees “about 90 seconds”, not a spinning wheel. The waiting room is cheap to run because a waiting user only asks “is it my turn?” every few seconds. The admitted user gets a token valid for 10 minutes, so the booking servers see only as many people as they can serve.</p>
+<figure>{{SVG:wroom}}
+<figcaption><b>{{FIG:wroom}} · Inside the waiting room.</b> The queue absorbs the crowd (①–③); only admitted users reach booking (④–⑤); a berth is held while they pay (⑥–⑧). <span class="src">Author’s diagram; numbers illustrative.</span></figcaption>
+</figure>
+<p><b>3. Scaling before the wall (scaling and reliability).</b> Booking servers keep no user data of their own (they are stateless), so more can be added behind the load balancer. Because the spike is known to the minute, they are added on a schedule at 9:45, not by an autoscaler that reacts after the rush has begun.</p>
+<p><b>4. Two kinds of seat count (data, caching, consistency).</b> The number shown while browsing (“3A: available 42”) comes from a cache and may be a few seconds old; it is labelled as approximate. The count that matters, the one used to hold a berth, comes from the seat database, where each train has one authoritative record and only one booking can take a given berth. Browsing can be slightly stale; booking must be exact.</p>
+<p><b>5. Holding a berth while the user pays.</b> When a user picks a berth, it is <b>held</b> for five minutes: nobody else can take it, and the user sees a countdown ({{REF:seathold}}). If payment succeeds, it becomes booked; if the timer runs out, it goes back on sale. The number of berths held at any moment is the rate of new holds times the hold time: 25,000 a minute × 5 minutes ≈ 1.25 lakh berths. If 30% of holders never pay, those berths return to sale minutes later, to someone further back in the queue. A shorter timer returns them sooner but fails people on slow UPI apps; this is a product choice, not a technical one.</p>
+<figure>{{SVG:seathold}}
+<figcaption><b>{{FIG:seathold}} · The life of one berth.</b> A hold is a promise with a timer. Its length decides how many berths are locked up at any moment and how fairly they come back. <span class="src">Author’s diagram; numbers illustrative.</span></figcaption>
+</figure>
+<p><b>6. Payment that can’t double-charge (APIs, idempotency).</b> Every payment request carries the booking ID. If the bank debits the money but the reply is lost, the retry arrives with the same ID and the payment service sees it is already paid ({{REF:payidem}}). The case users fear most, “money gone, no ticket”, is caught by a nightly match of every debit against every ticket, with an automatic refund for any debit that has no ticket.</p>
+<p><b>7. Everything after the booking goes in a queue (queues, notifications).</b> The PDF ticket, the SMS and the email are put in a queue and sent by separate workers a few seconds later, so a slow SMS provider never holds up the next booking.</p>
+<figure>{{SVG:payidem}}
+<figcaption><b>{{FIG:payidem}} · A lost reply that doesn’t become a second debit.</b> The booking ID (the key) makes the retry safe (④–⑤); the nightly match catches anything that slipped through (⑧). <span class="src">Author’s diagram; amount illustrative.</span></figcaption>
+</figure>
+<p><b>8. A degradation ladder for the morning (graceful degradation).</b> Decided in advance and rehearsed: switch off meal and hotel offers at 9:45, serve fare enquiries and PNR checks from copies, pause new sign-ups, and never touch holding, paying and ticketing ({{REF:tdegrade}}).</p>
+<figure>{{SVG:tdegrade}}
+<figcaption><b>{{FIG:tdegrade}} · What gives way first.</b> Each rung frees capacity for the one job that must not fail. The PM decides the order; engineers build the switches. <span class="src">Author’s example ladder.</span></figcaption>
+</figure>
+<p><b>9. Watching the morning (observability).</b> One screen for 9:45 to 10:30: people waiting and admitted per minute; holds, bookings and releases per minute; payment success by bank; 95th-percentile time from “admitted” to “ticket”; error budget left; bot blocks. Each has an owner and a threshold that triggers a named action.</p>
+
+<h3>The PM trade-offs</h3>
+<table class="tbl">
+<tr><th style="width:24%">Decision</th><th style="width:38%">Option A</th><th>Option B</th></tr>
+<tr><td><b>Order in the queue</b></td><td>First come, first served: feels fair, rewards the fastest connection</td><td>Random order among everyone who arrived by 10:00: fairer to slow phones, feels like a lottery</td></tr>
+<tr><td><b>Stopping bots</b></td><td>Aadhaar OTP for every Tatkal booking: few bots</td><td>Lighter checks: fewer honest people shut out (lost phone, Aadhaar-number mismatch)</td></tr>
+<tr><td><b>Hold time</b></td><td>3 minutes: berths return faster</td><td>7 minutes: fewer failures for people on slow payment apps</td></tr>
+<tr><td><b>What to show the 40,000th person</b></td><td>“About 90 seconds” plus a live count of berths left, even when it is falling fast</td><td>A spinner: calmer, but people refresh and add load</td></tr>
+<tr><td><b>When seats run out</b></td><td>Tell people in the queue as soon as a train is full</td><td>Let them reach the booking page: costly and cruel</td></tr>
+</table>
+<div class="box key"><span class="lbl">Key idea · Protect the one job, and be honest with the crowd</span>
+<p>Tatkal is a small, exact job (hold a berth, take the money, issue a ticket) surrounded by a crowd. The design controls the crowd first (front door, waiting room, rate limits), keeps the exact job strict (one seat record, holds with timers, one payment per booking), and gives up everything else under load. The most useful thing a PM adds is honesty: a queue position, a wait time, a countdown and an early “sold out” turn a stampede into a line.</p></div>
+<div class="box int"><span class="lbl">In the interview · System design at PM level</span>
+<p class="small">“Design Tatkal booking” (or a flash sale, IPL tickets, a vaccine slot opening). Start with the numbers (people, requests a second, what can be completed a minute), then the crowd controls (front door, waiting room, rate limits), then the exact part (one seat record, holds, idempotent payment), then what gives way under load, then what you watch. End with the trade-offs you, the PM, must decide: queue order, bots vs honest users, hold time, what to show people who won’t get a seat.</p></div>
+</section>

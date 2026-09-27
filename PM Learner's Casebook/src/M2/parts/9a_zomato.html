@@ -1,0 +1,84 @@
+<!-- ============ TEARDOWNS: ZOMATO + BLINKIT ============ -->
+<section class="page">
+<div class="kicker">Food delivery &amp; quick commerce · Product teardowns</div>
+<h1>Zomato and Blinkit: profit from food, growth from ten minutes</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> 8:40 pm. Kavya opens Zomato. The top row says “Order again” and shows the biryani she had two Fridays ago. She taps it, sees “arrives in 28–33 min”, and the bill: ₹450 food, ₹25 delivery, ₹15 platform fee. She pays by UPI. A map shows the restaurant preparing, then a rider’s dot moving towards her. At the door she reads out a four-digit PIN. The whole visible journey takes four taps; {{REF:zm-walk}} shows the relay behind them.</p>
+
+<figure>
+{{SVG:flow_zomato}}
+<figcaption><b>{{FIG:zm-walk}} · What happens behind Kavya’s four taps.</b> Six parties, thirteen steps. Zomato holds the money for a few days and makes every match, but the food and the ride belong to others. Solid arrows are requests, dotted arrows replies, green arrows money. <span class="src">Simplified from Zomato’s public descriptions of ordering, dispatch and payouts; amounts illustrative.</span></figcaption>
+</figure>
+
+
+<h2>Key features, and why they’re built that way</h2>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:26%">User problem</th><th style="width:33%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>“Order again” and dish search</td><td>Choosing dinner takes too long</td><td>Most orders are repeats, so the fastest path is the last good meal; search works on dishes, not just restaurants</td><td>Time from open to payment; conversion</td></tr>
+<tr><td>Arrival time as a range, live map</td><td>“Where is my food?”</td><td>A range is kept more often than a single number; the map cuts “where is my order” calls to support</td><td>On-time %; support contacts per 100 orders</td></tr>
+<tr><td>Zomato Gold</td><td>Fees add up for frequent users</td><td>A paid membership with free delivery above a basket size; members order more often</td><td>Orders per member vs non-member</td></tr>
+<tr><td>Platform fee</td><td>Zomato: thin margin per order</td><td>A flat fee in rupees, not a %, shown before payment</td><td>Revenue per order (guardrail: conversion)</td></tr>
+<tr><td>Restaurant ads</td><td>Restaurants: “customers can’t find us”</td><td>Pay for a higher place in search and on the home screen</td><td>Ad revenue as % of order value</td></tr>
+<tr><td>Blinkit’s range beyond groceries</td><td>“I need a charger / a gift / printouts now”</td><td>Electronics, toys and beauty raise the basket and give a reason to open the app daily</td><td>AOV; orders per customer</td></tr>
+</table>
+<p><b>The second app.</b> 10:52 pm, Gurugram. Rohan, a student, realises there is no milk for the morning and his laptop charger has died. On Blinkit he adds both, pays ₹1,340, and a rider is at his door at 11:03. The store 1.8 km away never saw him; its picker saw only a list of shelf locations ({{REF:bk-walk}}).</p>
+<figure>
+{{SVG:flow_blinkit}}
+<figcaption><b>{{FIG:bk-walk}} · Behind an 11-minute Blinkit order.</b> Steps ①–⑥ are the customer’s 11 minutes; ⑦–⑩ happen overnight and decide whether tomorrow’s order will be in stock. <span class="src">Simplified from Eternal shareholder letters (2025–26); amounts illustrative.</span></figcaption>
+</figure>
+
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 176" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="zm6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0b5d7a"/></marker></defs>
+ <rect x="95" y="4" width="140" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="165" y="18" text-anchor="middle" class="b">More customers</text><text x="165" y="32" text-anchor="middle" class="s">ordering more often</text>
+ <rect x="216" y="70" width="110" height="34" rx="6" fill="#eef0f2" stroke="#5b6470"/><text x="271" y="84" text-anchor="middle" class="b">More restaurants</text><text x="271" y="98" text-anchor="middle" class="s">join and advertise</text>
+ <rect x="95" y="138" width="140" height="34" rx="6" fill="#fde7c8" stroke="#c47f17"/><text x="165" y="152" text-anchor="middle" class="b">Busier riders</text><text x="165" y="166" text-anchor="middle" class="s">more orders per hour</text>
+ <rect x="4" y="70" width="110" height="34" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="59" y="84" text-anchor="middle" class="b">Faster, cheaper</text><text x="59" y="98" text-anchor="middle" class="s">delivery</text>
+ <g stroke="#0b5d7a" stroke-width="1.5" fill="none"><path d="M235,24 Q268,30 271,68" marker-end="url(#zm6)"/><path d="M271,104 Q268,146 237,152" marker-end="url(#zm6)"/><path d="M95,152 Q62,146 59,106" marker-end="url(#zm6)"/><path d="M59,70 Q62,30 93,24" marker-end="url(#zm6)"/></g>
+ <text x="165" y="80" text-anchor="middle" class="b acc">density:</text><text x="165" y="94" text-anchor="middle" class="acc">each order makes</text><text x="165" y="108" text-anchor="middle" class="acc">the next cheaper</text>
+</svg>
+<figcaption><b>{{FIG:zm-loop}} · The core loop.</b> More orders in a neighbourhood make riders busier and delivery cheaper, which brings more orders. The same loop runs in Blinkit’s stores. <span class="src">Author’s model.</span></figcaption>
+</figure>
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 176" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="12" class="s">Order value, Apr–Jun 2026 (₹ Cr) · adjusted EBITDA</text>
+ <text x="4" y="40" class="b">Blinkit</text><rect x="74" y="26" width="219" height="20" fill="#127a64"/><text x="287" y="40" text-anchor="end" class="w b">17,132</text>
+ <text x="74" y="62" class="grn b">+₹102 Cr, first profit</text>
+ <text x="4" y="92" class="b">Food</text><rect x="74" y="78" width="138" height="20" fill="#b93a32"/><text x="206" y="92" text-anchor="end" class="w b">10,769</text>
+ <text x="74" y="114" class="grn b">+₹606 Cr (5.6%)</text>
+ <text x="4" y="144" class="b">District</text><rect x="74" y="130" width="41" height="20" fill="#7c3aa6"/><text x="121" y="144" class="b">~3,200</text>
+ <text x="74" y="166" class="red b">−₹65 Cr</text>
+</svg>
+<figcaption><b>{{FIG:zm-money}} · Eternal’s three consumer businesses.</b> Blinkit is now the largest by order value; food still makes most of the profit. <span class="src">Eternal Q1 FY27 shareholder letter (Jul 2026); District derived from total B2C NOV of ₹31,120 Cr.</span></figcaption>
+</figure>
+</div>
+
+<p><b>Business model in one line.</b> Food earns a commission, customer fees and ads on each order, and turns about 5–6% of order value into profit. Blinkit now owns much of its stock, so its revenue counts the full price of goods (which is why Eternal’s revenue jumped 182% to ₹20,211 Cr), and it earns the product margin plus brand ads. Hyperpure sells supplies to restaurants.</p>
+
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Orders delivered per week (food) and order value per store per day (Blinkit).</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Monthly transacting customers · orders per customer · top restaurants online at 8 pm · store fill rate · share of mature stores.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Cancellations · on-time % · rider earnings per hour · inventory written off as % of sales.</div>
+</div>
+
+<p><b>Moat, in plain words.</b> Density. Zomato has more restaurants and more orders in most neighbourhoods, so its riders are busier and its delivery cheaper. Blinkit has the most dark stores (2,443 in Jun 2026), and a mature store handles about ₹8.3 lakh of orders a day, which a newcomer’s half-empty store can’t match. Both cracks are the same: restaurants and brands list on every app, and customers switch for a ₹50 coupon.</p>
+<p><b>2025–26 moves.</b> Renamed the parent Eternal (2025). Blinkit moved to owning stock after Eternal became Indian-owned and controlled. District, a separate app for dining out, films and events. Bistro, a 10-minute café app. Zomato’s own 10-minute food experiments shut. Blinkit posted its first adjusted profit (Apr–Jun 2026).</p>
+
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good">
+<li>Leader in food and in quick commerce, both profitable at the operating level</li>
+<li>Dense store network and a store economics playbook rivals copy</li>
+<li>Food profits fund experiments without raising money</li>
+</ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss">
+<li>Food growth has slowed to about 20% a year</li>
+<li>Owning stock adds waste and working capital risk</li>
+<li>Restaurant goodwill: the CCI report and commission complaints</li>
+</ul></div>
+</div>
+
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Families order dinner separately on four phones <span class="arrow">→</span> a shared family cart with one payer and one delivery <span class="arrow">→</span> AOV and orders per household.</p>
+<p class="idea"><b>2.</b> On rain nights promised times break and cancellations spike <span class="arrow">→</span> a “rain mode” that widens the time range before payment and hides restaurants beyond 5 km <span class="arrow">→</span> cancellations on rain nights vs dry nights.</p>
+<p class="idea"><b>3.</b> Blinkit stores waste fresh stock that is close to expiry <span class="arrow">→</span> a 7–10 pm “use today” shelf at a discount, shown only near the store <span class="arrow">→</span> inventory written off as % of sales.</p>
+</section>

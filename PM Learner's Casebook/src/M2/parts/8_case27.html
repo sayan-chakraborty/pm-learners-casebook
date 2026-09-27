@@ -1,0 +1,127 @@
+<!-- ============ CASE 2.7 ZEPTO BREACHES ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 2.7 · Zepto’s delivery-time breaches in Bengaluru</span>
+ <span class="m"><span class="pill">Root cause</span><span>Hard</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, pp. 82–83</span></span></div>
+<div class="try"><b>Try it first.</b> A 12-minute delivery now takes 15, but only in some parts of the city, and it happened suddenly a month ago. Write down the steps of one delivery and guess which step grew.</div>
+</div>
+
+{{CASE:B82}}
+
+<figure>
+<svg class="d" viewBox="0 0 680 192" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="z7a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker></defs>
+ <g fill="#0b5d7a"><rect x="0" y="4" width="148" height="46" rx="4"/><rect x="176" y="4" width="148" height="46" rx="4"/><rect x="352" y="4" width="148" height="46" rx="4"/><rect x="528" y="4" width="150" height="46" rx="4"/></g>
+<text class="w b" text-anchor="middle" x="74" y="23">Order received</text><text class="w b" text-anchor="middle" x="74" y="38">from customer</text><text class="w b" text-anchor="middle" x="250" y="23">Order assigned &amp; accepted</text><text class="w b" text-anchor="middle" x="250" y="38">by delivery driver</text><text class="w b" text-anchor="middle" x="426" y="23">Travel to dark store</text><text class="w b" text-anchor="middle" x="426" y="38">and pick up order</text><text class="w b" text-anchor="middle" x="603" y="23">Travel to customer</text><text class="w b" text-anchor="middle" x="603" y="38">location and deliver</text>
+ <g stroke="#4a5563" stroke-width="1.5"><line x1="148" y1="27" x2="174" y2="27" marker-end="url(#z7a)"/><line x1="324" y1="27" x2="350" y2="27" marker-end="url(#z7a)"/><line x1="500" y1="27" x2="526" y2="27" marker-end="url(#z7a)"/></g>
+ <g style="font-size:10.3px">
+  <text x="2" y="68" class="b">Orders received</text><text x="2" y="83">· Order processing time</text><text x="2" y="97">· Order error rate</text><text x="2" y="111">· Customer order</text><text x="10" y="125">confirmation time</text><text x="2" y="139">· System uptime/downtime</text>
+  <text x="178" y="68" class="b">Assignment &amp; acceptance</text><text x="178" y="83">· Avg. order assignment time</text><text x="178" y="97">· Acceptance rate</text><text x="178" y="111">· Avg. time to accept / order</text><text x="178" y="125">· Reassignment rate</text>
+  <text x="354" y="68" class="b">Travel</text><text x="354" y="83">· # stores covered</text><text x="354" y="97">· Avg. distance travelled /</text><text x="362" y="111">delivery guy / day</text><text x="354" y="125">· Avg. time of travel / store</text>
+  <text x="354" y="143" class="b">Pick up</text><text x="354" y="158">· Dark store efficiency</text><text x="354" y="172">· Avg. time to confirm</text><text x="362" y="186">pickup / store</text>
+  <text x="530" y="68" class="b">Travel &amp; deliver</text><text x="530" y="83">· Avg. distance travelled</text><text x="538" y="97">/ order</text><text x="530" y="111" class="b red">· Avg. time from pickup</text><text x="538" y="125" class="b red">till delivery / order</text>
+  <text x="530" y="150" class="s red">In red: the metric that</text><text x="530" y="163" class="s red">moved, per the interviewer</text><text x="530" y="176" class="s red">(our annotation)</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:zepto-orig}} · The candidate’s four-step breakdown, redrawn from the original.</b> Four stages of a delivery, each with the numbers to check. Only one number moved, which let the candidate zoom into the last leg. <span class="src">Redrawn from the original, IIM B <i>Sigma PM Casebook 2026–27</i>, p. 82.</span></figcaption>
+</figure>
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Textbook clarifying</b>: what a breach is and how it is measured, how big, which categories, which areas, sudden or gradual.</li>
+ <li><b>Outside causes first, then the journey</b>: the right order.</li>
+ <li><b>Four steps, each with metrics</b>, then asked which one moved.</li>
+ <li><b>Turned 25% into minutes</b> (3–4 on a 10–15 minute promise).</li>
+ <li><b>Split the last leg</b> into “to the landmark” and “landmark to the door”, and took the hint quickly.</li>
+</ul>
+<ul class="miss small">
+ <li><b>A sudden step in a few areas means something changed on a date.</b> The first question should have been: what changed there a month ago?</li>
+ <li><b>Never asked if the number could be trusted.</b> If riders started tapping “delivered” at the flat door instead of the gate, time would rise with no real change.</li>
+ <li><b>No fix, no measure.</b> The case ends at the cause.</li>
+ <li><b>Missed the knock-on.</b> A rider stuck at a gate is late for the next order too (see the framework).</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check (RCA add-ons):</b> Exact definition <span class="tk y">✓</span> · Size <span class="tk y">✓</span> · Since when, sudden or gradual <span class="tk y">✓</span> · Where it shows <span class="tk y">✓ category and area</span> · Recent changes <span class="tk n">✗ skipped</span> · Can we trust the data? <span class="tk n">✗ skipped</span>. The two skips are exactly the two that fit a sudden, local step.</p>
+
+<div class="box chk"><span class="lbl">Check · “The issue is in only a few areas, so tech can’t be the problem” <span class="verdict v-over">Overstated</span></span>
+<p>A good instinct, stated too firmly. Tech can fail locally: a new map version for one area, a delivery zone drawn wrongly so homes get served from a farther store, or a rider-app bug on one phone model common in one hub. A safer line: “A regional pattern makes a server-wide failure unlikely; I’ll check local changes, including tech ones.”</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">
+<svg class="d" viewBox="0 0 680 62" xmlns="http://www.w3.org/2000/svg">
+ <g class="c">
+  <polygon points="0,4 106,4 116,31 106,58 0,58" fill="#127a64"/><text x="54" y="26" text-anchor="middle" class="b w">① Clarify</text><text x="54" y="44" text-anchor="middle" class="w">+ trust the number?</text>
+  <polygon points="113,4 219,4 229,31 219,58 113,58 123,31" fill="#1d8a73"/><text x="170" y="26" text-anchor="middle" class="b w">② What changed</text><text x="170" y="44" text-anchor="middle" class="w">on that date, there</text>
+  <polygon points="226,4 332,4 342,31 332,58 226,58 236,31" fill="#2a9a82"/><text x="283" y="26" text-anchor="middle" class="b w">③ Break down</text><text x="283" y="44" text-anchor="middle" class="w">minutes per step</text>
+  <polygon points="339,4 445,4 455,31 445,58 339,58 349,31" fill="#0b5d7a"/><text x="396" y="26" text-anchor="middle" class="b w">④ Find the step</text><text x="396" y="44" text-anchor="middle" class="w">vs normal areas</text>
+  <polygon points="452,4 558,4 568,31 558,58 452,58 462,31" fill="#3e4fb8"/><text x="509" y="26" text-anchor="middle" class="b w">⑤ Knock-on</text><text x="509" y="44" text-anchor="middle" class="w">Little’s law</text>
+  <polygon points="565,4 680,4 680,58 565,58 575,31" fill="#7c3aa6"/><text x="624" y="26" text-anchor="middle" class="b w">⑥ Fix + measure</text><text x="624" y="44" text-anchor="middle" class="w">gate + riders</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:strip27}} · A delivery-time diagnosis in six moves.</b> Move ⑤ turns a local annoyance into a fleet problem, which is what makes the fix worth paying for. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>So: order-to-door time is up about 25%, roughly 12 to 15 minutes, only in some areas, as a sudden step a month ago. Two more questions. What changed in those areas around that date? And did anything change in how “delivered” is recorded?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>No app changes, and the recording is the same. We don’t know what else changed.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② What changed</div><p>A sudden step in a few areas usually means a local event: a store moved, road works, or a new rule at residential gates. Rather than guess, I’ll break the 12 minutes into steps and compare affected and normal areas.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Break down</div><p>One order ({{REF:zepto22}}): assign 0.5 + pick and pack 2 + hand to rider 0.5 + ride 6 + gate and lift 2 + handover 1 = 12 minutes. Same split for the affected areas.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Find the step</div><p>Only “gate and lift” moved: from 2 minutes to 5. That fits the interviewer’s finding that guards now hold riders at the gate. I’d confirm it by checking whether the delay sits in large gated societies and not in independent houses in the same area.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Knock-on</div><p>A stuck rider is also late for the next order. Illustrative: the area gets 2 orders a minute at peak and a round trip took 13 minutes, so 2 × 13 = 26 riders are busy. With 3 more minutes per trip, 2 × 16 = 32 are needed. With the same 26, orders queue for a rider, and even homes without gates get slower.</p></div></div>
+<p class="whynote">Why this move: it shows the fix pays for itself across the whole area, not just in gated societies.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Fix + measure</div><p><b>Fix:</b> link with society gate apps so the resident pre-approves the rider at checkout; learn each building’s gate time and include it in the promise; add riders at peak until the gate time falls. <b>Goal (North Star):</b> delivery time in those areas back to 12 minutes. <b>Safety check (guardrail):</b> rider earnings per hour and time riders spend waiting unpaid. <b>Trade-off:</b> extra riders cost money now; broken promises cost customers.</p></div></div>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · Breaking a process into steps, and Little’s law</span>
+<p><span class="step">1 · The situation.</span>“Delivery is slower” is too big to fix. “The gate step went from 2 to 5 minutes in large societies” can be fixed by Tuesday.</p>
+<p><span class="step">2 · An everyday example.</span>You have reached college 15 minutes late every day this week. Time each step of your morning: alarm, bath, dressing, breakfast, lift, bus. Only one changed: the lift in your building is under repair, so you take the stairs and miss your usual bus. And the knock-on, which is Little’s law: a dhaba with 10 tables, where 20 customers arrive an hour and each stays half an hour, has 20 × 0.5 = 10 tables busy on average. If meals slow to 45 minutes, it needs 15 tables. With 10, a queue forms outside, even for people who eat quickly.</p>
+<table class="tbl">
+<tr><th style="width:22%">Idea</th><th>Your morning / the dhaba</th><th>Zepto in Bengaluru</th></tr>
+<tr><td><b>Break into steps</b></td><td>Alarm → bath → dress → lift → bus</td><td>Assign → pack → hand over → ride → gate → door</td></tr>
+<tr><td><b>Compare with normal</b></td><td>Last week’s mornings</td><td>Areas that are fine</td></tr>
+<tr><td><b>The step that moved</b></td><td>The lift</td><td>The gate: 2 → 5 minutes</td></tr>
+<tr><td><b>Little’s law</b></td><td>20 an hour × 0.5 h = 10 tables busy</td><td>2 a minute × 13 min = 26 riders busy</td></tr>
+<tr><td><b>Knock-on</b></td><td>Slow meals make a queue for everyone</td><td>Slow gates make everyone’s order wait for a rider</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span><span class="term">Process decomposition</span> splits a total time (or a funnel) into steps that happen one after another, measures each step, and compares with a normal baseline. The step that changed holds the cause. <span class="term">Little’s law</span> says that, on average and in a steady state, <b>items in the system = arrival rate × time each spends</b>. It links a delay in one step to the capacity you need.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 212" xmlns="http://www.w3.org/2000/svg">
+ <!-- x = 120 + 36*min -->
+ <text x="4" y="30" class="b">Normal area</text><text x="4" y="44" class="s">12 minutes</text>
+ <rect x="120" y="20" width="18" height="26" fill="#9fb3c8"/><rect x="138" y="20" width="72" height="26" fill="#127a64"/><rect x="210" y="20" width="18" height="26" fill="#e0a340"/>
+ <rect x="228" y="20" width="216" height="26" fill="#c47f17"/><rect x="444" y="20" width="72" height="26" fill="#5b6470"/><rect x="516" y="20" width="36" height="26" fill="#9fb3c8"/>
+ <text x="174" y="37" text-anchor="middle" class="w b">pack 2</text><text x="336" y="37" text-anchor="middle" class="w b">ride ~2 km, 6 min</text><text x="480" y="37" text-anchor="middle" class="w b">gate 2</text>
+ <text x="4" y="78" class="b">Affected area</text><text x="4" y="92" class="s">15 minutes</text>
+ <rect x="120" y="68" width="18" height="26" fill="#9fb3c8"/><rect x="138" y="68" width="72" height="26" fill="#127a64"/><rect x="210" y="68" width="18" height="26" fill="#e0a340"/>
+ <rect x="228" y="68" width="216" height="26" fill="#c47f17"/><rect x="444" y="68" width="180" height="26" fill="#b93a32"/><rect x="624" y="68" width="36" height="26" fill="#9fb3c8"/>
+ <text x="174" y="85" text-anchor="middle" class="w b">pack 2</text><text x="336" y="85" text-anchor="middle" class="w b">ride ~2 km, 6 min</text><text x="534" y="85" text-anchor="middle" class="w b">gate, guard call, lift: 5</text>
+ <text x="120" y="110" class="s">first: assign 0.5 · then hand to rider 0.5 · last: handover at door 1</text>
+ <text x="444" y="110" class="b red">only this step changed</text>
+ <line x1="4" y1="122" x2="676" y2="122" stroke="#d9dee4"/>
+ <text x="4" y="140" class="b">Little’s law for riders: riders busy = orders per minute × minutes per round trip</text>
+ <rect x="4" y="150" width="210" height="52" rx="5" fill="#e1f2ec" stroke="#127a64"/><text x="12" y="168" class="b grn">Before</text><text x="12" y="184">2 a minute × 13 min</text><text x="12" y="198" class="b">= 26 riders busy</text>
+ <rect x="232" y="150" width="210" height="52" rx="5" fill="#fcecea" stroke="#b93a32"/><text x="240" y="168" class="b red">Gate adds 3 min</text><text x="240" y="184">2 a minute × 16 min</text><text x="240" y="198" class="b">= 32 riders needed</text>
+ <rect x="460" y="150" width="216" height="52" rx="5" fill="#fff" stroke="#b93a32" stroke-dasharray="4 3"/><text x="468" y="168" class="b red">Still only 26 riders</text><text x="468" y="184">6 short at peak: orders wait,</text><text x="468" y="198">even to homes with no gate</text>
+</svg>
+<figcaption><b>{{FIG:zepto22}} · Find the step, then follow its knock-on.</b> Top: the same order in a normal and an affected area; only the gate step grew. Bottom: because riders are tied up longer, the area needs 6 more riders at peak, or every order slows. <span class="src">Illustrative timings consistent with the case (25% rise, ~5 minutes lost at gates).</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>Steps that happen at the same time can’t be added: making tea while you shower doesn’t add to your morning, and a rider riding to the store while the order is packed doesn’t add either. Averages hide spread: a few 30-minute gates can hide inside a “5-minute” average. And Little’s law holds for averages in a steady state, not in the first ten minutes of a sudden downpour.</p>
+<p><span class="step">5 · In the interview.</span>“Let me break the 12 minutes into steps and compare with a normal area. Whichever step grew, I’ll then check its knock-on on rider capacity using Little’s law.”</p>
+</div>
+
+<div class="box key" style="margin-top:12pt"><span class="lbl">Key idea · What these seven openings teach about scoping</span>
+<table class="tbl">
+<tr><th style="width:30%">Pattern</th><th style="width:38%">Where it showed up</th><th>The question to ask</th></tr>
+<tr><td><b>A sudden step in one place</b></td><td>Zepto’s breaches; cancellations in metros</td><td>“What changed there, on that date?” Then: “Can we trust the number?”</td></tr>
+<tr><td><b>“X% increase” with no base</b></td><td>Cancellations up “4–5%”</td><td>“From what level to what level?”</td></tr>
+<tr><td><b>A goal question left unanswered</b></td><td>Table reservations; the IPO metrics</td><td>Push once, then state your own: “I’ll assume the goal is honoured bookings.”</td></tr>
+<tr><td><b>One word hiding two users</b></td><td>“Vendors”: national brands and local bakeries</td><td>“How is this group split, and which part matters most?”</td></tr>
+<tr><td><b>An asset the company already owns</b></td><td>Swiggy’s Dineout, ignored in a reservations launch</td><td>“What do we already have here?”</td></tr>
+</table>
+<p class="small" style="margin-top:4pt">Asking the right one of these in the first two minutes changed the whole answer in every case above. None needs more than one sentence.</p></div>
+

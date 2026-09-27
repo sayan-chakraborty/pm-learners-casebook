@@ -1,0 +1,128 @@
+<!-- ============ CASE 1.5 GOOGLE PAY PROMOTIONS ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 1.5 · Promotions in Google Pay</span>
+ <span class="m"><span class="pill">Metrics</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, p. 294</span></span></div>
+<div class="try"><b>Try it first.</b> Before any metric, answer: why does Google want partner coupons inside Google Pay at all? Then name the one number you would report to its head.</div>
+</div>
+
+{{CASE:A294}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Confirmed the feature in plain words</b> before measuring it: scratch cards, cashback, partner coupons. A model “confirm the thing”.</li>
+ <li><b>Named both sides</b>: users and partner brands.</li>
+ <li><b>Wrote the metric as a formula</b>, which is a driver tree in words.</li>
+ <li><b>Gave partners their own formula</b> and metrics, including churn.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Never asked why Google runs the promotions</b>: more payments, partner revenue, or both? Without that there is no North Star, just 15 metrics of equal weight.</li>
+ <li><b>Never asked whether the coupons cause anything.</b> Would the user have bought from Lenskart anyway? Only a holdout group answers that.</li>
+ <li><b>No cost or safety checks</b>: coupon farming (₹1 payments to friends to win cards), “not interested” taps, trust.</li>
+ <li><b>The formula starts one level too low</b>: “number of payments” is really payers × payments per payer, two levers owned by different teams.</li>
+</ul>
+</div>
+
+<div class="box chk"><span class="lbl">Check · “Successful uses = payments × % tie-in scratch cards × % used” <span class="verdict v-dir">Directionally right</span></span>
+<p>It is a proper driver tree: each factor can be owned and moved by a team. Two caveats. The factors aren’t independent (people who pay more also redeem more coupons), so improving one can shift another. And the output is a count of redemptions, which says nothing about whether each redemption was extra business for the partner.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">
+<svg class="d" viewBox="0 0 680 62" xmlns="http://www.w3.org/2000/svg">
+ <g class="c">
+  <polygon points="0,4 106,4 116,31 106,58 0,58" fill="#127a64"/><text x="54" y="26" text-anchor="middle" class="b w">① Why?</text><text x="54" y="44" text-anchor="middle" class="w">goal of the feature</text>
+  <polygon points="113,4 219,4 229,31 219,58 113,58 123,31" fill="#1d8a73"/><text x="170" y="26" text-anchor="middle" class="b w">② Who gains?</text><text x="170" y="44" text-anchor="middle" class="w">three sides</text>
+  <polygon points="226,4 332,4 342,31 332,58 226,58 236,31" fill="#2a9a82"/><text x="283" y="26" text-anchor="middle" class="b w">③ North Star</text><text x="283" y="44" text-anchor="middle" class="w">one number</text>
+  <polygon points="339,4 445,4 455,31 445,58 339,58 349,31" fill="#0b5d7a"/><text x="396" y="26" text-anchor="middle" class="b w">④ Driver tree</text><text x="396" y="44" text-anchor="middle" class="w">find the weak link</text>
+  <polygon points="452,4 558,4 568,31 558,58 452,58 462,31" fill="#3e4fb8"/><text x="509" y="26" text-anchor="middle" class="b w">⑤ Prove cause</text><text x="509" y="44" text-anchor="middle" class="w">holdout group</text>
+  <polygon points="565,4 680,4 680,58 565,58 575,31" fill="#7c3aa6"/><text x="624" y="26" text-anchor="middle" class="b w">⑥ Guardrails</text><text x="624" y="44" text-anchor="middle" class="w">farming, spam</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:strip15}} · A metrics answer in six moves.</b> Metrics cases reward depth on a few numbers over a long list. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Why?</div><p>Why does Google Pay carry partner coupons? My guess: partners fund the rewards, so Google gets rewards that keep people paying on Google Pay without paying for them itself, and partners get customers. Is the priority more payments on Google Pay, or partner revenue?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Both, but more payments on Google Pay comes first.</p></div></div>
+<p class="whynote">Why this move: the answer decides the North Star. Without it, every metric looks equally important.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Who gains · ③ North Star</div><p>Users want to be rewarded for paying here. Partners want new customers cheaper than ads. Google wants Google Pay to be the default way to pay. So my <b>Goal (North Star)</b> is monthly payers who make 10 or more payments, a habit measure. Promotions are one input to it, alongside payment success and new users.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Driver tree</div><p>Illustrative numbers: 10 crore monthly payers × 25 payments = 250 crore payments. 20% earn a scratch card = 50 crore cards. 30% of cards are partner coupons = 15 crore coupons. 2% are redeemed = 30 lakh redemptions a month. The weak link is redemption: 98% of coupons go unused, so I’d fix relevance before signing more partners ({{REF:tree}}).</p></div></div>
+<p class="whynote">Why this move: multiplying the chain out shows which factor is weakest, and that factor becomes the team’s focus.</p>
+<figure>
+<svg class="d" viewBox="0 0 680 224" xmlns="http://www.w3.org/2000/svg">
+ <rect x="4" y="84" width="130" height="58" rx="6" fill="#3e4fb8"/><text x="69" y="104" text-anchor="middle" class="w b">Partner-coupon</text><text x="69" y="118" text-anchor="middle" class="w b">redemptions</text><text x="69" y="134" text-anchor="middle" class="w">30 lakh / month</text>
+ <path d="M134,113 H150 M150,26 V200 M150,26 H166 M150,84 H166 M150,142 H166 M150,200 H166" class="ln"/>
+ <text x="146" y="60" text-anchor="end" class="b acc t13">=</text>
+ <rect x="168" y="8" width="150" height="38" rx="5" fill="#fff" stroke="#3e4fb8" stroke-width="1.4"/><text x="243" y="24" text-anchor="middle" class="b">Payments a month</text><text x="243" y="39" text-anchor="middle">250 crore</text>
+ <rect x="168" y="66" width="150" height="38" rx="5" fill="#fff" stroke="#3e4fb8"/><text x="243" y="82" text-anchor="middle" class="b">× earn a scratch card</text><text x="243" y="97" text-anchor="middle">20% → 50 crore cards</text>
+ <rect x="168" y="124" width="150" height="38" rx="5" fill="#fff" stroke="#3e4fb8"/><text x="243" y="140" text-anchor="middle" class="b">× partner coupon</text><text x="243" y="155" text-anchor="middle">30% → 15 crore</text>
+ <rect x="168" y="182" width="150" height="38" rx="5" fill="#fcecea" stroke="#b93a32" stroke-width="1.8"/><text x="243" y="198" text-anchor="middle" class="b red">× redeemed</text><text x="243" y="213" text-anchor="middle" class="b red">2% → 30 lakh</text>
+ <path d="M318,27 H334 M334,8 V46 M334,8 H348 M334,46 H348" class="ln"/>
+ <rect x="350" y="0" width="118" height="22" rx="4" fill="#fff" stroke="#9aa3ad"/><text x="409" y="15" text-anchor="middle" class="s">monthly payers 10 cr</text>
+ <rect x="350" y="34" width="118" height="22" rx="4" fill="#fff" stroke="#9aa3ad"/><text x="409" y="49" text-anchor="middle" class="s">× 25 payments each</text>
+ <!-- owners -->
+ <text x="488" y="24" class="b">Who moves it</text>
+ <text x="488" y="42" class="s">Growth and payments teams</text>
+ <text x="488" y="90" class="s">Rewards budget (cost per card)</text>
+ <text x="488" y="148" class="s">Partnerships team</text>
+ <text x="488" y="198" class="b red">Targeting: relevance of coupons</text>
+ <text x="488" y="213" class="s red">98% unused: the weakest branch</text>
+ <line x1="318" y1="201" x2="484" y2="201" stroke="#b93a32" stroke-dasharray="3 3"/>
+</svg>
+<figcaption><b>{{FIG:tree}} · The promotions driver tree, with numbers.</b> Read it left to right: each box multiplies the one above. The red branch is the weakest link, so doubling redemption from 2% to 4% adds as much as doubling every partner deal. <span class="src">All numbers illustrative. Structure from the candidate’s formula (IIM A p. 294), extended one level.</span></figcaption>
+</figure>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Prove cause</div><p>Do coupons cause anything? Keep 5% of users on no partner coupons for a quarter. If they make 24.5 payments a month and everyone else makes 25, coupons add 2% more payments. For partners: if 1.2% of users shown a Lenskart coupon buy, against 1.0% of similar users not shown one, only 1 in 6 redemptions is new business. That is what Lenskart should pay for ({{REF:holdout}}).</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Guardrails</div><p><b>Safety check (guardrail):</b> coupon farming (very small payments between the same few people), “not interested” taps, and support complaints. <b>Trade-off:</b> better targeting means fewer coupons for some users, which can feel like a cut in rewards. <b>Next:</b> report incremental purchases per partner every month, not raw redemptions.</p></div></div>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · North Star, input metrics and the driver tree</span>
+<p><span class="step">1 · The situation.</span>The candidate listed 15 metrics. A team can’t steer by 15 numbers; it needs one that captures the value it creates, and a map of the levers that move it.</p>
+<p><span class="step">2 · An everyday example.</span>A cricket team’s goal is matches won. The captain can’t order “win more”, but can work on the things that add up to it: runs per over, wickets, catches. And runs themselves split further: balls faced × strike rate.</p>
+<table class="tbl">
+<tr><th style="width:20%">Part</th><th>Cricket team</th><th>Google Pay promotions</th></tr>
+<tr><td><b>North Star</b></td><td>Matches won</td><td>Monthly payers making 10+ payments</td></tr>
+<tr><td><b>Input metrics</b></td><td>Runs per over, wickets, catches</td><td>Payments per payer, coupon redemptions, payment success</td></tr>
+<tr><td><b>Driver tree</b></td><td>Runs = balls faced × strike rate</td><td>Redemptions = payments × card rate × partner share × redemption rate</td></tr>
+<tr><td><b>Weak link</b></td><td>Dropped catches</td><td>98% of coupons unused</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>A <span class="term">North Star metric</span> is the one number that best captures the value users get, and that predicts the business’s future. <span class="term">Input metrics</span> are the few numbers teams can move directly that feed it. A <span class="term">driver tree</span> writes the link as arithmetic, a multiplication or a sum, so you can see which branch is weakest and who owns it ({{REF:tree}}).</p>
+<p><span class="step">4 · When it misleads.</span>Choose a North Star that can be gamed and it will be. If it were “number of payments”, users would split one ₹500 payment into five of ₹100 to win more scratch cards, and the number would rise while nothing real improved. Driver trees mislead when the branches affect each other: showing more coupons (partner share ↑) can lower the redemption rate, because people ignore a cluttered rewards page.</p>
+<p><span class="step">5 · In the interview.</span>“I’ll pick one number that shows users are getting value, then break it into the three or four levers that drive it, and find the weakest one.” Say the North Star in a sentence before listing any other metric.</p>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · Holdouts and incrementality: did we cause it?</span>
+<p><span class="step">1 · The situation.</span>Lenskart sees 30,000 coupon redemptions and is delighted. But many of those buyers were already planning to buy glasses. Lenskart should pay only for the purchases the coupon <i>caused</i>.</p>
+<p><span class="step">2 · An everyday example.</span>A coaching centre advertises that its students average 90% in the board exam. But the students who join coaching are often the most motivated ones anyway. The fair test: compare them with similar students who didn’t join.</p>
+<table class="tbl">
+<tr><th style="width:24%">Part</th><th>Coaching centre</th><th>Partner coupon</th></tr>
+<tr><td><b>Treatment group</b></td><td>Students who joined</td><td>Users shown the Lenskart coupon</td></tr>
+<tr><td><b>Holdout (control)</b></td><td>Similar students who didn’t join</td><td>Similar users, picked at random, not shown it</td></tr>
+<tr><td><b>Raw result</b></td><td>90% average</td><td>1.2% of users bought</td></tr>
+<tr><td><b>Incremental effect</b></td><td>90% − 84% = 6 points</td><td>1.2% − 1.0% = 0.2 points: 1 in 6 buyers</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>A <span class="term">holdout</span> is a random slice of users kept away from a feature so they show what would have happened without it. <span class="term">Incrementality</span> is the difference between the treated group and the holdout: the effect the feature caused. Because the slice is random, the two groups are alike in everything except the feature.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 188" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="14" class="b">For Google: payments per user a month</text>
+ <text x="4" y="46">Holdout (5%, no coupons)</text><rect x="170" y="34" width="147" height="18" fill="#9aa3ad"/><text x="323" y="47" class="b">24.5</text>
+ <text x="4" y="74">Everyone else</text><rect x="170" y="62" width="147" height="18" fill="#9aa3ad"/><rect x="317" y="62" width="3" height="18" fill="#127a64"/><text x="326" y="75" class="b">25.0</text>
+ <text x="170" y="98" class="s">grey: would have happened anyway</text><text x="170" y="111" class="s">green: caused by coupons (+0.5, +2%)</text>
+ <line x1="350" y1="8" x2="350" y2="116" stroke="#d9dee4"/>
+ <text x="366" y="14" class="b">For Lenskart: share of users who bought</text>
+ <text x="366" y="46">Not shown coupon</text><rect x="480" y="34" width="150" height="18" fill="#9aa3ad"/><text x="636" y="47" class="b">1.0%</text>
+ <text x="366" y="74">Shown coupon</text><rect x="480" y="62" width="150" height="18" fill="#9aa3ad"/><rect x="630" y="62" width="30" height="18" fill="#127a64"/><text x="664" y="75" class="b" text-anchor="end" fill="#fff">+</text>
+ <text x="366" y="98" class="s">1.2% bought; only 0.2 points were new business</text>
+ <rect x="4" y="128" width="672" height="54" rx="5" fill="#e7f4f0" stroke="#127a64"/>
+ <text x="16" y="148" class="b grn">30 lakh redemptions ≠ 30 lakh new sales.</text>
+ <text x="16" y="165">If 1 in 6 redemptions is incremental, the partner’s true result is about 5 lakh extra purchases a month,</text>
+ <text x="16" y="179">and that is the number to price the partnership on.</text>
+</svg>
+<figcaption><b>{{FIG:holdout}} · Raw results vs the part a feature caused.</b> Both panels ask the same question: compared with a random group that didn’t get the coupon, what changed? Most of the bar would have happened anyway. <span class="src">Illustrative numbers.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>Holdouts cost something: those users miss rewards, and the business gives up whatever the feature earns on them. Too small a holdout gives noise: 5% of 10 crore users is 50 lakh people and plenty; 5% of a 2,000-user pilot is 100 people and tells you nothing. And holdouts run for too short a time miss slow effects, such as users getting tired of coupons after two months.</p>
+<p><span class="step">5 · In the interview.</span>“Redemptions tell us coupons were used, not that they caused anything. I’d keep a random 5% on no partner coupons and compare purchases and payments against them.”</p>
+</div>

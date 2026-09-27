@@ -1,0 +1,33 @@
+<!-- ============ TEARDOWNS: ZYNGA ============ -->
+<h1 style="margin-top:12pt">Zynga: free to play, paid for by a few</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Lakshmi, 38, an accountant in Chennai, plays Toon Blast on the train home. She has played for two years and never paid. On level 212 she runs out of moves two cubes short. The game offers five more moves: watch a 30-second ad, or spend coins. She watches the ad and wins. Three seats away, a college student has spent ₹2,400 this month on boosters to beat a level before his friends. The game is the same for both. Its business needs Lakshmi happy and playing, because she makes the teams feel alive and fills ad slots, while the student and players like him pay most of the bills ({{REF:zy-flow}}).</p>
+<figure>{{SVG:flow_zy}}
+<figcaption><b>{{FIG:zy-flow}} · Two ways Lakshmi pays without paying, and one way she might.</b> The “near miss” offer (②) is the moment people are most willing to pay. The app store keeps up to 30% of any purchase (⑧). <span class="src">Simplified from how casual mobile games generally earn; ad and pack prices illustrative.</span></figcaption>
+</figure>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">Player problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Short levels, few moves</td><td>“A few minutes of progress on the train”</td><td>Clear goals, two to three minutes, early levels designed to be won</td><td>Level completion; day-1 return</td></tr>
+<tr><td>Lives that refill</td><td>Game: stop players burning out in one sitting</td><td>Limited plays, then a reason to come back later</td><td>Sessions per day</td></tr>
+<tr><td>Rewarded ads</td><td>“I’m stuck but won’t pay”</td><td>Choose an ad for a bonus; never forced</td><td>Ad revenue per player; non-payer retention</td></tr>
+<tr><td>Teams, weekly events</td><td>“It feels the same every day”</td><td>Shared goals, team chests, limited-time events</td><td>Day-30 return; spend during events</td></tr>
+<tr><td>Web store</td><td>Studio: app stores take up to 30%</td><td>Sell coins on the web where store rules allow</td><td>Margin per purchase</td></tr>
+</table>
+<p><b>Business model, with numbers.</b> Free-to-play games earn from <b>in-app purchases</b> and <b>ads</b>. Usually only 2–5% of players ever pay, and a tiny group spends heavily. The test for every game is whether a player is worth more than it costs to win them ({{REF:zy-ltv}}). Zynga began with FarmVille on Facebook in 2009, grew through friends’ feeds and fell when Facebook cut those feeds; it then bought mobile studios with proven hits. Take-Two bought it in 2022 for $12.7 bn, and in the year to March 2026 mobile was about half of Take-Two’s $6.7 bn of net bookings (money players committed to spend).</p>
+<figure>{{SVG:ltv_zy}}
+<figcaption><b>{{FIG:zy-ltv}} · The one sum a games PM must know.</b> If a player’s lifetime value beats the cost of winning them, buying ads to grow pays back. Retention is the lever: more active days raises LTV. <span class="src">Structure standard in mobile gaming; values illustrative.</span></figcaption>
+</figure>
+<p><b>Moat, in plain words.</b> A portfolio of long-running hits, each with years of tuned levels and loyal teams; and the data to know which players will pay and which ads win players cheaply. Lesson from FarmVille: growth that depends on someone else’s platform can be switched off by that platform.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Daily active players who come back the next week.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Day-1, day-7, day-30 return · share who ever pay · revenue per daily player · cost per install.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Spending by very heavy payers (fair treatment) · difficulty complaints · ad frequency.</div>
+</div>
+<div class="box brk"><span class="lbl">When it breaks · India’s ban on real-money games</span>
+<p>The Online Gaming Act 2025 banned games played for money from 1 October 2025, including fantasy cricket and rummy, and banned their ads and payments. Casual games like Toon Blast, where you buy extras but can’t win money, were not affected. The line that matters is simple: can a player put money in <i>and take money out</i>? Any game design that looks like a bet now carries legal risk in India.</p></div>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Many long-lived hits</li><li>Skilled at buying players profitably</li><li>Take-Two’s money behind it</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Hits are rare and fade</li><li>Depends on app stores and ad networks</li><li>Heavy spenders invite scrutiny</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Indian players rarely pay ₹89 at once <span class="arrow">→</span> ₹10 “sachet” boosters paid by UPI <span class="arrow">→</span> share of players who ever pay; revenue per daily player.</p>
+<p class="idea"><b>2.</b> Players leave when stuck on a hard level for days <span class="arrow">→</span> spot players stuck three days and quietly give a free booster <span class="arrow">→</span> day-30 return; guardrail: purchases per payer.</p>

@@ -1,0 +1,45 @@
+<!-- ============ TEARDOWNS: MYNTRA ============ -->
+<h1 style="margin-top:12pt">Myntra: one category, done deeply, turned into profit</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Aditi, 24, works in Pune. She sees a kurta on an influencer’s Instagram post, screenshots it, and uploads the photo to Myntra’s visual search. Forty similar kurtas appear. On the one she likes, a small line says “runs small: most people chose one size up”, so she orders an L instead of her usual M. It is in stock at an M-Now store nearby, so it arrives in 30 minutes. It fits ({{REF:my-walk}}).</p>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Visual search</td><td>“I saw it on Instagram but can’t describe it”</td><td>A photo replaces words; computer vision finds items with a similar cut, colour and pattern</td><td>Searches that end in a product view</td></tr>
+<tr><td>Size and fit hints</td><td>“Will it fit?”</td><td>Returns data per product turns into a one-line hint before the order, the cheapest point to stop a misfit</td><td>Return rate for size reasons</td></tr>
+<tr><td>M-Now</td><td>“I need an outfit for tonight”</td><td>Fashion and beauty in about 30 minutes from city stores; launched December 2024</td><td>Orders per customer; share of urgent occasions won</td></tr>
+<tr><td>MyFashionGPT</td><td>“What should I wear to a beach wedding?”</td><td>Launched 2023: type a need in plain words, get a set of products instead of a keyword search</td><td>Search success on vague queries</td></tr>
+<tr><td>Brand ads</td><td>Brands: “we need to be seen during the sale”</td><td>Sponsored slots and brand pages; fashion shoppers browse, so there are many slots to sell</td><td>Ad revenue (₹915 Cr in FY25, +28%)</td></tr>
+</table>
+<figure>
+{{SVG:flow_myntra}}
+<figcaption><b>{{FIG:my-walk}} · Behind Aditi’s kurta.</b> Two steps do the heavy lifting: the photo search (②) that finds the product without words, and the size hint (③) that makes the kept order more likely. The brand pays for the slot (⑨) whether or not Aditi keeps the kurta. <span class="src">Simplified from Myntra’s public feature descriptions; amounts illustrative.</span></figcaption>
+</figure>
+<figure>
+<svg class="d" viewBox="0 0 680 116" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="mr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker></defs>
+ <g>
+  <rect x="0" y="8" width="200" height="72" rx="6" fill="#e7f4f0" stroke="#127a64" stroke-width="1.6"/>
+  <text x="100" y="28" text-anchor="middle" class="b grn">① Before the order</text><text x="100" y="45" text-anchor="middle">size hint, fit from past buys</text><text x="100" y="70" text-anchor="middle" class="b grn t13">misfit costs ₹0</text>
+  <rect x="240" y="8" width="200" height="72" rx="6" fill="#fbf4e6" stroke="#c47f17" stroke-width="1.6"/>
+  <text x="340" y="28" text-anchor="middle" class="b amb">② At the door</text><text x="340" y="45" text-anchor="middle">try it while the rider waits</text><text x="340" y="70" text-anchor="middle" class="b amb t13">costs ~₹85: one trip</text>
+  <rect x="480" y="8" width="200" height="72" rx="6" fill="#fcecea" stroke="#b93a32" stroke-width="1.6"/>
+  <text x="580" y="28" text-anchor="middle" class="b red">③ After delivery</text><text x="580" y="45" text-anchor="middle">pickup, check, resell</text><text x="580" y="70" text-anchor="middle" class="b red t13">costs ~₹250</text>
+  <line x1="200" y1="44" x2="236" y2="44" class="ln" marker-end="url(#mr)"/><line x1="440" y1="44" x2="476" y2="44" class="ln" marker-end="url(#mr)"/>
+  <text x="340" y="104" text-anchor="middle" class="b acc">The earlier a misfit is caught, the cheaper it is: move effort to the left.</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:my-ladder}} · Three places to catch a kurta that won’t fit.</b> Every rupee spent improving size hints saves more than the same rupee spent on faster return pickups. <span class="src">Costs illustrative, from the return waterfall in the primer.</span></figcaption>
+</figure>
+<p><b>Business model, with numbers.</b> Myntra earned <b>₹6,043 Cr</b> in FY25 (+18%) and a profit of <b>₹548 Cr</b>, up from ₹31 Cr, helped by about ₹138 Cr of deferred tax credit. Half its revenue is logistics fees charged to sellers, a third is commission, and ads bring ₹915 Cr. The lesson for PMs: a focused vertical with high-margin ads and loyal 18–35-year-olds can make money where the everything-stores can’t. More than 70% of its new customers in 2025 came from outside the metros.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Kept orders per active customer per quarter.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Search-to-cart rate · size-hint coverage of catalogue · M-Now orders · new customers outside metros.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Return rate by reason · ad load per search page · brand partner satisfaction.</div>
+</div>
+<p><b>Moat, in plain words.</b> Long relationships with fashion brands, years of fit and return data per product, and a young audience that browses often, which makes its ad slots valuable. <b>2025–26 moves:</b> M-Now scaling across cities; more AI-led discovery; growth outside metros.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Profitable, unlike most rivals</li><li>Deep fashion data and brand ties</li><li>Ads grow fast at low cost</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>High return rates are built into the category</li><li>Meesho and Shopsy win the price-conscious shopper</li><li>Depends on a few big sale events</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Customers order two sizes and return one <span class="arrow">→</span> “your size here”: fit advice from the customer’s own kept orders, shown when a second size is added <span class="arrow">→</span> bracketed orders; size-related returns.</p>
+<p class="idea"><b>2.</b> M-Now orders are urgent and misfits hurt most <span class="arrow">→</span> try-at-the-door on M-Now orders only, where the rider is nearby anyway <span class="arrow">→</span> kept rate on M-Now; cost per M-Now order.</p>

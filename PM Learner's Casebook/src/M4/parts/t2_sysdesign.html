@@ -1,0 +1,116 @@
+<!-- ============ TECHNOLOGY: SYSTEM DESIGN III ============ -->
+<h1 style="margin-top:14pt">System design III: staying up when everyone books at once</h1>
+<p class="lede">Friday, 6 pm, rain in Bengaluru: ride requests triple in 20 minutes. New Year’s Eve at midnight: ten times a normal evening, in five minutes. The product team has to know three things before that night: which parts of the app must keep working, which may slow down, and what riders see when the system is overloaded. None of the ideas below needs a computer science degree. Every one of them already happens in a busy restaurant.</p>
+
+<h2>One restaurant, eight ideas</h2>
+<p>Picture a popular restaurant in Jayanagar on Diwali night. It faces the same problems as a ride app at midnight on 31 December, and it has found the same solutions. Keep this table in mind; each idea in this section is one row of it.</p>
+<table class="tbl">
+<tr><th style="width:21%">Idea</th><th style="width:41%">The restaurant on Diwali night</th><th>The ride app on New Year’s Eve</th></tr>
+<tr><td><b>Scaling out</b></td><td>Add more cooks at more stoves, not one faster cook</td><td>Add more identical servers</td></tr>
+<tr><td><b>Load balancer</b></td><td>The head waiter seats each group at a free table, and skips the section whose waiter is on a break</td><td>Sends each request to a healthy server with room</td></tr>
+<tr><td><b>Autoscaling</b></td><td>Calling in extra staff when the queue forms; they take 30 minutes to arrive, so for Diwali they are booked in advance</td><td>Adds servers when load rises; pre-scales for known peaks</td></tr>
+<tr><td><b>Consistency vs availability</b></td><td>Never promise the last table to two families; the menu board can be a little out of date</td><td>Never give one driver two rides; the map of cars can be 10 s old</td></tr>
+<tr><td><b>SLO and error budget</b></td><td>“At most 1 order in 100 may be late”; after too many late orders, no new dishes until the kitchen catches up</td><td>“99.9% of bookings work”; when the budget is spent, stop shipping features</td></tr>
+<tr><td><b>Graceful degradation</b></td><td>When swamped, stop serving the elaborate thali and keep the main menu going</td><td>Switch off promos and extras so booking keeps working</td></tr>
+<tr><td><b>Retries, circuit breaker</b></td><td>Guests shouting “where’s my food?” every minute slow the kitchen further; when the tandoor breaks, stop taking tandoor orders</td><td>Retries pile load on a sick service; a breaker stops calling it for a while</td></tr>
+<tr><td><b>Monolith vs microservices</b></td><td>One big kitchen doing everything, or a food court of separate stalls</td><td>One program, or many small services</td></tr>
+</table>
+
+<h2>The load, in numbers</h2>
+<p>Say a ride app across India handles 5,000 requests a second on a normal Friday peak: fare checks, bookings, status updates. New Year’s Eve brings 10×: <b>50,000 requests a second</b>. Separately, every online driver’s phone sends its location every 4 seconds. 2 lakh drivers ÷ 4 s = <b>50,000 location updates a second</b>, all night, whatever riders do. These two streams need different care: bookings must be exactly right; locations just need to be handled in huge volume. (Numbers illustrative.)</p>
+
+<h2>1. Scaling up or scaling out</h2>
+<p><b>Everyday picture.</b> A railway station before a festival can make one ticket clerk faster, or open more ticket windows. One fast clerk still has two hands, and if that clerk falls ill, nobody gets a ticket. Ten windows can serve ten queues, and one closed window doesn’t stop the station.</p>
+<p><b>How it works.</b> <span class="term">Vertical scaling</span> (scaling up) buys a bigger machine: more processors, more memory. It needs no change to the software, but there is a biggest machine you can buy, and one machine is one point of failure. <span class="term">Horizontal scaling</span> (scaling out) adds more machines of the same size and spreads the work ({{REF:scaling}}). It has no ceiling, but it only works if any machine can handle any request. That needs the service to be <span class="term">stateless</span>: like a bank, where any cashier can serve you because your balance is in the bank’s central ledger, not in one cashier’s head. The rider’s trip details therefore live in a shared database, not on whichever server took the booking.</p>
+<figure>{{SVG:scaling}}
+<figcaption><b>{{FIG:scaling}} · Two ways to add capacity.</b> Ride apps scale out: many identical servers behind a load balancer. The part that is hard to scale out, the database, is where most design effort goes. <span class="src">Author’s diagram.</span></figcaption>
+</figure>
+<p><b>Real example.</b> Stack Overflow, one of the busiest sites for programmers, famously ran for years on a small number of powerful servers: scaling up worked because its traffic was large but steady. A ride app’s traffic swings 10× in a night, so it scales out. <b>PM decision:</b> if a feature keeps information on one server (a half-filled form, a trip in progress), ask where it goes when that server disappears.</p>
+
+<h2>2. Load balancing</h2>
+<p><b>Everyday picture.</b> A toll plaza on the Mumbai–Pune expressway. Cars don’t pick a lane at random: overhead lights show which booths are open, and a booth with a broken barrier shows a red cross, so nobody queues behind it.</p>
+<p><b>How it works.</b> A <span class="term">load balancer</span> stands in front of the servers and sends each request to one with spare room ({{REF:lb}}). Simple rules work well: take turns (round robin), or pick the server with the fewest requests in hand. Every few seconds it sends each server a tiny “are you alive?” message, a <span class="term">health check</span>. A server that doesn’t answer gets the red cross: no new traffic, and the others share its load. Riders never notice. Load balancers also spread traffic across <span class="term">availability zones</span>: separate buildings, with separate power, in the same city.</p>
+<figure>{{SVG:lb}}
+<figcaption><b>{{FIG:lb}} · A load balancer with a failed server.</b> Health checks make one broken machine invisible to riders. <span class="src">Illustrative numbers: 50,000 requests a second over four servers.</span></figcaption>
+</figure>
+<p><b>Real example.</b> In March 2021 a fire destroyed a building at OVHcloud’s data centre in Strasbourg, France. Websites that kept copies in other buildings stayed up; some that lived in one building went offline, and a few lost their data. <b>PM decision:</b> for the booking and payment path, insist on at least two zones; for an internal report, one may be enough.</p>
+
+<h2>3. Autoscaling, and why it arrives late</h2>
+<p><b>Everyday picture.</b> When the restaurant’s queue suddenly reaches the pavement, the manager phones two extra waiters. They take 30 minutes to arrive, by which time half the queue has left. So for Diwali, the manager books extra staff a week ahead, and keeps one helper waiting in the back room for surprises.</p>
+<p><b>How it works.</b> <span class="term">Autoscaling</span> adds servers when a signal, such as requests per second, crosses a line, and removes them when load falls, so you pay only for what you use. The sizing sum is simple: servers = peak requests per second ÷ requests one server handles, plus spare room. 50,000 ÷ 500 = 100 servers; × 1.3 for spare room = <b>130</b>. The catch is time: a new server takes 3–5 minutes to start, and the midnight spike arrives in five. Requests fail in the gap ({{REF:autoscale}}). For peaks you can see coming, scale on a schedule; for surprises, such as sudden rain, keep a small <b>warm pool</b> of servers already running.</p>
+<figure>{{SVG:autoscale}}
+<figcaption><b>{{FIG:autoscale}} · Reactive autoscaling lags a sudden peak.</b> The red area is requests that fail while new servers start. Scaling up at 11:20 pm on a schedule (green) closes the gap for a known peak. <span class="src">Illustrative curve; start-up times typical of cloud servers, 2026.</span></figcaption>
+</figure>
+<p><b>Real example.</b> IRCTC’s Tatkal window opens at 10 am for AC classes and 11 am for sleeper, every single day. Nobody waits for the rush to start adding capacity: the spike is on the calendar. The same is true of an IPL final, a Flipkart sale at midnight or a results day. <b>PM decision:</b> give engineering the calendar of your known peaks (launches, sales, festivals, marketing pushes) weeks ahead.</p>
+
+<h2>4. Right, or up? Consistency and availability, feature by feature</h2>
+<p><b>Everyday picture.</b> Two counters of a cinema sell tickets for the same show, and the phone line between them goes dead. If both keep selling, seat F12 may be sold twice, and two families will argue in the dark. So seat sales must stop, or wait, until the line is back. But the poster showing the day’s show timings can stay up even if it is an hour out of date. Nobody is harmed.</p>
+<p><b>How it works.</b> Large apps run in more than one data centre, and sometimes the link between them breaks for a few seconds: a <span class="term">network partition</span>. The <span class="term">CAP theorem</span> says that during a partition a system must choose: stay <b>consistent</b> (every answer correct and up to date, even if some requests must wait or be refused) or stay <b>available</b> (always answer, even if some answers are a few seconds old). The useful move is to choose per feature ({{REF:cap}}). A driver must never be assigned to two rides, so matching chooses consistency: better to wait two seconds than double-book. The cars on the map can be 10 seconds old, so they choose availability.</p>
+<figure>{{SVG:cap}}
+<figcaption><b>{{FIG:cap}} · Choosing per feature during a network split.</b> Anything involving money or exclusive assignment must be right; anything that is only displayed can be slightly stale. <span class="src">Author’s classification for a typical ride app.</span></figcaption>
+</figure>
+<p><b>Real examples.</b> BookMyShow locks your chosen seats for a few minutes while you pay, so nobody else can buy them: consistency, bought with a short wait. An ATM whose link to the bank is down says “unable to process” instead of handing out cash it can’t check: consistency again. WhatsApp’s “last seen” is sometimes a little behind: availability, because a slightly old time hurts nobody. <b>PM decision:</b> for each feature, write one line: “if we’re unsure, do we wait, or show the last known answer?”</p>
+
+<h2>5. Measuring reliability: SLIs, SLOs and error budgets</h2>
+<p><b>Everyday picture.</b> A monthly mobile data pack. You get 45 GB for the month. Use it freely, stream what you like, but if 40 GB is gone by the 18th, you stop streaming video until the next cycle. Nobody argues about it, because the rule was agreed in advance.</p>
+<p><b>How it works.</b> An <span class="term">SLI</span> (service level indicator) is what you measure: “share of booking requests answered successfully within 2 seconds”. An <span class="term">SLO</span> (service level objective) is the target: “99.9% over 30 days”. The gap between the target and 100% is the <span class="term">error budget</span>, the data pack of failure. 30 days × 24 hours × 60 minutes = 43,200 minutes; 0.1% of that is <b>43.2 minutes</b> of failed bookings a month. While budget remains, the team ships features. When it runs out, it freezes feature releases and fixes reliability ({{REF:budget}}). One bad release that breaks bookings for 20 minutes spends 20 ÷ 43.2 = 46% of the month’s budget.</p>
+<figure>{{SVG:budget}}
+<figcaption><b>{{FIG:budget}} · An error budget over one month.</b> Two incidents spent 86% of the budget by day 18; the team froze feature releases until reliability work was done. <span class="src">Illustrative; the error-budget practice follows Google’s <i>Site Reliability Engineering</i> (2016).</span></figcaption>
+</figure>
+<p><b>Real example.</b> NPCI publishes, month by month, how often each bank’s UPI systems fail on their own side (“technical declines”). That share is an SLI anyone can read, and banks with high numbers are named in the tables. Google made the error-budget rule famous: product teams and reliability engineers agree the budget first, so the argument “speed or stability?” is settled by a number, not by who shouts louder. <b>PM decision:</b> choose the SLO from what riders feel (a booking confirmed within 2 seconds), not from what servers report. Each extra nine costs roughly ten times more effort, so don’t ask for 99.99% where 99.5% would go unnoticed.</p>
+
+<h2>6. Failing gently: graceful degradation</h2>
+<p><b>Everyday picture.</b> A power cut at home with an inverter. The inverter can’t run everything, so it runs the fans, lights and the Wi-Fi router, not the air conditioner or the geyser. The house stays liveable because someone decided in advance which sockets matter.</p>
+<p><b>How it works.</b> <span class="term">Graceful degradation</span> means that under overload the app gives up less important things so the core job keeps working. It is designed in advance as a ladder of switches ({{REF:degrade}}), usually <b>kill switches</b>: settings an engineer can flip in seconds without a new app release. At 120% of planned load, switch off promo banners and recommendations. At 150%, show ETAs and fares from a saved copy up to 60 seconds old. At 200%, simplify matching to “nearest free driver”. At 300%, queue new requests with an honest message (“high demand, about 3 minutes”). Only as a last resort, pause bookings in the worst zones.</p>
+<figure>{{SVG:degrade}}
+<figcaption><b>{{FIG:degrade}} · A degradation ladder for a ride app.</b> Each rung protects the core job by giving up something riders will miss less. <span class="src">Author’s example; the thresholds are illustrative.</span></figcaption>
+</figure>
+<p><b>Real examples.</b> When Netflix’s personalisation system is struggling, the home screen falls back to a general list of popular titles instead of going blank; Netflix engineers have written about these fallbacks for years. IRCTC, at Tatkal time, puts some users in a waiting queue page rather than letting the whole site freeze. <b>PM decision:</b> the PM owns the ladder. Which feature is “the fan” and which is “the geyser” is a product call, and the switches must be rehearsed before the big night, because a switch nobody has tested often doesn’t work.</p>
+
+<h2>7. Timeouts, retries and circuit breakers</h2>
+<p><b>Everyday picture.</b> At midnight on New Year’s Eve everyone calls their family at once. Calls fail, so everyone redials immediately, again and again, and the network jams even harder. The sensible thing is to wait a minute, and then a bit longer, before trying again. And in your home, when a faulty heater keeps overloading the circuit, the MCB (the switch in the fuse box) trips. It stops power to that circuit so the wiring doesn’t burn, and after a while you switch it back on to see if the fault has cleared.</p>
+<p><b>How it works.</b> One ride request calls several internal services: pricing, maps, matching, payments. If pricing slows down and every caller <b>retries</b> at once, the struggling service gets several times its normal load at its weakest moment: a <span class="term">retry storm</span>. With three retries each, 10,000 requests a second become 40,000 ({{REF:breaker}}). Three defences. <b>Timeouts:</b> give up after a set time, shorter than the rider’s patience. <b>Backoff:</b> wait longer before each retry (1 s, 2 s, 4 s), with a little randomness so callers don’t all retry together. <b>Circuit breaker:</b> the MCB. When too many calls fail, the breaker “opens” and callers stop calling for a while, using a fallback instead (the last known fare, labelled “estimate”). After 30 seconds it lets a few calls through to test whether the service has recovered.</p>
+<figure>{{SVG:breaker}}
+<figcaption><b>{{FIG:breaker}} · How retries multiply a failure, and how a circuit breaker stops it.</b> The breaker trades a slightly worse answer (an estimated fare) for keeping the whole app up. <span class="src">Illustrative numbers; the pattern follows Nygard, <i>Release It!</i> (2007).</span></figcaption>
+</figure>
+<p><b>Real example.</b> Netflix popularised circuit breakers in 2012 with an open-source tool called Hystrix, so that one slow service (say, ratings) couldn’t freeze the whole app. Payment apps show the same idea to users: “Bank server is busy, please try after some time” is a circuit breaker speaking. <b>PM decision:</b> decide what the fallback looks like on screen. “Estimated fare”, “ratings unavailable” and “try again in a minute” are product copy, not engineering details.</p>
+
+<h2>8. Monolith or microservices</h2>
+<p><b>Everyday picture.</b> A family restaurant with one big kitchen: one head cook, one menu, one set of rules. Easy to run with ten staff. Now picture a mall food court: a dosa stall, a biryani stall, a juice stall, each with its own staff and hours. If the juice stall’s blender breaks, you can still buy a dosa. But a “combo meal” across three stalls needs someone to coordinate, and when an order goes wrong, finding which stall caused it takes longer.</p>
+<p><b>How it works.</b> A <span class="term">monolith</span> is one program that does everything, released as a single unit. It is simple and right for a young product. As teams grow it becomes a queue: 200 engineers wait for one release, and a bug in promotions can crash payments. <span class="term">Microservices</span> split the product into small services, each owned and released by its own team, talking over the network ({{REF:micro}}). You can scale only the busy parts (matching at 9 am), and a crash stays local. The price is complexity: calls between services can fail, a bug can hide across ten services, and you need strong monitoring.</p>
+<figure>{{SVG:micro}}
+<figcaption><b>{{FIG:micro}} · One kitchen, or a food court.</b> Microservices buy team speed and fault isolation at the cost of network complexity. Most young products should start with a well-organised monolith. <span class="src">Author’s diagram.</span></figcaption>
+</figure>
+<p><b>Real examples.</b> Uber moved from a monolith to microservices in the mid-2010s; by 2020 its engineers described about 2,200 critical services, and then grouped them into larger “domains” to tame the tangle. Going the other way, in 2023 the Amazon Prime Video team that monitors video quality merged one set of small services back into a single program and reported cutting that system’s running cost by about 90%. Neither answer is always right. <b>PM decision:</b> split when release queues and outages are slowing teams down, along the lines of how teams own the product, not because microservices sound modern.</p>
+
+<table class="tbl">
+<tr><th style="width:23%">Mechanism</th><th style="width:22%">Everyday picture</th><th style="width:27%">Where it breaks</th><th>The PM decision it drives</th></tr>
+<tr><td><b>Scaling out</b></td><td>More ticket windows</td><td>Data kept on one server is lost with it</td><td>Where does each feature’s information live?</td></tr>
+<tr><td><b>Load balancer</b></td><td>Toll-plaza lane lights</td><td>Everything in one building</td><td>Two zones for booking and payments</td></tr>
+<tr><td><b>Autoscaling</b></td><td>Extra waiters take 30 minutes</td><td>Late for sudden peaks; runaway bills</td><td>A calendar of known peaks; a cost ceiling</td></tr>
+<tr><td><b>Consistency vs availability</b></td><td>Cinema seats vs the timings poster</td><td>Double-booked drivers, or a blank map</td><td>Wait, or show the last known answer?</td></tr>
+<tr><td><b>SLO, error budget</b></td><td>The monthly data pack</td><td>A target nobody enforces</td><td>Agree the freeze rule before the incident</td></tr>
+<tr><td><b>Graceful degradation</b></td><td>The inverter</td><td>Switches never rehearsed</td><td>Rank features; rehearse before big nights</td></tr>
+<tr><td><b>Retries, breakers</b></td><td>Redialling; the MCB</td><td>A slowdown turned into an outage</td><td>What the fallback says on screen</td></tr>
+<tr><td><b>Microservices</b></td><td>Kitchen vs food court</td><td>Too many, too early</td><td>Split along team lines when queues hurt</td></tr>
+</table>
+<h2>Putting it together: the New Year’s Eve plan</h2>
+<p>Like a restaurant preparing for Diwali, the whole plan is written weeks before the night. Each line below uses one of the eight ideas.</p>
+<table class="tbl">
+<tr><th style="width:17%">When</th><th style="width:45%">What the team does</th><th>Which idea, and the restaurant version</th></tr>
+<tr><td><b>3 weeks before</b></td><td>Load test at 10× a normal Friday; fix whatever breaks first</td><td>Scaling out · a trial run with a full dining hall</td></tr>
+<tr><td><b>1 week before</b></td><td>Rehearse every kill switch on the degradation ladder</td><td>Graceful degradation · test the inverter before the power cut</td></tr>
+<tr><td><b>2 days before</b></td><td>Freeze feature releases; only fixes ship</td><td>Error budget · no new dishes on Diwali</td></tr>
+<tr><td><b>11:20 pm</b></td><td>Scale to 130 servers on a schedule; warm pool ready</td><td>Autoscaling · extra waiters already on the floor</td></tr>
+<tr><td><b>11:50 pm</b></td><td>Switch off promo banners and recommendations</td><td>Degradation · stop the elaborate thali early</td></tr>
+<tr><td><b>Midnight</b></td><td>Watch booking success against the SLO; breakers ready to open on pricing and maps</td><td>SLO, circuit breaker · stop tandoor orders if it breaks</td></tr>
+<tr><td><b>1:30 am</b></td><td>Scale down; switch features back on one at a time</td><td>Autoscaling · send the extra staff home</td></tr>
+<tr><td><b>Next week</b></td><td>Blameless review: what failed, how much budget it used, what to change</td><td>SLO · the morning-after kitchen meeting</td></tr>
+</table>
+<div class="box int"><span class="lbl">In the interview · How system design comes up for a PM</span>
+<ul class="small">
+<li><b>“Our app crashed on New Year’s Eve. What would you do?”</b> Prevention (scale up on a schedule, test at 10× load, rehearse the degradation ladder), response (flip kill switches, show an honest message), then learning (a blameless review against the SLO).</li>
+<li><b>“Should we show the fare even if pricing is down?”</b> Yes, as a clearly labelled estimate from the saved copy; the booking then charges the confirmed fare. Available for display, consistent for money, like the cinema poster and the seat lock.</li>
+<li><b>“How reliable should the app be?”</b> Pick a target riders would feel (bookings confirmed in 2 s, 99.9% of the time), turn it into a monthly budget (43 minutes), and agree what happens when it runs out.</li>
+</ul></div>
+</section>

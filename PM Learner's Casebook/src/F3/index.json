@@ -1,0 +1,1392 @@
+[
+ {
+  "code": "M1",
+  "file": "M1 - Payments & fintech.pdf",
+  "title": "Payments & fintech",
+  "pages": 43,
+  "h1": [
+   {
+    "p": 25,
+    "t": "PhonePe: free payments, paid loans",
+    "sz": 16.840442657470703
+   },
+   {
+    "p": 26,
+    "t": "Google Pay: the payment app that lives inside Google",
+    "sz": 16.840442657470703
+   },
+   {
+    "p": 28,
+    "t": "Paytm, and the super-app question",
+    "sz": 16.840442657470703
+   },
+   {
+    "p": 30,
+    "t": "Razorpay: the plumbing behind India’s online checkouts",
+    "sz": 16.840442657470703
+   },
+   {
+    "p": 32,
+    "t": "Groww vs Zerodha vs smallcase: three ways to earn from investors",
+    "sz": 16.840442657470703
+   },
+   {
+    "p": 36,
+    "t": "How software is built: from an idea to an app update",
+    "sz": 16.840442657470703
+   },
+   {
+    "p": 38,
+    "t": "System design I: how the internet and APIs work",
+    "sz": 16.840442657470703
+   },
+   {
+    "p": 41,
+    "t": "A/B testing basics: did the change cause the result?",
+    "sz": 16.840442657470703
+   },
+   {
+    "p": 43,
+    "t": "Connect the dots",
+    "sz": 16.840442657470703
+   }
+  ],
+  "labels": [
+   {
+    "p": 6,
+    "kind": "CASE",
+    "num": "1.1",
+    "t": "A BANK APP FOR RURAL INDIA"
+   },
+   {
+    "p": 8,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "RICE: RANK IDEAS WITH FOUR ROUGH NUMBERS"
+   },
+   {
+    "p": 9,
+    "kind": "CASE",
+    "num": "1.2",
+    "t": "CREDIT FOR TEENAGERS"
+   },
+   {
+    "p": 11,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "TWO-SIDED USERS AND PERSONAS"
+   },
+   {
+    "p": 12,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "JOBS TO BE DONE, AND THE FOUR FORCES"
+   },
+   {
+    "p": 12,
+    "kind": "CASE",
+    "num": "1.3",
+    "t": "IMPROVE YOUR FAVOURITE UPI APP"
+   },
+   {
+    "p": 15,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "CIRCLES: A ROUTE MAP FOR “IMPROVE X”"
+   },
+   {
+    "p": 15,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "KANO: BASICS, PERFORMANCE, DELIGHTERS"
+   },
+   {
+    "p": 16,
+    "kind": "CASE",
+    "num": "1.4",
+    "t": "FRAUD PREVENTION IN A BANKING APP"
+   },
+   {
+    "p": 18,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "GUARDRAILS AND COUNTER-METRICS"
+   },
+   {
+    "p": 18,
+    "kind": "CASE",
+    "num": "1.5",
+    "t": "PROMOTIONS IN GOOGLE PAY"
+   },
+   {
+    "p": 20,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "NORTH STAR, INPUT METRICS AND THE DRIVER TREE"
+   },
+   {
+    "p": 21,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "HOLDOUTS AND INCREMENTALITY: DID WE CAUSE IT?"
+   },
+   {
+    "p": 21,
+    "kind": "CASE",
+    "num": "1.6",
+    "t": "ANDROID DAILY USERS DROP 40%"
+   },
+   {
+    "p": 23,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "FINDING THE CAUSE: FOUR DOORS, THEN 5 WHYS"
+   }
+  ],
+  "kick": {
+   "“PHONEPE MUST CUT ITS SHARE TO 30% BY JANUARY 2027”": 5,
+   "FIVE QUESTIONS THIS SECTOR LOVES": 5,
+   "WHAT 0.4% MEANS FOR THREE SHOPS": 5,
+   "“HOW DOES PHONEPE MAKE MONEY?”": 5,
+   "CASES": 6,
+   "WHAT WAS MISSING": 7,
+   "“RURAL INDIA FACES ~30% UPI TRANSACTION FAILURE RATES”": 7,
+   "“OFFLINE UPI IN OUR APP, USING SMS READ/WRITE PERMISSIONS”": 7,
+   "FIVE QUESTIONS BEFORE ANY ANSWER": 7,
+   "③ FIND THE PAIN": 8,
+   "“INTRODUCE A TEEN CREDIT SCORE”": 10,
+   "WHAT INDIAN TEENS CAN USE TODAY": 10,
+   "③ THEIR JOBS": 11,
+   "“A SUSPENSE WALLET GIVES NEARLY 100% TRANSACTION SUCCESS”": 14,
+   "COMPREHEND": 14,
+   "REPORT": 14,
+   "CUT": 14,
+   "LIST": 14,
+   "EVALUATE": 15,
+   "SUMMARISE": 15,
+   "③ NORTH STAR": 20,
+   "“ROLL BACK TO THE LAST STABLE VERSION”": 22,
+   "APPLIED TO A “NUMBER DROPPED” CASE": 22,
+   "③ FIND WHERE": 23,
+   "⑥ MEASURE": 23,
+   "THE FIRST 60 SECONDS, BY CASE TYPE": 24,
+   "PRODUCT TEARDOWNS": 25,
+   "“PAYTM IS INDIA’S SUPER-APP”": 30,
+   "WHAT SEBI’S F&O RULES DID TO BOTH BROKERS": 34,
+   "“WHICH OF THESE WOULD YOU RATHER": 35,
+   "READ ANY FINTECH IN THREE NUMBERS": 35,
+   "TECHNOLOGY": 36,
+   "THE PM DECISIONS THIS DRIVES": 37,
+   "“MONEY GONE, SHOP NOT PAID”": 41,
+   "CONNECT THE DOTS": 43,
+   "A SKETCH ANSWER FOR HITESH": 43,
+   "THE PAYMENTS PM’S THREE QUESTIONS": 43
+  }
+ },
+ {
+  "code": "M2",
+  "file": "M2 - Food delivery & quick commerce.pdf",
+  "title": "Food delivery & quick commerce",
+  "pages": 43,
+  "h1": [
+   {
+    "p": 29,
+    "t": "Zomato and Blinkit: profit from food, growth from ten minutes",
+    "sz": 16.782442092895508
+   },
+   {
+    "p": 31,
+    "t": "Swiggy and Instamart: one member, one fleet, many services",
+    "sz": 16.782442092895508
+   },
+   {
+    "p": 32,
+    "t": "Zepto: speed first, and then the bill for it",
+    "sz": 16.782442092895508
+   },
+   {
+    "p": 33,
+    "t": "BigBasket: the planned weekly shop in a ten-minute world",
+    "sz": 16.782442092895508
+   },
+   {
+    "p": 35,
+    "t": "magicpin and ONDC: food delivery on an open network",
+    "sz": 16.782442092895508
+   },
+   {
+    "p": 37,
+    "t": "UX design: from “users are leaving” to a screen that works",
+    "sz": 16.782442092895508
+   },
+   {
+    "p": 39,
+    "t": "System design II: where an order lives, and why the map never freezes",
+    "sz": 16.782442092895508
+   },
+   {
+    "p": 43,
+    "t": "Connect the dots",
+    "sz": 16.782442092895508
+   }
+  ],
+  "labels": [
+   {
+    "p": 6,
+    "kind": "CASE",
+    "num": "2.1",
+    "t": "A VENDOR PLATFORM FOR QUICK COMMERCE"
+   },
+   {
+    "p": 9,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "IMPACT–EFFORT AND MOSCOW"
+   },
+   {
+    "p": 10,
+    "kind": "CASE",
+    "num": "2.2",
+    "t": "IMPROVE A FOOD DELIVERY APP"
+   },
+   {
+    "p": 13,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "THE CUSTOMER JOURNEY MAP"
+   },
+   {
+    "p": 13,
+    "kind": "CASE",
+    "num": "2.3",
+    "t": "METRICS FOR BIGBASKET’S APP"
+   },
+   {
+    "p": 16,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "AARRR, THE CUSTOMER FUNNEL"
+   },
+   {
+    "p": 16,
+    "kind": "CASE",
+    "num": "2.4",
+    "t": "SWIGGY’S PRODUCT METRICS BEFORE ITS IPO"
+   },
+   {
+    "p": 18,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "UNIT ECONOMICS: CONTRIBUTION MARGIN, LTV/CAC AND PAYBACK"
+   },
+   {
+    "p": 19,
+    "kind": "CASE",
+    "num": "2.5",
+    "t": "LAUNCHING TABLE RESERVATIONS ON SWIGGY"
+   },
+   {
+    "p": 22,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "STP, THE FIVE GTM QUESTIONS, AND BULLSEYE"
+   },
+   {
+    "p": 22,
+    "kind": "CASE",
+    "num": "2.6",
+    "t": "RISING CANCELLATIONS AT A FOOD APP"
+   },
+   {
+    "p": 24,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "ISSUE TREES AND MECE"
+   },
+   {
+    "p": 25,
+    "kind": "CASE",
+    "num": "2.7",
+    "t": "ZEPTO’S DELIVERY-TIME BREACHES IN BENGALURU"
+   },
+   {
+    "p": 27,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "BREAKING A PROCESS INTO STEPS, AND LITTLE’S LAW"
+   }
+  ],
+  "kick": {
+   "WHAT THE APPS DO ON A RAIN NIGHT": 5,
+   "“TEN-MINUTE DELIVERY MAKES RIDERS RACE THROUGH TRAFFIC”": 5,
+   "SHOULD THE PLATFORM FEE GO FROM ₹10 TO ₹15?": 5,
+   "THREE QUESTIONS FOR ANY ORDER": 5,
+   "QUESTIONS THEY LOVE HERE": 5,
+   "CASES": 6,
+   "WHAT WAS MISSING": 8,
+   "“NORTH STAR: PROCUREMENT CYCLE TIME”": 8,
+   "“EDI HAS LOWER REACH, AS NOT ALL VENDORS USE IT”": 8,
+   "“SWIGGY IS CONSIDERED TO HAVE A DUOPOLY”": 12,
+   "“ORDERS = VISITORS × ADD-TO-CART RATE × PURCHASE CONVERSION”": 15,
+   "“DAILY ACTIVE USERS AS AN ENGAGEMENT METRIC”": 15,
+   "“A HIGH DAU-TO-MAU RATIO SIGNALS STRONG RETENTION”": 17,
+   "“A HIGH AOV HIGHLIGHTS THE POTENTIAL FOR PROFITABILITY”": 17,
+   "“SWIGGY ALREADY HAS 90M+ USERS, SO DISTRIBUTION IS INSTANT”": 21,
+   "“MONETISE LATER WITH A ₹20–50 BOOKING FEE”": 21,
+   "WHAT THESE SEVEN OPENINGS TEACH ABOUT SCOPING": 28,
+   "PRODUCT TEARDOWNS": 29,
+   "+17%": 32,
+   "+40%": 32,
+   "WHY FAST GROWTH LOOKS LIKE BIG LOSSES": 33,
+   "WHY A VAN BEATS A SCOOTER,": 34,
+   "“ONDC WILL BREAK THE FOOD-DELIVERY DUOPOLY”": 35,
+   "TECHNOLOGY FOR PMS": 37,
+   "GOOD UX FOR THE COMPANY, BAD FOR THE USER": 38,
+   "THE PM’S UX DECISIONS": 38,
+   "THE STALE MENU": 40,
+   "HOW MANY WORKERS FOR THE IPL FINAL?": 41,
+   "WHAT GOES WRONG ON A BUSY NIGHT": 42,
+   "DECISIONS A PM MAKES HERE": 42,
+   "CONNECT THE DOTS": 43,
+   "A SKETCH ANSWER FOR THE MONSOON EVENING": 43,
+   "THE DELIVERY PM’S THREE QUESTIONS": 43
+  }
+ },
+ {
+  "code": "M3",
+  "file": "M3 - E-commerce & marketplaces.pdf",
+  "title": "E-commerce & marketplaces",
+  "pages": 40,
+  "h1": [
+   {
+    "p": 19,
+    "t": "Guesstimates: a number from nothing, out loud",
+    "sz": 16.603076934814453
+   },
+   {
+    "p": 26,
+    "t": "Amazon: the store that is really a delivery network and an ad business",
+    "sz": 16.603076934814453
+   },
+   {
+    "p": 27,
+    "t": "Flipkart: India’s biggest sale, and the fight for every day in between",
+    "sz": 16.603076934814453
+   },
+   {
+    "p": 29,
+    "t": "Myntra: one category, done deeply, turned into profit",
+    "sz": 16.603076934814453
+   },
+   {
+    "p": 30,
+    "t": "Google Search: people say what they want, and advertisers pay to answer",
+    "sz": 16.603076934814453
+   },
+   {
+    "p": 32,
+    "t": "Ad tech: InMobi, Media.net, and the auction before the page loads",
+    "sz": 16.603076934814453
+   },
+   {
+    "p": 35,
+    "t": "Machine learning and AI: what a PM needs to know",
+    "sz": 16.603076934814453
+   },
+   {
+    "p": 37,
+    "t": "Precision, recall and the threshold dial",
+    "sz": 16.603076934814453
+   },
+   {
+    "p": 38,
+    "t": "The customer funnel and brand lift",
+    "sz": 16.603076934814453
+   },
+   {
+    "p": 40,
+    "t": "Connect the dots",
+    "sz": 16.603076934814453
+   }
+  ],
+  "labels": [
+   {
+    "p": 5,
+    "kind": "CASE",
+    "num": "3.1",
+    "t": "AI TO RAISE ENGAGEMENT ON MYNTRA"
+   },
+   {
+    "p": 7,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "DOES THIS NEED AI?"
+   },
+   {
+    "p": 8,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "THE FOUR RISKS OF A NEW PRODUCT (MARTY CAGAN)"
+   },
+   {
+    "p": 9,
+    "kind": "CASE",
+    "num": "3.2",
+    "t": "MEASURING FACEBOOK MARKETPLACE"
+   },
+   {
+    "p": 11,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "MARKETPLACE LIQUIDITY"
+   },
+   {
+    "p": 12,
+    "kind": "CASE",
+    "num": "3.3",
+    "t": "AMAZON’S RETURN RATE IS RISING"
+   },
+   {
+    "p": 14,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "MIX OR RATE? SPLITTING A CHANGE IN AN AVERAGE"
+   },
+   {
+    "p": 15,
+    "kind": "CASE",
+    "num": "3.4",
+    "t": "PRICING AMAZON PRIME, TWO TAKES"
+   },
+   {
+    "p": 18,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "THREE WAYS TO SET A PRICE, AND THE BREAK-EVEN TEST FOR A CUT"
+   },
+   {
+    "p": 20,
+    "kind": "GUESSTIMATE",
+    "num": "3.1",
+    "t": "GOOGLE SEARCHES PER SECOND"
+   },
+   {
+    "p": 22,
+    "kind": "GUESSTIMATE",
+    "num": "3.2",
+    "t": "DARK STORES FOR 10-MINUTE AHMEDABAD"
+   }
+  ],
+  "kick": {
+   "PLACED IS NOT DELIVERED, AND DELIVERED IS NOT KEPT": 2,
+   "WHY MEESHO GREW WHILE CHARGING SELLERS NOTHING": 4,
+   "QUESTIONS THIS SECTOR LOVES": 4,
+   "CASES": 5,
+   "WHAT WAS MISSING": 6,
+   "“NO OTHER PLATFORM KNOWS WHAT YOU ALREADY OWN”": 6,
+   "“CHATTING INCREASES SESSION DURATION SIGNIFICANTLY”": 6,
+   "“COUNTER METRIC: PURCHASES PER WEEK”": 10,
+   "“UNIQUE INTERACTIONS PER WEEK” AS THE NORTH STAR": 10,
+   "“WARDROBING” AS A TOP-THREE CAUSE": 13,
+   "SHOULD PRIME DROP FROM $99.99 TO $89.99?": 15,
+   "HOW WOULD YOU PRICE PRIME IN INDIA?": 16,
+   "“LET’S ASSUME PRIME MEMBERSHIP GROWS BY 20%”": 17,
+   "GUESSTIMATES": 19,
+   "“INTERNET PENETRATION GLOBALLY IS ~60%”": 21,
+   "UNIT": 21,
+   "APPROACH": 21,
+   "TREE AND NUMBERS": 21,
+   "CHECK": 21,
+   "RANGE": 21,
+   "“DEMAND BINDS, NOT GEOMETRY”": 24,
+   "UNIT AND APPROACH": 24,
+   "REACH, AT THE PEAK": 24,
+   "CAPACITY": 24,
+   "PRODUCT TEARDOWNS": 26,
+   "WHY THE SALE IS NOT ENOUGH": 29,
+   "CONTEXTUAL VS PERSONAL TARGETING": 33,
+   "HOW THESE PRODUCTS COME UP": 34,
+   "TECHNOLOGY FOR PMS": 35,
+   "CONNECT THE DOTS": 40,
+   "A SKETCH ANSWER FOR THE KURTA QUESTION": 40,
+   "THE E-COMMERCE PM’S THREE QUESTIONS": 40
+  }
+ },
+ {
+  "code": "M4",
+  "file": "M4 - Mobility, maps & travel.pdf",
+  "title": "Mobility, maps & travel",
+  "pages": 46,
+  "h1": [
+   {
+    "p": 23,
+    "t": "Guesstimates: sizing a fleet",
+    "sz": 17.913278579711914
+   },
+   {
+    "p": 29,
+    "t": "Uber: a pricing and matching engine that happens to move cars",
+    "sz": 17.913278579711914
+   },
+   {
+    "p": 30,
+    "t": "Ola: how a market leader loses a two-sided market",
+    "sz": 17.913278579711914
+   },
+   {
+    "p": 32,
+    "t": "Rapido: the bike taxi that changed how drivers are paid",
+    "sz": 17.913278579711914
+   },
+   {
+    "p": 33,
+    "t": "Google Maps: two billion users who are also its sensors",
+    "sz": 17.913278579711914
+   },
+   {
+    "p": 35,
+    "t": "MakeMyTrip: the flight brings you in, the hotel pays the bills",
+    "sz": 17.913278579711914
+   },
+   {
+    "p": 38,
+    "t": "Cloud computing: renting the computer instead of owning it",
+    "sz": 17.913278579711914
+   },
+   {
+    "p": 39,
+    "t": "System design III: staying up when everyone books at once",
+    "sz": 17.913278579711914
+   },
+   {
+    "p": 46,
+    "t": "Connect the dots",
+    "sz": 17.913278579711914
+   }
+  ],
+  "labels": [
+   {
+    "p": 6,
+    "kind": "CASE",
+    "num": "4.1",
+    "t": "OLA FOR SCHOOLCHILDREN"
+   },
+   {
+    "p": 9,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "MVP, BUILD–MEASURE–LEARN AND THE RISKIEST ASSUMPTION"
+   },
+   {
+    "p": 10,
+    "kind": "CASE",
+    "num": "4.2",
+    "t": "IMPROVE GOOGLE MAPS"
+   },
+   {
+    "p": 13,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "OPPORTUNITY SOLUTION TREE"
+   },
+   {
+    "p": 14,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "HEART METRICS"
+   },
+   {
+    "p": 15,
+    "kind": "CASE",
+    "num": "4.3",
+    "t": "A SPIKE IN UBER RIDE CANCELLATIONS"
+   },
+   {
+    "p": 17,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "SUPPLY–DEMAND BALANCE AND SURGE PRICING"
+   },
+   {
+    "p": 18,
+    "kind": "CASE",
+    "num": "4.4",
+    "t": "MAKEMYTRIP ENTERS DUBAI"
+   },
+   {
+    "p": 21,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "TAM, SAM AND SOM"
+   },
+   {
+    "p": 22,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "PORTER’S FIVE FORCES"
+   },
+   {
+    "p": 24,
+    "kind": "GUESSTIMATE",
+    "num": "4.1",
+    "t": "UBER DRIVERS IN BENGALURU"
+   },
+   {
+    "p": 26,
+    "kind": "GUESSTIMATE",
+    "num": "4.2",
+    "t": "BIKES FOR A NEW BIKE-TAXI FIRM"
+   }
+  ],
+  "kick": {
+   "QUESTIONS THIS SECTOR LOVES": 5,
+   "CASES": 6,
+   "WHAT WAS MISSING": 7,
+   "“A CAP OR PENALTY ON POST-ACCEPTANCE CANCELLATIONS”": 16,
+   "“A SWOT ANALYSIS IS THE WAY TO STRUCTURE MARKET ENTRY”": 23,
+   "GUESSTIMATES": 23,
+   "A FLEET IS SIZED FOR ITS BUSIEST HOUR": 23,
+   "40% OF WORKING PROFESSIONALS COMMUTE BY CAB": 25,
+   "UNIT": 25,
+   "APPROACH": 25,
+   "TREE AND NUMBERS": 25,
+   "CHECK": 25,
+   "RANGE": 25,
+   "“A RIDER WORKS 10 HOURS… 20 TRIPS IN A DAY”": 27,
+   "PRODUCT TEARDOWNS": 29,
+   "NAMMA YATRI, THE DRIVER-OWNED COMPARISON": 33,
+   "HOW THESE PRODUCTS COME UP": 37,
+   "TECHNOLOGY FOR PMS": 38,
+   "HOW SYSTEM DESIGN COMES UP FOR A PM": 45,
+   "CONNECT THE DOTS": 46,
+   "EVERY MOBILITY PROBLEM IS A PEAK PROBLEM": 46
+  }
+ },
+ {
+  "code": "M5",
+  "file": "M5 - Social, creators & messaging.pdf",
+  "title": "Social, creators & messaging",
+  "pages": 42,
+  "h1": [
+   {
+    "p": 16,
+    "t": "Guesstimates: counting what people do",
+    "sz": 16.764148712158203
+   },
+   {
+    "p": 22,
+    "t": "Instagram: a video feed that keeps friends in the loop",
+    "sz": 16.764148712158203
+   },
+   {
+    "p": 23,
+    "t": "Facebook and Meta’s ad machine",
+    "sz": 16.764148712158203
+   },
+   {
+    "p": 25,
+    "t": "X: the fastest place for news, and a shrinking business",
+    "sz": 16.764148712158203
+   },
+   {
+    "p": 27,
+    "t": "Snapchat: the camera company",
+    "sz": 16.764148712158203
+   },
+   {
+    "p": 28,
+    "t": "WhatsApp: India’s default way to talk, and now to buy",
+    "sz": 16.764148712158203
+   },
+   {
+    "p": 31,
+    "t": "System design IV: one WhatsApp message, end to end",
+    "sz": 16.764148712158203
+   },
+   {
+    "p": 36,
+    "t": "Encryption: how a message stays private",
+    "sz": 16.764148712158203
+   },
+   {
+    "p": 42,
+    "t": "Connect the dots",
+    "sz": 16.764148712158203
+   }
+  ],
+  "labels": [
+   {
+    "p": 5,
+    "kind": "CASE",
+    "num": "5.1",
+    "t": "LINKEDIN FOR BLUE-COLLAR WORKERS"
+   },
+   {
+    "p": 8,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "NETWORK EFFECTS AND THE COLD START"
+   },
+   {
+    "p": 9,
+    "kind": "CASE",
+    "num": "5.2",
+    "t": "MEASURING INSTAGRAM’S CREATOR PRODUCT TAGS"
+   },
+   {
+    "p": 12,
+    "kind": "CASE",
+    "num": "5.3",
+    "t": "USERS MOVING FROM WHATSAPP TO TELEGRAM"
+   },
+   {
+    "p": 15,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "SWITCHING COSTS, AND WHY PEOPLE KEEP BOTH APPS"
+   },
+   {
+    "p": 16,
+    "kind": "GUESSTIMATE",
+    "num": "5.1",
+    "t": "INSTAGRAM POSTS A DAY IN INDIA"
+   },
+   {
+    "p": 19,
+    "kind": "GUESSTIMATE",
+    "num": "5.2",
+    "t": "WHATSAPP CHATS A DAY IN INDIA"
+   }
+  ],
+  "kick": {
+   "QUESTIONS THIS SECTOR LOVES": 4,
+   "CASES": 5,
+   "WHAT WAS MISSING": 6,
+   "“BASIC PHONE AND AADHAAR VERIFICATION IS ENOUGH FOR THE MVP”": 6,
+   "“NORTH STAR: CREATOR-ATTRIBUTED PURCHASE GMV”": 10,
+   "“PURCHASES ATTRIBUTED USING CREATOR AND CAMPAIGN IDS”": 10,
+   "THE WHO-WINS, WHO-LOSES GRID": 12,
+   "THE FOUR PROPOSED FEATURES AGAINST WHAT WHATSAPP ALREADY HAD": 14,
+   "GUESSTIMATES": 16,
+   "INDIA’S SLICE OF A GLOBAL NUMBER": 16,
+   "UNIT": 18,
+   "APPROACH": 18,
+   "TREE AND NUMBERS": 18,
+   "CHECK": 18,
+   "RANGE": 18,
+   "“40% OF WHATSAPP USERS ARE UNDER 18”": 20,
+   "PRODUCT TEARDOWNS": 22,
+   "TELEGRAM, THE PUBLIC MESSENGER": 29,
+   "HOW THESE PRODUCTS COME UP": 30,
+   "TECHNOLOGY": 31,
+   "DIWALI MIDNIGHT, PLANNED IN ADVANCE": 36,
+   "HOW ENCRYPTION COMES UP": 41,
+   "CONNECT THE DOTS": 42,
+   "A SKETCH ANSWER FOR THE FAMILY-GROUP QUESTION": 42,
+   "NETWORKS ARE WON ONE GROUP AT A TIME": 42
+  }
+ },
+ {
+  "code": "M6",
+  "file": "M6 - Streaming, music & entertainment.pdf",
+  "title": "Streaming, music & entertainment",
+  "pages": 40,
+  "h1": [
+   {
+    "p": 16,
+    "t": "Guesstimates: counting attention and fans",
+    "sz": 17.084320068359375
+   },
+   {
+    "p": 21,
+    "t": "Netflix: always something good to watch, found in a minute",
+    "sz": 17.084320068359375
+   },
+   {
+    "p": 22,
+    "t": "JioHotstar: cricket for everyone, paid for by ads",
+    "sz": 17.084320068359375
+   },
+   {
+    "p": 24,
+    "t": "YouTube: India’s free television, made by its viewers",
+    "sz": 17.084320068359375
+   },
+   {
+    "p": 25,
+    "t": "Spotify: free music that sells Premium",
+    "sz": 17.084320068359375
+   },
+   {
+    "p": 27,
+    "t": "Zynga: free to play, paid for by a few",
+    "sz": 17.084320068359375
+   },
+   {
+    "p": 30,
+    "t": "Blockchain: a shared record that nobody can quietly change",
+    "sz": 17.084320068359375
+   },
+   {
+    "p": 35,
+    "t": "System design V: one IPL final, to crores of phones at once",
+    "sz": 17.084320068359375
+   },
+   {
+    "p": 40,
+    "t": "Connect the dots",
+    "sz": 17.084320068359375
+   }
+  ],
+  "labels": [
+   {
+    "p": 6,
+    "kind": "CASE",
+    "num": "6.1",
+    "t": "IMPROVE HOTSTAR"
+   },
+   {
+    "p": 9,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "RETENTION CURVES AND COHORTS"
+   },
+   {
+    "p": 9,
+    "kind": "CASE",
+    "num": "6.2",
+    "t": "PRIME VIDEO VIEWS FALL 20%"
+   },
+   {
+    "p": 13,
+    "kind": "CASE",
+    "num": "6.3",
+    "t": "NETFLIX PRICING AND PAID SHARING IN INDIA"
+   },
+   {
+    "p": 15,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "TIERED PRICING: GOOD, BETTER, BEST"
+   },
+   {
+    "p": 17,
+    "kind": "GUESSTIMATE",
+    "num": "6.1",
+    "t": "YOUTUBE’S DAILY AD REVENUE"
+   },
+   {
+    "p": 19,
+    "kind": "GUESSTIMATE",
+    "num": "6.2",
+    "t": "USERS OF A BHOJPURI SHORT-MOVIE APP"
+   }
+  ],
+  "kick": {
+   "QUESTIONS THIS SECTOR LOVES": 5,
+   "CASES": 6,
+   "WHAT WAS MISSING": 7,
+   "THE CANDIDATE’S RANKING, REDONE WITH NUMBERS": 7,
+   "“WE NEED AN INNOVATIVE WAY OF PRICING SUCH AS SACHET PRICING”": 11,
+   "A SLOW FALL EVERYWHERE POINTS OUTSIDE THE CODE": 11,
+   "A FAMILY PLAN, WORKED": 16,
+   "GUESSTIMATES": 16,
+   "AD MONEY = MINUTES × ADS PER MINUTE × PRICE PER AD": 16,
+   "“ASSUMING USA GIVES $7.3B IS A FAIR ESTIMATE”": 18,
+   "UNIT": 18,
+   "APPROACH": 18,
+   "TREE AND NUMBERS": 18,
+   "CHECK": 18,
+   "RANGE": 18,
+   "“TAM ≈ 120–125 MILLION BHOJPURI SPEAKERS”": 20,
+   "10% → 40 L": 20,
+   "PRODUCT TEARDOWNS": 21,
+   "PRIME VIDEO: THE SHOW THAT SELLS THE SHIPPING": 23,
+   "MOJ AND TWITCH": 25,
+   "JIOSAAVN AND THE INDIAN MUSIC APPS": 27,
+   "INDIA’S BAN ON REAL-MONEY GAMES": 28,
+   "HOW THESE PRODUCTS COME UP": 29,
+   "TECHNOLOGY": 30,
+   "HOW BLOCKCHAIN COMES UP": 34,
+   "HOW STREAMING SYSTEMS COME UP": 39,
+   "CONNECT THE DOTS": 40,
+   "A SKETCH ANSWER FOR THE FINAL-NIGHT QUESTION": 40,
+   "PAY ONCE, THEN EARN BETWEEN THE BIG MOMENTS": 40
+  }
+ },
+ {
+  "code": "M7",
+  "file": "M7 - Health, fitness & learning.pdf",
+  "title": "Health, fitness & learning",
+  "pages": 43,
+  "h1": [
+   {
+    "p": 19,
+    "t": "Guesstimates: counting calls and meetings",
+    "sz": 17.383766174316406
+   },
+   {
+    "p": 25,
+    "t": "Duolingo: a daily habit, three minutes at a time",
+    "sz": 17.383766174316406
+   },
+   {
+    "p": 26,
+    "t": "HealthifyMe: counting calories so a coach can do the rest",
+    "sz": 17.383766174316406
+   },
+   {
+    "p": 28,
+    "t": "Cult.fit: selling the 7 am slot",
+    "sz": 17.383766174316406
+   },
+   {
+    "p": 30,
+    "t": "Practo: the doctor’s calendar, from both sides",
+    "sz": 17.383766174316406
+   },
+   {
+    "p": 31,
+    "t": "PhysicsWallah: free on YouTube, paid in the classroom",
+    "sz": 17.383766174316406
+   },
+   {
+    "p": 34,
+    "t": "Large language models and prompting",
+    "sz": 17.383766174316406
+   },
+   {
+    "p": 38,
+    "t": "Evals: how you know an AI feature is good enough",
+    "sz": 17.383766174316406
+   },
+   {
+    "p": 41,
+    "t": "AI guardrails: layers around the model",
+    "sz": 17.383766174316406
+   },
+   {
+    "p": 43,
+    "t": "Connect the dots",
+    "sz": 17.383766174316406
+   }
+  ],
+  "labels": [
+   {
+    "p": 6,
+    "kind": "CASE",
+    "num": "7.1",
+    "t": "AN AI ASSISTANT FOR DOCTORS IN SMALL CLINICS"
+   },
+   {
+    "p": 9,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "HUMAN-IN-THE-LOOP AND RISK TIERS"
+   },
+   {
+    "p": 10,
+    "kind": "CASE",
+    "num": "7.2",
+    "t": "HEALTHIFYME: USERS DROPPING OFF EARLY"
+   },
+   {
+    "p": 13,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "BEHAVIOUR CHANGE: B = MAP (FOGG)"
+   },
+   {
+    "p": 14,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "ACTIVATION AND THE AHA MOMENT"
+   },
+   {
+    "p": 14,
+    "kind": "CASE",
+    "num": "7.3",
+    "t": "DUOLINGO: ENGAGEMENT DOWN 15%"
+   },
+   {
+    "p": 17,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "READING AN A/B TEST"
+   },
+   {
+    "p": 19,
+    "kind": "GUESSTIMATE",
+    "num": "7.1",
+    "t": "ZOOM’S DAILY SERVER USAGE IN INDIA"
+   },
+   {
+    "p": 22,
+    "kind": "GUESSTIMATE",
+    "num": "7.2",
+    "t": "GOOGLE MEET CALLS A DAY"
+   }
+  ],
+  "kick": {
+   "QUESTIONS THIS SECTOR LOVES": 5,
+   "CASES": 6,
+   "WHAT WAS MISSING": 7,
+   "CAN ONE US IOS TEST EXPLAIN A 15% FALL?": 16,
+   "GUESSTIMATES": 19,
+   "COUNT THE RIGHT UNIT": 19,
+   "“≈ 20,000 TB/DAY” FOR INDIAN BUSINESS CALLS ON ZOOM": 20,
+   "UNIT": 21,
+   "APPROACH": 21,
+   "TREE AND NUMBERS": 21,
+   "CHECK": 21,
+   "RANGE": 21,
+   "“1.68 BILLION” GOOGLE MEETS A DAY": 23,
+   "PRODUCT TEARDOWNS": 25,
+   "HOW THESE PRODUCTS COME UP": 33,
+   "TECHNOLOGY": 34,
+   "LLMS": 38,
+   "EVALS": 41,
+   "GUARDRAILS": 42,
+   "CONNECT THE DOTS": 43,
+   "A SKETCH ANSWER FOR THE COLD-OPEN QUESTION": 43,
+   "MAKE THE NEXT STEP SMALL, AND CHECK IT LEADS SOMEWHERE": 43
+  }
+ },
+ {
+  "code": "M8",
+  "file": "M8 - SaaS, productivity & enterprise AI.pdf",
+  "title": "SaaS, productivity & enterprise AI",
+  "pages": 37,
+  "h1": [
+   {
+    "p": 15,
+    "t": "Guesstimates: how much storage?",
+    "sz": 14.795692443847656
+   },
+   {
+    "p": 20,
+    "t": "The cloud trio: AWS vs Google Cloud vs Azure",
+    "sz": 14.795692443847656
+   },
+   {
+    "p": 21,
+    "t": "Amplitude: seeing what users actually do",
+    "sz": 14.795692443847656
+   },
+   {
+    "p": 22,
+    "t": "ThoughtSpot: asking the data in plain words",
+    "sz": 14.795692443847656
+   },
+   {
+    "p": 23,
+    "t": "Gmail and Google Workspace: the office in a browser",
+    "sz": 14.795692443847656
+   },
+   {
+    "p": 24,
+    "t": "Microsoft 365 Copilot: AI sold per seat",
+    "sz": 14.795692443847656
+   },
+   {
+    "p": 27,
+    "t": "AI that looks things up, takes actions and plugs into other software",
+    "sz": 14.795692443847656
+   },
+   {
+    "p": 37,
+    "t": "Connect the dots",
+    "sz": 14.795692443847656
+   }
+  ],
+  "labels": [
+   {
+    "p": 5,
+    "kind": "CASE",
+    "num": "8.1",
+    "t": "AN AI COPILOT FOR SUPPORT AGENTS"
+   },
+   {
+    "p": 8,
+    "kind": "CASE",
+    "num": "8.2",
+    "t": "SALES REPS WHO WON’T UPDATE THE CRM"
+   },
+   {
+    "p": 10,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "BUYER VS USER (B2B)"
+   },
+   {
+    "p": 11,
+    "kind": "CASE",
+    "num": "8.3",
+    "t": "LAUNCHING AN AI SALES ASSISTANT IN INDIA"
+   },
+   {
+    "p": 14,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "SALES-LED VS PRODUCT-LED GROWTH, WITH SEAT VS USAGE PRICING"
+   },
+   {
+    "p": 15,
+    "kind": "GUESSTIMATE",
+    "num": "8.1",
+    "t": "STORAGE NEEDED BY GOOGLE PHOTOS"
+   },
+   {
+    "p": 17,
+    "kind": "GUESSTIMATE",
+    "num": "8.2",
+    "t": "STORAGE FOR 200 GB OF FREE GOOGLE DRIVE IN SINGAPORE"
+   }
+  ],
+  "kick": {
+   "QUESTIONS THIS SECTOR LOVES": 4,
+   "CASES": 5,
+   "WHAT WAS MISSING": 5,
+   "“CONTEXT-GATHERING AND REPLY DRAFTING DOMINATE HANDLE TIME”": 6,
+   "GUESSTIMATES": 15,
+   "STORED IS NOT THE SAME AS OFFERED": 15,
+   "UNIT": 16,
+   "APPROACH": 16,
+   "TREE AND NUMBERS": 17,
+   "CHECK": 17,
+   "RANGE": 17,
+   "APPROACH AND TREE": 18,
+   "NUMBERS": 18,
+   "PRODUCT TEARDOWNS": 20,
+   "HOW THESE PRODUCTS COME UP": 26,
+   "TECHNOLOGY": 27,
+   "RAG": 29,
+   "AGENTS": 31,
+   "MCP": 33,
+   "EVALS FOR RAG AND AGENTS": 35,
+   "COST AND LATENCY": 36,
+   "CONNECT THE DOTS": 37
+  }
+ },
+ {
+  "code": "M9",
+  "file": "M9 - Consumer hardware, loyalty & public services.pdf",
+  "title": "Consumer hardware, loyalty & public services",
+  "pages": 40,
+  "h1": [
+   {
+    "p": 17,
+    "t": "Guesstimates: users, and orders per hour",
+    "sz": 16.051067352294922
+   },
+   {
+    "p": 22,
+    "t": "Intuit: a deep dive into TurboTax, QuickBooks, Enterprise Suite, Credit Karma and Mailchimp",
+    "sz": 16.051067352294922
+   },
+   {
+    "p": 29,
+    "t": "Tata Neu",
+    "sz": 16.051067352294922
+   },
+   {
+    "p": 30,
+    "t": "DigiLocker (with ONDC for comparison)",
+    "sz": 16.051067352294922
+   },
+   {
+    "p": 32,
+    "t": "Shipping without breaking things, and one system designed end to end",
+    "sz": 16.051067352294922
+   },
+   {
+    "p": 40,
+    "t": "Connect the dots",
+    "sz": 16.051067352294922
+   }
+  ],
+  "labels": [
+   {
+    "p": 6,
+    "kind": "CASE",
+    "num": "9.1",
+    "t": "AN APP TO RAISE VOTER TURNOUT"
+   },
+   {
+    "p": 9,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "NUDGES, USING EAST (EASY, ATTRACTIVE, SOCIAL, TIMELY)"
+   },
+   {
+    "p": 10,
+    "kind": "CASE",
+    "num": "9.2",
+    "t": "PRICING AN APPLE SMART SPEAKER"
+   },
+   {
+    "p": 13,
+    "kind": "CASE",
+    "num": "9.3",
+    "t": "ONE LOYALTY PROGRAMME FOR THE TATA GROUP"
+   },
+   {
+    "p": 16,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "WORKING BACKWARDS: A PR-FAQ, THEN A PRE-MORTEM"
+   },
+   {
+    "p": 18,
+    "kind": "GUESSTIMATE",
+    "num": "9.1",
+    "t": "USERS OF A FOOD-DELIVERY APP IN SOUTH AMERICA"
+   },
+   {
+    "p": 20,
+    "kind": "GUESSTIMATE",
+    "num": "9.2",
+    "t": "SWIGGY ORDERS PER HOUR IN INDIA"
+   }
+  ],
+  "kick": {
+   "“POINTS MAKE CUSTOMERS LOYAL”": 4,
+   "QUESTIONS THIS SECTOR LOVES": 5,
+   "CASES": 6,
+   "WHAT WAS MISSING": 7,
+   "“THE NORTH STAR IS TURNOUT AMONG APP USERS VERSUS NON-USERS”": 7,
+   "PRICE FOR THE BUYER WHO CAN BUY, THEN COUNT THE WHOLE LIFE": 13,
+   "“USE THE CUSTOMER’S MOBILE NUMBER AS THE PRIMARY IDENTIFIER”": 14,
+   "GUESSTIMATES": 17,
+   "USERS ARE NOT ACTIVE USERS, AND AN HOUR IS NOT A DAY ÷ 24": 17,
+   "UNIT": 19,
+   "APPROACH": 19,
+   "TREE AND NUMBERS": 19,
+   "CHECK": 19,
+   "RANGE": 19,
+   "PRODUCT TEARDOWNS": 22,
+   "“FREE” THAT WASN’T": 24,
+   "WHY QUICKBOOKS LEFT INDIA": 26,
+   "HOW THESE PRODUCTS COME UP": 31,
+   "TECHNOLOGY": 32,
+   "RELEASES": 33,
+   "FEATURE FLAGS": 34,
+   "STAGED ROLL-OUTS": 35,
+   "OBSERVABILITY": 36,
+   "PROTECT THE ONE JOB, AND BE HONEST WITH THE CROWD": 39,
+   "SYSTEM DESIGN AT PM LEVEL": 39,
+   "CONNECT THE DOTS": 40
+  }
+ },
+ {
+  "code": "F2",
+  "file": "F2 - Behavioural.pdf",
+  "title": "Behavioural",
+  "pages": 12,
+  "h1": [
+   {
+    "p": 2,
+    "t": "Build a story bank",
+    "sz": 18.0
+   },
+   {
+    "p": 4,
+    "t": "The questions, most asked first",
+    "sz": 18.0
+   },
+   {
+    "p": 11,
+    "t": "Stress rounds, curveballs and the last five minutes",
+    "sz": 18.0
+   }
+  ],
+  "labels": [
+   {
+    "p": 3,
+    "kind": "FRAMEWORK",
+    "num": "",
+    "t": "STAR, USED LOOSELY"
+   },
+   {
+    "p": 4,
+    "kind": "QUESTION",
+    "num": "1",
+    "t": "WALK ME THROUGH A PROJECT"
+   },
+   {
+    "p": 5,
+    "kind": "QUESTION",
+    "num": "2",
+    "t": "TELL ME ABOUT YOURSELF"
+   },
+   {
+    "p": 6,
+    "kind": "QUESTION",
+    "num": "3",
+    "t": "WHY PRODUCT MANAGEMENT? WHY NOW?"
+   },
+   {
+    "p": 7,
+    "kind": "QUESTION",
+    "num": "4",
+    "t": "WHY THIS COMPANY?"
+   },
+   {
+    "p": 8,
+    "kind": "QUESTION",
+    "num": "5",
+    "t": "HOW DO YOU PRIORITISE? A TIME YOU SAID NO"
+   },
+   {
+    "p": 8,
+    "kind": "QUESTION",
+    "num": "6",
+    "t": "A CONFLICT OR DISAGREEMENT"
+   },
+   {
+    "p": 9,
+    "kind": "QUESTION",
+    "num": "7",
+    "t": "STRENGTHS AND WEAKNESSES"
+   },
+   {
+    "p": 10,
+    "kind": "QUESTION",
+    "num": "8",
+    "t": "A FAILURE, OR A TIME YOU WERE CRITICISED"
+   },
+   {
+    "p": 10,
+    "kind": "QUESTION",
+    "num": "9",
+    "t": "LEADING OR PERSUADING WITHOUT AUTHORITY"
+   },
+   {
+    "p": 11,
+    "kind": "QUESTION",
+    "num": "10",
+    "t": "WHERE DO YOU SEE YOURSELF IN FIVE YEARS?"
+   },
+   {
+    "p": 11,
+    "kind": "QUESTION",
+    "num": "11",
+    "t": "HOW DO YOU USE AI IN YOUR WORK?"
+   }
+  ],
+  "kick": {
+   "YOUR RESUME IS THE QUESTION PAPER": 2,
+   "STORY BANK": 2,
+   "FRAMEWORK": 3,
+   "THE QUESTIONS": 4,
+   "PRACTO, 2026 (CO-FOUNDER ROUND)": 4,
+   "PRACTO, 2026": 6,
+   "HILABS, 2026": 6,
+   "MICROSOFT, 2026": 7,
+   "MASTERCARD, 2026": 10,
+   "SALESFORCE, 2026": 11,
+   "DELIVERY": 11,
+   "THE WEAK FEST ANSWER, FIXED IN FOUR LINES": 12
+  }
+ }
+]

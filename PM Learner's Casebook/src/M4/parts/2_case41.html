@@ -1,0 +1,79 @@
+<!-- ============ CASE 4.1 OLA FOR SCHOOLKIDS ============ -->
+<section class="page">
+<div class="kicker">Mobility, maps &amp; travel · Cases</div>
+<div class="keep" style="break-after:avoid">
+<div class="casehead"><span class="t">Case 4.1 · Ola for schoolchildren</span>
+ <span class="m"><span class="pill">Product design</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, pp. 250–251</span></span></div>
+<div class="try"><b>Try it first.</b> Think of how you got to school at age ten. Who chose that van or bus, who paid, and what would have made your parents switch? Now spend five minutes on what Ola would need to be true before building anything.</div>
+</div>
+
+{{CASE:A250}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Separated the buyer from the user</b> in the first answer: the parent decides and pays, the child rides, the school controls the gate, the driver is supply.</li>
+ <li><b>Segmented by today’s commute</b> and picked the informal van, where the pain is sharpest, with a clear table of why not the others.</li>
+ <li><b>Ruled out modes on safety first</b> (no bikes, no autos for young children) before cost.</li>
+ <li><b>Tied every feature to a parent’s worry</b>: verification, trial ride, alerts, backup, seat caps, fixed pricing.</li>
+</ul>
+<ul class="miss small">
+ <li><b>“The MVP should solve all of them.”</b> That is the whole product. Nothing tests whether parents will pay more than they pay the van driver they know.</li>
+ <li><b>No numbers.</b> No price, no children per van, no cost of a dedicated driver. The idea lives or dies on route density.</li>
+ <li><b>Ola’s supply doesn’t fit.</b> Ola drivers are on-demand and use several apps. A school run needs the same driver at 7:15 am every school day.</li>
+ <li><b>Never asked why Ola wants this</b>: new revenue, idle afternoon supply, or brand trust with families.</li>
+ <li><b>No success metric or safety check</b>, even though the interviewer closed the case without asking for one.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓ (inside the Ola app, India)</span> · Goal <span class="tk n">✗</span> · Who <span class="tk y">✓ (parent, child, school, driver)</span> · Today and the trigger <span class="tk y">✓ (current commute modes)</span> · Edges <span class="tk n">✗ city, regulation</span>. Design add-on “eligibility and legal limits” <span class="tk n">✗</span>: for minors this is the first question. Most states set rules for vehicles that carry schoolchildren (markings, speed limits, sometimes an attendant), and an MVP must meet them from day one.</p>
+
+<div class="box chk"><span class="lbl">Check · “The incremental effort to add each is low, so the MVP should solve all of them” <span class="verdict v-no">Doesn’t hold up</span></span>
+<p>Background checks, a backup vehicle on standby, fixed seats and a dedicated driver each need a new operation, not a new screen. Ola’s drivers are independent and paid per trip; a backup van waiting every morning costs a full day’s wage. The right test is the opposite: find the one thing that must be true, and test only that.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip41}}
+<figcaption><b>{{FIG:strip41}} · A design answer that learns before it builds.</b> Move ③ decides what the MVP must test; everything else waits. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Why does Ola want this: a new revenue line, work for drivers in quiet hours, or trust with families? And which city first? For children, I’d also confirm the state’s rules for school vehicles, because they set the minimum design. I’ll assume children aged 6–14.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>A new, predictable revenue line. Start with Bengaluru.</p></div></div>
+<p class="whynote">Why this move: “predictable revenue” points to a monthly subscription, not per-ride pricing. The city sets traffic, school timings and rules.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Pick the families</div><p>I agree with the informal van users: the pain is sharpest there. Illustrative size for one large school: 2,000 children × 30% in private vans = 600 children. Those parents already pay about ₹2,000–2,500 a month and worry about the unknown driver and a van packed with 12 children.</p></div></div>
+<p class="whynote">Why this move: families already paying for a van have proven they will pay for school transport. We only need them to switch.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Riskiest assumption</div><p>Five things must be true: parents pay more (say ₹3,000); each van fills enough seats; Ola can keep the same driver daily; children are fine with it; tracking works. The last one is easy, Ola already does it. The first two are both unknown and fatal ({{REF:riskmap}}).</p><p>The maths shows why. A van with a driver and an attendant costs about ₹40,000 a month. It can do two school runs each morning. At ₹3,000 a child, each extra child in a run adds 2 × ₹3,000 = ₹6,000 a month. Break-even = ₹40,000 ÷ ₹6,000 ≈ 6.7 children a run ({{REF:van}}).</p></div></div>
+<p class="whynote">Why this move: the numbers turn a list of worries into one question: will parents pay ₹3,000 and can we fill 7 seats a run? That question is what the MVP must answer.</p>
+<figure>{{SVG:van}}
+<figcaption><b>{{FIG:van}} · Density decides the business.</b> With 5 children a run the van loses ₹10,000 a month; with 8 it earns ₹8,000. Two school timings a morning make the same van and driver pay twice. <span class="src">Illustrative: driver ₹18,000, attendant ₹7,000, van lease ₹9,500, fuel ₹5,500 a month.</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ MVP</div><p>One school with two start times, three vans, 24 children. Ola staff build the routes by hand, so no new app yet. Parents get tracking through the existing app and a WhatsApp group with the driver. Price: ₹3,000 a month, first week free. Every driver is verified and every van meets the state’s school-vehicle rules.</p></div></div>
+<p class="whynote">Why this move: people do by hand what software would do later. It costs weeks, not months, and it still tests real payment and real mornings. Safety is not cut, because it can’t be tested later.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Learn</div><p>Before starting, I’d write the pass mark. Of 600 van families told about it, do 5% (30) sign up and pay? Do 80% renew after month one? Is the van at the gate within 5 minutes of the bell on 95% of days? Are there at least 7 children a run? If price fails, test ₹2,500 with a smaller van. If density fails, shrink the radius to 3 km.</p></div></div>
+<p class="whynote">Why this move: a pass mark written in advance stops the team from calling any result a success.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Scale and measure</div><p>Only then build seat booking and routing in the app, and sign school partnerships, since schools reach parents most cheaply. <b>Goal (North Star):</b> children delivered to the gate on time each school day. <b>Safety checks (guardrails):</b> safety incidents (target zero), seats over the cap, driver churn. <b>Trade-off:</b> dedicated drivers make it reliable but cost Ola the flexibility of on-demand supply. <b>Next time:</b> offer the afternoon return run to drivers who are otherwise idle then.</p></div></div>
+<p class="whynote">Why this move: the goal counts a promise kept to parents (on time, every day), which is what makes them renew.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>The goal (predictable revenue) led to a subscription. The van maths (break-even at about 7 children a run) exposed the two riskiest assumptions: price and density. The MVP (3 vans, 1 school, routes by hand) tests exactly those, with a pass mark set in advance. Safety is the one thing never cut, and it becomes the guardrail.</div>
+
+<div class="box fw"><span class="lbl">Framework · MVP, build–measure–learn and the riskiest assumption</span>
+<p><span class="step">1 · The situation.</span>The candidate designed the full service and called it the MVP. Nothing in it would tell Ola, cheaply, whether parents will pay or whether vans will fill.</p>
+<p><span class="step">2 · An everyday example.</span>Meena wants to start a home tiffin service. She could rent a kitchen, hire two delivery boys and print menus. Instead, she cooks for five neighbours for two weeks at ₹120 a meal, collects cash, and notes who orders again. If three of five reorder, she has learned more than any business plan could tell her.</p>
+<table class="tbl">
+<tr><th style="width:22%">Idea</th><th style="width:36%">Meena’s tiffin service</th><th>Ola for schoolchildren</th></tr>
+<tr><td><b>The big plan</b></td><td>Kitchen, staff, menus, an app</td><td>A new app section, a fleet, school tie-ups</td></tr>
+<tr><td><b>Riskiest assumption</b></td><td>People pay ₹120 and order again</td><td>Parents pay ₹3,000 and renew; vans fill 7+ seats</td></tr>
+<tr><td><b>The MVP</b></td><td>Cook for five neighbours</td><td>3 vans for 1 school, routes by hand</td></tr>
+<tr><td><b>Measure</b></td><td>Reorders after week one</td><td>Sign-ups, renewals, on-time arrivals</td></tr>
+<tr><td><b>Learn</b></td><td>Change the price or the menu</td><td>Change the price or the route radius</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>An <span class="term">MVP</span> (minimum viable product) is the smallest thing that tests your riskiest assumption with real users and real money. It is <i>not</i> version 1 with fewer features. The <span class="term">build–measure–learn loop</span> (from Eric Ries’s <i>The Lean Startup</i>) says: build the MVP, measure what users actually do, learn, and go round again, faster each time. To choose what to test, list every assumption and place each one by how little you know and how fatal it is if wrong ({{REF:riskmap}}). Test the top-right corner first. Common MVP types: <b>concierge</b> (people do by hand what software will do later), <b>Wizard of Oz</b> (it looks automatic to users, but people run it behind the scenes), and <b>fake door</b> (a button or landing page that measures interest before anything exists).</p>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this case):</p><ol class="usesteps"><li>Write every assumption as a sentence that could be false: “parents will pay ₹3,000 a month”.</li><li>Place each on the map: how little we know, how fatal if wrong. Price and density land top-right.</li><li>Pick the cheapest test that uses real money and real behaviour: 3 vans, 1 school, first week free, then pay.</li><li>Write the pass mark before starting: 30 paying families, 80% renewal, 7 children a run.</li><li>Run one loop in about four weeks, then decide: go on, change price or radius, or stop.</li></ol><p class="slip"><b>Common slip</b> · building a smaller app and calling it an MVP. It takes months and tests whether the screens work, while the real unknown is whether anyone pays.</p>
+<div class="figrow">
+<figure style="margin-top:0">{{SVG:riskmap}}
+<figcaption><b>{{FIG:riskmap}} · Where to point the first test.</b> Price and density are unknown and fatal; tracking is known; how children feel matters but can be checked later. <span class="src">Author’s placement.</span></figcaption></figure>
+<figure style="margin-top:0">{{SVG:bml}}
+<figcaption><b>{{FIG:bml}} · One build–measure–learn loop.</b> Each loop answers one question. Speed of learning, not the size of the build, is the goal. <span class="src">After Ries, <i>The Lean Startup</i> (2011); numbers illustrative.</span></figcaption></figure>
+</div>
+<p><span class="step">4 · When it misleads.</span>A concierge MVP can succeed because of effort that won’t scale. If the PM personally calls every parent each morning, parents love it, and the real service without those calls may fail, just as Meena’s tiffin tastes great because Meena cooks, not the cook she will hire. Some things also can’t be “minimum”: a weaker background check is never a valid test for a children’s service.</p>
+<p><span class="step">5 · In the interview.</span>“Before designing the full service, I’ll name the assumption that would kill it, and design the smallest real test of that one assumption.”</p>
+</div>
+</section>

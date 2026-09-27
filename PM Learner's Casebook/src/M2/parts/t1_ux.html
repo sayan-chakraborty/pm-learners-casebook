@@ -1,0 +1,112 @@
+<!-- ============ TECHNOLOGY: UX DESIGN ============ -->
+<section class="page">
+<div class="kicker">Food delivery &amp; quick commerce · Technology for PMs</div>
+<h1>UX design: from “users are leaving” to a screen that works</h1>
+<p class="lede">A food app’s data shows that 18 of every 100 people who reach the bill screen leave without paying. The design team wants a new checkout; engineering wants to know what to build; the business wants the fee to stay. <span class="term">UX (user experience) design</span> is the discipline of finding out why people struggle with a product and designing it so they don’t. For a PM it is less about drawing screens and more about a process that stops the team from building the wrong thing.</p>
+
+<h2>Design thinking: five stages, used as a loop</h2>
+<p><span class="term">Design thinking</span> is a problem-solving process that starts from the user’s experience instead of from a feature idea. The common version (Stanford d.school) has five stages: <b>Empathise</b> (understand users), <b>Define</b> (state the problem sharply), <b>Ideate</b> (many ideas), <b>Prototype</b> (a cheap version) and <b>Test</b> (watch real users try it). It is a loop: a test usually sends you back to define the problem better.</p>
+<figure>
+<svg class="d" viewBox="0 0 680 206" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="dt1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker></defs>
+ <g class="c">
+  <rect x="0" y="6" width="124" height="44" rx="6" fill="#127a64"/><text x="62" y="25" text-anchor="middle" class="b w">① Empathise</text><text x="62" y="41" text-anchor="middle" class="w">watch 8 users order</text>
+  <rect x="139" y="6" width="124" height="44" rx="6" fill="#2a9a82"/><text x="201" y="25" text-anchor="middle" class="b w">② Define</text><text x="201" y="41" text-anchor="middle" class="w">one sharp problem</text>
+  <rect x="278" y="6" width="124" height="44" rx="6" fill="#0b5d7a"/><text x="340" y="25" text-anchor="middle" class="b w">③ Ideate</text><text x="340" y="41" text-anchor="middle" class="w">15 ideas → 3</text>
+  <rect x="417" y="6" width="124" height="44" rx="6" fill="#3e4fb8"/><text x="479" y="25" text-anchor="middle" class="b w">④ Prototype</text><text x="479" y="41" text-anchor="middle" class="w">clickable, 2 days</text>
+  <rect x="556" y="6" width="124" height="44" rx="6" fill="#7c3aa6"/><text x="618" y="25" text-anchor="middle" class="b w">⑤ Test</text><text x="618" y="41" text-anchor="middle" class="w">5 users, 3 tasks</text>
+ </g>
+ <g stroke="#4a5563" stroke-width="1.4"><line x1="124" y1="28" x2="137" y2="28" marker-end="url(#dt1)"/><line x1="263" y1="28" x2="276" y2="28" marker-end="url(#dt1)"/><line x1="402" y1="28" x2="415" y2="28" marker-end="url(#dt1)"/><line x1="541" y1="28" x2="554" y2="28" marker-end="url(#dt1)"/></g>
+ <path d="M618,52 L618,70 L201,70 L201,54" fill="none" stroke="#b93a32" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#dt1)"/>
+ <text x="410" y="84" text-anchor="middle" class="b red">test shows the real problem is different: loop back and redefine</text>
+ <g style="font-size:10.5px">
+ <text x="0" y="110" class="b">What the team saw</text><text x="0" y="124">Users scroll to the bill,</text><text x="0" y="137">pause at “platform fee”,</text><text x="0" y="150">go back to the menu</text><text x="0" y="163">to remove items.</text>
+ <text x="139" y="110" class="b">Problem statement</text><text x="139" y="124">“Hungry office workers</text><text x="139" y="137">feel tricked when fees</text><text x="139" y="150">appear only at the bill,</text><text x="139" y="163">so they leave.”</text>
+ <text x="278" y="110" class="b">Ideas kept</text><text x="278" y="124">Fees shown on the menu;</text><text x="278" y="137">one “all-in” price;</text><text x="278" y="150">fee explained in one line.</text>
+ <text x="417" y="110" class="b">Prototype</text><text x="417" y="124">Two versions of the bill</text><text x="417" y="137">screen in Figma, clickable</text><text x="417" y="150">on a phone.</text>
+ <text x="556" y="110" class="b">Test result</text><text x="556" y="124">4 of 5 finished faster</text><text x="556" y="137">with the “all-in” price;</text><text x="556" y="150">then an A/B test on</text><text x="556" y="163">real traffic decides.</text>
+ </g>
+ <rect x="0" y="176" width="680" height="26" rx="4" fill="#e1f2ec"/><text x="10" y="193" class="grn b">Two days of prototype and five users can kill a bad idea before two months of engineering are spent on it.</text>
+</svg>
+<figcaption><b>{{FIG:dt}} · Design thinking on the checkout problem.</b> Each stage produces something concrete: an observation, a sentence, a short list, a clickable screen, a result. The dashed arrow is the most common path in real life. <span class="src">Process: Stanford d.school; example illustrative.</span></figcaption>
+</figure>
+
+<h2>Research: what to learn, from how many people</h2>
+<p><b>Empathise</b> uses interviews (ask about the last real time, not opinions), observation (watch someone order dinner), surveys (how many feel this) and data (where people drop off). The notes pile up quickly, so teams group them with <span class="term">affinity mapping</span> (the KJ method, after Jiro Kawakita): write each observation on a sticky note, cluster similar notes silently, then name each cluster. The clusters become the problems worth defining.</p>
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 176" xmlns="http://www.w3.org/2000/svg">
+ <rect x="2" y="2" width="104" height="150" rx="6" fill="#fffbea" stroke="#e0a340"/><text x="54" y="18" text-anchor="middle" class="b">Fees surprise</text>
+ <g style="font-size:10.3px"><rect x="8" y="26" width="92" height="36" fill="#ffe7a3"/><text x="12" y="41">“₹15 for what?”</text><text x="12" y="55" class="s">user 2</text>
+ <rect x="8" y="68" width="92" height="36" fill="#ffe7a3"/><text x="12" y="83">removed a dish</text><text x="12" y="97" class="s">at the bill, user 5</text>
+ <rect x="8" y="110" width="92" height="36" fill="#ffe7a3"/><text x="12" y="125">compared with</text><text x="12" y="139" class="s">Zomato, user 7</text></g>
+ <rect x="113" y="2" width="104" height="150" rx="6" fill="#eef4fb" stroke="#2f6ea5"/><text x="165" y="18" text-anchor="middle" class="b">Choice overload</text>
+ <g style="font-size:10.3px"><rect x="119" y="26" width="92" height="36" fill="#cfe0f5"/><text x="123" y="41">scrolled 9 min</text><text x="123" y="55" class="s">user 1</text>
+ <rect x="119" y="68" width="92" height="36" fill="#cfe0f5"/><text x="123" y="83">“all 4.2 stars”</text><text x="123" y="97" class="s">user 4</text></g>
+ <rect x="224" y="2" width="104" height="150" rx="6" fill="#f3ecf8" stroke="#7c3aa6"/><text x="276" y="18" text-anchor="middle" class="b">Trust in time</text>
+ <g style="font-size:10.3px"><rect x="230" y="26" width="92" height="36" fill="#e6d6f2"/><text x="234" y="41">“30 min is never</text><text x="234" y="55">30 min”, user 3</text>
+ <rect x="230" y="68" width="92" height="36" fill="#e6d6f2"/><text x="234" y="83">picked nearer</text><text x="234" y="97" class="s">place, user 8</text></g>
+ <text x="2" y="170" class="s">Eight interviews → notes → three themes</text>
+</svg>
+<figcaption><b>{{FIG:affinity}} · Affinity mapping.</b> The biggest cluster is not always the most important, but it is where to look first. <span class="src">Illustrative notes.</span></figcaption>
+</figure>
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 176" xmlns="http://www.w3.org/2000/svg">
+ <!-- x = 40 + 25*n, y = 150 - 1.35*pct -->
+ <line x1="40" y1="150" x2="320" y2="150" stroke="#4a5563"/><line x1="40" y1="150" x2="40" y2="10" stroke="#4a5563"/>
+ <g class="s" text-anchor="end"><text x="36" y="154">0%</text><text x="36" y="87">50%</text><text x="36" y="19">100%</text></g>
+ <g class="s" text-anchor="middle"><text x="65" y="166">1</text><text x="115" y="166">3</text><text x="165" y="166">5</text><text x="215" y="166">7</text><text x="290" y="166">10 users</text></g>
+ <polyline points="40,150 65,108 90,79 115,59 140,45 165,36 190,29 215,25 240,21 265,19 290,17" fill="none" stroke="#0b5d7a" stroke-width="2.4"/>
+ <circle cx="165" cy="36" r="5" fill="#b93a32"/><text x="172" y="54" class="b red">5 users: ~84%</text>
+ <text x="172" y="68" class="s">1 − (1 − 0.31)⁵ = 0.84</text>
+ <text x="190" y="104" class="s">each extra user finds</text><text x="190" y="117" class="s">mostly the same problems</text>
+</svg>
+<figcaption><b>{{FIG:five}} · Why five test users is usually enough.</b> If each user hits a given usability problem with a 31% chance, five users reveal about 84% of such problems. Better: three rounds of five than one round of fifteen. <span class="src">Nielsen and Landauer (1993); Nielsen, “Why you only need to test with 5 users” (2000).</span></figcaption>
+</figure>
+</div>
+
+<p><b>Personas that help, and ones that don’t.</b> A <span class="term">persona</span> is a short, research-based portrait of one type of user. A useless persona lists age, city and hobbies (“Riya, 26, likes travel”). A useful one describes a situation and a goal: “Riya orders dinner at her desk three nights a week, has 15 minutes, and cares most about arriving on time.” The second tells a designer what to put on the first screen.</p>
+
+<h2>Prototypes: spend as little as the question needs</h2>
+<figure>
+<svg class="d" viewBox="0 0 680 128" xmlns="http://www.w3.org/2000/svg">
+ <rect x="0" y="80" width="160" height="40" rx="5" fill="#e1f2ec" stroke="#127a64"/><text x="80" y="97" text-anchor="middle" class="b">Paper sketch</text><text x="80" y="112" text-anchor="middle" class="s">1 hour · “is this the idea?”</text>
+ <rect x="173" y="56" width="160" height="64" rx="5" fill="#e3f0f5" stroke="#0b5d7a"/><text x="253" y="73" text-anchor="middle" class="b">Wireframe</text><text x="253" y="88" text-anchor="middle" class="s">1 day · “is the layout</text><text x="253" y="101" text-anchor="middle" class="s">and order of steps right?”</text>
+ <rect x="346" y="30" width="160" height="90" rx="5" fill="#e8ebfa" stroke="#3e4fb8"/><text x="426" y="47" text-anchor="middle" class="b">Clickable (Figma)</text><text x="426" y="62" text-anchor="middle" class="s">2–3 days · “can users</text><text x="426" y="75" text-anchor="middle" class="s">finish the task?”</text>
+ <rect x="519" y="4" width="160" height="116" rx="5" fill="#f3ecf8" stroke="#7c3aa6"/><text x="599" y="21" text-anchor="middle" class="b">Coded beta</text><text x="599" y="36" text-anchor="middle" class="s">2–6 weeks · “does it move</text><text x="599" y="49" text-anchor="middle" class="s">the metric with real</text><text x="599" y="62" text-anchor="middle" class="s">orders and real money?”</text>
+ <text x="4" y="20" class="b">Fidelity rises →</text><text x="4" y="36" class="s">cost and time rise with it</text>
+</svg>
+<figcaption><b>{{FIG:fidelity}} · The prototype ladder.</b> Pick the cheapest step that answers the question you have. Teams waste most time by jumping to a coded beta to answer a layout question. <span class="src">Author’s summary of common practice.</span></figcaption>
+</figure>
+
+<h2>Nielsen’s ten heuristics, on a food-app checkout</h2>
+<p><span class="term">Usability heuristics</span> are rules of thumb for spotting problems without a user test. Jakob Nielsen’s ten (1994) are the standard list. Walk the screen with each one and note violations, then fix by <b>severity × how often users hit it</b>.</p>
+<table class="tbl flow">
+<tr><th style="width:24%">Heuristic, in plain words</th><th style="width:38%">Checkout: done well</th><th>Checkout: a violation</th></tr>
+<tr><td>1. Show what is happening</td><td>“Restaurant is preparing · rider 1.2 km away”</td><td>A spinner for 40 seconds after paying</td></tr>
+<tr><td>2. Speak the user’s language</td><td>“Arrives 8:55–9:05 pm”</td><td>“Order state: DISPATCH_PENDING”</td></tr>
+<tr><td>3. Easy undo and exit</td><td>Edit the cart from the bill screen</td><td>Back button empties the cart</td></tr>
+<tr><td>4. Be consistent</td><td>“Add” always in the same place and colour</td><td>“Proceed” on one screen, “Continue” on the next</td></tr>
+<tr><td>5. Prevent errors</td><td>Warns when the address is 12 km from the pin</td><td>Lets you pay for a closed restaurant</td></tr>
+<tr><td>6. Recognition over recall</td><td>Saved address and last payment method shown</td><td>Retype the flat number each time</td></tr>
+<tr><td>7. Shortcuts for regulars</td><td>One-tap “order again”</td><td>Eight taps to repeat last Friday’s order</td></tr>
+<tr><td>8. Keep it minimal</td><td>Bill shows total first, details on tap</td><td>Five banners above the Pay button</td></tr>
+<tr><td>9. Help recover from errors</td><td>“Payment failed; money not taken; retry”</td><td>“Error 502”</td></tr>
+<tr><td>10. Help when needed</td><td>“Why this fee?” link next to the fee</td><td>Help buried under Profile → Settings</td></tr>
+</table>
+
+<div class="box brk"><span class="lbl">When it breaks · Good UX for the company, bad for the user</span>
+<p>Design can be used against users: a fee revealed only at the last step, a donation box ticked by default, a cancel button hidden in grey. These are <span class="term">dark patterns</span>. India’s Central Consumer Protection Authority notified guidelines in November 2023 that name 13 of them, including <b>drip pricing</b> (revealing charges bit by bit) and <b>basket sneaking</b> (adding items or charges without asking), and treat them as unfair trade practice. A PM who ships one can win a quarter’s metric and lose the regulator and the customer. Other ways UX work breaks: “design thinking theatre”, with workshops and sticky notes that never change a decision; trusting what users <i>say</i> over what they <i>do</i>; and using five-user tests for questions of preference or price, which need numbers.</p></div>
+
+<div class="cols2">
+<div class="box key"><span class="lbl">Key idea · The PM’s UX decisions</span>
+<ul class="small">
+<li><b>How much research before building?</b> More when a mistake is costly or hard to undo.</li>
+<li><b>Which prototype?</b> The cheapest that answers the question.</li>
+<li><b>Which problems first?</b> Severity × frequency, not whichever the loudest stakeholder saw.</li>
+<li><b>Where is the line?</b> Nudges that help users are fine; hiding costs is not.</li>
+</ul></div>
+<div class="box int"><span class="lbl">In the interview</span>
+<p class="small">In any design case, one sentence shows UX maturity: “Before building, I’d watch five users try a clickable prototype of the new checkout, fix what they struggle with, and only then A/B test it on real traffic.” If asked about fees, add: “and every fee is shown before the bill, never added at the end.”</p></div>
+</div>
+</section>

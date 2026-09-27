@@ -1,0 +1,65 @@
+<!-- ============ CASES: 8.1 AI COPILOT FOR SUPPORT AGENTS ============ -->
+<section class="page">
+<div class="kicker">SaaS, productivity &amp; enterprise AI · Cases</div>
+<div class="keep" style="break-after:avoid">
+<div class="casehead"><span class="t">Case 8.1 · An AI copilot for support agents</span>
+ <span class="m"><span class="pill">Design</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, pp. 267–268</span></span></div>
+<div class="try"><b>Try it first.</b> Think of the last time you raised a complaint with a company by chat. How long did the agent take, and what were they probably doing while you waited? Now structure “design an AI copilot for support agents” out loud, for five minutes.</div>
+</div>
+
+{{CASE:A267}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>A clean opening.</b> Who the copilot is for, which channels, and the one outcome that matters, then a stated plan the interviewer agreed to.</li>
+ <li><b>The workflow before the features.</b> Six steps of an agent’s day, four pain points, and an offer to check them against real data.</li>
+ <li><b>Safeguards a support head would sign:</b> suggest, don’t send; show the source; hard rules for risky topics; “no suggestion” when nothing is found.</li>
+ <li><b>A sharp launch gate</b>: the wrong-answer rate, because one confident wrong reply costs more trust than a missing one.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Never sized the prize.</b> How many tickets a day, how many minutes each, what an agent’s hour costs, and what the AI costs per ticket. Without these, “high impact” is a guess.</li>
+ <li><b>“Validate with analytics” stayed a promise.</b> No numbers on where the minutes go, so the MVP choice rests on belief.</li>
+ <li><b>Where does “confidence” come from?</b> A model’s own sense of certainty is unreliable. It should come from how close the search match was and from simple checks.</li>
+ <li><b>Acceptance rate can be gamed.</b> A rushed agent can accept every draft. Track how much agents edit drafts, and audit a sample for quality.</li>
+ <li><b>Didn’t check what exists.</b> Freshdesk (Freddy AI), Zendesk, Intercom and Salesforce all sell copilots. Buy or build is the first real decision.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓ assists, the agent approves</span> · Goal <span class="tk y">✓ handle time and quality</span> · Who <span class="tk y">✓ own agents</span> · Today and the trigger <span class="tk n">✗ volume, tools, why now</span> · Edges <span class="tk y">✓ chat and email</span>. Design add-on: success metric at the end <span class="tk y">✓</span>. The costliest skip: “today and the trigger”. Knowing the help desk already offers a copilot changes the whole plan from “build” to “test the one we have”.</p>
+
+<div class="box chk"><span class="lbl">Check · “Context-gathering and reply drafting dominate handle time” <span class="verdict v-dir">Directionally right</span></span>
+<p>The best evidence is a study of 5,179 support agents at a software company who were given an AI assistant that suggested replies (Brynjolfsson, Li and Raymond, <i>Generative AI at Work</i>, 2023). Issues resolved per hour rose 14% on average. But the gain was uneven: new and less skilled agents improved by about 34%, while the most experienced barely changed. So the copilot does cut handling time, by a sixth rather than by half, and its biggest win is faster ramp-up for new agents. The candidate listed “new agents ramp slowly” as a pain point but didn’t design for it.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip81}}
+<figcaption><b>{{FIG:strip81}} · Six moves for “design an AI copilot”.</b> Size the prize and find the minutes before choosing features; decide the escalation threshold by what each mistake costs. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Three quick questions. How many agents and tickets a day, and what is the average handling time today? Which help desk do we use, and does it already offer an AI assistant? And why now: a growing backlog, a hiring freeze, or new agents taking too long to learn? I’ll assume English chat and email for one B2B product.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>120 agents, about 60 tickets each a day, 8 minutes on average. We use Freshdesk. Tickets grow 25% a year and we can’t hire that fast.</p></div></div>
+<p class="whynote">Why this move: the numbers turn “make agents faster” into a sum you can check, and the help desk answer tells you whether to buy or build.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Size</div><p>120 agents × 60 tickets = 7,200 tickets a day. Studies of support copilots show about 15% faster handling on average, so 8 minutes × 15% = 1.2 minutes saved a ticket. 7,200 × 1.2 minutes = 8,640 minutes, or 144 hours a day: about 18 agents’ worth of 8-hour shifts. At ₹250 an hour of agent time that is ₹36,000 a day; the AI at about ₹2 a ticket costs 7,200 × ₹2 = ₹14,400. All figures illustrative.</p></div></div>
+<p class="whynote">Why this move: the result is framed as the headcount the company doesn’t have to hire next year, which is how a support head budgets. It also shows the AI cost is real but well under the saving.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Find the minutes</div><p>Next I’d time a sample of tickets. Say the 8 minutes split into 2.5 reading the ticket and history, 2 finding the answer, 2.5 writing the reply and 1 deciding the next step ({{REF:mins81}}). A summary saves reading time and a search that shows the right article saves finding time. The draft itself saves little, because checking a draft takes about as long as writing a short reply. So the core of the MVP is summary plus grounded search, with the draft as the way the answer is shown.</p></div></div>
+<p class="whynote">Why this move: a timed breakdown decides the MVP with data rather than opinion, and it corrects the common belief that drafting is where the time goes.</p>
+<figure>{{SVG:mins81}}
+<figcaption><b>{{FIG:mins81}} · Where an agent’s 8 minutes go, before and after.</b> The summary and the search save the time; checking a draft costs about what writing did. <span class="src">Illustrative timings; the 15% average gain is in line with Brynjolfsson, Li and Raymond (2023).</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Design</div><p>First, buy or build: Freshdesk already sells a copilot, so I’d pilot it on 20 agents for a month against our help centre. I’d build only if it can’t reach our billing and plan data. Either way the flow is the same ({{REF:flow81}}). The ticket triggers a search of our articles and past resolved tickets. The model writes a draft only from the passages found, citing them. The agent sees a three-line summary, the draft and its source, and approves or edits. If no passage matches closely, the copilot shows “no suggestion” instead of guessing. New agents get one extra: a “why this answer” line, so the copilot also teaches.</p></div></div>
+<p class="whynote">Why this move: buying first is faster and cheaper to learn from. And tying confidence to the search match gives the agent a signal that means something, unlike a model that sounds equally sure when it is wrong.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Escalate</div><p>For escalation, the two possible mistakes cost very different amounts. Missing a legal threat can lose a ₹24-lakh account; flagging a harmless ticket costs a senior five minutes. So I’d set the flag to catch 97% of truly risky tickets even if it raises more false alarms ({{REF:esc81}}), and add fixed rules that always escalate words like “lawyer”, “cancel my contract” or a data-leak complaint, whatever the model says.</p></div></div>
+<p class="whynote">Why this move: choosing a threshold is a business decision about which mistake you can afford, so it belongs to the PM, not only to the data scientist.</p>
+
+<figure>{{SVG:flow81}}
+<figcaption><b>{{FIG:flow81}} · Behind one suggested reply.</b> The model only writes from what the search found (③–④); when the search finds nothing close, the agent gets no draft rather than a confident guess (⑨). <span class="src">Author’s diagram; match scores and the ticket illustrative.</span></figcaption>
+</figure>
+<figure>{{SVG:esc81}}
+<figcaption><b>{{FIG:esc81}} · Two settings for the escalation flag.</b> Catching more real threats (recall, from 90% to 97%) costs more false alarms (precision falls from 45% to 21%). When a miss is far dearer than a false alarm, pay for the false alarms. <span class="src">Illustrative counts.</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> tickets resolved per agent-hour, with first-contact resolution held steady. <b>Inputs:</b> share of tickets with a good-match suggestion; how much agents edit drafts; time to proficiency for new agents. <b>Safety checks (guardrails):</b> wrong-answer rate in a weekly audit of 200 sent replies, capped at 2%, and customer satisfaction. <b>Launch gate:</b> the audit, not acceptance rate, because an agent can accept a bad draft in one click.</p></div></div>
+<p class="whynote">Why this move: output per hour captures the saving, the audit catches the case where speed hides wrong answers, and editing effort shows whether drafts are useful or just rubber-stamped.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>The clarifying numbers gave the size: 7,200 tickets a day and about 18 agents’ worth of time to save. Timing the ticket showed the saving lives in the summary and the search, so the design grounds every draft in search results and says “no suggestion” when there is none. The cost of each mistake set the escalation threshold. The North Star counts output per hour, and the wrong-answer audit keeps that speed honest.</div>
+<div class="box key"><span class="lbl">Key idea · Confidence should come from the evidence, not from the model’s tone</span>
+<p>A language model writes a wrong answer in the same fluent, sure voice as a right one, and asking it “how confident are you?” gives numbers that don’t track accuracy well. Useful confidence signals come from outside the writing: did the search find a passage that closely matches the question? Does every fact in the draft appear in that passage? Is the topic on the list that always goes to a human? Show agents those signals, and they learn when to trust the copilot.</p></div>
+</section>

@@ -1,0 +1,107 @@
+<!-- ============ CASE 2.2 IMPROVE SWIGGY ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 2.2 · Improve a food delivery app</span>
+ <span class="m"><span class="pill">Product improvement</span><span>Medium</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, pp. 126–127</span></span></div>
+<div class="try"><b>Try it first.</b> Think of the last time you opened a food app and closed it without ordering. At which step did you give up, and why? Build your answer from that moment.</div>
+</div>
+
+{{CASE:B126}}
+
+<figure>
+{{SVG:swj_orig}}
+<figcaption><b>{{FIG:swj-orig}} · The candidate’s three user journeys, redrawn from the original.</b> Each row is one reason to open the app, broken into the steps the user takes. The steps are right; what is missing is how the user feels at each one, which is where the pain points should come from. <span class="src">Redrawn from the original, IIM B <i>Sigma PM Casebook 2026–27</i>, pp. 126–127.</span></figcaption>
+</figure>
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Asked for the goal</b>, then picked one and gave a reason: acquisition isn’t Swiggy’s problem, so retention and revenue.</li>
+ <li><b>Chose one side</b> of the three-sided marketplace and checked it with the interviewer.</li>
+ <li><b>Personas that differ</b> in how often and how much they order.</li>
+ <li><b>Used journeys</b> for three reasons to open the app, and framed pains as beliefs to change.</li>
+</ul>
+<ul class="miss small">
+ <li><b>A minute of company history</b> nobody asked for. Confirm the product in one line.</li>
+ <li><b>The priority logic contradicts itself</b> (see the Check below).</li>
+ <li><b>Pain points float free of the journey.</b> None is tied to a step, and none is called the worst.</li>
+ <li><b>Five ideas, no ranking.</b> The case ends before the promised RICE. Voice ordering through Alexa solves a problem no persona had.</li>
+ <li><b>“Retention and revenue” never became a number.</b></li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓ (too long)</span> · Goal <span class="tk y">✓</span> · Who <span class="tk y">✓</span> · Today and the trigger: what’s changed, where are we losing? <span class="tk n">✗ skipped</span> · Edges <span class="tk y">✓ (which vertical)</span>. Without a trigger the goal stayed vague.</p>
+
+<div class="box chk"><span class="lbl">Check · “Households order rarely but spend more, so prioritise them by lifetime value” <span class="verdict v-no">Doesn’t hold up</span></span>
+<p>Lifetime value is orders × margin × how long they stay, so frequency usually beats basket size. Illustrative, at 8% contribution: a household ordering twice a month at ₹900 is worth 2 × ₹900 × 8% = <b>₹144 a month</b>. A professional ordering 12 times at ₹350 is worth 12 × ₹350 × 8% = <b>₹336 a month</b>, more than twice as much. The households may still be a good bet for Instamart, but not on this logic.</p></div>
+<div class="box chk"><span class="lbl">Check · “Swiggy is considered to have a duopoly” <span class="verdict v-hold">Holds up</span></span>
+<p>Zomato and Swiggy handle the large majority of India’s app-based food orders, roughly 55:45 between them by order value in 2025–26. ONDC apps such as magicpin and newer entrants are growing from a small base. The useful follow-on is the gap: Zomato food grew 20% in Apr–Jun 2026, Swiggy 17%.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">
+<svg class="d" viewBox="0 0 680 62" xmlns="http://www.w3.org/2000/svg">
+ <g class="c">
+  <polygon points="0,4 106,4 116,31 106,58 0,58" fill="#127a64"/><text x="54" y="26" text-anchor="middle" class="b w">① Clarify</text><text x="54" y="44" text-anchor="middle" class="w">goal as a number</text>
+  <polygon points="113,4 219,4 229,31 219,58 113,58 123,31" fill="#1d8a73"/><text x="170" y="26" text-anchor="middle" class="b w">② One user</text><text x="170" y="44" text-anchor="middle" class="w">most orders at risk</text>
+  <polygon points="226,4 332,4 342,31 332,58 226,58 236,31" fill="#2a9a82"/><text x="283" y="26" text-anchor="middle" class="b w">③ Map</text><text x="283" y="44" text-anchor="middle" class="w">steps + feelings</text>
+  <polygon points="339,4 445,4 455,31 445,58 339,58 349,31" fill="#0b5d7a"/><text x="396" y="26" text-anchor="middle" class="b w">④ Worst step</text><text x="396" y="44" text-anchor="middle" class="w">where they quit</text>
+  <polygon points="452,4 558,4 568,31 558,58 452,58 462,31" fill="#3e4fb8"/><text x="509" y="26" text-anchor="middle" class="b w">⑤ Solve</text><text x="509" y="44" text-anchor="middle" class="w">that step first</text>
+  <polygon points="565,4 680,4 680,58 565,58 575,31" fill="#7c3aa6"/><text x="624" y="26" text-anchor="middle" class="b w">⑥ Measure</text><text x="624" y="44" text-anchor="middle" class="w">frequency + guard</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:strip22}} · An improvement answer in six moves.</b> The map in move ③ exists to find move ④: the one step where the user feels worst. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>I’ll take Swiggy’s food app in India, for customers. Swiggy is the close number two and grew slower than Zomato last quarter, so I’d aim at <b>orders per monthly user</b> from people who already use it. Has anything changed recently that I should know about?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Nothing specific. Your call on the rest.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② One user</div><p>Then the user is <b>Arjun</b>, 29, who works late and orders dinner three or four times a week. He is Swiggy’s most valuable customer and the easiest to lose: Zomato is one tap away and has the same restaurants.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Map</div><p>His weeknight journey: feel hungry → decide what to eat → pick a restaurant → pay → wait → eat → rate. I’ll mark how he feels at each step ({{REF:journey22}}). Two low points: deciding (12 minutes of scrolling through 40 look-alike options at 8:45 pm) and waiting (the promised 31 minutes becomes 45).</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Worst step</div><p>Illustrative: of 100 evening sessions, 55 end in an order. Of the 45 that don’t, most leave while browsing, before a cart exists. So deciding is the worst step, and waiting is second.</p></div></div>
+<p class="whynote">Why this move: the map is only useful once it names one step to fix first.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Solve</div><p><b>“Tonight’s three”:</b> between 7 and 11 pm the app opens on three one-tap picks: his most-reordered dish, one new dish close to his taste, and the fastest reliable option near him. <b>An honest ETA:</b> a range (30–38 min) and an on-time badge for restaurants that keep their promise.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> orders per monthly user among weeknight users, from 3.4 to 3.7. <b>Inputs:</b> time from app open to payment (12 → 6 minutes); share of evening sessions ending in an order. <b>Safety check (guardrail):</b> order value per order, and cancellations. <b>Trade-off:</b> three picks can bury small restaurants that pay for ads, so one of the three is always a discovery slot.</p></div></div>
+</div>
+
+<div class="box fw"><span class="lbl">Framework · The customer journey map</span>
+<p><span class="step">1 · The situation.</span>The candidate drew the steps of three journeys, then listed pain points separately. Nobody could tell which step hurt most, so nothing got fixed first.</p>
+<p><span class="step">2 · An everyday example.</span>Think of an overnight train from Pune to Delhi. Booking: anxious (waitlisted). Reaching the station: rushed. Finding the coach: confused. The night: fine. Arrival at 6 am: tired. If you ran Indian Railways and could fix one thing, better food on board would not be it. The low point is the waitlist.</p>
+<table class="tbl">
+<tr><th style="width:18%">Row of the map</th><th>Train to Delhi</th><th>Arjun’s weeknight dinner</th></tr>
+<tr><td><b>Stages</b></td><td>Book → reach station → find coach → travel → arrive</td><td>Hungry → decide → pick → pay → wait → eat → rate</td></tr>
+<tr><td><b>Doing</b></td><td>Refreshes the waitlist status</td><td>Scrolls 40 options</td></tr>
+<tr><td><b>Feeling</b></td><td>Lowest at booking</td><td>Lowest at deciding, then waiting</td></tr>
+<tr><td><b>Pain point</b></td><td>“Will I even get a berth?”</td><td>“Everything looks the same, it’s 8:45”</td></tr>
+<tr><td><b>Opportunity</b></td><td>Confirmed-berth prediction</td><td>Tonight’s three, one tap each</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>A <span class="term">customer journey map</span> lays out the stages a user goes through to get a job done, and for each stage what they do, think and feel. The feelings, drawn as a curve, show the low points. Pain points and opportunities are written under the stage where they occur, so every idea is tied to a moment.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 236" xmlns="http://www.w3.org/2000/svg">
+ <!-- columns: x0 = 76 + 86*i, width 86 -->
+ <g class="b" text-anchor="middle">
+  <rect x="76" y="2" width="602" height="22" fill="#e3f0f5"/>
+  <text x="119" y="17">Feel hungry</text><text x="205" y="17">Decide</text><text x="291" y="17">Pick place</text><text x="377" y="17">Pay</text><text x="463" y="17">Wait</text><text x="549" y="17">Eat</text><text x="635" y="17">Rate</text>
+ </g>
+ <g stroke="#d9dee4"><line x1="162" y1="2" x2="162" y2="232"/><line x1="248" y1="2" x2="248" y2="232"/><line x1="334" y1="2" x2="334" y2="232"/><line x1="420" y1="2" x2="420" y2="232"/><line x1="506" y1="2" x2="506" y2="232"/><line x1="592" y1="2" x2="592" y2="232"/></g>
+ <text x="4" y="42" class="b">Doing</text>
+ <g text-anchor="middle" class="s"><text x="119" y="38">opens app</text><text x="119" y="50">at 8:45 pm</text><text x="205" y="38">scrolls</text><text x="205" y="50">40 options</text><text x="291" y="38">compares</text><text x="291" y="50">ratings, ETAs</text><text x="377" y="38">applies</text><text x="377" y="50">a coupon</text><text x="463" y="38">watches</text><text x="463" y="50">the map</text><text x="549" y="38">eats at</text><text x="549" y="50">his desk</text><text x="635" y="38">skips</text><text x="635" y="50">the rating</text></g>
+ <text x="4" y="100" class="b">Feeling</text>
+ <line x1="76" y1="96" x2="678" y2="96" stroke="#c3cad2" stroke-dasharray="3 3"/>
+ <text x="674" y="70" text-anchor="end" class="s grn">happy</text><text x="674" y="130" text-anchor="end" class="s red">frustrated</text>
+ <polyline points="119,90 205,132 291,112 377,88 463,124 549,66 635,86" fill="none" stroke="#0b5d7a" stroke-width="2.4"/>
+ <g fill="#0b5d7a"><circle cx="119" cy="90" r="4"/><circle cx="291" cy="112" r="4"/><circle cx="377" cy="88" r="4"/><circle cx="549" cy="66" r="4"/><circle cx="635" cy="86" r="4"/></g>
+ <circle cx="205" cy="132" r="7" fill="#b93a32"/><circle cx="463" cy="124" r="6" fill="#b93a32"/>
+ <text x="205" y="150" text-anchor="middle" class="b red">worst</text>
+ <text x="4" y="176" class="b">Pain</text>
+ <g text-anchor="middle" class="s"><text x="205" y="170">12 min of</text><text x="205" y="182">scrolling</text><text x="291" y="170">every place</text><text x="291" y="182">shows 4.3★</text><text x="377" y="170">fees appear</text><text x="377" y="182">at the end</text><text x="463" y="170">ETA slips</text><text x="463" y="182">31 → 45 min</text><text x="635" y="170">no reason</text><text x="635" y="182">to rate</text></g>
+ <text x="4" y="214" class="b grn">Idea</text>
+ <g text-anchor="middle" class="s grn"><text x="119" y="208">open on</text><text x="119" y="220">tonight’s 3</text><text x="205" y="208">one-tap</text><text x="205" y="220">reorder</text><text x="291" y="208">on-time</text><text x="291" y="220">badge</text><text x="377" y="208">fees shown</text><text x="377" y="220">up front</text><text x="463" y="208">ETA as</text><text x="463" y="220">a range</text><text x="635" y="208">“same again</text><text x="635" y="220">Friday?”</text></g>
+</svg>
+<figcaption><b>{{FIG:journey22}} · Arjun’s weeknight dinner as a journey map.</b> Read the curve first: the two red dips, deciding and waiting, are where he quits or gets angry. Ideas sit under the step they fix, so each one has a reason to exist. <span class="src">Illustrative persona and journey.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>A map drawn at the team’s desk shows the team’s guesses. Plan a wedding from the host’s desk and you will map the ceremony beautifully and never see the guests’ two-hour parking queue. Build the map from real evidence: session recordings, where users drop off, support tickets, five user interviews. And map the unhappy path too: the late order, the wrong item.</p>
+<p><span class="step">5 · In the interview.</span>“Let me walk one weeknight order step by step and mark where Arjun feels worst. I’ll fix that step first.”</p>
+</div>

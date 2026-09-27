@@ -1,0 +1,101 @@
+<!-- ============ TECHNOLOGY 2: SYSTEM DESIGN I, THE INTERNET AND APIs ============ -->
+<section class="page">
+<div class="kicker">Payments &amp; fintech · Technology</div>
+<h1>System design I: how the internet and APIs work</h1>
+<p class="lede">Meena opens PhonePe on 4G in Indore and taps “Check balance”. Two seconds later she sees ₹18,240. In between, her phone found PhonePe’s servers among billions of machines, set up a secret channel, proved who she is, and PhonePe asked her bank, through NPCI, for a number. A PM who can walk through those two seconds can hold a real conversation about why the app is slow, why a payment is “pending”, and what an engineer means by “the bank’s API is timing out”.</p>
+
+<h2>What happens when you open a screen</h2>
+<p>The app on the phone is the <span class="term">client</span>: it asks. Computers in a data centre are the <span class="term">servers</span>: they answer. Every screen that shows live data is a conversation between the two, in a fixed order.</p>
+<figure>
+{{SVG:flow_request}}
+<figcaption><b>{{FIG:request}} · Behind one “Check balance” tap.</b> Solid arrows are requests, dotted arrows replies. The first steps find and secure the connection; the middle proves who Meena is; the slow part is the bank. <span class="src">Simplified; real apps reuse connections and cache DNS answers, so steps ①–③ often take no time. Balance illustrative.</span></figcaption>
+</figure>
+<div class="cols2 small">
+<div>
+<p><span class="term">IP address</span>: a server’s numeric address on the internet, like 104.18.2.35.</p>
+<p><span class="term">DNS</span> (domain name system): the internet’s phone book; it turns api.phonepe.com into an IP address. Answers are cached, so the lookup is usually skipped.</p>
+<p><span class="term">HTTPS</span>: the web’s request-and-reply format (HTTP), sent inside an encrypted tunnel (TLS). The padlock in a browser means TLS is on.</p>
+</div><div>
+<p><span class="term">Load balancer</span>: a traffic police officer that sends each request to a healthy server, so one crash doesn’t take the app down.</p>
+<p><span class="term">Token</span>: a temporary pass the app got at login; every request carries it, so the server knows it is Meena without asking for her password again.</p>
+<p><span class="term">Latency</span>: waiting time. A <span class="term">round trip</span> on 4G is often 50–100 ms, so steps that each need a round trip add up.</p>
+</div></div>
+
+<h2>An API call, opened up</h2>
+<p>An <span class="term">API</span> (application programming interface) is a menu of requests one system accepts from another, with a fixed format for each. <span class="term">REST</span> is the most common style: each thing is a web address (/orders, /payments), and a verb says what to do with it: <b>GET</b> to read, <b>POST</b> to create. Here is the real shape of the call Neha’s website makes to Razorpay when Arjun taps “Pay ₹899”.</p>
+<figure>
+<svg class="d" viewBox="0 0 680 212" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="api" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker></defs>
+ <text x="4" y="14" class="b">Request: Neha’s server → Razorpay</text><text x="400" y="14" class="b">Response: Razorpay → Neha’s server</text>
+ <rect x="4" y="22" width="330" height="150" rx="6" fill="#1c232b"/>
+ <g style="font-family:Consolas,'Courier New',monospace">
+  <text x="14" y="42" class="w" style="font-size:10.5px"><tspan fill="#7fd1a8" font-weight="700">POST</tspan> https://api.razorpay.com/v1/orders</text>
+  <text x="14" y="62" style="font-size:10.5px" fill="#9fb3c8">Authorization: Basic ‹key id : secret›</text>
+  <text x="14" y="78" style="font-size:10.5px" fill="#9fb3c8">Content-Type: application/json</text>
+  <text x="14" y="102" class="w" style="font-size:10.5px">{</text>
+  <text x="26" y="118" class="w" style="font-size:10.5px">"amount": <tspan fill="#f2c46d">89900</tspan>,</text>
+  <text x="26" y="134" class="w" style="font-size:10.5px">"currency": "INR",</text>
+  <text x="26" y="150" class="w" style="font-size:10.5px">"receipt": "neha_order_1042"</text>
+  <text x="14" y="166" class="w" style="font-size:10.5px">}</text>
+ </g>
+ <line x1="338" y1="96" x2="392" y2="96" stroke="#4a5563" stroke-width="1.5" marker-end="url(#api)"/>
+ <rect x="396" y="22" width="280" height="150" rx="6" fill="#1c232b"/>
+ <g style="font-family:Consolas,'Courier New',monospace">
+  <text x="406" y="42" style="font-size:10.5px" fill="#7fd1a8" font-weight="700">200 OK</text>
+  <text x="406" y="66" class="w" style="font-size:10.5px">{</text>
+  <text x="418" y="82" class="w" style="font-size:10.5px">"id": "order_Q7xK…",</text>
+  <text x="418" y="98" class="w" style="font-size:10.5px">"amount": 89900,</text>
+  <text x="418" y="114" class="w" style="font-size:10.5px">"status": "created"</text>
+  <text x="406" y="130" class="w" style="font-size:10.5px">}</text>
+ </g>
+ <text x="14" y="190" class="s">① the verb and address say what to do</text><text x="14" y="204" class="s">② the secret key lives only on Neha’s server, never in the app</text>
+ <text x="360" y="190" class="b amb">③ amounts are in paise: 89900 = ₹899,</text><text x="360" y="204" class="s">so no rounding errors with decimals</text>
+</svg>
+<figcaption><b>{{FIG:api}} · The anatomy of one API call.</b> A request names an action and an object, proves who is asking, and carries data as JSON (labelled text that both sides can read); the reply carries a status code and data. <span class="src">Format as in Razorpay’s public Orders API documentation; values illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl">
+<tr><th style="width:17%">Status code</th><th style="width:30%">Meaning</th><th>What the user should see (the PM’s call)</th></tr>
+<tr><td><b>200 / 201</b></td><td>OK / created</td><td>Success, and the next step</td></tr>
+<tr><td><b>400</b></td><td>Bad request: the data was wrong</td><td>A specific fix: “Enter a 10-digit mobile number”, never “Error 400”</td></tr>
+<tr><td><b>401 / 403</b></td><td>Not logged in / not allowed</td><td>Sign in again, without losing what they typed</td></tr>
+<tr><td><b>429</b></td><td>Too many requests: slow down</td><td>Wait quietly and retry; NPCI caps balance checks at 50 per app per user a day</td></tr>
+<tr><td><b>500 / 503 / timeout</b></td><td>The server or a partner failed</td><td>For money, say “pending”, never “failed”, until the status is certain</td></tr>
+</table>
+
+<h2>Webhooks vs polling: how a system hears that something happened</h2>
+<p>After Arjun pays, Neha’s server needs to know. It can <span class="term">poll</span>, asking Razorpay every few seconds “paid yet?”, like a child asking “are we there yet?”. Or Razorpay can send a <span class="term">webhook</span>, a message to an address Neha registered in advance: “payment.captured, order_Q7xK, ₹899”. The first is simple and wasteful; the second is efficient but needs care.</p>
+<figure>
+<svg class="d" viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="wh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker>
+ <marker id="whg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#127a64"/></marker></defs>
+ <text x="4" y="14" class="b">Polling: ask again and again</text>
+ <rect x="4" y="24" width="90" height="36" rx="5" fill="#eef0f2" stroke="#5b6470"/><text x="49" y="46" text-anchor="middle" class="b">Neha’s server</text>
+ <rect x="244" y="24" width="90" height="36" rx="5" fill="#e3f0f5" stroke="#0b5d7a"/><text x="289" y="46" text-anchor="middle" class="b">Razorpay</text>
+ <g stroke="#4a5563" stroke-width="1.1"><line x1="94" y1="30" x2="240" y2="30" marker-end="url(#wh)"/><line x1="94" y1="38" x2="240" y2="38" marker-end="url(#wh)"/><line x1="94" y1="46" x2="240" y2="46" marker-end="url(#wh)"/><line x1="94" y1="54" x2="240" y2="54" marker-end="url(#wh)"/></g>
+ <text x="167" y="76" text-anchor="middle" class="s">“paid yet?” × 12, every 5 s</text>
+ <text x="4" y="98" class="red b">10 lakh orders a day × 12 checks</text><text x="4" y="112" class="red">= 1.2 crore calls, mostly “not yet”</text>
+ <line x1="345" y1="8" x2="345" y2="140" stroke="#d9dee4"/>
+ <text x="356" y="14" class="b">Webhook: be told once</text>
+ <rect x="356" y="24" width="90" height="36" rx="5" fill="#e3f0f5" stroke="#0b5d7a"/><text x="401" y="46" text-anchor="middle" class="b">Razorpay</text>
+ <rect x="586" y="24" width="90" height="36" rx="5" fill="#eef0f2" stroke="#5b6470"/><text x="631" y="46" text-anchor="middle" class="b">Neha’s server</text>
+ <line x1="446" y1="42" x2="582" y2="42" stroke="#127a64" stroke-width="2.4" marker-end="url(#whg)"/>
+ <text x="514" y="76" text-anchor="middle" class="s">“payment.captured” once, signed</text>
+ <text x="356" y="98" class="grn b">10 lakh orders = 10 lakh messages</text><text x="356" y="112" class="s">but: retry if Neha’s server is down,</text><text x="356" y="126" class="s">check the signature, ignore duplicates</text>
+</svg>
+<figcaption><b>{{FIG:webhook}} · Polling vs webhooks.</b> Webhooks cut the traffic twelvefold here, but the receiver must handle a message arriving twice or late, and must check the signature so a fake “paid” message can’t ship an order. <span class="src">Illustrative numbers; webhook signing as in Razorpay’s public docs (HMAC signature header).</span></figcaption>
+</figure>
+
+<div class="cols2">
+<div class="box brk"><span class="lbl">When it breaks</span>
+<ul class="small">
+<li><b>A slow partner makes you slow.</b> If a bank’s API takes 8 s, your screen takes 8 s. Timeouts and clear “pending” states matter more than faster code.</li>
+<li><b>Retries double-charge</b> unless each request carries a unique ID that the server remembers (idempotency: a repeated request has the effect of one).</li>
+<li><b>Unsigned webhooks</b> let a fraudster tell a shop “paid” when nothing was paid.</li>
+</ul></div>
+<div class="box int"><span class="lbl">In the interview</span>
+<p class="small"><b>“Our app feels slow. What would you check?”</b> “Where the time goes, step by step: finding the server, the connection, our servers, then partners such as banks. I’d look at p95, not the average, split by partner and network type. Usually one slow partner or a chatty screen making ten calls is the culprit.”</p></div>
+</div>
+
+<h2>Walkthrough: 2 seconds inside a UPI payment</h2>
+<p>Back at the Pune kirana. Between Asha’s thumb on “Pay” and the soundbox speaking, about ten messages cross five organisations, all using the API ideas above. Knowing that path lets a PM answer the question every payments team hears weekly: “The money left my account but the shop didn’t get it. Where is it?”</p>

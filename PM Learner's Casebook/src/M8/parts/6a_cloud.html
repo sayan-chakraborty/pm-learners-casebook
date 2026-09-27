@@ -1,0 +1,49 @@
+<!-- ============ TEARDOWNS: CLOUD TRIO ============ -->
+<section class="page">
+<div class="kicker">SaaS, productivity &amp; enterprise AI · Product teardowns</div>
+<h1>The cloud trio: AWS vs Google Cloud vs Azure</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Meera, 31, runs engineering at a Bengaluru clothing brand that sells online. On a normal evening ten servers handle the site. For the Diwali sale at 8 pm she expects ten times the traffic. She doesn’t buy servers. She sets a rule in AWS: when the servers get busy, add more; when it’s quiet, remove them. At 8:02 pm traffic jumps, the rule adds 30 servers in about three minutes, product pages are served from read copies of the database, and orders go to the main copy. At midnight the extra servers switch off. Her bill shows 40 servers for four hours, charged by the second ({{REF:flow_cloud}}).</p>
+
+<figure>{{SVG:flow_cloud}}
+<figcaption><b>{{FIG:flow_cloud}} · Behind a Diwali sale on the cloud.</b> Servers are added and removed by a rule (③, ⑧); reads and writes go to different copies of the database (④–⑤); the bill counts only what was used (⑨). <span class="src">Author’s diagram; server counts and timings illustrative.</span></figcaption>
+</figure>
+
+<table class="tbl flow feat">
+<tr><th style="width:18%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Autoscaling</td><td>“Traffic spikes for a few hours a year”</td><td>Capacity follows demand by rule, so nobody buys for the peak</td><td>Cost per order; uptime at peak</td></tr>
+<tr><td>Managed databases</td><td>“We can’t hire a database team”</td><td>The provider runs backups, copies and patches</td><td>Services used per customer</td></tr>
+<tr><td>Spot and reserved prices</td><td>“The bill is too high”</td><td>Spare capacity sold cheap; discounts for a 1–3 year commitment</td><td>Committed spend; retention</td></tr>
+<tr><td>Own AI chips</td><td>“Nvidia chips are scarce and dear”</td><td>AWS Trainium, Google TPUs and Microsoft Maia cut the cost of running models</td><td>AI revenue; margin</td></tr>
+<tr><td>Model marketplaces</td><td>“Which AI model should we use?”</td><td>Bedrock (AWS), Vertex AI (Google), Azure AI Foundry offer many models under one bill</td><td>AI usage; lock-in</td></tr>
+<tr><td>India regions</td><td>“Our payment data must stay in India”</td><td>Data centres in Mumbai, Hyderabad, Pune, Chennai and Delhi meet RBI and government rules</td><td>Banks and government deals</td></tr>
+</table>
+
+<h3>Core loop: why customers spend more each year</h3>
+<p>A customer starts with servers and storage, then adds a managed database, then analytics, then AI. Each added service makes the next one easier to adopt on the same cloud and harder to move away from, because data is expensive to take out (providers charge for data leaving their network) and engineers learn one provider’s tools. Big customers sign <b>commitments</b>: “we’ll spend $50 million over three years” in return for a discount. That locks in spending and gives the provider a backlog of future revenue to plan data centres against.</p>
+
+<h3>Business model, with numbers</h3>
+<p>Pay for what you use: per second of server time, per GB stored, per million AI tokens. In April–June 2026 <b>AWS</b> earned $42.2 billion, up 37%, with $16.6 billion of operating profit (a 39% margin). <b>Google Cloud</b> earned $24.8 billion, up 82%, the fastest growth of the three, driven by AI work. <b>Microsoft</b> doesn’t report Azure’s revenue on its own; Azure grew 43%, and the wider Microsoft Cloud, which includes Microsoft 365, earned $59.3 billion ({{REF:cloudmoney}}). AWS remains the largest by market share (about 28% against Azure’s 20% and Google’s 15%, mid-2026). All three are spending record sums on data centres for AI; Amazon raised its 2026 plan to about $220 billion.</p>
+<div class="figrow">
+<figure>{{SVG:cloudmoney}}
+<figcaption><b>{{FIG:cloudmoney}} · Revenue in one quarter.</b> Microsoft’s figure is wider than cloud infrastructure alone. <span class="src">Company results, quarter to 30 Jun 2026.</span></figcaption>
+</figure>
+<figure>{{SVG:cloudmargin}}
+<figcaption><b>{{FIG:cloudmargin}} · Operating margin.</b> Renting computers has become very profitable at this scale. <span class="src">Amazon, Alphabet Q2 2026; Google’s margin from press coverage.</span></figcaption>
+</figure>
+</div>
+<p><b>Moat, in plain words.</b> Scale: each provider buys chips, power and land cheaper than anyone else. Switching costs: moving years of data and rebuilding systems on another cloud takes months. Each also has a different pull. <b>AWS</b> has the widest range of services and the most engineers who know it. <b>Azure</b> sells into companies that already run Microsoft software, and hosts OpenAI’s models. <b>Google</b> leads on data analytics (BigQuery) and its own AI (Gemini, TPUs).</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Customer spend used each month (consumed revenue).</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>New workloads moved in · services per customer · committed spend backlog · AI tokens served.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Uptime against the promised level · customers’ cost per unit of work · outage minutes.</div>
+</div>
+<p><b>2025–26 moves.</b> AI capacity is the race: record data-centre spending, own chips, and deals to host models from OpenAI and Anthropic. A long AWS outage in its main US region in October 2025 took down many apps worldwide and reminded customers why spreading work across regions matters.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Customers stay for years</li><li>Very high margins at scale</li><li>AI demand still growing fast</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Bills that surprise customers</li><li>Huge spending before demand is proven</li><li>One region’s outage hits thousands of firms</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Start-ups in India overspend because nobody watches idle servers <span class="arrow">→</span> a weekly “money left on the table” report in rupees, with one-click fixes <span class="arrow">→</span> cost per active customer; small-customer retention.</p>
+<p class="idea"><b>2.</b> Teams can’t tell which AI model is good enough for the price <span class="arrow">→</span> run the customer’s own test questions on three models and show quality, speed and cost side by side <span class="arrow">→</span> AI spend retained after the first month.</p>
+<p class="idea"><b>3.</b> Banks must prove they can survive a region failing <span class="arrow">→</span> a guided “fail over to Hyderabad” drill with a report for the RBI audit <span class="arrow">→</span> regulated customers running in two regions.</p>
+</section>

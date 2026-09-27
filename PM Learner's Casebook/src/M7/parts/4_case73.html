@@ -1,0 +1,79 @@
+<!-- ============ CASE 7.3 DUOLINGO ENGAGEMENT DROP ============ -->
+<div class="keep" style="break-after:avoid;margin-top:12pt">
+<div class="casehead"><span class="t">Case 7.3 · Duolingo: engagement down 15%</span>
+ <span class="m"><span class="pill">Root cause</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, pp. 303–304</span></span></div>
+<div class="try"><b>Try it first.</b> Open a language app on the bus and imagine it suddenly asks you to speak a sentence aloud. What do you do? Now structure “engagement fell 15% in a month” for five minutes: what would you check, in what order?</div>
+</div>
+
+{{CASE:A303}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>A model opening:</b> confirmed the product, pinned the metric (weekly users finishing at least one lesson), asked sudden or gradual and checked the seasonal pattern against last year.</li>
+ <li><b>Found where before why:</b> segment (returning, iOS, US), then the funnel (start stable, finish down), then what changed inside the lesson.</li>
+ <li><b>Tested its own hypothesis</b> three ways. The third check, whether blocked users finish a different lesson instead, is the kind of thinking that separates strong candidates.</li>
+ <li><b>Shipped the fix as an A/B test</b> with a main metric and a safety check.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Didn’t make the numbers add up.</b> A flag given to “a segment of US iOS users” is unlikely to move a worldwide metric by 15% on its own.</li>
+ <li><b>Didn’t stop the bleeding.</b> The cause was a flag the team controls. The fastest fix is to switch it off or shrink it today, before building anything.</li>
+ <li><b>Solution 1 may already exist.</b> Duolingo has long shown a “Can’t speak now” button on speaking exercises (check the current app). If users still quit, the question is why they didn’t find or trust it.</li>
+ <li><b>Never asked how the original test was read.</b> It was meant “to improve retention”; its safety checks should have caught a fall in lessons finished within days.</li>
+ <li><b>The new test’s main metric can be gamed.</b> A skip button raises lesson finish rate by making lessons shorter. The goal is weekly learners, and speaking practice, the reason for the change, needs its own check.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check (root-cause add-ons):</b> Exact definition <span class="tk y">✓</span> · Size vs normal <span class="tk y">✓ 15% vs a usual 3–5%</span> · Sudden or gradual <span class="tk y">✓</span> · Where it shows <span class="tk y">✓</span> · Recent changes <span class="tk y">✓ release log, flags</span> · Is the data trustworthy <span class="tk n">✗</span> · Scope of the metric <span class="tk n">✗ worldwide or US?</span>. Nearly a clean sweep; the one gap, scope, decides whether the flag can explain the whole fall.</p>
+
+<div class="box chk"><span class="lbl">Check · Can one US iOS test explain a 15% fall? <span class="verdict v-dir">Directionally right</span></span>
+<p>Suppose, illustratively, that returning US iPhone users are 12% of Duolingo’s weekly learners and the flag went to half of them: 6% of all learners. Even if every one of them stopped finishing lessons, the worldwide metric would fall by 6%, not 15%. So either the metric being discussed is the US one, or the flag reached more users than “a segment”, or there is a second cause. The candidate’s hypothesis is almost certainly part of the story. The strong move is to say “let me check this explains all of it” before calling it the root cause.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip73}}
+<figcaption><b>{{FIG:strip73}} · Six moves for “engagement fell 15%”.</b> The fourth move, checking that the cause adds up to the whole fall, is the one most candidates skip. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Engagement here is weekly learners who finish at least one lesson, down 15% over four weeks. Is that worldwide or one market? And has anything changed in how we count a “finished lesson”, for instance an app update that logs events differently?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>US only. Counting hasn’t changed.</p></div></div>
+<p class="whynote">Why this move: scope decides whether the cause you find can be big enough. The counting question rules out a fake drop, which happens more often than people expect after app updates.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Rule out</div><p>It’s gradual, and the usual seasonal dip is 3–5%, so seasonality is at most a third of it. No competitor move and no bad press. So the cause is most likely inside the product.</p></div></div>
+<p class="whynote">Why this move: the outside checks take one line each once you have the facts, and naming the seasonal share (a third at most) shows you are sizing rather than ticking boxes.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Find where</div><p>I’d split weekly learners into returning learners × the share who start a lesson × the share who finish it ({{REF:tree73}}). Returning learners and starts are flat; finishing fell from about 80% to 68%. That one step explains the whole 15%: 0.68 ÷ 0.80 = 0.85. Then I’d look at which screen people quit on ({{REF:exits73}}).</p></div></div>
+<p class="whynote">Why this move: splitting the number into its parts turns a vague “engagement” question into one step of the lesson, and the arithmetic proves that step accounts for all of the fall.</p>
+<figure>{{SVG:tree73}}
+<figcaption><b>{{FIG:tree73}} · Where 15% of weekly learners went.</b> Only the finish rate moved, and by enough to explain the whole fall. <span class="src">Illustrative numbers; structure from the case.</span></figcaption>
+</figure>
+<figure>{{SVG:exits73}}
+<figcaption><b>{{FIG:exits73}} · The quit screen.</b> Before the flag, exits were spread across exercise types. With the flag, six in ten happen on a speaking screen. <span class="src">Illustrative.</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Add it up</div><p>The speaking flag fits: exits jump on speaking screens, mostly at commute and office hours. Since the metric is US-only and the flag went to a large share of US iPhone users, it can explain most of the fall. I’d still check Android: if Android US also fell, there is a second cause.</p></div></div>
+<p class="whynote">Why this move: a cause that explains only part of a drop is a trap: the team fixes it, the number recovers halfway and everyone is confused. Checking the untreated group (Android) is the cheapest test.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Stop it</div><p>Today I’d roll the flag back to the old share of speaking exercises for everyone who has it. That costs nothing and recovers most learners within a week. Then I’d look at how the original test was read: it was meant to improve retention, but lessons finished must have fallen from week one. Why did nobody stop it?</p></div></div>
+<p class="whynote">Why this move: when the cause is a switch you own, turn it off first and build later. Asking why the test ran on is how the team avoids the same mistake next quarter.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Fix and test</div><p>More speaking is still a good goal: it is how people actually learn to talk. So I’d test a smarter version: speaking exercises only when headphones are connected or the learner has spoken in the last few days, with “Can’t speak now” made more visible. <b>Main metric:</b> weekly learners finishing a lesson. <b>Safety checks:</b> speaking exercises done per learner (the original aim) and day-28 retention. I’d run it for three full weeks and read the result step by step: was the split fair, is the gain real, did the safety checks hold ({{REF:abci}}).</p></div></div>
+<p class="whynote">Why this move: choosing weekly learners as the main metric stops a skip button from “winning” by making lessons shorter, and the speaking check makes sure the fix doesn’t quietly kill the reason for the change.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>Pinning the scope (US only) made it possible to check that the speaking flag explains the whole 15%. Splitting the metric put the fall inside the lesson; the quit-screen data pointed at speaking. Because the team owns the flag, the first fix is to switch it off. The better fix is then tested with weekly learners as the goal and speaking practice as the safety check, so neither “finish rate” nor “skips” can mislead.</div>
+
+<div class="box fw flowbox"><span class="lbl">Framework · Reading an A/B test</span>
+<p><span class="step">1 · The situation.</span>The smarter-speaking test comes back after three weeks. The dashboard says: lesson finish rate up 7.4 points, weekly learners up 1.9, retention “up” 0.3. Ship it? Maybe. A test result is evidence, and it can mislead in several predictable ways. Reading it well is a PM’s job, not only the analyst’s.</p>
+<p><span class="step">2 · An everyday example.</span>Two tea stalls on the same street. One puts up a bright new sign, and sales rise 20% that week. Before you order signs for all your stalls, you would ask: were both stalls equally busy to begin with? Was it one lucky week? Did people come for the sign’s novelty and then drift back? Did the new crowd buy only cheap tea, so income fell? Reading an A/B test is asking those questions in order.</p>
+<table class="tbl">
+<tr><th style="width:22%">Question</th><th style="width:36%">The tea stalls</th><th>The Duolingo test</th></tr>
+<tr><td><b>Was the split fair?</b></td><td>Were the two stalls equally busy before?</td><td>50,210 vs 49,790 users: close enough to 50:50</td></tr>
+<tr><td><b>Is the change real?</b></td><td>More than a normal week’s swing?</td><td>The 95% range for weekly learners, +1.3 to +2.5, stays above zero</td></tr>
+<tr><td><b>Big enough to matter?</b></td><td>Worth the cost of new signs?</td><td>+1.9 points on crores of learners: yes</td></tr>
+<tr><td><b>Safety checks held?</b></td><td>Did income per cup fall?</td><td>Speaking practice fell 61%: no</td></tr>
+<tr><td><b>Will it last?</b></td><td>Busy only while the sign was new?</td><td>Week 1 lift +3.6, settling at +1.9</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>An <span class="term">A/B test</span> shows a random half of users the change (the variant) and keeps the rest on the current version (the control), so any difference comes from the change. Read the result in six steps. <b>1. The split:</b> if you planned 50:50 and got 52:48 on a lakh users, something is broken in who gets which version (a <span class="term">sample ratio mismatch</span>), and no number can be trusted. <b>2. Real or chance:</b> look at the 95% range as well as the average: if the range crosses zero, you haven’t shown a change. <b>3. Size:</b> a real but tiny change may not be worth the complexity. <b>4. Safety checks:</b> a win on the main metric that breaks a guardrail is not a win. <b>5. Segments:</b> check the groups you named before the test (new vs returning, iOS vs Android), not every slice you can find afterwards. <b>6. Time:</b> a <span class="term">novelty effect</span> (people try what is new, then stop) inflates week one; a <span class="term">learning effect</span> (people need time to get used to a change) does the opposite. Run whole weeks, and look at the trend.</p>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this test):</p><ol class="usesteps"><li>Split: 50,210 vs 49,790 is a 50.2:49.8 split, well within chance. Trust the data.</li><li>Main metric: weekly learners +1.9 points, range +1.3 to +2.5: a real gain ({{REF:abci}}).</li><li>The finish-rate jump of +7.4 is partly mechanical: skipping a speaking exercise makes a lesson shorter. Don’t celebrate it.</li><li>Safety check: speaking practice down 61%. The version fails as it stands; cap skips (for example, offer speaking again later in the same session) and retest.</li><li>Time: the lift fell from +3.6 in week one to about +1.9 ({{REF:novelty}}). Plan with the settled number.</li></ol><p class="slip"><b>Common slip</b> · peeking every day and stopping the test the first time it looks good. Look often enough and chance will hand you a “win”; fix the length before you start.</p>
+<figure style="margin:3pt 0 4pt">{{SVG:abci}}
+<figcaption><b>{{FIG:abci}} · The test, read properly.</b> Each dot is the variant’s gain over control; the line is the 95% range. The goal metric rose for real; day-28 retention didn’t change; the safety check on speaking failed. <span class="src">Illustrative results; ranges calculated for about 50,000 users a group.</span></figcaption>
+</figure>
+<figure style="margin:3pt 0 4pt">{{SVG:novelty}}
+<figcaption><b>{{FIG:novelty}} · Why one week isn’t enough.</b> The lift is biggest while the change is new, then settles. The shaded band is the 95% range each week. <span class="src">Illustrative.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>Twenty metrics on one dashboard: at a 95% standard, about one will look “significant” by chance alone, so decide the main metric before the test. The winner’s curse: the tests that look best are often the lucky ones, so the real effect after launch is usually smaller; keep a small group on the old version for a few months (a holdout) to see the lasting effect. And some changes can’t be tested this way at all: in a marketplace or a social app, treated users affect untreated ones, like two tea stalls sharing one queue.</p>
+<p><span class="step">5 · In the interview.</span>“Before shipping, I’d check the split was fair, that the range for weekly learners stays above zero, that speaking practice didn’t collapse, and that the lift holds after the first week.”</p>
+</div>

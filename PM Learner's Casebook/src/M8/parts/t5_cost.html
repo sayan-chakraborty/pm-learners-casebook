@@ -1,0 +1,38 @@
+<!-- ============ TECHNOLOGY: COST PER TASK, LATENCY, THE TRIANGLE ============ -->
+<h2 style="margin-top:12pt">E. Cost per task, and the quality–latency–cost triangle</h2>
+
+<h3>1. Cost per resolved task</h3>
+<p><b>Everyday picture.</b> A mechanic who charges ₹300 an attempt but fixes your scooter only every second visit costs you ₹600 a fix, plus the day you lose.</p>
+<p><b>How it works.</b> The price of one model call is the wrong number to budget with. What matters is <span class="term">cost per resolved task</span>: the cost of an attempt divided by the share of attempts that succeed, plus what failures cost. <b>Worked example</b> ({{REF:costchain}}): an answer takes 3 model calls at about ₹2 each = ₹6 an attempt. It solves 60% of tickets, so ₹6 ÷ 0.6 = ₹10 per solved ticket. The other 40% go to a person at about ₹40 each, adding 0.4 × ₹40 = ₹16. Real cost: ₹6 + ₹16 = ₹22 a ticket, against ₹40 when people handle everything. The saving is ₹18 a ticket, not the ₹34 the ₹6 figure suggests. Raising the solve rate from 60% to 75% is often worth more than halving the price of a model call.</p>
+<figure>{{SVG:costchain}}
+<figcaption><b>{{FIG:costchain}} · From price per call to cost per ticket.</b> Failures cost twice: the wasted attempt and the person who then does the work. <span class="src">Illustrative.</span></figcaption>
+</figure>
+
+<h3>2. Latency: the median and the slow tail</h3>
+<p><b>Everyday picture.</b> A bus that is usually on time but once a week is 40 minutes late. You remember the late day.</p>
+<p><b>How it works.</b> <span class="term">Latency</span> is how long the user waits. Two numbers matter: <b>time to first word</b> (answers that stream in word by word feel faster) and <b>time to the full answer</b>. Look at the spread, not the average. The <span class="term">median</span> is the time half the answers beat; <span class="term">p95</span> is the time 95% beat, so 1 in 20 is slower ({{REF:latency}}). <b>Worked example:</b> the copilot’s median is 1.2 seconds but its p95 is 6 seconds, mostly on long tickets with many replies, because the model has more to read. An agent handling 60 tickets a day hits the slow tail about 3 times a day. What users tolerate depends on the job: an agent will wait 3 seconds for a draft; a customer in live chat wants the first words within a second or two; an overnight report can take minutes.</p>
+<figure>{{SVG:latency}}
+<figcaption><b>{{FIG:latency}} · Most answers are quick; some are not.</b> The average hides the slow tail, and the slow tail is what users complain about. <span class="src">Illustrative distribution.</span></figcaption>
+</figure>
+
+<h3>3. The triangle: quality, speed, cost</h3>
+<p><b>Everyday picture.</b> A wedding caterer: excellent food, fast service, low price. You can usually have two.</p>
+<p><b>How it works.</b> Bigger models and extra steps (re-ranking, checking) raise quality but add time and cost. Smaller models are fast and cheap but miss more. The PM’s job is to pick a point on the triangle for each use, not one for the whole product ({{REF:triangle}}). <b>Worked example:</b> A, a large model with a re-ranker, is right 92% of the time but takes 4.5 seconds and ₹3 a ticket. B, a small model, takes 0.9 seconds and ₹0.30 but is right only 81% of the time. C sends every ticket to the small model first and passes it to the large one when the small one is unsure: right 90% of the time, 1.6 seconds on average, and 0.7 × ₹0.30 + 0.3 × ₹3.00 = ₹1.11 a ticket ({{REF:routing}}).</p>
+<figure>{{SVG:triangle}}
+<figcaption><b>{{FIG:triangle}} · Three set-ups on the triangle.</b> Routing (C) gets close to the best quality at about a third of its cost. <span class="src">Illustrative.</span></figcaption>
+</figure>
+<figure>{{SVG:routing}}
+<figcaption><b>{{FIG:routing}} · How routing is priced.</b> 70 easy tickets go to the small model; 30 hard ones to the large one. <span class="src">Illustrative.</span></figcaption>
+</figure>
+
+<h3>4. The levers</h3>
+<p><b>Route by difficulty</b>: easy tickets to a small model, hard ones to a large one. <b>Cache repeated answers:</b> if 30% of questions are the same 50 (“how do I reset my password?”), answer them from a saved reply without calling a model at all. <b>Prompt caching:</b> the fixed part of every prompt (instructions, tool descriptions) can be stored by the model provider and charged at a fraction of the price when reused. <b>Send less text:</b> 5 chunks instead of 20 is 1,500 words instead of 6,000 in every request, cheaper and often more accurate. <b>Batch work that can wait:</b> overnight summaries through batch services cost about half. <b>Stop loops early</b> with stopping rules.</p>
+<p><b>Why this changes pricing.</b> In classic SaaS, one more user cost the vendor almost nothing, so a flat price per seat was safe. With AI, every question has a cost, and heavy users can cost more than they pay. That is why vendors now charge per use or per result, or give each seat an allowance.</p>
+<p><b>The PM decisions.</b> A cost-per-resolved-task target, set before launch. The latency the job needs (draft, live chat or overnight). Which set-up to use for which task. And a guardrail on quality, so cost cutting doesn’t quietly lower the solve rate, which raises the real cost.</p>
+<div class="box int"><span class="lbl">In the interview · Cost and latency</span>
+<ul class="small">
+<li><b>“Our AI bill doubled. What do you do?”</b> Break it down by task: calls per task, words per call, solve rate, loops. Then route, cache and trim before cutting quality.</li>
+<li><b>“Which model should we use?”</b> Different ones for different jobs; show the three set-ups with quality, time and cost, and route by difficulty.</li>
+<li><b>“Why is p95 more important than the average?”</b> The slow 1 in 20 is what users feel and complain about, and an agent meets it several times a day.</li>
+</ul></div>
+</section>

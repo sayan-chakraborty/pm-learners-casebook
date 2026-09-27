@@ -1,0 +1,96 @@
+=== iimb 46 47
+[I] Let’s design something like LinkedIn, but for blue-collar workers in India. How would you approach this?
+[C] Before I jump in, can I clarify two small things? First, are we focusing only on India? Second, do you want the platform to help with full-time jobs, part-time gigs, or both?
+[I] Good questions. Yes, India. And let's include both full-time and part-time work.
+[C] Great, that helps. Let me begin with the overall context then. Blue-collar workers in India rely mostly on word-of-mouth and local contacts. There’s no proper digital identity for them. Employers also don’t have one reliable place to find verified workers. So, the overall context is a huge workforce, high churn, very little structure, and very low trust.
+[I] Makes sense. How do you understand the users?
+[C] Let me create two simple personas, so we keep real people in mind. The first one is Ramesh. He’s 28, a delivery worker. He changes jobs every few months because timings or salary change suddenly. He hates dealing with agents because they charge a fee. The second one is Savita. She’s 35 and works as a housekeeper. She wants work near her home because she has kids to look after. She’s not very confident reading long English text, so she prefers simple visuals and audio guidance. For employers, imagine someone like Mr. Shah who runs a small restaurant. He always needs staff but spends too much time asking other restaurants or agents. And if someone leaves suddenly, his whole kitchen slows down.
+[I] Nice. What pain points do you see here?
+[C] Ramesh’s biggest pain is job uncertainty. He doesn’t know when he’ll get his next job or how far he’ll need to travel. Savita’s pain is trust, she worries about safety, late payments, or unexpected changes in work hours. For employers like Mr. Shah, the pain is unreliability, people not showing up, wrong identity details, and high churn. So overall, the big pains are unclear job information, trust issues, distance problems, and no proper worker profile.
+[I] Good observation. Now how would you prioritize the problems to solve?
+[C] I would start with the simplest problems that unblock everything else. First priority: job discovery. If workers can’t see clear, nearby jobs, the whole platform fails.¶¶Second: identity and trust. If employers don’t trust the profiles, they won’t hire through us.¶¶Third: clarity -salary, timing, weekly off, working hours. Most disputes happen because these aren’t fixed upfront. Other things like training, community features, or financial services can come later.
+[I] Alright. What direction does this set for your solution?
+[C] It means the platform should focus on giving every worker a simple digital profile, showing nearby verified jobs with transparent pay, and supporting basic identity checks. Almost like creating “mini LinkedIn pages” for people who’ve never had one.
+[I] And what choices do you need to think about?
+[C] The biggest choice is whether this should be a new app or part of an existing one. Given the audience, I’d build a new app with a very simple flow, big buttons, audio instructions, multiple languages. Another choice is where to start. I would start with delivery workers, drivers, and housekeeping staff because they already use smartphones and switch jobs quickly. I also need to choose how deep verification needs to go. I think basic phone and Aadhaar verification is enough for MVP, with optional deeper checks later.
+[I] Good. How would you actually execute the MVP?
+[C] The first step would be a very easy sign-up for workers. They enter their phone number, pick their language, take a photo, and choose their job type using icons. They can also record a short voice or video intro if they want, something simple like “I’m Ramesh, I have 3 years of delivery experience.” The app then shows nearby jobs with salary and timings clearly visible. Ramesh just taps “Apply,” and the employer sees his profile. On the employer side, they add their location, choose the job type, mention salary and timings, and the app shows matching workers. Once both sides agree, the app creates a small digital agreement, so expectations are clear.
+[I] Nice flow. How does this tie back to success metrics?
+[C] Success should be measured in simple, real-world terms. First, how many workers complete their profile? That tells us if onboarding is easy enough. Second, how many job matches actually convert into someone starting work? That’s our core metric. Third, what’s the 30-day retention of both workers and employers? If people keep coming back, it means trust is building. And finally, distance between worker and job, shorter distances show the matching algorithm is working.
+[I] Nice. That’s a clear and very grounded approach. Thank you for the breakdown.
+[C] Thank you
+=== iima 288 289
+[I] You are a product manager at Instagram working on the Creator Commerce product tagging feature. How would you go about measuring its success?
+[C] Before I begin, let me confirm my understanding. Creator Commerce allows creators to tag products from partner brands in their posts, reels, and stories. Users can tap the tag, view product details, and complete the purchase on the merchant's website. Is that accurate?
+[I] The description is accurate. Please proceed with the rest of the solution.
+[C] Great. Since this feature serves multiple stakeholders, I'd first map their journeys before defining metrics.¶¶The three stakeholders are: Creator¶¶• Buyer¶¶• Brand partner¶¶• If that's okay, I'd first cover the creator and buyer journeys.
+[I] The approach seems good. Let’s keep the focus on the creators and buyers. You can skip the brand-side metrics for now. Please go on with the journeys.
+[C] Sure. Creator Journey Discover the Creator Commerce program.¶¶• Verify eligibility and enable product tagging.¶¶• Tag products in posts, reels and stories.¶¶• Track performance through Instagram Insights.¶¶• Optimize content based on results.¶¶• Buyer Journey Discover tagged products while browsing Instagram.¶¶• Open the product detail page.¶¶• Visit the merchant website.¶¶• Complete the purchase.¶¶• Return to Instagram for future engagement.¶¶•
+[I] You’ve captured the journeys accurately. Please go ahead with the metrics.
+[C] I'll define metrics separately for creators and buyers. Creator Metrics Awareness % eligible creators aware of the program¶¶• Invite CTR¶¶• Engagement % creators enabling product tagging¶¶• Tagged posts/reels per creator¶¶• Weekly active tagging creators¶¶• Conversion Outbound clicks to merchant sites¶¶• GMV attributed to creator content¶¶• % creators driving purchases¶¶•
+[I] That’s a solid set. What about metrics for buyers?
+[C] I'd use a similar funnel. Buyer Metrics Awareness % users exposed to tagged products¶¶• Product tag CTR¶¶• Engagement Product detail views¶¶• Time spent on product pages¶¶• Conversion Merchant website CTR¶¶• Purchase conversion rate¶¶• Repeat outbound clicks¶¶•
+[I] Do you think we can consider any other metrics to track for this program?
+[C] Yes. I'd also monitor operational and guardrail metrics
+[C] Operational Metrics Outbound link success rate¶¶• Merchant page load time¶¶• Attribution accuracy¶¶• Guardrail Metrics Creator satisfaction¶¶• Abuse/fraud reports¶¶• Buyer complaints about checkout or product quality¶¶•
+[I] Makes sense. How would you go about defining a North Star and tracking all these metrics?
+[C] Since Instagram doesn't own checkout, the North Star should reflect successful commerce driven by creators.¶¶North Star : Creator-attributed Purchase GMV (or Outbound Purchase Conversion from Creator Content) To measure this, we'd instrument events across the funnel: Product tag impressions¶¶• Product tag clicks¶¶• Product detail views¶¶• Outbound merchant clicks¶¶• Purchases attributed using creator and campaign IDs¶¶• I'd also capture creator and buyer feedback through lightweight post-purchase surveys.
+[I] Thanks for the great discussion. We can end the interview.
+=== iimb 149 150
+[I] How to stop people moving from WhatsApp to Telegram?
+[C] I have some initial clarifying questions. First, What are the primary reasons users are switching to Telegram, unique features Telegram has, and any recent triggers (past 6 months) causing the migration, including trust factors and user experience issues?
+[I] Users are switching due to recent updates by Telegram focused on privacy and user control
+[C] What is WhatsApp's main goal in addressing this issue? Is it user retention, feature parity, or maintaining market dominance?
+[I] You are free to decide.
+[C] I believe the main goal should be user retention through feature enhancement and improved user experience, as this will naturally lead to maintaining market dominance. Before proposing specific solutions, I'd like to identify different user segments and their pain points. Is that acceptable?
+[I] Sure, please proceed.
+[C] I can identify 4 potential customer segments –¶¶1. Privacy-conscious users: Concerned about data security and encryption.¶¶2. Power users: Require advanced features and higher file-sharing limits.¶¶3. Group communication users: Extensively use groups and community features.¶¶4. WhatsApp Business users: Businesses leveraging WhatsApp for customer communication¶¶I'd like to focus on Privacy-conscious users and Power users as the primary segments, as addressing their needs will likely have the most significant impact on preventing migration to Telegram. If that's agreeable, I can proceed with listing pain points?
+[I] Yes, that is a reasonable approach. You can proceed.
+[C] Pain points for Privacy-conscious users:¶¶1. Concerns about data sharing with Facebook (now Meta)¶¶2. Lack of anonymity options¶¶3. Limited control over personal data¶¶4. Concerns about government surveillance features.
+[C] Pain points for Power users:¶¶1. File size limitations for sharing media and documents¶¶2. Lack of advanced customization options¶¶3. Limited multi-device support¶¶4. Absence of features like message scheduling and self-destructing messages The following can be the proposed features to address these pain points:¶¶1.¶¶Enhanced Encryption: Implement end-to-end encryption for all types of communication, including backups, with user-controlled encryption keys.¶¶2.¶¶Anonymous Chat Mode: Introduce an option for users to chat without sharing their phone numbers, using temporary usernames instead.¶¶3.¶¶Increased File Sharing Limits: Raise the file size limit for sharing media and documents to match or exceed Telegram's limits.¶¶4.¶¶Advanced Customization: Provide more options for app themes, chat backgrounds, and notification settings.
+[I] How will you prioritize among these?
+[C] For prioritizing features, I will consider their potential impact on user trust and implementation complexity:
+[T] [['Feature', 'Impact', 'Complexity'], ['Enhanced Encryption', 'High', 'High'], ['Anonymous Chat Mode', 'High', 'Medium'], ['Increased File sharinglimits', 'Medium', 'Low'], ['Advanced Communication', 'Medium', 'Medium']]
+[I] How will you measure the success of these features implemented?
+[C] 1.¶¶User Retention Rate: Measure the percentage of users who remain active on WhatsApp over time to assess the effectiveness of the new features¶¶2.¶¶Feature Adoption Rate: Track the usage of newly introduced features to determine user engagement and acceptance.¶¶3.¶¶Churn Rate: Monitor the rate at which users are leaving WhatsApp for
+[I] What would be the North Star metric among these?
+[C] User Retention Rate is a direct measure of the percentage of users who remain active on WhatsApp over time. This metric provides a clear indication of how effectively WhatsApp is maintaining its user base and preventing churn. By focusing on retention, WhatsApp can ensure long-term user engagement and loyalty, which are critical for sustaining growth and countering the shift of users to Telegram. High retention rates typically reflect positive user experiences and satisfaction, which are essential for keeping users from switching to alternative platforms.
+[I] Great! We can close the case now.
+[C] Thank you.
+=== iima 235
+[I] Estimate the number of Instagram uploads occurring in India.
+[C] A few clarifying questions first. Should I estimate uploads per day or per year, and should "uploads" include posts, stories, or both?
+[I] Consider only posts and estimate uploads per day.
+[C] Should I consider both personal and business accounts?
+[I] Personal accounts only for now.
+[C] Can I assume this estimate is for a typical day, not a festival or a holiday?
+[I] You can assume a typical day and start working on your approach.
+[T] [["I'll break the problem down as:", ''], ['Instagram uploads per day = active personal Instagram users ×', 'average posts per user per day.']]
+[T] [['First, active personal users:', '', '', '', '', '', ''], ['active users = population', '×', '% with smartphone and internet', '×', '% on Instagram', '×', '% monthly active']]
+[T] [["India's population is about 1.4 billion. Assuming 70% smartphone", '', '', '-', 'and', '-', 'internet penetration:'], ['1.4 billion', '×', '70% = 980 million smartphone users with internet.', '', '', '', '']]
+[C] Should I take Instagram penetration across all smartphone users, or segment by app usage?
+[I] What do you think?
+[C] Instagram is among the most downloaded apps on the Play Store, with over a billion downloads, so I'll assume around 50% of smartphone-internet users have it.
+[I] Sure, good point. For simplicity, assume 50% penetration among smartphone users and feel free to make reasonable assumptions.
+[C] Thanks, assuming 50% of these people use Instagram: 980M × 50% = 490M accounts I’ll assume that 80% of these accounts are active personal accounts: 490M × 80% = 400M So, we have around 400 M active personal users.
+[I] Sounds reasonable.
+[C] Now, I’ll estimate the average number of uploads per person per day.  We can divide the monthly active users into three categories, with rough estimates for the percentage of users in each category from my own experience on the app as follows:¶¶1.¶¶Light users: 60% of users, posting one post every month = 0.6 * 400 = 240 M users¶¶2.¶¶Moderate users: 35% of users, posting one post every week = 0.35 * 400 = 140M users¶¶3.¶¶Heavy users: 5% of users, posting one post every 2 days = 0.5 *400 = 20M users Therefore, the number of posts per day =  240M × (1/30) + 140M × (1/7) + 20M × (1/2) = 8M + 20M+ 10M = 38 M
+[I] That sounds good. Anything else? I think Instagram has around 100 million daily posts.
+[C] Then India contributing around 38 million close to a third of the global total is in a plausible range, given India's large user base and the fact that Instagram is blocked in China.
+[I] Great, thank you. We can close this interview.
+=== iimb 136
+[I] Estimate the number of WhatsApp chats occurring in India in a day?
+[C] I have some initial clarifying questions. We are focusing on chats and not on messages? Also chats includes individual chats, group chats or both?
+[I] Yes, we are focusing on the number of chats and it covers both individual and group chats.
+[C] I would like to start by categorizing the Indian population based on urban and rural segments. Then, I will estimate the number of WhatsApp users in each segment. Finally, I will estimate the average number of chats per day for each group, considering both individual and group chats. Is this approach alright?
+[I] Sounds like a comprehensive approach, please proceed.
+[C] Population of India is approximately 1.4 billion people. Considering the urban and rural split to be 40% and 60%. The urban and the rural population will be around 560 and 840 million. Now, assuming smartphone penetration rates in urban and rural India to be 80% and 60%, we get 448 million urban smartphone users and 504 million rural smartphone users. Does this seem reasonable?
+[I] Yes, you may continue.
+[C] Considering the popularity of WhatsApp, I will estimate that around 90% of urban smartphone users and 70% of rural smartphone users have WhatsApp, resulting in around 403 million urban WhatsApp users and 352 million rural WhatsApp users. If this sound reasonable, I would like to further categorize urban and rural WhatsApp users into three age group: under 18, 18-45, and over 45. Should I proceed with this approach?
+[I] Yes, please continue.
+[C] Considering the population distribution to be approximately 40% under 18, 40% between 18-45, and 20% over 45, we get:¶¶1. Number of urban WhatsApp user aged <18: 161 million¶¶2. Number of urban WhatsApp user aged between 18-45: 161 million¶¶3. Number of urban WhatsApp user aged >45: 81 million¶¶4. Number of rural WhatsApp user aged <18: 141 million¶¶5. Number of rural WhatsApp user aged between 18-45: 141 million¶¶6. Number of rural WhatsApp user aged >45: 70 million Does this breakdown seem reasonable?
+[I] Yes, that is a fair segmentation.
+[C] Now, I will estimate the average number of chats per day for each segment.¶¶1. Under 18:¶¶Individual chats: 15 per day¶¶Group chats: 5 per day¶¶Total chats: 20 per day¶¶2. Between 18-45:¶¶Individual chats: 10 per day¶¶Group chats: 3 per day¶¶Total chats: 13 per day¶¶3. Over 45:¶¶Individual chats: 5 per day¶¶Group chats: 2 per day¶¶Total chats: 7 per day Does this seem reasonable?
+[I] Yes.
+[C] Now, calculating the total chats per day for each segment, we get:¶¶1. Chats in age group, under 18: (161+141)×20 = 6.04 billion¶¶2. Chats in age group, 18-45: (161+141)×13 = 3.93 billion¶¶3. Chats in age group, over 45: (81+70)×7 = 1.06 billion Total Number of WhatsApp chats in a day: = 6.04+3.93+1.06 = 11.03 billion WhatsApp chats per day
+[I] This was a comprehensive estimate. Thank you.

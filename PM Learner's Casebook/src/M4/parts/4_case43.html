@@ -1,0 +1,74 @@
+<!-- ============ CASE 4.3 UBER CANCELLATIONS ============ -->
+<div class="keep" style="break-after:avoid;margin-top:10pt">
+<div class="casehead"><span class="t">Case 4.3 · A spike in Uber ride cancellations</span>
+ <span class="m"><span class="pill">Root cause analysis</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, p. 306</span></span></div>
+<div class="try"><b>Try it first.</b> You are an auto driver at Majestic at 9 pm. A passenger wants to go to a far suburb, and you know you will drive back empty. What do you do, and what would change your mind? Then ask what an app could change.</div>
+</div>
+
+{{CASE:A306}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Split driver from rider cancellations first</b>, and said why: the causes differ completely.</li>
+ <li><b>A near-complete checklist</b>: timing, city, rider type, platform, metric definition, releases, point in the flow, glitches, other changes, outside events.</li>
+ <li><b>Found where in the flow</b> it happens (after accepting, before pickup), which pointed straight at the release.</li>
+ <li><b>Proposed a way to confirm it</b>: cancellation rate against drop-off type, and the timing of the rollout.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Never asked how big.</b> From 8% to 14%, or from 8% to 9%? And did completed trips actually fall, or were rides quickly reassigned?</li>
+ <li><b>Didn’t ask why drivers accept and then cancel</b>, instead of simply declining. The usual answer: an acceptance-rate target in driver incentives. That is the real bug.</li>
+ <li><b>The release revealed bad trips; it didn’t create them.</b> Before it, drivers found out at pickup and cancelled or rushed the rider. The cause is the economics of trips that end far away.</li>
+ <li><b>Two of the three fixes fight drivers.</b> Penalties and hiding the drop-off push drivers who run two apps towards the rival.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓</span> · Goal <span class="tk n">✗</span> · Who <span class="tk y">✓ driver-side, frequent riders</span> · Today and the trigger <span class="tk y">✓ last two weeks</span> · Edges <span class="tk y">✓ metros, both platforms</span>. RCA add-ons: exact definition <span class="tk y">✓</span> · size vs baseline <span class="tk n">✗</span> · where it shows <span class="tk y">✓</span> · recent changes <span class="tk y">✓</span> · is the data trustworthy <span class="tk y">✓</span>. One of the best openings in the casebook. The one gap, size, is also what would have shown whether riders were really worse off.</p>
+
+<div class="box chk"><span class="lbl">Check · “A cap or penalty on post-acceptance cancellations” <span class="verdict v-dir">Directionally right</span></span>
+<p>India’s 2025 aggregator guidelines allow a penalty of 10% of the fare, up to ₹100, on a driver or rider who cancels without a valid reason, so a penalty is legal. But a driver facing an hour of empty driving back will still cancel, or will simply switch to the other app for the evening. Penalties work only after the trip itself is worth taking.</p></div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip43}}
+<figcaption><b>{{FIG:strip43}} · The RCA sequence, with a fourth step that reads the driver’s maths.</b> In a two-sided market, “why” usually means “why is this rational for one side?” <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Which cancellations, driver or rider? How big is the rise, from what to what? And the outcome that matters: did completed trips per request fall, or were cancelled rides quickly given to another driver?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Driver-side, after accepting: 8% to 14% of accepted rides in two weeks. Completed trips per request fell from 78% to 73%.</p></div></div>
+<p class="whynote">Why this move: a 5-point fall in completed trips per request is real harm to riders, so this is worth fixing now, not a reporting quirk.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Rule out</div><p>Same checks as the candidate, done quickly: no change in how the metric is counted, no outage, no weather or strike, no competitor offer. The one change is the release that shows drivers the drop-off before they accept.</p></div></div>
+<p class="whynote">Why this move: ruling out the boring causes first (data, outside events) protects you from blaming a release for a festival or a rainstorm.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Find where</div><p>I’d split cancellations by where the trip ends. Illustrative: inside the city core they barely moved, 8% to 9%. To the airport, 10% to 24%. To the city’s edge, 11% to 31% ({{REF:czone}}). Most cancel within a minute of accepting.</p></div></div>
+<p class="whynote">Why this move: one split turns “drivers are cancelling” into “drivers are cancelling one kind of trip”, which tells you the cause.</p>
+<figure>{{SVG:czone}}
+<figcaption><b>{{FIG:czone}} · Where the cancellations come from.</b> The rise sits almost entirely on trips that end where drivers won’t find a next fare. <span class="src">Illustrative numbers consistent with the case (a two-week rise after a driver-app release).</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Why: the driver’s maths</div><p>A city trip nets the driver about ₹117 for 55 minutes: ₹128 an hour. An edge trip: ₹600 fare − ₹120 commission − 53 km of fuel at ₹5 (₹265, because the car comes back empty) − ₹48 EMI = ₹167, for 70 minutes out and 60 back. ₹167 ÷ 130 minutes × 60 = ₹77 an hour, 40% less. So why accept first? I’d ask about incentives.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Weekly bonuses need a 90% acceptance rate.</p></div></div>
+<p class="whynote">Why this move: now both halves make sense. The trip pays badly, and the bonus punishes declining it, so drivers accept, look, and cancel. Nobody is misbehaving; the incentives are.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Fix</div><p>Three changes. <b>Pay for the return:</b> a return premium on trips ending in low-demand zones, split between rider and platform. <b>Match by direction:</b> offer edge trips first to drivers heading that way, such as those ending their shift near there. <b>Fix the bonus:</b> count cancellations after accepting, not declines, so an honest “no” costs the driver nothing. Cost, illustrative: 8% of trips × ₹100 premium, half paid by the rider = ₹4 a trip on average for the platform.</p></div></div>
+<p class="whynote">Why this move: each fix removes a reason to cancel rather than punishing the cancel. Hiding the drop-off again would only move the problem to the pickup.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> completed trips per request, back to 78% or better. <b>Inputs:</b> cancellations after accepting on edge trips; time to match edge trips. <b>Safety checks (guardrails):</b> driver earnings per online hour; rider complaints about the premium; ETA in the city core. <b>Trade-off:</b> letting drivers decline freely makes edge trips slower to match, but a quick “no” wastes less of the rider’s time than a “yes” that is cancelled. <b>Next time:</b> read every driver-facing release by its effect on earnings per hour.</p></div></div>
+<p class="whynote">Why this move: the goal measures what riders feel (did I get a ride?), while the driver-earnings guardrail makes sure the fix doesn’t work by squeezing drivers.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>Sizing (8% to 14%, completed trips down 5 points) showed real harm. The split by drop-off found <i>which</i> trips, the driver’s maths (₹77 an hour against ₹128) found <i>why</i>, and the bonus rule explained <i>why after accepting</i>. Each fix removes one of those reasons, and the goal and guardrail check that riders get rides without drivers paying for it.</div>
+
+<div class="box fw"><span class="lbl">Framework · Supply–demand balance and surge pricing</span>
+<p><span class="step">1 · The situation.</span>Nobody in the case mentioned price, yet drivers were voting on price with every cancellation. A ride that pays too little for the time it takes is a market out of balance, one trip at a time.</p>
+<p><span class="step">2 · An everyday example.</span>Bengaluru’s railway station at 1 am. A late train arrives and 300 people want autos; 60 autos are waiting. Drivers quote double the meter. At that price, a few more drivers come out from home nearby, and some passengers decide to wait for the first bus. The high price is ugly, but it gets more people home than a fixed price with a two-hour queue.</p>
+<table class="tbl">
+<tr><th style="width:20%">Idea</th><th style="width:38%">The station at 1 am</th><th>Uber on a rainy Friday</th></tr>
+<tr><td><b>Demand</b></td><td>Passengers off the late train</td><td>People leaving offices in the rain</td></tr>
+<tr><td><b>Supply</b></td><td>Autos at the stand</td><td>Drivers nearby and free (not stuck with a rider)</td></tr>
+<tr><td><b>Price signal</b></td><td>“Double meter”</td><td>1.8× surge on the fare</td></tr>
+<tr><td><b>Supply responds</b></td><td>Drivers come out from home</td><td>Drivers drive in or log on</td></tr>
+<tr><td><b>Demand responds</b></td><td>Some wait for the bus</td><td>Some take the metro or wait an hour</td></tr>
+<tr><td><b>Bad trips</b></td><td>“Not going that side”</td><td>Cancels on edge and airport trips</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>At any price, some number of riders want rides and some number of drivers are willing to drive. When the price is too low, riders outnumber drivers: waits grow, drivers pick the best trips and cancel the rest. <span class="term">Surge pricing</span> (a temporary multiplier on the fare) raises the price until the two meet. Worked example ({{REF:surge}}): at 1.0×, 1,000 riders want a ride and 600 drivers are available, a gap of 400. At 1.5×, demand falls to 800 and supply rises to 800. The gap closes. The same logic works for a single trip: a trip that pays less per hour than the driver’s alternative will be declined or cancelled, whatever the rules say.</p>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this case):</p><ol class="usesteps"><li>Name the two sides and the unit: riders and drivers, rides per hour, in one zone.</li><li>Ask which side is short, where and when: drivers willing to take edge trips at night.</li><li>Find the driver’s alternative: ₹128 an hour on city trips against ₹77 on an edge trip.</li><li>Change the price of the short side’s bad option (a return premium) or change who gets it (drivers heading that way).</li><li>Check both reactions: did more drivers accept, and did riders still book at the new price?</li></ol><p class="slip"><b>Common slip</b> · treating surge only as a way to earn more. Its main job is to move drivers to where riders are; if it doesn’t change supply within 10–15 minutes, it is only a tax on riders.</p>
+<figure style="margin:3pt 0 4pt">{{SVG:surge}}
+<figcaption><b>{{FIG:surge}} · Why a higher price can shorten waits.</b> At the base price the red gap is riders who wait, cancel or give up. Surge closes it from both ends: fewer riders, more drivers. <span class="src">Illustrative curves; the 2× cap is from India’s Motor Vehicle Aggregator Guidelines, July 2025.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>In an emergency, such as a flood or an attack, supply can’t respond and high prices look like exploitation. Most apps now cap or switch off surge in declared emergencies. Drivers also learn to game it: there have been reports of drivers logging off together near airports to trigger surge. And a cap (2× under India’s rules) can stop the price from ever closing a very large gap, so waits stay long however well the algorithm works.</p>
+<p><span class="step">5 · In the interview.</span>“Cancellations are drivers telling us a trip is priced below what their time is worth. I’ll find which trips, and fix the price or the matching for those trips.”</p>
+</div>

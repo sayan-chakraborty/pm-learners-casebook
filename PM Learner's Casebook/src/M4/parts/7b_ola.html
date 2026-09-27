@@ -1,0 +1,36 @@
+<!-- ============ TEARDOWNS: OLA ============ -->
+<h1 style="margin-top:12pt">Ola: how a market leader loses a two-sided market</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Ravi, 34, books an Ola auto from Koramangala to MG Road. Ola’s own map, Ola Maps, estimates 6 km, ₹120 and 22 minutes. A driver 800 m away accepts; Ravi gets an OTP and an ETA of 4 minutes. At the end he pays ₹120 by UPI, and all of it goes to the driver. Ola earns nothing on this ride. It earns once a day, from the flat fee the driver pays to stay on the platform ({{REF:ol-walk}}).</p>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Zero commission (2025)</td><td>Drivers: “Commission eats my earnings”</td><td>A flat daily fee; announced June 2025 after Rapido and Namma Yatri had won drivers with the same model</td><td>Drivers online; fares</td></tr>
+<tr><td>Ola Maps</td><td>Platform: a large bill for every route and ETA call</td><td>An in-house map replaced Google Maps in 2024; the founder said it cut about ₹100 Cr a year</td><td>Cost per trip</td></tr>
+<tr><td>Autos, bikes, cabs, rentals, outstation</td><td>“I need a different vehicle today”</td><td>One app for every trip type, the original Indian answer to Uber</td><td>Trips per rider</td></tr>
+<tr><td>Ola Money (wallet)</td><td>Cash and change at the end of the ride</td><td>Built before UPI; UPI made it far less needed</td><td>Cashless share</td></tr>
+</table>
+<figure>{{SVG:flow_ola}}
+<figcaption><b>{{FIG:ol-walk}} · Behind Ravi’s auto ride.</b> The money (⑧) now skips Ola entirely; Ola’s income (⑨) depends on how many drivers pay the daily fee, not on how many rides happen. <span class="src">Simplified; fare illustrative; zero-commission model announced June 2025.</span></figcaption>
+</figure>
+
+<h3>The loop, running backwards</h3>
+<p>Ola had more of India’s cab market than Uber in the mid-2010s. By FY25 its ride-hailing revenue had fallen 42% to <b>₹1,171 Cr</b>, with a loss of <b>₹662 Cr</b>; a write-down of its Ola Electric stake pushed the group loss to about ₹1,975 Cr. The causes are a lesson in two-sided markets. Leadership time and money went to Ola Electric and the AI venture Krutrim. Drivers complained about payouts and incentives and drifted to rivals. Fewer drivers meant longer waits and more cancellations, and riders followed. The same loop that grows a marketplace shrinks it just as fast ({{REF:ol-loop}}).</p>
+<figure>{{SVG:loop_ola}}
+<figcaption><b>{{FIG:ol-loop}} · The flywheel in reverse.</b> Lose drivers and riders wait longer; lose riders and drivers earn less. Each turn makes the next one easier. <span class="src">Author’s diagram; revenue and loss from Ola Consumer’s FY25 filings, reported May 2026.</span></figcaption>
+</figure>
+
+<p><b>Business model.</b> Now mainly flat fees from drivers, plus fees on cab rentals and outstation trips. Revenue no longer rises with rides, so it must rise with active drivers or new products. <b>Moat, in plain words.</b> Thin today: a known brand and its own map. The map is a real asset: it removes a cost every rival pays and could be sold to other companies.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Completed trips per week in its top five cities.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Paying drivers online at peak · pickup ETA · repeat riders.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Driver payout complaints · cancellations · cash burn per trip.</div>
+</div>
+<p><b>2025–26 moves.</b> Zero commission (June 2025); Ola Maps offered to outside developers; board approval to prepare an IPO (2026 filings), with a loan of about $65 mn due in December 2026.</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Its own map: a lower cost per trip</li><li>A brand every Indian rider knows</li><li>All vehicle types in one app</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Lost driver trust; weak service reputation</li><li>Late to subscriptions, so no counter-position left</li><li>Thin cash for a price or incentive war</li></ul></div>
+</div>
+<h3>What I’d build next (a turnaround)</h3>
+<p class="idea"><b>1.</b> Supply is the constraint <span class="arrow">→</span> a guaranteed minimum hourly earning for 90 days in five core cities, funded by pausing weak cities <span class="arrow">→</span> drivers online at peak; ETA.</p>
+<p class="idea"><b>2.</b> Returning riders remember bad experiences <span class="arrow">→</span> an automatic ₹50 credit whenever a driver cancels <span class="arrow">→</span> 30-day retention of returning riders; driver cancellations.</p>
+<p class="idea"><b>3.</b> Ola Maps is a cost saver nobody outside uses <span class="arrow">→</span> sell it to delivery and logistics firms with Indian-address features <span class="arrow">→</span> API revenue; external developers.</p>

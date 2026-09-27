@@ -1,0 +1,84 @@
+<!-- ============ CASES: 9.1 VOTER TURNOUT ============ -->
+<section class="page">
+<div class="kicker">Consumer hardware, loyalty &amp; public services · Cases</div>
+<div class="keep" style="break-after:avoid">
+<div class="casehead"><span class="t">Case 9.1 · An app to raise voter turnout</span>
+ <span class="m"><span class="pill">Product design</span><span>Medium</span><span>IIM A <i>Product Mindset 2026–27</i>, pp. 245–246</span></span></div>
+<div class="try"><b>Try it first.</b> Think of the last time you meant to do something civic (renew a licence, update an address, vote) and didn’t. Was it that you couldn’t, didn’t care, or forgot? Now structure “design an app that gets more young people to vote” out loud, for five minutes.</div>
+</div>
+
+{{CASE:A245}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Asked why turnout stalled and who is skipping</b>, and got the five reasons and the segment (18–30, new voters) in one exchange.</li>
+ <li><b>Asked whether the app is a voting channel</b>, which fixed a big edge: paper ballots stay, so the app can only help people get to the booth.</li>
+ <li><b>Called out “my vote doesn’t count” as its own problem</b>, and said information features alone won’t shift it.</li>
+ <li><b>Tied the North Star to what the government hired for</b>: turnout against the 55% baseline.</li>
+</ul>
+<ul class="miss small">
+ <li><b>“App users vs non-users” measures who installs, not what the app does.</b> Keen voters install voter apps. A random group that gets no reminders is the fair comparison.</li>
+ <li><b>Most features give information</b>; the research says the biggest effects come from reminders, plan-making and social norms, at the moment of action.</li>
+ <li><b>“My vote doesn’t count” was named, then left without a feature.</b></li>
+ <li><b>Risky features:</b> a government-curated “scorecard” invites charges of bias; “preferential voting” as a quiz prize would break the rule of one person, one equal vote; app registration needs identity checks and a legal basis.</li>
+ <li><b>Never asked what exists today.</b> In India the Election Commission already runs the Voter Helpline app (name search, booth details) and campaigns to register young voters.</li>
+</ul>
+</div>
+<p class="small"><b>Scoping kit check:</b> Confirm the thing <span class="tk y">✓ engagement tool, not a voting channel</span> · Goal <span class="tk y">✓ turnout</span> · Who <span class="tk y">✓ new voters, 18–30</span> · Today and the trigger <span class="tk n">✗ what the government already offers</span> · Edges <span class="tk n">✗ neutrality, privacy, what the law allows</span>. Design add-ons: journey stage <span class="tk n">✗</span> · success metric at the end <span class="tk y">✓</span>. The costliest skip: edges. A government app lives or dies on looking neutral, and two of the eight features would fail that test.</p>
+
+<div class="box chk"><span class="lbl">Check · “The North Star is turnout among app users versus non-users” <span class="verdict v-no">Doesn’t hold up</span></span>
+<p>Picture two groups on polling day. The people who downloaded a voter app were already interested: many would have voted without it. Say 70% of app users vote and 38% of everyone else. The 32-point gap mostly shows who installs the app ({{REF:lift91}}). The fair test is a <b>holdout</b>: pick a random 10% of app users and send them no reminders. Both groups are the same kind of people, so the gap between them (say 43% vs 40%) is what the reminders caused. Overall turnout against 55% is still the right headline, but it moves for many reasons at once: the candidates, the weather, the mood of the election.</p></div>
+<figure>{{SVG:lift91}}
+<figcaption><b>{{FIG:lift91}} · Two ways to measure the app, one of them fair.</b> Comparing users with non-users credits the app for people who would have voted anyway. A random holdout keeps the groups alike, so the gap is the app’s real effect. <span class="src">Illustrative numbers.</span></figcaption>
+</figure>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">{{SVG:strip91}}
+<figcaption><b>{{FIG:strip91}} · Six moves for “design an app to change a behaviour”.</b> Find out whether people can’t, won’t or forget, fix the step where most drop out, and measure against a group that got nothing. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Three quick questions. What does the government offer today: can people check their name and booth online? How many 18–30-year-olds are on the roll, and how many voted last time? And what are the limits: the app must be neutral between parties, and I assume we can’t share anyone’s data with candidates.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>There’s a website to search your name; nothing on mobile. About 30,000 of the city’s 1.5 lakh voters are 18–30, and about 40% of them voted, against 59% of older voters. Yes, strictly neutral, and no data sharing.</p></div></div>
+<p class="whynote">Why this move: what exists today tells you what to build on; the size of the group tells you how much a feature can move the city’s number; the limits rule out features before you fall in love with them.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Why</div><p>I’d sort the five reasons into three kinds. Some people <b>can’t</b>: they aren’t registered or don’t know their booth. Some <b>won’t</b>: no interest, or they think their vote won’t count. Some <b>forget</b> or get busy. They need different fixes. If a survey shows reasons like these ({{REF:why91}}), “busy or forgot” and “unsure how” together are over half, and those are the easiest for an app to fix.</p></div></div>
+<p class="whynote">Why this move: a person who can’t vote needs a step removed, one who forgets needs a prompt, and one who doesn’t care needs a reason. Lumping them together produces a feature list that fits nobody.</p>
+<figure>{{SVG:why91}}
+<figcaption><b>{{FIG:why91}} · Why young voters stayed home.</b> The reasons sort into can’t (register, booth), won’t (interest, belief) and forgot (timing). The orange and green bars are the ones an app can fix cheaply. <span class="src">Illustrative split of the five reasons named by the interviewer.</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">③ Journey</div><p>Next I’d follow one young voter from registration to the ballot box and ask where people drop out ({{REF:journey91}}). Two leaks stand out. Many miss the registration deadline. And many mean to vote but never decide when, so the day fills up with other things. Learning about candidates matters too, but it loses fewer people.</p></div></div>
+<p class="whynote">Why this move: putting the reasons on a journey shows where to act. It also shows that the candidate scorecard, the most elaborate feature on the candidate’s list, sits at a step that loses the fewest people.</p>
+<figure>{{SVG:journey91}}
+<figcaption><b>{{FIG:journey91}} · The voter’s journey and where people drop out.</b> Of 100 young people on the roll, 40 vote. The biggest leaks are registering in time and making a plan for the day. <span class="src">Illustrative numbers, chosen to match 40% turnout.</span></figcaption>
+</figure>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Nudge</div><p>For each leak, the smallest nudge that works. <b>Registration:</b> a reminder four weeks before the deadline with a direct link to the official form and a checklist of documents. <b>Booth:</b> one tap to see “you’re on the list, booth 14, Government School, open 7 am to 6 pm”, with the route. <b>Plan:</b> three days before, the app asks “What time will you go, and from where?” and saves the answer to the phone’s calendar. <b>Polling day:</b> a morning message: “Your booth opens at 7. You said 9 am.” For candidates, the same facts for everyone, taken from their official declarations (education, assets, pending cases), in the same format, with no scores.</p></div></div>
+<p class="whynote">Why this move: each feature sits on a leak and is small enough to build before the election. Using the candidates’ own sworn declarations keeps the government out of judging them.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Build first</div><p>With one election as the deadline, I’d ship four things: the list and booth check, registration reminders, the plan-making prompt with the calendar entry, and the polling-day message. Candidate facts come next, because they need careful checking. I’d drop quizzes with prizes, a news feed and candidate Q&amp;A: each needs moderation, and each invites a charge of bias. For “my vote won’t count”, one honest screen: “In the last city election, ward 7 was decided by 212 votes.”</p></div></div>
+<p class="whynote">Why this move: a public app has one deadline it can’t move. Choosing four features that remove friction at the moment of action gives the best chance of an effect this election.</p>
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> turnout of 18–30s who got the reminders, against a random group who didn’t (the holdout), checked on the official record of who voted. <b>Sizing:</b> if the app and SMS reach 18,000 young voters and lift their turnout by 3 points, that’s 18,000 × 3% = 540 extra votes, about 0.4 points on the city’s 55%. To see a 3-point lift from 40%, each group needs about 16 × 0.4 × 0.6 ÷ 0.03² ≈ 4,300 people, so the holdout of 1,800 is too small; I’d hold out 4,300 in year one. <b>Safety checks (guardrails):</b> complaints of bias, wrong booth details, and opt-outs from messages. All numbers illustrative.</p></div></div>
+<p class="whynote">Why this move: an honest size stops the government expecting 55% to become 70%. The sample-size check shows the test can tell a real effect from noise, and the guardrails protect trust, which is the app’s only asset.</p>
+</div>
+<div class="hang"><span class="l">How the answer hangs together</span>The clarifying questions gave the base (30,000 young voters at 40%) and the limits (neutral, no data sharing). Sorting reasons into can’t, won’t and forgot pointed at the two big leaks: registering in time and making a plan. Each feature sits on one leak and is small enough to build before polling day. The North Star is turnout against a random holdout, because that is the only number that shows what the app caused; bias complaints and wrong booth details are the guardrails, because a public app runs on trust.</div>
+
+<div class="box fw flowbox"><span class="lbl">Framework · Nudges, using EAST (Easy, Attractive, Social, Timely)</span>
+<p><span class="step">1 · The situation.</span>Most young people in Perugia intend to vote; 60% of them don’t. Information alone rarely closes that gap between meaning to and doing. What closes it is making the action easier, more appealing, visible among peers, and asked for at the right moment. That is what a <span class="term">nudge</span> does: it changes how a choice is presented without banning anything or paying anyone.</p>
+<p><span class="step">2 · An everyday example.</span>A family that keeps forgetting their vitamins. Telling them vitamins are healthy doesn’t help; they know. What helps: the bottle next to the toothbrush, a sticker chart for the children, “everyone at school takes them”, and a reminder at breakfast.</p>
+<table class="tbl">
+<tr><th style="width:14%"></th><th style="width:36%">Vitamins at home</th><th>Voting in Perugia</th></tr>
+<tr><td><b>Easy</b></td><td>Bottle next to the toothbrush</td><td>One tap to see your booth, hours and route</td></tr>
+<tr><td><b>Attractive</b></td><td>A sticker chart the children like</td><td>A first-time-voter pledge card; the inked-finger photo frame</td></tr>
+<tr><td><b>Social</b></td><td>“Everyone at school takes them”</td><td>“8 in 10 first-time voters in your ward checked their booth”</td></tr>
+<tr><td><b>Timely</b></td><td>A reminder at breakfast, not at night</td><td>Plan three days before; a message on polling morning</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span>EAST was set out by the UK’s Behavioural Insights Team in 2014 as a checklist for designing nudges ({{REF:east91}}). <b>Easy:</b> remove steps, fill things in by default, make the next action one tap. <b>Attractive:</b> draw attention and make the action feel rewarding. <b>Social:</b> show that people like me do it, or let people commit in front of friends. <b>Timely:</b> prompt when people are most likely to act, and help them plan. The evidence from voting is useful because the effects were measured against control groups ({{REF:evid91}}): telling people that neighbours would see who voted raised turnout by about 8 points; a phone call asking when and how someone would vote raised it by about 4; a plain “voting is your duty” letter by under 2.</p>
+<p style="margin-bottom:1pt"><b>Using it, step by step</b> (on this case):</p><ol class="usesteps"><li>Name the exact action and the moment: “vote at booth 14 on polling day”.</li><li>Map the journey to that moment and find the biggest leaks: registering in time, making a plan.</li><li>For each leak, ask the four questions in order: can it be easier, more appealing, more social, better timed?</li><li>Prefer the smallest change that removes a step (booth in one tap) over the cleverest message.</li><li>Test each nudge against a random group that doesn’t get it, and keep only what moves the number.</li></ol><p class="slip"><b>Common slip</b> · nudging people who can’t act. A reminder to vote is useless to someone who isn’t on the roll; fix the “can’t” before the “forgot”.</p>
+<figure style="margin:3pt 0 4pt">{{SVG:east91}}
+<figcaption><b>{{FIG:east91}} · EAST applied to voting.</b> Each letter is a question to ask about one step of the journey. The examples are small on purpose: the effect comes from the moment and the ease, not from the size of the feature. <span class="src">EAST from the Behavioural Insights Team (2014); examples are the author’s.</span></figcaption>
+</figure>
+<figure style="margin:3pt 0 4pt">{{SVG:evid91}}
+<figcaption><b>{{FIG:evid91}} · What moved turnout in real experiments.</b> Social pressure worked best but can feel like shaming; plan-making worked well with no downside; the Facebook effect was tiny per person but reached 6.1 crore people. <span class="src">Gerber, Green and Larimer (2008); Nickerson and Rogers (2010); Bond et al. (2012). US elections; effects in India will differ.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>A social message can backfire when the norm is low. “Only 40% of young people vote” tells a young reader that not voting is normal. Pressure can also turn into shaming: publishing who didn’t vote would raise turnout and anger a city. And nudges are small. A PM who promises that an app will lift turnout from 55% to 70% will be judged against that promise; a lift of 1 to 4 points among the people reached is a good result.</p>
+<p><span class="step">5 · In the interview.</span>“Most of them mean to vote but don’t, so I’d fix the two steps where they drop out, registering and planning the day, with a one-tap booth check and a plan-making prompt, and I’d measure the lift against a random group that gets no reminders.”</p>
+</div>
+</section>

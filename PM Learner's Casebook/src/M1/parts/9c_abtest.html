@@ -1,0 +1,71 @@
+<!-- ============ TECHNOLOGY 3: A/B TESTING BASICS ============ -->
+<div style="height:10pt"></div>
+<h1>A/B testing basics: did the change cause the result?</h1>
+<p class="lede">PhonePe wants more people to pay bills on autopay, because an autopay user comes back every month without being reminded. A designer proposes a button on the success screen: “Autopay next month’s bill”. The team could ship it to everyone and watch the numbers. But October has Diwali, salary days and a new fee on merchants, so any rise or fall could come from anything. An <span class="term">A/B test</span> fixes that: show the button to a random half, hide it from the other half, and compare.</p>
+
+<figure>
+<svg class="d" viewBox="0 0 680 176" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7d8793"/></marker></defs>
+ <rect x="2" y="60" width="118" height="54" rx="6" fill="#e3f0f5" stroke="#0b5d7a"/><text x="61" y="80" text-anchor="middle" class="b">Bill payers</text><text x="61" y="96" text-anchor="middle" class="s">40,000 a day</text><text x="61" y="108" text-anchor="middle" class="s">enter the test</text>
+ <path d="M120,87 L150,87" class="ln" marker-end="url(#ab)"/>
+ <rect x="152" y="66" width="80" height="42" rx="21" fill="#fff" stroke="#3e4fb8" stroke-width="1.6"/><text x="192" y="84" text-anchor="middle" class="b fwc">random</text><text x="192" y="98" text-anchor="middle" class="fwc" style="font-size:10.3px">50 : 50</text>
+ <path d="M232,78 L268,42" class="ln" marker-end="url(#ab)"/><path d="M232,96 L268,132" class="ln" marker-end="url(#ab)"/>
+ <rect x="270" y="14" width="190" height="52" rx="6" fill="#f1f2f4" stroke="#9aa3ad"/><text x="280" y="32" class="b">A · control: no button</text><text x="280" y="48">2.0% set autopay in 7 days</text><text x="280" y="60" class="s">today’s experience</text>
+ <rect x="270" y="108" width="190" height="52" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="280" y="126" class="b">B · variant: button shown</text><text x="280" y="142">2.3% set autopay in 7 days</text><text x="280" y="154" class="s">the only difference</text>
+ <path d="M460,40 L500,80" class="ln" marker-end="url(#ab)"/><path d="M460,134 L500,94" class="ln" marker-end="url(#ab)"/>
+ <rect x="502" y="44" width="174" height="86" rx="6" fill="#eef0fb" stroke="#3e4fb8"/>
+ <text x="512" y="62" class="b fwc">Decide by preset rules</text>
+ <text x="512" y="80">+0.3 points (15% more)</text>
+ <text x="512" y="95">real, not chance? ✓</text>
+ <text x="512" y="110">bill success, complaints ✓</text>
+ <text x="512" y="124" class="b grn">→ ship the button</text>
+</svg>
+<figcaption><b>{{FIG:ab}} · An A/B test in three moves: split at random, change one thing, decide by rules written before the test.</b> Because the split is random, Diwali, salary days and the new fee hit both groups equally, so the gap between them is the button’s effect. <span class="src">Illustrative numbers; method as in IIM A Product Mindset (p. 54).</span></figcaption>
+</figure>
+
+<div class="cols2 small">
+<div>
+<p><span class="term">Control / variant</span>: the current experience (A) and the changed one (B).</p>
+<p><span class="term">Primary metric</span>: the one number that decides the test, chosen before it starts (autopay set within 7 days).</p>
+<p><span class="term">Guardrail metric</span>: a number that must not get worse (bill-payment success, complaints).</p>
+</div><div>
+<p><span class="term">Statistically significant</span>: a gap too large to be luck. By convention, a gap this big would appear by chance less than 5% of the time (p &lt; 0.05).</p>
+<p><span class="term">Power</span>: the chance the test spots a real effect of a given size; teams usually aim for 80%.</p>
+<p><span class="term">MDE</span> (minimum detectable effect): the smallest gap worth detecting, which sets the sample size.</p>
+</div></div>
+
+<div class="keep"><h2>Light maths: how many users, how many days?</h2>
+<p>A handy rule of thumb for an 80%-power test at 5% significance: users needed <b>in each group ≈ 16 × p × (1 − p) ÷ δ²</b>, where p is today’s rate and δ the gap you want to detect. With p = 2% and a hoped-for 2.2% (δ = 0.2 points = 0.002): 16 × 0.02 × 0.98 ÷ 0.002² = 16 × 0.0196 ÷ 0.000004 = <b>78,400 users per group</b>. At 20,000 new users per group per day, that is 4 days. Halve the gap you want to see and you need <b>four times</b> the users, because δ is squared.</p></div>
+<figure>
+<svg class="d" viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="14" class="b">Users needed per group, starting from 2.0%</text><text x="676" y="14" text-anchor="end" class="b">days at 20,000 a day</text>
+ <!-- 313,600 = 400 px -->
+ <text x="4" y="42">2.0% → 2.1% (5% lift)</text><rect x="180" y="30" width="400" height="17" fill="#b93a32"/><text x="574" y="43" text-anchor="end" class="w b">3,13,600</text><text x="676" y="43" text-anchor="end" class="b red">16 days</text>
+ <text x="4" y="70">2.0% → 2.2% (10%)</text><rect x="180" y="58" width="100" height="17" fill="#c47f17"/><text x="286" y="71" class="b">78,400</text><text x="676" y="71" text-anchor="end" class="b">4 days</text>
+ <text x="4" y="98">2.0% → 2.4% (20%)</text><rect x="180" y="86" width="25" height="17" fill="#127a64"/><text x="211" y="99" class="b">19,600</text><text x="676" y="99" text-anchor="end" class="b">1 day</text>
+ <text x="4" y="126">2.0% → 3.0% (50%)</text><rect x="180" y="114" width="4" height="17" fill="#127a64"/><text x="190" y="127" class="b">3,136</text><text x="676" y="127" text-anchor="end" class="b">a few hours</text>
+ <text x="4" y="146" class="s">Small effects on low rates need big samples; run whole weeks anyway, and include the 1st–10th of the month, when most bills fall due.</text>
+</svg>
+<figcaption><b>{{FIG:samplesize}} · Detecting small changes is expensive.</b> Each halving of the effect you want to detect quadruples the users needed. For a small app, a 5% lift on a 2% rate may be untestable, so test bolder changes. <span class="src">Lehr’s rule of thumb (80% power, 5% significance); arithmetic exact, traffic illustrative.</span></figcaption>
+</figure>
+
+<div class="cols2">
+<div class="box brk"><span class="lbl">When it breaks</span>
+<ul class="small">
+<li><b>Peeking:</b> checking daily and stopping on the first good day turns luck into “wins”. Fix the duration in advance.</li>
+<li><b>Too many metrics:</b> test 20 metrics at 5% and about one will look significant by chance. Pick one primary metric.</li>
+<li><b>Users who affect each other:</b> in P2P payments a variant user pays a control user, so the groups leak. Split by city or friend groups instead.</li>
+<li><b>Novelty:</b> a shiny new button gets clicked for a week, then ignored. Run long enough to see it fade.</li>
+</ul></div>
+<div class="box key"><span class="lbl">Key idea · The PM decisions this drives</span>
+<ul class="small">
+<li>The hypothesis and the one primary metric.</li>
+<li>The smallest effect worth shipping, which sets the size and length.</li>
+<li>The guardrails that can veto a “win”.</li>
+<li>What happens if the result is flat: stop, or try a bolder variant.</li>
+<li>When not to test: legal fixes, or changes too small to measure.</li>
+</ul></div>
+</div>
+<div class="box int"><span class="lbl">In the interview</span>
+<p><b>“How would you test this feature?”</b> Answer in one breath: “My hypothesis is that the autopay button raises autopay sign-ups. Primary metric: autopay set within 7 days. Split bill payers 50:50 at random. I’d want to detect 2.0% to 2.2%, which needs about 78,000 users per group, so I’d run two full weeks across the bill cycle. Guardrails: bill-payment success and complaints. Ship if the primary metric wins and the guardrails hold.”</p></div>
+</section>

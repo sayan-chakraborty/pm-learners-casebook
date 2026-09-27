@@ -1,0 +1,80 @@
+<!-- ============ TEARDOWNS: RAZORPAY ============ -->
+<div style="height:10pt"></div>
+<h1>Razorpay: the plumbing behind India’s online checkouts</h1>
+<p class="lede"><b>Walkthrough (illustrative personas).</b> Neha sells skincare from her own website. Arjun, a customer in Jaipur, buys a ₹899 serum on his phone. The checkout sheet, the jump to his UPI app and the “order placed” page are all Razorpay, though Arjun never sees the name. Neha sees it every evening, on the dashboard where her day’s payments, failures and settlements live. Razorpay’s customer is Neha; Arjun’s experience is its product.</p>
+
+<figure>
+{{SVG:flow_razorpay}}
+<figcaption><b>{{FIG:rz-walk}} · Behind one online order.</b> Neha’s server talks to Razorpay through an API (②–③) and hears about the payment through a webhook (⑨): two ideas every payments PM uses daily. The money waits in an escrow account and reaches Neha, minus the fee, two working days later (⑪). <span class="src">Simplified from Razorpay’s public API and webhook docs and RBI payment-aggregator rules; fee from razorpay.com/pricing, Sep 2026.</span></figcaption>
+</figure>
+
+<h2>Key features, and why they’re built that way</h2>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:27%">User problem (the merchant’s)</th><th style="width:32%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Checkout</td><td>Every payment method needs its own bank contract and code</td><td>One integration for UPI, cards, netbanking, EMI and wallets; saved cards as tokens, as RBI requires</td><td>Checkout conversion; success rate</td></tr>
+<tr><td>Payment links, pages</td><td>Instagram sellers and tutors have no website</td><td>A link sent on WhatsApp opens a hosted payment page</td><td>New merchants live in 7 days</td></tr>
+<tr><td>Subscriptions</td><td>Chasing monthly fees by hand</td><td>UPI Autopay and card mandates debit customers on schedule</td><td>Renewal rate</td></tr>
+<tr><td>RazorpayX, Payroll</td><td>Paying vendors and staff means bank portals and spreadsheets</td><td>A current account with payouts and payroll run by API; 50,000+ businesses (company figure)</td><td>Products per merchant</td></tr>
+<tr><td>Agentic payments</td><td>AI assistants that shop need safe ways to pay</td><td>UPI Reserve Pay: the user authorises once, within set limits, and an app or AI agent completes several debits; pilots with NPCI and OpenAI, launches on Claude and Codex (2025–26)</td><td>Agent-initiated payment volume; disputes</td></tr>
+</table>
+
+<figure>
+<svg class="d" viewBox="0 0 680 196" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="14" class="b">Where a merchant’s ₹20 goes on a ₹1,000 card payment (standard 2% plan)</text>
+ <!-- 20 rupees = 600 px: 30 px per rupee, x0 = 40 -->
+ <rect x="40" y="26" width="420" height="36" fill="#2f6ea5"/><text x="250" y="42" text-anchor="middle" class="w b">~₹14 · card issuer (interchange)</text><text x="250" y="56" text-anchor="middle" class="w" style="font-size:10.3px">set by the card network’s rates</text>
+ <rect x="460" y="26" width="45" height="36" fill="#c47f17"/><text x="482" y="49" text-anchor="middle" class="w b">₹1.5</text>
+ <rect x="505" y="26" width="45" height="36" fill="#6a9bc9"/><text x="527" y="49" text-anchor="middle" class="w b">₹1.5</text>
+ <rect x="550" y="26" width="90" height="36" fill="#0b2f6b"/><text x="595" y="49" text-anchor="middle" class="w b">~₹3</text>
+ <text x="482" y="76" text-anchor="middle" class="s">network</text><text x="527" y="76" text-anchor="middle" class="s">bank</text><text x="595" y="76" text-anchor="middle" class="b">Razorpay keeps</text>
+ <line x1="4" y1="90" x2="676" y2="90" stroke="#d9dee4"/>
+ <text x="4" y="110" class="b">Headline fee vs what Razorpay earns on all the money it moves</text>
+ <text x="4" y="136">Standard price list</text><rect x="180" y="124" width="400" height="18" fill="#9fb3c8"/><text x="586" y="137" class="b">2%</text>
+ <text x="4" y="162">Revenue ÷ volume</text><rect x="180" y="150" width="50" height="18" fill="#0b2f6b"/><text x="236" y="163" class="b">≈0.25%</text>
+ <text x="4" y="188" class="s">≈ ₹3,783 Cr revenue (FY25) ÷ ~₹15 lakh Cr annualised volume (~$180 bn): big merchants pay far less than the list price, and much volume is UPI.</text>
+</svg>
+<figcaption><b>{{FIG:rz-money}} · A gateway keeps a thin slice.</b> Top: on card payments, most of the fee passes through to banks. Bottom: across all its volume, Razorpay earns roughly a tenth of its list price. That is why it keeps adding products further from the payment. <span class="src">Split illustrative; list price: razorpay.com/pricing (Sep 2026); revenue FY25 (Inc42); volume is the company’s 2026 annualised claim, so the ratio is rough.</span></figcaption>
+</figure>
+
+<figure>
+<svg class="d" viewBox="0 0 680 176" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="rz" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7d8793"/></marker></defs>
+ <line x1="18" y1="166" x2="672" y2="166" stroke="#7d8793" stroke-width="1.2" marker-end="url(#rz)"/>
+ <line x1="18" y1="166" x2="18" y2="8" stroke="#7d8793" stroke-width="1.2" marker-end="url(#rz)"/>
+ <text x="670" y="160" text-anchor="end" class="s">further from a single payment →</text>
+ <text x="26" y="16" class="s">revenue and switching cost per merchant ↑</text>
+ <rect x="30" y="126" width="104" height="34" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/><text x="82" y="141" text-anchor="middle" class="b">Gateway</text><text x="82" y="154" text-anchor="middle" class="s">take payments</text>
+ <rect x="122" y="104" width="104" height="34" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/><text x="174" y="119" text-anchor="middle" class="b">Links, subscriptions</text><text x="174" y="132" text-anchor="middle" class="s">no website needed</text>
+ <rect x="214" y="82" width="104" height="34" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/><text x="266" y="97" text-anchor="middle" class="b">RazorpayX</text><text x="266" y="110" text-anchor="middle" class="s">account, payouts</text>
+ <rect x="306" y="60" width="104" height="34" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/><text x="358" y="75" text-anchor="middle" class="b">Payroll</text><text x="358" y="88" text-anchor="middle" class="s">salaries, tax</text>
+ <rect x="398" y="38" width="104" height="34" rx="5" fill="#dbe8f5" stroke="#2f6ea5"/><text x="450" y="53" text-anchor="middle" class="b">POS, Capital</text><text x="450" y="66" text-anchor="middle" class="s">shops, loans</text>
+ <rect x="490" y="16" width="170" height="34" rx="5" fill="#0b2f6b"/><text x="575" y="31" text-anchor="middle" class="w b">Agentic payments</text><text x="575" y="44" text-anchor="middle" class="w" style="font-size:10.3px">AI agents pay within limits</text>
+</svg>
+<figcaption><b>{{FIG:rz-ladder}} · Razorpay’s product ladder.</b> Each step away from the single payment earns more per merchant and is harder to switch away from. A merchant can change gateways in weeks; changing payroll and bank accounts takes months. <span class="src">Author’s model from Razorpay product pages, 2026.</span></figcaption>
+</figure>
+
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Successful payment value from merchants active this month.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Payment success rate · new merchants live in 7 days · products per merchant.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Fraud and chargebacks · settlement delays · minutes of downtime.</div>
+</div>
+
+<p><b>Business model in one line.</b> A fee on each payment (2% on the standard plan, much less for large merchants), plus banking, payroll and lending products that earn more per merchant. FY25 revenue was ₹3,783 Cr (+65%), with a net loss of ₹1,209 Cr, mostly stock-based pay and a one-off tax on moving its holding company back to India. <b>Moat, in plain words:</b> being wired into thousands of merchants’ systems (checkout code, webhooks, reconciliation, payroll). Leaving means rebuilding that wiring. <b>2025–26 moves:</b> the move back to India (May 2025); a confidential IPO filing (12 Jun 2026); agentic-payments launches with NPCI, OpenAI and Anthropic.</p>
+
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good">
+<li>Developer-first products that other fintechs copy</li>
+<li>A ladder of products with rising switching costs</li>
+<li>Early in AI-agent payments</li>
+</ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss">
+<li>Thin gateway margins; zero-MDR UPI and rivals (PayU, Cashfree, Juspay) squeeze price</li>
+<li>Net loss in FY25; IPO timing depends on showing profit</li>
+<li>Every product rests on bank partners and RBI licences</li>
+</ul></div>
+</div>
+
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Neha loses orders every time a card payment fails <span class="arrow">→</span> when a card fails, offer UPI in the same sheet with the amount pre-filled <span class="arrow">→</span> orders recovered per 100 failed payments.</p>
+<p class="idea"><b>2.</b> Small D2C brands run short of cash before a sale season <span class="arrow">→</span> advances repaid as a fixed share of daily settlements, priced on their Razorpay history <span class="arrow">→</span> advances taken and loss rate.</p>
+<p class="idea"><b>3.</b> Merchants fear AI agents placing wrong or duplicate orders <span class="arrow">→</span> per-agent spending caps and an “agent orders” view on the dashboard <span class="arrow">→</span> disputes per 1,000 agent payments.</p>

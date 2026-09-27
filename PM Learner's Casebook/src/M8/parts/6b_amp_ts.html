@@ -1,0 +1,38 @@
+<!-- ============ TEARDOWNS: AMPLITUDE ============ -->
+<h1 style="margin-top:14pt">Amplitude: seeing what users actually do</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Rohan, 27, is a PM at a Pune investing app. Sign-ups are steady but fewer people finish KYC (the identity check every investor must pass). He opens a funnel in Amplitude: install → upload PAN → take selfie → submit. The selfie step has fallen from 71% to 52% since 4 September. He splits it by device: the drop is only on Android 14 with the new app version. He runs a test, old camera screen against new, and the old one wins by 17 points. The fix ships the next day ({{REF:flow_amp}}).</p>
+<figure>{{SVG:flow_amp}}
+<figcaption><b>{{FIG:flow_amp}} · Behind one funnel chart.</b> The app records named events (①–②); Amplitude counts them into a funnel and splits it by segment (③–⑥); an experiment confirms the cause (⑦–⑧). <span class="src">Author’s diagram; numbers illustrative.</span></figcaption>
+</figure>
+<table class="tbl flow feat">
+<tr><th style="width:18%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Funnels and cohorts</td><td>“Where do people drop off, and who comes back?”</td><td>Built from events without writing SQL, so PMs answer their own questions</td><td>Weekly querying users per account</td></tr>
+<tr><td>Session replay</td><td>“The chart says they left; I can’t see why”</td><td>Watch real sessions at the step where people leave</td><td>Add-on revenue</td></tr>
+<tr><td>Experiments</td><td>“Did my change cause the lift?”</td><td>A/B tests read from the same events as the charts</td><td>Products per customer</td></tr>
+<tr><td>AI agents</td><td>“I don’t know what to ask”</td><td>Agents watch dashboards, flag changes and suggest causes</td><td>Active users outside the data team</td></tr>
+</table>
+<p><b>Core loop and business model.</b> The more teams that send events, the more questions Amplitude can answer, and the more teams inside the company ask for access. So it lands with one product team and expands: more events, more seats, then experiments, replays and AI agents ({{REF:ladder_amp}}). In April–June 2026 revenue was $100.9 million, up 21%, ARR $410 million, and 824 customers paid over $100,000 a year. Net revenue retention was 103%: existing customers grow, but slowly. <b>Moat:</b> years of a company’s event history and the dashboards built on it are hard to move. <b>The threat:</b> companies now keep all their data in a warehouse (Snowflake, Databricks, BigQuery) and some analyse it there instead of copying it to a separate tool.</p>
+<figure>{{SVG:ladder_amp}}
+<figcaption><b>{{FIG:ladder_amp}} · Land with one team, expand across products.</b> The free plan brings in product teams; money comes from data volume and add-ons in large contracts. <span class="src">Amplitude Q2 2026 results; plan names and bands simplified from its pricing page.</span></figcaption>
+</figure>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Weekly users who ask a question of the data (query or view a chart).</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Events tracked · teams per account · products per account · experiments run.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Data accuracy (events arriving and named correctly) · query speed · gross retention.</div>
+</div>
+<p><b>2025–26 moves.</b> AI agents (Global Agent, specialised agents, Agent Analytics for measuring AI features); experimentation added through the Statsig integration, which brought $17 million of ARR. <b>Strengths:</b> PMs can answer questions without an analyst; one place for charts, replays and tests. <b>Weaknesses:</b> slow growth inside accounts; warehouse-native rivals; value depends on a clean tracking plan.</p>
+<p class="idea"><b>Build next.</b> Teams ship with broken or missing events <span class="arrow">→</span> an AI check on every app release that flags events that stopped arriving or changed shape <span class="arrow">→</span> share of dashboards with no data gaps; NRR.</p>
+
+<!-- ============ TEARDOWNS: THOUGHTSPOT ============ -->
+<h1 style="margin-top:14pt">ThoughtSpot: asking the data in plain words</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Anjali, 38, is regional sales head for a packaged-foods company in Mumbai. She has never written a database query. On Monday she types into Spotter, ThoughtSpot’s AI assistant: “Sales by district last quarter vs target, Maharashtra.” A bar chart appears in two seconds: Nashik is 22% short of target. She asks “Why Nashik?” and gets a breakdown: two stores explain 70% of the gap. She forwards the chart to her area manager before her 10 am call ({{REF:flow_ts}}).</p>
+<figure>{{SVG:flow_ts}}
+<figcaption><b>{{FIG:flow_ts}} · Behind a plain-words question.</b> The semantic model translates her words into exact columns (②–③); the AI writes the query that runs on the company’s own warehouse (④–⑤). <span class="src">Author’s diagram; numbers illustrative.</span></figcaption>
+</figure>
+<p><b>Key features.</b> <b>Search and Spotter</b> answer questions in everyday words, so managers don’t queue for an analyst (moves: weekly active business users). <b>The semantic model</b> is where the company defines what each word means ({{REF:semantic}}); the AI is only as right as these definitions (moves: answer accuracy). <b>Live queries on the warehouse</b> mean data isn’t copied, so the numbers match finance’s (moves: trust, fewer “which number is right?” meetings). <b>Embedded analytics</b> let software firms put ThoughtSpot charts inside their own products (moves: usage-based revenue).</p>
+<figure>{{SVG:semantic}}
+<figcaption><b>{{FIG:semantic}} · Words to columns.</b> Each everyday word needs one agreed meaning; “sales” as net or gross can change a region’s ranking. Getting these definitions right is the unglamorous work that makes AI answers trustworthy. <span class="src">Author’s diagram.</span></figcaption>
+</figure>
+<p><b>Business model.</b> Per user with limits on AI questions: Essentials from about $25 a user a month, Pro from about $50 with 25 Spotter questions a user a month (2026 list), and large contracts for enterprises and embedded use. ThoughtSpot is private; its last public ARR figure was about $150 million after it bought Mode in 2023. <b>Moat:</b> a company’s semantic model, built over months, and trust from answers that match finance’s numbers. <b>The threat:</b> Microsoft’s Power BI with Copilot, Google’s Looker with Gemini and Snowflake’s own AI can answer plain-words questions too, often already paid for. <b>North Star:</b> weekly business users who get an answer they act on; <b>guardrail:</b> share of answers a data team marks wrong.</p>
+<p><b>2025–26 moves.</b> Spotter agents for building dashboards, data models and embedded code (general release early 2026). <b>Strengths:</b> built for search from the start; runs on the customer’s warehouse. <b>Weaknesses:</b> bundled rivals are “free”; accuracy depends on definitions customers must maintain.</p>
+<p class="idea"><b>Build next.</b> Managers don’t know when to trust an answer <span class="arrow">→</span> show beside every chart the definitions used (“sales = net, after returns”) with one tap to flag a wrong one <span class="arrow">→</span> flagged-answer rate; repeat questions per user.</p>

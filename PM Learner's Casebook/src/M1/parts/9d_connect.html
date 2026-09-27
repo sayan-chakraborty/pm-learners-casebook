@@ -1,0 +1,30 @@
+<!-- ============ CONNECT THE DOTS ============ -->
+<section class="page">
+<div class="kicker">Payments &amp; fintech · Connect the dots</div>
+<h1>Connect the dots</h1>
+<p class="lede">Four ideas ran through every case, product and technology topic here. Seen together, they are most of what a payments PM thinks about in a week.</p>
+<table class="tbl">
+<tr><th style="width:17%">Thread</th><th style="width:28%">In the cases</th><th style="width:28%">In the products</th><th>In the technology</th></tr>
+<tr><td><b>Free payments, paid products</b></td><td>Teen credit needed a lender and the law before features; the rural bank’s win was fewer branch trips, not app downloads</td><td>PhonePe and Paytm earn on loans and devices; Groww earns nothing on the SIP that brings users in</td><td>Lending partners plug in through APIs; consent and disbursal rules shape every screen</td></tr>
+<tr><td><b>Trust while money is in flight</b></td><td>The “fail-proof” wallet idea broke on risk; fraud rules must count honest users slowed</td><td>Soundboxes beat fake “paid” screenshots; Razorpay keeps buyers’ money in escrow</td><td>Pending states, timeouts, idempotent retries and signed webhooks</td></tr>
+<tr><td><b>Measure what you caused</b></td><td>Google Pay coupons: redemptions are not incremental sales without a holdout</td><td>Scratch cards funded by partners; Zerodha’s profit held while its trading income fell</td><td>A/B tests: one primary metric, guardrails, sample size set in advance</td></tr>
+<tr><td><b>Ship without breaking</b></td><td>The Android update that crashed on newer phones</td><td>Paytm’s regulatory collapse and recovery; PhonePe’s paused IPO</td><td>Agile loops, staged roll-outs, p95 latency and per-bank success rates</td></tr>
+</table>
+
+<div class="box ex"><span class="lbl">Back to Surat · A sketch answer for Hitesh</span>
+<p><b>What changes on 15 October.</b> On ₹25 lakh a month of payments above ₹2,000, Hitesh now pays about ₹10,000 a month. His cheapest escape is asking buyers to pay his personal UPI ID, which is free. That hurts PhonePe twice: its share of the new fee disappears, and business payments become harder to see, which weakens the payment history it would use to lend to him.</p>
+<p><b>Scope first.</b> Goal: keep large merchants’ business payments on their business QR. Who: high-ticket merchants taking ₹1 lakh+ a month. Constraint: the fee is set by NPCI; PhonePe can’t waive it.</p>
+<p><b>What I’d build.</b> (1) A plain fee statement: the fee per payment, per day and per month, so nobody is surprised. (2) Reasons to stay that are worth more than 0.4%: next-morning settlement, GST-ready invoices for every payment, and working-capital credit priced on his business QR history. (3) A soundbox message that confirms business payments by the buyer’s firm name, which a personal-UPI transfer can’t.</p>
+<p><b>Goal (North Star):</b> share of large merchants’ payment value still on business QRs 60 days after 15 October. <b>Safety check (guardrail):</b> large merchants switching to a rival app, and support complaints about fees. <b>Trade-off:</b> credit offers bring in revenue but carry the risk of defaults, so start with merchants who have 12 months of history.</p></div>
+
+<div class="cols2">
+<div class="box key"><span class="lbl">Key idea · The payments PM’s three questions</span>
+<ol class="small">
+<li>Who pays for this, and who earns?</li>
+<li>What happens if money is stuck halfway?</li>
+<li>How will we know our change caused the result?</li>
+</ol></div>
+<div class="box int"><span class="lbl">In the interview</span>
+<p class="small">In any payments case, ask question 1 within the first two minutes. It is the fastest way to show you understand the industry, and it shapes every metric that follows.</p></div>
+</div>
+</section>

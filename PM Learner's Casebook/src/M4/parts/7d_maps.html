@@ -1,0 +1,37 @@
+<!-- ============ TEARDOWNS: GOOGLE MAPS ============ -->
+<h1 style="margin-top:12pt">Google Maps: two billion users who are also its sensors</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Meera, 41, needs to reach Bengaluru airport from Indiranagar for a 9 pm flight. At 6:30 pm Maps offers three routes; the fastest takes 52 minutes via Outer Ring Road. Twenty minutes in, someone reports a crash on the Hebbal flyover; Maps reroutes her and saves nine minutes. A café on the new route appears as a labelled ad. None of this needs a single traffic camera: the speeds come from millions of other phones moving through the same roads ({{REF:mp-walk}}).</p>
+
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Live traffic and ETA</td><td>“How long will it really take?”</td><td>Anonymous speed pings from phones, mixed with each road’s usual speed at that hour</td><td>ETA accuracy; routes started</td></tr>
+<tr><td>Address descriptions (India, 2024)</td><td>“The pin is wrong; which gate?”</td><td>Landmarks near the address, because many Indian addresses are descriptive</td><td>Arrivals at the right door</td></tr>
+<tr><td>Ask Maps (Gemini, March 2026)</td><td>“Where can I eat near the metro, not crowded, under ₹500?”</td><td>Plain-language questions answered from places, reviews and photos</td><td>Discovery searches; saves</td></tr>
+<tr><td>Metro tickets via ONDC</td><td>“One more app just for a metro ticket”</td><td>Buy tickets inside Maps in some cities, through India’s open commerce network</td><td>Transit trips planned in Maps</td></tr>
+<tr><td>Reviews, photos, Local Guides</td><td>“Is this place any good?”</td><td>Users add the content; points and badges reward them</td><td>Place coverage; review freshness</td></tr>
+</table>
+<figure>{{SVG:flow_maps}}
+<figcaption><b>{{FIG:mp-walk}} · Behind Meera’s drive.</b> Other users’ phones (①, ⑧) produce the traffic picture; Meera’s phone (⑦) feeds it back. Businesses (⑩) pay to be seen along the route. <span class="src">Simplified from Google’s published descriptions of traffic prediction; timings illustrative.</span></figcaption>
+</figure>
+
+<h3>Core loop: data</h3>
+<p>Maps improves because people use it ({{REF:mp-loop}}). More drivers mean more speed readings on more roads, so ETAs get more accurate, so more people trust Maps and use it. The same holds for places: more users write more reviews and upload more photos, which make search results better. A new map can copy the roads; it can’t copy a decade of live readings and reviews.</p>
+<figure>{{SVG:loop_maps}}
+<figcaption><b>{{FIG:mp-loop}} · The data loop.</b> Every user is also a sensor and a reviewer, so the product gets better for free as it grows. <span class="src">Author’s diagram; 2 bn+ monthly users per Google (2025–26).</span></figcaption>
+</figure>
+<p><b>Business model.</b> Maps is free to users. Alphabet doesn’t report its revenue, but it earns in three ways: <b>local ads</b> (promoted pins and sponsored results when people search “near me”); <b>Google Maps Platform</b> (companies pay per 1,000 calls to show maps, routes and places in their own apps); and <b>feeding Search</b>, where local intent makes ads more valuable. The biggest customers of the Platform, ride and delivery apps, are also the ones most likely to build their own map, as Ola did.</p>
+<p><b>Moat, in plain words.</b> The live data from two billion users, years of Street View imagery and place reviews, and the default spot on most Android phones.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Trips and place decisions completed with Maps each week.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>ETA accuracy · share of searches ending in a visit or direction · fresh reviews per place.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Wrong-place reports · ad share of local results · privacy complaints.</div>
+</div>
+<p><b>2025–26 moves.</b> Ask Maps and Immersive Navigation (a 3D, lane-level view) launched in the US and India in March 2026; Ask Maps reached 150+ more countries in August 2026. India-specific features: narrow-road alerts, flyover callouts and address descriptions (2024).</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Unmatched live traffic and place data</li><li>Default on Android; 2 bn+ users</li><li>AI answers built on real reviews</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Indian addresses and pins still go wrong</li><li>Big API customers build their own maps</li><li>Ads in local results can erode trust</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Delivery riders lose minutes finding the right gate <span class="arrow">→</span> gate-level pins learned from where past deliveries actually ended <span class="arrow">→</span> arrival-to-door time for Platform customers.</p>
+<p class="idea"><b>2.</b> Tourists don’t know what’s worth seeing in two days <span class="arrow">→</span> “Plan my day” from saved places, open hours and travel time <span class="arrow">→</span> trips with a plan followed.</p>
+<p class="idea"><b>3.</b> Commuters switch between metro, auto and walking <span class="arrow">→</span> one ticket and one route across modes via ONDC <span class="arrow">→</span> multi-mode trips booked in Maps.</p>

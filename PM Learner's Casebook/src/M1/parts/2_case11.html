@@ -1,0 +1,131 @@
+<!-- ============ CASES: 1.1 RURAL BANK ============ -->
+<section class="page">
+<div class="kicker">Payments &amp; fintech · Cases</div>
+<div class="keep" style="break-after:avoid">
+<div class="casehead"><span class="t">Case 1.1 · A bank app for rural India</span>
+ <span class="m"><span class="pill">Product design</span><span>Hard</span><span>IIM B <i>Sigma PM Casebook 2026–27</i>, pp. 55–56</span></span></div>
+<div class="try"><b>Try it first.</b> Read only the question in the blue box. Take 5 minutes and say your structure out loud before you read the candidate’s answer.</div>
+</div>
+
+{{CASE:B55}}
+
+<div class="sectag">What worked · what was missing</div>
+<div class="cols2">
+<ul class="good small">
+ <li><b>Asked for the objective.</b> The answer, “branches are overcrowded”, turned a vague “design an app” into a sharp brief: take load off branches.</li>
+ <li><b>Asked how customers bank today</b> before proposing anything.</li>
+ <li><b>Picked one segment with a reason</b> (regular customers, for volume) and parked vendors for later.</li>
+ <li><b>Prioritised with named criteria</b>, proposed an MVP order, and made the top metric (waiting time at the branch) match the goal.</li>
+</ul>
+<ul class="miss small">
+ <li><b>Never asked about phones, network or language.</b> In rural India many people share a phone: 18% of India’s internet users go online on someone else’s device, and about 80% of them are rural (IAMAI–Kantar 2025).</li>
+ <li><b>Scored RICE in words</b> (“High-Moderate”), so the ranking is still a gut call. With rough numbers the order changes ({{REF:rice}}).</li>
+ <li><b>Reinvented what exists.</b> “Vendors collecting cash” is the business correspondent model: 17.36 lakh bank agents already do it (Jul 2026). Offline UPI exists as UPI 123Pay.</li>
+ <li><b>Metrics mixed goal and vanity.</b> Downloads and DAU/MAU don’t show fewer branch trips, and nothing watches for fraud through agents.</li>
+</ul>
+</div>
+
+<div class="box chk"><span class="lbl">Check · “Rural India faces ~30% UPI transaction failure rates” <span class="verdict v-no">Doesn’t hold up</span></span>
+<p>No public source gives a rural figure near 30%. Nationally, technical declines (failures caused by banks or systems) fell from 8–10% in UPI’s first year to under 1% by 2025, and NPCI’s target is below 0.25%. Weak signal does cause timeouts and “pending” payments, and those feel like failures. The honest version: “Poor network makes payments slow or pending more often in villages; I don’t have a number, so I’d check our own data by district.”</p></div>
+<div class="box chk"><span class="lbl">Check · “Offline UPI in our app, using SMS read/write permissions” <span class="verdict v-no">Doesn’t hold up</span></span>
+<p>Google Play allows the SMS read and send permissions only for the phone’s default SMS app and a short list of approved uses, so a bank app would struggle to get them. The need is real, and it is already met: UPI 123Pay lets feature-phone users pay by voice call or missed call, up to ₹10,000 a payment. The better product move is to promote 123Pay in the bank’s alerts, not to rebuild it.</p></div>
+
+<div class="box key flowbox"><span class="lbl">The scoping kit · five questions before any answer</span>
+<p>A good doctor doesn’t write a prescription the moment you say “headache”. They ask where it hurts, since when, and whether anything changed: new food, new medicine, less sleep. The scoping kit is your version of those questions. It takes about a minute and stops you solving the wrong problem. In this case, question 2 alone changed the brief from “an app” to “emptier branches”.</p>
+<p class="small"><b>Same questions, everyday setting:</b> planning a friend’s birthday, you’d ask what they’d enjoy (goal), who is coming (who), what’s already booked (today), and the budget and date (limits).</p>
+<div class="kit">
+ <div class="card"><span class="n">1</span><b>What exactly is it?</b><span class="why">So you and the interviewer mean the same thing.</span><span class="here">“A mobile app for X Bank’s existing rural customers. Right?”</span><span class="tick" style="color:#b93a32">✗ half: asked about KYC, not the product</span></div>
+ <div class="card"><span class="n">2</span><b>What’s the goal?</b><span class="why">Growth, usage, money, cost or trust lead to different answers.</span><span class="here">“Is there a particular objective behind the app?”</span><span class="tick y">✓ asked: the key question here</span></div>
+ <div class="card"><span class="n">3</span><b>Who is it for?</b><span class="why">Farmers, labourers and shopkeepers bank differently.</span><span class="here">“In which geographies does our bank operate?”</span><span class="tick y">✓ asked, then chose a segment</span></div>
+ <div class="card"><span class="n">4</span><b>What happens today?</b><span class="why">Shows the real pain and why now.</span><span class="here">“How does the consumer currently use our services?”</span><span class="tick y">✓ asked</span></div>
+ <div class="card"><span class="n">5</span><b>What are the limits?</b><span class="why">Phones, network, language and rules shrink the design.</span><span class="here">“What phones do they have? Which languages?”</span><span class="tick" style="color:#b93a32">✗ skipped</span></div>
+</div>
+<p class="small" style="margin-top:4pt"><b>For a design case, add one or two:</b> which journey stage? · which platform first (smartphone, feature phone, both)? · any legal limits (who may handle cash)? · say the success metric at the end.</p>
+<p class="small"><b>Rule of thumb:</b> don’t ask everything. Ask 3–4, say one assumption out loud (“I’ll assume about half our rural customers have a smartphone”), and begin.</p>
+</div>
+
+<div class="sectag">Stronger answer</div>
+<figure style="margin:2pt 0 5pt">
+<svg class="d" viewBox="0 0 680 62" xmlns="http://www.w3.org/2000/svg">
+ <g class="c">
+  <polygon points="0,4 106,4 116,31 106,58 0,58" fill="#127a64"/><text x="54" y="26" text-anchor="middle" class="b w">① Clarify</text><text x="54" y="44" text-anchor="middle" class="w">goal, users, limits</text>
+  <polygon points="113,4 219,4 229,31 219,58 113,58 123,31" fill="#1d8a73"/><text x="170" y="26" text-anchor="middle" class="b w">② Pick user</text><text x="170" y="44" text-anchor="middle" class="w">who visits most?</text>
+  <polygon points="226,4 332,4 342,31 332,58 226,58 236,31" fill="#2a9a82"/><text x="283" y="26" text-anchor="middle" class="b w">③ Find the pain</text><text x="283" y="44" text-anchor="middle" class="w">why do they come?</text>
+  <polygon points="339,4 445,4 455,31 445,58 339,58 349,31" fill="#0b5d7a"/><text x="396" y="26" text-anchor="middle" class="b w">④ Ideas</text><text x="396" y="44" text-anchor="middle" class="w">one per reason</text>
+  <polygon points="452,4 558,4 568,31 558,58 452,58 462,31" fill="#3e4fb8"/><text x="509" y="26" text-anchor="middle" class="b w">⑤ Prioritise</text><text x="509" y="44" text-anchor="middle" class="w">RICE, with numbers</text>
+  <polygon points="565,4 680,4 680,58 565,58 575,31" fill="#7c3aa6"/><text x="624" y="26" text-anchor="middle" class="b w">⑥ Measure</text><text x="624" y="44" text-anchor="middle" class="w">fewer trips?</text>
+ </g>
+</svg>
+<figcaption><b>{{FIG:strip11}} · A design answer in six moves.</b> The same order works for any “design X for Y” case. Each turn below is tagged with its move. <span class="src">Author’s summary.</span></figcaption>
+</figure>
+
+<div class="qa stronger">
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">① Clarify</div><p>Three quick questions. What’s the goal: fewer branch visits, more digital use, or lower cost? Who are our rural customers, and what phones do they carry? Any languages or rules I should design around?</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Goal: emptier branches. Farmers, labourers, small shopkeepers. About half have a smartphone, often shared. Pick the languages you like.</p></div></div>
+<p class="whynote">Why this move: “emptier branches” is now the test for every idea. A feature that doesn’t remove a trip is out, however clever.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">② Pick user · ③ Find the pain</div><p>I’ll design for the account holder who visits most. I’ll assume 1 crore rural customers. A trip costs them a morning: 8 km each way, a two-hour queue, about ₹200 of lost wages. And many trips only ask “has my money come?”, a question the bank already knows the answer to ({{REF:journey}}).</p></div></div>
+<p class="whynote">Why this move: sorting visits by <i>reason</i> shows which ones an app can remove.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">④ Ideas</div><p>One idea per reason for visiting. <b>Money-arrived alerts</b>: a voice message in the local language when wages or scheme money land, plus a missed-call balance check. <b>Scheme checker</b>: which schemes you qualify for, and the documents to bring. <b>Branch token</b>: book a time slot. <b>Agent finder</b>: the nearest bank agent for cash deposits. Every feature needs a voice or missed-call version for the half without a smartphone.</p></div></div>
+<div class="turn q"><div class="who">Q</div><div class="body"><p>Why not the offline UPI idea?</p></div></div>
+<div class="turn a"><div class="who">A</div><div class="body"><p>UPI 123Pay already works on feature phones, and Android won’t let a bank app send SMS in the background. I’d promote 123Pay inside our alerts instead of rebuilding it.</p></div></div>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑤ Prioritise</div><p>Scoring with RICE, per quarter, with rough numbers: alerts reach 40 lakh people, impact 1, confidence 80%, effort 2 person-months: 40 × 1 × 0.8 ÷ 2 = 16. The agent finder reaches more people but needs agent training and cash limits, so effort is 8 and it scores under 4. Alerts first, then the scheme checker and tokens; agents in phase 2.</p></div></div>
+<p class="whynote">Why this move: numbers, even rough ones, let the interviewer argue with your inputs instead of your instinct.</p>
+
+<div class="turn a"><div class="who">A</div><div class="body"><div class="steptag">⑥ Measure</div><p><b>Goal (North Star):</b> branch visits per rural customer per month, from about 1.5 to 1.1 in six months (illustrative). <b>Safety check (guardrail):</b> fake “money arrived” scam messages and complaints about missed alerts. <b>Trade-off:</b> messages cost money: 40 lakh people × 4 alerts × ₹0.15 = ₹24 lakh a month, far less than the branch staff time saved. <b>Next:</b> pilot in two districts before a state-wide launch.</p></div></div>
+</div>
+
+<figure>
+<svg class="d" viewBox="0 0 680 228" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="j1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7d8793"/></marker></defs>
+ <text x="4" y="14" class="b">A cash deposit or balance check today: one morning, five steps</text>
+ <g>
+  <rect x="4" y="24" width="120" height="52" rx="6" fill="#f1f2f4" stroke="#9aa3ad"/><text x="64" y="44" text-anchor="middle" class="b">① Leave work</text><text x="64" y="60" text-anchor="middle" class="s">9 am, field or shop</text>
+  <rect x="142" y="24" width="120" height="52" rx="6" fill="#f1f2f4" stroke="#9aa3ad"/><text x="202" y="44" text-anchor="middle" class="b">② 8 km by auto</text><text x="202" y="60" text-anchor="middle" class="s">₹60 return, 40 min</text>
+  <rect x="280" y="24" width="120" height="52" rx="6" fill="#fcecea" stroke="#b93a32" stroke-width="1.6"/><text x="340" y="44" text-anchor="middle" class="b red">③ Queue 2 hours</text><text x="340" y="60" text-anchor="middle" class="s">one busy branch</text>
+  <rect x="418" y="24" width="120" height="52" rx="6" fill="#fcecea" stroke="#b93a32" stroke-width="1.6"/><text x="478" y="44" text-anchor="middle" class="b red">④ Paper slip</text><text x="478" y="60" text-anchor="middle" class="s">needs help to fill</text>
+  <rect x="556" y="24" width="120" height="52" rx="6" fill="#f1f2f4" stroke="#9aa3ad"/><text x="616" y="44" text-anchor="middle" class="b">⑤ Home by 2 pm</text><text x="616" y="60" text-anchor="middle" class="s">~₹200 wages lost</text>
+  <line x1="124" y1="50" x2="140" y2="50" class="ln" marker-end="url(#j1)"/><line x1="262" y1="50" x2="278" y2="50" class="ln" marker-end="url(#j1)"/><line x1="400" y1="50" x2="416" y2="50" class="ln" marker-end="url(#j1)"/><line x1="538" y1="50" x2="554" y2="50" class="ln" marker-end="url(#j1)"/>
+ </g>
+ <text x="4" y="104" class="b">Why people came (share of visits, illustrative)</text><text x="676" y="104" text-anchor="end" class="b">What could replace the trip</text>
+ <!-- bars: 1% = 4px, x0=180 -->
+ <text x="4" y="126">Has my money come?</text><rect x="180" y="115" width="120" height="16" fill="#b93a32"/><text x="306" y="127" class="b">30%</text><text x="676" y="127" text-anchor="end" class="grn b">voice alert, missed-call balance</text>
+ <text x="4" y="150">Deposit cash</text><rect x="180" y="139" width="100" height="16" fill="#c47f17"/><text x="286" y="151" class="b">25%</text><text x="676" y="151" text-anchor="end">nearest bank agent (BC)</text>
+ <text x="4" y="174">Withdraw cash</text><rect x="180" y="163" width="80" height="16" fill="#c47f17"/><text x="266" y="175" class="b">20%</text><text x="676" y="175" text-anchor="end">agent, micro-ATM</text>
+ <text x="4" y="198">Scheme forms, documents</text><rect x="180" y="187" width="60" height="16" fill="#b93a32"/><text x="246" y="199" class="b">15%</text><text x="676" y="199" text-anchor="end" class="grn b">scheme checker + document list</text>
+ <text x="4" y="222">Passbook, other</text><rect x="180" y="211" width="40" height="16" fill="#9aa3ad"/><text x="226" y="223" class="b">10%</text><text x="676" y="223" text-anchor="end">branch token for the rest</text>
+</svg>
+<figcaption><b>{{FIG:journey}} · A rural branch trip, and the reasons behind it.</b> Red rows are trips an app can remove completely, because the bank already has the answer. Amber rows still need cash in someone’s hand, so they need an agent, not only an app. <span class="src">Journey and visit shares are illustrative, for teaching; agent network: 17.36 lakh BCs and 99.92% of villages within 5 km of a banking outlet, govt data, Jul 2026.</span></figcaption>
+</figure>
+
+<div class="box fw"><span class="lbl">Framework · RICE: rank ideas with four rough numbers</span>
+<p><span class="step">1 · The situation.</span>The candidate had three good ideas and had to pick an order. Without numbers, “High-Moderate” against “High” is a matter of taste, and the interviewer can only nod or disagree.</p>
+<p><span class="step">2 · An everyday example.</span>A free Saturday and four jobs at home: fix the leaking tap, paint the balcony, set up the family’s new phone, clean the fan. You naturally ask: how many people does it help, how much, how sure am I it’ll work, and how long will it take?</p>
+<table class="tbl">
+<tr><th style="width:16%">RICE part</th><th style="width:28%">The question</th><th>Saturday jobs</th><th>Rural bank app</th></tr>
+<tr><td><b>Reach</b></td><td>How many people, in a set time?</td><td>Tap: all 4 at home. Phone: 1 (grandma)</td><td>Alerts: 40 lakh customers a quarter</td></tr>
+<tr><td><b>Impact</b></td><td>How much for each? (3 huge, 2 high, 1 medium, 0.5 low)</td><td>Tap: 1, saves water. Phone: 3, she can video-call</td><td>Alerts: 1, removes a trip for some</td></tr>
+<tr><td><b>Confidence</b></td><td>How sure are the numbers? (100%, 80%, 50%)</td><td>Tap: 80%, done it before. Paint: 50%</td><td>Alerts: 80%, simple tech; agents: 50%</td></tr>
+<tr><td><b>Effort</b></td><td>How much work? (person-months)</td><td>Tap: 1 hour. Balcony: 2 days</td><td>Alerts: 2; agent finder: 8</td></tr>
+</table>
+<p><span class="step">3 · The framework.</span><b>Score = Reach × Impact × Confidence ÷ Effort.</b> A high score means a lot of benefit per unit of work. Popularised by the product team at Intercom, it works because each part is argued separately: someone can challenge your reach without rejecting the whole idea.</p>
+<figure style="margin:3pt 0 4pt">
+<svg class="d" viewBox="0 0 680 176" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="14" class="b">RICE scores, per quarter (illustrative inputs; bar = score)</text>
+ <text x="676" y="14" text-anchor="end" class="s">R (lakh) × I × C ÷ E</text>
+ <!-- x0=210, 16 px per point -->
+ <text x="4" y="40">Money-arrived alerts</text><rect x="210" y="28" width="256" height="18" fill="#127a64"/><text x="472" y="41" class="b">16.0</text><text x="676" y="41" text-anchor="end" class="s">40 × 1 × 0.8 ÷ 2</text>
+ <text x="4" y="66">Scheme checker</text><rect x="210" y="54" width="133" height="18" fill="#127a64"/><text x="349" y="67" class="b">8.3</text><text x="676" y="67" text-anchor="end" class="s">25 × 2 × 0.5 ÷ 3 · <tspan fill="#0b5d7a" font-weight="700">candidate’s #2</tspan></text>
+ <text x="4" y="92">Branch token</text><rect x="210" y="80" width="128" height="18" fill="#127a64"/><text x="344" y="93" class="b">8.0</text><text x="676" y="93" text-anchor="end" class="s">20 × 1 × 0.8 ÷ 2</text>
+ <text x="4" y="118">Agent finder + deposits</text><rect x="210" y="106" width="60" height="18" fill="#c47f17"/><text x="276" y="119" class="b">3.8</text><text x="676" y="119" text-anchor="end" class="s">30 × 2 × 0.5 ÷ 8 · <tspan fill="#0b5d7a" font-weight="700">candidate’s #3</tspan></text>
+ <text x="4" y="144">Offline UPI by SMS</text><rect x="210" y="132" width="12" height="18" fill="#b93a32"/><text x="228" y="145" class="b">0.8</text><text x="676" y="145" text-anchor="end" class="s">15 × 1 × 0.3 ÷ 6 · <tspan fill="#0b5d7a" font-weight="700">candidate’s #1</tspan></text>
+ <text x="4" y="170" class="s i">Confidence for offline UPI is 30%: Play Store SMS rules and UPI 123Pay already existing make success doubtful.</text>
+</svg>
+<figcaption><b>{{FIG:rice}} · The same ideas, ranked with numbers.</b> Putting even rough numbers on each part flips the candidate’s order: the idea they ranked first scores last, because its effort is high and its confidence low. <span class="src">All inputs illustrative; formula from Intercom’s RICE method.</span></figcaption>
+</figure>
+<p><span class="step">4 · When it misleads.</span>RICE would tell a family to fix the squeaky door (quick, everyone hears it) before the gas leak in the kitchen (one room, slow to fix). Anything about safety, law or a promise already made goes first and is never scored. RICE also breaks when reach is counted in different units (users a day for one idea, customers a year for another), or when confidence is inflated for a favourite idea.</p>
+<p><span class="step">5 · In the interview.</span>“Let me put rough numbers on reach, impact, confidence and effort, so we can argue about the inputs.” Show one calculation out loud, give the others as results, and say what you do first regardless of the score.</p>
+</div>
+</section>

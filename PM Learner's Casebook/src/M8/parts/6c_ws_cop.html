@@ -1,0 +1,43 @@
+<!-- ============ TEARDOWNS: GMAIL AND GOOGLE WORKSPACE ============ -->
+<h1 style="margin-top:14pt">Gmail and Google Workspace: the office in a browser</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Sunita, 44, runs operations at a 20-person travel agency in Jaipur on Google Workspace. An email arrives from a Udaipur hotel with revised rates and a PDF. Gmail has already checked that the sender is who it claims to be and scanned the PDF. The thread is 14 emails long, so she taps “Summarise”: three lines tell her the new rates, the Friday deadline and one open question. She uses “Help me write” to accept and ask about child rates, edits the draft and sends it. She shares the rate sheet from Drive; the owner’s admin rules allow sharing only inside the firm ({{REF:flow_gm}}).</p>
+<figure>{{SVG:flow_gm}}
+<figcaption><b>{{FIG:flow_gm}} · Behind one supplier email.</b> Checks on the sender and filters for spam and phishing run before delivery (②–③); Gemini summarises and drafts on request (⑤–⑧); the admin’s rules decide what can be shared (⑨). <span class="src">Author’s diagram; simplified from Google’s Gmail security and Workspace admin documentation.</span></figcaption>
+</figure>
+<table class="tbl flow feat">
+<tr><th style="width:18%">Feature</th><th style="width:25%">User problem</th><th style="width:34%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Spam and phishing filters</td><td>“One fake invoice email could cost us lakhs”</td><td>Sender checks plus models trained on billions of emails, run before delivery</td><td>Phishing reaching inboxes</td></tr>
+<tr><td>Summaries, “Help me write”</td><td>“Long threads eat my morning”</td><td>AI inside the app where the work is, not in a separate chatbot</td><td>AI actions per user; time on email</td></tr>
+<tr><td>Shared Docs and Drive</td><td>“Which version is final?”</td><td>One live file everyone edits, instead of attachments</td><td>Files shared per user</td></tr>
+<tr><td>Admin console</td><td>“Staff leave with our data”</td><td>The owner controls accounts, sharing and devices from one screen</td><td>Seats per customer; renewals</td></tr>
+</table>
+<p><b>Core loop and business model.</b> Gmail is free for about 3 billion people, so most workers already know it; that familiarity sells the paid version to their employers. A business pays per user per month for its own email address, more storage, meetings and admin controls. In early 2025 Google put Gemini into every business plan and raised prices by about $2 a user ({{REF:ladder_ws}}): Business Standard moved from $12 to $14 on a yearly plan. Instead of selling AI as a $20 add-on few bought, every customer pays a little more and every user gets it. <b>Moat:</b> familiarity, a company’s years of email and files, and the admin’s set-up. <b>The threat:</b> Microsoft 365 in large companies, where Outlook, Excel and Teams are the default.</p>
+<figure>{{SVG:ladder_ws}}
+<figcaption><b>{{FIG:ladder_ws}} · Workspace business plans.</b> AI is included at every step; the steps differ in storage, meetings, security and control. <span class="src">Google Workspace pricing (annual plans, 2025 list prices in US$); India prices differ.</span></figcaption>
+</figure>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Weekly active users across Gmail, Docs, Drive and Meet in paying businesses.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Paid seats · apps used per user · AI actions per user · new businesses from free Gmail users.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Phishing that gets through · wrong AI summaries reported · churn after the price rise.</div>
+</div>
+<p><b>2025–26 moves.</b> Gemini bundled into all plans with the price rise (2025); AI Overviews and Help Me Write free in Gmail, with an AI inbox and natural-language search for paid plans (January 2026). <b>Strengths:</b> huge free base; simple for small firms. <b>Weaknesses:</b> weaker in big enterprises; forcing AI into the price annoys firms that didn’t want it.</p>
+<p class="idea"><b>Build next.</b> Small Indian firms run their business on email and WhatsApp side by side <span class="arrow">→</span> a Gmail view that files WhatsApp Business chats with a customer’s email thread, with consent <span class="arrow">→</span> seats per small-business account; weekly active use.</p>
+
+<!-- ============ TEARDOWNS: MICROSOFT 365 COPILOT ============ -->
+<h1 style="margin-top:14pt">Microsoft 365 Copilot: AI sold per seat</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Arjun, 30, is a finance analyst at a Mumbai logistics firm. In Teams he asks Copilot: “What did we agree with the auditors last week? Draft the follow-up.” Copilot searches only the mail, meetings and files Arjun is allowed to open, finds the meeting transcript, two emails and a spreadsheet, and answers with four agreed points, each linked to its source. He asks for a draft email in Word, checks two figures against the spreadsheet, fixes one, and sends it ({{REF:flow_cop}}).</p>
+<figure>{{SVG:flow_cop}}
+<figcaption><b>{{FIG:flow_cop}} · Behind one Copilot answer.</b> Microsoft Graph finds the user’s own mail, meetings and files (②–③); the model answers only from those and cites them (④–⑥). This pattern, finding the right documents and then answering only from them, is called RAG (retrieval-augmented generation). <span class="src">Author’s diagram; simplified from Microsoft’s Copilot architecture documentation.</span></figcaption>
+</figure>
+<p><b>Key features.</b> <b>Copilot inside each app</b> (summarise a Teams meeting, draft in Word, analyse in Excel), so AI shows up where the work already is. <b>Grounding in Microsoft Graph</b>, the map of a company’s emails, files, meetings and people, which no outside chatbot can see. <b>Permissions carried over</b>: Copilot sees only what the user can open, which is safe only if file sharing was set up well; many firms found old salary sheets shared with “everyone” and had to clean up first. <b>Agents</b> built in Copilot Studio for tasks such as HR queries, sold per use.</p>
+<p><b>Business model, with numbers.</b> $30 a user a month on top of a Microsoft 365 licence, which roughly doubles what a company pays per user ({{REF:copmoney}}). Paid seats went from 1.5 crore in January 2026 to over 3 crore by July, still under 7% of about 45 crore Microsoft 365 business seats. At list price, 3 crore seats are worth about $10.8 billion a year; discounts make the real figure lower. Unlike classic Office, each question costs Microsoft money to answer. <b>Moat:</b> it sits inside the tools and data a company already has. <b>The threat:</b> buyers asking whether $30 a seat pays for itself when half the seats are barely used.</p>
+<figure>{{SVG:copmoney}}
+<figcaption><b>{{FIG:copmoney}} · What a Copilot seat adds.</b> A seat price is easy to budget, but it is paid whether the user asks one question a month or a hundred. <span class="src">Microsoft list prices (2025–26); seat count from Microsoft FY26 Q4 results.</span></figcaption>
+</figure>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Paid Copilot seats used weekly.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Seats sold · actions per active user · agents deployed · apps used with Copilot.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Answers exposing files the user shouldn’t see · wrong answers reported · seats cut at renewal.</div>
+</div>
+<p><b>2025–26 moves.</b> Seat sales doubled in six months; Copilot Chat offered free to Microsoft 365 users with paid agents on top; more choice of models inside Copilot. <b>Strengths:</b> distribution to 45 crore seats; the company’s data is already there. <b>Weaknesses:</b> value hard to prove per seat; messy permissions slow roll-outs; a large AI cost to serve.</p>
+<p class="idea"><b>Build next.</b> Buyers can’t see whether seats pay off <span class="arrow">→</span> a monthly admin report of hours saved per team, estimated from tasks done with Copilot, with the unused seats listed <span class="arrow">→</span> seats renewed; seats moved from idle to active users.</p>

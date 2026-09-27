@@ -1,0 +1,77 @@
+<!-- ============ TEARDOWNS: GOOGLE PAY ============ -->
+<div style="height:10pt"></div>
+<h1>Google Pay: the payment app that lives inside Google</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Rahul, 24, a software tester in Bengaluru, owes his flatmate Aman ₹250 for a cab. He opens Google Pay, taps Aman’s face, sees their payment history as a chat, pays, and scratches a card that gives him ₹11 back and a Lenskart coupon. Google designed the whole flow to feel like messaging a friend, not visiting a bank.</p>
+
+<figure>
+{{SVG:flow_gpay}}
+<figcaption><b>{{FIG:gp-walk}} · Behind a ₹250 request between flatmates.</b> The payment itself (①–⑧) is plain UPI; Google’s own design sits in the chat that carries it and in the rewards engine at ⑨, which a partner brand helps pay for at ⑫. <span class="src">Simplified from NPCI UPI collect-request flow; names and amounts illustrative, Sep 2026.</span></figcaption>
+</figure>
+
+<h2>Key features, and why they’re built that way</h2>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:27%">User problem</th><th style="width:32%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>People-first home, chat threads</td><td>“Did I pay you? How much do I owe?”</td><td>Every payment sits in a thread with that person, like WhatsApp; requests and payments go both ways</td><td>P2P payments per user; repeat pairs</td></tr>
+<tr><td>Scratch cards, partner offers</td><td>Payments are boring, and every app is the same</td><td>A variable reward after eligible payments; partner brands fund many of the prizes</td><td>Payments per user; coupon redemption</td></tr>
+<tr><td>Pocket Money (UPI Circle)</td><td>Parents want children to pay digitally, within limits</td><td>Built on NPCI’s delegated payments: up to ₹15,000 a month, or approve each payment (Dec 2025)</td><td>Family circles created; child payments</td></tr>
+<tr><td>Flex card, loans</td><td>Credit for young earners with thin credit files</td><td>A RuPay credit card with Axis Bank (Dec 2025), usable on UPI; personal loans from partners such as DMI Finance</td><td>Cards issued, loans disbursed, overdue rate</td></tr>
+<tr><td>Scam alerts</td><td>“Customer care” callers who ask you to share your screen</td><td>A warning when a payment is made during screen sharing (Android 11+); Google says it showed 4.1 crore warnings from Oct 2024 to Dec 2025</td><td>Fraud reports per lakh payments</td></tr>
+</table>
+
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 196" xmlns="http://www.w3.org/2000/svg">
+ <defs><marker id="g1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5563"/></marker></defs>
+ <rect x="95" y="74" width="140" height="48" rx="7" fill="#1a73e8"/><text x="165" y="94" text-anchor="middle" class="w b">Google Pay users</text><text x="165" y="110" text-anchor="middle" class="w" style="font-size:10.3px">₹0 earned per payment</text>
+ <rect x="2" y="2" width="146" height="44" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="75" y="19" text-anchor="middle" class="b">Lenders, Axis card</text><text x="75" y="35" text-anchor="middle" class="s">pay distribution fees</text>
+ <rect x="182" y="2" width="146" height="44" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="255" y="19" text-anchor="middle" class="b">Partner brands</text><text x="255" y="35" text-anchor="middle" class="s">fund coupons, placement</text>
+ <rect x="2" y="150" width="146" height="44" rx="6" fill="#e1f2ec" stroke="#127a64"/><text x="75" y="167" text-anchor="middle" class="b">Small merchants</text><text x="75" y="183" text-anchor="middle" class="s">ratings to Maps, ads tool</text>
+ <rect x="182" y="150" width="146" height="44" rx="6" fill="#f1f2f4" stroke="#9aa3ad"/><text x="255" y="167" text-anchor="middle" class="b">Android, Google account</text><text x="255" y="183" text-anchor="middle" class="s">daily reason to stay in Google</text>
+ <path d="M120,74 L90,48" class="msg" marker-end="url(#g1)"/><path d="M210,74 L240,48" class="msg" marker-end="url(#g1)"/>
+ <path d="M120,122 L90,148" class="msg" marker-end="url(#g1)"/><path d="M210,122 L240,148" class="msg" marker-end="url(#g1)"/>
+</svg>
+<figcaption><b>{{FIG:gp-model}} · How a free payments app earns for Google.</b> Green boxes pay in rupees; the grey one pays in strategy, keeping Google in users’ daily lives. <span class="src">Author’s model from Google announcements, Dec 2025.</span></figcaption>
+</figure>
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 196" xmlns="http://www.w3.org/2000/svg">
+ <text x="4" y="12" class="b">UPI share (Aug 2026)</text><text x="182" y="12" class="b">Revenue (latest year)</text>
+ <text x="4" y="40" class="b">PhonePe</text><rect x="80" y="29" width="92" height="15" fill="#5f259f"/><text x="84" y="58" class="s">45.9%</text>
+ <rect x="182" y="29" width="131" height="15" fill="#0b5d7a"/><text x="186" y="58" class="s">₹7,920 Cr (FY26)</text>
+ <text x="4" y="86" class="b">Google Pay</text><rect x="80" y="75" width="65" height="15" fill="#1a73e8"/><text x="84" y="104" class="s">32.4%</text>
+ <rect x="182" y="75" width="26" height="15" fill="#0b5d7a"/><text x="186" y="104" class="s">₹1,547 Cr (FY25)*</text>
+ <text x="4" y="132" class="b">Paytm</text><rect x="80" y="121" width="16" height="15" fill="#00a0dc"/><text x="84" y="150" class="s">8.1%</text>
+ <rect x="182" y="121" width="140" height="15" fill="#0b5d7a"/><text x="186" y="150" class="s">₹8,437 Cr (FY26)</text>
+ <text x="4" y="176" class="s">*Indian entity only; Google books some value elsewhere.</text>
+ <text x="4" y="190" class="b acc">Share of payments ≠ share of money.</text>
+</svg>
+<figcaption><b>{{FIG:gp-share}} · UPI share and revenue barely line up.</b> Paytm, with a quarter of Google Pay’s share, reports over five times its Indian revenue, because it sells devices and loans to merchants. <span class="src">NPCI via Inc42 (Aug 2026); company filings via Storyboard18 (Feb 2026), Paytm IR (May 2026), Inc42 (FY26).</span></figcaption>
+</figure>
+</div>
+
+<p><b>Business model in one line.</b> Google Pay India’s own revenue is small (₹1,547 Cr in FY25, profit ₹50 Cr) and flat for five years. It earns from loan and card distribution, partner-funded offers and fees on card bill payments (0.5–1% plus GST when paid by card; free from a bank account by UPI). Its bigger value is strategic: payments are the most frequent reason to open a Google app in India.</p>
+
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Monthly payers making 10+ payments: a habit measure, not a download count.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>P2P pairs · payment success rate · reward redemption · Flex cards issued.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Scam reports per lakh payments · reward cost per payment · overdue card balances.</div>
+</div>
+
+<p><b>Moat, in plain words.</b> It comes pre-installed in trust: a Google account, Android, and a clean interface people already know. Chat threads make leaving costly in a small way, because your payment history with each friend lives there. Its fraud tools draw on Google’s scale. <b>2025–26 moves:</b> Flex RuPay credit card with Axis Bank and Pocket Money on UPI Circle (both Dec 2025); screen-sharing scam alerts; merchant ratings synced to Google Maps; convenience fees on card-funded bill payments.</p>
+
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good">
+<li>32.4% of UPI; the cleanest, most social interface</li>
+<li>Google’s trust and scale in fraud detection</li>
+<li>Rewards partly funded by partner brands</li>
+</ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss">
+<li>Small Indian revenue for its size; every financial product depends on partners</li>
+<li>Weaker with offline merchants than PhonePe and Paytm</li>
+<li>Also above the 30% cap, if it is ever enforced</li>
+</ul></div>
+</div>
+
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Group expenses (flats, trips) are tracked in spreadsheets and chased by message <span class="arrow">→</span> shared groups with running balances and one-tap “settle up” by UPI <span class="arrow">→</span> active groups settling at least monthly.</p>
+<p class="idea"><b>2.</b> Most scams happen while the victim is on a call with the scammer <span class="arrow">→</span> with permission, warn when a payment to a new payee starts during a call from an unsaved number <span class="arrow">→</span> scam reports per lakh payments, and genuine payments abandoned after the warning.</p>
+<p class="idea"><b>3.</b> Flex cardholders are new to credit and may overspend <span class="arrow">→</span> a weekly “what you owe” nudge in the chat-style home, with autopay from the bank account <span class="arrow">→</span> share of card bills paid in full on time.</p>

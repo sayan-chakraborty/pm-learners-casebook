@@ -1,0 +1,29 @@
+<!-- ============ TEARDOWNS: X ============ -->
+<h1 style="margin-top:14pt">X: the fastest place for news, and a shrinking business</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Meera, a reporter in Mumbai, sees smoke over a railway yard at 7:10 pm and posts a photo with two lines. Her 80,000 followers get it in their “Following” timeline within seconds. X’s “For You” ranking notices fast replies and reposts, and shows it to people in Mumbai who don’t follow her. Within an hour, another account posts an old video from a different fire, claiming it is tonight’s. Readers who add context write a note: “This video is from 2019.” The note appears under the post only after raters who usually disagree with each other both mark it helpful ({{REF:x-flow}}).</p>
+
+<figure>{{SVG:flow_x}}
+<figcaption><b>{{FIG:x-flow}} · Behind a breaking-news post, and the note on a false one.</b> Followers get the post directly (②); strangers get it only if the ranking picks it (③–④). A note is shown only when people from different sides agree (⑦–⑨). <span class="src">Simplified from X’s published Community Notes and ranking descriptions (2023–26); numbers illustrative.</span></figcaption>
+</figure>
+
+<h3>The clever part: notes that both sides must agree on</h3>
+<p>Most fact-check systems ask a few experts, and half the audience distrusts them. X’s <b>Community Notes</b> ask users instead, but a note isn’t shown just because many people like it; that would let the bigger side win every time. The system learns which raters usually disagree, and shows a note only when people from <i>both</i> groups rate it helpful ({{REF:bridge}}). Designers call this <span class="term">bridging</span>. Meta copied the idea for Facebook, Instagram and Threads in the US in 2025.</p>
+<figure>{{SVG:bridge}}
+<figcaption><b>{{FIG:bridge}} · Why popularity alone doesn’t publish a note.</b> Note A has more helpful votes, all from one side, and stays hidden. Note B has fewer votes, but from both sides, and is shown. <span class="src">Author’s diagram of X’s open-source Community Notes ranking; votes illustrative.</span></figcaption>
+</figure>
+
+<h3>Business model, with numbers</h3>
+<p>X earns from ads and from subscriptions (Premium, for a blue tick and more reach). After Elon Musk bought Twitter in October 2022 for $44 bn and cut about 80% of its staff, many big advertisers left. Ad revenue fell from $4.4 bn in 2022 to about $2 bn in 2025. X now sits inside the SpaceX group through its merger with xAI, and a 2026 filing showed <b>550 mn monthly users</b>, fewer than the 600 mn X had claimed, and about 6.3 mn paying subscribers. It is also testing X Money, for payments.</p>
+<p><b>Moat, in plain words.</b> Journalists, politicians, investors and sports fans still post here first, so news breaks here first. That habit is hard to copy, but Threads and Bluesky are trying. In India, X is where governments and ministers announce things, which also makes it a frequent subject of takedown orders: X challenged India’s Sahyog portal for such orders in the Karnataka High Court and lost in September 2025.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Daily users who read or post during live events.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Posts and replies per user · notes shown on viral posts · Premium sign-ups.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Advertiser brand-safety complaints · spam and bot share · time from false post to note.</div>
+</div>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Real-time news and public debate</li><li>Community Notes, a design others copy</li><li>Grok AI built in</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Ad revenue half of 2022’s</li><li>Decisions depend heavily on one owner</li><li>Bots, spam and brand-safety worries</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> During a crisis, people can’t tell rumours from reports <span class="arrow">→</span> a “verified sources” view that shows only news organisations and posts with notes <span class="arrow">→</span> daily users during breaking news; time from false post to note.</p>
+<p class="idea"><b>2.</b> Indian cricket fans scatter across apps during matches <span class="arrow">→</span> official match rooms with live scores and highlights in Hindi, Tamil and Bengali <span class="arrow">→</span> match-day daily users; ad revenue per match.</p>

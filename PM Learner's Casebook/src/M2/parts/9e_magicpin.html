@@ -1,0 +1,46 @@
+<!-- ============ TEARDOWNS: MAGICPIN + ONDC ============ -->
+<h1 style="margin-top:12pt">magicpin and ONDC: food delivery on an open network</h1>
+<p class="lede"><b>Walkthrough (illustrative persona).</b> Sameer, 27, in Delhi, noticed that his usual paneer roll costs less on magicpin than on the big apps: same shop, same roll. He searches, orders for ₹240, and a rider from a separate delivery company brings it. What he doesn’t see is that four different companies handled his order, all speaking one open protocol run by ONDC, the government-backed Open Network for Digital Commerce ({{REF:ondc-walk}}).</p>
+<div class="figrow">
+<figure style="margin-top:0">
+<svg class="d" viewBox="0 0 330 150" xmlns="http://www.w3.org/2000/svg">
+ <!-- scale 0.75 px per ₹ -->
+ <text x="4" y="12" class="s">What the restaurant keeps from a ₹400 order (illustrative)</text>
+ <text x="4" y="42" class="b">Big food app</text>
+ <rect x="4" y="50" width="225" height="20" fill="#127a64"/><text x="10" y="64" class="w b">keeps ~₹300</text>
+ <rect x="229" y="50" width="75" height="20" fill="#b93a32"/><text x="266" y="64" text-anchor="middle" class="w b">~₹100</text>
+ <text x="4" y="98" class="b">ONDC via magicpin</text>
+ <rect x="4" y="106" width="262" height="20" fill="#127a64"/><text x="10" y="120" class="w b">keeps ~₹350</text>
+ <rect x="266" y="106" width="38" height="20" fill="#b93a32"/><text x="285" y="120" text-anchor="middle" class="w b">₹50</text>
+ <text x="4" y="144" class="s">red: commission, fees and ads the restaurant pays</text>
+</svg>
+<figcaption><b>{{FIG:ondc-money}} · Why restaurants join.</b> Lower fees let them keep more, or price the same roll lower. Delivery is often paid separately by the customer. <span class="src">Illustrative; commissions of 18–25% on large apps and single-digit fees on ONDC are commonly reported (2024–26).</span></figcaption>
+</figure>
+<div class="box chk" style="margin-top:0"><span class="lbl">Check · “ONDC will break the food-delivery duopoly” <span class="verdict v-over">Overstated</span></span>
+<p class="small">At about 1.5 lakh orders a day in late 2024, magicpin’s ONDC food business was a few per cent of the big two’s volume. Lower fees help restaurants, but customers choose on range, reliability and habit, and those still sit with Zomato and Swiggy. A better claim: ONDC puts a ceiling on how far commissions can rise, because restaurants now have somewhere else to go.</p></div>
+</div>
+<table class="tbl flow feat">
+<tr><th style="width:17%">Feature</th><th style="width:26%">User problem</th><th style="width:33%">Why it’s designed this way</th><th>Metric it moves</th></tr>
+<tr><td>Lower prices</td><td>“Same food, why pay more?”</td><td>Lower network fees are passed on as lower menu prices</td><td>Share of orders from price-sensitive users</td></tr>
+<tr><td>magicNOW</td><td>“I want it fast”</td><td>15-minute delivery from kitchens very close to the user</td><td>Share of orders under 15 minutes</td></tr>
+<tr><td>magicPoints</td><td>A reason to come back</td><td>Loyalty points carried over from its discovery days</td><td>Repeat rate</td></tr>
+<tr><td>Its own delivery fleet</td><td>Riders from other companies are less reliable</td><td>A fleet it controls for the busiest areas</td><td>On-time %</td></tr>
+</table>
+<figure>
+{{SVG:flow_ondc}}
+<figcaption><b>{{FIG:ondc-walk}} · Behind an ONDC food order.</b> The buyer app (magicpin), the restaurant’s seller app and the delivery company are separate businesses. ONDC sets the rules and passes messages; it holds no money and no customers. <span class="src">Simplified from ONDC’s published network design (Beckn protocol); amounts illustrative.</span></figcaption>
+</figure>
+<p><b>Business model and scale.</b> magicpin earns fees as a buyer app, delivery fees and brand deals. It became the largest food buyer app on ONDC, at about 1.5 lakh orders a day (Oct 2024). ONDC’s own incentives, which once paid part of each order, have been cut back, and that tests how many customers stay without them.</p>
+<div class="metrics">
+ <div><span class="h" style="color:var(--key)">North Star</span>Weekly repeat orders without any subsidy.</div>
+ <div><span class="h" style="color:var(--accent)">Inputs</span>Restaurants live at 8 pm · price gap vs big apps · delivery time.</div>
+ <div><span class="h" style="color:var(--brk)">Guardrails</span>Order failures across apps · refund time · complaints.</div>
+</div>
+<p><b>Moat, in plain words.</b> Very little of its own: any buyer app can plug into the same restaurants on ONDC. Its edge is being early, a loyalty base and a delivery fleet. The deeper question is whether an open network can match the reliability of one company that controls the whole chain: when an ONDC order fails, whose fault is it, and who refunds?</p>
+<div class="sw">
+<div><h4 class="g">Strengths</h4><ul class="good"><li>Real price advantage for the same food</li><li>Restaurants actively want an alternative</li></ul></div>
+<div><h4 class="r">Weaknesses</h4><ul class="miss"><li>Smaller range and less reliable delivery than the big two</li><li>Growth leaned on ONDC incentives</li></ul></div>
+</div>
+<h3>What I’d build next</h3>
+<p class="idea"><b>1.</b> Users can’t tell who is responsible when an order goes wrong <span class="arrow">→</span> a single magicpin guarantee: refund in 10 minutes, whichever company failed <span class="arrow">→</span> repeat rate after a failed order.</p>
+<p class="idea"><b>2.</b> The price gap is the reason to switch, but users can’t see it <span class="arrow">→</span> show “₹38 less than on other apps” on each dish, from restaurants’ own price data <span class="arrow">→</span> conversion on dishes showing the gap.</p>
