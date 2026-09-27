@@ -544,6 +544,9 @@ My feedback on the first draft: these three felt weak for understanding and too 
 - Preface: credits (Claude, the IIM A and IIM B casebooks, ISB, Lenny's guide, public sources); the guide is exhaustive and for learning: curiosity about products, how they help or harm people, and second-order consequences; the case structure explained; readers are expected to critique the stronger answers and build their own thinking frameworks.
 - Publish to a public GitHub repo. README: anyone can make changes; not verified, a work in progress; prepared in September 2026, so data will go stale; clone and fix mistakes or inconsistencies.
 
+### Old drafts deleted (owner's instruction, 27 Sep 2026)
+- The `PM Learner's Casebook (drafts)/` folder (Part II Product Dossiers, Part III Technology Explained, Markdown sources zip) was deleted locally and from the GitHub repo. It is no longer available as research material (§3); it survives only in git history (commit fbd5e6a and earlier).
+
 ### ~~Real app screenshots in product teardowns (approved 25 Sep 2026)~~ (superseded, see above)
 - Product teardowns may include **real images of app screens** (and product photos where useful), alongside the bespoke annotated SVG diagrams. Use whichever tool suits: WebFetch, the built-in browser, or Claude in Chrome.
 - **Use:**
