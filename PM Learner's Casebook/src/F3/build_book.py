@@ -5,7 +5,7 @@ import pymupdf as fitz
 HERE = pathlib.Path(__file__).resolve().parent
 SRC = HERE.parent; BOOK = HERE.parents[1]; ROOT = BOOK.parent
 sys.path.insert(0, str(SRC / "common"))
-OUT = BOOK / "PM Learner's Casebook (complete).pdf"
+OUT = ROOT / "PM Learner's Casebook (complete).pdf"
 CH = json.loads((HERE / "index.json").read_text(encoding="utf-8"))
 E = html.escape
 norm = lambda s: re.sub(r"[^A-Z0-9]", "", s.upper())

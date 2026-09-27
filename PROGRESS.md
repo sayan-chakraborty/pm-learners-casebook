@@ -28,6 +28,7 @@ F2 Behavioural: the plan is saved in `src/F2/plan.md`. At the start of that sess
 ### 2026-09-27: F3 merged book complete
 - Owner: merge all 10 PDFs; detailed index with page links; cover "Prepared for: Sayan Chakraborty" with the XLRI logo (`XLRI Logo.webp`); preface crediting Claude and the casebooks, saying the guide is exhaustive and for learning (curiosity about products, harm, second-order effects), explaining the case structure and asking readers to critique the stronger answers and build their own frameworks. Cover redone in an Economist style after "design is bad"; the title stays "PM Learner's Casebook".
 - Built: `src/F3/extract.py` (headings, case/guesstimate/framework labels and section kickers from each chapter PDF → index.json; heading size relative to each chapter's title), `build_book.py` (cover + preface + contents + index, all linked; book-wide page numbers stamped over each chapter footer; 172 bookmarks). 391 pages; 36 cases, 14 guesstimates, 43 teardowns.
+- The complete book now sits in the top folder (`PM Learner's Casebook (complete).pdf`); `build_book.py` writes it there.
 - Then: published to a public GitHub repo at the owner's request (everything in the folder, including the source casebook PDFs, the owner's explicit choice after a warning about redistribution). README says it is unverified, a work in progress, prepared in Sep 2026 (data will go stale), and that anyone may change it.
 
 ### 2026-09-27: F2 Behavioural complete
