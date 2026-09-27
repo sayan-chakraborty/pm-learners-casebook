@@ -18,7 +18,7 @@ Claude Code: read this at the start of every session and update it at the end (s
 | M9 Consumer hardware, loyalty & public | ☑ 27 Sep 2026 | ☑ 27 Sep 2026 | ☑ (awaiting owner review) | 40 | `M9 - Consumer hardware, loyalty & public services.pdf`, 64 figures |
 | F1 Guesstimates | n/a | n/a | dropped | | Owner, 25 Sep 2026: 2 guesstimates per module in M3–M9 instead |
 | F2 Behavioural | n/a | n/a | ☑ 27 Sep 2026 (awaiting owner review) | 12 | `F2 - Behavioural.pdf`, 10 figures |
-| F3 Merge into one book | n/a | n/a | ☑ 27 Sep 2026 | 392 | `PM Learner's Casebook (complete).pdf`: cover, preface, linked contents and index, bookmarks |
+| F3 Merge into one book | n/a | n/a | ☑ 27 Sep 2026 | 391 | `PM Learner's Casebook (complete).pdf`: cover, preface, linked contents and index, bookmarks |
 
 ## Next step
 F2 Behavioural: the plan is saved in `src/F2/plan.md`. At the start of that session, show the saved plan in chat and wait for the owner’s “go”. Reuse `src/M9/build.py` (EXTRA scan with pointer patterns) and `figlib.py` (shared helpers: box, vbars, curves, etree, stacks, ladder, arr) as the starting kit. After F2, F3 (optional merge) remains.
@@ -27,7 +27,7 @@ F2 Behavioural: the plan is saved in `src/F2/plan.md`. At the start of that sess
 
 ### 2026-09-27: F3 merged book complete
 - Owner: merge all 10 PDFs; detailed index with page links; cover "Prepared for: Sayan Chakraborty" with the XLRI logo (`XLRI Logo.webp`); preface crediting Claude and the casebooks, saying the guide is exhaustive and for learning (curiosity about products, harm, second-order effects), explaining the case structure and asking readers to critique the stronger answers and build their own frameworks. Cover redone in an Economist style after "design is bad"; the title stays "PM Learner's Casebook".
-- Built: `src/F3/extract.py` (headings, case/guesstimate/framework labels and section kickers from each chapter PDF → index.json; heading size relative to each chapter's title), `build_book.py` (cover + preface + contents + index, all linked; book-wide page numbers stamped over each chapter footer; 172 bookmarks). 392 pages; 36 cases, 14 guesstimates, 43 teardowns.
+- Built: `src/F3/extract.py` (headings, case/guesstimate/framework labels and section kickers from each chapter PDF → index.json; heading size relative to each chapter's title), `build_book.py` (cover + preface + contents + index, all linked; book-wide page numbers stamped over each chapter footer; 172 bookmarks). 391 pages; 36 cases, 14 guesstimates, 43 teardowns.
 - Then: published to a public GitHub repo at the owner's request (everything in the folder, including the source casebook PDFs, the owner's explicit choice after a warning about redistribution). README says it is unverified, a work in progress, prepared in Sep 2026 (data will go stale), and that anyone may change it.
 
 ### 2026-09-27: F2 Behavioural complete

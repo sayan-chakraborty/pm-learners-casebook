@@ -2,7 +2,7 @@
 
 A learner's guide for product-management interviews, built in September 2026 for PM placements at XLRI. Nine sectors, each with a sector primer, real interview cases in Q&A form, product teardowns and a technology block, plus a chapter on behavioural interviews.
 
-**Start here:** [`PM Learner's Casebook/PM Learner's Casebook (complete).pdf`](PM%20Learner's%20Casebook/PM%20Learner's%20Casebook%20(complete).pdf) is the whole book in one file (392 pages), with a clickable contents page, a detailed index (cases, guesstimates, frameworks, products, technology, behavioural questions) and PDF bookmarks. Each chapter is also available as its own PDF in the same folder.
+**Start here:** [`PM Learner's Casebook/PM Learner's Casebook (complete).pdf`](PM%20Learner's%20Casebook/PM%20Learner's%20Casebook%20(complete).pdf) is the whole book in one file (391 pages), with a clickable contents page, a detailed index (cases, guesstimates, frameworks, products, technology, behavioural questions) and PDF bookmarks. Each chapter is also available as its own PDF in the same folder.
 
 | # | Chapter |
 |---|---|
